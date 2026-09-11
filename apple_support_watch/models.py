@@ -40,6 +40,8 @@ class Event:
     diff_excerpt: list[str] = field(default_factory=list)
     diff_page: str | None = None
     counterpart_url: str | None = None
+    source_name: str = ""
+    category: str = ""
 
     def as_dict(self) -> dict[str, Any]:
         return {
@@ -58,10 +60,11 @@ class Event:
             "diff_excerpt": self.diff_excerpt,
             "diff_page": self.diff_page,
             "counterpart_url": self.counterpart_url,
+            "source_name": self.source_name,
+            "category": self.category,
         }
 
     @classmethod
     def from_dict(cls, value: dict[str, Any]) -> "Event":
         allowed = cls.__dataclass_fields__.keys()
         return cls(**{key: value[key] for key in allowed if key in value})
-

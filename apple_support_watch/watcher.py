@@ -15,6 +15,7 @@ from .http import HttpClient
 from .models import Event, Source
 from .site import write_index
 from .sitemaps import fetch_articles
+from .thematic import ThematicWatcher
 
 
 def now_iso() -> str:
@@ -323,6 +324,11 @@ class Watcher:
                     self.site_url,
                     int(self.config["feed_item_limit"]),
                 )
+        thematic = ThematicWatcher(
+            self.root, self.config, self.client, self.site_url, dry_run=self.dry_run
+        )
+        status["themes"] = thematic.run(timestamp)
+        self.created_events.extend(thematic.created_events)
         if not self.dry_run:
             write_index(self.public_dir, status, self.config["site_title"])
         return status

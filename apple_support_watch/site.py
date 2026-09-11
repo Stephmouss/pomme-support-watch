@@ -16,6 +16,14 @@ def write_index(public_dir: Path, status: dict, site_title: str) -> None:
             f"<p><a href=\"feeds/{locale}-new.xml\">New articles</a> · "
             f"<a href=\"feeds/{locale}-updated.xml\">Updated articles</a></p></section>"
         )
+    for slug, details in status.get("themes", {}).items():
+        warning = f"<p>⚠ {len(details['errors'])} unavailable collection(s)</p>" if details.get("errors") else ""
+        cards.append(
+            f"<section><h2>{html.escape(details['title'])}</h2>"
+            f"<p><strong>{details['active']}</strong> watched items · "
+            f"{details['collections']} collections</p>{warning}"
+            f"<p><a href=\"feeds/{html.escape(slug)}.xml\">All changes</a></p></section>"
+        )
     page = f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow"><title>{html.escape(site_title)}</title>
@@ -25,4 +33,3 @@ def write_index(public_dir: Path, status: dict, site_title: str) -> None:
     (public_dir / "index.html").write_text(page, encoding="utf-8")
     (public_dir / "status.json").write_text(json.dumps(status, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (public_dir / ".nojekyll").write_text("", encoding="utf-8")
-

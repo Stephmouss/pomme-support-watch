@@ -25,7 +25,8 @@ def _event_html(event: Event, base_url: str) -> str:
                 color = "#087f23" if line.startswith("+") else "#b00020"
                 formatted.append(f'<span style="color:{color}">{html.escape(line)}</span>')
             parts.append(f"<pre>{'<br>'.join(formatted)}</pre>")
-    links = [f'<a href="{html.escape(event.url, quote=True)}">Apple Support</a>']
+    source_name = event.source_name or "Apple Support"
+    links = [f'<a href="{html.escape(event.url, quote=True)}">{html.escape(source_name)}</a>']
     diff_url = _absolute(base_url, event.diff_page)
     if diff_url:
         links.append(f'<a href="{html.escape(diff_url, quote=True)}">Full diff</a>')

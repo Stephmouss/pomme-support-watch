@@ -34,10 +34,16 @@ class HttpClient:
         self._last_request = 0.0
 
     def get_text(self, url: str) -> str:
+        return self._get(url).text
+
+    def get_json(self, url: str, headers: dict[str, str] | None = None):
+        return self._get(url, headers=headers).json()
+
+    def _get(self, url: str, headers: dict[str, str] | None = None):
         elapsed = time.monotonic() - self._last_request
         if elapsed < self.delay:
             time.sleep(self.delay - elapsed)
-        response = self.session.get(url, timeout=self.timeout)
+        response = self.session.get(url, timeout=self.timeout, headers=headers)
         self._last_request = time.monotonic()
         response.raise_for_status()
-        return response.text
+        return response
