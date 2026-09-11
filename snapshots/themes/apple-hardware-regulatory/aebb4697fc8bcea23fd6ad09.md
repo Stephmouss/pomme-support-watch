@@ -1,0 +1,31 @@
+# iPhone 13 Pro
+
+Category: Environmental regulations
+
+```json
+{
+  "archived": false,
+  "categoryName": "iPhone",
+  "deviceId": "631a093b70023c117017b50c",
+  "deviceWorkflowMessage": "",
+  "extraInfo": "Ecodesign requirements for standby and off mode, networked standby, and electric power consumption of electrical and electronic household and office equipment.",
+  "fileId": "regulations/A2638_V0.zip",
+  "fileName": "A2638_V0.zip",
+  "id": "633d75fea037842e7ea1c2d8",
+  "imageName": "A2638_V0.zip",
+  "modelNames": [
+    "A2638"
+  ],
+  "originalFileName": "A2638_V0.zip",
+  "productCategory": {
+    "id": "6398c145948c6c4924ab69a4",
+    "name": "iPhone"
+  },
+  "productName": "iPhone 13 Pro",
+  "regulation": "Commission Regulation (EU) 1275/2008 Technical Documentation",
+  "subCategory": "",
+  "transName": "iPhone 13 Pro",
+  "version": 0,
+  "yearOfRelease": "2021"
+}
+```
