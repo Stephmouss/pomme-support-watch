@@ -1,9 +1,11 @@
 # Apple Support Watch
 
 Apple Support Watch surveille les sitemaps officiels d’Apple Support en anglais
-américain et en français. Il publie quatre flux RSS : nouvelles fiches et
-fiches modifiées pour chaque langue. Les versions successives des articles sont
-conservées en Markdown et les changements disposent d’une page de comparaison.
+américain et en français. Il surveille également plusieurs sources Apple plus
+discrètes : le catalogue réglementaire, les opérateurs eSIM et les collectes
+Apple Plans en France, ainsi que la page consacrée au DSA. Les versions
+successives sont conservées en Markdown et les changements disposent d’une
+page de comparaison.
 
 ## Flux publiés
 
@@ -11,6 +13,9 @@ conservées en Markdown et les changements disposent d’une page de comparaison
 - `feeds/en-us-updated.xml`
 - `feeds/fr-fr-new.xml`
 - `feeds/fr-fr-updated.xml`
+- `feeds/apple-hardware-regulatory.xml`
+- `feeds/apple-services-operations-fr.xml`
+- `feeds/apple-platform-policies-regulation.xml`
 
 Une fois GitHub Pages activé, les URLs sont de la forme :
 
@@ -20,14 +25,17 @@ https://COMPTE.github.io/NOM-DU-DEPOT/feeds/en-us-new.xml
 
 ## Fonctionnement
 
-Le workflow GitHub Actions s’exécute aux minutes 17 et 47 de chaque heure. Il :
+Le workflow GitHub Actions s’exécute toutes les deux heures, à la minute 17. Il :
 
 1. découvre les sitemaps `ac` depuis les index Apple ;
 2. compare les URL et les champs `lastmod` avec l’état précédent ;
 3. extrait le contenu éditorial des fiches nouvelles ou modifiées ;
 4. normalise ce contenu en Markdown et calcule un diff ;
-5. met à jour les snapshots, les pages HTML et les quatre flux ;
-6. enregistre les changements dans Git et déploie `public/` avec GitHub Pages.
+5. parcourt chaque rubrique publique de la base Apple Regulatory Information ;
+6. contrôle les listes françaises d’opérateurs eSIM et de collectes Apple Plans ;
+7. contrôle la page DSA et les liens vers ses rapports ;
+8. met à jour les snapshots, les pages HTML et les sept flux ;
+9. enregistre les changements dans Git et déploie `public/` avec GitHub Pages.
 
 La première exécution initialise la liste des fiches sans créer des milliers
 d’alertes. Les snapshots sont ensuite constitués progressivement, en donnant
@@ -41,7 +49,7 @@ la priorité aux documents modifiés récemment.
 3. Dans **Settings > Pages > Build and deployment**, sélectionner
    **GitHub Actions** comme source.
 4. Ouvrir **Actions > Apple Support Watch**, puis lancer **Run workflow**.
-5. Attendre le premier déploiement et ajouter les quatre URLs à Feedbin.
+5. Attendre le premier déploiement et ajouter les URLs souhaitées à Feedbin.
 
 Aucun secret et aucun service extérieur ne sont nécessaires.
 
