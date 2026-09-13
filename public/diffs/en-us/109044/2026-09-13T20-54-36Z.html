@@ -9,9 +9,16 @@
     :root { color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
     body { margin: 0 auto; max-width: 1500px; padding: 24px; }
     a { color: #06c; } .meta { margin-bottom: 24px; color: #666; }
-    table.diff { border-collapse: collapse; width: 100%; table-layout: fixed; font-family: ui-monospace, monospace; font-size: 13px; }
+    .diff-scroll { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    table.diff { border-collapse: collapse; width: 100%; min-width: 760px; table-layout: fixed; font-family: ui-monospace, monospace; font-size: 13px; line-height: 1.45; }
+    table.diff colgroup:nth-of-type(1), table.diff colgroup:nth-of-type(4) { width: 1.75rem; }
+    table.diff colgroup:nth-of-type(2), table.diff colgroup:nth-of-type(5) { width: 3rem; }
+    table.diff th, table.diff td { box-sizing: border-box; }
     .diff_header { background: #e8e8ed; color: #222; }
-    td { padding: 2px 6px; vertical-align: top; overflow-wrap: anywhere; }
+    td { padding: 3px 6px; vertical-align: top; }
+    td.diff_next { text-align: center; }
+    td.diff_header { text-align: right; white-space: nowrap; }
+    table.diff td:not(.diff_next):not(.diff_header) { white-space: pre-wrap !important; overflow-wrap: anywhere; word-break: break-word; }
     .diff_add { background: #c6f6d5; color: #111; } .diff_sub { background: #fed7d7; color: #111; }
     .diff_chg { background: #fefcbf; color: #111; }
     @media (prefers-color-scheme: dark) { .meta { color:#aaa; } a {color:#2997ff} }
@@ -20,7 +27,7 @@
 <body>
   <h1>About the USB-C to Lightning Adapter</h1>
   <p class="meta"><a href="https://support.apple.com/en-us/109044">Current article on Apple Support</a></p>
-  
+  <div class="diff-scroll">
     <table class="diff" id="difflib_chg_to0__top"
            cellspacing="0" cellpadding="0" rules="groups" >
         <colgroup></colgroup> <colgroup></colgroup> <colgroup></colgroup>
@@ -71,5 +78,6 @@
             <tr><td class="diff_next"></td><td class="diff_header">></td><td nowrap="nowrap">pport.apple.com/103190)&nbsp;for&nbsp;additional&nbsp;information.</td><td class="diff_next"></td><td class="diff_header">></td><td nowrap="nowrap">pport.apple.com/103190)&nbsp;for&nbsp;additional&nbsp;information.</td></tr>
         </tbody>
     </table>
+  </div>
 </body>
 </html>
