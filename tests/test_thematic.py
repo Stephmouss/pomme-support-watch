@@ -85,6 +85,24 @@ class ThematicWatcherTests(unittest.TestCase):
         events = json.loads((self.root / "events/themes/test-theme.json").read_text(encoding="utf-8"))
         self.assertEqual(events[0]["source_name"], "Apple Test")
 
+    def test_disappearance_is_tracked_without_an_event(self):
+        first = ThematicWatcher(self.root, self.config, self.client, "https://pages.test")
+        with patch.object(first, "_fetch_source", return_value=({"test:collection": [self.item("First version")]}, {})):
+            first.run("2026-09-11T10:00:00Z")
+
+        for hour in (12, 14):
+            watcher = ThematicWatcher(self.root, self.config, self.client, "https://pages.test")
+            with patch.object(watcher, "_fetch_source", return_value=({"test:collection": []}, {})):
+                watcher.run(f"2026-09-11T{hour}:00:00Z")
+
+        self.assertEqual(watcher.created_events, [])
+        state = json.loads((self.root / "state/themes/test-theme.json").read_text(encoding="utf-8"))
+        self.assertFalse(state["items"]["test:item"]["active"])
+        events = json.loads((self.root / "events/themes/test-theme.json").read_text(encoding="utf-8"))
+        self.assertEqual(events, [])
+        feed = (self.root / "public/feeds/test-theme.xml").read_text(encoding="utf-8")
+        self.assertNotIn("REMOVED", feed)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -47,9 +47,10 @@ def write_feed(path: Path, events: list[Event], title: str, base_url: str, limit
     ET.SubElement(channel, "lastBuildDate").text = format_datetime(
         datetime.now(timezone.utc), usegmt=True
     )
-    for event in sorted(events, key=lambda item: item.detected_at, reverse=True)[:limit]:
+    visible_events = [event for event in events if event.kind in {"new", "updated"}]
+    for event in sorted(visible_events, key=lambda item: item.detected_at, reverse=True)[:limit]:
         item = ET.SubElement(channel, "item")
-        prefix = {"new": "NEW", "updated": "UPDATED", "removed": "REMOVED"}.get(event.kind, event.kind.upper())
+        prefix = {"new": "NEW", "updated": "UPDATED"}[event.kind]
         ET.SubElement(item, "title").text = f"[{prefix}] {event.title}"
         ET.SubElement(item, "link").text = event.url
         ET.SubElement(item, "guid", {"isPermaLink": "false"}).text = event.event_id

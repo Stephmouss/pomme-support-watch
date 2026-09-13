@@ -70,7 +70,30 @@ class WatcherTests(unittest.TestCase):
         self.assertIn("Second version", feed)
         self.assertTrue(any((self.root / "public/diffs/en-us/123456").glob("*.html")))
 
+    def test_disappearance_is_tracked_without_an_event(self):
+        with patch("apple_support_watch.watcher.fetch_articles", return_value={self.url: "2026-01-01"}), patch.object(
+            Watcher, "_fetch_article", return_value=make_article("First version")
+        ):
+            Watcher(self.root, self.config).run()
+
+        state_path = self.root / "state/en-us.json"
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        state["sitemap_count"] = 0
+        state_path.write_text(json.dumps(state), encoding="utf-8")
+
+        for _ in range(2):
+            with patch("apple_support_watch.watcher.fetch_articles", return_value={}):
+                watcher = Watcher(self.root, self.config)
+                watcher.run()
+
+        self.assertEqual(watcher.created_events, [])
+        state = json.loads(state_path.read_text(encoding="utf-8"))
+        self.assertFalse(state["articles"][self.url]["active"])
+        events = json.loads((self.root / "events/en-us.json").read_text(encoding="utf-8"))
+        self.assertEqual(events, [])
+        feed = (self.root / "public/feeds/en-us-updated.xml").read_text(encoding="utf-8")
+        self.assertNotIn("REMOVED", feed)
+
 
 if __name__ == "__main__":
     unittest.main()
-

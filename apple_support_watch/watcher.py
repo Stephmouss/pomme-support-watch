@@ -58,7 +58,8 @@ class Watcher:
         return self.event_dir / f"{locale}.json"
 
     def _load_events(self, locale: str) -> list[Event]:
-        return [Event.from_dict(item) for item in load_json(self._events_path(locale), [])]
+        events = [Event.from_dict(item) for item in load_json(self._events_path(locale), [])]
+        return [event for event in events if event.kind in {"new", "updated"}]
 
     def _save_events(self, locale: str, events: list[Event]) -> None:
         save_json(self._events_path(locale), [event.as_dict() for event in events[:1000]])
@@ -241,20 +242,6 @@ class Watcher:
                     record["missing_count"] = int(record.get("missing_count", 0)) + 1
                     if record["missing_count"] >= confirmations:
                         record["active"] = False
-                        marker = f"removed:{timestamp}"
-                        event = Event(
-                            event_id=self._event_id("removed", source.locale, record["article_id"], marker),
-                            kind="removed",
-                            locale=source.locale,
-                            article_id=record["article_id"],
-                            title=record.get("title", record["article_id"]),
-                            url=url,
-                            detected_at=timestamp,
-                            sitemap_lastmod=record.get("sitemap_lastmod"),
-                            description="The URL disappeared from the Apple Support sitemap in two consecutive checks.",
-                        )
-                        events.insert(0, event)
-                        self.created_events.append(event)
 
             # Build initial snapshots progressively, newest sitemap dates first.
             pending = [
@@ -308,7 +295,7 @@ class Watcher:
             if not self.dry_run:
                 events = self._load_events(source.locale)
                 new_events = [event for event in events if event.kind == "new"]
-                updated_events = [event for event in events if event.kind in {"updated", "removed"}]
+                updated_events = [event for event in events if event.kind == "updated"]
                 label = "FR" if source.locale == "fr-fr" else "EN"
                 write_feed(
                     self.public_dir / "feeds" / f"{source.locale}-new.xml",

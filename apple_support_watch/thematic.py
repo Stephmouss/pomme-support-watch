@@ -359,7 +359,11 @@ class ThematicWatcher:
             state = _load_json(state_path, {"items": {}, "initialized_collections": {}})
             records = state.setdefault("items", {})
             initialized = state.setdefault("initialized_collections", {})
-            events = [Event.from_dict(value) for value in _load_json(events_path, [])]
+            events = [
+                event
+                for event in (Event.from_dict(value) for value in _load_json(events_path, []))
+                if event.kind in {"new", "updated"}
+            ]
             all_errors: dict[str, str] = {}
             fetched: dict[str, list[ThemeItem]] = {}
 
@@ -418,19 +422,6 @@ class ThematicWatcher:
                         record["missing_count"] = int(record.get("missing_count", 0)) + 1
                         if record["missing_count"] >= confirmations:
                             record["active"] = False
-                            vanished = ThemeItem(
-                                item_id=item_id,
-                                collection=collection,
-                                title=record.get("title", item_id),
-                                url=record.get("url", theme.get("link", "")),
-                                source_name=record.get("source_name", "Apple"),
-                                category=record.get("category", "Removed"),
-                                description="This item disappeared from Apple's public catalogue in two consecutive checks.",
-                                markdown="",
-                            )
-                            event = self._event(slug, "removed", vanished, timestamp)
-                            events.insert(0, event)
-                            self.created_events.append(event)
                 initialized[collection] = initialized.get(collection) or timestamp
 
             state["last_success"] = timestamp
