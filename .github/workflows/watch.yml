@@ -1,6 +1,14 @@
 name: Apple Support Watch
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/watch.yml"
+      - "apple_support_watch/**"
+      - "tests/**"
+      - "requirements.txt"
+      - "config/**"
   schedule:
     - cron: "17 */2 * * *"
   workflow_dispatch:
