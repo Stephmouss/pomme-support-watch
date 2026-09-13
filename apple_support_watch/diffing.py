@@ -33,9 +33,16 @@ def write_html_diff(path: Path, old: str, new: str, title: str, apple_url: str) 
     :root {{ color-scheme: light dark; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }}
     body {{ margin: 0 auto; max-width: 1500px; padding: 24px; }}
     a {{ color: #06c; }} .meta {{ margin-bottom: 24px; color: #666; }}
-    table.diff {{ border-collapse: collapse; width: 100%; table-layout: fixed; font-family: ui-monospace, monospace; font-size: 13px; }}
+    .diff-scroll {{ width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }}
+    table.diff {{ border-collapse: collapse; width: 100%; min-width: 760px; table-layout: fixed; font-family: ui-monospace, monospace; font-size: 13px; line-height: 1.45; }}
+    table.diff colgroup:nth-of-type(1), table.diff colgroup:nth-of-type(4) {{ width: 1.75rem; }}
+    table.diff colgroup:nth-of-type(2), table.diff colgroup:nth-of-type(5) {{ width: 3rem; }}
+    table.diff th, table.diff td {{ box-sizing: border-box; }}
     .diff_header {{ background: #e8e8ed; color: #222; }}
-    td {{ padding: 2px 6px; vertical-align: top; overflow-wrap: anywhere; }}
+    td {{ padding: 3px 6px; vertical-align: top; }}
+    td.diff_next {{ text-align: center; }}
+    td.diff_header {{ text-align: right; white-space: nowrap; }}
+    table.diff td:not(.diff_next):not(.diff_header) {{ white-space: pre-wrap !important; overflow-wrap: anywhere; word-break: break-word; }}
     .diff_add {{ background: #c6f6d5; color: #111; }} .diff_sub {{ background: #fed7d7; color: #111; }}
     .diff_chg {{ background: #fefcbf; color: #111; }}
     @media (prefers-color-scheme: dark) {{ .meta {{ color:#aaa; }} a {{color:#2997ff}} }}
@@ -44,7 +51,9 @@ def write_html_diff(path: Path, old: str, new: str, title: str, apple_url: str) 
 <body>
   <h1>{html.escape(title)}</h1>
   <p class="meta"><a href="{html.escape(apple_url, quote=True)}">Current article on Apple Support</a></p>
-  {table}
+  <div class="diff-scroll">
+    {table}
+  </div>
 </body>
 </html>
 """
