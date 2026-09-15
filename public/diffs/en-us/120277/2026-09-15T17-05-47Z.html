@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Monitor your heart rate with Apple Watch — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Monitor your heart rate with Apple Watch</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/120277">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+28 ajouts</span>
+      <span class="badge removed">−14 suppressions</span>
+      <span class="badge">1 bloc modifié</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">Learn how Apple Watch measures your heart rate, and get tips for a more accurate reading.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">Learn how Apple Watch measures your heart rate, and get tips for a more accurate reading.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">## <mark class="inline-remove">How to c</mark>heck your heart rate</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">## <mark class="inline-add">C</mark>heck your heart rate</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">You can check your heart rate any time using the Heart Rate app. Open the app, then wait for Apple Watch to measure your heart rate. You can also view your resting, walking, <mark class="inline-remove">breathe, </mark>workout, and re<mark class="inline-remove">cove</mark>r<mark class="inline-remove">y</mark> rate<mark class="inline-remove">s throughout the day</mark>.<mark class="inline-remove"> To easily open the app, [add the Heart Rate complication to your watch face](https://support.apple.com/guide/watch/apd8d0b9c582) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">You can check your heart rate any time using the Heart Rate app. Open the app, then wait for Apple Watch to measure your heart rate. You can also view your resting, walking, workout, and <mark class="inline-add">post-wo</mark>r<mark class="inline-add">kout h</mark>e<mark class="inline-add">a</mark>r<mark class="inline-add">t</mark> rate.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">[Image:<mark class="inline-remove"> An</mark> Apple Watch <mark class="inline-remove">that </mark>show<mark class="inline-remove">s</mark> a heart rate of 6<mark class="inline-remove">7</mark> beats per minute.]</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">[Image: Apple Watch show<mark class="inline-add">ing</mark> a heart rate of <mark class="inline-add">8</mark>6 beats per minute.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">You can also [turn on heart rate notifications](https://support.apple.com/en-us/120276) , so you know if your heart rate remains above or below a chosen beats per minute (BPM), or to occasionally check for an irregular heart rhythm.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">You can also [turn on heart rate notifications](https://support.apple.com/en-us/120276) , so you know if your heart rate remains above or below a chosen beats per minute (BPM), or to occasionally check for an irregular heart rhythm.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">Irregular rhythm notifications are available only with watchOS 5.1.2 or later. To enable irregular rhythm notifications, the notifications must be available in your country or region. [Learn where irregular rhythm notifications are available](https://www.apple.com/watchos/feature-availability/) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">Irregular rhythm notifications are available only with watchOS 5.1.2 or later. To enable irregular rhythm notifications, the notifications must be available in your country or region. [Learn where irregular rhythm notifications are available](https://www.apple.com/watchos/feature-availability/) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">## <mark class="inline-remove">Wh</mark>e<mark class="inline-remove">n Apple Watch measures</mark> your heart rate</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">## <mark class="inline-add">Vi</mark>e<mark class="inline-add">w</mark> your<mark class="inline-add"> recovery</mark> heart rate<mark class="inline-add"> variability (Recovery HRV)</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text"><mark class="inline-remove">[</mark>I<mark class="inline-remove">mage:</mark> <mark class="inline-remove">An</mark> <mark class="inline-remove">iPhone t</mark>ha<mark class="inline-remove">t shows a graph of h</mark>e<mark class="inline-remove">art rate data for the week and an</mark> Apple Watch <mark class="inline-remove">th</mark>at shows a<mark class="inline-remove"> </mark>r<mark class="inline-remove">es</mark>t<mark class="inline-remove">ing rate of 65 </mark>beats per minute.<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">I<mark class="inline-add">f</mark> <mark class="inline-add">you</mark> ha<mark class="inline-add">v</mark>e Apple Watch <mark class="inline-add">Series 12 or Apple W</mark>at<mark class="inline-add">ch</mark> <mark class="inline-add">Ultra 4, you can view your Recovery HRV. Your Recovery HRV mea</mark>s<mark class="inline-add">ures </mark>how<mark class="inline-add"> time varie</mark>s <mark class="inline-add">between he</mark>artbeats<mark class="inline-add">,</mark> <mark class="inline-add">and can be an indicator of stress and recovery. HRV is sam</mark>p<mark class="inline-add">led while you&#x27;re still, so the numb</mark>er <mark class="inline-add">of </mark>m<mark class="inline-add">easurements you see will vary accord</mark>in<mark class="inline-add">g to yo</mark>u<mark class="inline-add">r ac</mark>t<mark class="inline-add">ivity l</mark>e<mark class="inline-add">vel</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text"><mark class="inline-remove">Whe</mark>n you<mark class="inline-remove"> use the Wo</mark>r<mark class="inline-remove">kout app,</mark> Apple Watch <mark class="inline-remove">m</mark>e<mark class="inline-remove">asur</mark>e<mark class="inline-remove">s</mark> <mark class="inline-remove">your h</mark>eart <mark class="inline-remove">r</mark>ate <mark class="inline-remove">continuously during the workout and for 3 minutes after the workout ends to determine a workout recovery rate. If you don&#x27;t see your heart rate, [check your settings](https://support.</mark>app<mark class="inline-remove">le</mark>.<mark class="inline-remove">com/en-us/105002) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text"><mark class="inline-add">- O</mark>n your Apple Watch<mark class="inline-add">,</mark> <mark class="inline-add">op</mark>e<mark class="inline-add">n th</mark>e <mark class="inline-add">H</mark>eart <mark class="inline-add">R</mark>ate app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">T<mark class="inline-remove">his</mark> <mark class="inline-remove">information, as well as o</mark>the<mark class="inline-remove">r</mark> <mark class="inline-remove">da</mark>ta <mark class="inline-remove">it collects, helps Apple Watch estimate h</mark>ow <mark class="inline-remove">many</mark> <mark class="inline-remove">calor</mark>ie<mark class="inline-remove">s you’ve burned. In addition, Apple Watch measures</mark> your <mark class="inline-remove">h</mark>e<mark class="inline-remove">art rate thr</mark>o<mark class="inline-remove">ughout the day when you’re still, and periodically when you’re walking (Apple Watch Series 1 or later). Since Apple Watch takes these background readings based on your activity, the time between these measurements will vary. Apple Watch also calculates a daily resting rate and walking a</mark>ver<mark class="inline-remove">age b</mark>y <mark class="inline-remove">correlating background heart rate readings with accelerometer data when sufficient background readings are available</mark>.<mark class="inline-remove"> 1 You can [control which third-party apps have access to your health data from the Health app in Sources](https://support.apple.com/en-us/108779) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text"><mark class="inline-add">- </mark>T<mark class="inline-add">urn</mark> the <mark class="inline-add">Digi</mark>ta<mark class="inline-add">l</mark> <mark class="inline-add">Cr</mark>ow<mark class="inline-add">n</mark> <mark class="inline-add">to</mark> <mark class="inline-add">v</mark>ie<mark class="inline-add">w</mark> your <mark class="inline-add">R</mark>e<mark class="inline-add">c</mark>overy <mark class="inline-add">HRV</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- Tap info to learn more.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">## How Apple Watch measures your heart rate</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">## How Apple Watch measures your heart rate</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">The optical heart sensor in Apple Watch uses what is known as photoplethysmography. This technology, while difficult to pronounce, is based on a very simple fact: Blood is red because it reflects red light and absorbs green light.<mark class="inline-remove"> Apple Watch uses green LED lights paired with light‑sensitive photodiodes to detect the amount of blood flowing through your wrist at any given moment. When your heart beats, the blood flow in your wrist — and the green light absorption — is greater. Between beats, it’s less. By flashing its LED lights hundreds of times per second, Apple Watch can calculate the number of times the heart beats each minute — your heart rate. The optical heart sensor supports a range of 30–210 beats per minute. In addition, the optical heart sensor is designed to compensate for low signal levels by increasing both LED brightness and sampling rate.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">The optical heart sensor in Apple Watch uses what is known as photoplethysmography. This technology, while difficult to pronounce, is based on a very simple fact: Blood is red because it reflects red light and absorbs green light.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text"><mark class="inline-remove">The optical heart sensor can also use infrared light. This mode is what Apple Watch uses when it measures your heart rate in the background, and for heart rate notifications. </mark>Apple Watch uses green LED lights to measure your heart rate<mark class="inline-remove"> during workouts and Breathe sessions, and to calculate walking average and Heart Rate Variability (HRV)</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">Apple Watch uses green LED lights <mark class="inline-add">paired with light‑sensitive photodiodes </mark>to <mark class="inline-add">detect the amount of blood flowing through your wrist at any given mo</mark>me<mark class="inline-add">nt. When your heart beats, the blood flow in your wrist — and the green light absorption — is greater. Between beats, it’s less. By fl</mark>as<mark class="inline-add">hing its LED lights h</mark>u<mark class="inline-add">nd</mark>re<mark class="inline-add">ds of times per second, Apple Watch can calculate the number of times the heart beats each minute —</mark> your heart rate.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text"><mark class="inline-remove">[Image: A diagram of t</mark>he <mark class="inline-remove">b</mark>a<mark class="inline-remove">ck</mark> <mark class="inline-remove">of an Apple Watch with t</mark>he<mark class="inline-remove"> Infr</mark>ar<mark class="inline-remove">ed LEDs, Pho</mark>t<mark class="inline-remove">odiode</mark> sensors, and <mark class="inline-remove">Back</mark> cr<mark class="inline-remove">y</mark>s<mark class="inline-remove">t</mark>al ele<mark class="inline-remove">c</mark>tr<mark class="inline-remove">o</mark>de<mark class="inline-remove"> labeled</mark>.<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text"><mark class="inline-add">T</mark>he <mark class="inline-add">optic</mark>a<mark class="inline-add">l</mark> heart sensor<mark class="inline-add"> </mark>s<mark class="inline-add">upports a range of 30–210 beats per minute</mark>, and <mark class="inline-add">is designed to</mark> c<mark class="inline-add">ompensate fo</mark>r<mark class="inline-add"> low </mark>s<mark class="inline-add">ign</mark>al <mark class="inline-add">lev</mark>el<mark class="inline-add">s by incr</mark>e<mark class="inline-add">asing bo</mark>t<mark class="inline-add">h LED b</mark>r<mark class="inline-add">ightness an</mark>d<mark class="inline-add"> sampling rat</mark>e.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">The optical heart sensor can also use infrared light. The color of LED that your watch uses for sampling is determined by several factors, such as your watch model, your activity level, and whether you&#x27;re sleeping.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">Apple Watch Series 12 and Apple Watch Ultra 4 use green LEDs continuously during the day to provide a measurement as often as every five seconds, even when you&#x27;re in motion. Infrared LED lights are used during your sleep schedule or if you&#x27;ve manually turned on a sleep focus. You can turn off continuous measurements with green LED lights:</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- On your Apple Watch, open the Settings app.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">- Tap Heart.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">- Turn off Continuous Measurements.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">[Image: A diagram of the back of an Apple Watch with Digital Crown electrodes, Infrared LEDs, Photodiode sensors, and Back crystal electrode labeled.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">Apple Watch Series 4 and later and all models of Apple Watch Ultra also have built-in electrodes in the Digital Crown and the back of Apple Watch, which can measure the electrical signals across your heart when used with the Heart Rate app or the ECG app. When you place your finger on the Digital Crown, it creates a closed circuit between your heart and both arms, capturing the electrical impulses across your chest.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">Apple Watch Series 4 and later and all models of Apple Watch Ultra also have built-in electrodes in the Digital Crown and the back of Apple Watch, which can measure the electrical signals across your heart when used with the Heart Rate app or the ECG app. When you place your finger on the Digital Crown, it creates a closed circuit between your heart and both arms, capturing the electrical impulses across your chest.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">To use the electrical heart sensor to measure your heart rate, open the Heart Rate app and place your finger on the Digital Crown. You will get a faster reading with higher fidelity — getting a measurement every second instead of every 5 seconds. You’ll see &quot;ECG&quot; in Heart Rate Context when looking at recorded data for Heart Rate in the Health app. You can also use the electrical heart sensor to [take an ECG with the ECG app](https://support.apple.com/en-us/120278) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">To use the electrical heart sensor to measure your heart rate, open the Heart Rate app and place your finger on the Digital Crown. You will get a faster reading with higher fidelity — getting a measurement every second instead of every 5 seconds. You’ll see &quot;ECG&quot; in Heart Rate Context when looking at recorded data for Heart Rate in the Health app. You can also use the electrical heart sensor to [take an ECG with the ECG app](https://support.apple.com/en-us/120278) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">The ECG app is currently available only in certain countries and regions. [Learn where the ECG app is available](https://www.apple.com/watchos/feature-availability/) .</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">The ECG app is currently available only in certain countries and regions. [Learn where the ECG app is available](https://www.apple.com/watchos/feature-availability/) .<mark class="inline-add"> ECG isn&#x27;t supported on Apple Watch SE.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">## <mark class="inline-remove">For</mark> best results</code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">## <mark class="inline-add">Get the</mark> best results</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">[Start with a good fit](https://support.apple.com/en-us/118234#bestfit) . Even under ideal conditions, Apple Watch may not be able to get a reliable heart rate reading every time for everybody. And for a small percentage of users, various factors may make it impossible to get any heart rate reading at all. But there are things you can do to help Apple Watch get the most consistent and best heart rate readings possible. [Learn what else affects your reading](https://support.apple.com/en-us/105002#heartrate) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">[Start with a good fit](https://support.apple.com/en-us/118234#bestfit) . Even under ideal conditions, Apple Watch may not be able to get a reliable heart rate reading every time for everybody. And for a small percentage of users, various factors may make it impossible to get any heart rate reading at all. But there are things you can do to help Apple Watch get the most consistent and best heart rate readings possible. [Learn what else affects your reading](https://support.apple.com/en-us/105002#heartrate) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text"><mark class="inline-remove">1. </mark>Some anomalies may appear in the displayed data, resulting in occasional heart rate measurements that are abnormally high or low.</code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">Some anomalies may appear in the displayed data, resulting in occasional heart rate measurements that are abnormally high or low.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text"><mark class="inline-remove">2.</mark> <mark class="inline-remove">ECG</mark> <mark class="inline-remove">isn&#x27;</mark>t <mark class="inline-remove">suppo</mark>rte<mark class="inline-remove">d</mark> <mark class="inline-remove">on A</mark>pple <mark class="inline-remove">Watch SE</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text"><mark class="inline-add">[Learn</mark> <mark class="inline-add">more</mark> <mark class="inline-add">abou</mark>t <mark class="inline-add">hea</mark>rt<mark class="inline-add"> rat</mark>e <mark class="inline-add">accuracy](https://www.a</mark>pple<mark class="inline-add">.com/HRAccuracy)</mark> .</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

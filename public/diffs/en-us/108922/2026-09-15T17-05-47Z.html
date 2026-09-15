@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Manage your iCloud storage on your Apple device — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Manage your iCloud storage on your Apple device</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/108922">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+80 ajouts</span>
+      <span class="badge removed">−54 suppressions</span>
+      <span class="badge">17 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 35 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">- [Delete Apple Invites data from iCloud](https://support.apple.com/en-us/108922#deleteevent)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">- [Delete Apple Invites data from iCloud](https://support.apple.com/en-us/108922#deleteevent)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text"><mark class="inline-remove">-</mark> [<mark class="inline-remove">M</mark>anage iCloud storage on your Windows PC](https://support.apple.com/121314)</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text"><mark class="inline-add">You can also</mark> [<mark class="inline-add">m</mark>anage iCloud storage on your Windows PC](https://support.apple.com/121314)<mark class="inline-add"> .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">## Check Recommended for You</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">## Check Recommended for You</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">- Open the Settings app, tap your name, then tap iCloud.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">- Open the Settings app, tap your name, then tap iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">- Tap Recommended for You<mark class="inline-remove">, then tap one of the options and follow the onscreen instructions to free up storage</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- Tap Recommended for You.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text"><mark class="inline-remove">[Im</mark>a<mark class="inline-remove">ge:</mark> <mark class="inline-remove">iPh</mark>one screen <mark class="inline-remove">show</mark>in<mark class="inline-remove">g </mark>t<mark class="inline-remove">he Re</mark>c<mark class="inline-remove">ommended For You sugges</mark>tion.<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text"><mark class="inline-add">- T</mark>a<mark class="inline-add">p</mark> one <mark class="inline-add">of the options and follow the on</mark>screen in<mark class="inline-add">s</mark>t<mark class="inline-add">ru</mark>ction<mark class="inline-add">s to free up storage</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">I<mark class="inline-remove">f</mark> <mark class="inline-remove">you d</mark>on<mark class="inline-remove">&#x27;t</mark> see w<mark class="inline-remove">hat you&#x27;re look</mark>ing <mark class="inline-remove">for under </mark>Recommended For You<mark class="inline-remove">,</mark> <mark class="inline-remove">yo</mark>u<mark class="inline-remove"> can </mark>sti<mark class="inline-remove">ll manually delete certai</mark>n co<mark class="inline-remove">n</mark>t<mark class="inline-remove">en</mark>t<mark class="inline-remove"> fr</mark>o<mark class="inline-remove">m</mark> iCloud.</code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text"><mark class="inline-add">[</mark>I<mark class="inline-add">mage:</mark> <mark class="inline-add">iPh</mark>on<mark class="inline-add">e</mark> s<mark class="inline-add">cr</mark>ee<mark class="inline-add">n</mark> <mark class="inline-add">sho</mark>wing <mark class="inline-add">&quot;</mark>Recommended For You<mark class="inline-add">&quot;</mark> <mark class="inline-add">with a s</mark>u<mark class="inline-add">gge</mark>sti<mark class="inline-add">o</mark>n <mark class="inline-add">to &quot;Syn</mark>c<mark class="inline-add"> Ph</mark>ot<mark class="inline-add">os </mark>to iCloud.<mark class="inline-add">&quot;]</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">If you don&#x27;t see what you&#x27;re looking for under Recommended For You, you can still manually delete content from iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">## Reduce the size of your iCloud Backup</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">## Reduce the size of your iCloud Backup</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">When you [back up your iPhone or iPad to iCloud](https://support.apple.com/118426) , the most important information on your device is backed up automatically. Many apps automatically back up to iCloud after you install them. <mark class="inline-remove">Y</mark>o<mark class="inline-remove">u can</mark> decrease the size of your iCloud Backup and free up space in iCloud<mark class="inline-remove"> when</mark> you stop backing up apps that you don&#x27;t use or delete old iCloud backups.</code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">When you [back up your iPhone or iPad to iCloud](https://support.apple.com/118426) , the most important information on your device is backed up automatically. Many apps automatically back up to iCloud after you install them. <mark class="inline-add">T</mark>o decrease the size of your iCloud Backup and free up space in iCloud<mark class="inline-add">,</mark> you<mark class="inline-add"> can</mark> stop backing up apps that you don&#x27;t use<mark class="inline-add">,</mark> or delete old iCloud backups.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">[Learn more about what iCloud backs up](https://support.apple.com/108770)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">[Learn more about what iCloud backs up](https://support.apple.com/108770)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Open the Settings app, tap your name, then tap iCloud.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">- Open the Settings app, tap your name, then tap iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">- Tap Storage or tap Manage Account Storage<mark class="inline-remove">, then tap Backups</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">- Tap Storage or tap Manage Account Storage.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">- Tap the name of the device that you&#x27;re using.</code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">- T<mark class="inline-add">ap Backups, then t</mark>ap the name of the device that you&#x27;re using.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">- Turn off any apps that you don&#x27;t want to back up.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">- Turn off any apps that you don&#x27;t want to back up.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">- Tap Turn Off to confirm.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">- Tap Turn Off to confirm.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">When you confirm that you want to Turn Off, i<mark class="inline-remove">t turns off i</mark>Cloud Backup for that app and removes all of its information from iCloud.</code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">When you confirm that you want to Turn Off, iCloud Backup<mark class="inline-add"> turns off</mark> for that app and removes all of its information from iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">Some apps are always backed up and you can&#x27;t turn them off.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">Some apps are always backed up and you can&#x27;t turn them off.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">### Delete backups and turn off iCloud Backup for your device</code></div>
+<div class="diff-line current unchanged"><span class="line-number">77</span><code class="line-text">### Delete backups and turn off iCloud Backup for your device</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">You can delete old iCloud backups for the device you&#x27;re currently using<mark class="inline-remove">,</mark> or older devices that you might not use anymore. iCloud backups are available for 180 days after you disable or stop using iCloud Backup. Backups that are currently being used to restore a device can&#x27;t be deleted.</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">You can delete old iCloud backups for the device you&#x27;re currently using or older devices that you might not use anymore. iCloud backups are available for 180 days after you disable or stop using iCloud Backup. Backups that are currently being used to restore a device can&#x27;t be deleted.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">#### iPhone, iPad, or Apple Vision Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">#### iPhone, iPad, or Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 15 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">97</span><code class="line-text">- Click Manage, then select Backups.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">99</span><code class="line-text">- Click Manage, then select Backups.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text">- Select one of the backups, then click the remove button to delete. If you want to turn off backups and remove all backups for that device from iCloud, choose Delete when you&#x27;re asked to confirm.</code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">- Select one of the backups, then click the remove button<mark class="inline-add"> (–)</mark> to delete. If you want to turn off backups and remove all backups for that device from iCloud, choose Delete when you&#x27;re asked to confirm.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">101</span><code class="line-text">## Delete photos in iCloud Photos</code></div>
+<div class="diff-line current unchanged"><span class="line-number">103</span><code class="line-text">## Delete photos in iCloud Photos</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">103</span><code class="line-text">iCloud Photos uses your iCloud storage to keep all of your photos and videos up to date across your devices. You can make more space in iCloud when you delete photos and videos that you no longer need from the Photos app<mark class="inline-remove"> on any of your devices</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">105</span><code class="line-text">iCloud Photos uses your iCloud storage to keep all of your photos and videos up to date across your devices. You can make more space in iCloud when you delete photos and videos that you no longer need from the Photos app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">105</span><code class="line-text">Before you delete anything, make sure that you [back up the photos and videos that you still want](https://support.apple.com/108306) .<mark class="inline-remove"> When you use iCloud Photos and delete a photo or video on one device, it&#x27;s also deleted on all other devices where you&#x27;re signed in with the same Apple Account.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">107</span><code class="line-text"><mark class="inline-add">- When you use iCloud Photos and delete a photo or video on one device, it also deletes on all other devices where you&#x27;re signed in with the same Apple Account. </mark>Before you delete anything, make sure that you [back up the photos and videos that you still want](https://support.apple.com/108306) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">107</span><code class="line-text"><mark class="inline-remove">U</mark>se the ste<mark class="inline-remove">ps</mark> <mark class="inline-remove">bel</mark>o<mark class="inline-remove">w</mark> to delete <mark class="inline-remove">p</mark>hotos<mark class="inline-remove"> and videos from</mark> your iCloud <mark class="inline-remove">Pho</mark>tos<mark class="inline-remove">.</mark> <mark class="inline-remove">If</mark> you<mark class="inline-remove"> don</mark>&#x27;<mark class="inline-remove">t us</mark>e i<mark class="inline-remove">Cloud Photos, you ca</mark>n<mark class="inline-remove"> [delete photos from</mark> your P<mark class="inline-remove">h</mark>o<mark class="inline-remove">tos</mark> Library<mark class="inline-remove"> instead</mark>](https://support.apple.com/<mark class="inline-remove">en-us/</mark>1<mark class="inline-remove">0</mark>8<mark class="inline-remove">9</mark>22<mark class="inline-remove">#camera_roll</mark>) .</code></div>
+<div class="diff-line current added"><span class="line-number">109</span><code class="line-text"><mark class="inline-add">- If you&#x27;re part of an iCloud Shared Photo Library, photo</mark>s<mark class="inline-add"> add</mark>e<mark class="inline-add">d to the Shared Library only count towards</mark> the st<mark class="inline-add">orag</mark>e o<mark class="inline-add">f</mark> t<mark class="inline-add">he person who created the Shared Library. T</mark>o delete <mark class="inline-add">items t</mark>h<mark class="inline-add">at c</mark>o<mark class="inline-add">unt </mark>to<mark class="inline-add">ward</mark>s your iCloud <mark class="inline-add">s</mark>to<mark class="inline-add">rage, [make </mark>s<mark class="inline-add">ure</mark> <mark class="inline-add">that</mark> you&#x27;<mark class="inline-add">r</mark>e <mark class="inline-add">v</mark>i<mark class="inline-add">ewi</mark>n<mark class="inline-add">g</mark> your P<mark class="inline-add">ers</mark>o<mark class="inline-add">nal</mark> Library](https://support.apple.com/1<mark class="inline-add">1</mark>822<mark class="inline-add">9</mark>) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">109</span><code class="line-text">I<mark class="inline-remove">f</mark> <mark class="inline-remove">y</mark>o<mark class="inline-remove">u&#x27;</mark>re<mark class="inline-remove"> pa</mark>r<mark class="inline-remove">t</mark> of an<mark class="inline-remove"> iClou</mark>d S<mark class="inline-remove">hared Photo Library</mark>, photos added to <mark class="inline-remove">the</mark> <mark class="inline-remove">S</mark>hared <mark class="inline-remove">Li</mark>b<mark class="inline-remove">rary only</mark> count towards the storage of the person who created the <mark class="inline-remove">S</mark>hared <mark class="inline-remove">L</mark>ibrary. <mark class="inline-remove">T</mark>o delete ite<mark class="inline-remove">m</mark>s <mark class="inline-remove">th</mark>a<mark class="inline-remove">t</mark> co<mark class="inline-remove">unt</mark> to<mark class="inline-remove">wards</mark> your <mark class="inline-remove">iCloud storage, [make sure that you&#x27;re viewing your P</mark>ersonal <mark class="inline-remove">L</mark>ibrary<mark class="inline-remove">](h</mark>tt<mark class="inline-remove">p</mark>s<mark class="inline-remove">://</mark>s<mark class="inline-remove">upport</mark>.<mark class="inline-remove">apple.com/118229) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text"><mark class="inline-add">- </mark>I<mark class="inline-add">n</mark> <mark class="inline-add">versi</mark>o<mark class="inline-add">n 27 o</mark>r<mark class="inline-add"> lat</mark>er of <mark class="inline-add">iOS, iPadOS, macOS, </mark>and <mark class="inline-add">visionO</mark>S, photos added to <mark class="inline-add">a</mark> <mark class="inline-add">s</mark>hared <mark class="inline-add">al</mark>b<mark class="inline-add">um</mark> count towards the storage of the person who created the <mark class="inline-add">s</mark>hared <mark class="inline-add">album. If you delete a shared album, participants lose access to all items not saved to their personal l</mark>ibrary. <mark class="inline-add">Ph</mark>o<mark class="inline-add">tos deleted from a shared album</mark> delete i<mark class="inline-add">mmedia</mark>te<mark class="inline-add">ly — </mark>s<mark class="inline-add">ave</mark> a co<mark class="inline-add">py</mark> to your <mark class="inline-add">p</mark>ersonal <mark class="inline-add">l</mark>ibrary<mark class="inline-add"> </mark>t<mark class="inline-add">o re</mark>t<mark class="inline-add">ain acce</mark>ss.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">111</span><code class="line-text"><mark class="inline-remove">###</mark> iPho<mark class="inline-remove">ne</mark>, i<mark class="inline-remove">P</mark>ad<mark class="inline-remove">, </mark>or<mark class="inline-remove"> A</mark>pple<mark class="inline-remove"> Vi</mark>s<mark class="inline-remove">ion P</mark>ro</code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text"><mark class="inline-add">If you don&#x27;t use</mark> i<mark class="inline-add">Cloud </mark>Pho<mark class="inline-add">tos</mark>, <mark class="inline-add">you can [delete photos from your Photos L</mark>i<mark class="inline-add">brary inste</mark>ad<mark class="inline-add">](https://supp</mark>or<mark class="inline-add">t.a</mark>pple<mark class="inline-add">.com/en-u</mark>s<mark class="inline-add">/108922#camera_</mark>ro<mark class="inline-add">ll) .</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">115</span><code class="line-text">You can recover photos and videos that you delete from your Recently Deleted album for 30 days. Items in Recently Deleted don&#x27;t count towards your iCloud storage. If you exceed your iCloud storage limit, your device immediately removes any photos and videos you delete and they won&#x27;t be available for recovery in your Recently Deleted album.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">117</span><code class="line-text">### Delete photos on iPhone, iPad, or Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">113</span><code class="line-text">- Open the Photos app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">119</span><code class="line-text">- Open the Photos app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 21 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">137</span><code class="line-text">- If you want to keep your photos and videos on your device, you can [turn off Photos in Backup](https://support.apple.com/108922#selectapps) or [upgrade to iCloud+](https://support.apple.com/108349) for more storage.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">143</span><code class="line-text">- If you want to keep your photos and videos on your device, you can [turn off Photos in Backup](https://support.apple.com/108922#selectapps) or [upgrade to iCloud+](https://support.apple.com/108349) for more storage.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">139</span><code class="line-text">### Mac</code></div>
+<div class="diff-line current added"><span class="line-number">145</span><code class="line-text">### <mark class="inline-add">Delete photos on </mark>Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">141</span><code class="line-text">- Open the Photos app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">147</span><code class="line-text">- Open the Photos app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">145</span><code class="line-text">- Press the delete key on your keyboard, then click Delete to confirm.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">151</span><code class="line-text">- Press the delete key on your keyboard, then click Delete to confirm.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">147</span><code class="line-text">### iCloud.com</code></div>
+<div class="diff-line current added"><span class="line-number">153</span><code class="line-text">###<mark class="inline-add"> Delete photos on</mark> iCloud.com</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">149</span><code class="line-text">- From your iPhone, iPad, Apple Vision Pro, or computer, sign in to [i<mark class="inline-remove">C</mark>loud.com](https://www.icloud.com/) .</code></div>
+<div class="diff-line current added"><span class="line-number">155</span><code class="line-text">- From your iPhone, iPad, Apple Vision Pro, or computer, sign in to [i<mark class="inline-add">c</mark>loud.com<mark class="inline-add">/photos</mark>](https://www.icloud.com/<mark class="inline-add">photos/</mark>) .</code></div>
+<div class="diff-line previous removed"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">151</span><code class="line-text">- Select the Photos app.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">153</span><code class="line-text">- Select the photos or videos that you want to delete.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">157</span><code class="line-text">- Select the photos or videos that you want to delete.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">155</span><code class="line-text">- To select multiple photos or videos<mark class="inline-remove">,</mark> <mark class="inline-remove">tap Select o</mark>n iOS, iPadOS, or visionOS, <mark class="inline-remove">or</mark> press and hold Command<mark class="inline-remove"> on a Mac or Control on a PC</mark> while you select the items.</code></div>
+<div class="diff-line current added"><span class="line-number">159</span><code class="line-text">- To select multiple photos or videos <mark class="inline-add">i</mark>n iOS, iPadOS, or visionOS, <mark class="inline-add">tap Select. In macOS,</mark> press and hold Command while you select the items.<mark class="inline-add"> In Windows, press and hold Control while you select the items.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">157</span><code class="line-text">- To select all<mark class="inline-remove">,</mark> <mark class="inline-remove">press and hold Command-A on macOS, Control-A on W</mark>i<mark class="inline-remove">ndows, or tap Select All o</mark>n iOS, iPadOS, or visionOS.</code></div>
+<div class="diff-line current added"><span class="line-number">161</span><code class="line-text">- To select all in iOS, iPadOS, or visionOS<mark class="inline-add">, tap Select All</mark>.<mark class="inline-add"> In macOS, press Command-A. In Windows, press Control-A.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">159</span><code class="line-text">- Tap or click the Delete button , then tap or click Delete.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">163</span><code class="line-text">- Tap or click the Delete button , then tap or click Delete.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">161</span><code class="line-text">[Image: Delete button]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">165</span><code class="line-text">[Image: Delete button]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">163</span><code class="line-text"><mark class="inline-remove">You</mark> <mark class="inline-remove">can recover photos and videos that you d</mark>elete <mark class="inline-remove">f</mark>r<mark class="inline-remove">om your Recently Delet</mark>ed album<mark class="inline-remove"> for 30 day</mark>s<mark class="inline-remove">. If you want to remove content from Recently Deleted album faster, tap Select, then select the items you want to remove. Tap the More button, tap Delete, then tap Delete From This iPhone. If you exceed your iCloud storage limit, your device immediately removes any photos and videos you delete and they won&#x27;t be available for recovery in your Recently Deleted album.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">167</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">D</mark>elete <mark class="inline-add">sha</mark>red albums</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">169</span><code class="line-text">Photos deleted from a shared album are deleted immediately. Be sure to save a copy to your personal library to retain access.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">171</span><code class="line-text">[Learn how to delete a shared album in iOS, iPadOS, or visionOS](https://support.apple.com/en-us/108314#delete-album-ios)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">173</span><code class="line-text">[Learn how to delete a shared album in macOS](https://support.apple.com/en-us/124160#delete-album-macos)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">165</span><code class="line-text">## Delete folders or files in iCloud Drive</code></div>
+<div class="diff-line current unchanged"><span class="line-number">175</span><code class="line-text">## Delete folders or files in iCloud Drive</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">173</span><code class="line-text">- Under Locations, tap iCloud Drive.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">183</span><code class="line-text">- Under Locations, tap iCloud Drive.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">184</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">175</span><code class="line-text">- To delete <mark class="inline-remove">a</mark> folder<mark class="inline-remove">(</mark>s<mark class="inline-remove">)</mark>, t<mark class="inline-remove">ap the the More button , then tap Select and choose the folder(s) that you want to delete. Tap the Delete button. To delete a file, such as one inside of a folder, tap the folder to open it. T</mark>ap the More button , then tap Select and choose the file<mark class="inline-remove">(</mark>s<mark class="inline-remove">)</mark> that you want to delete.</code></div>
+<div class="diff-line current added"><span class="line-number">185</span><code class="line-text">- To delete <mark class="inline-add">files or</mark> folders, tap the More button , then tap Select and choose the files<mark class="inline-add"> or folders</mark> that you want to delete.<mark class="inline-add"> If the file is inside a folder, tap the folder first to open it.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">186</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">177</span><code class="line-text"><mark class="inline-remove">[Im</mark>a<mark class="inline-remove">g</mark>e<mark class="inline-remove">:</mark> <mark class="inline-remove">Mor</mark>e button<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">187</span><code class="line-text"><mark class="inline-add">- T</mark>a<mark class="inline-add">p th</mark>e <mark class="inline-add">Delet</mark>e button<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">188</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">179</span><code class="line-text">- Then tap Delete to remove the file<mark class="inline-remove">(s)</mark> or folder<mark class="inline-remove">(s)</mark> from iCloud Drive on all of your devices.</code></div>
+<div class="diff-line current added"><span class="line-number">189</span><code class="line-text">- Then tap Delete to remove the file or folder from iCloud Drive on all of your devices.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">190</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">181</span><code class="line-text">### iPad or Apple Vision Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">191</span><code class="line-text">### iPad or Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">192</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">184</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">194</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">185</span><code class="line-text">- Under Locations, tap iCloud Drive.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">195</span><code class="line-text">- Under Locations, tap iCloud Drive.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">186</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">196</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">187</span><code class="line-text">- To delete <mark class="inline-remove">a</mark> folder, tap Select, then choose the folder that you want to remove. <mark class="inline-remove">Tap</mark> <mark class="inline-remove">D</mark>e<mark class="inline-remove">lete. To delete a</mark> file<mark class="inline-remove">,</mark> s<mark class="inline-remove">uch as one</mark> inside a folder, tap the folder to open it.<mark class="inline-remove"> Then tap Select and choose the file(s) that you want to delete.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">197</span><code class="line-text">- To delete <mark class="inline-add">files or</mark> folder<mark class="inline-add">s</mark>, tap Select, then choose the f<mark class="inline-add">iles or f</mark>older<mark class="inline-add">s</mark> that you want to remove. <mark class="inline-add">If</mark> <mark class="inline-add">th</mark>e file <mark class="inline-add">i</mark>s inside a folder, tap the folder <mark class="inline-add">first </mark>to open it.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">188</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">189</span><code class="line-text">- Tap Delete<mark class="inline-remove"> to remove the file(s) or folder(s) from iCloud Drive on all of your devices</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">199</span><code class="line-text">- Tap Delete.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">200</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">201</span><code class="line-text">- Tap Delete to remove the file or folder from iCloud Drive on all of your devices.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">190</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">202</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">191</span><code class="line-text">### Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">203</span><code class="line-text">### Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">192</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">204</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">193</span><code class="line-text">- Open <mark class="inline-remove">the</mark> Finder and go to the iCloud Drive folder.</code></div>
+<div class="diff-line current added"><span class="line-number">205</span><code class="line-text">- Open <mark class="inline-add">a</mark> Finder<mark class="inline-add"> window</mark> and go to the iCloud Drive folder<mark class="inline-add"> in the sidebar</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">194</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">206</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">195</span><code class="line-text">- Drag an item to the Trash, or move it to a different folder on your Mac. If you move it to the Trash, you can find it in <mark class="inline-remove">Recently Deleted</mark> for 30 days.</code></div>
+<div class="diff-line current added"><span class="line-number">207</span><code class="line-text">- Drag an item to the Trash, or move it to a different folder on your Mac. If you move it to the Trash, you can find it in <mark class="inline-add">Trash</mark> for 30 days.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">196</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">208</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">197</span><code class="line-text">### iCloud.com</code></div>
+<div class="diff-line current unchanged"><span class="line-number">209</span><code class="line-text">### iCloud.com</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">210</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">199</span><code class="line-text">- Sign in to [i<mark class="inline-remove">C</mark>loud.com](https://www.icloud.com<mark class="inline-remove">) , then select the iClou</mark>d<mark class="inline-remove"> D</mark>rive <mark class="inline-remove">app</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">211</span><code class="line-text">- Sign in to [i<mark class="inline-add">c</mark>loud.com<mark class="inline-add">/drive</mark>](https://www.icloud.com<mark class="inline-add">/</mark>drive<mark class="inline-add">)</mark> .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">200</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">212</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">201</span><code class="line-text">- Select the files that you want to delete, then tap or click the <mark class="inline-remove">Trash</mark> button . You can find it in Recently Deleted for 30 days.</code></div>
+<div class="diff-line current added"><span class="line-number">213</span><code class="line-text">- Select the file<mark class="inline-add">s or folder</mark>s that you want to delete, then tap or click the <mark class="inline-add">Delete</mark> button . You can find it in Recently Deleted for 30 days.</code></div>
+<div class="diff-line previous removed"><span class="line-number">202</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">203</span><code class="line-text">You can find your deleted folders, subfolders, and files in Recently Deleted for 30 days.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">204</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">214</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">205</span><code class="line-text">## Delete texts and attachments in Messages</code></div>
+<div class="diff-line current unchanged"><span class="line-number">215</span><code class="line-text">## Delete texts and attachments in Messages</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">206</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">216</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">207</span><code class="line-text">When you use [Messages in iCloud](https://support.apple.com/guide/icloud/mm0de0d4528d/) , the text messages and the attachments that you send and receive use your iCloud storage. You can make more space available when you delete texts and attachments <mark class="inline-remove">— </mark>like photos, videos, and files <mark class="inline-remove">— </mark>that you don&#x27;t need anymore.</code></div>
+<div class="diff-line current added"><span class="line-number">217</span><code class="line-text">When you use [Messages in iCloud](https://support.apple.com/guide/icloud/mm0de0d4528d/) , the text messages and the attachments that you send and receive use your iCloud storage. You can make more space available when you delete texts and attachments like photos, videos, and files that you don&#x27;t need anymore.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">208</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">218</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">209</span><code class="line-text">### Delete attachments on your iPhone, iPad, or Apple Vision Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">219</span><code class="line-text">### Delete attachments on your iPhone, iPad, or Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">210</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">220</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">211</span><code class="line-text">- In a message conversation, tap the contact&#x27;s name at the top of the screen.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">221</span><code class="line-text">- In a message conversation, tap the contact&#x27;s name at the top of the screen.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">212</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">222</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">213</span><code class="line-text">-<mark class="inline-remove"> In the Photos section, tap See All.</mark> In iOS 26, tap Photos. In iOS 18 or earlier, in the Photos section, tap See All.</code></div>
+<div class="diff-line current added"><span class="line-number">223</span><code class="line-text">- In iOS 26<mark class="inline-add"> or later</mark>, tap Photos. In iOS 18 or earlier, in the Photos section, tap See All.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">214</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">224</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">215</span><code class="line-text">- Tap Edit, then tap Select. In iOS 18 or earlier, tap Select.</code></div>
+<div class="diff-line current added"><span class="line-number">225</span><code class="line-text">- Tap Edit, then tap Select<mark class="inline-add"> Photos</mark>. In iOS 18 or earlier, tap Select.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">226</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">227</span><code class="line-text">[Image: iPhone screen showing photos of food from a conversation, with Select Photos selected at the top of the screen above Edit Contact Info and Edit Background.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">216</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">228</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">217</span><code class="line-text">- Tap the images you&#x27;d like to delete.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">229</span><code class="line-text">- Tap the images you&#x27;d like to delete.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">218</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">230</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">219</span><code class="line-text">- Tap Delete, then tap Delete Attachment to confirm.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">231</span><code class="line-text">- Tap Delete, then tap Delete Attachment to confirm.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">232</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">233</span><code class="line-text">You can also [automatically delete old messages](https://support.apple.com/guide/iphone/iph2c9c4bfcb) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">220</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">234</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">221</span><code class="line-text">#### Delete an entire conversation</code></div>
+<div class="diff-line current unchanged"><span class="line-number">235</span><code class="line-text">#### Delete an entire conversation</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">222</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">236</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 41 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">264</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">278</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">265</span><code class="line-text">- Tap iCloud Mail Cleanup. Choose which type of messages to clean up, such as subscriptions, promotions, or transactions.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">279</span><code class="line-text">- Tap iCloud Mail Cleanup. Choose which type of messages to clean up, such as subscriptions, promotions, or transactions.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">266</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">280</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">281</span><code class="line-text">[Image: iPhone screen showing iCloud Mail Cleanup with a suggestion to Clean Up Promotions.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">282</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">267</span><code class="line-text">- Follow the onscreen steps to identify and delete those messages.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">283</span><code class="line-text">- Follow the onscreen steps to identify and delete those messages.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">268</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">284</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">285</span><code class="line-text">iCloud Mail Cleanup continues to clean up this type of email automatically until you turn the feature off.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">286</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">269</span><code class="line-text">[You can also use iCloud Mail Cleanup on iCloud.com](https://support.apple.com/guide/icloud/mma3d15ee93e/)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">287</span><code class="line-text">[You can also use iCloud Mail Cleanup on iCloud.com](https://support.apple.com/guide/icloud/mma3d15ee93e/)</code></div>
+<div class="diff-line previous removed"><span class="line-number">270</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">271</span><code class="line-text">iCloud Mail Cleanup continues to clean up this type of email automatically until you turn the feature off.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">272</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">288</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">273</span><code class="line-text">### Delete messages on your iPhone, iPad, or Apple Vision Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">289</span><code class="line-text">### Delete messages on your iPhone, iPad, or Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">274</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">290</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">276</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">292</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">277</span><code class="line-text">- Go to your Mailboxes and choose your Trash folder.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">293</span><code class="line-text">- Go to your Mailboxes and choose your Trash folder.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">278</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">294</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">279</span><code class="line-text">- To delete messages one at a time, swipe left on each message. <mark class="inline-remove">To delete eve</mark>r<mark class="inline-remove">ything, tap Edit,</mark> tap Select<mark class="inline-remove"> All</mark>, and then tap Delete.<mark class="inline-remove"> Tap Delete All to confirm.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">295</span><code class="line-text">- To delete messages one at a time, swipe left on each message. <mark class="inline-add">O</mark>r tap Select, <mark class="inline-add">select the messages that you w</mark>an<mark class="inline-add">t to </mark>d<mark class="inline-add">elete,</mark> then tap Delete.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">280</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">296</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">281</span><code class="line-text">You can also [move email messages](https://support.apple.com/100627) from your iPhone or iPad to your Mac, where they no longer count against your iCloud storage.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">297</span><code class="line-text">You can also [move email messages](https://support.apple.com/100627) from your iPhone or iPad to your Mac, where they no longer count against your iCloud storage.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">282</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">298</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">284</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">300</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">285</span><code class="line-text">- Open the Mail app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">301</span><code class="line-text">- Open the Mail app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">286</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">302</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">287</span><code class="line-text">- <mark class="inline-remove">D</mark>elet<mark class="inline-remove">e</mark> the messages that you <mark class="inline-remove">no longer </mark>want.</code></div>
+<div class="diff-line current added"><span class="line-number">303</span><code class="line-text">- <mark class="inline-add">S</mark>ele<mark class="inline-add">c</mark>t the messages that you want<mark class="inline-add"> to delete, then click the Delete button</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">288</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">304</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">289</span><code class="line-text">- <mark class="inline-remove">Click</mark> Mailbox<mark class="inline-remove">.</mark> <mark class="inline-remove">C</mark>hoose Erase Deleted Items, then select your iCloud email account from the menu.</code></div>
+<div class="diff-line current added"><span class="line-number">305</span><code class="line-text">- <mark class="inline-add">From the</mark> Mailbox <mark class="inline-add">menu in the menu bar, c</mark>hoose Erase Deleted Items, then select your iCloud email account from the menu.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">290</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">306</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">291</span><code class="line-text">- Click Erase to confirm.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">307</span><code class="line-text">- Click Erase to confirm.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">292</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">308</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">293</span><code class="line-text">### Delete messages on iCloud.com</code></div>
+<div class="diff-line current unchanged"><span class="line-number">309</span><code class="line-text">### Delete messages on iCloud.com</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">294</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">310</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">295</span><code class="line-text">- Sign in to [i<mark class="inline-remove">C</mark>loud.com/mail](https://www.icloud.com/mail/) .</code></div>
+<div class="diff-line current added"><span class="line-number">311</span><code class="line-text">- Sign in to [i<mark class="inline-add">c</mark>loud.com/mail](https://www.icloud.com/mail/) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">312</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">313</span><code class="line-text">- Select the messages that you want to delete, then click the Delete button.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">296</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">314</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">297</span><code class="line-text">- Choose your Trash folder.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">315</span><code class="line-text">- Choose your Trash folder.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">298</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">316</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 19 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">318</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">336</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">319</span><code class="line-text">- Click your name, then click iCloud.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">337</span><code class="line-text">- Click your name, then click iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">320</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">338</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">321</span><code class="line-text">- Click Manage, then c<mark class="inline-remove">hoose</mark> Contacts</code></div>
+<div class="diff-line current added"><span class="line-number">339</span><code class="line-text">- Click Manage, then c<mark class="inline-add">lick</mark> Contact<mark class="inline-add"> Image</mark>s<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">322</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">340</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">323</span><code class="line-text">- Click Delete from iCloud.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">341</span><code class="line-text">- Click Delete from iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">324</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">342</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">336</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">354</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">337</span><code class="line-text">- Tap Recently Deleted.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">355</span><code class="line-text">- Tap Recently Deleted.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">338</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">356</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">339</span><code class="line-text">- Tap<mark class="inline-remove"> Edit or</mark> Select, select the voice memo, then tap Delete.</code></div>
+<div class="diff-line current added"><span class="line-number">357</span><code class="line-text">- Tap Select<mark class="inline-add">. Tap Delete All</mark>,<mark class="inline-add"> or</mark> select the voice memo, then tap Delete.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">340</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">358</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">341</span><code class="line-text">- Tap Delete Forever to confirm.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">359</span><code class="line-text">- Tap Delete Forever to confirm.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">342</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">360</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">348</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">366</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">349</span><code class="line-text">[Image: Delete button]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">367</span><code class="line-text">[Image: Delete button]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">350</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">368</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">351</span><code class="line-text">- Open Recently Deleted, then click Delete All or Delete.</code></div>
+<div class="diff-line current added"><span class="line-number">369</span><code class="line-text">- Open Recently Deleted, then click Delete All or <mark class="inline-add">select the voice memo, then click </mark>Delete.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">352</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">370</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">353</span><code class="line-text">- Click Delete Forever to confirm.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">371</span><code class="line-text">- Click Delete Forever to confirm.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">354</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">372</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">355</span><code class="line-text">## Delete FaceTime data from iCloud</code></div>
+<div class="diff-line current unchanged"><span class="line-number">373</span><code class="line-text">## Delete FaceTime data from iCloud</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">356</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">374</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">357</span><code class="line-text">When you delete FaceTime from iCloud, it removes all of your data from the app and certain data from the Phone app, including phone voicemails and FaceTime video and audio messages. You won’t be able to recover the data after you delete FaceTime from iCloud. Depending on your software version, you can export video messages from FaceTime before you delete FaceTime from iCloud, so they save to your Photos app.<mark class="inline-remove"> [Learn how to export FaceTime video messages](https://support.apple.com/108306) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">375</span><code class="line-text">When you delete FaceTime from iCloud, it removes all of your data from the app and certain data from the Phone app, including phone voicemails and FaceTime video and audio messages. You won’t be able to recover the data after you delete FaceTime from iCloud. Depending on your software version, you can <mark class="inline-add">[save and </mark>export video messages from FaceTime<mark class="inline-add">](https://support.apple.com/en-us/108306)</mark> before you delete FaceTime from iCloud, so they save to your Photos app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">358</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">376</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">359</span><code class="line-text">### iPhone, iPad, or Apple Vision Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">377</span><code class="line-text">### iPhone, iPad, or Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">360</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">378</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">370</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">388</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">371</span><code class="line-text">- Click your name, then click iCloud.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">389</span><code class="line-text">- Click your name, then click iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">372</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">390</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">373</span><code class="line-text">- Click Manage, then c<mark class="inline-remove">hoose</mark> FaceTime</code></div>
+<div class="diff-line current added"><span class="line-number">391</span><code class="line-text">- Click Manage, then c<mark class="inline-add">lick</mark> FaceTime<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">374</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">392</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">375</span><code class="line-text">- Click Delete from iCloud.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">393</span><code class="line-text">- Click Delete from iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">376</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">394</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">377</span><code class="line-text">## Delete Apple Invites data from iCloud</code></div>
+<div class="diff-line current unchanged"><span class="line-number">395</span><code class="line-text">## Delete Apple Invites data from iCloud</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">378</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">396</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">379</span><code class="line-text">When you create an event in Apple Invites, the background image and any images added when a guest replies to an RSVP count toward the <mark class="inline-remove">h</mark>o<mark class="inline-remove">st</mark>&#x27;s iCloud storage. <mark class="inline-remove">As a host, y</mark>ou can delete events that you’ve created to free up iCloud storage. When you delete an event, participants lose access to the event<mark class="inline-remove">s</mark> and most information associated with it. If participants joined a shared album or shared playlist, they still have access to those in the Photos app and Music app.</code></div>
+<div class="diff-line current added"><span class="line-number">397</span><code class="line-text">When you create an event in Apple Invites, the background image and any images added when a guest replies to an RSVP count toward the <mark class="inline-add">event creat</mark>o<mark class="inline-add">r</mark>&#x27;s iCloud storage. <mark class="inline-add">Y</mark>ou can delete<mark class="inline-add"> all events or individual</mark> events that you’ve created to free up iCloud storage. When you delete an event, participants lose access to the event and most information associated with it. If participants joined a shared album or shared playlist, they still have access to those in the Photos app and Music app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">380</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">398</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">381</span><code class="line-text">If you delete Apple Invites data<mark class="inline-remove"> via iCloud Storage in Settings</mark>, all of the events you&#x27;re <mark class="inline-remove">hosting will b</mark>e removed, but events that you&#x27;re attending won&#x27;t be removed. You need to leave each of the events in order for your data to be deleted.</code></div>
+<div class="diff-line current added"><span class="line-number">399</span><code class="line-text">If you delete<mark class="inline-add"> all</mark> Apple Invites data, all of the events you&#x27;<mark class="inline-add">ve c</mark>re<mark class="inline-add">ated</mark> <mark class="inline-add">ar</mark>e removed, but events that you&#x27;re attending won&#x27;t be removed. You need to leave each of the events in order for your data to be deleted.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">382</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">400</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">383</span><code class="line-text">### iPhone or iPad</code></div>
+<div class="diff-line current added"><span class="line-number">401</span><code class="line-text">###<mark class="inline-add"> Delete all Apple Invites data on</mark> iPhone or iPad</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">402</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">403</span><code class="line-text">- Open the Settings app, tap your name, then tap iCloud.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">404</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">405</span><code class="line-text">- Tap Storage or Manage Account Storage.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">406</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">407</span><code class="line-text">- Tap Apple Invites, then tap Delete Data from iCloud.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">408</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">409</span><code class="line-text">### Delete individual events on iPhone or iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">384</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">410</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">385</span><code class="line-text">- Open the Apple Invites app, then select the event.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">411</span><code class="line-text">- Open the Apple Invites app, then select the event.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">386</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">412</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">388</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">414</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">389</span><code class="line-text">- Tap Delete Event, then tap again to confirm.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">415</span><code class="line-text">- Tap Delete Event, then tap again to confirm.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">390</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">416</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">391</span><code class="line-text">### iCloud.com</code></div>
+<div class="diff-line current added"><span class="line-number">417</span><code class="line-text">###<mark class="inline-add"> Delete individual events on</mark> iCloud.com</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">392</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">418</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">393</span><code class="line-text">- Go to [icloud.com/invites](https://icloud.com/invites) , then sign in to your [Apple Account](https://support.apple.com/guide/apple-invites/aside/dev56fb72aaa/<mark class="inline-remove">1.0/ios/1.0</mark>) (if necessary).</code></div>
+<div class="diff-line current added"><span class="line-number">419</span><code class="line-text">- Go to [icloud.com/invites](https://icloud.com/invites) , then sign in to your [Apple Account](https://support.apple.com/guide/apple-invites/aside/dev56fb72aaa/) (if necessary).</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">394</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">420</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">395</span><code class="line-text">- Select the event.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">421</span><code class="line-text">- Select the event.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">396</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">422</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">398</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">424</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">399</span><code class="line-text">- Tap or click Delete Event, then tap or click again to confirm.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">425</span><code class="line-text">- Tap or click Delete Event, then tap or click again to confirm.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">400</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">426</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">401</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](http://support.apple.com/<mark class="inline-remove">kb</mark>/<mark class="inline-remove">HT26</mark>9<mark class="inline-remove">3</mark>) for additional information.</code></div>
+<div class="diff-line current added"><span class="line-number">427</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](http<mark class="inline-add">s</mark>://support.apple.com/<mark class="inline-add">en-us</mark>/<mark class="inline-add">1031</mark>9<mark class="inline-add">0</mark>) for additional information.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

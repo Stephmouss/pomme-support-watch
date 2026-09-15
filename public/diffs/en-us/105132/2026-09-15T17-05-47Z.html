@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Set up your iPhone or iPad — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Set up your iPhone or iPad</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/105132">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+24 ajouts</span>
+      <span class="badge removed">−18 suppressions</span>
+      <span class="badge">5 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">Press and hold the device&#x27;s power button until you see the Apple logo. You&#x27;ll then see &quot;Hello&quot; in many languages. Follow the onscreen instructions to get started.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">Press and hold the device&#x27;s power button until you see the Apple logo. You&#x27;ll then see &quot;Hello&quot; in many languages. Follow the onscreen instructions to get started.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">If you&#x27;re blind or have low vision, you can [turn on VoiceOver or Zoom](http://support.apple.com/1117<mark class="inline-remove">71</mark>) <mark class="inline-remove">f</mark>r<mark class="inline-remove">om</mark> the <mark class="inline-remove">H</mark>e<mark class="inline-remove">ll</mark>o <mark class="inline-remove">sc</mark>reen.</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">If you&#x27;re blind or have low vision, you can [turn on VoiceOver or Zoom<mark class="inline-add"> from the Hello screen</mark>](http<mark class="inline-add">s</mark>://support.apple.com/1117<mark class="inline-add">80</mark>) <mark class="inline-add">. To enable VoiceOve</mark>r<mark class="inline-add"> during setup, press</mark> the <mark class="inline-add">sid</mark>e<mark class="inline-add"> butt</mark>o<mark class="inline-add">n</mark> <mark class="inline-add">or top button th</mark>ree<mark class="inline-add"> times. Then wait for the announcement that VoiceOver is o</mark>n.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text"><mark class="inline-remove">[I</mark>ma<mark class="inline-remove">ge:</mark> <mark class="inline-remove">T</mark>he<mark class="inline-remove"> initial &quot;Hello&quot;</mark> screen <mark class="inline-remove">d</mark>is<mark class="inline-remove">play</mark>e<mark class="inline-remove">d</mark> <mark class="inline-remove">dur</mark>ing<mark class="inline-remove"> th</mark>e<mark class="inline-remove"> </mark>s<mark class="inline-remove">etup of a new iPhone or iPad running iOS 26</mark>.<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text"><mark class="inline-add">To enable Zoo</mark>m<mark class="inline-add">, t</mark>a<mark class="inline-add">p</mark> <mark class="inline-add">t</mark>he screen <mark class="inline-add">two t</mark>i<mark class="inline-add">me</mark>s<mark class="inline-add"> with thr</mark>e<mark class="inline-add">e</mark> <mark class="inline-add">f</mark>inge<mark class="inline-add">r</mark>s.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">[Image: iPhone or iPad displaying the &quot;hello&quot; screen with a wavy abstract background.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">## Choose the size of text and icons on your phone</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">## Choose the size of text and icons on your phone</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">Select your preferred size for text and icons: Default, Medium, or Large. As you s<mark class="inline-remove">lid</mark>e<mark class="inline-remove"> the icon</mark> between those sizes, the text and images on this Appearance screen will change so you can preview the selected option.</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">Select your preferred size for text and icons: Default, Medium, or Large. As you <mark class="inline-add">choo</mark>se between those sizes, the text and images on this Appearance screen will change so you can preview the selected option.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">When ready, sl<mark class="inline-remove">id</mark>e<mark class="inline-remove"> </mark>t<mark class="inline-remove">he icon to</mark> your preferred size and tap Continue.</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">When ready, s<mark class="inline-add">e</mark>le<mark class="inline-add">c</mark>t your preferred size and tap Continue.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">[Image:<mark class="inline-remove"> In the</mark> iPhone se<mark class="inline-remove">t</mark> <mark class="inline-remove">u</mark>p<mark class="inline-remove"> </mark>pr<mark class="inline-remove">o</mark>ce<mark class="inline-remove">s</mark>s <mark class="inline-remove">for </mark>i<mark class="inline-remove">OS 26, slide</mark> a<mark class="inline-remove">n</mark> <mark class="inline-remove">icon to</mark> preview <mark class="inline-remove">the</mark>n<mark class="inline-remove"> choose your preferre</mark>d text <mark class="inline-remove">and app </mark>size.]</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">[Image: iPhone s<mark class="inline-add">cr</mark>e<mark class="inline-add">en</mark> <mark class="inline-add">showing a</mark>pp<mark class="inline-add">ea</mark>r<mark class="inline-add">an</mark>ce<mark class="inline-add"> option</mark>s <mark class="inline-add">w</mark>i<mark class="inline-add">th</mark> a <mark class="inline-add">wallpaper</mark> preview <mark class="inline-add">a</mark>nd text size<mark class="inline-add"> controls</mark>.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">## Use Quick Start or set up manually</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">## Use Quick Start or set up manually</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">If you have another device, you can use it to [automatically set up your new device with Quick Start](https://support.apple.com/102659) .</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">If you have another<mark class="inline-add"> iOS</mark> device, you can use it to [automatically set up your new device with Quick Start](https://support.apple.com/102659) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text"><mark class="inline-remove">If you don&#x27;t have ano</mark>ther<mark class="inline-remove"> dev</mark>i<mark class="inline-remove">c</mark>e, tap Set Up Without Another Device.</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text"><mark class="inline-add">O</mark>ther<mark class="inline-add">w</mark>i<mark class="inline-add">s</mark>e, tap Set Up Without Another Device.<mark class="inline-add"> Then choose whether you want to use languages commonly used in your region for your keyboard and dictation or whether you want to select different written and spoken languages.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text"><mark class="inline-remove">H</mark>ere you can t<mark class="inline-remove">ap</mark> the <mark class="inline-remove">blue access</mark>i<mark class="inline-remove">bility butt</mark>on to [<mark class="inline-remove">s</mark>et u<mark class="inline-remove">p</mark> A<mark class="inline-remove">c</mark>ce<mark class="inline-remove">ss</mark>i<mark class="inline-remove">b</mark>i<mark class="inline-remove">lity Options</mark>](https://support.apple.com/11<mark class="inline-remove">1</mark>7<mark class="inline-remove">8</mark>0) .</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text"><mark class="inline-add">If you want to transf</mark>er<mark class="inline-add"> from an Android d</mark>e<mark class="inline-add">vice and don&#x27;t have another iOS device, tap Set Up Without Another Device. On the Transfer Apps &amp; Data screen,</mark> you can <mark class="inline-add">selec</mark>t the <mark class="inline-add">opt</mark>ion to [<mark class="inline-add">mov</mark>e<mark class="inline-add"> da</mark>t<mark class="inline-add">a</mark> <mark class="inline-add">from yo</mark>u<mark class="inline-add">r</mark> A<mark class="inline-add">ndroid devi</mark>ce<mark class="inline-add"> to your new </mark>i<mark class="inline-add">OS dev</mark>i<mark class="inline-add">ce</mark>](https://support.apple.com/11<mark class="inline-add">86</mark>70) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text"><mark class="inline-remove">[Imag</mark>e<mark class="inline-remove">: Sc</mark>re<mark class="inline-remove">ensh</mark>o<mark class="inline-remove">t</mark> <mark class="inline-remove">of </mark>an <mark class="inline-remove">iPh</mark>o<mark class="inline-remove">ne</mark> <mark class="inline-remove">during </mark>setup<mark class="inline-remove">,</mark> <mark class="inline-remove">d</mark>isp<mark class="inline-remove">laying the Q</mark>u<mark class="inline-remove">ick Sta</mark>rt<mark class="inline-remove"> screen with overl</mark>app<mark class="inline-remove">ing iPhon</mark>e<mark class="inline-remove"> i</mark>co<mark class="inline-remove">ns</mark>.<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text"><mark class="inline-add">H</mark>ere<mark class="inline-add"> y</mark>o<mark class="inline-add">u</mark> <mark class="inline-add">c</mark>an <mark class="inline-add">als</mark>o <mark class="inline-add">[</mark>set<mark class="inline-add"> </mark>up <mark class="inline-add">Access</mark>i<mark class="inline-add">bility Option</mark>s<mark class="inline-add">](htt</mark>p<mark class="inline-add">s://s</mark>u<mark class="inline-add">ppo</mark>rt<mark class="inline-add">.</mark>app<mark class="inline-add">l</mark>e<mark class="inline-add">.</mark>co<mark class="inline-add">m/111780) </mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">[Image: An iPhone setup screen shows the Quick Start option in progress.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">## Activate your iPhone or iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">## Activate your iPhone or iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">## Set up for you or for a child</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">## Set up for you or for a child</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text"><mark class="inline-remove">Next, c</mark>hoose whether to set up your iPhone for you or for a child. Learn how to [create a new Apple Account for a child under 13](https://support.apple.com/102617) , how to [set up Family Sharing](https://support.apple.com/108380) , and how to [use parental controls on a child&#x27;s iPhone](https://support.apple.com/105121) .</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text"><mark class="inline-add">C</mark>hoose whether to set up your iPhone for you or for a child. Learn how to [create a new Apple Account for a child under 13](https://support.apple.com/102617) , how to [set up Family Sharing](https://support.apple.com/108380) , and how to [use parental controls on a child&#x27;s iPhone](https://support.apple.com/105121) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">[Image:<mark class="inline-remove"> During the</mark> iPhone set<mark class="inline-remove"> </mark>up <mark class="inline-remove">p</mark>r<mark class="inline-remove">oc</mark>es<mark class="inline-remove">s </mark>in <mark class="inline-remove">iOS</mark> <mark class="inline-remove">26, you can choo</mark>se<mark class="inline-remove"> wh</mark>et<mark class="inline-remove">her</mark> the <mark class="inline-remove">n</mark>e<mark class="inline-remove">w</mark> <mark class="inline-remove">phon</mark>e <mark class="inline-remove">is fo</mark>r<mark class="inline-remove"> you or for </mark>a<mark class="inline-remove"> child i</mark>n<mark class="inline-remove"> your family</mark>.]</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">[Image: iPhone setup <mark class="inline-add">sc</mark>re<mark class="inline-add">en a</mark>s<mark class="inline-add">k</mark>in<mark class="inline-add">g</mark> <mark class="inline-add">to</mark> se<mark class="inline-add">l</mark>e<mark class="inline-add">c</mark>t the <mark class="inline-add">primary us</mark>e<mark class="inline-add">r&#x27;s</mark> <mark class="inline-add">ag</mark>e ran<mark class="inline-add">ge</mark>.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">## Set up Face ID or Touch ID and create a passcode</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">## Set up Face ID or Touch ID and create a passcode</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">Choose how you want to restore or transfer your data from your old device to your new device. You can [use an iCloud backup or a backup made from your computer](https://support.apple.com/119967) , or [move data from an Android device](https://support.apple.com/118670) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">Choose how you want to restore or transfer your data from your old device to your new device. You can [use an iCloud backup or a backup made from your computer](https://support.apple.com/119967) , or [move data from an Android device](https://support.apple.com/118670) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">If you don&#x27;t have a backup or another device, select Don&#x27;t Transfer A<mark class="inline-remove">pps &amp; Da</mark>t<mark class="inline-remove">a</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">If you don&#x27;t have a backup or another device, select Don&#x27;t Transfer A<mark class="inline-add">ny</mark>t<mark class="inline-add">hing</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">[Image:<mark class="inline-remove"> The</mark> Transfer Your Apps &amp; Data options <mark class="inline-remove">wh</mark>e<mark class="inline-remove">n</mark> <mark class="inline-remove">y</mark>ou <mark class="inline-remove">set</mark> <mark class="inline-remove">up</mark> <mark class="inline-remove">a</mark> i<mark class="inline-remove">Phone in iOS 26</mark>.]</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">[Image: Transfer Your Apps &amp; Data <mark class="inline-add">screen shows </mark>options <mark class="inline-add">to r</mark>e<mark class="inline-add">store</mark> <mark class="inline-add">from iCl</mark>ou<mark class="inline-add">d,</mark> <mark class="inline-add">Mac</mark> <mark class="inline-add">or</mark> <mark class="inline-add">PC,</mark> <mark class="inline-add">or Andro</mark>i<mark class="inline-add">d</mark>.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">## Sign in with your Apple Account or another Apple device</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">## Sign in with your Apple Account or another Apple device</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">[Learn what to do if you forgot your Apple Account password](https://support.apple.com/102656)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">[Learn what to do if you forgot your Apple Account password](https://support.apple.com/102656)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">[Image:<mark class="inline-remove"> &quot;Sign-In Required&quot; screen during</mark> iPhone se<mark class="inline-remove">tup i</mark>n <mark class="inline-remove">iOS 26, sh</mark>o<mark class="inline-remove">wing o</mark>pt<mark class="inline-remove">ion</mark>s to sign in <mark class="inline-remove">wi</mark>th<mark class="inline-remove"> an</mark> Apple Account <mark class="inline-remove">using email </mark>or <mark class="inline-remove">ph</mark>o<mark class="inline-remove">ne</mark> <mark class="inline-remove">number, or to &quot;S</mark>et<mark class="inline-remove"> U</mark>p<mark class="inline-remove"> Later in Settings&quot;</mark>.]</code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">[Image: iPhone s<mark class="inline-add">cr</mark>e<mark class="inline-add">e</mark>n <mark class="inline-add">pr</mark>o<mark class="inline-add">m</mark>pt<mark class="inline-add">s user</mark>s to sign in <mark class="inline-add">to </mark>th<mark class="inline-add">eir</mark> Apple Account <mark class="inline-add">f</mark>or <mark class="inline-add">iCl</mark>o<mark class="inline-add">ud</mark> <mark class="inline-add">s</mark>et<mark class="inline-add">u</mark>p.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">## Turn on automatic updates and set up other features</code></div>
+<div class="diff-line current unchanged"><span class="line-number">77</span><code class="line-text">## Turn on automatic updates and set up other features</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">77</span><code class="line-text">- You&#x27;ll be asked to set up or enable services and features, like Siri. On some devices, you&#x27;ll be asked to speak a few phrases so that Siri can get to know your voice.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">- You&#x27;ll be asked to set up or enable services and features, like Siri. On some devices, you&#x27;ll be asked to speak a few phrases so that Siri can get to know your voice.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text">- T<mark class="inline-remove">hen, follow the</mark> on<mark class="inline-remove">sc</mark>r<mark class="inline-remove">een</mark> <mark class="inline-remove">inst</mark>r<mark class="inline-remove">uctions</mark> to se<mark class="inline-remove">t</mark> <mark class="inline-remove">u</mark>p<mark class="inline-remove"> [Sc</mark>ree<mark class="inline-remove">n</mark> <mark class="inline-remove">Time](https://supp</mark>o<mark class="inline-remove">rt.apple.com/108806) , which gives you insight into</mark> how m<mark class="inline-remove">u</mark>ch time <mark class="inline-remove">y</mark>o<mark class="inline-remove">u and your kids spend on your devices. It also lets you set time limits </mark>f<mark class="inline-remove">or</mark> da<mark class="inline-remove">il</mark>y ap<mark class="inline-remove">p</mark> u<mark class="inline-remove">s</mark>e.</code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">- T<mark class="inline-add">ap</mark> on<mark class="inline-add"> Light o</mark>r <mark class="inline-add">Da</mark>r<mark class="inline-add">k</mark> to se<mark class="inline-add">e</mark> <mark class="inline-add">a </mark>pre<mark class="inline-add">vi</mark>e<mark class="inline-add">w</mark> o<mark class="inline-add">f</mark> how <mark class="inline-add">your iPhone adjusts. Tap Auto to have your iPhone auto</mark>m<mark class="inline-add">atically swit</mark>ch<mark class="inline-add"> based on the</mark> time of day<mark class="inline-add">.</mark> <mark class="inline-add">When ready, t</mark>ap <mark class="inline-add">Contin</mark>ue.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">- <mark class="inline-remove">Next, </mark>l<mark class="inline-remove">earn ab</mark>o<mark class="inline-remove">ut</mark> the <mark class="inline-remove">d</mark>a<mark class="inline-remove">ta</mark> you c<mark class="inline-remove">an</mark> <mark class="inline-remove">shar</mark>e <mark class="inline-remove">with Apple</mark> and c<mark class="inline-remove">h</mark>oose<mark class="inline-remove"> whe</mark>t<mark class="inline-remove">her</mark> to<mark class="inline-remove"> sha</mark>r<mark class="inline-remove">e</mark> da<mark class="inline-remove">ta w</mark>i<mark class="inline-remove">th</mark> app <mark class="inline-remove">d</mark>e<mark class="inline-remove">velopers</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">- <mark class="inline-add">Fo</mark>l<mark class="inline-add">l</mark>o<mark class="inline-add">w</mark> the <mark class="inline-add">onscreen instructions to set up [Screen Time](https://support.</mark>a<mark class="inline-add">pple.com/108806) , which gives</mark> you <mark class="inline-add">insight into how mu</mark>c<mark class="inline-add">h</mark> <mark class="inline-add">tim</mark>e <mark class="inline-add">you</mark> and <mark class="inline-add">your kids spend on your devi</mark>c<mark class="inline-add">es. It als</mark>o<mark class="inline-add"> lets y</mark>o<mark class="inline-add">u </mark>set t<mark class="inline-add">ime limits f</mark>or dai<mark class="inline-add">ly</mark> app <mark class="inline-add">us</mark>e.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">- <mark class="inline-remove">T</mark>a<mark class="inline-remove">p o</mark>n <mark class="inline-remove">Light or D</mark>a<mark class="inline-remove">rk to see a preview of how your iPhone adjusts. Tap Auto to have your iPhone automatically switch </mark>b<mark class="inline-remove">etween both through</mark>out the day<mark class="inline-remove">.</mark> <mark class="inline-remove">W</mark>he<mark class="inline-remove">n</mark> rea<mark class="inline-remove">dy, </mark>tap <mark class="inline-remove">C</mark>o<mark class="inline-remove">ntinu</mark>e.</code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text">- <mark class="inline-add">Le</mark>a<mark class="inline-add">r</mark>n about the da<mark class="inline-add">ta </mark>y<mark class="inline-add">ou</mark> <mark class="inline-add">can share with Apple and choose w</mark>he<mark class="inline-add">ther</mark> <mark class="inline-add">to sha</mark>re<mark class="inline-add"> d</mark>ata<mark class="inline-add"> with ap</mark>p <mark class="inline-add">devel</mark>o<mark class="inline-add">p</mark>e<mark class="inline-add">rs</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">- Adapt the appearance of Liquid Glass to match your preference.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">- If your iPhone is an Apple Intelligence capable device, you can set up Apple Intelligence and [learn about features like Visual Intelligence in iOS 26](https://support.apple.com/guide/iphone/use-visual-intelligence-iph12eb1545e/26/ios/26) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">91</span><code class="line-text">- If your iPhone is an Apple Intelligence capable device, you can set up Apple Intelligence and [learn about features like Visual Intelligence in iOS 26](https://support.apple.com/guide/iphone/use-visual-intelligence-iph12eb1545e/26/ios/26) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text">- <mark class="inline-remove">Finally, i</mark>f you set up an iPhone 14 or later (all models), learn about safety features like [Emergency SOS](https://support.apple.com/guide/personal-safety/emergency-call-text-iphone-apple-watch-ips4f0cd709b/web) , [Crash Detection](https://support.apple.com/104959) , and [Emergency SOS via Satellite](https://support.apple.com/105097) in select countries.</code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">- <mark class="inline-add">I</mark>f you set up an iPhone 14 or later (all models), learn about safety features like [Emergency SOS](https://support.apple.com/guide/personal-safety/emergency-call-text-iphone-apple-watch-ips4f0cd709b/web) , [Crash Detection](https://support.apple.com/104959) , and [Emergency SOS via Satellite](https://support.apple.com/105097) in select countries.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">89</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

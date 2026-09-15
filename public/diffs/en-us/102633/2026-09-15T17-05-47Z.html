@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>If you forgot your Mac login password — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>If you forgot your Mac login password</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/102633">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+44 ajouts</span>
+      <span class="badge removed">−50 suppressions</span>
+      <span class="badge">5 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># If you forgot your Mac login password</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># If you forgot your Mac login password</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">If you can’t remember the password to log in to your Mac<mark class="inline-remove"> user account</mark>, or the password doesn’t work,<mark class="inline-remove"> follow these steps. You can&#x27;t disable the login password or log in to your Mac without the password, but</mark> you might be able to reset the password.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">If you can’t remember the password to log in to your Mac, or the password doesn’t work, you might be able to reset the password.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">[Image: macOS <mark class="inline-remove">S</mark>e<mark class="inline-remove">quoi</mark>a login window with a question mark icon next to the password field.]</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">[Image: macOS <mark class="inline-add">Gold</mark>e<mark class="inline-add">n G</mark>a<mark class="inline-add">te</mark> login window with a question mark icon next to the password field.]</code></div>
+<div class="diff-line previous removed"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">- [Restart your Mac](https://support.apple.com/en-us/102633#restart)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">- [Enter the password of your Mac user account](https://support.apple.com/en-us/102633#enterpassword)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">- [Use the reset options in the login window](https://support.apple.com/en-us/102633#resetfromlogin)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">- [Use the reset options in Recovery](https://support.apple.com/en-us/102633#resetfromrecovery)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- [If you don’t have your recovery key](https://support.apple.com/en-us/102633#nokey)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">- [If you can’t reset your login password](https://support.apple.com/en-us/102633#noreset)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">## Restart your Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">## Restart your Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">Restart your Mac. If you see no option to restart, press and hold the power (or Touch ID) button on your Mac for up to 10 seconds, until your Mac turns off. Then turn it on again.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">Restart your Mac. If you see no option to restart, press and hold the power (or Touch ID) button on your Mac for up to 10 seconds, until your Mac turns off. Then turn it on again.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">Your Mac should now start up to the login window. If i<mark class="inline-remove">t does</mark>n<mark class="inline-remove">&#x27;t </mark>sta<mark class="inline-remove">rt</mark> <mark class="inline-remove">up to the log</mark>i<mark class="inline-remove">n window, bu</mark>t stays on some other screen, such as blank screen, Activation Lock screen, or lock symbol, [learn what to do if your Mac doesn’t start up all the way](https://support.apple.com/en-us/102675) .</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">Your Mac should now start up to the login window. If inst<mark class="inline-add">e</mark>a<mark class="inline-add">d</mark> it stays on some other screen, such as<mark class="inline-add"> a</mark> blank screen, Activation Lock screen, or lock symbol, [learn what to do if your Mac doesn’t start up all the way](https://support.apple.com/en-us/102675) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">## Enter the password of your Mac user account</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">## Enter the password of your Mac user account</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">If your login password still doesn’t work, [use the reset options in the login window](https://support.apple.com/en-us/102633#resetfromlogin) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">If your login password still doesn’t work, [use the reset options in the login window](https://support.apple.com/en-us/102633#resetfromlogin) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">If you’re already logged in to your own user account or another administrator account, you can instead [change your login password in Users &amp; Groups settings](https://support.apple.com/guide/mac-help/mchlp1550/mac) .</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">If you’re already logged in to your own user account<mark class="inline-add">,</mark> or<mark class="inline-add"> you can log in to</mark> another administrator account, you can instead [change your login password in Users &amp; Groups settings](https://support.apple.com/guide/mac-help/mchlp1550/mac) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">## Use the reset options in the login window</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">## Use the reset options in the login window</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">- A password hint—if you added a hint when setting up your account.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">- A password hint—if you added a hint when setting up your account.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">- A reset message, such as &quot;Restart and show password reset options<mark class="inline-remove">&quot; or &quot;Reset it using your recovery key&quot; or &quot;Reset it using your Apple ID</mark>.&quot;</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">- A reset message, such as<mark class="inline-add"> &quot;Reset Password&quot; or</mark> &quot;Restart and show password reset options.&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">If you don’t see a reset message or question mark:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">If you don’t see a reset message or question mark:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">- Check again after entering a password up to three times.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">- Check again after entering a password up to three times.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">- Then <mark class="inline-remove">f</mark>o<mark class="inline-remove">llow th</mark>e<mark class="inline-remove"> st</mark>e<mark class="inline-remove">ps</mark> be<mark class="inline-remove">low, </mark>d<mark class="inline-remove">epending</mark> on what you see: a [reset message](https://support.apple.com/en-us/102633#showoptions) , a [message that your account is locked](https://support.apple.com/en-us/102633#locked) , or [no message](https://support.apple.com/en-us/102633#nomessage) .</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- Then <mark class="inline-add">pr</mark>o<mark class="inline-add">c</mark>ee<mark class="inline-add">d</mark> b<mark class="inline-add">as</mark>ed on what you see: a [reset message](https://support.apple.com/en-us/102633#showoptions) , a [message that your account is locked](https://support.apple.com/en-us/102633#locked) , or [no message](https://support.apple.com/en-us/102633#nomessage) .</code></div>
+<div class="diff-line previous removed"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">[Image: Password reset options next to the password field in the login window.]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">### If you see a reset message</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">### If you see a reset message</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">- If the login window shows a reset message, click the message to begin the reset process.</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">- If the login window shows a reset message,<mark class="inline-add"> such as &quot;Reset Password&quot; or &quot;Restart and show password reset options,&quot;</mark> click the message to begin the reset process.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">- Follow the onscreen instructions, which vary depending on your Mac setup.<mark class="inline-remove"> As you follow the instructions:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">- Follow the onscreen instructions, which vary depending on your Mac setup.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">- If<mark class="inline-remove"> asked to sign in to your Apple Account, enter your Apple Account email or phone number, then enter its password (not your login name or password). You may be</mark> asked to enter <mark class="inline-remove">a</mark> ver<mark class="inline-remove">i</mark>f<mark class="inline-remove">ica</mark>t<mark class="inline-remove">ion</mark> code sent <mark class="inline-remove">to</mark> your o<mark class="inline-remove">th</mark>er <mark class="inline-remove">d</mark>e<mark class="inline-remove">vi</mark>c<mark class="inline-remove">es. Y</mark>o<mark class="inline-remove">u can th</mark>en<mark class="inline-remove"> select the </mark>use<mark class="inline-remove">r to reset the password for.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">- If asked to enter <mark class="inline-add">your</mark> <mark class="inline-add">reco</mark>ver<mark class="inline-add">y key, enter the letters and numbers o</mark>f<mark class="inline-add"> </mark>t<mark class="inline-add">he</mark> <mark class="inline-add">re</mark>co<mark class="inline-add">very key. A recovery key does not inclu</mark>de <mark class="inline-add">the letter</mark>s<mark class="inline-add"> I (i) or S, or th</mark>e<mark class="inline-add"> </mark>n<mark class="inline-add">umbers 1 or 0. [Don’</mark>t <mark class="inline-add">have</mark> your <mark class="inline-add">rec</mark>o<mark class="inline-add">v</mark>er<mark class="inline-add">y</mark> <mark class="inline-add">k</mark>e<mark class="inline-add">y?](https://support.apple.</mark>co<mark class="inline-add">m/</mark>en<mark class="inline-add">-</mark>us<mark class="inline-add">/102633#nok</mark>e<mark class="inline-add">y)</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">- If asked to sign in to your Apple Account, enter your Apple Account email or phone number, then enter its password. You may be asked to enter a verification code sent to your other devices. You can then select the user to reset the password for.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">- If asked to select a volume to recover, select your startup disk, such as Macintosh HD.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">- If asked to select a volume to recover, select your startup disk, such as Macintosh HD.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">71</span><code class="line-text">- If asked to select a user you know the password for, click &quot;Forgot all passwords?&quot;.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">- If asked to select a user you know the password for, click &quot;Forgot all passwords?&quot;.</code></div>
+<div class="diff-line previous removed"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text">- If asked to enter your FileVault recovery key, enter the string of letters and numbers that make up the recovery key. [Don’t have your recovery key?](https://support.apple.com/en-us/102633#nokey)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">- If asked to deactivate this Mac, allow your Mac to deactivate. This is temporary.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">- If asked to deactivate this Mac, allow your Mac to deactivate. This is temporary.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">## Use the reset options in Recovery</code></div>
+<div class="diff-line current unchanged"><span class="line-number">77</span><code class="line-text">## Use the reset options in Recovery</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">If you couldn’t reset your password using <mark class="inline-remove">the </mark>reset options in the login window<mark class="inline-remove">:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">If you couldn’t reset your password using reset options in the login window<mark class="inline-add">, you might be able to reset your password from macOS Recovery.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">95</span><code class="line-text">- Follow the steps to [start up from macOS Recovery](https://support.apple.com/en-us/102518) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">- Follow the steps to [start up from macOS Recovery](https://support.apple.com/en-us/102518) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">97</span><code class="line-text">- Wh<mark class="inline-remove">il</mark>e<mark class="inline-remove"> starti</mark>n<mark class="inline-remove">g up from Recovery, you&#x27;re</mark> asked to select a user you know the password for<mark class="inline-remove">.</mark> <mark class="inline-remove">C</mark>lick &quot;Forgot all passwords?&quot;.</code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">- When asked to select a user you know the password for<mark class="inline-add">,</mark> <mark class="inline-add">c</mark>lick &quot;Forgot all passwords?&quot;.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">99</span><code class="line-text">[Image: macOS Recovery window showing &quot;Forgot all passwords&quot; beneath a user name.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">[Image: macOS Recovery window showing &quot;Forgot all passwords&quot; beneath a user name.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">101</span><code class="line-text">- Follow the onscreen instructions, which vary depending on your Mac setup.<mark class="inline-remove"> As you follow the instructions:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text">- Follow the onscreen instructions, which vary depending on your Mac setup.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">103</span><code class="line-text">- If asked to sign in to <mark class="inline-remove">your</mark> Apple Account, enter <mark class="inline-remove">your Appl</mark>e<mark class="inline-remove"> Account</mark> email or phone number, then enter its password.<mark class="inline-remove"> You may be asked to enter a verification code sent to your other devices. You can then select the user to reset the password for.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">- If asked to sign in to <mark class="inline-add">the</mark> Apple Account<mark class="inline-add"> previously used with this Mac</mark>, enter <mark class="inline-add">th</mark>e email or phone number<mark class="inline-add"> of that Apple Account</mark>, then enter its password.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">105</span><code class="line-text">- If asked to enter your <mark class="inline-remove">FileVault </mark>recovery key, enter the <mark class="inline-remove">string of </mark>letters and numbers <mark class="inline-remove">that make up</mark> the recovery key. [Don’t have your recovery key?](https://support.apple.com/en-us/102633#nokey)</code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">- If asked to enter your recovery key, enter the letters and numbers <mark class="inline-add">of</mark> the recovery key<mark class="inline-add">. A recovery key does not include the letters I (i) or S, or the numbers 1 or 0</mark>. [Don’t have your recovery key?](https://support.apple.com/en-us/102633#nokey)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">107</span><code class="line-text">- If asked to select a volume to recover, select your startup disk, such as Macintosh HD.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">93</span><code class="line-text">- If asked to select a volume to recover, select your startup disk, such as Macintosh HD.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">109</span><code class="line-text">- If asked to deactivate this Mac, allow your Mac to deactivate. This is temporary.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">- If asked to deactivate this Mac, allow your Mac to deactivate. This is temporary.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">111</span><code class="line-text">- <mark class="inline-remove">When done, c</mark>lick Exit to Recovery. You&#x27;re in Recovery when you see options to restore from Time Machine, reinstall macOS, and more<mark class="inline-remove">:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">97</span><code class="line-text">- <mark class="inline-add">C</mark>lick Exit to Recovery<mark class="inline-add"> when you see that option</mark>. You&#x27;re in Recovery when you see options to restore from Time Machine, reinstall macOS, and more<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">113</span><code class="line-text">[Image: Utilities window in macOS Recovery.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">99</span><code class="line-text">[Image: Utilities window in macOS Recovery.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">115</span><code class="line-text">- Wh<mark class="inline-remove">en follow</mark>i<mark class="inline-remove">ng the previous instructions, if you were offered steps to reset your password and were ab</mark>le <mark class="inline-remove">to complete those steps, choose Re</mark>start from <mark class="inline-remove">th</mark>e<mark class="inline-remove"> Appl</mark>e<mark class="inline-remove"> menu , then log in with </mark>y<mark class="inline-remove">our new password.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">- While start<mark class="inline-add">ing up</mark> from <mark class="inline-add">R</mark>e<mark class="inline-add">cov</mark>e<mark class="inline-add">r</mark>y<mark class="inline-add">:</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">117</span><code class="line-text">- If you were <mark class="inline-remove">not offer</mark>ed <mark class="inline-remove">st</mark>e<mark class="inline-remove">ps</mark> to re<mark class="inline-remove">s</mark>e<mark class="inline-remove">t</mark> <mark class="inline-remove">y</mark>o<mark class="inline-remove">ur</mark> password<mark class="inline-remove"> or could not complete them</mark>, choose <mark class="inline-remove">T</mark>er<mark class="inline-remove">minal</mark> from the <mark class="inline-remove">Uti</mark>l<mark class="inline-remove">ities menu in th</mark>e menu <mark class="inline-remove">b</mark>ar.</code></div>
+<div class="diff-line current added"><span class="line-number">103</span><code class="line-text">- If you were <mark class="inline-add">ask</mark>ed <mark class="inline-add">and abl</mark>e to <mark class="inline-add">c</mark>re<mark class="inline-add">at</mark>e <mark class="inline-add">a new l</mark>o<mark class="inline-add">gin</mark> password, choose <mark class="inline-add">R</mark>e<mark class="inline-add">sta</mark>r<mark class="inline-add">t</mark> from the <mark class="inline-add">App</mark>le menu <mark class="inline-add">, then log in with your new p</mark>a<mark class="inline-add">sswo</mark>r<mark class="inline-add">d</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">119</span><code class="line-text">- In <mark class="inline-remove">the Terminal window that opens, type reset</mark>password <mark class="inline-remove">,</mark> then p<mark class="inline-remove">r</mark>es<mark class="inline-remove">s</mark> Re<mark class="inline-remove">tu</mark>r<mark class="inline-remove">n</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">105</span><code class="line-text">- I<mark class="inline-add">f you were not asked or able to create a new logi</mark>n password<mark class="inline-add">,</mark> <mark class="inline-add">continue to</mark> the<mark class="inline-add"> </mark>n<mark class="inline-add">ext</mark> <mark class="inline-add">ste</mark>p<mark class="inline-add"> whil</mark>e<mark class="inline-add"> </mark>s<mark class="inline-add">till in</mark> Re<mark class="inline-add">cove</mark>r<mark class="inline-add">y</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">107</span><code class="line-text">- From the Utilities menu in the menu bar, choose Terminal.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">109</span><code class="line-text">- In the window that opens, type resetpassword , then press Return.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">121</span><code class="line-text">[Image: Terminal window after typing &quot;resetpassword&quot; at the command prompt.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">111</span><code class="line-text">[Image: Terminal window after typing &quot;resetpassword&quot; at the command prompt.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">123</span><code class="line-text">- In the window that opens, <mark class="inline-remove">choo</mark>se<mark class="inline-remove"> a r</mark>e<mark class="inline-remove">se</mark>t<mark class="inline-remove"> option, such as</mark> &quot;I forgot my password&quot; or &quot;My password doesn&#x27;t work when logging in.&quot; <mark class="inline-remove">Then c</mark>lick Next<mark class="inline-remove"> and follow the onscreen instructions</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text">- In the window that opens, se<mark class="inline-add">l</mark>e<mark class="inline-add">c</mark>t &quot;I forgot my password&quot; or &quot;My password doesn&#x27;t work when logging in.&quot; <mark class="inline-add">C</mark>lick Next.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">125</span><code class="line-text">[Image: Reset Password window in macOS Recovery]</code></div>
+<div class="diff-line current added"><span class="line-number">115</span><code class="line-text">[Image: Reset Password window in macOS Recovery<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">127</span><code class="line-text">- After you provide the information requested, you&#x27;re asked to create a new password for your account and any other user accounts. You can then restart your Mac and log in with the new password.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">117</span><code class="line-text">- After you provide the information requested, you&#x27;re asked to create a new password for your account and any other user accounts. You can then restart your Mac and log in with the new password.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">131</span><code class="line-text">## If you don’t have your recovery key</code></div>
+<div class="diff-line current unchanged"><span class="line-number">121</span><code class="line-text">## If you don’t have your recovery key</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">133</span><code class="line-text">A FileVault recovery key is 24-character alphanumeric code. It&#x27;s not the same as an [Apple Account recovery key](https://support.apple.com/en-us/109345) <mark class="inline-remove">,</mark> <mark class="inline-remove">and</mark> you <mark class="inline-remove">ca</mark>n’t <mark class="inline-remove">us</mark>e <mark class="inline-remove">an Apple Acc</mark>ou<mark class="inline-remove">nt </mark>r<mark class="inline-remove">ecovery key in place of a</mark> FileVault recovery key.</code></div>
+<div class="diff-line current added"><span class="line-number">123</span><code class="line-text">A <mark class="inline-add">[</mark>FileVault recovery key<mark class="inline-add">](https://support.apple.com/guide/mac-help/mh35880/mac)</mark> is<mark class="inline-add"> a</mark> 24-character alphanumeric code<mark class="inline-add"> created when FileVault is turned on</mark>. It&#x27;s not the same as an [Apple Account recovery key](https://support.apple.com/en-us/109345) <mark class="inline-add">.</mark> <mark class="inline-add">If</mark> you <mark class="inline-add">do</mark>n’t <mark class="inline-add">hav</mark>e <mark class="inline-add">y</mark>our FileVault recovery key<mark class="inline-add">, but the Mac requesting it is using macOS Tahoe 26 or later, the key might be available in the [Passwords app](https://support</mark>.<mark class="inline-add">apple.com/en-us/120758) on one of your other devices, such as an iPhone, iPad, or other Mac.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">135</span><code class="line-text"><mark class="inline-remove">If</mark> the Mac requesting <mark class="inline-remove">the FileVa</mark>u<mark class="inline-remove">lt</mark> recovery key <mark class="inline-remove">is</mark> us<mark class="inline-remove">ing macOS Tahoe 26 or later, the key migh</mark>t <mark class="inline-remove">be</mark> av<mark class="inline-remove">ailable in th</mark>e [Passwords a<mark class="inline-remove">pp</mark>](https://support.apple.com/en-us/1<mark class="inline-remove">2</mark>0<mark class="inline-remove">758</mark>) <mark class="inline-remove">o</mark>n <mark class="inline-remove">one of y</mark>ou<mark class="inline-remove">r</mark> <mark class="inline-remove">o</mark>t<mark class="inline-remove">her dev</mark>i<mark class="inline-remove">ce</mark>s<mark class="inline-remove">:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">125</span><code class="line-text"><mark class="inline-add">- Make sure that your other device is signed in to the same Apple Account as</mark> the Mac requesting <mark class="inline-add">yo</mark>u<mark class="inline-add">r</mark> recovery key<mark class="inline-add">.</mark> <mark class="inline-add">It</mark> <mark class="inline-add">m</mark>ust <mark class="inline-add">also</mark> <mark class="inline-add">h</mark>ave [<mark class="inline-add">iCloud </mark>Passwords <mark class="inline-add">&amp; Keych</mark>a<mark class="inline-add">in turned on</mark>](https://support.apple.com/en-us/10<mark class="inline-add">9016</mark>) <mark class="inline-add">i</mark>n <mark class="inline-add">iCl</mark>ou<mark class="inline-add">d</mark> <mark class="inline-add">se</mark>t<mark class="inline-add">t</mark>i<mark class="inline-add">ng</mark>s<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">137</span><code class="line-text">- <mark class="inline-remove">Mak</mark>e<mark class="inline-remove"> sure that your other device, such as a</mark>n<mark class="inline-remove"> iPhone, iPad, or other Mac, is signed in to</mark> the<mark class="inline-remove"> same Apple Account as the Mac requesting your recovery key. Then open</mark> Passwords <mark class="inline-remove">on th</mark>a<mark class="inline-remove">t device</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">127</span><code class="line-text">- <mark class="inline-add">Op</mark>en the Passwords a<mark class="inline-add">pp</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">139</span><code class="line-text">- <mark class="inline-remove">In Passwords, t</mark>ype &quot;recovery key&quot; in the Search field.</code></div>
+<div class="diff-line current added"><span class="line-number">129</span><code class="line-text">- <mark class="inline-add">T</mark>ype &quot;recovery key&quot; in the Search field.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">141</span><code class="line-text">- If the search results include the name of the Mac requesting your recovery key, <mark class="inline-remove">s</mark>e<mark class="inline-remove">lect</mark> the <mark class="inline-remove">name, t</mark>hen tap or click the dots in the Recovery Key field to <mark class="inline-remove">reveal</mark> the key for that Mac.</code></div>
+<div class="diff-line current added"><span class="line-number">131</span><code class="line-text">- If the search results include the name of the Mac requesting your recovery key, <mark class="inline-add">op</mark>e<mark class="inline-add">n</mark> th<mark class="inline-add">at it</mark>e<mark class="inline-add">m.</mark> <mark class="inline-add">T</mark>hen tap or click the dots in the Recovery Key field to <mark class="inline-add">show</mark> the key for that Mac.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">133</span><code class="line-text">[Image: FileVault Recovery Key for a Mac in the Passwords app on iPhone.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">135</span><code class="line-text">If you still can’t find your recovery key, [use the reset options in Recovery](https://support.apple.com/en-us/102633#resetfromrecovery) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">143</span><code class="line-text">## If you can’t reset your login password</code></div>
+<div class="diff-line current unchanged"><span class="line-number">137</span><code class="line-text">## If you can’t reset your login password</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">145</span><code class="line-text">If no other solution works, you can regain access to your Mac by erasing it. This permanently removes each user account, its password, and its data from your Mac.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">139</span><code class="line-text">If no other solution works, you can regain access to your Mac by erasing it. This permanently removes each user account, its password, and its data from your Mac.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">147</span><code class="line-text">- Shut down your Mac<mark class="inline-remove">, then [start up from macOS Recovery](https://support</mark>.<mark class="inline-remove">apple.com/en-us/102518) again. When asked to select a user you know the password for, choose Erase Mac from the Recovery Assistant menu at the top of the screen.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">141</span><code class="line-text">- Shut down <mark class="inline-add">or turn off </mark>your Mac.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">143</span><code class="line-text">- [Start up from macOS Recovery](https://support.apple.com/en-us/102518) . When asked to select a user you know the password for, choose Erase Mac from the Recovery Assistant menu in the menu bar.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">149</span><code class="line-text">- In the window that opens, click Erase Mac, then click Erase Mac to confirm. After your Mac is erased, it automatically restarts.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">145</span><code class="line-text">- In the window that opens, click Erase Mac, then click Erase Mac to confirm. After your Mac is erased, it automatically restarts.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">151</span><code class="line-text">[Image: Erase Mac window in macOS Recovery, warning that this will delete all media, data, and settings on this Mac.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">147</span><code class="line-text">[Image: Erase Mac window in macOS Recovery, warning that this will delete all media, data, and settings on this Mac.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">153</span><code class="line-text">- If your Mac starts up to a question mark, turn off your Mac<mark class="inline-remove">, start up from macOS Recovery again</mark>, then [reinstall macOS](https://support.apple.com/en-us/102655) from Recovery.</code></div>
+<div class="diff-line current added"><span class="line-number">149</span><code class="line-text">- If your Mac starts up to a question mark, turn off your Mac, then [reinstall macOS](https://support.apple.com/en-us/102655) from Recovery.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">155</span><code class="line-text">- If your Mac starts up to an Activate Mac window<mark class="inline-remove">, choose a Wi-Fi network from the Wi-Fi menu and enter your Apple Account information (not your login name or password) when asked.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">151</span><code class="line-text">- If your Mac starts up to an Activate Mac window<mark class="inline-add">:</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">153</span><code class="line-text">- If asked, choose a Wi-Fi network from the Wi-Fi menu , or attach a network cable.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">155</span><code class="line-text">- Enter your Apple Account information (not your login name or password) when asked.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">157</span><code class="line-text">- After your Mac activates, click Exit to Recovery, then [reinstall macOS](https://support.apple.com/en-us/102655) from Recovery.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">157</span><code class="line-text">- After your Mac activates, click Exit to Recovery, then [reinstall macOS](https://support.apple.com/en-us/102655) from Recovery.</code></div>
+<div class="diff-line previous removed"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">159</span><code class="line-text">## Learn more</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">161</span><code class="line-text">- [Learn what to do if you forgot your Apple Account password](https://support.apple.com/en-us/102656) . An Apple Account is not the same as a Mac user account.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">163</span><code class="line-text">- [Learn more about FileVault](https://support.apple.com/guide/mac-help/mh11785/mac) .</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

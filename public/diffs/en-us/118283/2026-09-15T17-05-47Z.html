@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Change your Apple Account country or region — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Change your Apple Account country or region</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/118283">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+74 ajouts</span>
+      <span class="badge removed">−32 suppressions</span>
+      <span class="badge">2 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Change your Apple Account country or region</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Change your Apple Account country or region</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Before you update your location, <mark class="inline-remove">you must </mark>spend your account balance a<mark class="inline-remove">nd</mark> cancel y<mark class="inline-remove">our</mark> subscriptions.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Before you update your location, spend your <mark class="inline-add">rem</mark>a<mark class="inline-add">ining Apple A</mark>ccount balance<mark class="inline-add">. You must</mark> a<mark class="inline-add">lso</mark> cancel <mark class="inline-add">an</mark>y subscriptions<mark class="inline-add"> that block a country or region change</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">[What to do before you change your country or region](https://support.apple.com/en-us/118283#qualifications)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">[How to change your country or region](https://support.apple.com/en-us/118283#howto)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">[If you can&#x27;t change your country or region](https://support.apple.com/en-us/118283#troubleshooting)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## What to do before you change your country or region</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">## What to do before you change your country or region</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text"><mark class="inline-remove">- Sp</mark>e<mark class="inline-remove">nd any balance </mark>re<mark class="inline-remove">maining on your Apple Account. If you’re not sure whether or not</mark> you <mark class="inline-remove">h</mark>a<mark class="inline-remove">v</mark>e<mark class="inline-remove"> a balance, [check</mark> your Apple Account <mark class="inline-remove">b</mark>a<mark class="inline-remove">la</mark>n<mark class="inline-remove">ce](https</mark>:<mark class="inline-remove">//support.apple.com/en-us/119902) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text"><mark class="inline-add">B</mark>e<mark class="inline-add">fo</mark>re you <mark class="inline-add">upd</mark>a<mark class="inline-add">t</mark>e your Apple Account <mark class="inline-add">loc</mark>a<mark class="inline-add">tio</mark>n:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">[Ca</mark>n<mark class="inline-remove">cel</mark> any <mark class="inline-remove">subsc</mark>ri<mark class="inline-remove">pt</mark>i<mark class="inline-remove">o</mark>n<mark class="inline-remove">s](https://support.a</mark>pple<mark class="inline-remove">.</mark>c<mark class="inline-remove">om/en-us/118428) that block a </mark>count<mark class="inline-remove">ry</mark> <mark class="inline-remove">or region ch</mark>an<mark class="inline-remove">g</mark>e<mark class="inline-remove">, and wait until the end of the subscription period.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">Spe</mark>n<mark class="inline-add">d</mark> any r<mark class="inline-add">ema</mark>i<mark class="inline-add">n</mark>in<mark class="inline-add">g A</mark>pple<mark class="inline-add"> A</mark>ccount <mark class="inline-add">bal</mark>an<mark class="inline-add">c</mark>e</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Wait for </mark>an<mark class="inline-remove">y</mark> <mark class="inline-remove">member</mark>s<mark class="inline-remove">hips, pre-orders, movie rentals, or Season Passes to complete, and wait for any </mark>pending <mark class="inline-remove">s</mark>tore <mark class="inline-remove">c</mark>re<mark class="inline-remove">d</mark>i<mark class="inline-remove">t refunds to pro</mark>ce<mark class="inline-remove">s</mark>s. You can [cance<mark class="inline-remove">l a pre-order</mark>](https://support.apple.com/en-us/1184<mark class="inline-remove">14</mark>) .</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text"><mark class="inline-add">You</mark> <mark class="inline-add">c</mark>an spend<mark class="inline-add"> your remain</mark>ing <mark class="inline-add">balance on the App S</mark>tore <mark class="inline-add">o</mark>r<mark class="inline-add"> oth</mark>e<mark class="inline-add">r Apple serv</mark>ices. You can <mark class="inline-add">also buy Apple products and accessories in some countries and regions. Learn </mark>[<mark class="inline-add">what you </mark>c<mark class="inline-add">an buy with your Apple Account bal</mark>ance](https://support.apple.com/en-us/118<mark class="inline-add">2</mark>4<mark class="inline-add">5</mark>) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text"><mark class="inline-remove">- You m</mark>a<mark class="inline-remove">y be </mark>r<mark class="inline-remove">equired to e</mark>n<mark class="inline-remove">ter a valid payment method for your new country or region. [See</mark> what <mark class="inline-remove">paymen</mark>t <mark class="inline-remove">meth</mark>o<mark class="inline-remove">ds</mark> you can <mark class="inline-remove">u</mark>se](https://support.apple.com/en-us/11<mark class="inline-remove">1741</mark>) .</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text"><mark class="inline-add">Le</mark>arn what t<mark class="inline-add">o</mark> <mark class="inline-add">d</mark>o<mark class="inline-add"> [if</mark> you <mark class="inline-add">have less store </mark>c<mark class="inline-add">redit th</mark>an <mark class="inline-add">the co</mark>s<mark class="inline-add">t of a singl</mark>e<mark class="inline-add"> item</mark>](https://support.apple.com/en-us/11<mark class="inline-add">8283#balance</mark>) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">R</mark>e<mark class="inline-remove">d</mark>o<mark class="inline-remove">w</mark>n<mark class="inline-remove">load</mark> your <mark class="inline-remove">a</mark>pp<mark class="inline-remove">s, music, movies, TV shows, and books on any devices that you might use to play or read them in the future. Some types of content might not be availab</mark>le <mark class="inline-remove">in your new </mark>count<mark class="inline-remove">ry</mark> <mark class="inline-remove">or region. [Le</mark>a<mark class="inline-remove">rn what types of content </mark>an<mark class="inline-remove">d servi</mark>ce<mark class="inline-remove">s are available in your new country or region</mark>](https://support.apple.com/en-us/11<mark class="inline-remove">8</mark>2<mark class="inline-remove">05</mark>) .</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text"><mark class="inline-add">If</mark> <mark class="inline-add">you’r</mark>e<mark class="inline-add"> n</mark>o<mark class="inline-add">t sure if you have a bala</mark>n<mark class="inline-add">ce, [check</mark> your <mark class="inline-add">A</mark>pple <mark class="inline-add">Ac</mark>count <mark class="inline-add">b</mark>a<mark class="inline-add">l</mark>ance](https://support.apple.com/en-us/11<mark class="inline-add">990</mark>2) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Af</mark>t<mark class="inline-remove">er you update your Apple Account bill</mark>ing <mark class="inline-remove">add</mark>r<mark class="inline-remove">e</mark>s<mark class="inline-remove">s and payment method, you can upgrade your iCloud+ plan using</mark> th<mark class="inline-remove">e</mark> <mark class="inline-remove">pri</mark>c<mark class="inline-remove">ing</mark> <mark class="inline-remove">in your new</mark> country or region<mark class="inline-remove">.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">Cancel exis</mark>ting <mark class="inline-add">subsc</mark>r<mark class="inline-add">iption</mark>s th<mark class="inline-add">at</mark> <mark class="inline-add">blo</mark>c<mark class="inline-add">k</mark> <mark class="inline-add">a</mark> country or region<mark class="inline-add"> change</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">U</mark>s<mark class="inline-remove">e yo</mark>ur<mark class="inline-remove"> </mark>i<mark class="inline-remove">Ph</mark>on<mark class="inline-remove">e, iPad, </mark>or<mark class="inline-remove"> A</mark>pple<mark class="inline-remove"> Vi</mark>s<mark class="inline-remove">ion Pro</mark> to c<mark class="inline-remove">hange y</mark>our region</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text"><mark class="inline-add">[Cancel</mark> <mark class="inline-add">any </mark>su<mark class="inline-add">bsc</mark>ri<mark class="inline-add">pti</mark>on<mark class="inline-add">s](https://supp</mark>or<mark class="inline-add">t.a</mark>pple<mark class="inline-add">.com/en-u</mark>s<mark class="inline-add">/118428)</mark> t<mark class="inline-add">hat bl</mark>o<mark class="inline-add">ck a</mark> cou<mark class="inline-add">ntry o</mark>r region<mark class="inline-add"> change, then wait until the end of the subscription period.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">O</mark>pen<mark class="inline-remove"> the Sett</mark>ing<mark class="inline-remove">s</mark> a<mark class="inline-remove">pp.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">Wait for </mark>pen<mark class="inline-add">d</mark>ing a<mark class="inline-add">ctivity to clear</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Tap y</mark>o<mark class="inline-remove">u</mark>r n<mark class="inline-remove">a</mark>me, <mark class="inline-remove">th</mark>en tap <mark class="inline-remove">M</mark>edia <mark class="inline-remove">&amp;</mark> <mark class="inline-remove">Purchases</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text"><mark class="inline-add">Wait</mark> <mark class="inline-add">f</mark>or <mark class="inline-add">a</mark>n<mark class="inline-add">y </mark>me<mark class="inline-add">mberships</mark>, <mark class="inline-add">pre-orders, movie r</mark>en<mark class="inline-add">tals, or Season Passes</mark> t<mark class="inline-add">o complete. Also w</mark>a<mark class="inline-add">it for any </mark>p<mark class="inline-add">ending</mark> <mark class="inline-add">store-cr</mark>edi<mark class="inline-add">t refunds to process. You can [cancel </mark>a <mark class="inline-add">pre-order](https://support.apple.com/en-us/118414)</mark> .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">T</mark>a<mark class="inline-remove">p View Account. You might b</mark>e a<mark class="inline-remove">ske</mark>d to<mark class="inline-remove"> sign in.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">Prep</mark>a<mark class="inline-add">r</mark>e a<mark class="inline-add"> vali</mark>d <mark class="inline-add">paymen</mark>t<mark class="inline-add"> meth</mark>o<mark class="inline-add">d</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">You might be required to enter [a valid payment method for your new country or region](https://support.apple.com/en-us/111741) . If you don’t want to enter a payment method, wait until you&#x27;re physically in your new country or region. Then [create a new Apple Account](https://support.apple.com/en-us/108647) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">### Redownload content to your devices</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">Some types of content might not be available in your new country or region. Redownload your apps, music, movies, TV shows, and books on any devices that you might use to play or read them in the future. [Learn what types of content and services are available in your new country or region](https://support.apple.com/en-us/118205) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">## How to change your country or region</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">You can change your Apple Account location using your device or on the web.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">### On iPhone, iPad, or Apple Vision Pro</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- In Settings, tap your name.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- Tap Media &amp; Purchases. You might be asked to sign in to your Apple Account.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">- Tap Country/Region.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">- Tap Country/Region.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">- Select your new country or region.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">- Select your new country or region.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- Tap C<mark class="inline-remove">hange C</mark>o<mark class="inline-remove">u</mark>nt<mark class="inline-remove">ry or R</mark>e<mark class="inline-remove">gion</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">- Tap Cont<mark class="inline-add">inu</mark>e.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- <mark class="inline-remove">Tap your new country or region, then r</mark>eview the Terms &amp; Conditions.</code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- <mark class="inline-add">R</mark>eview the Terms &amp; Conditions<mark class="inline-add">, then tap Agree</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- <mark class="inline-remove">T</mark>ap <mark class="inline-remove">Ag</mark>ree in<mark class="inline-remove"> the upper-right c</mark>orne<mark class="inline-remove">r</mark>, then tap <mark class="inline-remove">Agree again to c</mark>on<mark class="inline-remove">firm</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">- <mark class="inline-add">Select </mark>a<mark class="inline-add"> </mark>p<mark class="inline-add">ayment</mark> <mark class="inline-add">method and ente</mark>r<mark class="inline-add"> your n</mark>e<mark class="inline-add">w paym</mark>e<mark class="inline-add">nt</mark> in<mark class="inline-add">f</mark>or<mark class="inline-add">matio</mark>n<mark class="inline-add"> and billing addr</mark>e<mark class="inline-add">ss</mark>, then tap <mark class="inline-add">D</mark>on<mark class="inline-add">e</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Select a payment method and enter your new payment informatio</mark>n a<mark class="inline-remove">nd billing address, then tap Next. You may be required to enter a valid payment method for your new </mark>c<mark class="inline-remove">ountry or region.*</mark></code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">O</mark>n <mark class="inline-add">M</mark>ac</code></div>
+<div class="diff-line previous removed"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">## Use your Mac or Windows PC to change your region</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">- Open the Apple Music app or Apple TV app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">- Open the Apple Music app or Apple TV app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- <mark class="inline-remove">O</mark>n <mark class="inline-remove">a Mac,</mark> in the menu bar, choose Account<mark class="inline-remove">, then select Account</mark> Settings. <mark class="inline-remove">O</mark>n <mark class="inline-remove">a W</mark>in<mark class="inline-remove">d</mark>o<mark class="inline-remove">ws PC, click</mark> your <mark class="inline-remove">nam</mark>e<mark class="inline-remove"> at the bottom of the sidebar, then click View My</mark> Account.</code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">- <mark class="inline-add">From the Accou</mark>n<mark class="inline-add">t</mark> <mark class="inline-add">menu</mark> in the menu bar, choose Account Settings. <mark class="inline-add">You might need to sig</mark>n in<mark class="inline-add"> t</mark>o your <mark class="inline-add">Appl</mark>e Account.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">- <mark class="inline-remove">You</mark> <mark class="inline-remove">might need to sign in to your Apple Acc</mark>ount.</code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">- <mark class="inline-add">Click</mark> <mark class="inline-add">C</mark>ount<mark class="inline-add">ry/Region</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">O</mark>n the Account <mark class="inline-remove">Informa</mark>ti<mark class="inline-remove">o</mark>n page, cli<mark class="inline-remove">ck Cha</mark>nge Country<mark class="inline-remove"> or </mark>Region.</code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text"><mark class="inline-add">[Image:</mark> <mark class="inline-add">Apple Music app o</mark>n<mark class="inline-add"> Mac showing</mark> the Account <mark class="inline-add">Set</mark>tin<mark class="inline-add">gs</mark> page, <mark class="inline-add">in</mark>cl<mark class="inline-add">ud</mark>ing<mark class="inline-add"> th</mark>e Country<mark class="inline-add">/</mark>Region<mark class="inline-add"> setting</mark>.<mark class="inline-add">]</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">[Image: Apple Music app on Mac showing the Account Settings page, including Change Country or Region.]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">- Select your new country or region.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">- Select your new country or region.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">-<mark class="inline-remove"> Review the Terms &amp; Conditions, then click Agree.</mark> Click <mark class="inline-remove">Agree aga</mark>in<mark class="inline-remove"> to confirm</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">- Click <mark class="inline-add">Cont</mark>in<mark class="inline-add">ue</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">- <mark class="inline-remove">Ent</mark>e<mark class="inline-remove">r your n</mark>ew <mark class="inline-remove">paym</mark>e<mark class="inline-remove">nt</mark> <mark class="inline-remove">info</mark>rm<mark class="inline-remove">a</mark>tion<mark class="inline-remove">* and billing addres</mark>s, then click <mark class="inline-remove">Continu</mark>e.</code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">- <mark class="inline-add">R</mark>e<mark class="inline-add">vi</mark>ew <mark class="inline-add">th</mark>e <mark class="inline-add">Te</mark>rm<mark class="inline-add">s &amp; Condi</mark>tions, then click <mark class="inline-add">Agre</mark>e.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">C</mark>han<mark class="inline-remove">g</mark>e your r<mark class="inline-remove">eg</mark>ion <mark class="inline-remove">o</mark>n the <mark class="inline-remove">w</mark>e<mark class="inline-remove">b</mark></code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">Select a payment met</mark>h<mark class="inline-add">od </mark>an<mark class="inline-add">d </mark>e<mark class="inline-add">nter</mark> your <mark class="inline-add">new payment info</mark>r<mark class="inline-add">mat</mark>ion <mark class="inline-add">a</mark>n<mark class="inline-add">d billing address,</mark> the<mark class="inline-add">n</mark> <mark class="inline-add">click Don</mark>e<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">### On Windows PC</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text">- Open the Apple Music app or Apple TV app.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">- Click your name at the bottom of the sidebar. Or, click Sign In and sign in to your Apple Account.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">- Click View My Account. You might need to sign in to your Apple Account.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text">- Click Change Country or Region.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">- Select your new country or region.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">- Review the Terms &amp; Conditions, then click Agree.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">- Select a payment method and enter your new payment information and billing address, then click Continue.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text">### On the web</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Sign in to [account.apple.com](https://account.apple.com) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">- Sign in to [account.apple.com](https://account.apple.com) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">- <mark class="inline-remove">Tap or </mark>c<mark class="inline-remove">lick</mark> Personal Information.</code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text">- <mark class="inline-add">Sele</mark>c<mark class="inline-add">t</mark> Personal Information.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">- <mark class="inline-remove">Tap or </mark>c<mark class="inline-remove">lick</mark> Country/Region.</code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">- <mark class="inline-add">Sele</mark>c<mark class="inline-add">t</mark> Country/Region.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">- Follow the onscreen instructions.<mark class="inline-remove"> You may be required to enter a valid payment method for your new country or region.*</mark></code></div>
+<div class="diff-line current added"><span class="line-number">103</span><code class="line-text">- Follow the onscreen instructions.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">## If you can’t change your country or region</code></div>
+<div class="diff-line current unchanged"><span class="line-number">105</span><code class="line-text">## If you can’t change your country or region</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text"><mark class="inline-remove">- If you can’t change your country or region, m</mark>ake sure that you canceled your subscriptions and spent your account balance<mark class="inline-remove">. [Complete these steps before you try to change your country or region</mark>](https://support.apple.com/en-us/118283#qualifications) .</code></div>
+<div class="diff-line current added"><span class="line-number">107</span><code class="line-text"><mark class="inline-add">M</mark>ake sure that you <mark class="inline-add">[</mark>canceled your subscriptions<mark class="inline-add">, waited for pending activity to clear,</mark> and spent your account balance](https://support.apple.com/en-us/118283#qualifications) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text"><mark class="inline-remove">-</mark> If you’re a part of a Family Sharing group<mark class="inline-remove">, you might not be able to change your country or region. [Learn how to leave a Family Sharing group](https://support.apple.com/en-us/102652) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">109</span><code class="line-text"><mark class="inline-add">###</mark> If you’re a part of a Family Sharing group</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">If</mark> you have l<mark class="inline-remove">ess</mark> <mark class="inline-remove">store credit t</mark>ha<mark class="inline-remove">n the cost of a s</mark>ing<mark class="inline-remove">le</mark> <mark class="inline-remove">item, [c</mark>o<mark class="inline-remove">ntact Apple S</mark>up<mark class="inline-remove">port</mark>](https://<mark class="inline-remove">get</mark>support.apple.com/<mark class="inline-remove">?call</mark>e<mark class="inline-remove">r=kba</mark>s<mark class="inline-remove">e</mark>) .</code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text"><mark class="inline-add">You</mark> <mark class="inline-add">might not be able to change</mark> you<mark class="inline-add">r country or region. [Learn</mark> h<mark class="inline-add">ow to le</mark>ave <mark class="inline-add">a Fami</mark>l<mark class="inline-add">y</mark> <mark class="inline-add">S</mark>ha<mark class="inline-add">r</mark>ing <mark class="inline-add">gr</mark>oup](https://support.apple.com/e<mark class="inline-add">n-u</mark>s<mark class="inline-add">/102652</mark>) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text"><mark class="inline-remove">*</mark> If you d<mark class="inline-remove">on’t wan</mark>t t<mark class="inline-remove">o e</mark>n<mark class="inline-remove">ter a payment method, wait until you&#x27;re physically in your new country or region,</mark> the<mark class="inline-remove">n</mark> <mark class="inline-remove">[</mark>c<mark class="inline-remove">rea</mark>t<mark class="inline-remove">e</mark> a n<mark class="inline-remove">ew App</mark>le <mark class="inline-remove">Accoun</mark>t<mark class="inline-remove">](https://support.appl</mark>e<mark class="inline-remove">.co</mark>m<mark class="inline-remove">/en-us/108647) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text"><mark class="inline-add">###</mark> If you <mark class="inline-add">have less store cre</mark>d<mark class="inline-add">i</mark>t t<mark class="inline-add">ha</mark>n the c<mark class="inline-add">os</mark>t<mark class="inline-add"> of</mark> a <mark class="inline-add">si</mark>n<mark class="inline-add">g</mark>le <mark class="inline-add">i</mark>tem</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">115</span><code class="line-text">If your balance is less than the cost of a single item in the App Store or other Apple services, [contact Apple Support](https://getsupport.apple.com/?caller=kbase) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">117</span><code class="line-text">#### If cash refunds are required by law</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">119</span><code class="line-text">You can’t redeem or return Apple Gift Cards, App Store Gift Cards, or unused Apple Account balance for cash, except as required by law. If your jurisdiction allows for refund of redeemed gift balances, you can contact Apple Support to request a refund. When you contact Apple, include the primary email address that you use to sign in to your Apple Account.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">121</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Present your driver&#x27;s license from Apple Wallet — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Present your driver&#x27;s license from Apple Wallet</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/118237">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+31 ajouts</span>
+      <span class="badge removed">−17 suppressions</span>
+      <span class="badge">4 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Present your driver&#x27;s license from Apple Wallet</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Present your driver&#x27;s license from Apple Wallet</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Use your iPhone or Apple Watch to present your eligible license or ID at select T<mark class="inline-remove">ransportation Security Administration (T</mark>SA<mark class="inline-remove">)</mark> checkpoints, businesses, and venues. You can also share your identity information in participating apps and websites.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Use your iPhone or Apple Watch to present your eligible license or ID at select TSA checkpoints, businesses, and venues. You can also share your identity information in participating apps and websites.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">To use your iPhone or Apple Watch to present your driver&#x27;s license, you need:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">To use your iPhone or Apple Watch to present your driver&#x27;s license, you need:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">- An iPhone 8 or later, or an Apple Watch Series 4 or later, with the [latest version of iOS](https://support.apple.com<mark class="inline-remove">/en-us</mark>/118575) or [watchOS](https://support.apple.com/<mark class="inline-remove">en-us/</mark>108926) .*</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">- An iPhone 8 or later, or an Apple Watch Series 4 or later, with the [latest <mark class="inline-add">compatible </mark>version of iOS](https://support.apple.com/118575) or [watchOS](https://support.apple.com/108926) .*</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">- Face ID or Touch ID and Bluetooth turned on.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">- Face ID or Touch ID and Bluetooth turned on.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">- To be signed in to your device with your Apple Account.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">- To be signed in to your device with your Apple Account.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text"><mark class="inline-remove">[L</mark>earn <mark class="inline-remove">h</mark>o<mark class="inline-remove">w</mark> <mark class="inline-remove">t</mark>o a<mark class="inline-remove">dd</mark> your dr<mark class="inline-remove">iver&#x27;s</mark> license <mark class="inline-remove">t</mark>o A<mark class="inline-remove">pp</mark>le <mark class="inline-remove">Wa</mark>ll<mark class="inline-remove">et](https://supp</mark>ort.<mark class="inline-remove">apple.com/en-us/111803)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text"><mark class="inline-add">If you use an accessibility f</mark>ea<mark class="inline-add">ture, instead of having Face ID or Touch ID tu</mark>rn<mark class="inline-add">ed</mark> o<mark class="inline-add">n,</mark> <mark class="inline-add">y</mark>o<mark class="inline-add">u</mark> <mark class="inline-add">c</mark>a<mark class="inline-add">n use</mark> your <mark class="inline-add">passco</mark>d<mark class="inline-add">e to set up and then use you</mark>r license o<mark class="inline-add">r ID.</mark> A<mark class="inline-add">ccessibi</mark>l<mark class="inline-add">ity features includ</mark>e <mark class="inline-add">Voice Contro</mark>l<mark class="inline-add">, Switch Contro</mark>l<mark class="inline-add">, </mark>or<mark class="inline-add"> Assis</mark>t<mark class="inline-add">iveTouch</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">H</mark>ow to <mark class="inline-remove">present</mark> your driver&#x27;s license <mark class="inline-remove">in</mark> per<mark class="inline-remove">s</mark>o<mark class="inline-remove">n</mark></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text"><mark class="inline-add">[Learn</mark> <mark class="inline-add">h</mark>ow to <mark class="inline-add">add</mark> your driver&#x27;s license <mark class="inline-add">to</mark> <mark class="inline-add">A</mark>p<mark class="inline-add">pl</mark>e<mark class="inline-add"> Wallet](https://suppo</mark>r<mark class="inline-add">t.apple.c</mark>o<mark class="inline-add">m/111803)</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text"><mark class="inline-remove">You</mark> <mark class="inline-remove">can add and u</mark>se your driver&#x27;s license <mark class="inline-remove">or ID </mark>in <mark class="inline-remove">A</mark>p<mark class="inline-remove">pl</mark>e<mark class="inline-remove"> Wallet </mark>on<mark class="inline-remove"> your iPhone or Apple Watch in [participating locations](https://learn.wallet.apple/id#states-list) , and at select businesses, venues, and Transportation Security Administration (TSA) checkpoints at airports in those locations.*</mark></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text"><mark class="inline-add">##</mark> <mark class="inline-add">Pre</mark>se<mark class="inline-add">nt</mark> your driver&#x27;s license in pe<mark class="inline-add">rs</mark>on</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">O</mark>n an iPhone usin<mark class="inline-remove">g Fac</mark>e<mark class="inline-remove"> ID</mark>, dou<mark class="inline-remove">bl</mark>e<mark class="inline-remove">-cli</mark>ck the <mark class="inline-remove">side butt</mark>o<mark class="inline-remove">n. On an iPhone with Touch ID, double-click the Home button. If prompted, authenti</mark>cat<mark class="inline-remove">e w</mark>i<mark class="inline-remove">th Face ID </mark>o<mark class="inline-remove">r Touch ID</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text"><mark class="inline-add">You</mark> <mark class="inline-add">ca</mark>n <mark class="inline-add">use your driver&#x27;s license or ID in Apple W</mark>a<mark class="inline-add">llet o</mark>n<mark class="inline-add"> your</mark> iPhone <mark class="inline-add">or Apple Watch in [participating locations](https://learn.wallet.apple/id#states-list) , and at select b</mark>usine<mark class="inline-add">sses</mark>, <mark class="inline-add">venues, an</mark>d<mark class="inline-add"> Transp</mark>o<mark class="inline-add">rtation Sec</mark>u<mark class="inline-add">rity Administration (TSA) ch</mark>eck<mark class="inline-add">points at airports in</mark> th<mark class="inline-add">os</mark>e <mark class="inline-add">l</mark>ocatio<mark class="inline-add">ns</mark>.<mark class="inline-add">*</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">You can also choose what type of information from your ID is shared by default. You can change these settings any time you present your ID.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- On an iPhone using Face ID, double-click the side button. On an iPhone with Touch ID, double-click the Home button. If prompted, authenticate with Face ID or Touch ID. On an Apple Watch, double-click the side button.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">- Tap your driver&#x27;s license or ID.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">- Tap your driver&#x27;s license or ID.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- If you want to change what information is presented by default, tap the Present menu and make a selection.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">- Hold the top of your iPhone or the display of your Apple Watch near the identity reader.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">- Hold the top of your iPhone or the display of your Apple Watch near the identity reader.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- <mark class="inline-remove">On the screen o</mark>f your<mark class="inline-remove"> dev</mark>i<mark class="inline-remove">ce</mark>,<mark class="inline-remove"> review</mark> the information <mark class="inline-remove">that </mark>will be shared<mark class="inline-remove">.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- <mark class="inline-add">I</mark>f you<mark class="inline-add"> selected All ID Info</mark>r<mark class="inline-add">mat</mark>i<mark class="inline-add">on</mark>, the<mark class="inline-add">n any requested</mark> information will be s<mark class="inline-add">ent to t</mark>h<mark class="inline-add">e cont</mark>a<mark class="inline-add">ctless </mark>re<mark class="inline-add">a</mark>d<mark class="inline-add">er and no additional consent is needed</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">- <mark class="inline-remove">To provide</mark> your <mark class="inline-remove">c</mark>onsen<mark class="inline-remove">t:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- <mark class="inline-add">If</mark> you<mark class="inline-add"> selected Age &amp; ID Photo and more information is needed at the reader, then the additional information being requested will appea</mark>r on<mark class="inline-add"> </mark>s<mark class="inline-add">cre</mark>en<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- If you selected With Review, you&#x27;ll see all of the information being requested on screen.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- If needed, review the information that will be shared.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">- If prompted, provide your consent:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">- On an iPhone using Face ID: Double-click the side button.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">- On an iPhone using Face ID: Double-click the side button.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">- On an Apple Watch: Double-click the side button.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">- On an Apple Watch: Double-click the side button.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">When you successfully present you<mark class="inline-remove">r license o</mark>r ID, a checkmark and Done appear on your device.</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text"><mark class="inline-add">- </mark>When you successfully present your ID, a checkmark and Done appear on your device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text"><mark class="inline-remove">To</mark> <mark class="inline-remove">use</mark> your license or ID on <mark class="inline-remove">your Apple Watc</mark>h<mark class="inline-remove"> at a TSA checkpo</mark>i<mark class="inline-remove">nt, you need </mark>to<mark class="inline-remove"> unlock </mark>y<mark class="inline-remove">our iPhone using the associated Face ID or Touch ID each time that you put on your Apple Watch</mark>.<mark class="inline-remove"> Then, you can use your license or ID without authenticating until you take the watch off again.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">If</mark> your <mark class="inline-add">settings didn&#x27;t require a review step, you&#x27;</mark>l<mark class="inline-add">l see a notification showing the information that was presented. Tap the notification to see the details, or view them in your Driver&#x27;s L</mark>icense or ID <mark class="inline-add">transacti</mark>on hi<mark class="inline-add">s</mark>to<mark class="inline-add">r</mark>y.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text"><mark class="inline-remove">Depending</mark> <mark class="inline-remove">on where you p</mark>resent your <mark class="inline-remove">l</mark>i<mark class="inline-remove">cense or ID, th</mark>er<mark class="inline-remove">e might be additional requirement</mark>s<mark class="inline-remove">. For example, when you present your</mark> license<mark class="inline-remove"> or ID to the TSA, their identity reader captures your image for comparison with the image presented</mark> from your <mark class="inline-remove">license or ID in </mark>Apple Wa<mark class="inline-remove">lle</mark>t<mark class="inline-remove">.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">P</mark>resent your <mark class="inline-add">dr</mark>i<mark class="inline-add">v</mark>er<mark class="inline-add">&#x27;</mark>s license from your Apple Wat<mark class="inline-add">ch</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">To use your license or ID on your Apple Watch, you need to unlock your iPhone using the associated Face ID or Touch ID each time that you put on your Apple Watch. Then, you can use your license or ID without authenticating until you take the watch off again.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">## Share and present your driver&#x27;s license in apps and online</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">## Share and present your driver&#x27;s license in apps and online</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">You can present your license or ID to help verify your identity information online and in participating apps and [app-clips](https://support.apple.com/guide/iphone/iphb3a73ec53) . For example, you can use your license or ID in Apple Wallet to help verify your identity when renting a car within select rental car apps.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">You can present your license or ID to help verify your identity information online and in participating apps and [app-clips](https://support.apple.com/guide/iphone/iphb3a73ec53) . For example, you can use your license or ID in Apple Wallet to help verify your identity when renting a car within select rental car apps.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">### <mark class="inline-remove">How to s</mark>hare your driver&#x27;s license in an app with your iPhone</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">### <mark class="inline-add">S</mark>hare your driver&#x27;s license in an app with your iPhone</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">- In an app or app-clip, tap the Verify with Apple Wallet or Continue with Apple Wallet button.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">- In an app or app-clip, tap the Verify with Apple Wallet or Continue with Apple Wallet button.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- On an iPhone with Touch ID: Hold your finger on the Home button.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">- On an iPhone with Touch ID: Hold your finger on the Home button.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">### <mark class="inline-remove">How to p</mark>resent your driver&#x27;s license o<mark class="inline-remove">nl</mark>i<mark class="inline-remove">n</mark>e</code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">### <mark class="inline-add">P</mark>resent your driver&#x27;s license <mark class="inline-add">t</mark>o<mark class="inline-add"> a webs</mark>i<mark class="inline-add">t</mark>e</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">- In Safari, tap Verify Identity.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">79</span><code class="line-text">- In Safari, tap Verify Identity.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">- On an iPhone with Touch ID: Hold your finger on the Home button.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">- On an iPhone with Touch ID: Hold your finger on the Home button.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">On an iPad or Mac, after you tap Verify Identity, the requested ID information will display on your nearby iPhone. Your d<mark class="inline-remove">ev</mark>i<mark class="inline-remove">ce</mark> must be signed in to the same Apple Account.</code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">On an iPad or Mac, after you tap Verify Identity, the requested ID information will display on your nearby iPhone. Your <mark class="inline-add">iPhone an</mark>d<mark class="inline-add"> your Mac or </mark>i<mark class="inline-add">Pad</mark> must be signed in to the same Apple Account.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">77</span><code class="line-text">IDs in Apple Wallet take advantage of the privacy and security features already built into iPhone and Apple Watch to help protect against tampering and theft:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">91</span><code class="line-text">IDs in Apple Wallet take advantage of the privacy and security features already built into iPhone and Apple Watch to help protect against tampering and theft:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text">- Your driver&#x27;s license <mark class="inline-remove">or</mark> ID data are encrypted.</code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">- Your driver&#x27;s license <mark class="inline-add">and</mark> ID data are encrypted.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">81</span><code class="line-text">- Neither the issuing authority nor Apple can see when and where you use your license or ID.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">- Neither the issuing authority nor Apple can see when and where you use your license or ID.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">- Biometric authentication using Face ID and Touch ID helps make sure that only you can view and use your license or ID.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">- Biometric authentication using Face ID and Touch ID helps make sure that only you can view and use your license or ID.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">85</span><code class="line-text">[Learn more about how Apple protects your personal information and identity data](https://support.apple.com/<mark class="inline-remove">en-us/</mark>118260)</code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text">[Learn more about how Apple protects your personal information and identity data](https://support.apple.com/118260)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text">* ID in Apple Wallet is available in select U.S. states and territories, and is accepted at el<mark class="inline-remove">igibl</mark>e U.S. airports and TSA checkpoints (travelers should refer to airport checkpoint signage to confirm availability), as well as at select businesses and organizations in person, in app, and online. ID in<mark class="inline-remove"> Apple</mark> Wallet re<mark class="inline-remove">q</mark>ui<mark class="inline-remove">res</mark> iPhone<mark class="inline-remove"> 8 or later with iOS 16.5 or later</mark>, or<mark class="inline-remove"> Appl</mark>e <mark class="inline-remove">W</mark>a<mark class="inline-remove">t</mark>c<mark class="inline-remove">h S</mark>e<mark class="inline-remove">ries 4 or later with watchOS 9.5 or later. For California, ID in Apple Wallet</mark> requires <mark class="inline-remove">iPhone XS or l</mark>a<mark class="inline-remove">ter with iOS 17.5 or later, or A</mark>ppl<mark class="inline-remove">e</mark> <mark class="inline-remove">Watch Serie</mark>s<mark class="inline-remove"> 4 or later with watchOS 10 or later. For Puerto Rico, ID in Apple Wallet requires iPhone XS or later with iOS 18.1 or later, or Apple Watch Series 6 or later with watchOS 11 or later. S</mark>ee [here for details](https://support.apple.com<mark class="inline-remove">/en-us</mark>/111803) . ID in Wallet is not a replacement for a physical ID which may still be needed (e.g. f<mark class="inline-remove">or use with</mark> law enforcement).<mark class="inline-remove"> Mobile ID acceptance is available at select merchants, and verifying mobile IDs with an iPhone requires a compatible third party application on iPhone XS or later with iOS 17 or later.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">* ID in Apple Wallet is available in select U.S. states and territories, and is accepted at <mark class="inline-add">s</mark>ele<mark class="inline-add">ct</mark> U.S. airports and TSA checkpoints (travelers shoul<mark class="inline-add">d check if their airport accepts mobile ID before traveling an</mark>d refer to airport checkpoint signage to confirm availability), as well as at select businesses and organizations in person, in app, and online. <mark class="inline-add">To use </mark>ID in Wallet <mark class="inline-add">o</mark>r<mark class="inline-add"> v</mark>e<mark class="inline-add">rify ID </mark>u<mark class="inline-add">s</mark>i<mark class="inline-add">ng an</mark> iPhone, <mark class="inline-add">s</mark>o<mark class="inline-add">ftwa</mark>re a<mark class="inline-add">nd devi</mark>ce require<mark class="inline-add">ment</mark>s appl<mark class="inline-add">y;</mark> see [here for details](https://support.apple.com/111803) . ID in Wallet is not a replacement for a physical ID which may still be needed (e.g.<mark class="inline-add">,</mark> <mark class="inline-add">by request o</mark>f law enforcement).</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">89</span><code class="line-text">## Need more help?</code></div>
+<div class="diff-line current unchanged"><span class="line-number">103</span><code class="line-text">## Need more help?</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

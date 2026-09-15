@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Update macOS on Mac — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Update macOS on Mac</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/108382">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+20 ajouts</span>
+      <span class="badge removed">−18 suppressions</span>
+      <span class="badge">2 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Update macOS on Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Update macOS on Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">To maintain your computer&#x27;s security, stability, and compatibility, Apple recommends using the latest macOS that is compatible with your Mac. macOS updates <mark class="inline-remove">and upgrades also </mark>include the latest features and built-in apps such as Safari, Ma<mark class="inline-remove">il</mark>, and Apple Music. Use Software Update to keep your Mac up to date.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">To maintain your computer&#x27;s security, stability, and compatibility, Apple recommends using the latest macOS that is compatible with your Mac. macOS updates include the latest features and built-in apps such as Safari, <mark class="inline-add">Notes, </mark>M<mark class="inline-add">ess</mark>a<mark class="inline-add">ges</mark>, and Apple Music. Use Software Update to keep your Mac up to date.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## Use Software Update to get updates</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## Use Software Update to get updates</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">[Image: Play the video]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">[Image: Play the video]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">Software Update finds, downloads, and installs Apple software updat<mark class="inline-remove">es and upgrad</mark>es that are compatible with your Mac model. Before installing new software, it&#x27;s a good idea to [back up your Mac](https://support.apple.com/en-us/102307) .</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">Software Update finds, downloads, and installs Apple software updates that are compatible with your Mac model. Before installing new software, it&#x27;s a good idea to [back up your Mac](https://support.apple.com/en-us/102307) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">- Open Software Update:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">- Open Software Update:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">- <mark class="inline-remove">[</mark>Use<mark class="inline-remove">](https://support.apple.com/guide/mac-help/search-with-spotlight-mchlp1008/mac)</mark> <mark class="inline-remove">[</mark>Spotlight<mark class="inline-remove">](https://supp</mark>or<mark class="inline-remove">t.apple.com/gu</mark>i<mark class="inline-remove">de/mac-help/sea</mark>r<mark class="inline-remove">ch-w</mark>i<mark class="inline-remove">th-spotlight-mchlp1008/mac)</mark> in the menu bar to search for <mark class="inline-remove">&quot;</mark>Software Update,<mark class="inline-remove">&quot;</mark> then click to open it from the search results.</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- Use Spotlight<mark class="inline-add"> </mark>or<mark class="inline-add"> S</mark>iri<mark class="inline-add"> AI</mark> in the menu bar to search for Software Update, then click to open it from the search results.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">- Or choose System Settings from the Apple menu  in the corner of your screen. In the window that opens, click General in the sidebar, then click Software Update on the right.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">- Or choose System Settings from the Apple menu  in the corner of your screen. In the window that opens, click General in the sidebar, then click Software Update on the right.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">- If your older Mac doesn’t have Software Update, [use other ways to download and install macOS](https://support.apple.com/en-us/102662) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">- If your older Mac doesn’t have Software Update, [use other ways to download and install macOS](https://support.apple.com/en-us/102662) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">-<mark class="inline-remove"> When</mark> Software Update<mark class="inline-remove"> opens, it</mark> automatically checks for new softwar<mark class="inline-remove">e. If new software is availabl</mark>e for your Mac<mark class="inline-remove">,</mark> <mark class="inline-remove">click the Update, Upgra</mark>de<mark class="inline-remove">, or Restart Now button to insta</mark>l<mark class="inline-remove">l it</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- Software Update automatically checks for <mark class="inline-add">any </mark>new<mark class="inline-add"> Apple</mark> software for your Mac <mark class="inline-add">mo</mark>del.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text"><mark class="inline-remove">[</mark>I<mark class="inline-remove">mage:</mark> <mark class="inline-remove">S</mark>oftware <mark class="inline-remove">Update </mark>i<mark class="inline-remove">n macOS Sequoia, </mark>s<mark class="inline-remove">howing an</mark> available update.<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text"><mark class="inline-add">- </mark>I<mark class="inline-add">f</mark> <mark class="inline-add">s</mark>oftware is available <mark class="inline-add">for your Mac, install it by clicking the button to </mark>update<mark class="inline-add">, upgrade, or restart now</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text"><mark class="inline-remove">- </mark>I<mark class="inline-remove">f no n</mark>e<mark class="inline-remove">w software is available for your Mac model,</mark> Software Update s<mark class="inline-remove">ays t</mark>h<mark class="inline-remove">at y</mark>o<mark class="inline-remove">ur Mac is up to date. To check aga</mark>in<mark class="inline-remove">, click Check for Update, press Command-R on your keyboard, or close</mark> an<mark class="inline-remove">d</mark> <mark class="inline-remove">reopen Softw</mark>a<mark class="inline-remove">r</mark>e <mark class="inline-remove">U</mark>pdate.</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text"><mark class="inline-add">[</mark>I<mark class="inline-add">mag</mark>e<mark class="inline-add">:</mark> Software Update<mark class="inline-add">,</mark> sho<mark class="inline-add">w</mark>in<mark class="inline-add">g</mark> an a<mark class="inline-add">vailabl</mark>e <mark class="inline-add">u</mark>pdate.<mark class="inline-add">]</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text"><mark class="inline-remove">[</mark>I<mark class="inline-remove">m</mark>a<mark class="inline-remove">g</mark>e<mark class="inline-remove">:</mark> Software Update in<mark class="inline-remove"> macOS Sequoia</mark>, <mark class="inline-remove">s</mark>ho<mark class="inline-remove">wing</mark> <mark class="inline-remove">no available u</mark>pdates.<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text"><mark class="inline-add">- </mark>I<mark class="inline-add">f no softw</mark>a<mark class="inline-add">r</mark>e<mark class="inline-add"> is available for your Mac,</mark> Software Update <mark class="inline-add">says that your Mac is up to date. To check aga</mark>in, <mark class="inline-add">click C</mark>h<mark class="inline-add">eck f</mark>o<mark class="inline-add">r</mark> <mark class="inline-add">U</mark>pdates<mark class="inline-add">, press Command-R, or close and reopen Software Update</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">[Image: Software Update showing that your Mac is up to date, because no new updates are available.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">- Before installation begins, you’re asked to enter your administrator password. It&#x27;s the password you use to log in to your Mac. [Forgot your password?](https://support.apple.com/en-us/102633)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">- Before installation begins, you’re asked to enter your administrator password. It&#x27;s the password you use to log in to your Mac. [Forgot your password?](https://support.apple.com/en-us/102633)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">- Allow installation to complete without putting your Mac to sleep or closing its lid. During installation, your Mac might restart and show a progress bar or blank screen several times.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">- Allow installation to complete without putting your Mac to sleep or closing its lid. During installation, your Mac might restart and show a progress bar or blank screen several times.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">Learn what to do [if an error occurs during installation](https://support.apple.com/en-us/102531) or [your Mac doesn’t start up all the way](https://support.apple.com/en-us/102675) .</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text"><mark class="inline-add">- </mark>Learn what to do [if an error occurs during installation](https://support.apple.com/en-us/102531) or [your Mac doesn’t start up all the way](https://support.apple.com/en-us/102675) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- If macOS installs successfully, but you later need to install it again, you can [reinstall macOS from macOS Recovery](https://support.apple.com/en-us/102655) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">## If Software Update doesn’t show an update</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">## If Software Update doesn’t show an update</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">Software Update shows only software that is compatible with your Mac model. If your Mac doesn’t need or isn&#x27;t compatible with an update<mark class="inline-remove"> or upgrade</mark>, Software Update doesn&#x27;t offer it to you and says that your Mac is up to date.</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">Software Update shows only software that is compatible with your Mac model. If your Mac doesn’t need or isn&#x27;t compatible with an update, Software Update doesn&#x27;t offer it to you and says that your Mac is up to date.<mark class="inline-add"> These are the most recent major macOS releases and the computers that can use them:</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text"><mark class="inline-remove">The</mark>s<mark class="inline-remove">e</mark> <mark class="inline-remove">a</mark>r<mark class="inline-remove">e</mark> <mark class="inline-remove">the most recent m</mark>ac<mark class="inline-remove">OS upgrades and the</mark> comp<mark class="inline-remove">u</mark>te<mark class="inline-remove">rs</mark> that <mark class="inline-remove">c</mark>an <mark class="inline-remove">use</mark> the<mark class="inline-remove">m:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text"><mark class="inline-add">I</mark>s <mark class="inline-add">you</mark>r <mark class="inline-add">M</mark>ac comp<mark class="inline-add">a</mark>t<mark class="inline-add">ibl</mark>e<mark class="inline-add"> with</mark> th<mark class="inline-add">is upd</mark>at<mark class="inline-add">e?</mark> <mark class="inline-add">| Wh</mark>a<mark class="inline-add">t’s </mark>n<mark class="inline-add">ew</mark> <mark class="inline-add">in</mark> th<mark class="inline-add">is updat</mark>e<mark class="inline-add">?</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text"><mark class="inline-remove">Is your M</mark>ac compatibl<mark class="inline-remove">e?</mark> | What’s new in <mark class="inline-remove">this </mark>macOS</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text"><mark class="inline-add">m</mark>ac<mark class="inline-add">OS 27 Golden Gate</mark> compatib<mark class="inline-add">i</mark>l<mark class="inline-add">ity</mark> | What’s new in macOS<mark class="inline-add"> 27 Golden Gate</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">macOS Tahoe 26 compatibility | What’s new in macOS Tahoe 26</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">macOS Tahoe 26 compatibility | What’s new in macOS Tahoe 26</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">macOS Sonoma 14 compatibility | What’s new in macOS Sonoma 14</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">macOS Sonoma 14 compatibility | What’s new in macOS Sonoma 14</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">macOS Ventura 13 compatibility | What’s new macOS Ventura 13</code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">macOS Ventura 13 compatibility | What’s new <mark class="inline-add">in </mark>macOS Ventura 13</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">macOS Monterey 12 compatibility | What’s new macOS Monterey 12</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">macOS Monterey 12 compatibility | What’s new <mark class="inline-add">in </mark>macOS Monterey 12</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">macOS Big Sur 11 compatibility | What’s new in macOS Big Sur 11</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">macOS Big Sur 11 compatibility | What’s new in macOS Big Sur 11</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">macOS Catalina 10.15 compatibility | What’s new macOS Catalina 10.15</code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">macOS Catalina 10.15 compatibility | What’s new <mark class="inline-add">in </mark>macOS Catalina 10.15</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">## Learn more</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">## Learn more</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text"><mark class="inline-remove">-</mark> [Use Software Update settings](https://support.apple.com/guide/mac-help/mchla7037245/mac) to control wh<mark class="inline-remove">ic</mark>h<mark class="inline-remove"> updat</mark>e<mark class="inline-remove">s</mark> your Mac downloads or installs automatically.</code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text"><mark class="inline-add">A macOS update can be a minor new release of the currently installed macOS, such as from macOS 26 to macOS 26.4, or a major new release of macOS, such as from macOS 26 to macOS 27.</mark> [Use Software Update settings](https://support.apple.com/guide/mac-help/mchla7037245/mac) to control wh<mark class="inline-add">et</mark>he<mark class="inline-add">r</mark> your Mac downloads or installs <mark class="inline-add">these updates </mark>automatically.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text"><mark class="inline-remove">- An update is a minor new release of the </mark>[<mark class="inline-remove">currently installed macOS](https://support.apple.com/en-us/109033) or other software, such as an update from macOS Tahoe 26 to macOS Tahoe 26.4. An upgrade is a major new release of macOS with a new name, such as an upgrade from macOS Sequoia 15 to macOS Tahoe 26. </mark>Learn more <mark class="inline-remove">[</mark>about Apple software updates](https://support.apple.com/en-us/125039)<mark class="inline-remove"> .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">[Learn more about Apple software updates](https://support.apple.com/en-us/125039)</code></div>
+<div class="diff-line previous removed"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">- Learn how to [reinstall the currently installed macOS](https://support.apple.com/en-us/102655) .</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

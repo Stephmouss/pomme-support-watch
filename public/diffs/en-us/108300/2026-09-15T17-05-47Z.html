@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Use your Apple Watch without your iPhone nearby — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Use your Apple Watch without your iPhone nearby</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/108300">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+64 ajouts</span>
+      <span class="badge removed">−2 suppressions</span>
+      <span class="badge">2 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 21 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">With a Wi-Fi or cellular connection, your Apple Watch can do the following things, even if your iPhone isn&#x27;t with you.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">With a Wi-Fi or cellular connection, your Apple Watch can do the following things, even if your iPhone isn&#x27;t with you.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">[Image: Phone app icon.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">[Make](https://support.apple.com/guide/watch/make-phone-calls-apdc38d7a95e/watchos) and [answer](https://support.apple.com/guide/watch/answer-phone-calls-apd32b6c5658/watchos) phone calls. 1</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">[Make](https://support.apple.com/guide/watch/make-phone-calls-apdc38d7a95e/watchos) and [answer](https://support.apple.com/guide/watch/answer-phone-calls-apd32b6c5658/watchos) phone calls. 1</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">[Image: Messages app icon.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">[Send and receive messages](https://support.apple.com/guide/watch/apd92a90f882) . 2</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">[Send and receive messages](https://support.apple.com/guide/watch/apd92a90f882) . 2</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">[Image: Siri app icon.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">[Use Siri](https://support.apple.com/guide/watch/apd02f71f945) to get directions, send iMessages, and more.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">[Use Siri](https://support.apple.com/guide/watch/apd02f71f945) to get directions, send iMessages, and more.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">[Image: Weather app icon.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">[Check the weather](https://support.apple.com/guide/watch/apd07ec24f9e) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">[Check the weather](https://support.apple.com/guide/watch/apd07ec24f9e) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">[Image: Stocks app icon.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">[Track your stocks](https://support.apple.com/guide/watch/apd9e1532a14) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">[Track your stocks](https://support.apple.com/guide/watch/apd9e1532a14) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">[Image: Home app icon.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">[Control your home](https://support.apple.com/guide/watch/apddad023a05) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">[Control your home](https://support.apple.com/guide/watch/apddad023a05) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">[Image: Find My app icon.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">[Find your friends, devices, and items](https://support.apple.com/guide/watch/apd1132106dc) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">[Find your friends, devices, and items](https://support.apple.com/guide/watch/apd1132106dc) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">[Image: Reminders app icon.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">[Set reminders](https://support.apple.com/102484) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">[Set reminders](https://support.apple.com/102484) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">[Image: Podcasts app icon.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">[Listen to podcasts](https://support.apple.com/guide/watch/apd483798d11) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">[Listen to podcasts](https://support.apple.com/guide/watch/apd483798d11) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">[<mark class="inline-remove">U</mark>s<mark class="inline-remove">e</mark> <mark class="inline-remove">Walkie-Talkie](https://support.</mark>app<mark class="inline-remove">le.</mark>co<mark class="inline-remove">m/108416) </mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">[<mark class="inline-add">Image: Mu</mark>s<mark class="inline-add">ic</mark> app<mark class="inline-add"> i</mark>co<mark class="inline-add">n</mark>.<mark class="inline-add">]</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">[Stream music](https://support.apple.com/guide/watch/apd483798d11) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">[Stream music](https://support.apple.com/guide/watch/apd483798d11) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">[Image: Maps app icon.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">[Find your way with Maps](https://support.apple.com/guide/watch/apdea7480950) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">[Find your way with Maps](https://support.apple.com/guide/watch/apdea7480950) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">[Image: Mail app icon.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">[Send](https://support.apple.com/guide/watch/apd7df390dc3) and [read](https://support.apple.com/guide/watch/apddca457a4f) email.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">[Send](https://support.apple.com/guide/watch/apd7df390dc3) and [read](https://support.apple.com/guide/watch/apddca457a4f) email.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">[Image: News app icon.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">[Read top news stories](https://support.apple.com/guide/watch/apd59a829a2f) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">[Read top news stories](https://support.apple.com/guide/watch/apd59a829a2f) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">When your Apple Watch is disconnected — for example, if you&#x27;re hiking in an area without Wi-Fi or cellular signal, or your iPhone is off — you can still do these things.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">79</span><code class="line-text">When your Apple Watch is disconnected — for example, if you&#x27;re hiking in an area without Wi-Fi or cellular signal, or your iPhone is off — you can still do these things.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text">[Image: Workout app icon.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">[Track your workouts](https://support.apple.com/101171) . 3</code></div>
+<div class="diff-line current unchanged"><span class="line-number">83</span><code class="line-text">[Track your workouts](https://support.apple.com/101171) . 3</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">[Image: World Clock, Alarms, Timers, and Stopwatch app icons.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">See the time and use the [Alarm](https://support.apple.com/guide/watch/apd27ce65478) , [Timer](https://support.apple.com/guide/watch/apdf448955b2) , and [Stopwatch](https://support.apple.com/guide/watch/apd0d5883fca) apps.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">See the time and use the [Alarm](https://support.apple.com/guide/watch/apd27ce65478) , [Timer](https://support.apple.com/guide/watch/apdf448955b2) , and [Stopwatch](https://support.apple.com/guide/watch/apd0d5883fca) apps.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">[Image: Activity app icon.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">[Track your activity goals](https://support.apple.com/108359) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">91</span><code class="line-text">[Track your activity goals](https://support.apple.com/108359) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">[Image: Photos app icon.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">63</span><code class="line-text">[Display photos](https://support.apple.com/guide/watch/apde3d82be52) from synced photo albums.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">[Display photos](https://support.apple.com/guide/watch/apde3d82be52) from synced photo albums.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">97</span><code class="line-text">[Image: Music, Podcasts, and Audiobooks app icons.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">[Play music, podcasts, or audiobooks](https://support.apple.com/guide/watch/apd483798d11) that you&#x27;ve downloaded to your watch.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">99</span><code class="line-text">[Play music, podcasts, or audiobooks](https://support.apple.com/guide/watch/apd483798d11) that you&#x27;ve downloaded to your watch.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">[Image: Wallet app icon.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">[Make purchases with Apple Pay](https://support.apple.com/kb/HT204506) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">103</span><code class="line-text">[Make purchases with Apple Pay](https://support.apple.com/kb/HT204506) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">105</span><code class="line-text">[Image: Heart Rate app icon.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">[Check your heart rate](https://support.apple.com/120277) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">107</span><code class="line-text">[Check your heart rate](https://support.apple.com/120277) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">109</span><code class="line-text">[Image: Mindfulness app icon.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">71</span><code class="line-text">[Relax and breathe mindfully](https://support.apple.com/guide/watch/apd371dfe3d7) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">111</span><code class="line-text">[Relax and breathe mindfully](https://support.apple.com/guide/watch/apd371dfe3d7) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text">[Image: Voice Memos app icon.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">[Record thoughts and ideas](https://support.apple.com/guide/watch/voice-memos-apd441786282/watchos) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">115</span><code class="line-text">[Record thoughts and ideas](https://support.apple.com/guide/watch/voice-memos-apd441786282/watchos) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">117</span><code class="line-text">[Image: Compass app icon.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">[Get your bearings with Compass](https://support.apple.com/guide/watch/apd1cd7aad2c) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">119</span><code class="line-text">[Get your bearings with Compass](https://support.apple.com/guide/watch/apd1cd7aad2c) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">121</span><code class="line-text">[Image: Noise app icon.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">77</span><code class="line-text">[Protect your hearing](https://support.apple.com/102315) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">123</span><code class="line-text">[Protect your hearing](https://support.apple.com/102315) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">125</span><code class="line-text">[Image: Cycle Tracking app icon.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">[Track your menstrual cycle](https://support.apple.com/120356) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">127</span><code class="line-text">[Track your menstrual cycle](https://support.apple.com/120356) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">129</span><code class="line-text">[Image: Sleep app icon.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">81</span><code class="line-text">[Track your sleep](https://support.apple.com/108906) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">131</span><code class="line-text">[Track your sleep](https://support.apple.com/108906) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">133</span><code class="line-text">[Image: Blood Oxygen app icon.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">[Measure your blood oxygen level](https://support.apple.com/120358) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">135</span><code class="line-text">[Measure your blood oxygen level](https://support.apple.com/120358) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">137</span><code class="line-text">[Image: ECG app icon.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">[Take an ECG](https://support.apple.com/120278) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">139</span><code class="line-text">[Take an ECG](https://support.apple.com/120278) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">141</span><code class="line-text">[Image: Calendar app icon.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">87</span><code class="line-text">[Check and update your calendar](https://support.apple.com/guide/watch/apd1b51754cc) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">143</span><code class="line-text">[Check and update your calendar](https://support.apple.com/guide/watch/apd1b51754cc) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">145</span><code class="line-text">[Image: Contacts app icon.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">89</span><code class="line-text">[View and add contacts](https://support.apple.com/guide/watch/apd8ebed6c09) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">147</span><code class="line-text">[View and add contacts](https://support.apple.com/guide/watch/apd8ebed6c09) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">149</span><code class="line-text">[Image: Medications app icon.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">[Track your medications](https://support.apple.com/105064) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">151</span><code class="line-text">[Track your medications](https://support.apple.com/105064) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">[<mark class="inline-remove">Cr</mark>e<mark class="inline-remove">ate</mark> <mark class="inline-remove">and view n</mark>otes<mark class="inline-remove">](https://support.</mark>app<mark class="inline-remove">le.</mark>co<mark class="inline-remove">m/guide/watch/create-a</mark>n<mark class="inline-remove">d-view-notes-apdc6fb0a03f/watchos) </mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">153</span><code class="line-text">[<mark class="inline-add">Imag</mark>e<mark class="inline-add">:</mark> <mark class="inline-add">N</mark>otes<mark class="inline-add"> </mark>app<mark class="inline-add"> i</mark>con.<mark class="inline-add">]</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">155</span><code class="line-text">[Create and view notes.](https://support.apple.com/guide/watch/create-and-view-notes-apdc6fb0a03f/watchos)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">95</span><code class="line-text">Not all features are available on all Apple Watch models. Also, not all features are available in all countries or regions.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">157</span><code class="line-text">Not all features are available on all Apple Watch models. Also, not all features are available in all countries or regions.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

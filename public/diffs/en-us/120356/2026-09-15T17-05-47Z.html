@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Track your period with Cycle Tracking — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Track your period with Cycle Tracking</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/120356">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+37 ajouts</span>
+      <span class="badge removed">−12 suppressions</span>
+      <span class="badge">10 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Track your period with Cycle Tracking</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Track your period with Cycle Tracking</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text"><mark class="inline-remove">Y</mark>o<mark class="inline-remove">u</mark> <mark class="inline-remove">can</mark> track your menstrual cycle to help get a better picture of your health.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text"><mark class="inline-add">Learn h</mark>o<mark class="inline-add">w</mark> <mark class="inline-add">to</mark> track your menstrual cycle to help get a better picture of your health.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text"><mark class="inline-remove">[Image: The Heal</mark>th<mark class="inline-remove"> app and</mark> Cycle Tracking a<mark class="inline-remove">pp ico</mark>n<mark class="inline-remove">s.]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text"><mark class="inline-add">Wi</mark>th Cycle Tracking<mark class="inline-add">,</mark> <mark class="inline-add">you c</mark>an<mark class="inline-add">:</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text"><mark class="inline-remove">You</mark> <mark class="inline-remove">can t</mark>rack your menstrual cycle in the [Health app](https://support.apple.com/en-us/104997) on your iPhone or the Cycle Tracking app on your Apple Watch.<mark class="inline-remove"> And you can turn on notifications to tell you when your next period or fertile window is approaching. You can also [log a pregnancy](https://support.apple.com/en-us/120075) to track gestational age and receive a variety of health notifications and recommendations to review throughout your pregnancy.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">T</mark>rack your menstrual cycle in the [Health app](https://support.apple.com/en-us/104997) on your iPhone<mark class="inline-add">,</mark> or<mark class="inline-add"> in</mark> the Cycle Tracking app on your Apple Watch.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">- Turn on notifications to tell you when your next period or fertile window is approaching.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">- [Log a pregnancy](https://support.apple.com/en-us/120075) to track gestational age and receive a variety of health notifications and recommendations to review throughout your pregnancy.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- Set up menopause stage tracking in the Health app on your iPhone, then log symptoms and other information on your iPhone or Apple Watch.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">[Learn how the Health app is designed to protect your information](https://support.apple.com/en-us/120356#data)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">[Learn how the Health app is designed to protect your information](https://support.apple.com/en-us/120356#data)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">- On your iPhone or iPad, open the Health app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">- On your iPhone or iPad, open the Health app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- If you&#x27;re on your iPhone, tap <mark class="inline-remove">S</mark>ea<mark class="inline-remove">rch </mark>. If you&#x27;re on your iPad, tap sidebar to open the sidebar.</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">- If you&#x27;re on your iPhone, tap <mark class="inline-add">th</mark>e<mark class="inline-add"> Browse t</mark>a<mark class="inline-add">b</mark>. If you&#x27;re on your iPad, tap <mark class="inline-add">the </mark>sidebar<mark class="inline-add"> button</mark> to open the sidebar.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">- Tap Cycle Tracking.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">- Tap Cycle Tracking.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">- On your iPhone or iPad, open the Health app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">- On your iPhone or iPad, open the Health app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- If you&#x27;re on your iPhone, tap <mark class="inline-remove">S</mark>ea<mark class="inline-remove">rch </mark>. If you&#x27;re on your iPad, tap sidebar to open the sidebar.</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- If you&#x27;re on your iPhone, tap <mark class="inline-add">th</mark>e<mark class="inline-add"> Browse t</mark>a<mark class="inline-add">b</mark>. If you&#x27;re on your iPad, tap <mark class="inline-add">the </mark>sidebar<mark class="inline-add"> button</mark> to open the sidebar.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">- Tap Cycle Tracking.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">- Tap Cycle Tracking.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">- On your iPhone or iPad, open the Health app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">- On your iPhone or iPad, open the Health app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- If you&#x27;re on your iPhone, tap <mark class="inline-remove">S</mark>ea<mark class="inline-remove">rch </mark>. If you&#x27;re on your iPad, tap sidebar to open the sidebar.</code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">- If you&#x27;re on your iPhone, tap <mark class="inline-add">th</mark>e<mark class="inline-add"> Browse t</mark>a<mark class="inline-add">b</mark>. If you&#x27;re on your iPad, tap <mark class="inline-add">the </mark>sidebar<mark class="inline-add"> button</mark> to open the sidebar.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">- Tap Cycle Tracking.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">- Tap Cycle Tracking.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">- Under the Your Cycles section, tap Factors.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">- Under the Your Cycles section, tap Factors.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">- Tap the plus sign in the upper corner, then select Pregnancy, Lactation, or Contraceptive. Learn how to [log a pregnancy in the Health app](https://support.apple.com/en-us/120075) .</code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- Tap the plus sig<mark class="inline-add">n butto</mark>n in the upper corner, then select Pregnancy, Lactation, or Contraceptive. Learn how to [log a pregnancy in the Health app](https://support.apple.com/en-us/120075) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">- Enter a start date for the factor and tap Done.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">- Enter a start date for the factor and tap Done.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">If a factor was added incorrectly, tap the factor and tap Delete Factor From Health to remove it.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">If a factor was added incorrectly, tap the factor and tap Delete Factor From Health to remove it.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">To end a factor, tap the factor and tap Ended. Enter an end date and tap Done. You can tap Show All Factors to see a history of your previous factors.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">To end a factor, tap the factor and tap Ended. Enter an end date and tap Done. You can tap Show All Factors to see a history of your previous factors.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">### Track menopause stages</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">- On your iPhone or iPad, open the Health app.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">- If you&#x27;re on your iPhone, tap the Browse tab. If you&#x27;re on your iPad, tap the sidebar button to open the sidebar.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">- Tap Cycle Tracking.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">- Tap Menopause Stages.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">- Tap the plus sign button in the upper corner.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">- Tap Next, then follow the onscreen steps to set up perimenopause or menopause stages.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">Learn more about [tracking your perimenopause and menopause stages](https://support.apple.com/guide/watch/pym0x6ny1te5) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">### What the colors mean</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">### What the colors mean</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 35 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">97</span><code class="line-text">- On your iPhone or iPad, open the Health app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">119</span><code class="line-text">- On your iPhone or iPad, open the Health app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text">- If you&#x27;re on your iPhone, tap <mark class="inline-remove">S</mark>ea<mark class="inline-remove">rch </mark>. If you&#x27;re on your iPad, tap sidebar to open the sidebar.</code></div>
+<div class="diff-line current added"><span class="line-number">121</span><code class="line-text">- If you&#x27;re on your iPhone, tap <mark class="inline-add">th</mark>e<mark class="inline-add"> Browse t</mark>a<mark class="inline-add">b</mark>. If you&#x27;re on your iPad, tap <mark class="inline-add">the </mark>sidebar<mark class="inline-add"> button</mark> to open the sidebar.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">101</span><code class="line-text">- Tap Cycle Tracking.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">123</span><code class="line-text">- Tap Cycle Tracking.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">113</span><code class="line-text">- On your iPhone or iPad, open the Health app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">135</span><code class="line-text">- On your iPhone or iPad, open the Health app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">115</span><code class="line-text">- If you&#x27;re on your iPhone, tap <mark class="inline-remove">S</mark>ea<mark class="inline-remove">rch </mark>. If you&#x27;re on your iPad, tap sidebar to open the sidebar.</code></div>
+<div class="diff-line current added"><span class="line-number">137</span><code class="line-text">- If you&#x27;re on your iPhone, tap <mark class="inline-add">th</mark>e<mark class="inline-add"> Browse t</mark>a<mark class="inline-add">b</mark>. If you&#x27;re on your iPad, tap <mark class="inline-add">the </mark>sidebar<mark class="inline-add"> button</mark> to open the sidebar.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">117</span><code class="line-text">- Tap Cycle Tracking.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">139</span><code class="line-text">- Tap Cycle Tracking.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">125</span><code class="line-text">- Turn on Fertile Window Estimates and Fertility Notifications. These notifications can let you know when your fertile window is likely to start.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">147</span><code class="line-text">- Turn on Fertile Window Estimates and Fertility Notifications. These notifications can let you know when your fertile window is likely to start.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">127</span><code class="line-text">[Image: An iPhone that shows the options for Cycle Tracking such as Period Predictions and<mark class="inline-remove"> Fertility Notifications.]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">149</span><code class="line-text">[Image: An iPhone that shows the options for Cycle Tracking such as Period Predictions and</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">150</span><code class="line-text">Fertility Notifications.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">151</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">129</span><code class="line-text">Predictions begin after you enter your last period in the Cycle Tracking app and are based on logged data. If you log a period before it&#x27;s predicted to begin, you won&#x27;t get a period prediction notification for that cycle. Notifications appear on your Apple Watch and iPhone, depending on what you&#x27;re using.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">152</span><code class="line-text">Predictions begin after you enter your last period in the Cycle Tracking app and are based on logged data. If you log a period before it&#x27;s predicted to begin, you won&#x27;t get a period prediction notification for that cycle. Notifications appear on your Apple Watch and iPhone, depending on what you&#x27;re using.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">153</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">165</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">143</span><code class="line-text">In addition to the information you’ve logged for previous periods and cycle length, Health can use heart rate data from your Apple Watch to improve your Cycle Tracking predictions. 2 Using heart rate data from Apple Watch to improve predictions is on by default, but you can turn it off at any time.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">166</span><code class="line-text">In addition to the information you’ve logged for previous periods and cycle length, Health can use heart rate data from your Apple Watch to improve your Cycle Tracking predictions. 2 Using heart rate data from Apple Watch to improve predictions is on by default, but you can turn it off at any time.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">167</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">145</span><code class="line-text">- On your iPhone, open the Health app and tap <mark class="inline-remove">S</mark>ea<mark class="inline-remove">rch </mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">168</span><code class="line-text">- On your iPhone, open the Health app and tap <mark class="inline-add">th</mark>e<mark class="inline-add"> Browse t</mark>a<mark class="inline-add">b</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">169</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">147</span><code class="line-text">- Tap Cycle Tracking.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">170</span><code class="line-text">- Tap Cycle Tracking.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">171</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 4 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">153</span><code class="line-text">## About cycle deviations</code></div>
+<div class="diff-line current unchanged"><span class="line-number">176</span><code class="line-text">## About cycle deviations</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">177</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">155</span><code class="line-text">Cycle Tracking can inform you if your logged cycle history from the previous six months shows a pattern of irregular cycles, infrequent periods, prolonged periods, or persistent spotting. If you receive an alert or notification about a possible cycle deviation, you’ll be able to review your logged cycle history. If it’s accurate, you’ll be able to learn about the cycle deviation detected and export the last 12 months of your cycle history as a PDF to share with your healthcare provider. When you have a recent or ongoing cycle factor logged, cycle deviation detection is turned off automatically.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">178</span><code class="line-text">Cycle Tracking can inform you if your logged cycle history from the previous six months shows a pattern of irregular cycles, infrequent periods, prolonged periods, or persistent spotting. If you receive an alert or notification about a possible cycle deviation, you’ll be able to review your logged cycle history. If it’s accurate, you’ll be able to learn about the cycle deviation detected and export the last 12 months of your cycle history as a PDF to share with your healthcare provider. When you have a recent or ongoing cycle factor logged, cycle deviation detection is turned off automatically.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">179</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">180</span><code class="line-text">Users 40 and older might receive a cycle deviation notification if their logged cycle patterns are suggestive of perimenopause or other underlying conditions.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">181</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">157</span><code class="line-text">## How to hide the Cycle Tracking app</code></div>
+<div class="diff-line current unchanged"><span class="line-number">182</span><code class="line-text">## How to hide the Cycle Tracking app</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">183</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 15 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">199</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">175</span><code class="line-text">- On your iPhone, open the Health app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">200</span><code class="line-text">- On your iPhone, open the Health app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">201</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">177</span><code class="line-text">- Tap <mark class="inline-remove">S</mark>ea<mark class="inline-remove">rch </mark>, then tap Cycle Tracking.</code></div>
+<div class="diff-line current added"><span class="line-number">202</span><code class="line-text">- Tap <mark class="inline-add">th</mark>e<mark class="inline-add"> Browse t</mark>a<mark class="inline-add">b</mark>, then tap Cycle Tracking.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">203</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">179</span><code class="line-text">- Tap View Cycle Tracking Items.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">204</span><code class="line-text">- Tap View Cycle Tracking Items.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">205</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 29 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

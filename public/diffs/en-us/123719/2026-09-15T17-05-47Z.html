@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Use your Digital ID in Apple Wallet — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Use your Digital ID in Apple Wallet</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/123719">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+24 ajouts</span>
+      <span class="badge removed">−10 suppressions</span>
+      <span class="badge">6 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">To create and present your Digital ID, you need * :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">To create and present your Digital ID, you need * :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">- An iPhone 11 or later, or an Apple Watch Series 6 or later, with the [latest version of iOS](https://support.apple.com/118575) or [watchOS](https://support.apple.com/108926) .</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">- An iPhone 11 or later, or an Apple Watch Series 6 or later, with the [latest<mark class="inline-add"> compatible</mark> version of iOS](https://support.apple.com/118575) or [watchOS](https://support.apple.com/108926) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">- Face ID or Touch ID and Bluetooth turned on.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">- Face ID or Touch ID and Bluetooth turned on.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">Digital ID is derived from your government-issued passport, but it is not a government-issued passport nor a replacement for a physical passport. A Digital ID can&#x27;t be used for international travel and border crossing instead of a passport.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">Digital ID is derived from your government-issued passport, but it is not a government-issued passport nor a replacement for a physical passport. A Digital ID can&#x27;t be used for international travel and border crossing instead of a passport.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">I<mark class="inline-remove">f</mark> you<mark class="inline-remove"> don&#x27;t have a</mark> U.S. passport to create your Digital ID, you can [add an eligible driver&#x27;s license to Apple Wallet](https://support.apple.com/111803) .</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">I<mark class="inline-add">n addition to using</mark> you<mark class="inline-add">r</mark> U.S. passport to create your Digital ID, you can [add an eligible driver&#x27;s license to Apple Wallet](https://support.apple.com/111803) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">## Create a Digital ID on your iPhone and Apple Watch</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">## Create a Digital ID on your iPhone and Apple Watch</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 37 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">Your Digital ID can be presented at TSA checkpoints for identity verification purposes prior to boarding domestic flights and at select businesses and organizations to verify your age or identity in person, apps, and online.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">Your Digital ID can be presented at TSA checkpoints for identity verification purposes prior to boarding domestic flights and at select businesses and organizations to verify your age or identity in person, apps, and online.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text"><mark class="inline-remove">###</mark> <mark class="inline-remove">Pre</mark>sent your Digital ID at <mark class="inline-remove">TSA</mark> che<mark class="inline-remove">ckpo</mark>ints</code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text"><mark class="inline-add">You</mark> <mark class="inline-add">can also choo</mark>se<mark class="inline-add"> what type of i</mark>n<mark class="inline-add">forma</mark>t<mark class="inline-add">ion from</mark> your Digital ID <mark class="inline-add">is sh</mark>a<mark class="inline-add">red by defaul</mark>t<mark class="inline-add">.</mark> <mark class="inline-add">You can</mark> ch<mark class="inline-add">ang</mark>e<mark class="inline-add"> these sett</mark>in<mark class="inline-add">gs any </mark>t<mark class="inline-add">ime you pre</mark>s<mark class="inline-add">ent your ID.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">On an i</mark>P<mark class="inline-remove">hon</mark>e<mark class="inline-remove"> u</mark>s<mark class="inline-remove">ing Face ID, double-click the side button. On an iPhone with Touch ID, double-click the Home button. If prompted, auth</mark>enti<mark class="inline-remove">cate w</mark>it<mark class="inline-remove">h F</mark>a<mark class="inline-remove">ce</mark> ID o<mark class="inline-remove">r Touch ID.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text"><mark class="inline-add">###</mark> P<mark class="inline-add">r</mark>esent<mark class="inline-add"> your D</mark>i<mark class="inline-add">g</mark>ita<mark class="inline-add">l</mark> ID <mark class="inline-add">in pers</mark>o<mark class="inline-add">n</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">- On an iPhone using Face ID, double-click the side button. On an iPhone with Touch ID, double-click the Home button. If prompted, authenticate with Face ID or Touch ID. On an Apple Watch, double-click the side button.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">- Tap your Digital ID.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">77</span><code class="line-text">- Tap your Digital ID.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">- If you want to change what information is presented by default, tap the Present menu and make a selection.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">77</span><code class="line-text">- Hold the top of your iPhone or the display of your Apple Watch near the identity reader.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">- Hold the top of your iPhone or the display of your Apple Watch near the identity reader.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text">- <mark class="inline-remove">On the screen o</mark>f your<mark class="inline-remove"> dev</mark>i<mark class="inline-remove">ce</mark>,<mark class="inline-remove"> review</mark> the information <mark class="inline-remove">that </mark>will be shared<mark class="inline-remove">.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">- <mark class="inline-add">I</mark>f you<mark class="inline-add"> selected All ID Info</mark>r<mark class="inline-add">mat</mark>i<mark class="inline-add">on</mark>, the<mark class="inline-add">n any requested</mark> information will be s<mark class="inline-add">ent to t</mark>h<mark class="inline-add">e cont</mark>a<mark class="inline-add">ctless </mark>re<mark class="inline-add">a</mark>d<mark class="inline-add">er and no additional consent is needed</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">- <mark class="inline-remove">To provide</mark> your <mark class="inline-remove">c</mark>onsen<mark class="inline-remove">t:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">- <mark class="inline-add">If</mark> you<mark class="inline-add"> selected Age &amp; ID Photo and more information is needed at the reader, then the additional information being requested will appea</mark>r on<mark class="inline-add"> </mark>s<mark class="inline-add">cre</mark>en<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text">- If you selected With Review, you&#x27;ll see all of the information being requested on screen.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">- If needed, review the information that will be shared.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">- If prompted, provide your consent:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">- On an iPhone using Face ID: Double-click the side button.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">93</span><code class="line-text">- On an iPhone using Face ID: Double-click the side button.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">87</span><code class="line-text">- On an Apple Watch: Double-click the side button.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">- On an Apple Watch: Double-click the side button.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text">When you successfully present your Digital ID, a checkmark and Done appear on your device.</code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text"><mark class="inline-add">- </mark>When you successfully present your Digital ID, a checkmark and Done appear on your device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text"><mark class="inline-remove">D</mark>epen<mark class="inline-remove">d</mark>ing on w<mark class="inline-remove">here you</mark> present <mark class="inline-remove">your Digit</mark>a<mark class="inline-remove">l ID,</mark> the<mark class="inline-remove">re</mark> <mark class="inline-remove">m</mark>i<mark class="inline-remove">ght be </mark>a<mark class="inline-remove">ddi</mark>tional <mark class="inline-remove">requirements. F</mark>or e<mark class="inline-remove">xample,</mark> <mark class="inline-remove">w</mark>hen<mark class="inline-remove"> you present</mark> your Digital ID t<mark class="inline-remove">o the TSA, thei</mark>r<mark class="inline-remove"> ide</mark>nti<mark class="inline-remove">ty reader captures your image for comparis</mark>on <mark class="inline-remove">w</mark>it<mark class="inline-remove">h the image p</mark>r<mark class="inline-remove">esented from </mark>y<mark class="inline-remove">our Digital ID</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text"><mark class="inline-add">- If your settings didn&#x27;t require a review st</mark>ep<mark class="inline-add">, you&#x27;ll s</mark>e<mark class="inline-add">e a </mark>n<mark class="inline-add">otification show</mark>ing <mark class="inline-add">the informati</mark>on <mark class="inline-add">that </mark>w<mark class="inline-add">as</mark> present<mark class="inline-add">ed.</mark> <mark class="inline-add">T</mark>a<mark class="inline-add">p</mark> the <mark class="inline-add">not</mark>i<mark class="inline-add">fic</mark>ation<mark class="inline-add"> to see the det</mark>a<mark class="inline-add">i</mark>l<mark class="inline-add">s,</mark> or <mark class="inline-add">vi</mark>e<mark class="inline-add">w</mark> <mark class="inline-add">t</mark>he<mark class="inline-add">m i</mark>n your Digital ID tr<mark class="inline-add">a</mark>n<mark class="inline-add">sac</mark>tion <mark class="inline-add">h</mark>i<mark class="inline-add">s</mark>t<mark class="inline-add">o</mark>ry.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">103</span><code class="line-text">### Present your Digital ID from your Apple Watch</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">105</span><code class="line-text">To use your Digital ID on your Apple Watch at a TSA checkpoint, you need to unlock your iPhone using the associated Face ID or Touch ID each time that you put on your Apple Watch. Then, you can use your ID without authenticating until you take the watch off again.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">93</span><code class="line-text">### Present your Digital ID in apps for identity verification</code></div>
+<div class="diff-line current unchanged"><span class="line-number">107</span><code class="line-text">### Present your Digital ID in apps for identity verification</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">103</span><code class="line-text">- On an iPhone with Touch ID: Hold your finger on the Home button.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">117</span><code class="line-text">- On an iPhone with Touch ID: Hold your finger on the Home button.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">105</span><code class="line-text">### Present your Digital ID o<mark class="inline-remove">nl</mark>i<mark class="inline-remove">n</mark>e</code></div>
+<div class="diff-line current added"><span class="line-number">119</span><code class="line-text">### Present your Digital ID <mark class="inline-add">t</mark>o<mark class="inline-add"> a webs</mark>i<mark class="inline-add">t</mark>e</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">107</span><code class="line-text">- In Safari, tap Verify Identity.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">121</span><code class="line-text">- In Safari, tap Verify Identity.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">115</span><code class="line-text">- On an iPhone with Touch ID: Hold your finger on the Home button.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">129</span><code class="line-text">- On an iPhone with Touch ID: Hold your finger on the Home button.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">117</span><code class="line-text">On an iPad or Mac, after you tap Verify Identity, the requested ID information will display on your nearby iPhone. Your d<mark class="inline-remove">ev</mark>i<mark class="inline-remove">ce</mark> must be signed in to the same Apple Account.</code></div>
+<div class="diff-line current added"><span class="line-number">131</span><code class="line-text">On an iPad or Mac, after you tap Verify Identity, the requested ID information will display on your nearby iPhone. Your <mark class="inline-add">iPhone an</mark>d<mark class="inline-add"> your Mac or </mark>i<mark class="inline-add">Pad</mark> must be signed in to the same Apple Account.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">119</span><code class="line-text">When you successfully present your Digital ID, a checkmark and Done will appear on your device.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">133</span><code class="line-text">When you successfully present your Digital ID, a checkmark and Done will appear on your device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>If tap gestures aren&#x27;t working on your Apple Watch — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>If tap gestures aren&#x27;t working on your Apple Watch</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/108413">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+21 ajouts</span>
+      <span class="badge removed">−13 suppressions</span>
+      <span class="badge">4 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous removed"><span class="line-number">1</span><code class="line-text"># If <mark class="inline-remove">double </mark>tap <mark class="inline-remove">i</mark>sn&#x27;t working on your Apple Watch</code></div>
+<div class="diff-line current added"><span class="line-number">1</span><code class="line-text"># If tap <mark class="inline-add">ge</mark>s<mark class="inline-add">tures are</mark>n&#x27;t working on your Apple Watch</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Try these tips if the double tap gesture isn&#x27;t working on your Apple Watch Series 9 or later, Apple Watch Ultra 2 or later, or Apple Watch SE 3.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Try these tips if the doub<mark class="inline-add">le tap or sing</mark>le tap gesture isn&#x27;t working on your Apple Watch Series 9 or later, Apple Watch Ultra 2 or later, or Apple Watch SE 3.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## If your watch doesn&#x27;t recognize the gesture</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## If your watch doesn&#x27;t recognize the gesture</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Ma</mark>ke s<mark class="inline-remove">ur</mark>e <mark class="inline-remove">double</mark> t<mark class="inline-remove">ap is on: op</mark>e<mark class="inline-remove">n</mark> Settings, <mark class="inline-remove">tap</mark> <mark class="inline-remove">Gestures,</mark> the<mark class="inline-remove">n</mark> <mark class="inline-remove">ta</mark>p<mark class="inline-remove"> Doub</mark>le <mark class="inline-remove">T</mark>ap<mark class="inline-remove">.*</mark></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text"><mark class="inline-add">First,</mark> <mark class="inline-add">chec</mark>k<mark class="inline-add"> thes</mark>e se<mark class="inline-add">ttings</mark> <mark class="inline-add">in</mark> t<mark class="inline-add">h</mark>e Settings<mark class="inline-add"> app on your Apple Watch</mark>, <mark class="inline-add">or</mark> <mark class="inline-add">in</mark> the <mark class="inline-add">A</mark>p<mark class="inline-add">p</mark>le <mark class="inline-add">Watch </mark>ap<mark class="inline-add">p on your iPhone:</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">- <mark class="inline-remove">M</mark>ake sure <mark class="inline-remove">Wri</mark>st<mark class="inline-remove"> D</mark>e<mark class="inline-remove">tection</mark> is on<mark class="inline-remove">: open Settings, then tap Passcode</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">- <mark class="inline-add">Select Gestures, then m</mark>ake sure <mark class="inline-add">Ge</mark>st<mark class="inline-add">ur</mark>e<mark class="inline-add">s</mark> is <mark class="inline-add">turned </mark>on.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">- <mark class="inline-remove">M</mark>ake sure <mark class="inline-remove">W</mark>a<mark class="inline-remove">k</mark>e<mark class="inline-remove"> on Wri</mark>st<mark class="inline-remove"> Rai</mark>s<mark class="inline-remove">e</mark> is on<mark class="inline-remove">: open Settings, then tap Display &amp; Brightness</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">- <mark class="inline-add">Select Gestures, select Tap Gestures, then m</mark>ake sure <mark class="inline-add">T</mark>a<mark class="inline-add">p G</mark>est<mark class="inline-add">ure</mark>s is <mark class="inline-add">turned </mark>on.<mark class="inline-add">*</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">- <mark class="inline-remove">M</mark>ake sure <mark class="inline-remove">Low</mark> <mark class="inline-remove">Pow</mark>e<mark class="inline-remove">r Mode , Sleep Focus , Thea</mark>te<mark class="inline-remove">r</mark> <mark class="inline-remove">Mode , and Water Lock are</mark> turned o<mark class="inline-remove">ff i</mark>n<mark class="inline-remove"> [Control Center](https://support</mark>.<mark class="inline-remove">apple.com/guide/watch/use-control-center-apd06bc15da1/watchos) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- <mark class="inline-add">Select Passcode, then m</mark>ake sure <mark class="inline-add">Wrist</mark> <mark class="inline-add">D</mark>ete<mark class="inline-add">ction</mark> <mark class="inline-add">is</mark> turned on.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- Select Display &amp; Brightness, then make sure Wrist Detection is on.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">Next, try these tips:</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- Make sure Low Power Mode , Sleep Focus , Theater Mode , and Water Lock are turned off in [Control Center](https://support.apple.com/guide/watch/use-control-center-apd06bc15da1/watchos) on your watch.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">[Image: Low Power Mode]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">[Image: Low Power Mode]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">- Raise your wrist to wake the screen before trying the gesture.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">- Raise your wrist to wake the screen before trying the gesture.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- Tap your index finger and thumb together twice, at the same pace as double clicking a mouse.</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- T<mark class="inline-add">o double tap, t</mark>ap your index finger and thumb together twice, at the same pace as double clicking a mouse.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">- T<mark class="inline-remove">ry</mark> <mark class="inline-remove">doub</mark>le tap <mark class="inline-remove">wh</mark>i<mark class="inline-remove">l</mark>e <mark class="inline-remove">sitt</mark>ing<mark class="inline-remove"> o</mark>r <mark class="inline-remove">st</mark>and<mark class="inline-remove">i</mark>n<mark class="inline-remove">g still</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- T<mark class="inline-add">o</mark> <mark class="inline-add">sing</mark>le tap<mark class="inline-add">,</mark> <mark class="inline-add">tap your </mark>i<mark class="inline-add">nd</mark>e<mark class="inline-add">x</mark> <mark class="inline-add">f</mark>ing<mark class="inline-add">e</mark>r and<mark class="inline-add"> thumb together o</mark>n<mark class="inline-add">ce</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- Try tap gestures while sitting or standing still.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">- If you have a tattoo on the wrist where you wear your watch, try wearing it on the other wrist.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">- If you have a tattoo on the wrist where you wear your watch, try wearing it on the other wrist.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">- Make sure your watch wasn&#x27;t set up using [Apple Watch For Your Kids](https://support.apple.com/109036) (formerly known as Family Setup).</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">- Make sure your watch wasn&#x27;t set up using [Apple Watch For Your Kids](https://support.apple.com/109036) (formerly known as Family Setup).</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">*You can&#x27;t turn on <mark class="inline-remove">double </mark>tap when these accessibility settings are on: AssistiveTouch, Quick Actions, Zoom with Hand Gestures, or VoiceOver with Hand Gestures.</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">*You can&#x27;t turn on tap<mark class="inline-add"> gestures</mark> when these accessibility settings are on: AssistiveTouch, Quick Actions, Zoom with Hand Gestures, or VoiceOver with Hand Gestures.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">## If <mark class="inline-remove">the double</mark> tap gesture happens unintentionally</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">## If <mark class="inline-add">a</mark> tap gesture happens unintentionally</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">Some activities might evoke the gesture when you didn&#x27;t mean to. Open Settings, tap Gestures<mark class="inline-remove">,</mark> t<mark class="inline-remove">ap D</mark>o<mark class="inline-remove">uble Tap, then</mark> turn off<mark class="inline-remove"> Double Tap</mark>. When you&#x27;re finished with the activity, turn <mark class="inline-remove">do</mark>u<mark class="inline-remove">bl</mark>e<mark class="inline-remove"> tap</mark> back on.</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">Some activities might evoke the gesture when you didn&#x27;t mean to. Open Settings, <mark class="inline-add">select Gestures, then </mark>tap Gestures to turn <mark class="inline-add">the feature </mark>off. When you&#x27;re finished with the activity, turn <mark class="inline-add">gest</mark>u<mark class="inline-add">r</mark>e<mark class="inline-add">s</mark> back on.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">## If the double tap icon shakes</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">## If the double tap icon shakes</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 23 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">- Switch flashlight modes</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">- Switch flashlight modes</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text"><mark class="inline-remove">Do</mark>u<mark class="inline-remove">bl</mark>e <mark class="inline-remove">t</mark>a<mark class="inline-remove">p is</mark>n&#x27;t available while using the Depth app or taking an ECG.</code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text"><mark class="inline-add">Gest</mark>u<mark class="inline-add">r</mark>e<mark class="inline-add">s</mark> a<mark class="inline-add">re</mark>n&#x27;t available while using the Depth app or taking an ECG.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">## If you need more help</code></div>
+<div class="diff-line current unchanged"><span class="line-number">77</span><code class="line-text">## If you need more help</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">- [Restart your Apple Watch](https://support.apple.com/guide/watch/apd521a8a902/) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">- [Restart your Apple Watch](https://support.apple.com/guide/watch/apd521a8a902/) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">- Open Settings, t<mark class="inline-remove">ap</mark> Gestures, then tap <mark class="inline-remove">Doubl</mark>e<mark class="inline-remove"> Tap. T</mark>ur<mark class="inline-remove">n off Doubl</mark>e<mark class="inline-remove"> Tap,</mark> t<mark class="inline-remove">hen</mark> turn it o<mark class="inline-remove">n</mark> again.</code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">- Open Settings, <mark class="inline-add">selec</mark>t Gestures, then tap <mark class="inline-add">G</mark>e<mark class="inline-add">st</mark>ure<mark class="inline-add">s</mark> t<mark class="inline-add">o</mark> turn it o<mark class="inline-add">ff. Tap it</mark> again<mark class="inline-add"> to turn it back on</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">77</span><code class="line-text">- Make sure you wear your watch on the wrist that you selected in Settings. To check, open Settings, tap General, then tap Orientation.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">- Make sure you wear your watch on the wrist that you selected in Settings. To check, open Settings, tap General, then tap Orientation.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>iPhone Mirroring: Use your iPhone from your Mac — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>iPhone Mirroring: Use your iPhone from your Mac</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/120421">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+21 ajouts</span>
+      <span class="badge removed">−23 suppressions</span>
+      <span class="badge">7 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 21 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">## iPhone Mirroring system requirements</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">## iPhone Mirroring system requirements</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">iPhone Mirroring is currently unavailable in the European Union. To simply view but not interact with your iPhone screen or its streamed video on an AirPlay-compatible device, you can [use AirPlay](https://support.apple.com/en-us/102661) instead.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">iPhone Mirroring can be used with only one Mac and one iPhone at a time. Your devices must meet these requirements:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">iPhone Mirroring can be used with only one Mac and one iPhone at a time. Your devices must meet these requirements:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">- Your Mac is using macOS Sequoia 15 or later and is a [Mac with Apple silicon](https://support.apple.com/en-us/116943) or [Mac with the Apple T2 Security Chip](https://support.apple.com/en-us/103265) . Live Activities on Mac requires macOS Tahoe 26 or later.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">- Your Mac is using macOS Sequoia 15 or later and is a [Mac with Apple silicon](https://support.apple.com/en-us/116943) or [Mac with the Apple T2 Security Chip](https://support.apple.com/en-us/103265) . Live Activities on Mac requires macOS Tahoe 26 or later.</code></div>
+<div class="fold"><span>••• 8 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">- Your Mac is not [sharing its internet connection](https://support.apple.com/guide/mac-help/mchlp1540/mac) or using [AirPlay](https://support.apple.com/guide/mac-help/mchld7e543a0/mac) or [Sidecar](https://support.apple.com/en-us/102597) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">- Your Mac is not [sharing its internet connection](https://support.apple.com/guide/mac-help/mchlp1540/mac) or using [AirPlay](https://support.apple.com/guide/mac-help/mchld7e543a0/mac) or [Sidecar](https://support.apple.com/en-us/102597) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">iPhone Mirroring is currently unavailable in the European Union. To simply view but not interact with your iPhone screen or its streamed video on an AirPlay-compatible device, you can [use AirPlay](https://support.apple.com/en-us/102661) instead.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">## Start or stop iPhone Mirroring</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">## Start or stop iPhone Mirroring</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">- On your Mac, click iPhone Mirroring in the Dock. Or open it from the Applications folder or Spotlight . It&#x27;s included with macOS Sequoia 15 or later.</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- On your Mac, click iPhone Mirroring in the Dock. Or open it from the Applications folder or Spotlight <mark class="inline-add">or Siri AI </mark>. It&#x27;s included with macOS Sequoia 15 or later.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">[Image: iPhone Mirroring app in the Dock.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">[Image: iPhone Mirroring app in the Dock.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">- If your Mac asks whether to require Mac login to access your iPhone, choose whether to be asked every time or to authenticate automatically. You can change this later in [iPhone Mirroring settings](https://support.apple.com/en-us/120421#settings) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">- If your Mac asks whether to require Mac login to access your iPhone, choose whether to be asked every time or to authenticate automatically. You can change this later in [iPhone Mirroring settings](https://support.apple.com/en-us/120421#settings) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">- When iPhone Mirroring shows your iPhone screen, it’s connected to your iPhone and you can use it to interact with your iPhone. <mark class="inline-remove">If iPhone Mirroring c</mark>an’t connect to your iPhone<mark class="inline-remove">, review the [troubleshooting steps</mark>](https://support.apple.com/en-us/120421#help)<mark class="inline-remove"> later in this article.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">- When iPhone Mirroring shows your iPhone screen, it’s connected to your iPhone and you can use it to interact with your iPhone. <mark class="inline-add">[C</mark>an’t connect to your iPhone<mark class="inline-add">?</mark>](https://support.apple.com/en-us/120421#help)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">- To stop mirroring your iPhone, quit the iPhone Mirroring app or unlock your iPhone.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">- To stop mirroring your iPhone, quit the iPhone Mirroring app or unlock your iPhone.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">Tap, swipe, and type | Use your Mac mouse or trackpad to click wherever you would tap on your iPhone. Or click and hold wherever you would touch and hold, such as to edit the Home Screen or open a quick actions menu . You can scroll or swipe with your mouse or trackpad, and use your Mac keyboard to type and use keyboard shortcuts. To swipe left or right, you can also press and hold the Shift key while scrolling. To use a wireless game controller with iPhone apps that support it, use Bluetooth to connect the controller to your iPhone instead of your Mac.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">Tap, swipe, and type | Use your Mac mouse or trackpad to click wherever you would tap on your iPhone. Or click and hold wherever you would touch and hold, such as to edit the Home Screen or open a quick actions menu . You can scroll or swipe with your mouse or trackpad, and use your Mac keyboard to type and use keyboard shortcuts. To swipe left or right, you can also press and hold the Shift key while scrolling. To use a wireless game controller with iPhone apps that support it, use Bluetooth to connect the controller to your iPhone instead of your Mac.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">Go to the Home Screen | Move the pointer to the top of the iPhone Mirroring window, then click the Home Screen button in the <mark class="inline-remove">c</mark>o<mark class="inline-remove">rne</mark>r. Or click the bar at the bottom of the iPhone Mirroring window. Or press Command-1 on your keyboard.</code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">Go to the Home Screen | Move the pointer to the top of the iPhone Mirroring window, then click the Home Screen button in the <mark class="inline-add">t</mark>o<mark class="inline-add">olba</mark>r. Or click the bar at the bottom of the iPhone Mirroring window. Or press Command-1 on your keyboard.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">Open the App Switcher | Move the pointer to the top of the iPhone Mirroring window, then click the App Switcher button in the <mark class="inline-remove">c</mark>o<mark class="inline-remove">rne</mark>r. Or press Command-2 on your keyboard.</code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">Open the App Switcher | Move the pointer to the top of the iPhone Mirroring window, then click the App Switcher button in the <mark class="inline-add">t</mark>o<mark class="inline-add">olba</mark>r. Or press Command-2 on your keyboard.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">71</span><code class="line-text">Open Spotlight | Use your mouse or trackpad to scroll or swipe up from the Home Screen. Or press Command-3 on your keyboard.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">Open Spotlight | Use your mouse or trackpad to scroll or swipe up from the Home Screen. Or press Command-3 on your keyboard.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">Open Control Center | Press Command-4 on your keyboard. (Requires macOS 27 or later.)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">Play audio or video | iPhone audio plays through your Mac, and your Mac controls the volume, unless you&#x27;re listening through headphones connected to your iPhone. iPhone video plays back in the iPhone Mirroring window. Streaming content providers might have playback restriction policies that affect whether their premium video content can be mirrored.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">Play audio or video | iPhone audio plays through your Mac, and your Mac controls the volume, unless you&#x27;re listening through headphones connected to your iPhone. iPhone video plays back in the iPhone Mirroring window. Streaming content providers might have playback restriction policies that affect whether their premium video content can be mirrored.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">Access to the iPhone camera and mic is not available in iPhone Mirroring, including for Face ID or phone calls. You can [make and receive phone calls on your Mac](https://support.apple.com/en-us/102405) instead.</code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">Access to the iPhone camera and mic is not available in iPhone Mirroring, including for Face ID or phone calls. You can [make and receive phone calls on your Mac](https://support.apple.com/en-us/102405) instead.<mark class="inline-add"> To make calls from your Mac while iPhone Mirroring is in use, both devices must have [Wi-Fi Calling turned on](https://support.apple.com/en-us/108066) .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">77</span><code class="line-text">## Move or resize the iPhone Mirroring window</code></div>
+<div class="diff-line current unchanged"><span class="line-number">79</span><code class="line-text">## Move or resize the iPhone Mirroring window</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text">To <mark class="inline-remove">r</mark>eposition the iPhone Mirroring window, move the pointer to the top of the window, then drag the window by the toolbar that appears.</code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text">To <mark class="inline-add">chang</mark>e<mark class="inline-add"> the </mark>position<mark class="inline-add"> of</mark> the iPhone Mirroring window, move the pointer to the top of the window, then drag the window by the toolbar that appears.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">To change the size of the iPhone Mirroring window<mark class="inline-remove">, use the View menu in the iPhone Mirroring menu bar</mark>:</code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">To change the size of the iPhone Mirroring window:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">- <mark class="inline-remove">C</mark>hoose Larger, or press Command–Plus sign (+).</code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">- <mark class="inline-add">Use the View menu in the menu bar to c</mark>hoose<mark class="inline-add"> from three preset sizes:</mark> Larger, <mark class="inline-add">Smaller, </mark>o<mark class="inline-add">r Actual Size. O</mark>r press Command–Plus sign (+)<mark class="inline-add">, Command–Minus sign (–), or Command-0 to switch between sizes</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">85</span><code class="line-text">- <mark class="inline-remove">C</mark>ho<mark class="inline-remove">os</mark>e <mark class="inline-remove">Ac</mark>t<mark class="inline-remove">ual</mark> <mark class="inline-remove">S</mark>ize, or press Command-<mark class="inline-remove">0</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text">- <mark class="inline-add">In macOS 27 or later, you can drag a corner of the iP</mark>ho<mark class="inline-add">n</mark>e <mark class="inline-add">Mirroring window </mark>t<mark class="inline-add">o</mark> <mark class="inline-add">res</mark>ize<mark class="inline-add"> it. Some apps, such as Mail, Messages, and Calendar, are designed to show more information when you drag to make the window wider. You can then return to standard iPhone size by clicking the iPhone size button in the iPhone Mirroring toolbar</mark>, or<mark class="inline-add"> by</mark> press<mark class="inline-add">ing</mark> Command-<mark class="inline-add">9</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text"><mark class="inline-remove">- C</mark>ho<mark class="inline-remove">os</mark>e <mark class="inline-remove">S</mark>mall<mark class="inline-remove">er,</mark> <mark class="inline-remove">or pr</mark>es<mark class="inline-remove">s</mark> <mark class="inline-remove">C</mark>o<mark class="inline-remove">mm</mark>and<mark class="inline-remove">–M</mark>in<mark class="inline-remove">us si</mark>g<mark class="inline-remove">n (–)</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text"><mark class="inline-add">iP</mark>ho<mark class="inline-add">n</mark>e <mark class="inline-add">Mirroring auto</mark>m<mark class="inline-add">atic</mark>all<mark class="inline-add">y</mark> <mark class="inline-add">switch</mark>es <mark class="inline-add">t</mark>o<mark class="inline-add"> </mark>and<mark class="inline-add"> from landscape view as required by the app that you’re us</mark>ing.</code></div>
+<div class="diff-line previous removed"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text">iPhone Mirroring automatically switches to and from landscape view when required by the app that you’re using.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">## Manage iPhone notifications</code></div>
+<div class="diff-line current unchanged"><span class="line-number">91</span><code class="line-text">## Manage iPhone notifications</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">103</span><code class="line-text">- [Universal Clipboard](https://support.apple.com/en-us/102430)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">103</span><code class="line-text">- [Universal Clipboard](https://support.apple.com/en-us/102430)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">105</span><code class="line-text">- [AirDrop](https://support.apple.com/e<mark class="inline-remove">n</mark>-<mark class="inline-remove">us</mark>/<mark class="inline-remove">102</mark>5<mark class="inline-remove">3</mark>8)</code></div>
+<div class="diff-line current added"><span class="line-number">105</span><code class="line-text">- [AirDrop](https://support.apple.com/<mark class="inline-add">guid</mark>e<mark class="inline-add">/mac</mark>-<mark class="inline-add">help</mark>/<mark class="inline-add">mh3</mark>58<mark class="inline-add">68/mac</mark>)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">107</span><code class="line-text">## Change iPhone Mirroring settings</code></div>
+<div class="diff-line current unchanged"><span class="line-number">107</span><code class="line-text">## Change iPhone Mirroring settings</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">111</span><code class="line-text">- From the iPhone Mirroring menu in the menu bar, choose Settings.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">111</span><code class="line-text">- From the iPhone Mirroring menu in the menu bar, choose Settings.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">113</span><code class="line-text">- Ask every time: iPhone Mirroring always asks you to authenticate before mirroring. You can authenticate using your Mac login password, [using Touch ID on your Mac](https://support.apple.com/guide/mac-help/mchl16fbf90a/mac) <mark class="inline-remove">, </mark>or [using your Apple Watch](https://support.apple.com/en-us/102442) .</code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text">- Ask every time: iPhone Mirroring always asks you to authenticate before mirroring. You can authenticate using your Mac login password, [using Touch ID on your Mac](https://support.apple.com/guide/mac-help/mchl16fbf90a/mac) or [using your Apple Watch](https://support.apple.com/en-us/102442) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">115</span><code class="line-text">- Authenticate automatically: After entering your Mac login password to select this setting, you are no longer asked to authenticate before mirroring. While this setting is selected, the &quot;Require password after screen saver begins or display is turned off&quot; setting in [Lock Screen settings](https://support.apple.com/guide/mac-help/mh11784/mac) remains set to Immediately.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">115</span><code class="line-text">- Authenticate automatically: After entering your Mac login password to select this setting, you are no longer asked to authenticate before mirroring. While this setting is selected, the &quot;Require password after screen saver begins or display is turned off&quot; setting in [Lock Screen settings](https://support.apple.com/guide/mac-help/mh11784/mac) remains set to Immediately.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">117</span><code class="line-text">- Revoke Access<mark class="inline-remove"> to [name of iPhone]</mark>: Reset the iPhone Mirroring setup for this iPhone and remove &quot;Allow notifications from iPhone&quot; from Notifications settings on your Mac. To mirror your iPhone and receive its notifications again, [set up iPhone mirroring](https://support.apple.com/en-us/120421#start) .</code></div>
+<div class="diff-line current added"><span class="line-number">117</span><code class="line-text">- Revoke <mark class="inline-add">iPhone </mark>Access: Reset the iPhone Mirroring setup for this iPhone and remove &quot;Allow notifications from iPhone&quot; from Notifications settings on your Mac. To mirror your iPhone and receive its notifications again, [set up iPhone mirroring](https://support.apple.com/en-us/120421#start) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">119</span><code class="line-text">### Choose the iPhone that your Mac uses</code></div>
+<div class="diff-line current unchanged"><span class="line-number">119</span><code class="line-text">### Choose the iPhone that your Mac uses</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">135</span><code class="line-text">### Use Spotlight to find and open iPhone apps</code></div>
+<div class="diff-line current unchanged"><span class="line-number">135</span><code class="line-text">### Use Spotlight to find and open iPhone apps</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">137</span><code class="line-text">In macOS Tahoe 26 or later, Spotlight can find<mark class="inline-remove"> and open the</mark> apps installed on your iPhone:</code></div>
+<div class="diff-line current added"><span class="line-number">137</span><code class="line-text">In macOS Tahoe 26 or later, Spotlight <mark class="inline-add">or Siri AI </mark>can find apps installed on your iPhone<mark class="inline-add">, then open them in iPhone Mirroring. To turn on this feature</mark>:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">139</span><code class="line-text">- <mark class="inline-remove">To turn on this feature, m</mark>ake sure that you’ve set up iPhone Mirroring<mark class="inline-remove">, then take either of these steps:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">139</span><code class="line-text">- <mark class="inline-add">M</mark>ake sure that you’ve set up iPhone Mirroring<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">141</span><code class="line-text">- From the Apple menu , choose System Settings<mark class="inline-remove">, click Spotlight in the sidebar, then scroll down on the right and turn on iPhone Apps</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">141</span><code class="line-text">- From the Apple menu , choose System Settings.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">143</span><code class="line-text">- <mark class="inline-remove">Or open</mark> Spotlight <mark class="inline-remove">and click the Apps button (Command-1). Click the More button </mark>in the <mark class="inline-remove">co</mark>r<mark class="inline-remove">ner of the Apps window</mark>, then ch<mark class="inline-remove">oos</mark>e <mark class="inline-remove">S</mark>ho<mark class="inline-remove">w</mark> iPhone Apps<mark class="inline-remove"> from the pop-up menu</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">143</span><code class="line-text">- <mark class="inline-add">Click</mark> Spotlight in the <mark class="inline-add">sideba</mark>r, then <mark class="inline-add">s</mark>c<mark class="inline-add">roll down on t</mark>he <mark class="inline-add">rig</mark>h<mark class="inline-add">t and turn </mark>o<mark class="inline-add">n</mark> iPhone Apps.</code></div>
+<div class="diff-line previous removed"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">145</span><code class="line-text">- When you open an iPhone app from Spotlight, it opens in iPhone Mirroring.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">147</span><code class="line-text">## If you need help</code></div>
+<div class="diff-line current unchanged"><span class="line-number">145</span><code class="line-text">## If you need help</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 19 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

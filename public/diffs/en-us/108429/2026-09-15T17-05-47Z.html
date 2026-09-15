@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>How to check the storage on your iPhone and iPad — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>How to check the storage on your iPhone and iPad</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/108429">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+17 ajouts</span>
+      <span class="badge removed">−23 suppressions</span>
+      <span class="badge">4 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># How to check the storage on your iPhone and iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># How to check the storage on your iPhone and iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text"><mark class="inline-remove">iOS and iPadOS monitor d</mark>e<mark class="inline-remove">vi</mark>c<mark class="inline-remove">e storage, showing</mark> how much space <mark class="inline-remove">each</mark> app use<mark class="inline-remove">s</mark>. You can check storage in <mark class="inline-remove">Settings,</mark> <mark class="inline-remove">the Fin</mark>d<mark class="inline-remove">er, the Apple D</mark>evice<mark class="inline-remove">s app,</mark> or i<mark class="inline-remove">T</mark>u<mark class="inline-remove">n</mark>e<mark class="inline-remove">s</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text"><mark class="inline-add">Ch</mark>ec<mark class="inline-add">k</mark> how much space <mark class="inline-add">your</mark> app<mark class="inline-add">s</mark> use<mark class="inline-add"> on your iPhone or iPad</mark>. You can check storage <mark class="inline-add">d</mark>i<mark class="inline-add">rectly o</mark>n <mark class="inline-add">your</mark> device or <mark class="inline-add">by us</mark>i<mark class="inline-add">ng a comp</mark>u<mark class="inline-add">t</mark>e<mark class="inline-add">r</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">[Image: Play the video]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">[Image: Play the video]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">## Optimize iOS and iPadOS storage</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">## Optimize iOS and iPadOS storage</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">When your device is low on storage, it frees up space by removing items that you can <mark class="inline-remove">re</mark>download or aren&#x27;t needed, like unused apps and temporary files.</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">When your device is low on storage, it frees up space by removing items that you can download<mark class="inline-add"> again</mark> or aren&#x27;t needed, like unused apps and temporary files.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">## Use your device to check its storage</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">## Use your device to check its storage</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">- Go to Settings and tap General, then tap [<mark class="inline-remove">D</mark>evice] Storage<mark class="inline-remove">,</mark> <mark class="inline-remove">wh</mark>ere you&#x27;ll <mark class="inline-remove">see</mark> <mark class="inline-remove">[</mark>recommendations](https://support.apple.com/en-us/108429#recommendations) <mark class="inline-remove">and a list of apps </mark>with their storage usage.</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- Go to Settings and tap General, then tap [<mark class="inline-add">d</mark>evice] Storage<mark class="inline-add">.</mark> <mark class="inline-add">H</mark>ere<mark class="inline-add">,</mark> you&#x27;ll <mark class="inline-add">[find</mark> recommendation<mark class="inline-add">s and a list of app</mark>s](https://support.apple.com/en-us/108429#recommendations) with their storage usage.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">[Image: Offload Unused Apps recommendation in iPhone Storage settings.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">[Image: Offload Unused Apps recommendation in iPhone Storage settings.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">- Tap an app&#x27;s name for more information about its storage. Cached data and temporary data might not count as usage.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">- Tap an app&#x27;s name for more information about its storage. Cached data and temporary data might not count as usage.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">In the detailed view you can:</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text"><mark class="inline-add">- </mark>In the detailed view<mark class="inline-add">,</mark> you can:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">- Offload the app<mark class="inline-remove">,</mark> <mark class="inline-remove">w</mark>hi<mark class="inline-remove">ch</mark> frees up storage used by the app, but keeps its documents and data.</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">- Offload the app<mark class="inline-add">.</mark> <mark class="inline-add">T</mark>hi<mark class="inline-add">s</mark> frees up storage used by the app, but keeps its documents and data.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- Delete the app, which removes the app and its related data.</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- Delete the app, which removes the app and its related data.<mark class="inline-add"> Depending on the app, you might be able to delete some of its documents and data.</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- Depending on the app, you might be able to delete some of its documents and data.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">If your device shows a &quot;Storage Almost Full&quot; alert, check the storage recommendations or remove some content, such as videos and apps.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">If your device shows a &quot;Storage Almost Full&quot; alert, check the storage recommendations or remove some content, such as videos and apps.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">### <mark class="inline-remove">C</mark>ategor<mark class="inline-remove">ize content</mark></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">### <mark class="inline-add">Understand each storage c</mark>ategor<mark class="inline-add">y</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">Here&#x27;s a list of the types of content on your device, and what each type includes:</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">- Apps: Installed apps and their content, and content stored in &quot;On My iPhone/iPad/iPod touch&quot; directory in the Files app, and Safari downloads.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">- Apps: Installed apps and their content, and content stored in &quot;On My iPhone/iPad/iPod touch&quot; directory in the Files app, and Safari downloads.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">- Photos: Photos and videos stored in the Photos app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">- Photos: Photos and videos stored in the Photos app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- Media: Music, videos, podcasts, ringtones, artwork, and <mark class="inline-remove">V</mark>oice <mark class="inline-remove">M</mark>emos.</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- Media: Music, videos, podcasts, ringtones, artwork, and <mark class="inline-add">v</mark>oice <mark class="inline-add">m</mark>emos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">- Mail: Emails and their attachments.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">- Mail: Emails and their attachments.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">- iCloud Drive: iCloud Drive content that you downloaded locally to your device. 1</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">- iCloud Drive: iCloud Drive content that you downloaded locally to your device. 1</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">- Other: Non-removable mobile assets, like Siri voices, fonts, dictionaries, non-removable logs and caches, Spotlight index, and system data, such as Keychain and CloudKit <mark class="inline-remove">D</mark>atabase. 2</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- Other: Non-removable mobile assets, like Siri voices, fonts, dictionaries, non-removable logs and caches, Spotlight index, and system data, such as Keychain and CloudKit <mark class="inline-add">d</mark>atabase. 2</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">- System: Space taken by the operating system. This can vary based on your device and model.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">- System: Space taken by the operating system. This can vary based on your device and model.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">### If your storage is full, use recommendations to optimize storage</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">### If your storage is full, use recommendations to optimize storage</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text"><mark class="inline-remove">In the Storage section of Settings, y</mark>our device might offer recommendations for optimizing <mark class="inline-remove">your </mark>storage<mark class="inline-remove">.</mark> <mark class="inline-remove">To</mark> <mark class="inline-remove">op</mark>t<mark class="inline-remove">imiz</mark>e <mark class="inline-remove">your s</mark>torage:</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text"><mark class="inline-add">Y</mark>our device might offer recommendations for optimizing storage <mark class="inline-add">in</mark> t<mark class="inline-add">h</mark>e <mark class="inline-add">S</mark>torage<mark class="inline-add"> section of Settings</mark>:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">- Tap Show All to see the recommendations for your device.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">- Tap Show All to see the recommendations for your device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">- Read the description of each recommendation, then tap Enable to turn it on or tap the recommendation to review the contents that you can delete.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">- Read the description of each recommendation, then tap Enable to turn it on or tap the recommendation to review the contents that you can delete.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">## Use the Finder, the Apple Devices app, or iTunes to check the storage on your <mark class="inline-remove">iOS </mark>device</code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">## Use the Finder, the Apple Devices app, or iTunes to check the storage on your device</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Switch to the Finder on your Mac, or open the [Apple Devices app](https://support.apple.com/guide/devices-windows/welcome/windows) on your PC. If your PC doesn&#x27;t have the Apple Devices app, or your Mac is using macOS Mojave or earlier, open [iTunes](https://support.apple.com/en-us/118290) instead. [Find out which macOS your Mac is using](https://support.apple.com/en-us/109033) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">- Switch to the Finder on your Mac, or open the [Apple Devices app](https://support.apple.com/guide/devices-windows/welcome/windows) on your PC. If your PC doesn&#x27;t have the Apple Devices app, or your Mac is using macOS Mojave or earlier, open [iTunes](https://support.apple.com/en-us/118290) instead. [Find out which macOS your Mac is using](https://support.apple.com/en-us/109033) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">- Move your mouse over the bar to see how much storage each content type is using.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">- Move your mouse over the bar to see how much storage each content type is using.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">[Image: Cursor hovering over a storage category in the Finder.]</code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">[Image: Cursor hovering over a<mark class="inline-add">n iPhone</mark> storage category in the Finder.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">71</span><code class="line-text">### Categorize content</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">### Categorize content</code></div>
+<div class="diff-line previous removed"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text">Here&#x27;s a list of the types of content on your device, and what each type includes:</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">- Audio: Songs, audio podcasts, audiobooks, voice memos, and ringtones.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">- Audio: Songs, audio podcasts, audiobooks, voice memos, and ringtones.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">### About cached files in Other</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">### About cached files in Other</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">The Finder, Apple Devices app, and iTunes show cached music, videos, and photos as &quot;Other&quot; storage. <mark class="inline-remove">Th</mark>e<mark class="inline-remove"> syst</mark>e<mark class="inline-remove">m</mark> creates these files when you stream or view content<mark class="inline-remove">,</mark> <mark class="inline-remove">al</mark>lo<mark class="inline-remove">wing for</mark> faster<mark class="inline-remove"> access</mark> the next time you w<mark class="inline-remove">ant</mark> t<mark class="inline-remove">o </mark>e<mark class="inline-remove">njoy content</mark>. Your device removes these files when your device needs more space.</code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text">The Finder, Apple Devices app, and iTunes show cached music, videos, and photos as &quot;Other&quot; storage. <mark class="inline-add">Your d</mark>e<mark class="inline-add">vic</mark>e creates these files when you stream or view content <mark class="inline-add">so they </mark>lo<mark class="inline-add">ad</mark> faster the next time you <mark class="inline-add">vie</mark>w t<mark class="inline-add">h</mark>e<mark class="inline-add">m</mark>. Your device removes these files when your device needs more space.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">95</span><code class="line-text">### If storage on your device differs from what you see in the Finder, Apple Devices app, or iTunes</code></div>
+<div class="diff-line current unchanged"><span class="line-number">89</span><code class="line-text">### If storage on your device differs from what you see in the Finder, Apple Devices app, or iTunes</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">97</span><code class="line-text">Since the Finder, Apple Devices app, and iTunes categorize cached files as Other, reported usage for Music or Videos might differ. To view usage on your device, go to Settings and tap General, then tap [<mark class="inline-remove">D</mark>evice] Storage.</code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">Since the Finder, Apple Devices app, and iTunes categorize cached files as Other, reported usage for Music or Videos might differ. To view usage on your device, go to Settings and tap General, then tap [<mark class="inline-add">d</mark>evice] Storage.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">99</span><code class="line-text">### If you want to delete the cached files from your device</code></div>
+<div class="diff-line current unchanged"><span class="line-number">93</span><code class="line-text">### If you want to delete the cached files from your device</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">101</span><code class="line-text">To free up space, your device removes cached and temporary files, so you don&#x27;t have to.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">To free up space, your device removes cached and temporary files, so you don&#x27;t have to.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">103</span><code class="line-text"><mark class="inline-remove">1.</mark> You can&#x27;t delete iCloud content automatically.</code></div>
+<div class="diff-line current added"><span class="line-number">97</span><code class="line-text"><mark class="inline-add">-</mark> You can&#x27;t delete iCloud content automatically.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">105</span><code class="line-text"><mark class="inline-remove">2.</mark> The system can&#x27;t delete cached files.</code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text"><mark class="inline-add">-</mark> The system can&#x27;t delete cached files.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">107</span><code class="line-text"><mark class="inline-remove">3.</mark> You can&#x27;t remove data in Synced content using your iPhone. To remove this data, switch to the Finder, or open the Apple Devices app or iTunes, deselect the data, and click Sync.</code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text"><mark class="inline-add">-</mark> You can&#x27;t remove data in Synced content using your iPhone. To remove this data, switch to the Finder, or open the Apple Devices app or iTunes, deselect the data, and click Sync.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">109</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">103</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Make purchases using Apple Pay — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Make purchases using Apple Pay</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/102626">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+9 ajouts</span>
+      <span class="badge removed">−13 suppressions</span>
+      <span class="badge">6 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## How to pay using Apple Pay in stores and other places</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## How to pay using Apple Pay in stores and other places</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">With your iPhone or Apple Watch, you can use Apple Pay in stores, restaurants, gas stations, taxis, or wherever you see the [appropriate contactless payment symbols](https://support.apple.com/120364) [.](https://support.apple.com/en-us/120364) <mark class="inline-remove">1 </mark>If you have any questions, contact the merchant or card issuer.</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">With your iPhone or Apple Watch, you can use Apple Pay in stores, restaurants, gas stations, taxis, or wherever you see the [appropriate contactless payment symbols](https://support.apple.com/120364) [.](https://support.apple.com/en-us/120364) If you have any questions, contact the merchant or card issuer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">### Pay with your iPhone</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">### Pay with your iPhone</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">- Hold the top of your iPhone near the contactless reader until Done and a checkmark appear on the display.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">- Hold the top of your iPhone near the contactless reader until Done and a checkmark appear on the display.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">[Image: iPhone<mark class="inline-remove"> showing a completed payment with Apple Pay</mark>.]</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">[Image: <mark class="inline-add">A debit card on </mark>iPhone.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">In some stores, you can [use Tap to Share to complete your purchase](http://support.apple.com/127868) . At checkout, hold your iPhone near the cashier&#x27;s device. Then, follow the interactive prompts to complete your purchase using Apple Pay.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">### Pay with your Apple Watch</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">### Pay with your Apple Watch</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">- Hold the display of your Apple Watch near the contactless reader until you feel a gentle tap and hear a beep.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">- Hold the display of your Apple Watch near the contactless reader until you feel a gentle tap and hear a beep.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">[Image: Apple Watch<mark class="inline-remove"> showing a completed payment with Apple Pay</mark>.]</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">[Image:<mark class="inline-add"> A debit card on</mark> Apple Watch.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text"><mark class="inline-remove">Want t</mark>o see your recent purchases<mark class="inline-remove">? Learn how to</mark> [check your Apple Pay transaction history](https://support.apple.com/104954) .</code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text"><mark class="inline-add">T</mark>o see your recent purchases<mark class="inline-add">,</mark> [check your Apple Pay transaction history](https://support.apple.com/104954) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">## How to use Apple Pay online or in apps</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">## How to use Apple Pay online or in apps</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">You can use Apple Pay to pay online or in apps when you see Apple Pay as a payment option. 2<mark class="inline-remove">,3</mark></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">You can use Apple Pay to pay online or in apps when you see Apple Pay as a payment option. <mark class="inline-add">1,</mark>2</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">- Tap the Apple Pay button or choose Apple Pay as your payment method.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">- Tap the Apple Pay button or choose Apple Pay as your payment method.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">- To use a payment method different from your default card, tap Other Cards &amp; Pay Later Options or Change Payment Method.</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- To use a payment method different from your default card, tap Other Cards &amp; Pay Later Options or Change Payment Method.<mark class="inline-add"> You can also tap your default card and swipe to view your other cards.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">- If necessary, enter your billing, shipping, and contact information.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">- If necessary, enter your billing, shipping, and contact information.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 17 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">63</span><code class="line-text">### How to use Apple Pay by scanning a code</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">### How to use Apple Pay by scanning a code</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">You can use Apple Pay with third-party browsers and more on Mac, PC, and other devices by scanning a code with your iPhone or iPad. <mark class="inline-remove">4</mark></code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">You can use Apple Pay with third-party browsers and more on Mac, PC, and other devices by scanning a code with your iPhone or iPad. <mark class="inline-add">3</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">- Tap the Apple Pay button or choose Apple Pay as your payment method. A code will be presented to you on the screen.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">- Tap the Apple Pay button or choose Apple Pay as your payment method. A code will be presented to you on the screen.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">- When your payment is successful, you&#x27;ll see Done and a checkmark on the screen.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">- When your payment is successful, you&#x27;ll see Done and a checkmark on the screen.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">- In addition to accepting Apple Pay, the merchant must accept your payment card and payment network.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">- In China mainland, you can use Apple Pay on the web in Safari only on a compatible iPhone and iPad with [the latest version of iOS or iPadOS](https://support.apple.com/118575) . In China mainland, using Apple Pay with a third-party browser is not available.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">83</span><code class="line-text">- In China mainland, you can use Apple Pay on the web in Safari only on a compatible iPhone and iPad with [the latest version of iOS or iPadOS](https://support.apple.com/118575) . In China mainland, using Apple Pay with a third-party browser is not available.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">- In Italy, you can use your iPhone and Apple Watch to make Apple Pay purchases in stores with your Maestro card. Maestro cards can&#x27;t be used within apps and on the web. In the Netherlands, you can add Maestro cards to all [compatible devices](https://support.apple.com/102896) except Mac.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">- In Italy, you can use your iPhone and Apple Watch to make Apple Pay purchases in stores with your Maestro card. Maestro cards can&#x27;t be used within apps and on the web. In the Netherlands, you can add Maestro cards to all [compatible devices](https://support.apple.com/102896) except Mac.</code></div>
+<div class="fold"><span>••• 4 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">Features are subject to change. Some features, applications, and services may not be available in all regions or all languages and may require specific hardware and software. For more information, see [Feature Availability](https://www.apple.com/ios/feature-availability/#apple-pay) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">91</span><code class="line-text">Features are subject to change. Some features, applications, and services may not be available in all regions or all languages and may require specific hardware and software. For more information, see [Feature Availability](https://www.apple.com/ios/feature-availability/#apple-pay) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">To access and use all Apple Card features and products available only to Apple Card users, you must add Apple Card to Wallet on an iPhone or iPad that supports and has the latest version of iOS or iPadOS. Apple Card is subject to credit approval, available only for qualifying applicants in the United States, and issued by Goldman Sachs Bank USA, Salt Lake City Branch.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">95</span><code class="line-text">If you reside in the U.S. territories, please call Goldman Sachs at 877-255-5923 with questions about Apple Card.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">97</span><code class="line-text">Apple Pay is a service provided by Apple Payments Services LLC, a subsidiary of Apple Inc. Neither Apple Inc. nor Apple Payments Services LLC is a bank. Any card used in Apple Pay is offered by the card issuer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">93</span><code class="line-text">Apple Pay is a service provided by Apple Payments Services LLC, a subsidiary of Apple Inc. Neither Apple Inc. nor Apple Payments Services LLC is a bank. Any card used in Apple Pay is offered by the card issuer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">99</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -7,7 +7,7 @@ Category: Australian cyber security
   "archived": false,
   "categoryName": "Watch",
   "deviceId": "6aa7be93daf7704b4c98a104",
-  "deviceWorkflowMessage": "",
+  "deviceWorkflowMessage": "Device WorkFlow in Progress",
   "fileId": "australianCyberSecurity/Apple Watch Series 12 GPS 42mm_AUS Cyber_A3581_V1.pdf",
   "fileName": "Apple Watch Series 12 GPS 42mm_AUS Cyber_A3581_V1.pdf",
   "id": "6aa7e9cddaf7704b4c98a986",

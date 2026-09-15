@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>About Sensitive Content Warning on Apple devices — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>About Sensitive Content Warning on Apple devices</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/105071">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+22 ajouts</span>
+      <span class="badge removed">−16 suppressions</span>
+      <span class="badge">3 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># About Sensitive Content Warning on Apple devices</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># About Sensitive Content Warning on Apple devices</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Sensitive Content Warning <mark class="inline-remove">let</mark>s you<mark class="inline-remove"> receive warnings</mark> about photos or videos that might contain n<mark class="inline-remove">ud</mark>it<mark class="inline-remove">y</mark> before view<mark class="inline-remove">ing</mark> them. You also <mark class="inline-remove">g</mark>e<mark class="inline-remove">t</mark> resources to help you make a safe choice.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Sensitive Content Warning <mark class="inline-add">warn</mark>s you about photos or videos that might contain <mark class="inline-add">se</mark>n<mark class="inline-add">s</mark>it<mark class="inline-add">ive content</mark> before <mark class="inline-add">you </mark>view them<mark class="inline-add"> — including nudity or gore and violence</mark>. You <mark class="inline-add">can </mark>also <mark class="inline-add">vi</mark>e<mark class="inline-add">w</mark> resources to help you make a safe choice.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## Check for sensitive photos and videos</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## Check for sensitive photos and videos</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">Sensitive Content Warning helps you avoid receiving unwanted n<mark class="inline-remove">ud</mark>e photos or videos on your Apple device.</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">Sensitive Content Warning helps you avoid receiving unwanted <mark class="inline-add">se</mark>n<mark class="inline-add">sitiv</mark>e photos or videos on your Apple device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">- <mark class="inline-remove">P</mark>hoto<mark class="inline-remove">s</mark> or video<mark class="inline-remove">s that</mark> might contain nudity <mark class="inline-remove">a</mark>re blurred before you view t<mark class="inline-remove">hem</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">- <mark class="inline-add">If a p</mark>hoto or video might contain nudity <mark class="inline-add">or go</mark>re<mark class="inline-add"> and violence, it&#x27;s</mark> blurred before you view <mark class="inline-add">i</mark>t.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">- You can also <mark class="inline-remove">f</mark>i<mark class="inline-remove">nd</mark> guidance and resources t<mark class="inline-remove">hat</mark> help you make a choice that you&#x27;re comfortable with.</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">- You can also <mark class="inline-add">v</mark>i<mark class="inline-add">ew</mark> guidance and resources t<mark class="inline-add">o</mark> help you make a choice that you&#x27;re comfortable with.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">### How Sensitive Content Warning protects your privacy</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">### How Sensitive Content Warning protects your privacy</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">Sensitive Content Warning uses on-device machine learning to analyze photos and videos. Because t<mark class="inline-remove">h</mark>e<mark class="inline-remove">y&#x27;</mark>re analyzed on your device, Apple doesn&#x27;t receive an indication that n<mark class="inline-remove">ud</mark>it<mark class="inline-remove">y</mark> was detected and doesn&#x27;t get access to the photos or videos<mark class="inline-remove"> as a result</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">Sensitive Content Warning uses on-device machine learning to analyze photos and videos<mark class="inline-add"> for sensitive content, including nudity or gore and violence</mark>. Because <mark class="inline-add">pho</mark>t<mark class="inline-add">os and vid</mark>e<mark class="inline-add">os a</mark>re analyzed on your device, Apple doesn&#x27;t receive an indication that <mark class="inline-add">se</mark>n<mark class="inline-add">s</mark>it<mark class="inline-add">ive content</mark> was detected and doesn&#x27;t get access to the photos or videos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">### Where Sensitive Content Warning detects sensitive <mark class="inline-remove">ph</mark>ot<mark class="inline-remove">os a</mark>n<mark class="inline-remove">d videos</mark></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">### Where Sensitive Content Warning detects sensitive <mark class="inline-add">c</mark>o<mark class="inline-add">n</mark>t<mark class="inline-add">e</mark>n<mark class="inline-add">t</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text"><mark class="inline-remove">- O</mark>n<mark class="inline-remove"> </mark>i<mark class="inline-remove">Phon</mark>e<mark class="inline-remove"> or iPad: Messages, AirDrop, shared photo albums,</mark> Contact <mark class="inline-remove">P</mark>o<mark class="inline-remove">s</mark>te<mark class="inline-remove">rs</mark> in the<mark class="inline-remove"> Phon</mark>e app<mark class="inline-remove"> and the Contacts app, and FaceTime call</mark>s and vi<mark class="inline-remove">deo m</mark>es<mark class="inline-remove">sages.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text"><mark class="inline-add">Se</mark>n<mark class="inline-add">s</mark>i<mark class="inline-add">tiv</mark>e Cont<mark class="inline-add">ent W</mark>a<mark class="inline-add">rning dete</mark>ct<mark class="inline-add">s</mark> <mark class="inline-add">sensitive c</mark>o<mark class="inline-add">n</mark>te<mark class="inline-add">nt</mark> in the<mark class="inline-add">s</mark>e apps and <mark class="inline-add">ser</mark>vi<mark class="inline-add">c</mark>es<mark class="inline-add">:</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">- On <mark class="inline-remove">M</mark>a<mark class="inline-remove">c</mark>: Messages, Contact Posters in the Phone app and the Contacts app, and shared photo albums.</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">- On <mark class="inline-add">iPhone or iP</mark>a<mark class="inline-add">d</mark>: Messages<mark class="inline-add">, AirDrop</mark>, Contact Posters in the Phone app and the Contacts app, <mark class="inline-add">FaceTime calls </mark>and<mark class="inline-add"> video messages*,</mark> shared photo albums<mark class="inline-add">, and when you select a photo or video to share in some third-party apps</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- On Mac: Messages, Contact Posters in the Phone app and the Contacts app, shared photo albums, and when you select a photo or video to share in some third-party apps.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">- On Apple Watch: Messages, Contact Posters in the Phone app and the Contacts app, and FaceTime video messages.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">- On Apple Watch: Messages, Contact Posters in the Phone app and the Contacts app, and FaceTime video messages.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- On Apple Vision Pro: Messages<mark class="inline-remove"> and</mark> AirDrop.</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- On Apple Vision Pro<mark class="inline-add">*</mark>: Messages<mark class="inline-add">,</mark> AirDrop<mark class="inline-add">, and when you select a photo or video to share in some third-party apps</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">*Gore and violence detection is available only in FaceTime video messages, not live calls. It isn&#x27;t available on Apple Vision Pro.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">### Requirements</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">### Requirements</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">- Sensitive Content Warning requires iOS 17 or later, iPadOS 17 or later, watchOS 10 or later, macOS Sonoma or later, or visionOS 2 or later.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">- Sensitive Content Warning requires iOS 17 or later, iPadOS 17 or later, watchOS 10 or later, macOS Sonoma or later, or visionOS 2 or later.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- Gore and violence detection requires iOS 27 or later, iPadOS 27 or later, macOS 27 Golden Gate or later, watchOS 27 or later, or visionOS 27 or later.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">- For a complete set of protections, update your devices to the latest software version.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">- For a complete set of protections, update your devices to the latest software version.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">- Scroll down and select Sensitive Content Warning.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">- Scroll down and select Sensitive Content Warning.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">Turn on Sensitive Content Warning.</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text"><mark class="inline-add">- </mark>Turn on Sensitive Content Warning.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">[Image: In Privacy &amp; Security settings on iPhone, you can turn on Sensitive Content Warning and choose in which apps you&#x27;d like to turn on protections.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">[Image: In Privacy &amp; Security settings on iPhone, you can turn on Sensitive Content Warning and choose in which apps you&#x27;d like to turn on protections.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">## What happens when sensitive content is detected</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">## What happens when sensitive content is detected</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">If Sensitive Content Warning detects that a photo or video appears to contain nudity, the content is blurred and a warning is displayed. From this alert, you have several options:</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">If Sensitive Content Warning detects that a photo or video appears to contain nudity<mark class="inline-add"> or gore and violence</mark>, the content is blurred and a warning is displayed. From this alert, you have several options:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">[Image: When Sensitive Content Warning detects that an image or video might contain n<mark class="inline-remove">ud</mark>it<mark class="inline-remove">y</mark>, it blurs the message before you view it.]</code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">[Image: When Sensitive Content Warning detects that an image or video might contain <mark class="inline-add">se</mark>n<mark class="inline-add">s</mark>it<mark class="inline-add">ive content</mark>, it blurs the message before you view it.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">- <mark class="inline-remove">T</mark>o view the content<mark class="inline-remove">: Select Show</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- <mark class="inline-add">View : Select Show t</mark>o view the content.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">- <mark class="inline-remove">T</mark>o <mark class="inline-remove">find help</mark>: Select the Alert button to find safety resources or block the person.<mark class="inline-remove"> If the sensitive content is detected in an iMessage or FaceTime video call, you can also report the sender to Apple.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">- <mark class="inline-add">Bl</mark>o<mark class="inline-add">ck</mark> : Select the Alert button to find safety resources or block the person.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">- When you report the sender to Apple, the sensitive content is sent to Apple for review. Apple may forward reports to the relevant authorities, including law enforcement, and take appropriate action on the sender&#x27;s Apple Account. Additionally, Apple may follow up regarding your report.</code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">-<mark class="inline-add"> Report: If nudity is detected in an iMessage or FaceTime video call, you can also report the sender to Apple.</mark> When you report the sender to Apple, the sensitive content is sent to Apple for review. Apple may forward reports to the relevant authorities, including law enforcement, and take appropriate action on the sender&#x27;s Apple Account. Additionally, Apple may follow up regarding your report.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">## About Communication Safety on your child&#x27;s Apple device</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">## About Communication Safety on your child&#x27;s Apple device</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">To help protect your child from viewing or sharing sensitive photos or videos, you can turn on Communication Safety so that your child&#x27;s device detects photos and videos that might contain nudity.</code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">To help protect your child from viewing or sharing sensitive photos or videos, you can turn on Communication Safety so that your child&#x27;s device detects photos and videos that might contain nudity<mark class="inline-add"> or gore and violence</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">[Learn more about Communication Safety](https://support.apple.com/en-us/105069)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">[Learn more about Communication Safety](https://support.apple.com/en-us/105069)</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

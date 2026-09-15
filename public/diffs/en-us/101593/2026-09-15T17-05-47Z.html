@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>How to find your lost iPhone or iPad — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>How to find your lost iPhone or iPad</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/101593">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+36 ajouts</span>
+      <span class="badge removed">−32 suppressions</span>
+      <span class="badge">5 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## Ways to find your iPhone or iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## Ways to find your iPhone or iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">You can find a lost iPhone or iPad<mark class="inline-remove"> on the web at [iCloud.com/find](http://iCloud.com/find) or</mark> with the Find My app on another device.</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">You can find a lost iPhone or iPad with the Find My app on another device<mark class="inline-add"> or on the web at [icloud</mark>.<mark class="inline-add">com/find](https://icloud.com/find) . If you can&#x27;t find your device right away, [mark it as lost to protect it](https://support.apple.com/en-us/101593#lost) .</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">If you can&#x27;t find your device right away, [mark it as lost to protect it](https://support.apple.com/en-us/101593#lost) .</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">[Learn what to do if your iPhone or iPad was stolen](https://support.apple.com/en-us/120837)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">[Learn what to do if your iPhone or iPad was stolen](https://support.apple.com/en-us/120837)</code></div>
+<div class="diff-line previous removed"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">### Use Find Devices on iCloud.com/find</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">When you sign in to [iCloud.com/find](https://www.icloud.com/find/) , you can use the Find Devices app to locate your devices. Once you’re in the app, review the list of your devices under All Devices and tap the one you want to find. On the device information card, you can play a sound to help locate it, mark it as lost, or erase it.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">### Use the Find My app on another device</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">### Use the Find My app on another device</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">[How to use a family member&#x27;s iPhone to locate your lost device](https://support.apple.com/guide/iphone/iph6231f621a)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">[How to use a family member&#x27;s iPhone to locate your lost device](https://support.apple.com/guide/iphone/iph6231f621a)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">## <mark class="inline-remove">Way</mark>s <mark class="inline-remove">t</mark>o <mark class="inline-remove">mark y</mark>ou<mark class="inline-remove">r </mark>i<mark class="inline-remove">Pho</mark>n<mark class="inline-remove">e or iPa</mark>d<mark class="inline-remove"> as lost</mark></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text"><mark class="inline-add">#</mark>## <mark class="inline-add">Use Find Device</mark>s o<mark class="inline-add">n</mark> <mark class="inline-add">icl</mark>ou<mark class="inline-add">d.com/f</mark>ind</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text"><mark class="inline-remove">There are a few ways to mark your iPhone or iPad as lost. </mark>When you ma<mark class="inline-remove">rk</mark> your device <mark class="inline-remove">as</mark> l<mark class="inline-remove">o</mark>st<mark class="inline-remove">,</mark> your device<mark class="inline-remove"> i</mark>s <mark class="inline-remove">p</mark>u<mark class="inline-remove">t i</mark>n<mark class="inline-remove"> Lost Mo</mark>de<mark class="inline-remove">, which means you</mark>r <mark class="inline-remove">d</mark>evice<mark class="inline-remove"> is locked with your passcode, and payment card</mark>s and p<mark class="inline-remove">asses</mark> th<mark class="inline-remove">at</mark> you <mark class="inline-remove">use</mark> <mark class="inline-remove">w</mark>i<mark class="inline-remove">th Apple Pay are suspe</mark>n<mark class="inline-remove">de</mark>d. <mark class="inline-remove">Y</mark>ou can <mark class="inline-remove">also dis</mark>play a <mark class="inline-remove">ph</mark>o<mark class="inline-remove">ne n</mark>u<mark class="inline-remove">mber a</mark>nd<mark class="inline-remove"> message that allows others</mark> to <mark class="inline-remove">g</mark>et <mark class="inline-remove">in</mark> to<mark class="inline-remove">uch</mark> <mark class="inline-remove">w</mark>it<mark class="inline-remove">h you if they find your device</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">When you <mark class="inline-add">sign in to [icloud.co</mark>m<mark class="inline-add">/find](https://www.icloud.com/find/) , you c</mark>a<mark class="inline-add">n use Find My to locate</mark> your device<mark class="inline-add">s.</mark> <mark class="inline-add">Once you’re in Find My, review the</mark> l<mark class="inline-add">i</mark>st<mark class="inline-add"> of</mark> your devices under <mark class="inline-add">All D</mark>evices and <mark class="inline-add">ta</mark>p th<mark class="inline-add">e one</mark> you <mark class="inline-add">want</mark> <mark class="inline-add">to f</mark>ind. <mark class="inline-add">Then y</mark>ou can play a <mark class="inline-add">s</mark>ound to <mark class="inline-add">h</mark>e<mark class="inline-add">lp locate it, mark i</mark>t <mark class="inline-add">as</mark> <mark class="inline-add">los</mark>t<mark class="inline-add">, </mark>o<mark class="inline-add">r</mark> <mark class="inline-add">erase </mark>it.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text"><mark class="inline-remove">When</mark> <mark class="inline-remove">y</mark>o<mark class="inline-remove">u</mark> mark a<mark class="inline-remove">s </mark>d<mark class="inline-remove">evice</mark> as lost<mark class="inline-remove">:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text"><mark class="inline-add">##</mark> <mark class="inline-add">H</mark>o<mark class="inline-add">w to</mark> mark <mark class="inline-add">your iPhone or iP</mark>ad as lost</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">It</mark> <mark class="inline-remove">won&#x27;t appe</mark>ar o<mark class="inline-remove">nl</mark>i<mark class="inline-remove">n</mark>e a<mark class="inline-remove">n</mark>d in Lost Mode u<mark class="inline-remove">ntil the</mark> device is <mark class="inline-remove">turn</mark>ed o<mark class="inline-remove">n</mark> and conne<mark class="inline-remove">c</mark>te<mark class="inline-remove">d</mark> to <mark class="inline-remove">W</mark>i<mark class="inline-remove">-F</mark>i or ce<mark class="inline-remove">llular</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text"><mark class="inline-add">When</mark> <mark class="inline-add">you</mark> <mark class="inline-add">m</mark>ar<mark class="inline-add">k</mark> <mark class="inline-add">y</mark>o<mark class="inline-add">ur dev</mark>i<mark class="inline-add">c</mark>e a<mark class="inline-add">s lost, your </mark>d<mark class="inline-add">evice is put</mark> in Lost Mode<mark class="inline-add">,</mark> <mark class="inline-add">which means yo</mark>u<mark class="inline-add">r</mark> device is <mark class="inline-add">lock</mark>ed <mark class="inline-add">with y</mark>o<mark class="inline-add">ur passcode,</mark> and <mark class="inline-add">payment </mark>c<mark class="inline-add">ards and passes that you use with Apple Pay are suspended. You can also provide a ph</mark>on<mark class="inline-add">e </mark>n<mark class="inline-add">umb</mark>e<mark class="inline-add">r and message </mark>t<mark class="inline-add">hat allows oth</mark>e<mark class="inline-add">rs</mark> to <mark class="inline-add">contact you </mark>i<mark class="inline-add">f they f</mark>i<mark class="inline-add">nd</mark> <mark class="inline-add">y</mark>o<mark class="inline-add">u</mark>r <mark class="inline-add">devi</mark>ce.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">If</mark> you <mark class="inline-remove">use Stolen Device Protection for iPhone, Face ID or Touch ID is required </mark>to t<mark class="inline-remove">urn off Lost Mode — so even if a person </mark>ha<mark class="inline-remove">s</mark> your iPhone a<mark class="inline-remove">n</mark>d <mark class="inline-remove">knows your p</mark>as<mark class="inline-remove">scode, they&#x27;ll still</mark> be <mark class="inline-remove">locked </mark>ou<mark class="inline-remove">t</mark> <mark class="inline-remove">of</mark> your device.</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text"><mark class="inline-add">Apple</mark> <mark class="inline-add">will never contact</mark> you to <mark class="inline-add">say </mark>tha<mark class="inline-add">t</mark> your iPhone <mark class="inline-add">or iP</mark>ad <mark class="inline-add">h</mark>as be<mark class="inline-add">en</mark> <mark class="inline-add">f</mark>ou<mark class="inline-add">nd.</mark> <mark class="inline-add">Never share</mark> your device<mark class="inline-add"> passcode, passwords, verification codes, or other account information with anyone who requests it</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">Stay vigilant to avoid social engineering schemes, including phishing messages, phony support calls, and other scams.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">[Learn how to help protect your personal data from social engineering](https://support.apple.com/en-us/102568)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">[Image: Lost Mode settings on an iPhone, showing options to enable Lost Mode and preview your customized message and phone number to be displayed on the lost device.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">When you mark a device as lost:</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">- It only appears online and in Lost Mode if the device has been turned on and is connected to Wi-Fi or cellular.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- If you use [Stolen Device Protection for iPhone](https://support.apple.com/en-us/120340) , Face ID or Touch ID is required to turn off Lost Mode — so even if a person has your iPhone and knows your passcode, they&#x27;re still locked out of your device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">- If you have AppleCare+ with Theft and Loss, don&#x27;t remove your iPhone from Find My or your Apple Account until your claim has been fully approved.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">- If you have AppleCare+ with Theft and Loss, don&#x27;t remove your iPhone from Find My or your Apple Account until your claim has been fully approved.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text"><mark class="inline-remove">Apple</mark> w<mark class="inline-remove">ill</mark> ne<mark class="inline-remove">ver contact you to say that your iPhone</mark> o<mark class="inline-remove">r iPad has bee</mark>n fo<mark class="inline-remove">und. Neve</mark>r<mark class="inline-remove"> share</mark> your device <mark class="inline-remove">p</mark>asscod<mark class="inline-remove">e</mark> or <mark class="inline-remove">o</mark>the<mark class="inline-remove">r</mark> a<mark class="inline-remove">cc</mark>ount <mark class="inline-remove">infor</mark>mat<mark class="inline-remove">ion (such</mark> as <mark class="inline-remove">pa</mark>s<mark class="inline-remove">swords</mark> or <mark class="inline-remove">v</mark>er<mark class="inline-remove">ific</mark>a<mark class="inline-remove">tion</mark> <mark class="inline-remove">codes) w</mark>it<mark class="inline-remove">h anyone else</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text"><mark class="inline-add">If Find My</mark> w<mark class="inline-add">asn&#x27;t</mark> <mark class="inline-add">tur</mark>ne<mark class="inline-add">d</mark> on for your device <mark class="inline-add">before it w</mark>as<mark class="inline-add"> lo</mark>s<mark class="inline-add">t, it won&#x27;t appear at [icloud.</mark>co<mark class="inline-add">m/fin</mark>d<mark class="inline-add">](https://www.icloud.com/find/)</mark> or <mark class="inline-add">in </mark>the<mark class="inline-add"> Find My</mark> a<mark class="inline-add">pp and y</mark>ou<mark class="inline-add"> ca</mark>n<mark class="inline-add">&#x27;</mark>t ma<mark class="inline-add">rk i</mark>t as <mark class="inline-add">lo</mark>s<mark class="inline-add">t</mark> or <mark class="inline-add">remotely </mark>era<mark class="inline-add">se</mark> it.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text"><mark class="inline-remove">Stay</mark> <mark class="inline-remove">v</mark>i<mark class="inline-remove">gilant to avoid social engineering schemes, including phishing messages, phony support calls, a</mark>nd o<mark class="inline-remove">ther</mark> <mark class="inline-remove">s</mark>c<mark class="inline-remove">a</mark>m<mark class="inline-remove">s.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">Use F</mark>ind <mark class="inline-add">Devices </mark>o<mark class="inline-add">n</mark> <mark class="inline-add">i</mark>c<mark class="inline-add">loud.co</mark>m<mark class="inline-add">/find</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text"><mark class="inline-remove">[Lear</mark>n <mark class="inline-remove">more about social eng</mark>in<mark class="inline-remove">eering and steps that you can take</mark> to <mark class="inline-remove">prote</mark>c<mark class="inline-remove">t y</mark>ou<mark class="inline-remove">r pers</mark>on<mark class="inline-remove">al </mark>d<mark class="inline-remove">ata</mark>](https://<mark class="inline-remove">s</mark>u<mark class="inline-remove">pport.apple</mark>.com/en<mark class="inline-remove">-</mark>us<mark class="inline-remove">/102568)</mark> .</code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text"><mark class="inline-add">To sig</mark>n in to <mark class="inline-add">[i</mark>c<mark class="inline-add">l</mark>ou<mark class="inline-add">d.c</mark>o<mark class="inline-add">m/fi</mark>nd](https://<mark class="inline-add">www.iclo</mark>u<mark class="inline-add">d</mark>.com/<mark class="inline-add">find/) , you don&#x27;t need a verification code — so you can mark your device as lost, ev</mark>en<mark class="inline-add"> if it&#x27;s your tr</mark>us<mark class="inline-add">ted</mark> <mark class="inline-add">device that&#x27;s lost</mark>.<mark class="inline-add"> If you&#x27;re asked for a verification code, select the Find Devices button instead.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text"><mark class="inline-remove">###</mark> <mark class="inline-remove">Use</mark> <mark class="inline-remove">Fin</mark>d<mark class="inline-remove"> D</mark>evices on i<mark class="inline-remove">C</mark>loud.com/find</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text"><mark class="inline-add">[Mark</mark> <mark class="inline-add">your</mark> device<mark class="inline-add"> a</mark>s<mark class="inline-add"> lost</mark> on i<mark class="inline-add">c</mark>loud.com/find<mark class="inline-add">](https://www.icloud.com/find/)</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">To sign in to iCloud.com/find, you don&#x27;t need a verification code — so you can mark your device as lost, even if it&#x27;s your trusted device that&#x27;s lost. If you&#x27;re asked for a verification code, select the Find Devices button instead.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">[Mark your device as lost on iCloud.com/find](https://www.icloud.com/find/)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">[Learn more about using Lost Mode on iCloud.com](https://support.apple.com/guide/icloud/mmfc0f0165/icloud)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">[Learn more about using Lost Mode on iCloud.com](https://support.apple.com/guide/icloud/mmfc0f0165/icloud)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">### Use the Find My app on another device or a Family Sharing group member&#x27;s device</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">### Use the Find My app on another device or a Family Sharing group member&#x27;s device</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">- In the Find My app<mark class="inline-remove"> (or Find Devices on Apple Watch)</mark>, go to the Devices tab.</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">- In the Find My app, go to the Devices tab.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">- Scroll down and select your missing iPhone or iPad.</code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">- Scroll down and select your missing iPhone or iPad.<mark class="inline-add"> On a Family Sharing group member&#x27;s device, your iPhone or iPad appears underneath their devices.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">- Tap the More button .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Scroll down to Lost [Device], then turn on Lost Mode.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">- Scroll down to Lost [Device], then turn on Lost Mode.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">63</span><code class="line-text">- Follow the onscreen steps if you want to display your contact information on your missing device.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">- Follow the onscreen steps if you want to display your contact information on your missing device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">- Tap Activate.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">- Tap Activate.</code></div>
+<div class="diff-line previous removed"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">On a Family Sharing group member&#x27;s device, your iPhone or iPad appears underneath their devices.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">If Find My wasn&#x27;t turned on for your device before it was lost, it won&#x27;t appear at [iCloud.com/find](https://www.icloud.com/find/) or in the Find My app and you can&#x27;t mark it as lost or remotely erase it.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">71</span><code class="line-text">## If your iPhone or iPad is lost permanently</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">## If your iPhone or iPad is lost permanently</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 17 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">### Remotely erase your iPhone or iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">91</span><code class="line-text">### Remotely erase your iPhone or iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">You can remotely erase your device using the Find My app on another device or at [i<mark class="inline-remove">C</mark>loud.com/find](https://www.icloud.com/find/) . But make sure that you&#x27;ve tried everything else to find it, because erasing your device can&#x27;t be undone.</code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">You can remotely erase your device using the Find My app on another device or at [i<mark class="inline-add">c</mark>loud.com/find](https://www.icloud.com/find/) . But make sure that you&#x27;ve tried everything else to find it, because erasing your device can&#x27;t be undone.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">95</span><code class="line-text">Don&#x27;t remove the device from Find My, even if you remotely erase it. Removing the device from your Find My list removes Activation Lock, which will make it easier for the thief to unlock and resell your device.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">Don&#x27;t remove the device from Find My, even if you remotely erase it. Removing the device from your Find My list removes Activation Lock, which will make it easier for the thief to unlock and resell your device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">99</span><code class="line-text">If your device is offline, the remote erase process begins the next time it&#x27;s online.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">99</span><code class="line-text">If your device is offline, the remote erase process begins the next time it&#x27;s online.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">101</span><code class="line-text">[Remotely erase your iPhone or iPad on i<mark class="inline-remove">C</mark>loud.com/find](https://support.apple.com/guide/icloud/mmfc0ef36f/icloud)</code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">[Remotely erase your iPhone or iPad on i<mark class="inline-add">c</mark>loud.com/find](https://support.apple.com/guide/icloud/mmfc0ef36f/icloud)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">103</span><code class="line-text">[Remotely erase a device in the Find My app on iPhone](https://support.apple.com/guide/iphone/iph21a030ae3/ios)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">103</span><code class="line-text">[Remotely erase a device in the Find My app on iPhone](https://support.apple.com/guide/iphone/iph21a030ae3/ios)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">107</span><code class="line-text">Make sure that your Apple Account is secure by reviewing your Apple Account information. If you find changes that you don&#x27;t recognize or didn&#x27;t make, update that information and change your Apple Account password.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">107</span><code class="line-text">Make sure that your Apple Account is secure by reviewing your Apple Account information. If you find changes that you don&#x27;t recognize or didn&#x27;t make, update that information and change your Apple Account password.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">109</span><code class="line-text">#### <mark class="inline-remove">If</mark> you <mark class="inline-remove">h</mark>a<mark class="inline-remove">ve</mark> another trusted device</code></div>
+<div class="diff-line current added"><span class="line-number">109</span><code class="line-text">#### <mark class="inline-add">Review</mark> you<mark class="inline-add">r</mark> a<mark class="inline-add">ccount on</mark> another trusted device</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">111</span><code class="line-text">Use your other trusted device (like an iPad or Mac) to review your account.<mark class="inline-remove"> Go to Settings, then tap [Your Name] or System Settings, tap [Your Name], then tap Sign-In &amp; Security to review your security settings.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text">Use your other trusted device (like an iPad or Mac) to review your account.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">113</span><code class="line-text"><mark class="inline-remove">####</mark> <mark class="inline-remove">If</mark> you <mark class="inline-remove">g</mark>e<mark class="inline-remove">t</mark> a <mark class="inline-remove">n</mark>e<mark class="inline-remove">w</mark> Apple <mark class="inline-remove">d</mark>e<mark class="inline-remove">v</mark>i<mark class="inline-remove">c</mark>e</code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">On an iPhone or iPad, go to Settings, then tap</mark> you<mark class="inline-add">r</mark> <mark class="inline-add">nam</mark>e<mark class="inline-add">. On</mark> a <mark class="inline-add">Mac, from th</mark>e Apple <mark class="inline-add">m</mark>e<mark class="inline-add">nu , choose System Sett</mark>i<mark class="inline-add">ngs, th</mark>e<mark class="inline-add">n tap your name.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">115</span><code class="line-text">- To review your security settings, tap Sign-In &amp; Security.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">117</span><code class="line-text">#### Review your account on a new Apple device</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">115</span><code class="line-text">After you sign in with your Apple Account, you can review your account information. There may be a waiting period before you can make changes to your security settings.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">119</span><code class="line-text">After you sign in with your Apple Account, you can review your account information. There may be a waiting period before you can make changes to your security settings.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">117</span><code class="line-text">#### <mark class="inline-remove">O</mark>n the web</code></div>
+<div class="diff-line current added"><span class="line-number">121</span><code class="line-text">#### <mark class="inline-add">Review your account o</mark>n the web</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">119</span><code class="line-text">- You can review your account information at [account.apple.com](https://account.apple.com/) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">123</span><code class="line-text">- You can review your account information at [account.apple.com](https://account.apple.com/) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

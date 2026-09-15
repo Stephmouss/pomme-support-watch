@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Customize headphone audio levels on your iPhone or iPad — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Customize headphone audio levels on your iPhone or iPad</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/102663">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+24 ajouts</span>
+      <span class="badge removed">−18 suppressions</span>
+      <span class="badge">7 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">Headphone Accommodations works with these headphones:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">Headphone Accommodations works with these headphones:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">- AirPods 2<mark class="inline-remove">, 3,</mark> and <mark class="inline-remove">4 (bo</mark>t<mark class="inline-remove">h mod</mark>e<mark class="inline-remove">ls)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">- AirPods 2 and <mark class="inline-add">la</mark>te<mark class="inline-add">r</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">- AirPods Max (all models)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">- AirPods Max (all models)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">- Powerbeats Pro 2</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">- Powerbeats Pro 2</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">When [using automatic device switching](https://support.apple.com/en-us/104988) with your headphones, your custom audio settings will transfer between your iPhone, your iPad, your paired Apple Watch (on watchOS 7), your Mac running macOS Sequoia (depending on your model of AirPods), and your Apple Vision Pro.</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">When [using automatic device switching](https://support.apple.com/en-us/104988) with your headphones, your custom audio settings will transfer between your iPhone, your iPad, your paired Apple Watch (on watchOS 7<mark class="inline-add"> or later</mark>), your Mac running macOS Sequoia<mark class="inline-add"> or later</mark> (depending on your model of AirPods), and your Apple Vision Pro.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">If you [enable Hearing Assistance](https://support.apple.com/en-us/120992) with your AirPods Pro 2 or AirPods Pro 3 on iOS 18.1 or later, your Headphone Accommodations settings will be overridden.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">If you [enable Hearing Assistance](https://support.apple.com/en-us/120992) with your AirPods Pro 2 or AirPods Pro 3 on iOS 18.1 or later, your Headphone Accommodations settings will be overridden.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">- Check that you have the [latest version of iOS or iPadOS](https://support.apple.com/en-us/118575) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">- Check that you have the [latest version of iOS or iPadOS](https://support.apple.com/en-us/118575) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- Go to Settings, tap Accessibility, then select Audio &amp; Visual. Tap Headphone Accommodations, then turn on Headphone Accommodations.</code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- Go to<mark class="inline-add"> the</mark> Settings<mark class="inline-add"> app </mark>, tap Accessibility, then select Audio &amp; Visual. Tap Headphone Accommodations, then turn on Headphone Accommodations.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">- Choose how you want to apply your custom audio settings:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">- Choose how you want to apply your custom audio settings:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">- Customize your headphone audio settings:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">- Customize your headphone audio settings:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- [Use Custom Audio<mark class="inline-remove"> Setup</mark>](https://support.apple.com/en-us/102663#custom-audio<mark class="inline-remove">-setup</mark>) . You’ll listen to audio samples and choose which ones sound better to you. Then you can apply the custom settings suggested based on your choices.</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- [Use Custom<mark class="inline-add">ize</mark> Audio](https://support.apple.com/en-us/102663#custom<mark class="inline-add">ize</mark>-audio) . You’ll listen to audio samples and choose which ones sound better to you. Then you can apply the custom settings suggested based on your choices.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">- [Manually adjust audio settings](https://support.apple.com/en-us/102663#manually-adjust) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">- [Manually adjust audio settings](https://support.apple.com/en-us/102663#manually-adjust) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">### Use Custom Audio<mark class="inline-remove"> Setup</mark></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">### Use Custom<mark class="inline-add">ize</mark> Audio</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">- Reset any current audio configurations to their default settings:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">- Reset any current audio configurations to their default settings:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">- Go to Settings. Tap Apps, then select Music. Tap EQ, then choose Off to turn off Music EQ.</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">- Go to<mark class="inline-add"> the</mark> Settings<mark class="inline-add"> app</mark>. Tap Apps, then select Music. Tap EQ, then choose Off to turn off Music EQ.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">- Go to Settings. Tap Accessibility, then select Audio &amp; Visual. Adjust the Balance slider. Set the audio volume balance to the center.</code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">- Go to<mark class="inline-add"> the</mark> Settings<mark class="inline-add"> app</mark>. Tap Accessibility, then select Audio &amp; Visual. Adjust the Balance slider. Set the audio volume balance to the center.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- Connect your AirPods. Go to the Settings app, then tap Bluetooth. Tap the Info button next to your AirPods, then tap Audio &amp; Routing. Tap Equalizer, and set it to Recommended.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">- Connect your headphones. Make sure that you&#x27;re in a quiet environment.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">- Connect your headphones. Make sure that you&#x27;re in a quiet environment.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">- Go to Settings. Tap Accessibility, choose Audio &amp; Visual, then tap Headphone Accommodations.</code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">- Go to<mark class="inline-add"> the</mark> Settings<mark class="inline-add"> app</mark>. Tap Accessibility, choose Audio &amp; Visual, then tap Headphone Accommodations.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">- Tap Custom Audio<mark class="inline-remove"> Setup</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">- Tap Custom<mark class="inline-add">ize</mark> Audio.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">63</span><code class="line-text">- Follow the instructions on your screen. When finished, tap Use Custom Settings to apply the custom settings suggested based on your choices. You can switch back to standard settings at any time.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">- Follow the instructions on your screen. When finished, tap Use Custom Settings to apply the custom settings suggested based on your choices. You can switch back to standard settings at any time.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">You can also adjust the audio volume balance between left and right channels:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">You can also adjust the audio volume balance between left and right channels:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">- Go to Settings. Tap Accessibility, then choose Audio &amp; Visual.</code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">- Go to<mark class="inline-add"> the</mark> Settings<mark class="inline-add"> app</mark>. Tap Accessibility, then choose Audio &amp; Visual.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">- Adjust the Balance slider.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">- Adjust the Balance slider.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">If you&#x27;re using Transparency mode on your AirPods Pro or AirPods Max, you can [manually adjust audio settings](https://support.apple.com/en-us/102663#customize-transparency-mode) —including adjusting the left-right balance—in the Headphones Accommodations settings on your device.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">77</span><code class="line-text">## Customize Transparency mode on your AirPods Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">77</span><code class="line-text">## Customize Transparency mode on your AirPods Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text">Headphone Accommodations supports Transparency mode on AirPods Pro, making quiet voices more audible and tuning the sounds of your environment to your hearing needs.<mark class="inline-remove"> With AirPods Pro 2, AirPods Pro 3, and AirPods 4 (ANC), you can also use Adaptive Audio to automatically adjust listening mode settings based on your surroundings.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">Headphone Accommodations supports Transparency mode on AirPods Pro, making quiet voices more audible and tuning the sounds of your environment to your hearing needs.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">81</span><code class="line-text">[When Transparency mode is turned on](https://support.apple.com/en-us/108918) , your Headphone Accommodations settings might change how you hear your own voice or increase your environment&#x27;s noise level. You might need to adjust these settings to find a setup that&#x27;s most comfortable for you. You can start from a milder setting by adjusting the sliders for Amplification, Tone, Ambient Noise Reduction, and Own Voice Amplification. Then gradually increase to the setting that&#x27;s most helpful for hearing people’s voices or natural sound around you.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">[When Transparency mode is turned on](https://support.apple.com/en-us/108918) , your Headphone Accommodations settings might change how you hear your own voice or increase your environment&#x27;s noise level. You might need to adjust these settings to find a setup that&#x27;s most comfortable for you. You can start from a milder setting by adjusting the sliders for Amplification, Tone, Ambient Noise Reduction, and Own Voice Amplification. Then gradually increase to the setting that&#x27;s most helpful for hearing people’s voices or natural sound around you.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">87</span><code class="line-text">- Put your AirPods Pro in your ears and connect them to your iPhone or iPad.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">- Put your AirPods Pro in your ears and connect them to your iPhone or iPad.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text">- Go to Settings. Tap Accessibility, then choose Audio &amp; Visual.</code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">- Go to<mark class="inline-add"> the</mark> Settings<mark class="inline-add"> app</mark>. Tap Accessibility, then choose Audio &amp; Visual.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text">- Tap Headphone Accommodations, then <mark class="inline-remove">selec</mark>t Transparency<mark class="inline-remove"> Mode</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">- Tap Headphone Accommodations, then t<mark class="inline-add">urn on</mark> Transparency.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">- Tap Custom Transparency<mark class="inline-remove"> Mode and turn it on</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">- Tap Custom<mark class="inline-add">ize</mark> Transparency.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">95</span><code class="line-text">To adjust the audio-volume balance between left and right channels, adjust the Transparency Balance slider. You can also adjust Transparency mode settings by tapping the Hearing button in Control Center.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">To adjust the audio-volume balance between left and right channels, adjust the Transparency Balance slider. You can also adjust Transparency mode settings by tapping the Hearing button in Control Center.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">105</span><code class="line-text">- Put your AirPods Pro in your ears and connect them to your iPhone or iPad.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">105</span><code class="line-text">- Put your AirPods Pro in your ears and connect them to your iPhone or iPad.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">107</span><code class="line-text">- Go to Settings, then tap Accessibility. Select Audio &amp; Visual, then tap Headphone Accommodations.</code></div>
+<div class="diff-line current added"><span class="line-number">107</span><code class="line-text">- Go to<mark class="inline-add"> the</mark> Settings<mark class="inline-add"> app</mark>, then tap Accessibility. Select Audio &amp; Visual, then tap Headphone Accommodations.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">109</span><code class="line-text">- Make sure that Headphone Accommodations is turned on.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">109</span><code class="line-text">- Make sure that Headphone Accommodations is turned on.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">111</span><code class="line-text">- <mark class="inline-remove">T</mark>a<mark class="inline-remove">p</mark> Transparency <mark class="inline-remove">Mode, and</mark> turn on<mark class="inline-remove"> Custom Transparency Mode</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text">- <mark class="inline-add">M</mark>a<mark class="inline-add">ke sure that</mark> Transparency <mark class="inline-add">is</mark> turn<mark class="inline-add">ed</mark> on.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text">- Tap Customize Transparency.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">113</span><code class="line-text">- Turn on Conversation Boost.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">115</span><code class="line-text">- Turn on Conversation Boost.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">115</span><code class="line-text">You can also turn on Conversation Boost by tapping the Hearing button in Control Center.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">117</span><code class="line-text">You can also turn on Conversation Boost by tapping the Hearing button in Control Center.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">117</span><code class="line-text">[Image: Hearing button]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">119</span><code class="line-text">[Image: Hearing button]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">121</span><code class="line-text">## Use Custom EQ with your AirPods</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">123</span><code class="line-text">You can use a three-band equalizer on your iPhone, iPad, or Mac to [personalize the sound signature](https://support.apple.com/guide/airpods/te819024i19r/web) of your AirPods 4 or later, your AirPods Pro 2 or later, or your AirPods Max 2.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">119</span><code class="line-text">## Learn more</code></div>
+<div class="diff-line current unchanged"><span class="line-number">125</span><code class="line-text">## Learn more</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

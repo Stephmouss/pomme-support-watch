@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Track your overnight and daytime vitals with Apple Watch — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Track your overnight and daytime vitals with Apple Watch</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/120142">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+32 ajouts</span>
+      <span class="badge removed">−16 suppressions</span>
+      <span class="badge">3 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous removed"><span class="line-number">1</span><code class="line-text"># Track your overnight vitals with Apple Watch</code></div>
+<div class="diff-line current added"><span class="line-number">1</span><code class="line-text"># Track your overnight<mark class="inline-add"> and daytime</mark> vitals with Apple Watch</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">Review your health data with the Vitals app on Apple Watch to get a better understanding of your daily health status.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">Review your health data with the Vitals app on Apple Watch to get a better understanding of your daily health status.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## About the Vitals app</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## About the Vitals app</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">The Vitals app shows you what your typical overnight metrics are so you can assess them at a glance. 1 When you wear your Apple Watch to bed, the Vitals app estimates certain overnight health metrics and establishes a typical range for each.<mark class="inline-remove"> These metrics include:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">The Vitals app shows you what your typical overnight<mark class="inline-add"> and daytime</mark> metrics are so you can assess them at a glance. 1 When you wear your Apple Watch <mark class="inline-add">during the day and </mark>to bed, the Vitals app estimates certain overnight<mark class="inline-add"> and daytime</mark> health metrics and establishes a typical range for each.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">H</mark>e<mark class="inline-remove">a</mark>rt <mark class="inline-remove">Ra</mark>t<mark class="inline-remove">e</mark></code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text"><mark class="inline-add">The</mark> <mark class="inline-add">Vitals app shows th</mark>e<mark class="inline-add">se ove</mark>r<mark class="inline-add">nigh</mark>t <mark class="inline-add">me</mark>t<mark class="inline-add">rics:</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">- <mark class="inline-remove">R</mark>e<mark class="inline-remove">spi</mark>rat<mark class="inline-remove">ory Rat</mark>e</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">- <mark class="inline-add">H</mark>e<mark class="inline-add">art </mark>rate</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">- <mark class="inline-remove">Bl</mark>o<mark class="inline-remove">od</mark> <mark class="inline-remove">Oxyg</mark>e<mark class="inline-remove">n 2</mark></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- <mark class="inline-add">Respirat</mark>o<mark class="inline-add">ry</mark> <mark class="inline-add">rat</mark>e</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- <mark class="inline-remove">Wrist</mark> <mark class="inline-remove">T</mark>e<mark class="inline-remove">mperature</mark> <mark class="inline-remove">3</mark></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- <mark class="inline-add">Blood</mark> <mark class="inline-add">oxyg</mark>e<mark class="inline-add">n</mark> <mark class="inline-add">2</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">- <mark class="inline-remove">Sl</mark>ee<mark class="inline-remove">p Du</mark>rat<mark class="inline-remove">ion</mark></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- <mark class="inline-add">Wrist t</mark>e<mark class="inline-add">mp</mark>erat<mark class="inline-add">ure 3</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- Sleep duration</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">If you have Apple Watch Series 12 or Apple Watch Ultra 4, heart rate variability (HRV) replaces sleep duration and the Vitals app also shows a daytime view with these metrics:</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- Resting heart rate 4</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- HRV 4</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">Factors such as your medications, elevation, alcohol intake, or even illness can impact your metrics. If multiple metrics are outside of your typical range, you get a notification the next morning which tells you possible factors that may have caused the outliers.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">Factors such as your medications, elevation, alcohol intake, or even illness can impact your metrics. If multiple metrics are outside of your typical range, you get a notification the next morning which tells you possible factors that may have caused the outliers.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">- Make sure that you&#x27;re wearing your Apple Watch at a comfortable fit. If your watch is too loose, the sensors might not capture accurate readings.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">- Make sure that you&#x27;re wearing your Apple Watch at a comfortable fit. If your watch is too loose, the sensors might not capture accurate readings.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">## View a history of your overnight vitals</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">## View a history of your overnight <mark class="inline-add">and daytime </mark>vitals</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">You can view a history of your overnight vitals on your Apple Watch, iPhone, or iPad.</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">You can view a history of your overnight vitals on your Apple Watch, iPhone, or iPad.<mark class="inline-add"> If you have Apple Watch Series 12 or Apple Watch Ultra 4, you can also view your daytime vitals which include your resting heart rate and HRV.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">### On Apple Watch</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">### On Apple Watch</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">- Open the Vitals app.</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- Open the Vitals app.<mark class="inline-add"> Your overnight vitals are shown by default.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">[Image: An Apple Watch <mark class="inline-remove">that </mark>show<mark class="inline-remove">s</mark> <mark class="inline-remove">O</mark>vernight <mark class="inline-remove">V</mark>itals within a <mark class="inline-remove">typic</mark>al range<mark class="inline-remove"> for the past 7 days</mark> in the Vitals app.]</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">[Image: An Apple Watch show<mark class="inline-add">ing</mark> <mark class="inline-add">o</mark>vernight <mark class="inline-add">v</mark>itals within a <mark class="inline-add">f</mark>a<mark class="inline-add">vorab</mark>l<mark class="inline-add">e</mark> range in the Vitals app.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">- Turn the Digital Crown to view details on your overnight vitals, then tap a metric to learn more about it.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">- Turn the Digital Crown to view details on your overnight vitals, then tap a metric to learn more about it.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- <mark class="inline-remove">To view</mark> you<mark class="inline-remove">r</mark> <mark class="inline-remove">o</mark>ver<mark class="inline-remove">n</mark>i<mark class="inline-remove">ght vital</mark>s <mark class="inline-remove">f</mark>or <mark class="inline-remove">th</mark>e la<mark class="inline-remove">st</mark> <mark class="inline-remove">7 days</mark>, tap the <mark class="inline-remove">ca</mark>len<mark class="inline-remove">dar</mark> in the <mark class="inline-remove">to</mark>p-<mark class="inline-remove">lef</mark>t corner.</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">- <mark class="inline-add">If</mark> you <mark class="inline-add">ha</mark>ve<mark class="inline-add"> Apple Watch Se</mark>ri<mark class="inline-add">e</mark>s <mark class="inline-add">12 </mark>or <mark class="inline-add">Appl</mark>e <mark class="inline-add">Watch U</mark>l<mark class="inline-add">tr</mark>a <mark class="inline-add">4</mark>, tap the <mark class="inline-add">S</mark>le<mark class="inline-add">ep butto</mark>n in the <mark class="inline-add">u</mark>p<mark class="inline-add">per</mark>-<mark class="inline-add">righ</mark>t corner<mark class="inline-add"> to see your daytime vitals</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text"><mark class="inline-remove">You</mark> <mark class="inline-remove">ca</mark>n <mark class="inline-remove">a</mark>l<mark class="inline-remove">so tap Overnight Vitals, then tap Mor</mark>e <mark class="inline-remove">Info to learn about wh</mark>at <mark class="inline-remove">re</mark>s<mark class="inline-remove">ults</mark> <mark class="inline-remove">you m</mark>ay<mark class="inline-remove"> see, wha</mark>t<mark class="inline-remove"> </mark>i<mark class="inline-remove">t </mark>me<mark class="inline-remove">ans when your overnight</mark> vitals a<mark class="inline-remove">re outside of your</mark> typical range<mark class="inline-remove">,</mark> <mark class="inline-remove">a</mark>n<mark class="inline-remove">d</mark> the l<mark class="inline-remove">ifestyle factor</mark>s <mark class="inline-remove">th</mark>a<mark class="inline-remove">t may im</mark>p<mark class="inline-remove">act your results</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text"><mark class="inline-add">[Image:</mark> <mark class="inline-add">A</mark>n <mark class="inline-add">App</mark>le <mark class="inline-add">W</mark>at<mark class="inline-add">ch</mark> s<mark class="inline-add">howing</mark> <mark class="inline-add">d</mark>aytime vitals <mark class="inline-add">within </mark>a typical range <mark class="inline-add">i</mark>n the <mark class="inline-add">Vita</mark>ls ap<mark class="inline-add">p</mark>.<mark class="inline-add">]</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- Turn the Digital Crown to view details on your daytime vitals, then tap a metric to learn more about it.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">- To view your overnight or daytime vitals for the last 7 days, tap the calendar button in the upper corner.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">You can also tap More Info to learn about what results you may see, what it means when your vitals are outside of your typical range, and the lifestyle factors that may impact your results.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">### On iPhone or iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">### On iPhone or iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">- Open the Health app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">- Open the Health app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">- If you&#x27;re on your iPhone, tap <mark class="inline-remove">S</mark>ea<mark class="inline-remove">rch [magnifying glass icon] </mark>, then tap Vitals. If you&#x27;re on your iPad, tap the sidebar , then tap Vitals.</code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">- If you&#x27;re on your iPhone, tap <mark class="inline-add">th</mark>e<mark class="inline-add"> Browse t</mark>a<mark class="inline-add">b</mark>, then tap Vitals. If you&#x27;re on your iPad, tap the sidebar <mark class="inline-add">button </mark>, then tap Vitals.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">By default, the bar graph is set to D for daily. Tap W at the top of the chart to view your history for the past week, M for the past month, or 6M for the past 6 months. Tap Show More Vitals Data below the graph and select a category to review additional details.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">By default, the bar graph is set to D for daily. Tap W at the top of the chart to view your history for the past week, M for the past month, or 6M for the past 6 months. Tap Show More Vitals Data below the graph and select a category to review additional details.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">[Image: An iPhone <mark class="inline-remove">that </mark>show<mark class="inline-remove">s</mark> overnight health metrics in a typical range for a single day.]</code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">[Image: An iPhone show<mark class="inline-add">ing</mark> overnight health metrics in a typical range for a single day.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">- Metrics: View each health metric, as well as the number of outliers that occurred for the metric during the selected timeframe.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">- Metrics: View each health metric, as well as the number of outliers that occurred for the metric during the selected timeframe.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">63</span><code class="line-text">- Vitals app measurements are not intended for medical use. Please consult your healthcare provider prior to making any decisions related to your health.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">77</span><code class="line-text">- Vitals app measurements are not intended for medical use. Please consult your healthcare provider prior to making any decisions related to your health.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">- The Blood Oxygen app is not supported on Apple Watch SE or Apple Watch For Your Kids. For models of Apple Watch purchased in the United States on or after January 18, 2024 with part numbers ending in LW/A, the Blood Oxygen data analysis is performed on iPhone, and results can be viewed in the Health app. Blood Oxygen data is not available in the Vitals app for <mark class="inline-remove">these</mark> models. Learn [how to identify your Apple Watch](https://support.apple.com/en-us/108056) .</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">- The Blood Oxygen app is not supported on Apple Watch SE or Apple Watch For Your Kids. For models of Apple Watch purchased in the United States on or after January 18, 2024 with part numbers ending in LW/A<mark class="inline-add"> or LS/A</mark>, the Blood Oxygen data analysis is performed on iPhone, and results can be viewed in the Health app. Blood Oxygen data is not available in the Vitals app for <mark class="inline-add">LW/A or LS/A</mark> models. Learn [how to identify your Apple Watch](https://support.apple.com/en-us/108056) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">- Wrist Temperature is available with Apple Watch Series 8 or later and any model of Apple Watch Ultra.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">- Wrist Temperature is available with Apple Watch Series 8 or later and any model of Apple Watch Ultra.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">- Daytime vitals are available only with Apple Watch Series 12 or Apple Watch Ultra 4.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">## Need more help?</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">## Need more help?</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

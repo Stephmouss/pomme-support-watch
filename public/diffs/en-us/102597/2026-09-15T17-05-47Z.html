@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Use an iPad as a second display for a Mac — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Use an iPad as a second display for a Mac</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/102597">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+22 ajouts</span>
+      <span class="badge removed">−70 suppressions</span>
+      <span class="badge">4 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">With Sidecar, you can use your iPad as a display that extends or mirrors your Mac desktop.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">With Sidecar, you can use your iPad as a display that extends or mirrors your Mac desktop.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">[Image: MacBook Air with iPad Pro as a second display]</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">[Image: MacBook Air with iPad Pro as a second display<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">## Get ready</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">## Get ready</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">If you want your keyboard, mouse, or trackpad to control your Mac and iPad, with the iPad showing its own Home Screen and apps rather than the desktop and apps of your Mac, [use Universal Control](https://support.apple.com/en-us/102459) instead.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">If you want your keyboard, mouse, or trackpad to control your Mac and iPad, with the iPad showing its own Home Screen and apps rather than the desktop and apps of your Mac, [use Universal Control](https://support.apple.com/en-us/102459) instead.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">## Move a Mac window to <mark class="inline-remove">y</mark>o<mark class="inline-remove">ur</mark> iPad</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">## Move a Mac window to <mark class="inline-add">and fr</mark>o<mark class="inline-add">m</mark> iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">Move your pointer over the full-screen button of a window on your Mac, then choose the option to move that window to your iPad.</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">Move your pointer over the full-screen button of a window on your Mac, then choose the option to move that window to your iPad.<mark class="inline-add"> Or just drag the window to your iPad.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">[Image: full-screen button]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">[Image: full-screen button]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">To move the window back to your Mac, move your pointer over the full-screen button on your iPad and choose Move Window Back to Mac. If using iPadOS 27 and macOS 27 or later, you can instead touch and hold the full-screen button, then choose Move Window Back to Mac. Or just drag the window back to your Mac.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">If you want your iPad to mirror your Mac screen instead of extending its desktop, choose your iPad from the Screen Mirroring menu in Control Center or the menu bar.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">[Image: The menu available from the full-screen button]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">[Image: The menu available from the full-screen button]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text"><mark class="inline-remove">You</mark> <mark class="inline-remove">ca</mark>n<mark class="inline-remove"> repeat this s</mark>te<mark class="inline-remove">p fo</mark>r<mark class="inline-remove"> other M</mark>ac wi<mark class="inline-remove">ndows, or simply drag o</mark>th<mark class="inline-remove">er</mark> Mac windows <mark class="inline-remove">t</mark>o<mark class="inline-remove"> a</mark>n<mark class="inline-remove">d from your</mark> iPad<mark class="inline-remove">. To move a window back to your Mac, you can also move your pointer over the full-screen button and choose Move Window Back to Mac.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text"><mark class="inline-add">##</mark> <mark class="inline-add">I</mark>nterac<mark class="inline-add">t</mark> with Mac windows on iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text"><mark class="inline-remove">[I</mark>mage: f<mark class="inline-remove">ull-sc</mark>r<mark class="inline-remove">een</mark> <mark class="inline-remove">button]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text"><mark class="inline-add">Use a keyboard, mouse, or trackpad. During a Sidecar session, you can type on your iPad using either a keyboard connected to your Mac or a keyboard connected to your iPad (such as a S</mark>ma<mark class="inline-add">rt Keyboard or Magic Keyboard for iPad). To point, click, or select with a mouse or trackpad, use the mouse or trackpad connected to your Mac. Sidecar also supports [trackpad </mark>ge<mark class="inline-add">stures](https</mark>:<mark class="inline-add">//support.apple.com/guide/ipad/ipad66ce6358/ipados) and [mouse gestures](https://support.apple.com/guide/ipad/ipada39e5184/ipados)</mark> f<mark class="inline-add">o</mark>r <mark class="inline-add">iPad.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text"><mark class="inline-remove">I</mark>f <mark class="inline-remove">you</mark> <mark class="inline-remove">w</mark>ant <mark class="inline-remove">y</mark>o<mark class="inline-remove">ur</mark> iPad t<mark class="inline-remove">o</mark> <mark class="inline-remove">mirr</mark>or<mark class="inline-remove"> your Mac</mark> scr<mark class="inline-remove">een instead </mark>o<mark class="inline-remove">f extend</mark>ing its <mark class="inline-remove">desk</mark>top<mark class="inline-remove">:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text"><mark class="inline-add">Use touch. Beginning with iPadOS 27 and macOS 27, Sidecar offers greatly expanded support for using touch to interact with Mac windows and menus on iPad. Earlier versions o</mark>f <mark class="inline-add">iOS</mark> an<mark class="inline-add">d macOS suppor</mark>t <mark class="inline-add">a limited set </mark>o<mark class="inline-add">f</mark> iPad <mark class="inline-add">ges</mark>t<mark class="inline-add">ures,</mark> <mark class="inline-add">such as f</mark>or scro<mark class="inline-add">ll</mark>ing <mark class="inline-add">(swipe w</mark>it<mark class="inline-add">h two finger</mark>s<mark class="inline-add">),</mark> <mark class="inline-add">cu</mark>t<mark class="inline-add">, c</mark>op<mark class="inline-add">y, paste, and undo.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">I</mark>n mac<mark class="inline-remove">OS</mark> <mark class="inline-remove">M</mark>ontere<mark class="inline-remove">y</mark> <mark class="inline-remove">or later, choose a mirro</mark>ring <mark class="inline-remove">opt</mark>ion from t<mark class="inline-remove">he Screen Mirr</mark>o<mark class="inline-remove">ring menu in</mark> t<mark class="inline-remove">he menu</mark> b<mark class="inline-remove">ar. 1</mark></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text"><mark class="inline-add">Use</mark> <mark class="inline-add">the sidebar o</mark>n <mark class="inline-add">iPad. The sidebar puts co</mark>m<mark class="inline-add">monly used M</mark>ac <mark class="inline-add">c</mark>ont<mark class="inline-add">rols on th</mark>e<mark class="inline-add"> side of your iPad sc</mark>re<mark class="inline-add">en</mark> <mark class="inline-add">du</mark>ring <mark class="inline-add">a Sidecar sess</mark>ion<mark class="inline-add">. The sidebar includes,</mark> from to<mark class="inline-add">p</mark> t<mark class="inline-add">o</mark> b<mark class="inline-add">ottom:</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text"><mark class="inline-remove">[I</mark>mag<mark class="inline-remove">e:</mark> <mark class="inline-remove">S</mark>creen <mark class="inline-remove">M</mark>i<mark class="inline-remove">rroring menu]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text"><mark class="inline-add">- A button to show or hide the </mark>m<mark class="inline-add">enu b</mark>a<mark class="inline-add">r when viewin</mark>g <mark class="inline-add">a window in full s</mark>creen <mark class="inline-add">on </mark>i<mark class="inline-add">Pad.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- <mark class="inline-remove">In</mark> <mark class="inline-remove">macOS Big S</mark>u<mark class="inline-remove">r, choose a mirroring op</mark>t<mark class="inline-remove">i</mark>on <mark class="inline-remove">fr</mark>o<mark class="inline-remove">m</mark> <mark class="inline-remove">t</mark>h<mark class="inline-remove">e Display menu in [C</mark>o<mark class="inline-remove">ntrol Center](https://support.apple.com/guide/mac-help/quickly-change-settings-mchl50f94f8f/mac)</mark> or <mark class="inline-remove">t</mark>he menu <mark class="inline-remove">b</mark>a<mark class="inline-remove">r</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- <mark class="inline-add">A</mark> <mark class="inline-add">b</mark>ut<mark class="inline-add">t</mark>on <mark class="inline-add">t</mark>o <mark class="inline-add">s</mark>ho<mark class="inline-add">w</mark> or h<mark class="inline-add">id</mark>e <mark class="inline-add">your co</mark>m<mark class="inline-add">put</mark>e<mark class="inline-add">r’s Dock o</mark>n<mark class="inline-add"> yo</mark>u<mark class="inline-add">r</mark> <mark class="inline-add">iP</mark>a<mark class="inline-add">d</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- <mark class="inline-remove">I</mark>n <mark class="inline-remove">macOS</mark> Cata<mark class="inline-remove">li</mark>na<mark class="inline-remove">,</mark> choose a mir<mark class="inline-remove">ror</mark>ing opt<mark class="inline-remove">i</mark>on <mark class="inline-remove">fr</mark>o<mark class="inline-remove">m</mark> the <mark class="inline-remove">Di</mark>s<mark class="inline-remove">play m</mark>e<mark class="inline-remove">nu or AirPlay menu in</mark> the <mark class="inline-remove">m</mark>e<mark class="inline-remove">n</mark>u b<mark class="inline-remove">ar</mark>.<mark class="inline-remove"> 2</mark></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">- <mark class="inline-add">Buttons for Command ⌘, Optio</mark>n <mark class="inline-add">⌥,</mark> C<mark class="inline-add">ontrol ⌃, </mark>a<mark class="inline-add">nd Shif</mark>t<mark class="inline-add"> ⇧. These offer </mark>an<mark class="inline-add">other w</mark>a<mark class="inline-add">y to</mark> choose <mark class="inline-add">essenti</mark>a<mark class="inline-add">l</mark> <mark class="inline-add">co</mark>m<mark class="inline-add">mands w</mark>i<mark class="inline-add">th you</mark>r<mark class="inline-add"> f</mark>ing<mark class="inline-add">er</mark> o<mark class="inline-add">r A</mark>p<mark class="inline-add">ple Pencil ins</mark>t<mark class="inline-add">ead </mark>o<mark class="inline-add">f a keyboard. Touch a</mark>n<mark class="inline-add">d</mark> <mark class="inline-add">h</mark>o<mark class="inline-add">ld</mark> the <mark class="inline-add">button to </mark>se<mark class="inline-add">t</mark> the <mark class="inline-add">k</mark>e<mark class="inline-add">y, or do</mark>u<mark class="inline-add">ble-tap the</mark> b<mark class="inline-add">utton to lock the key</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">Use</mark> the si<mark class="inline-remove">debar </mark>on <mark class="inline-remove">y</mark>our i<mark class="inline-remove">Pa</mark>d</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">A button to undo</mark> the <mark class="inline-add">la</mark>s<mark class="inline-add">t act</mark>ion<mark class="inline-add">.</mark> <mark class="inline-add">S</mark>o<mark class="inline-add">me apps s</mark>u<mark class="inline-add">ppo</mark>r<mark class="inline-add">t</mark> <mark class="inline-add">mult</mark>i<mark class="inline-add">ple un</mark>d<mark class="inline-add">os.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text"><mark class="inline-remove">The</mark> side<mark class="inline-remove">bar puts commonly used Mac controls on</mark> the <mark class="inline-remove">side </mark>o<mark class="inline-remove">f your iPad </mark>screen<mark class="inline-remove">. It includes Command, Shift, and other modifier keys, so you can choose essential commands with your finger or Apple Pencil instead of a</mark> keyboard.</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text"><mark class="inline-add">- A button to</mark> s<mark class="inline-add">how or h</mark>ide the o<mark class="inline-add">n</mark>screen keyboard.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text"><mark class="inline-remove">Side</mark>b<mark class="inline-remove">ar ic</mark>on <mark class="inline-remove">|</mark> <mark class="inline-remove">D</mark>e<mark class="inline-remove">s</mark>cri<mark class="inline-remove">p</mark>t<mark class="inline-remove">ion</mark></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text"><mark class="inline-add">- A </mark>b<mark class="inline-add">utt</mark>on <mark class="inline-add">to</mark> <mark class="inline-add">[switch to th</mark>e<mark class="inline-add"> Home S</mark>cr<mark class="inline-add">een](https://support.apple.com/en-us/102597#sw</mark>it<mark class="inline-add">ch) .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text"><mark class="inline-remove">|</mark> <mark class="inline-remove">Tap</mark> to s<mark class="inline-remove">h</mark>o<mark class="inline-remove">w</mark> o<mark class="inline-remove">r</mark> <mark class="inline-remove">h</mark>i<mark class="inline-remove">de</mark> the <mark class="inline-remove">m</mark>e<mark class="inline-remove">nu b</mark>ar <mark class="inline-remove">wh</mark>e<mark class="inline-remove">n v</mark>i<mark class="inline-remove">ewing a window in full screen </mark>on<mark class="inline-remove"> iPad</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">A button</mark> to <mark class="inline-add">di</mark>s<mark class="inline-add">c</mark>o<mark class="inline-add">nnect</mark> <mark class="inline-add">iPad fr</mark>o<mark class="inline-add">m</mark> <mark class="inline-add">Mac, end</mark>i<mark class="inline-add">ng</mark> the <mark class="inline-add">Sid</mark>e<mark class="inline-add">c</mark>ar <mark class="inline-add">s</mark>e<mark class="inline-add">ss</mark>ion.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text"><mark class="inline-remove">|</mark> <mark class="inline-remove">S</mark>ho<mark class="inline-remove">w</mark> o<mark class="inline-remove">r hid</mark>e<mark class="inline-remove"> your </mark>c<mark class="inline-remove">ompu</mark>t<mark class="inline-remove">er&#x27;</mark>s<mark class="inline-remove"> Dock</mark> on your iPad.</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text"><mark class="inline-add">Use</mark> <mark class="inline-add">Apple Pencil. To point, click, select, and perform tasks such as drawing, editing p</mark>ho<mark class="inline-add">tos, and manipulating</mark> o<mark class="inline-add">bj</mark>ects on your iPad<mark class="inline-add"> while it&#x27;s extending or mirroring your Mac display, you can use your Apple Pencil instead of the mouse or trackpad connected to your Mac</mark>.<mark class="inline-add"> You can also use it to write, sketch, and mark up documents while seeing the updates live on your Mac. Sidecar also supports double-tap, which you can [turn on in settings](https://support.apple.com/en-us/102597#settings) . Double-tap enables apps that support this feature to perform custom actions when you double-tap the side of your Apple Pencil (2nd generation) or later.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text"><mark class="inline-remove">|</mark> <mark class="inline-remove">Command . Tou</mark>ch<mark class="inline-remove"> and hold</mark> to s<mark class="inline-remove">et</mark> <mark class="inline-remove">the Comm</mark>and <mark class="inline-remove">key. Double-t</mark>ap<mark class="inline-remove"> to lock the key.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text"><mark class="inline-add">##</mark> <mark class="inline-add">Swit</mark>ch to <mark class="inline-add">u</mark>s<mark class="inline-add">ing</mark> an<mark class="inline-add"> iPa</mark>d ap<mark class="inline-add">p</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text"><mark class="inline-remove">|</mark> <mark class="inline-remove">O</mark>p<mark class="inline-remove">ti</mark>on <mark class="inline-remove">.</mark> <mark class="inline-remove">Tou</mark>ch<mark class="inline-remove"> and hold</mark> to se<mark class="inline-remove">t</mark> the <mark class="inline-remove">Op</mark>t<mark class="inline-remove">i</mark>on <mark class="inline-remove">key. Double-tap to lock</mark> the key.</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text"><mark class="inline-add">While</mark> <mark class="inline-add">using your iPad as a dis</mark>p<mark class="inline-add">lay, y</mark>o<mark class="inline-add">u ca</mark>n <mark class="inline-add">[use</mark> <mark class="inline-add">the App Swit</mark>ch<mark class="inline-add">er</mark> to s<mark class="inline-add">witch to an iPad app](https://support.appl</mark>e<mark class="inline-add">.com/en-us/118408) . Or use</mark> the <mark class="inline-add">Home Screen bu</mark>t<mark class="inline-add">t</mark>on <mark class="inline-add">in</mark> the <mark class="inline-add">sidebar to return to the Home Screen. You can then interact with an iPad app as you normally would. This suspends the Sidecar session until you switch bac</mark>k<mark class="inline-add"> to th</mark>e<mark class="inline-add"> Sidecar app, which appears on the Home Screen onl</mark>y<mark class="inline-add"> while using Sidecar</mark>.</code></div>
+<div class="diff-line previous removed"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">| Control . Touch and hold to set the Control key. Double-tap to lock the key.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">| Shift . Touch and hold to set the Shift key. Double-tap to lock the key.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">| Undo the last action. Some apps support multiple undos.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">| Show or hide the onscreen keyboard.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">| Disconnect your iPad from your Mac.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">## Use gestures for scrolling and other actions</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">These [Multi-Touch gestures](https://support.apple.com/en-us/102576) are particularly useful when using your iPad as a display.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">- Scroll: Swipe with two fingers.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">- Copy: Pinch in with three fingers.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">- Cut: Pinch in with three fingers twice.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">- Paste: Pinch out with three fingers.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text">- Undo: Swipe left with three fingers, or double-tap with three fingers.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">- Redo: Swipe right with three fingers.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">## Use Apple Pencil</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text">To point, click, select, and perform tasks such as drawing, editing photos, and manipulating objects on your iPad while it&#x27;s extending or mirroring your Mac display, you can use your Apple Pencil instead of the mouse or trackpad connected to your Mac. You can also use it to write, sketch, and mark up documents while seeing the updates live on your Mac.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">Sidecar also supports double-tap, which you can [turn on in settings](https://support.apple.com/en-us/102597#settings) . Double-tap enables apps that support this feature to perform custom actions when you double-tap the side of your Apple Pencil (2nd generation).</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">## Use the Touch Bar</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">85</span><code class="line-text">Many apps on Mac have [Touch Bar](https://support.apple.com/guide/mac-help/use-the-touch-bar-mchlbfd5b039/mac) controls that make common actions even easier. With Sidecar, you get a Touch Bar on your iPad screen even if your Mac doesn’t have a Touch Bar. Tap its controls with either your finger or Apple Pencil. If the Touch Bar doesn&#x27;t appear when using an app that offers Touch Bar controls:</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text">- macOS Ventura or later: From the Apple menu , choose System Settings. Click Desktop &amp; Dock in the sidebar, then scroll down on the right and turn on &quot;Displays have separate Spaces.&quot;</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text">- Earlier versions of macOS: From the Apple menu , choose System Preferences. Click Mission Control, then make sure that &quot;Displays have separate Spaces&quot; is selected.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text">## Use a keyboard, mouse, or trackpad</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">During your session, you can type using the keyboard connected to your Mac, or you can use a keyboard connected to your iPad, such as the Smart Keyboard or Magic Keyboard for iPad. To point, click, or select with a mouse or trackpad, use the mouse or trackpad connected to your Mac, or [use an Apple Pencil](https://support.apple.com/en-us/102597#applepencil) on your iPad.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">95</span><code class="line-text">## Use iPad apps</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">97</span><code class="line-text">While using your iPad as a display, you can [switch to an iPad app](https://support.apple.com/en-us/118408) , then interact with that app on your iPad as you normally would. This suspends your session until you switch back to the Sidecar app, which appears on your iPad home screen only while using Sidecar.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">99</span><code class="line-text">[Image: The Sidecar app in the Dock on iPad.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">[Image: The Sidecar app in the Dock on iPad.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">115</span><code class="line-text">- Show Touch Bar: Show the Touch Bar on the bottom or top of your iPad screen, or turn it off.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">- Show Touch Bar: Show the Touch Bar on the bottom or top of your iPad screen, or turn it off.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">117</span><code class="line-text">- Enable double tap on Apple Pencil: Allow apps that support this feature to perform custom actions when you double-tap on the side of your Apple Pencil (2nd generation).</code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">- Enable double tap on Apple Pencil: Allow apps that support this feature to perform custom actions when you double-tap on the side of your Apple Pencil (2nd generation)<mark class="inline-add"> or later</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">119</span><code class="line-text">## Sidecar system requirements</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">## Sidecar system requirements</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 30 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">151</span><code class="line-text">- Learn how to [resolve Wi-Fi and Bluetooth issues caused by wireless interference](https://support.apple.com/en-us/102319) , which can affect Sidecar performance when using Sidecar wirelessly.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">107</span><code class="line-text">- Learn how to [resolve Wi-Fi and Bluetooth issues caused by wireless interference](https://support.apple.com/en-us/102319) , which can affect Sidecar performance when using Sidecar wirelessly.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">153</span><code class="line-text">- [Use Reference Mode on your iPad Pro](https://support.apple.com/en-us/111792) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">109</span><code class="line-text">- [Use Reference Mode on your iPad Pro](https://support.apple.com/en-us/111792) .</code></div>
+<div class="diff-line previous removed"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">155</span><code class="line-text">1. If you don&#x27;t see this menu: In macOS Ventura 13 or later, choose System Settings from the Apple menu , click Control Center in the sidebar, then choose an option from the Screen Mirroring menu on the right. In earlier macOS versions, choose System Preferences from the Apple menu , click Dock &amp; Menu Bar, then click Screen Mirroring in the sidebar. Select the Show in Menu Bar checkbox, then choose Always from the adjacent pop-up menu.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">157</span><code class="line-text">2. If you don&#x27;t see this menu, choose System Preferences from the Apple menu . Click Displays, then select &quot;Show mirroring options in the menu bar when available.&quot;</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

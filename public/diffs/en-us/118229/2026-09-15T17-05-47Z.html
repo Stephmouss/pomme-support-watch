@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>How to use iCloud Shared Photo Library on iPhone or iPad — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>How to use iCloud Shared Photo Library on iPhone or iPad</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/118229">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+9 ajouts</span>
+      <span class="badge removed">−7 suppressions</span>
+      <span class="badge">5 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 31 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">- Tap Shared Library.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">- Tap Shared Library.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">[Image: iPhone screen showing Photos settings with the Shared Library selected.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">- Choose up to five people to invite, or you can invite participants later.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">- Choose up to five people to invite, or you can invite participants later.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">- Choose past photos and videos that you want to move to your Shared Library, or choose to move photos later.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">- Choose past photos and videos that you want to move to your Shared Library, or choose to move photos later.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">- Follow the onscreen steps to preview your Shared Library, confirm the content that you want to share, and invite additional participants.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">- Follow the onscreen steps to preview your Shared Library, confirm the content that you want to share, and invite additional participants.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">[Image:<mark class="inline-remove"> An</mark> iPhone screen showing a <mark class="inline-remove">preview of a </mark>Shared Library <mark class="inline-remove">during setup. The images in the </mark>preview i<mark class="inline-remove">nclude smiling people,</mark> a <mark class="inline-remove">closeup</mark> of <mark class="inline-remove">a </mark>p<mark class="inline-remove">lan</mark>t<mark class="inline-remove">, and landscape</mark>s.]</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">[Image: iPhone screen showing a Shared Library preview <mark class="inline-add">w</mark>i<mark class="inline-add">th</mark> a <mark class="inline-add">grid</mark> of p<mark class="inline-add">ho</mark>t<mark class="inline-add">o</mark>s.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">## Join a Shared Library</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">## Join a Shared Library</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">- On your iPhone or iPad, open the invitation from the library creator or go to Settings, tap Apps, then select Photos. In iOS 17 or earlier, go to Settings, then tap Photos.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">- On your iPhone or iPad, open the invitation from the library creator or go to Settings, tap Apps, then select Photos. In iOS 17 or earlier, go to Settings, then tap Photos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">[Image: <mark class="inline-remove">If</mark> <mark class="inline-remove">y</mark>o<mark class="inline-remove">u have</mark> a Shared Library invitation<mark class="inline-remove">,</mark> <mark class="inline-remove">y</mark>o<mark class="inline-remove">u</mark> <mark class="inline-remove">c</mark>an <mark class="inline-remove">find it at the top of the Photos section of your dev</mark>ic<mark class="inline-remove">e Settings, under “Shared Library Invitati</mark>o<mark class="inline-remove">n</mark>.<mark class="inline-remove">”</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">[Image: <mark class="inline-add">iPhone</mark> <mark class="inline-add">screen sh</mark>o<mark class="inline-add">wing</mark> a Shared Library invitation <mark class="inline-add">fr</mark>o<mark class="inline-add">m</mark> <mark class="inline-add">D</mark>an<mark class="inline-add">ny</mark> <mark class="inline-add">R</mark>ico.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">- Tap Accept &amp; Continue.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">- Tap Accept &amp; Continue.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Tap Sharing from Camera and make sure that it&#x27;s turned on.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">- Tap Sharing from Camera and make sure that it&#x27;s turned on.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">[Image: An iPhone showing the Sharing from Camera settings. Sharing from Camera is turned on, and Share Automatically is selected.]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">- To have the Camera app add photos to your Shared Library automatically when you&#x27;re near participants, choose Share Automatically.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">- To have the Camera app add photos to your Shared Library automatically when you&#x27;re near participants, choose Share Automatically.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">- To choose when to have the Camera app add photos to your Shared Library, choose Share Manually.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">- To choose when to have the Camera app add photos to your Shared Library, choose Share Manually.</code></div>
+<div class="fold"><span>••• 4 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">[Image: No alt supplied for Image]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">[Image: No alt supplied for Image]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">[Image:<mark class="inline-remove"> An</mark> iPhone showing the Shared Library button is <mark class="inline-remove">a</mark>t<mark class="inline-remove"> th</mark>e<mark class="inline-remove"> top</mark> o<mark class="inline-remove">f the scree</mark>n<mark class="inline-remove"> in the Camera app</mark>.]</code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">[Image: iPhone showing t<mark class="inline-add">he camera screen capturing a man and child. T</mark>he Shared Library button is t<mark class="inline-add">urn</mark>e<mark class="inline-add">d</mark> on.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">77</span><code class="line-text">## Switch between your Personal Library and Shared Library</code></div>
+<div class="diff-line current unchanged"><span class="line-number">77</span><code class="line-text">## Switch between your Personal Library and Shared Library</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">81</span><code class="line-text">- Go to Library View Options:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">- Go to Library View Options:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">- In iOS 2<mark class="inline-remove">6</mark> or later, tap Library, then tap the Sort and Filter button <mark class="inline-remove">or tap Collections</mark>, then tap <mark class="inline-remove">th</mark>e<mark class="inline-remove"> More button </mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">- In iOS 2<mark class="inline-add">7</mark> or later, tap Library, then tap the Sort and Filter button , then tap <mark class="inline-add">Library Vi</mark>e<mark class="inline-add">w</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">- In iOS 26, tap Library, then tap the Sort and Filter button or tap Collections, then tap the More button .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">- In iOS 18, tap the profile button in the upper corner and scroll down to Library View Options.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">- In iOS 18, tap the profile button in the upper corner and scroll down to Library View Options.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">89</span><code class="line-text">- Choose Personal Library, Shared Library, or Both Libraries.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">91</span><code class="line-text">- Choose Personal Library, Shared Library, or Both Libraries.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text">[Image:<mark class="inline-remove"> An</mark> iPhone screen showing <mark class="inline-remove">Bo</mark>th <mark class="inline-remove">L</mark>ib<mark class="inline-remove">rari</mark>e<mark class="inline-remove">s,</mark> Personal<mark class="inline-remove"> Library,</mark> and Shared Librar<mark class="inline-remove">y under Library V</mark>ie<mark class="inline-remove">w Option</mark>s.]</code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">[Image: iPhone screen showing th<mark class="inline-add">e</mark> <mark class="inline-add">menu to sw</mark>i<mark class="inline-add">tch </mark>be<mark class="inline-add">tween</mark> Personal and Shared Libraries.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">93</span><code class="line-text">In Both Libraries or Shared Library view, you can identify photos that are in the Shared Library by the icon in the corner. To turn the icon off, tap Shared Library Indicator.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">In Both Libraries or Shared Library view, you can identify photos that are in the Shared Library by the icon in the corner. To turn the icon off, tap Shared Library Indicator.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 27 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

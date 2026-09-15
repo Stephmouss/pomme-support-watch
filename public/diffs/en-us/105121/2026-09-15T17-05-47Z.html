@@ -1,0 +1,919 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Set up parental controls to manage your child&#x27;s iPhone or iPad — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Set up parental controls to manage your child&#x27;s iPhone or iPad</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/105121">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+177 ajouts</span>
+      <span class="badge removed">−239 suppressions</span>
+      <span class="badge">1 bloc modifié</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous removed"><span class="line-number">1</span><code class="line-text"># <mark class="inline-remove">Us</mark>e parental controls to manage your child&#x27;s iPhone or iPad</code></div>
+<div class="diff-line current added"><span class="line-number">1</span><code class="line-text"># <mark class="inline-add">S</mark>e<mark class="inline-add">t up</mark> parental controls to manage your child&#x27;s iPhone or iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text"><mark class="inline-remove">With </mark>Screen Time<mark class="inline-remove">,</mark> th<mark class="inline-remove">ere are a number of settings and</mark> parental controls that <mark class="inline-remove">you </mark>can<mark class="inline-remove"> use to</mark> help <mark class="inline-remove">k</mark>eep your child<mark class="inline-remove">&#x27;</mark>s device<mark class="inline-remove"> u</mark>s<mark class="inline-remove">age safe, private</mark>, and <mark class="inline-remove">age app</mark>r<mark class="inline-remove">opriat</mark>e.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Screen Time <mark class="inline-add">comes wi</mark>th parental controls that can help <mark class="inline-add">you manag</mark>e<mark class="inline-add"> th</mark>e<mark class="inline-add"> a</mark>p<mark class="inline-add">ps and websites</mark> your child<mark class="inline-add"> can acce</mark>s<mark class="inline-add">s, who they communicate with, when they use their</mark> devices, and <mark class="inline-add">mo</mark>re.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">Wh</mark>at <mark class="inline-remove">you</mark> <mark class="inline-remove">c</mark>an d<mark class="inline-remove">o</mark> w<mark class="inline-remove">ith</mark> parental controls</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text"><mark class="inline-add">In</mark> <mark class="inline-add">iOS 27, iPadOS 27, macOS 27, w</mark>at<mark class="inline-add">chOS</mark> <mark class="inline-add">27,</mark> an<mark class="inline-add">d</mark> <mark class="inline-add">visionOS 27, Screen Time intro</mark>d<mark class="inline-add">uces</mark> <mark class="inline-add">ne</mark>w parental controls<mark class="inline-add"> to help parents manage what kids access, when they use devices, and how they stay safe while communicating with others. To access these updated parental controls, make sure every device in your Family Sharing group is using these software versions. The Family Sharing organizer or a parent/guardian also needs to update the parental controls for the family group.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text"><mark class="inline-remove">A</mark>pple<mark class="inline-remove">&#x27;s</mark> parental controls <mark class="inline-remove">are important tools that allow parents and guardians to choose how — and how often — their children use their devices. Parental controls are built </mark>directly <mark class="inline-remove">into iPh</mark>on<mark class="inline-remove">e, iPad, and Mac, and can help you manage</mark> the<mark class="inline-remove"> downloads and purchases your</mark> child <mark class="inline-remove">can mak</mark>e<mark class="inline-remove">, who they can commun</mark>ic<mark class="inline-remove">at</mark>e<mark class="inline-remove"> with, and the apps and other content they can access</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text"><mark class="inline-add">If you can&#x27;t u</mark>p<mark class="inline-add">date every device in your Family Sharing grou</mark>p<mark class="inline-add">, you can continue to use the previous version of Screen Time and parenta</mark>l<mark class="inline-add"> controls, or adjust th</mark>e parental controls directly on the child<mark class="inline-add">&#x27;s</mark> <mark class="inline-add">d</mark>e<mark class="inline-add">v</mark>ice.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">Before you <mark class="inline-remove">can s</mark>et <mark class="inline-remove">p</mark>ar<mark class="inline-remove">en</mark>t<mark class="inline-remove">al controls for a child&#x27;s device, you ne</mark>ed<mark class="inline-remove"> to [set up Family Sharing on your device](https://setup.iCloud.com/family/messages?aaaction=showFamilyInvite&amp;inviteCode=organizer_create&amp;campaign=kbArticle) . Then add your child&#x27;s Apple Account to your family group.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text"><mark class="inline-add">## </mark>Before you <mark class="inline-add">g</mark>et <mark class="inline-add">st</mark>arted</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text"><mark class="inline-remove">Wh</mark>e<mark class="inline-remove">n Family Sharing is</mark> se<mark class="inline-remove">t up, and</mark> you<mark class="inline-remove">r</mark> <mark class="inline-remove">c</mark>h<mark class="inline-remove">ild&#x27;s Apple Account is </mark>a<mark class="inline-remove">dded to th</mark>e Family Sharing <mark class="inline-remove">gro</mark>up<mark class="inline-remove">, you need to [turn on Content &amp; Privacy Restrictions</mark>](https://sup<mark class="inline-remove">p</mark>o<mark class="inline-remove">rt.apple</mark>.com/<mark class="inline-remove">en-us</mark>/<mark class="inline-remove">105121#set-r</mark>es<mark class="inline-remove">tri</mark>ctions) .<mark class="inline-remove"> Then you&#x27;re ready to start setting and managing parental controls. Depending on your country or region, and your child&#x27;s age, some parental controls are on by default. *</mark></code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text"><mark class="inline-add">- [Mak</mark>e s<mark class="inline-add">ur</mark>e you ha<mark class="inline-add">v</mark>e Family Sharing <mark class="inline-add">set </mark>up](https://s<mark class="inline-add">et</mark>up<mark class="inline-add">.icl</mark>o<mark class="inline-add">ud</mark>.com/<mark class="inline-add">family</mark>/<mark class="inline-add">m</mark>es<mark class="inline-add">sages?aaa</mark>ction<mark class="inline-add">=</mark>s<mark class="inline-add">howFamilyInvite&amp;inviteCode=organizer_create&amp;campaign=kbArticle</mark>) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text"><mark class="inline-remove">You</mark> <mark class="inline-remove">can use some Sc</mark>r<mark class="inline-remove">een Time f</mark>eat<mark class="inline-remove">ur</mark>e<mark class="inline-remove">s</mark> <mark class="inline-remove">w</mark>i<mark class="inline-remove">th</mark>ou<mark class="inline-remove">t turning on Conte</mark>nt <mark class="inline-remove">&amp; Privacy Restrictions </mark>or<mark class="inline-remove"> setting parental controls. For example, you can enable Screen Distance to help reduce eye strain; Communication Limits to manage how</mark> your child<mark class="inline-remove"> communicates with others; and Communication Safety to help detect inappropriate photos and videos before they&#x27;re even sent from or viewed on your child&#x27;s device. [Learn more about Screen Time</mark>](https://support.apple.com/10<mark class="inline-remove">880</mark>6) .</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">[C</mark>reate <mark class="inline-add">a Ch</mark>i<mark class="inline-add">ld Acc</mark>ount <mark class="inline-add">f</mark>or your child](https://support.apple.com/10<mark class="inline-add">2</mark>6<mark class="inline-add">17</mark>) <mark class="inline-add">, if they don&#x27;t have one already</mark>.<mark class="inline-add"> Then make sure your child&#x27;s Apple Account is part of your Family Sharing group. It&#x27;s important that your child has their own Apple Account, and isn&#x27;t sharing an account with anyone else (for example, another family member).</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text"><mark class="inline-remove">*</mark> <mark class="inline-remove">Ag</mark>e vari<mark class="inline-remove">es</mark> <mark class="inline-remove">by c</mark>ou<mark class="inline-remove">n</mark>t<mark class="inline-remove">ry</mark> <mark class="inline-remove">or</mark> <mark class="inline-remove">reg</mark>i<mark class="inline-remove">on.</mark> <mark class="inline-remove">[Learn</mark> m<mark class="inline-remove">ore</mark> a<mark class="inline-remove">bou</mark>t <mark class="inline-remove">settings</mark> and<mark class="inline-remove"> features f</mark>or <mark class="inline-remove">k</mark>id<mark class="inline-remove">s</mark> <mark class="inline-remove">b</mark>y co<mark class="inline-remove">u</mark>ntr<mark class="inline-remove">y </mark>o<mark class="inline-remove">r region</mark>](https://support.apple.com/<mark class="inline-remove">125666</mark>) .</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">Updat</mark>e <mark class="inline-add">all de</mark>v<mark class="inline-add">ices in your Family Sh</mark>ari<mark class="inline-add">ng</mark> <mark class="inline-add">gr</mark>ou<mark class="inline-add">p </mark>t<mark class="inline-add">o</mark> <mark class="inline-add">iOS</mark> <mark class="inline-add">27, </mark>i<mark class="inline-add">PadOS</mark> <mark class="inline-add">27,</mark> m<mark class="inline-add">acOS</mark> <mark class="inline-add">27, w</mark>at<mark class="inline-add">chOS</mark> <mark class="inline-add">27,</mark> and<mark class="inline-add">/</mark>or <mark class="inline-add">v</mark>i<mark class="inline-add">sionOS 27, then [up</mark>d<mark class="inline-add">ate</mark> y<mark class="inline-add">our parental</mark> contro<mark class="inline-add">ls</mark>](https://support.apple.com/<mark class="inline-add">guide/child-safety/jrzvk3ml3unm</mark>) <mark class="inline-add">to access the new Screen Time and parental controls experience</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">T</mark>urn o<mark class="inline-remove">n</mark> <mark class="inline-remove">C</mark>ontent <mark class="inline-remove">&amp;</mark> <mark class="inline-remove">P</mark>r<mark class="inline-remove">i</mark>va<mark class="inline-remove">cy Restrictions</mark></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">Make s</mark>ur<mark class="inline-add">e the Family Sharing organizer or another parent/guardia</mark>n <mark class="inline-add">is added t</mark>o <mark class="inline-add">the child&#x27;s c</mark>ont<mark class="inline-add">acts list so the child&#x27;s requests can be s</mark>ent <mark class="inline-add">for</mark> <mark class="inline-add">app</mark>r<mark class="inline-add">o</mark>va<mark class="inline-add">l.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text"><mark class="inline-remove">Wh</mark>en <mark class="inline-remove">y</mark>o<mark class="inline-remove">u</mark> set <mark class="inline-remove">up</mark> Screen Time on your child&#x27;s <mark class="inline-remove">devic</mark>e, <mark class="inline-remove">y</mark>o<mark class="inline-remove">u</mark> <mark class="inline-remove">c</mark>a<mark class="inline-remove">n set age-</mark>rel<mark class="inline-remove">ated restrictions for</mark> content<mark class="inline-remove">, purchases</mark> and <mark class="inline-remove">downloads, privacy settings, and more. If you chose to set it up later, you </mark>can<mark class="inline-remove"> turn on Conten</mark>t <mark class="inline-remove">&amp;</mark> <mark class="inline-remove">Privacy Restrictions in Sc</mark>ree<mark class="inline-remove">n</mark> <mark class="inline-remove">Time.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text"><mark class="inline-add">Not all par</mark>en<mark class="inline-add">tal</mark> <mark class="inline-add">c</mark>o<mark class="inline-add">ntrols</mark> <mark class="inline-add">are available on all Apple device</mark>s<mark class="inline-add">. Som</mark>e<mark class="inline-add"> paren</mark>t<mark class="inline-add">al</mark> <mark class="inline-add">controls are located within</mark> Screen Time<mark class="inline-add">, and some are enabled through the settings directly — like Apple TV</mark> on<mark class="inline-add"> the web. Depending on your state, country, or region, and</mark> your child&#x27;s <mark class="inline-add">ag</mark>e, <mark class="inline-add">s</mark>o<mark class="inline-add">me</mark> <mark class="inline-add">p</mark>are<mark class="inline-add">nta</mark>l cont<mark class="inline-add">rols ar</mark>e<mark class="inline-add"> o</mark>n<mark class="inline-add"> by defaul</mark>t and can<mark class="inline-add">&#x27;</mark>t <mark class="inline-add">be</mark> re<mark class="inline-add">mov</mark>e<mark class="inline-add">d.</mark> <mark class="inline-add">1</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">O</mark>pen t<mark class="inline-remove">he Settings app, sc</mark>roll d<mark class="inline-remove">own, then tap Screen Time.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text"><mark class="inline-add">##</mark> <mark class="inline-add">How to set u</mark>p<mark class="inline-add"> par</mark>en<mark class="inline-add">tal</mark> <mark class="inline-add">con</mark>trol<mark class="inline-add">s for your chi</mark>l<mark class="inline-add">d&#x27;s</mark> <mark class="inline-add">iPhone or iPa</mark>d</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">U</mark>nde<mark class="inline-remove">r</mark> Family, <mark class="inline-remove">t</mark>ap your child<mark class="inline-remove">&#x27;</mark>s n<mark class="inline-remove">a</mark>me.</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text"><mark class="inline-add">You</mark> <mark class="inline-add">ca</mark>n<mark class="inline-add"> set parental controls from your own iPhone or iPa</mark>d<mark class="inline-add"> as long as you&#x27;r</mark>e<mark class="inline-add"> the</mark> Family<mark class="inline-add"> Sharing organizer or a parent/guardian in the Family Sharing group. Then you can check in on their activity</mark>, ap<mark class="inline-add">prove apps, websites, and people for</mark> your child<mark class="inline-add"> to interact with, adjust content and privacy restriction</mark>s <mark class="inline-add">a</mark>n<mark class="inline-add">d </mark>m<mark class="inline-add">or</mark>e.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- <mark class="inline-remove">T</mark>ap <mark class="inline-remove">Co</mark>nte<mark class="inline-remove">nt &amp; Privacy Re</mark>s<mark class="inline-remove">trictions. If asked, enter</mark> your <mark class="inline-remove">S</mark>creen<mark class="inline-remove"> T</mark>i<mark class="inline-remove">me passcode, then turn on Con</mark>te<mark class="inline-remove">nt &amp; Privacy Re</mark>s<mark class="inline-remove">trictions.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- <mark class="inline-add">[Manage the </mark>ap<mark class="inline-add">ps</mark> <mark class="inline-add">a</mark>n<mark class="inline-add">d websi</mark>tes your c<mark class="inline-add">hild can access](https://suppo</mark>r<mark class="inline-add">t.appl</mark>e<mark class="inline-add">.com/</mark>en<mark class="inline-add">-us/105121#apps-webs</mark>ites<mark class="inline-add">)</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text"><mark class="inline-remove">If</mark> you <mark class="inline-remove">tur</mark>n<mark class="inline-remove"> off Content &amp; Privacy Restrictions, the parental</mark> con<mark class="inline-remove">trols th</mark>at<mark class="inline-remove"> you s</mark>e<mark class="inline-remove">t</mark> withi<mark class="inline-remove">n Con</mark>te<mark class="inline-remove">nt &amp; Privacy Restrictions will pause until you turn it on again.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text"><mark class="inline-add">- [Choose who</mark> you<mark class="inline-add">r</mark> <mark class="inline-add">child ca</mark>n co<mark class="inline-add">mmu</mark>n<mark class="inline-add">ic</mark>ate with<mark class="inline-add">](https://support.apple.com/en-us/105121#commun</mark>i<mark class="inline-add">ca</mark>te<mark class="inline-add">)</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">S</mark>e<mark class="inline-remove">t an</mark>d<mark class="inline-remove"> manag</mark>e <mark class="inline-remove">par</mark>en<mark class="inline-remove">tal controls for</mark> your child<mark class="inline-remove">&#x27;</mark>s device</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">[D</mark>e<mark class="inline-add">ci</mark>de <mark class="inline-add">wh</mark>en your child<mark class="inline-add"> can u</mark>s<mark class="inline-add">e their</mark> device<mark class="inline-add">](https://support.apple.com/en-us/105121#time-allowances)</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text"><mark class="inline-remove">I</mark>n<mark class="inline-remove"> order for </mark>t<mark class="inline-remove">he par</mark>ent<mark class="inline-remove">al</mark> <mark class="inline-remove">cont</mark>r<mark class="inline-remove">ol sett</mark>i<mark class="inline-remove">ngs to sync </mark>ac<mark class="inline-remove">ross all the devices in your Famil</mark>y <mark class="inline-remove">Sharing group, make sure that all devices have the lat</mark>est<mark class="inline-remove"> sof</mark>t<mark class="inline-remove">ware vers</mark>ion<mark class="inline-remove"> bef</mark>ore<mark class="inline-remove"> y</mark>o<mark class="inline-remove">u turn on par</mark>en<mark class="inline-remove">tal control</mark>s<mark class="inline-remove"> or change any of the parental controls settings. Some parental controls are turned on by default depending on the child&#x27;s </mark>age<mark class="inline-remove">. H</mark>e<mark class="inline-remove">re&#x27;s what you can manage for your chil</mark>d<mark class="inline-remove">&#x27;s device.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text"><mark class="inline-add">- [Set Co</mark>ntent <mark class="inline-add">&amp; P</mark>ri<mark class="inline-add">v</mark>acy <mark class="inline-add">R</mark>est<mark class="inline-add">ric</mark>tion<mark class="inline-add">s](https://supp</mark>or<mark class="inline-add">t.appl</mark>e<mark class="inline-add">.c</mark>o<mark class="inline-add">m/</mark>en<mark class="inline-add">-u</mark>s<mark class="inline-add">/105121#</mark>age<mark class="inline-add">-bas</mark>ed<mark class="inline-add">)</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">[Preve</mark>n<mark class="inline-remove">t App Stor</mark>e <mark class="inline-remove">purc</mark>h<mark class="inline-remove">as</mark>e<mark class="inline-remove">s](https://support.</mark>app<mark class="inline-remove">l</mark>e<mark class="inline-remove">.c</mark>o<mark class="inline-remove">m/en-us/105121#prevent-p</mark>urcha<mark class="inline-remove">s</mark>es<mark class="inline-remove">)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text"><mark class="inline-add">##</mark> <mark class="inline-add">Ma</mark>n<mark class="inline-add">ag</mark>e <mark class="inline-add">t</mark>he<mark class="inline-add"> </mark>app<mark class="inline-add">s and w</mark>e<mark class="inline-add">bsites y</mark>our<mark class="inline-add"> </mark>ch<mark class="inline-add">ild c</mark>a<mark class="inline-add">n acc</mark>es<mark class="inline-add">s</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">[</mark>A<mark class="inline-remove">ll</mark>ow <mark class="inline-remove">b</mark>ui<mark class="inline-remove">lt-in</mark> apps and <mark class="inline-remove">feat</mark>ures<mark class="inline-remove">](</mark>htt<mark class="inline-remove">ps://</mark>support<mark class="inline-remove">.</mark>app<mark class="inline-remove">le</mark>.<mark class="inline-remove">com/</mark>en<mark class="inline-remove">-</mark>us<mark class="inline-remove">/105121#</mark>allow<mark class="inline-remove">-</mark>apps<mark class="inline-remove">)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text"><mark class="inline-add">With</mark> A<mark class="inline-add">sk to Buy and Ask to Br</mark>ow<mark class="inline-add">se,</mark> <mark class="inline-add">yo</mark>u<mark class="inline-add"> can approve wh</mark>i<mark class="inline-add">ch</mark> apps <mark class="inline-add">your child can download </mark>and <mark class="inline-add">p</mark>ur<mark class="inline-add">chase and which websit</mark>es<mark class="inline-add"> t</mark>h<mark class="inline-add">ey can visi</mark>t<mark class="inline-add"> in Safari and o</mark>t<mark class="inline-add">her </mark>support<mark class="inline-add">ed browser </mark>app<mark class="inline-add">s</mark>.<mark class="inline-add"> 1 Wh</mark>en<mark class="inline-add"> they want to access a new app or visit a new website, they have to req</mark>u<mark class="inline-add">e</mark>s<mark class="inline-add">t approval. You can also </mark>allow<mark class="inline-add"> websites ahead of time so your child always has what they need (for example, a website for a school project). If you </mark>app<mark class="inline-add">rove a reque</mark>s<mark class="inline-add">t, your child will be able to access the app or website unless you choose to block it later. If you decline the request, the app or website won&#x27;t be available on your child&#x27;s device.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">[P</mark>reve<mark class="inline-remove">nt explicit content</mark> and manage <mark class="inline-remove">c</mark>ontent <mark class="inline-remove">ratings](https://supp</mark>or<mark class="inline-remove">t.app</mark>l<mark class="inline-remove">e.com/</mark>en<mark class="inline-remove">-</mark>u<mark class="inline-remove">s/</mark>1<mark class="inline-remove">051</mark>2<mark class="inline-remove">1#explicit-content)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text"><mark class="inline-add">The</mark> <mark class="inline-add">Apps &amp; Websites section in Screen Time lets you manually allow or block specific apps and websites, and adjust these settings whenever needed. Every app and website you approve or block is organized into Allowed and Blocked lists within Apps &amp; Websites, making it easy to </mark>rev<mark class="inline-add">i</mark>e<mark class="inline-add">w</mark> and manage <mark class="inline-add">what you allow. Ask to Buy and Ask to Browse are </mark>on<mark class="inline-add"> by default for children under 13. Limit Adult Websi</mark>te<mark class="inline-add">s is o</mark>n<mark class="inline-add"> by defaul</mark>t <mark class="inline-add">f</mark>or<mark class="inline-add"> chi</mark>l<mark class="inline-add">dr</mark>en<mark class="inline-add"> </mark>u<mark class="inline-add">nder </mark>1<mark class="inline-add">8. </mark>2</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">[Prevent ina</mark>ppro<mark class="inline-remove">priat</mark>e w<mark class="inline-remove">eb</mark> <mark class="inline-remove">content](https://support.</mark>apple<mark class="inline-remove">.com/en-u</mark>s<mark class="inline-remove">/105121#web-content)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">A</mark>ppro<mark class="inline-add">v</mark>e w<mark class="inline-add">hat</mark> app<mark class="inline-add">s your chi</mark>l<mark class="inline-add">d downloads and purchas</mark>es</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">[R</mark>estrict <mark class="inline-remove">Gam</mark>e <mark class="inline-remove">Center features](https://support.</mark>apple<mark class="inline-remove">.com/</mark>e<mark class="inline-remove">n-</mark>u<mark class="inline-remove">s/105121#r</mark>est<mark class="inline-remove">rict-games)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text"><mark class="inline-add">With</mark> <mark class="inline-add">Ask to Buy, you can give your child the freedom to make their own choices while still managing their downloads and purchases. When your child wants to make an eligible purchase or download, they send you a requ</mark>est<mark class="inline-add">. You can use you</mark>r<mark class="inline-add"> own dev</mark>ic<mark class="inline-add">e to view information abou</mark>t <mark class="inline-add">th</mark>e app<mark class="inline-add"> and decide to approve or dec</mark>l<mark class="inline-add">in</mark>e<mark class="inline-add"> th</mark>e<mark class="inline-add"> req</mark>uest<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">- <mark class="inline-remove">[Restrict Intellig</mark>en<mark class="inline-remove">c</mark>e <mark class="inline-remove">&amp; </mark>S<mark class="inline-remove">iri f</mark>e<mark class="inline-remove">atures](h</mark>tt<mark class="inline-remove">p</mark>s<mark class="inline-remove">://support.</mark>apple.<mark class="inline-remove">com/en-us/105121#restrict-siri)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- <mark class="inline-add">Op</mark>en<mark class="inline-add"> th</mark>e Sett<mark class="inline-add">ing</mark>s<mark class="inline-add"> </mark>app<mark class="inline-add">, tap Fami</mark>l<mark class="inline-add">y, then tap your child&#x27;s nam</mark>e.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- <mark class="inline-remove">[Pr</mark>e<mark class="inline-remove">v</mark>ent c<mark class="inline-remove">ha</mark>n<mark class="inline-remove">g</mark>e<mark class="inline-remove">s to</mark> p<mark class="inline-remove">riv</mark>ac<mark class="inline-remove">y settings](https://supp</mark>o<mark class="inline-remove">rt.appl</mark>e.<mark class="inline-remove">com/en-us/105121#privacy-settings)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- <mark class="inline-add">Tap Apps &amp; W</mark>e<mark class="inline-add">bsites. If asked, </mark>ent<mark class="inline-add">er</mark> <mark class="inline-add">your S</mark>c<mark class="inline-add">ree</mark>n<mark class="inline-add"> Tim</mark>e pa<mark class="inline-add">ss</mark>co<mark class="inline-add">d</mark>e.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">- <mark class="inline-remove">[Prevent</mark> <mark class="inline-remove">or allow chang</mark>es<mark class="inline-remove"> </mark>t<mark class="inline-remove">o othe</mark>r<mark class="inline-remove"> set</mark>tin<mark class="inline-remove">g</mark>s<mark class="inline-remove"> and features](https://support</mark>.<mark class="inline-remove">apple.com/en-us/105121#allow-changes)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- <mark class="inline-add">Tap</mark> <mark class="inline-add">R</mark>estr<mark class="inline-add">ic</mark>ti<mark class="inline-add">o</mark>ns.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">- <mark class="inline-remove">[M</mark>ak<mark class="inline-remove">e changes</mark> to he<mark class="inline-remove">alth</mark> <mark class="inline-remove">and safety fea</mark>tures<mark class="inline-remove">](https://su</mark>ppo<mark class="inline-remove">rt</mark>.<mark class="inline-remove">apple.com/en-us/105121#other)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">- <mark class="inline-add">T</mark>a<mark class="inline-add">p As</mark>k to <mark class="inline-add">Buy, t</mark>he<mark class="inline-add">n</mark> tur<mark class="inline-add">n on R</mark>e<mark class="inline-add">quire Purcha</mark>s<mark class="inline-add">e A</mark>pp<mark class="inline-add">r</mark>o<mark class="inline-add">val</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">[If you can&#x27;t resp</mark>on<mark class="inline-remove">d</mark> t<mark class="inline-remove">o your</mark> child&#x27;s e<mark class="inline-remove">x</mark>ce<mark class="inline-remove">pt</mark>ion re<mark class="inline-remove">q</mark>ues<mark class="inline-remove">t](https://s</mark>u<mark class="inline-remove">ppo</mark>r<mark class="inline-remove">t</mark>.<mark class="inline-remove">apple.com/en-us/105121#requests)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text"><mark class="inline-add">Depending</mark> on t<mark class="inline-add">he</mark> child&#x27;s <mark class="inline-add">stat</mark>e<mark class="inline-add">, </mark>c<mark class="inline-add">ountry, or r</mark>e<mark class="inline-add">g</mark>ion<mark class="inline-add">,</mark> <mark class="inline-add">Ask to Buy is tu</mark>r<mark class="inline-add">n</mark>e<mark class="inline-add">d on by defa</mark>u<mark class="inline-add">lt and can’t b</mark>e<mark class="inline-add"> turned off if the child i</mark>s<mark class="inline-add"> </mark>u<mark class="inline-add">nde</mark>r<mark class="inline-add"> 18</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text"><mark class="inline-remove">###</mark> <mark class="inline-remove">Prevent App St</mark>ore purc<mark class="inline-remove">hases</mark></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text"><mark class="inline-add">[Learn</mark> <mark class="inline-add">m</mark>ore <mark class="inline-add">about Ask to Buy](htt</mark>p<mark class="inline-add">s://s</mark>u<mark class="inline-add">ppo</mark>r<mark class="inline-add">t.apple.</mark>c<mark class="inline-add">om/105055)</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text"><mark class="inline-remove">You</mark> <mark class="inline-remove">c</mark>an<mark class="inline-remove"> prevent your child from bein</mark>g<mark class="inline-remove"> able to install or delete apps, make in-app purchases in apps installed from th</mark>e App Store<mark class="inline-remove">,</mark> <mark class="inline-remove">a</mark>n<mark class="inline-remove">d more.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">M</mark>an<mark class="inline-add">a</mark>ge App Store <mark class="inline-add">setti</mark>n<mark class="inline-add">gs</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">- Open the Settings app, <mark class="inline-remove">scro</mark>l<mark class="inline-remove">l down</mark>, then tap <mark class="inline-remove">S</mark>c<mark class="inline-remove">ree</mark>n<mark class="inline-remove"> Ti</mark>me.</code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- Open the Settings app, <mark class="inline-add">tap Fami</mark>l<mark class="inline-add">y</mark>, then tap <mark class="inline-add">your </mark>c<mark class="inline-add">hild&#x27;s </mark>n<mark class="inline-add">a</mark>me.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">- <mark class="inline-remove">U</mark>n<mark class="inline-remove">d</mark>er<mark class="inline-remove"> Family, tap</mark> your c<mark class="inline-remove">h</mark>i<mark class="inline-remove">ld&#x27;s na</mark>me.</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">- <mark class="inline-add">Tap Apps &amp; Websites. If asked, e</mark>n<mark class="inline-add">t</mark>er your <mark class="inline-add">S</mark>c<mark class="inline-add">reen T</mark>ime<mark class="inline-add"> passcode</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">- Tap App Store, then choose a setting like Installing Apps or App Clips.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">- Choose Allowed or Blocked.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">[Image: An iPhone displays App Store settings, Ask to Buy active.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">In iOS 26 and iPadOS 26 and later, you can allow your child to request an exception to the limit or restriction that you set in Screen Time. [Learn how to respond to your child&#x27;s app exception request](https://support.apple.com/125399) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">[Learn more about managing app installation preferences for your child&#x27;s iPhone in countries or regions where alternative app distribution is available](https://support.apple.com/118128)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">### Approve websites your child can access</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">You can use Ask to Browse, so when your child wants to browse a new website in Safari and other supported browser apps 1 — they have to ask for approval. You can approve or decline requests from your own device or your child&#x27;s device. If you approve a request, your child can access the website anytime unless you choose to block it later. You can also allow websites ahead of time, so your child always has what they need (for example, a website for a school project).</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">When your child is ready to browse more freely, you can update the settings for Ask to Browse. Ask to Browse is on by default for children under 13 and Limit Adult Websites is on by default for children under 18. 2</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">[Learn more about Ask to Browse](https://support.apple.com/127512)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">### Filter web content</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text">- Open the Settings app, tap Family, then tap your child&#x27;s name.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">- Tap Apps &amp; Websites. If asked, enter your Screen Time passcode.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">- Tap Restrictions, then tap Filtering under Websites.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text">- Choose a browsing setting for your child: Limit Adult Websites or Ask to Browse. To use Ask to Browse, just set to Approved Websites Only.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">[Image: iPhone screen showing parental controls settings with &quot;Approved Websites Only&quot; selected.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">### Allow or block apps and websites</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">- Open the Settings app, tap Family, then tap your child&#x27;s name.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text">- Tap Apps &amp; Websites. If asked, enter your Screen Time passcode.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">97</span><code class="line-text">- Select an app or website. Tap Block App or Block Website, then tap again to confirm. You can unblock an app or website at any time.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text">[Image: iPhone screen showing Apps &amp; Websites settings with options to restrict content and manage app usage.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">If you block an app, the app won&#x27;t be deleted, it&#x27;s just dimmed on the Home Screen. You can also block apps with specific ratings (or [Unrated apps in the EU](https://support.apple.com/118128) ).</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">103</span><code class="line-text">## Choose who your child can communicate with</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">105</span><code class="line-text">You can choose who your child communicates with in Messages, FaceTime, and Phone by deciding who&#x27;s included in their contacts list, and requiring permission before they connect with anyone new. For example, if your child receives a message from someone new, they can&#x27;t see the message until you or another parent or guardian in the Family Sharing group approves.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">107</span><code class="line-text">### Manage communication during Screen Time</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">109</span><code class="line-text">- Open the Settings app, tap Family, then tap your child&#x27;s name.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text">- Tap Allowed Contacts.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text">- Tap During Screen Time.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">115</span><code class="line-text">- Choose Contacts Only, Contacts &amp; Groups with at Least One Contact, or Everyone.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">117</span><code class="line-text">[Image: iPhone screen showing Communication Safety settings, with Contacts &amp; Groups with Allowed Contacts selected.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">119</span><code class="line-text">### Manage your child&#x27;s contacts</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">121</span><code class="line-text">- Open the Settings app, tap Family, then tap your child&#x27;s name.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">123</span><code class="line-text">- Tap Allowed Contacts.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">125</span><code class="line-text">- Turn on Manage Contacts, and choose the contacts you approve.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">127</span><code class="line-text">- If you want your child to be able to edit their contacts, turn on Allow Contact Editing. If you want your child to have to send you a request in order to add a new contact, then keep Allow Contact Editing off.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">129</span><code class="line-text">### Turn on Communication Safety</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">131</span><code class="line-text">Communication Safety helps protect your child from viewing or sharing photos or videos with detected nudity, gore, or violence. This includes pictures and videos sent through text message or a FaceTime video call.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">133</span><code class="line-text">- Open the Settings app, tap Family, then tap your child&#x27;s name.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">135</span><code class="line-text">- Tap Communication Safety, then turn on Communication Safety.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">137</span><code class="line-text">[Image: iPhone screen showing Communication Safety settings with a toggle switch.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">139</span><code class="line-text">[Learn more about Communication Safety](https://support.apple.com/105069)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">141</span><code class="line-text">## Decide when your child can use their device</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">143</span><code class="line-text">With Screen Time Schedules, you can choose which apps your child can access at different times of the day, like before school, during school, and after school. You can even set up separate routines for weekdays and weekends, or create your own based on what works best for your family. You can also quickly pause device use, allow unlimited use, or change the schedule for the day, right within the Screen Time settings.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">145</span><code class="line-text">With Time Allowances, you can set boundaries for how long your child can use apps across app categories, such as entertainment, games, and social media. You can set a daily time budget that spans all categories, then fine tune it by adjusting the time allotted to any individual category.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">147</span><code class="line-text">### Set Time Allowances for apps</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">149</span><code class="line-text">- Open the Settings app, tap Family, then tap your child&#x27;s name.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">151</span><code class="line-text">- Tap Time Allowances, tap the Add button, then follow the onscreen instructions.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">153</span><code class="line-text">[Image: iPhone Screen Time settings showing Time Allowances and app limits.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">155</span><code class="line-text">### Set Screen Time schedules</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">157</span><code class="line-text">- Open the Settings app, tap Family, then tap your child&#x27;s name.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">159</span><code class="line-text">- Tap Screen Time Schedule, then turn on Schedule.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">161</span><code class="line-text">- Scroll down and tap Add Schedule.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">163</span><code class="line-text">- Select the days you&#x27;d like the schedule to apply to.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">165</span><code class="line-text">[Image: iPhone screen displays setting up a new schedule.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">167</span><code class="line-text">[Learn more about Screen Time schedules and Time Allowances](https://support.apple.com/guide/child-safety/azgjjn208bw9)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">169</span><code class="line-text">## Set Content &amp; Privacy Restrictions</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">171</span><code class="line-text">Content &amp; Privacy Restrictions let you manage Apple content, apps, and settings for your child’s device. You can choose age-appropriate ratings for categories of apps, music, books, movies, TV shows, and more — so your child sees apps rated for their age group. You can also set restrictions for Game Center, limit what your child can access through Siri and Siri controls, manage privacy settings, and help reduce eye strain with Screen Distance. Many of these settings are applied automatically based on your child’s age, 1 but you can adjust the settings at any time.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">173</span><code class="line-text">### Set age-based content restrictions</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">175</span><code class="line-text">- Open the Settings app, tap Family, then tap your child&#x27;s name.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Tap Content &amp; Privacy Restrictions. If asked, enter your Screen Time passcode.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">177</span><code class="line-text">- Tap Content &amp; Privacy Restrictions. If asked, enter your Screen Time passcode.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">- <mark class="inline-remove">T</mark>ap <mark class="inline-remove">iT</mark>unes <mark class="inline-remove">&amp;</mark> A<mark class="inline-remove">pp</mark> <mark class="inline-remove">S</mark>tore <mark class="inline-remove">Pu</mark>r<mark class="inline-remove">ch</mark>a<mark class="inline-remove">ses</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">179</span><code class="line-text">- <mark class="inline-add">Select </mark>a<mark class="inline-add"> ty</mark>p<mark class="inline-add">e</mark> <mark class="inline-add">of content </mark>un<mark class="inline-add">der Content R</mark>es<mark class="inline-add">trictions,</mark> <mark class="inline-add">then choose a setting like, Don&#x27;t</mark> A<mark class="inline-add">llow,</mark> <mark class="inline-add">Unra</mark>t<mark class="inline-add">ed, Allow All, </mark>or<mark class="inline-add"> a specific ag</mark>e ra<mark class="inline-add">ting</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">C</mark>ho<mark class="inline-remove">os</mark>e <mark class="inline-remove">a</mark> setting <mark class="inline-remove">and</mark> set<mark class="inline-remove"> to Don&#x27;t Allow</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">181</span><code class="line-text"><mark class="inline-add">[Image:</mark> <mark class="inline-add">iP</mark>ho<mark class="inline-add">n</mark>e <mark class="inline-add">screen</mark> s<mark class="inline-add">howing cont</mark>e<mark class="inline-add">n</mark>t<mark class="inline-add"> restrictions with age ra</mark>ting<mark class="inline-add">s</mark> <mark class="inline-add">like PG</mark> se<mark class="inline-add">lec</mark>t<mark class="inline-add">ed</mark>.<mark class="inline-add">]</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text"><mark class="inline-remove">You</mark> <mark class="inline-remove">c</mark>an<mark class="inline-remove"> </mark>a<mark class="inline-remove">lso chan</mark>ge <mark class="inline-remove">you</mark>r <mark class="inline-remove">pa</mark>s<mark class="inline-remove">swo</mark>r<mark class="inline-remove">d sett</mark>i<mark class="inline-remove">ngs for addi</mark>tion<mark class="inline-remove">al purcha</mark>s<mark class="inline-remove">es from iTunes, App Store, Book Store, or Apple TV app. Under Require Password, choose Always Require or Don&#x27;t Require.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">183</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">M</mark>anage <mark class="inline-add">Si</mark>r<mark class="inline-add">i</mark> <mark class="inline-add">Re</mark>s<mark class="inline-add">t</mark>ri<mark class="inline-add">c</mark>tions</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">184</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text"><mark class="inline-remove">I</mark>n<mark class="inline-remove"> iOS 26 and iPadOS 26 and later, you can allow your child to request an exception to</mark> the <mark class="inline-remove">l</mark>imit<mark class="inline-remove"> or r</mark>e<mark class="inline-remove">strictio</mark>n t<mark class="inline-remove">h</mark>a<mark class="inline-remove">t you set in Screen Time. [Learn how to res</mark>p<mark class="inline-remove">ond to</mark> your child&#x27;s <mark class="inline-remove">request](https://support.</mark>a<mark class="inline-remove">ppl</mark>e.<mark class="inline-remove">com/guide/iphone/iph74e434e84) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">185</span><code class="line-text"><mark class="inline-add">- Ope</mark>n the <mark class="inline-add">Sett</mark>i<mark class="inline-add">ngs app, tap Fa</mark>mi<mark class="inline-add">ly, </mark>t<mark class="inline-add">h</mark>en tap your child&#x27;s <mark class="inline-add">n</mark>a<mark class="inline-add">m</mark>e.</code></div>
+<div class="diff-line previous removed"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">[Learn more about managing app installation preferences for your child&#x27;s iPhone in countries or regions where alternative app distribution is available](https://support.apple.com/118128)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text">### Allow built-in apps and features</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">You can restrict the use of built-in Apple apps and features. If you turn off an app or feature, the app or feature won&#x27;t be deleted, it&#x27;s just temporarily hidden from the Home Screen. For example, if you turn off Mail, the Mail app won&#x27;t appear on the Home Screen until you turn it back on.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">- Open the Settings app, scroll down, then tap Screen Time.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text">- Under Family, tap your child&#x27;s name.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">186</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">81</span><code class="line-text">- Tap Content &amp; Privacy Restrictions. If asked, enter your Screen Time passcode.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">187</span><code class="line-text">- Tap Content &amp; Privacy Restrictions. If asked, enter your Screen Time passcode.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">188</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">- Tap <mark class="inline-remove">A</mark>ll<mark class="inline-remove">ow</mark>e<mark class="inline-remove">d</mark> A<mark class="inline-remove">pp</mark>s <mark class="inline-remove">&amp;</mark> <mark class="inline-remove">F</mark>eat<mark class="inline-remove">ures</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">189</span><code class="line-text">- Tap <mark class="inline-add">Siri, then se</mark>l<mark class="inline-add">ect a category, </mark>l<mark class="inline-add">ik</mark>e<mark class="inline-add"> Writing</mark> As<mark class="inline-add">sistance</mark> <mark class="inline-add">or</mark> <mark class="inline-add">Image Cr</mark>eat<mark class="inline-add">ion</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">190</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">85</span><code class="line-text">- <mark class="inline-remove">Select t</mark>he <mark class="inline-remove">apps that you want to a</mark>llow.</code></div>
+<div class="diff-line current added"><span class="line-number">191</span><code class="line-text">- <mark class="inline-add">C</mark>h<mark class="inline-add">oos</mark>e <mark class="inline-add">A</mark>llow<mark class="inline-add">ed or Blocked</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">192</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text">[Image: iPhone screen <mark class="inline-remove">show</mark>i<mark class="inline-remove">ng Allow</mark>e<mark class="inline-remove">d App</mark>s t<mark class="inline-remove">ha</mark>t you c<mark class="inline-remove">a</mark>n<mark class="inline-remove"> manage</mark>.]</code></div>
+<div class="diff-line current added"><span class="line-number">193</span><code class="line-text">[Image: iPhone <mark class="inline-add">di</mark>s<mark class="inline-add">plays S</mark>creen <mark class="inline-add">T</mark>i<mark class="inline-add">m</mark>e<mark class="inline-add">&#x27;</mark>s <mark class="inline-add">Con</mark>t<mark class="inline-add">en</mark>t <mark class="inline-add">&amp; Privac</mark>y<mark class="inline-add"> Restricti</mark>o<mark class="inline-add">ns men</mark>u <mark class="inline-add">for parental </mark>c<mark class="inline-add">o</mark>n<mark class="inline-add">trols</mark>.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">194</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text">### <mark class="inline-remove">P</mark>re<mark class="inline-remove">v</mark>ent<mark class="inline-remove"> </mark>e<mark class="inline-remove">xplicit content and manage content </mark>r<mark class="inline-remove">atings</mark></code></div>
+<div class="diff-line current added"><span class="line-number">195</span><code class="line-text">### <mark class="inline-add">Set </mark>re<mark class="inline-add">strictions for Game C</mark>enter</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">196</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text"><mark class="inline-remove">For</mark> <mark class="inline-remove">cont</mark>en<mark class="inline-remove">t accessed</mark> th<mark class="inline-remove">rough Appl</mark>e<mark class="inline-remove"> Media</mark> Se<mark class="inline-remove">rvices (such as music, movies, TV shows, apps, podcas</mark>t<mark class="inline-remove">s, and more), you can prevent explicit content and specific ra</mark>tings.</code></div>
+<div class="diff-line current added"><span class="line-number">197</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">Op</mark>en the Settings<mark class="inline-add"> app, tap Family, then tap your child&#x27;s name</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">- <mark class="inline-remove">O</mark>pen <mark class="inline-remove">the Settings app, sc</mark>r<mark class="inline-remove">oll down, then tap</mark> Screen Time.</code></div>
+<div class="diff-line current added"><span class="line-number">199</span><code class="line-text">- <mark class="inline-add">Ta</mark>p<mark class="inline-add"> Apps &amp; Websites. If asked, </mark>en<mark class="inline-add">ter</mark> <mark class="inline-add">you</mark>r Screen Time<mark class="inline-add"> passcode</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">200</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">95</span><code class="line-text">- <mark class="inline-remove">U</mark>nder <mark class="inline-remove">Fam</mark>i<mark class="inline-remove">ly, tap y</mark>o<mark class="inline-remove">ur child&#x27;s </mark>n<mark class="inline-remove">ame</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">201</span><code class="line-text">- <mark class="inline-add">Tap Restrictio</mark>n<mark class="inline-add">s, then scroll </mark>d<mark class="inline-add">own to the Game Cent</mark>er <mark class="inline-add">sect</mark>ion.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">202</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">203</span><code class="line-text">[Image: iPhone screen showing Game Center, Private Messaging, and Screen Recording settings within Content &amp; Privacy Restrictions.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">204</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">205</span><code class="line-text">- Choose a setting like Connect with Friends or Private Messaging.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">206</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">207</span><code class="line-text">- Choose Allowed or Blocked.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">208</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">209</span><code class="line-text">### Manage Privacy Restrictions</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">210</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">211</span><code class="line-text">The privacy settings on your device give you control over which apps have access to information stored on your device. For example, you can allow a social-networking app to request access to use the camera, which allows you to take and upload pictures. For some settings, you can allow or restrict changes only for your device.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">212</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">213</span><code class="line-text">- Open the Settings app, tap Family, then tap your child&#x27;s name.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">214</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">97</span><code class="line-text">- Tap Content &amp; Privacy Restrictions. If asked, enter your Screen Time passcode.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">215</span><code class="line-text">- Tap Content &amp; Privacy Restrictions. If asked, enter your Screen Time passcode.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">216</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text">- <mark class="inline-remove">T</mark>a<mark class="inline-remove">p</mark> <mark class="inline-remove">App</mark> <mark class="inline-remove">Sto</mark>r<mark class="inline-remove">e,</mark> <mark class="inline-remove">Media, Web, &amp; Gam</mark>es.</code></div>
+<div class="diff-line current added"><span class="line-number">217</span><code class="line-text">- <mark class="inline-add">Scroll down </mark>a<mark class="inline-add">nd</mark> <mark class="inline-add">select</mark> <mark class="inline-add">P</mark>r<mark class="inline-add">ivacy</mark> <mark class="inline-add">R</mark>es<mark class="inline-add">trictions</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">218</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">101</span><code class="line-text">- <mark class="inline-remove">Select a type of content under Allowed Media Services </mark>C<mark class="inline-remove">ontent, then c</mark>hoose t<mark class="inline-remove">h</mark>e <mark class="inline-remove">settings that y</mark>ou<mark class="inline-remove"> wa</mark>nt<mark class="inline-remove"> to re</mark>s<mark class="inline-remove">trict</mark> or al<mark class="inline-remove">low</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">219</span><code class="line-text">- Choose <mark class="inline-add">a ca</mark>t<mark class="inline-add">egory, lik</mark>e <mark class="inline-add">Acc</mark>ounts or <mark class="inline-add">C</mark>al<mark class="inline-add">endar</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">220</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">103</span><code class="line-text"><mark class="inline-remove">[Image:</mark> <mark class="inline-remove">iP</mark>ho<mark class="inline-remove">n</mark>e <mark class="inline-remove">screen sh</mark>ow<mark class="inline-remove">ing</mark> <mark class="inline-remove">parental controls options f</mark>or <mark class="inline-remove">Media Services C</mark>ont<mark class="inline-remove">ent</mark>.<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">221</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">C</mark>ho<mark class="inline-add">os</mark>e <mark class="inline-add">All</mark>ow or <mark class="inline-add">D</mark>on<mark class="inline-add">&#x27;</mark>t<mark class="inline-add"> Allow</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">222</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">105</span><code class="line-text"><mark class="inline-remove">Y</mark>o<mark class="inline-remove">u</mark> can<mark class="inline-remove"> r</mark>e<mark class="inline-remove">strict or allow these types of media content:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">223</span><code class="line-text"><mark class="inline-add">### Turn </mark>o<mark class="inline-add">n</mark> <mark class="inline-add">S</mark>c<mark class="inline-add">reen Dist</mark>an<mark class="inline-add">c</mark>e</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">224</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">107</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">M</mark>usic, <mark class="inline-remove">P</mark>o<mark class="inline-remove">d</mark>ca<mark class="inline-remove">s</mark>ts<mark class="inline-remove">,</mark> <mark class="inline-remove">N</mark>e<mark class="inline-remove">w</mark>s<mark class="inline-remove">,</mark> <mark class="inline-remove">F</mark>i<mark class="inline-remove">t</mark>nes<mark class="inline-remove">s: Prevent</mark> the pl<mark class="inline-remove">ayback of</mark> e<mark class="inline-remove">xpl</mark>i<mark class="inline-remove">cit co</mark>n<mark class="inline-remove">tent</mark></code></div>
+<div class="diff-line current added"><span class="line-number">225</span><code class="line-text"><mark class="inline-add">Some</mark> <mark class="inline-add">Screen Time feat</mark>u<mark class="inline-add">re</mark>s<mark class="inline-add"> are turned on by default for ch</mark>i<mark class="inline-add">ld a</mark>c<mark class="inline-add">counts ( [age varies by state</mark>, <mark class="inline-add">c</mark>o<mark class="inline-add">untry, or region](https://support.apple.com/125666) ) that are part of a Family Sharing group. For example, Screen Distance </mark>ca<mark class="inline-add">n help your child engage in healthy viewing habi</mark>ts <mark class="inline-add">that can low</mark>e<mark class="inline-add">r their ri</mark>s<mark class="inline-add">k</mark> <mark class="inline-add">of myop</mark>i<mark class="inline-add">a a</mark>n<mark class="inline-add">d can give people of all ag</mark>es the <mark class="inline-add">o</mark>p<mark class="inline-add">portunity to reduce digita</mark>l e<mark class="inline-add">yestra</mark>in</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">226</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">109</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">M</mark>usi<mark class="inline-remove">c Video</mark>s:<mark class="inline-remove"> P</mark>re<mark class="inline-remove">vent finding and viewing </mark>m<mark class="inline-remove">usic videos</mark></code></div>
+<div class="diff-line current added"><span class="line-number">227</span><code class="line-text"><mark class="inline-add">[Learn</mark> <mark class="inline-add">how to Screen Distance to red</mark>u<mark class="inline-add">ce eye </mark>s<mark class="inline-add">tra</mark>i<mark class="inline-add">n](http</mark>s:<mark class="inline-add">//suppo</mark>r<mark class="inline-add">t.appl</mark>e<mark class="inline-add">.co</mark>m<mark class="inline-add">/105007)</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">228</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">111</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Mu</mark>s<mark class="inline-remove">ic</mark> <mark class="inline-remove">P</mark>ro<mark class="inline-remove">fil</mark>e<mark class="inline-remove">s: Prevent sharing what your child</mark> is l<mark class="inline-remove">ist</mark>e<mark class="inline-remove">n</mark>in<mark class="inline-remove">g</mark> <mark class="inline-remove">to</mark> <mark class="inline-remove">or seei</mark>n<mark class="inline-remove">g what</mark> others a<mark class="inline-remove">re</mark> <mark class="inline-remove">lis</mark>te<mark class="inline-remove">n</mark>ing to</code></div>
+<div class="diff-line current added"><span class="line-number">229</span><code class="line-text"><mark class="inline-add">1</mark> <mark class="inline-add">A</mark>s<mark class="inline-add">k</mark> <mark class="inline-add">to B</mark>ro<mark class="inline-add">ws</mark>e is <mark class="inline-add">avai</mark>l<mark class="inline-add">abl</mark>e<mark class="inline-add"> </mark>in <mark class="inline-add">Safari</mark> <mark class="inline-add">a</mark>n<mark class="inline-add">d</mark> other<mark class="inline-add"> supported browser app</mark>s <mark class="inline-add">in iOS 27, iP</mark>a<mark class="inline-add">dOS</mark> <mark class="inline-add">27, and macOS 27 af</mark>te<mark class="inline-add">r upgrad</mark>ing <mark class="inline-add">Screen Time. When enabled, wa</mark>t<mark class="inline-add">chOS and visi</mark>o<mark class="inline-add">nOS display approved websites only.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">230</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">113</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Movi</mark>e<mark class="inline-remove">s: P</mark>re<mark class="inline-remove">v</mark>ent <mark class="inline-remove">m</mark>o<mark class="inline-remove">v</mark>ies <mark class="inline-remove">w</mark>it<mark class="inline-remove">h</mark> s<mark class="inline-remove">p</mark>e<mark class="inline-remove">cific ra</mark>tings</code></div>
+<div class="diff-line current added"><span class="line-number">231</span><code class="line-text"><mark class="inline-add">2</mark> <mark class="inline-add">Wh</mark>ere<mark class="inline-add"> r</mark>e<mark class="inline-add">quired by law, an Apple Accou</mark>nt <mark class="inline-add">created f</mark>o<mark class="inline-add">r a ch</mark>i<mark class="inline-add">ld und</mark>e<mark class="inline-add">r 18 need</mark>s <mark class="inline-add">to be part of a Fam</mark>i<mark class="inline-add">ly Sharing group. Cer</mark>t<mark class="inline-add">ain</mark> se<mark class="inline-add">t</mark>tings<mark class="inline-add"> are automatically turned on for accounts under 18. In some places, settings like Screen Time, Ask to Buy, Ask to Browse, and content restrictions for apps can&#x27;t be turned off. [Learn how settings and features for kids vary by state, country, or region](https://support.apple.com/125666) .</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">115</span><code class="line-text">- TV Shows: Prevent TV shows with specific ratings</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">117</span><code class="line-text">- Books: Prevent content with specific ratings</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">119</span><code class="line-text">- Apps: Prevent apps with specific ratings (or [Unrated apps in the EU](https://support.apple.com/118128) )</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">121</span><code class="line-text">- App Clips: Prevent the use of App Clips</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">123</span><code class="line-text">### Prevent inappropriate web content</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">125</span><code class="line-text">You can help prevent or limit the type of web content that your child has access to by adjusting the settings. Some web content settings are on by default, depending on your child&#x27;s age.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">127</span><code class="line-text">- Open the Settings app, scroll down, then tap Screen Time.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">129</span><code class="line-text">- Under Family, tap your child&#x27;s name.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">131</span><code class="line-text">- Tap Content &amp; Privacy Restrictions. If asked, enter your Screen Time passcode.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">133</span><code class="line-text">- Tap App Store, Media, Web, &amp; Games, then tap Web Content.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">135</span><code class="line-text">- Choose Unrestricted, Limit Adult Websites, or Only Approved Websites.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">137</span><code class="line-text">[Image: iPhone screen showing parental controls options for restricting Web Content.]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">139</span><code class="line-text">Depending on the access you allow, you might need to add information, like the website that you want to restrict or add.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">141</span><code class="line-text">### Restrict Game Center features</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">143</span><code class="line-text">These restrictions apply only to games that use Game Center features.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">145</span><code class="line-text">- Open the Settings app, scroll down, then tap Screen Time.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">147</span><code class="line-text">- Under Family, tap your child&#x27;s name.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">149</span><code class="line-text">- Tap Content &amp; Privacy Restrictions. If asked, enter your Screen Time passcode.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">151</span><code class="line-text">- Tap App Store, Media, Web, &amp; Games, then scroll down to Game Center.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">153</span><code class="line-text">- Choose a category, then select Allow or Don&#x27;t Allow.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">155</span><code class="line-text">[Image: iPhone screen showing parental controls options for restricting Game Center features.]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">157</span><code class="line-text">You can restrict these Game Center features:</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">159</span><code class="line-text">- Multiplayer Games: Allow playing multiplayer games with everyone, allow with friends only, or don&#x27;t allow</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">161</span><code class="line-text">- Adding Friends: Allow or don&#x27;t allow adding friends to Game Center</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">163</span><code class="line-text">- Connect with Friends: Allow or don&#x27;t allow sharing a Game Center friend list with third-party games</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">165</span><code class="line-text">- Screen Recording: Allow or don&#x27;t allow capturing the screen and sound</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">167</span><code class="line-text">- Nearby Multiplayer: Allow or don&#x27;t allow the nearby setting</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">169</span><code class="line-text">- Private Messaging: Allow or don&#x27;t allow voice chats or sending and receiving custom messages with game and friend invitations</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">171</span><code class="line-text">- Profile Privacy Changes: Allow or don&#x27;t allow changing profile privacy settings</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">173</span><code class="line-text">- Avatar &amp; Nickname Changes: Allow or don&#x27;t allow changing avatars and nicknames used in Game Center</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">175</span><code class="line-text">### Restrict Intelligence &amp; Siri features</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">177</span><code class="line-text">- Open the Settings app, scroll down, then tap Screen Time.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">179</span><code class="line-text">- Under Family, tap your child&#x27;s name.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">181</span><code class="line-text">- Tap Content &amp; Privacy Restrictions. If asked, enter your Screen Time passcode.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">183</span><code class="line-text">- Tap Intelligence &amp; Siri, then choose your settings.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">184</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">185</span><code class="line-text">You can restrict or allow these Intelligence &amp; Siri features:</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">186</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">187</span><code class="line-text">- Image Creation</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">188</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">189</span><code class="line-text">- Writing Tools</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">190</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">191</span><code class="line-text">- Intelligence Extensions</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">192</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">193</span><code class="line-text">- Siri &amp; Dictation</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">194</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">195</span><code class="line-text">- Web Search Content</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">196</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">197</span><code class="line-text">- Explicit Language</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">199</span><code class="line-text">- Math Results</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">200</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">201</span><code class="line-text">### Prevent changes to privacy settings</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">202</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">203</span><code class="line-text">The privacy settings on your device give you control over which apps have access to information stored on your device or the hardware features. For example, you can allow a social-networking app to request access to use the camera, which allows you to take and upload pictures. For some settings, you can allow or restrict changes only for your device.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">204</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">205</span><code class="line-text">To allow changes to privacy settings:</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">206</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">207</span><code class="line-text">- Open the Settings app, scroll down, then tap Screen Time.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">208</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">209</span><code class="line-text">- Under Family, tap your child&#x27;s name.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">210</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">211</span><code class="line-text">- Tap Content &amp; Privacy Restrictions. If asked, enter your Screen Time passcode.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">212</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">213</span><code class="line-text">- Under Privacy, tap the setting that you want to change.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">214</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">215</span><code class="line-text">You can restrict these settings and features:</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">216</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">217</span><code class="line-text">- Location Services: Lock the settings to allow apps and websites to use location</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">218</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">219</span><code class="line-text">- Contacts: Prevent apps from accessing your Contacts</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">220</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">221</span><code class="line-text">- Calendars: Prevent apps from accessing your Calendar</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">222</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">223</span><code class="line-text">- Reminders: Prevent apps from accessing your Reminders</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">224</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">225</span><code class="line-text">- Photos: Prevent apps from requesting access to your photos in the Photos app</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">226</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">227</span><code class="line-text">- Share My Location: Lock the settings for location sharing in Messages and Find My</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">228</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">229</span><code class="line-text">- Bluetooth sharing: Prevent devices and apps from sharing data through Bluetooth</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">230</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">231</span><code class="line-text">- Microphone: Prevent apps from requesting access to your microphone</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">232</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">233</span><code class="line-text">- Speech Recognition: Prevent apps from accessing Speech Recognition or Dictation</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">234</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">235</span><code class="line-text">- Apple Advertising: Prevent changes to advertising settings</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">236</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">237</span><code class="line-text">- Allow Apps to Request to Track: Prevent tracking activity by apps that you&#x27;ve denied access to</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">238</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">239</span><code class="line-text">- Media &amp; Apple Music: Prevent apps from accessing your photos, videos, or music library</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">240</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">241</span><code class="line-text">### Prevent or allow changes to other settings and features</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">242</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">243</span><code class="line-text">You can prevent or allow changes to other settings and features, the same way you can allow changes to privacy settings.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">244</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">245</span><code class="line-text">- Open the Settings app, scroll down, then tap Screen Time.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">246</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">247</span><code class="line-text">- Under Family, tap your child&#x27;s name.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">248</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">249</span><code class="line-text">- Tap Content &amp; Privacy Restrictions. If asked, enter your Screen Time passcode.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">250</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">251</span><code class="line-text">- Under Allow Changes To, select the features or settings that you want to allow changes to and choose Allow or Don&#x27;t Allow.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">252</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">253</span><code class="line-text">You can prevent or allow changes for these features and settings:</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">254</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">255</span><code class="line-text">- Passcode &amp; Face ID: Changes to passcode, Touch ID, and Face ID</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">256</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">257</span><code class="line-text">- Accounts: Account changes</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">258</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">259</span><code class="line-text">- Cellular Data: Changes to cellular data settings</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">260</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">261</span><code class="line-text">- Reduce Loud Sounds: Changes to volume settings for safe listening</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">262</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">263</span><code class="line-text">- Speaker Volume Limit: Changes to speaker volume settings</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">264</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">265</span><code class="line-text">- Driving Focus: Changes to Driving Focus</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">266</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">267</span><code class="line-text">- TV Provider: Changes to TV provider settings</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">268</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">269</span><code class="line-text">- Background App Activity: Changes to whether or not apps run in the background</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">270</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">271</span><code class="line-text">### Make changes to health and safety features</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">272</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">273</span><code class="line-text">Some Screen Time features are turned on by default for child accounts ( [age varies by country or region](https://support.apple.com/en-us/102617#agevaries) ) that are part of a Family Sharing group. Learn more about the additional Screen Time features you can use to keep your child&#x27;s device usage safe, private, and age appropriate.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">274</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">275</span><code class="line-text">[Use Screen Distance to reduce eye strain](https://support.apple.com/105007)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">276</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">277</span><code class="line-text">[Use Communication Safety to help detect inappropriate content before it&#x27;s sent or viewed on your child&#x27;s device](https://support.apple.com/105069)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">278</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">279</span><code class="line-text">## If you can&#x27;t respond to your child&#x27;s exception request</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">280</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">281</span><code class="line-text">You should get a message in the Messages app when your child requests an exception to some parental controls or Screen Time settings — like requesting to add a new contact to their approved contacts list or downloading and using an app that has undergone a significant change and requires a new approval.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">282</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">283</span><code class="line-text">If you don’t get a message or it directs you to this support article, check the following:</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">284</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">285</span><code class="line-text">- [Update your iPhone or iPad to the latest software](https://support.apple.com/en-us/118575) . You need the latest software version to respond to some requests from your child. To make sure that Screen Time settings and other parental controls work as intended, keep all the devices in your Family Sharing group updated.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">286</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">287</span><code class="line-text">- [Add your Apple Account email address to iMessage](https://support.apple.com/guide/iphone/iph3d039b67) . Make sure that you can send and receive messages using iMessage from your Apple Account email address.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">288</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">289</span><code class="line-text">- [Use iMessage regularly](https://support.apple.com/en-us/104982) . To get these requests via Messages, you need to have sent and received messages using iMessages in the last 30 days.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">290</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">291</span><code class="line-text">- [Turn on notifications for Messages](https://support.apple.com/guide/iphone/iph7c3d96bab) . To get a notification when you get a request, turn on notifications for the Messages app.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">292</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">293</span><code class="line-text">- [Sync your iCloud contacts to your device](https://support.apple.com/guide/icloud/mm2e5b1c6686) . Make sure that your iCloud contacts sync to the device where you want to get these requests.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">294</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">232</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">295</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">233</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

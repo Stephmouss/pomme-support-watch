@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Use Screen Time on Apple Vision Pro — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Use Screen Time on Apple Vision Pro</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/120045">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+68 ajouts</span>
+      <span class="badge removed">−10 suppressions</span>
+      <span class="badge">1 bloc modifié</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Use Screen Time on Apple Vision Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Use Screen Time on Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">With Screen Time in visionOS, you can <mark class="inline-remove">t</mark>ur<mark class="inline-remove">n</mark> <mark class="inline-remove">on</mark> <mark class="inline-remove">Cont</mark>e<mark class="inline-remove">nt</mark> <mark class="inline-remove">&amp;</mark> <mark class="inline-remove">P</mark>riva<mark class="inline-remove">cy Restrictions to manage con</mark>te<mark class="inline-remove">nt, apps</mark>, and settings<mark class="inline-remove">.</mark> <mark class="inline-remove">Y</mark>ou<mark class="inline-remove"> can also restrict explicit content, purchases, and</mark> changes t<mark class="inline-remove">o</mark> p<mark class="inline-remove">r</mark>i<mark class="inline-remove">va</mark>c<mark class="inline-remove">y s</mark>e<mark class="inline-remove">tting</mark>s.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">With Screen Time in visionOS, you can <mark class="inline-add">help keep yo</mark>ur <mark class="inline-add">child&#x27;s</mark> <mark class="inline-add">d</mark>e<mark class="inline-add">vice</mark> <mark class="inline-add">usage</mark> <mark class="inline-add">safe, p</mark>rivate, and<mark class="inline-add"> age-appropriate. And Screen Time</mark> settings <mark class="inline-add">y</mark>ou change<mark class="inline-add"> on Apple Vision Pro can be shared acros</mark>s <mark class="inline-add">your child&#x27;s o</mark>t<mark class="inline-add">her</mark> <mark class="inline-add">A</mark>p<mark class="inline-add">ple dev</mark>ices.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text"><mark class="inline-remove">Y</mark>o<mark class="inline-remove">u</mark> <mark class="inline-remove">c</mark>an <mark class="inline-remove">ch</mark>a<mark class="inline-remove">n</mark>ge <mark class="inline-remove">or tur</mark>n o<mark class="inline-remove">ff</mark> t<mark class="inline-remove">h</mark>ese <mark class="inline-remove">settings for </mark>y<mark class="inline-remove">ourself, or for a</mark> child<mark class="inline-remove"> i</mark>n your <mark class="inline-remove">F</mark>a<mark class="inline-remove">m</mark>il<mark class="inline-remove">y</mark> <mark class="inline-remove">Shar</mark>ing <mark class="inline-remove">g</mark>ro<mark class="inline-remove">up, at any time</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text"><mark class="inline-add">Apple Visi</mark>o<mark class="inline-add">n</mark> <mark class="inline-add">Pro is designed to fit </mark>an<mark class="inline-add">d</mark> <mark class="inline-add">be used by individu</mark>a<mark class="inline-add">ls 13 years of a</mark>ge <mark class="inline-add">a</mark>n<mark class="inline-add">d</mark> o<mark class="inline-add">lder,</mark> <mark class="inline-add">and should no</mark>t<mark class="inline-add"> b</mark>e<mark class="inline-add"> u</mark>se<mark class="inline-add">d</mark> <mark class="inline-add">b</mark>y child<mark class="inline-add">re</mark>n <mark class="inline-add">under the age of 13. Children ages 13 </mark>y<mark class="inline-add">ears and older sh</mark>ou<mark class="inline-add">ld be supe</mark>r<mark class="inline-add">vised</mark> <mark class="inline-add">by </mark>a<mark class="inline-add">n adult wh</mark>il<mark class="inline-add">e</mark> <mark class="inline-add">us</mark>ing <mark class="inline-add">Apple Vision P</mark>ro.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">I</mark>n <mark class="inline-remove">y</mark>o<mark class="inline-remove">u</mark>r Apple Vision Pro, open <mark class="inline-remove">S</mark>ettings<mark class="inline-remove">.</mark> <mark class="inline-remove">T</mark>a<mark class="inline-remove">p Sc</mark>reen<mark class="inline-remove"> Time,</mark> then t<mark class="inline-remove">ap</mark> <mark class="inline-remove">C</mark>ont<mark class="inline-remove">e</mark>n<mark class="inline-remove">t</mark> <mark class="inline-remove">&amp;</mark> Privacy <mark class="inline-remove">R</mark>est<mark class="inline-remove">ricti</mark>o<mark class="inline-remove">ns</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text"><mark class="inline-add">To</mark> <mark class="inline-add">use Scree</mark>n <mark class="inline-add">Time and parental c</mark>o<mark class="inline-add">nt</mark>r<mark class="inline-add">ols on</mark> Apple Vision Pro, <mark class="inline-add">y</mark>o<mark class="inline-add">u need to have [Family Sharing set u</mark>p<mark class="inline-add">](https://support.apple.com/en-us/108380) and your child needs their own Apple Account. Wh</mark>en <mark class="inline-add">you first set up their account, s</mark>ettings are<mark class="inline-add"> automatically configur</mark>e<mark class="inline-add">d based o</mark>n the<mark class="inline-add">ir age a</mark>n<mark class="inline-add">d sync across</mark> t<mark class="inline-add">heir</mark> <mark class="inline-add">iPh</mark>on<mark class="inline-add">e, iPad, Mac, Apple Wa</mark>t<mark class="inline-add">ch, a</mark>n<mark class="inline-add">d</mark> <mark class="inline-add">Vision</mark> Pr<mark class="inline-add">o, apply</mark>i<mark class="inline-add">ng wherever rele</mark>va<mark class="inline-add">nt. You </mark>c<mark class="inline-add">an customize the settings at an</mark>y <mark class="inline-add">tim</mark>e<mark class="inline-add"> by following the </mark>st<mark class="inline-add">eps bel</mark>o<mark class="inline-add">w</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">## Turn Communication Safety on or off</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">If your child receives or attempts to send photos or videos that might contain nudity, [Communication Safety](https://support.apple.com/en-us/105069) warns them, blurs the content, and provides helpful resources. For children 13-17, Communication Safety is turned on by default on Apple Vision Pro with the latest software version.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- In your Apple Vision Pro, open Settings.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- Tap Screen Time, then tap Communication Safety.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- Turn Communication Safety on or off.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">## Set content restrictions</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">Set age-related restrictions for Siri, purchases and downloads, privacy settings, and more.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- In your Apple Vision Pro, open Settings.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- Tap Screen Time, then tap Content &amp; Privacy Restrictions.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">- Turn on Content &amp; Privacy Restrictions, then set the controls that you want:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">- Turn on Content &amp; Privacy Restrictions, then set the controls that you want:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">- iTunes &amp; App Store Purchases — Restrict or <mark class="inline-remove">b</mark>lo<mark class="inline-remove">ck</mark> <mark class="inline-remove">A</mark>pp <mark class="inline-remove">S</mark>t<mark class="inline-remove">ore</mark> purchases <mark class="inline-remove">and</mark> require a password for iTunes, Book, and App Store purchases.</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">- iTunes &amp; App Store Purchases — Restrict or <mark class="inline-add">al</mark>lo<mark class="inline-add">w</mark> <mark class="inline-add">installing a</mark>pp<mark class="inline-add">s,</mark> <mark class="inline-add">dele</mark>t<mark class="inline-add">ing apps, and making in-app</mark> purchases<mark class="inline-add">.</mark> <mark class="inline-add">Also choose whether to</mark> require a password for iTunes, Book, and App Store purchases.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">- Allowed Apps &amp; Features — Choose apps and features that you want to be available on the Home Screen. Turning off an app or feature doesn&#x27;t <mark class="inline-remove">r</mark>e<mark class="inline-remove">mov</mark>e it from <mark class="inline-remove">Apple</mark> Vision Pro.</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- Allowed Apps &amp; Features — Choose apps and features that you want to be available on the Home Screen. Turning off an app or feature <mark class="inline-add">removes it from the Home Screen, but </mark>doesn&#x27;t <mark class="inline-add">d</mark>e<mark class="inline-add">let</mark>e it from <mark class="inline-add">your</mark> Vision Pro.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- App Store, Media, Web, &amp; Games — Set restrictions for <mark class="inline-remove">w</mark>h<mark class="inline-remove">at kind of</mark> content <mark class="inline-remove">i</mark>s available from Apple Media Services, on the web, and in Game Center.</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- App Store, Media, Web, &amp; Games — Set restrictions for <mark class="inline-add">t</mark>h<mark class="inline-add">e</mark> content <mark class="inline-add">and feature</mark>s<mark class="inline-add"> that are</mark> available from Apple Media Services, on the web, and in Game Center.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">-<mark class="inline-remove"> Intelligence &amp;</mark> Siri — Cho<mark class="inline-remove">ose the Apple Intelligence and Siri features that</mark> you want to <mark class="inline-remove">all</mark>o<mark class="inline-remove">w</mark> on <mark class="inline-remove">Apple</mark> Vision Pro.</code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- Siri — C<mark class="inline-add">ustomize </mark>ho<mark class="inline-add">w</mark> you want <mark class="inline-add">Siri </mark>to <mark class="inline-add">w</mark>o<mark class="inline-add">rk</mark> on <mark class="inline-add">your</mark> Vision Pro.<mark class="inline-add"> This includes selecting [Siri AI (beta)](https://support.apple.com/en-us/127893) * or Siri Classic and choosing whether to allow features like Writing Assistance, Math Assistance, and Image Creation.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- <mark class="inline-remove">T</mark>o restri<mark class="inline-remove">c</mark>t <mark class="inline-remove">ch</mark>a<mark class="inline-remove">n</mark>ges<mark class="inline-remove">,</mark> <mark class="inline-remove">tap L</mark>oc<mark class="inline-remove">k Scr</mark>e<mark class="inline-remove">en Time Settings</mark> and <mark class="inline-remove">set a passcode that will be required before chang</mark>in<mark class="inline-remove">g</mark> s<mark class="inline-remove">ett</mark>ings.</code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- <mark class="inline-add">Accessibility — Ch</mark>o<mark class="inline-add">ose</mark> <mark class="inline-add">whether Accessibility featu</mark>res<mark class="inline-add"> can use Apple In</mark>t<mark class="inline-add">elligence to answe</mark>r<mark class="inline-add"> quest</mark>i<mark class="inline-add">ons abou</mark>t <mark class="inline-add">im</mark>ages o<mark class="inline-add">n-devi</mark>ce and in<mark class="inline-add"> your</mark> s<mark class="inline-add">urround</mark>ings.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">I<mark class="inline-remove">f you have Screen Time settings for a child</mark> i<mark class="inline-remove">n your family group,* </mark>s<mark class="inline-remove">ome settings for limiting usage or communication — such as App Limits, Downtime, and Communication Safety — aren&#x27;t</mark> available o<mark class="inline-remove">n</mark> <mark class="inline-remove">Appl</mark>e <mark class="inline-remove">Vision Pro</mark> and <mark class="inline-remove">won’t c</mark>a<mark class="inline-remove">rry </mark>ove<mark class="inline-remove">r to the child account being used on Apple Vision Pro</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text"><mark class="inline-add">*Siri A</mark>I is available <mark class="inline-add">f</mark>o<mark class="inline-add">r</mark> <mark class="inline-add">users ag</mark>e <mark class="inline-add">13</mark> and a<mark class="inline-add">b</mark>ove.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text"><mark class="inline-remove">*</mark> <mark class="inline-remove">Ag</mark>e va<mark class="inline-remove">ries b</mark>y<mark class="inline-remove"> country or</mark> re<mark class="inline-remove">g</mark>ion<mark class="inline-remove">.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text"><mark class="inline-add">##</mark> <mark class="inline-add">S</mark>e<mark class="inline-add">t</mark> <mark class="inline-add">pri</mark>va<mark class="inline-add">c</mark>y re<mark class="inline-add">strict</mark>ion<mark class="inline-add">s</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">Allow or prevent privacy-related changes to built-in apps and features, like Location Services and Share My Location.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- In your Apple Vision Pro, open Settings.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- Tap Screen Time, then tap Content &amp; Privacy Restrictions.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">- Under Privacy, tap a feature or app, then choose whether to allow it. Each feature or app includes a brief explanation to help you decide.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">## Restrict changes to features</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">Allow or prevent changes to system features, like Face ID and speaker volume limit.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">- In your Apple Vision Pro, open Settings.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- Tap Screen Time, then tap Content &amp; Privacy Restrictions.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">- Under Allow Changes to, tap a feature, then choose whether to allow it.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">## Share Screen Time settings across devices</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">- In your Apple Vision Pro, open Settings.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">- Tap Screen Time.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">- Turn on Share Across Devices.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">### Using Screen Time with multiple devices</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">If you use Screen Time to [manage your child&#x27;s iPhone or iPad](https://support.apple.com/en-us/108806) — and you&#x27;ve turned on Share Across Devices on those devices and Apple Vision Pro — changes you make to Screen Time settings on one device will appear on all devices. Not all Screen Time features that are available on iPhone or iPad are also available on Vision Pro.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">## Set a Screen Time passcode to prevent changes</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">- In your Apple Vision Pro, open Settings.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">- Tap Screen Time.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">- Tap Lock Screen Time Settings.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text">- Set a Screen Time passcode. If you turned on Share Across Devices, the Screen Time passcode you set on one device will apply to all your child&#x27;s devices.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

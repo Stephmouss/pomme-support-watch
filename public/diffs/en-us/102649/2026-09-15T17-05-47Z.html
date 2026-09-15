@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Review devices signed in to your Apple Account — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Review devices signed in to your Apple Account</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/102649">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+42 ajouts</span>
+      <span class="badge removed">−28 suppressions</span>
+      <span class="badge">1 bloc modifié</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous removed"><span class="line-number">1</span><code class="line-text"># <mark class="inline-remove">Ch</mark>ec<mark class="inline-remove">k</mark> your Apple Account<mark class="inline-remove"> device list to find where you’re signed in</mark></code></div>
+<div class="diff-line current added"><span class="line-number">1</span><code class="line-text"># <mark class="inline-add">R</mark>e<mark class="inline-add">view devi</mark>c<mark class="inline-add">es signed in to</mark> your Apple Account</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Learn which devices appear in your Apple Account device list, how to find your device <mark class="inline-remove">de</mark>t<mark class="inline-remove">a</mark>i<mark class="inline-remove">ls</mark>, and how to remove a device.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Learn which devices appear in your Apple Account device list, how to find your device <mark class="inline-add">informa</mark>ti<mark class="inline-add">on</mark>, and how to remove a device<mark class="inline-add"> if you’re no longer using it</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">## What devices on your Apple Account can do</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">When you sign in with your Apple Account on a device, it’s added to your Apple Account device list. This includes Android mobile devices, Windows PCs, and streaming devices that you use with your Apple Account for Apple Music or Apple TV. Depending on the device type, devices signed in to your Apple Account could be used to:</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">- Change your password</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">- Receive two-factor authentication verification codes</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- Edit personal information</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- Sync with iCloud</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## When to remove a device from the list</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">## When to remove a device from the list</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">If your <mark class="inline-remove">device is mis</mark>sing<mark class="inline-remove">, you can [use Find My](https://support.apple.com/en-us/101593) to find</mark> your device and <mark class="inline-remove">tak</mark>e additi<mark class="inline-remove">onal</mark> <mark class="inline-remove">a</mark>c<mark class="inline-remove">tion</mark>s that <mark class="inline-remove">can help </mark>you re<mark class="inline-remove">c</mark>over<mark class="inline-remove"> it and keep</mark> your data sa<mark class="inline-remove">f</mark>e.</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">If you<mark class="inline-add"> a</mark>r<mark class="inline-add">en’t</mark> <mark class="inline-add">u</mark>sing your device an<mark class="inline-add">ymore — or if you </mark>d<mark class="inline-add">on’t</mark> <mark class="inline-add">recogniz</mark>e a<mark class="inline-add"> liste</mark>d<mark class="inline-add"> </mark>d<mark class="inline-add">evice — you can remove </mark>it<mark class="inline-add"> from the l</mark>i<mark class="inline-add">st.</mark> <mark class="inline-add">Devi</mark>c<mark class="inline-add">e</mark>s that you re<mark class="inline-add">m</mark>ove<mark class="inline-add"> f</mark>r<mark class="inline-add">om</mark> your <mark class="inline-add">account won’t have access to iClou</mark>d<mark class="inline-add">, Find My, or other Apple services, and won’t display verific</mark>at<mark class="inline-add">ion codes for two-f</mark>a<mark class="inline-add">ctor authentication. The device won’t reappear in the list unless you</mark> s<mark class="inline-add">ign in on th</mark>a<mark class="inline-add">t d</mark>e<mark class="inline-add">vice again</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">If you <mark class="inline-remove">ar</mark>e<mark class="inline-remove">n’t using your</mark> device <mark class="inline-remove">anym</mark>or<mark class="inline-remove">e,</mark> no longer <mark class="inline-remove">h</mark>a<mark class="inline-remove">ve access</mark> to that <mark class="inline-remove">device, </mark>o<mark class="inline-remove">r if you</mark> do<mark class="inline-remove">n’</mark>t<mark class="inline-remove"> </mark>reco<mark class="inline-remove">g</mark>n<mark class="inline-remove">iz</mark>e<mark class="inline-remove"> </mark>a<mark class="inline-remove"> </mark>l<mark class="inline-remove">isted device, </mark>y<mark class="inline-remove">ou should </mark>remove <mark class="inline-remove">it from the list</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">If you<mark class="inline-add">r</mark> <mark class="inline-add">Appl</mark>e device <mark class="inline-add">is lost </mark>or<mark class="inline-add"> you</mark> no longer <mark class="inline-add">w</mark>a<mark class="inline-add">nt</mark> to <mark class="inline-add">use i</mark>t<mark class="inline-add">, [learn w</mark>hat <mark class="inline-add">t</mark>o do<mark class="inline-add">](h</mark>t<mark class="inline-add">tps://suppo</mark>r<mark class="inline-add">t.appl</mark>e<mark class="inline-add">.</mark>co<mark class="inline-add">m/e</mark>n<mark class="inline-add">-us/102649#p</mark>e<mark class="inline-add">rm</mark>a<mark class="inline-add">nent</mark>lyremove<mark class="inline-add">)</mark> .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text"><mark class="inline-remove">D</mark>e<mark class="inline-remove">vices</mark> <mark class="inline-remove">that y</mark>o<mark class="inline-remove">u</mark> remove <mark class="inline-remove">from the list won’t have access to iCloud, Find My, or other Apple services, and won’t display verification codes for two-factor authentication. The </mark>device<mark class="inline-remove"> won’t reappear</mark> in <mark class="inline-remove">the</mark> list<mark class="inline-remove"> unless you sign in on that device again.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text"><mark class="inline-add">## Vi</mark>e<mark class="inline-add">w</mark> o<mark class="inline-add">r</mark> remove device<mark class="inline-add">s</mark> in <mark class="inline-add">your</mark> list</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">F</mark>in<mark class="inline-remove">d</mark> o<mark class="inline-remove">r</mark> <mark class="inline-remove">rem</mark>o<mark class="inline-remove">ve devices in</mark> your li<mark class="inline-remove">st</mark></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text"><mark class="inline-add">You</mark> <mark class="inline-add">can s</mark>i<mark class="inline-add">g</mark>n o<mark class="inline-add">ut</mark> o<mark class="inline-add">f</mark> your <mark class="inline-add">App</mark>l<mark class="inline-add">e Account remotely, </mark>i<mark class="inline-add">f needed.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text"><mark class="inline-remove">Whe</mark>n<mark class="inline-remove"> you sign in with</mark> your <mark class="inline-remove">Apple Account on a dev</mark>i<mark class="inline-remove">ce, it’s added to your Apple Account screen. From </mark>h<mark class="inline-remove">ere you can see which </mark>one<mark class="inline-remove">s are trusted devices, which</mark> o<mark class="inline-remove">nes you’</mark>r<mark class="inline-remove">e currently signed</mark> i<mark class="inline-remove">n to, </mark>a<mark class="inline-remove">n</mark>d<mark class="inline-remove"> you can sign out remotely, if needed.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text"><mark class="inline-add">### O</mark>n your i<mark class="inline-add">P</mark>hone or i<mark class="inline-add">P</mark>ad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text"><mark class="inline-remove">###</mark> <mark class="inline-remove">Us</mark>e <mark class="inline-remove">your iPhon</mark>e<mark class="inline-remove"> or iPad </mark>t<mark class="inline-remove">o f</mark>in<mark class="inline-remove">d where you’re </mark>s<mark class="inline-remove">igned in</mark></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">Op</mark>e<mark class="inline-add">n</mark> <mark class="inline-add">S</mark>et<mark class="inline-add">t</mark>in<mark class="inline-add">g</mark>s<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- T<mark class="inline-remove">ap Settings and t</mark>ap [your name], then scroll down to see a list of devices.</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- Tap [your name], then scroll down to see a list of devices.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">[Image: iPhone settings showing a list of devices]</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">[Image: iPhone settings showing a list of devices<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- Tap any device name to view that device’s information<mark class="inline-remove">, such as the device model, serial number, software version, and whether it’s a trusted device that can be used to receive Apple Account verification codes</mark>.<mark class="inline-remove"> The information might vary depending on the device type. You might need to authenticate to view device details.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- Tap any device name to view that device’s information.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">- If you want to remove that device from your account by signing out remotely, tap Remove from Account. Review the message that appears, then confirm that you want to remove that device.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">- If you want to remove that device from your account by signing out remotely, tap Remove from Account. Review the message that appears, then confirm that you want to remove that device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text"><mark class="inline-remove">### Use</mark> your <mark class="inline-remove">M</mark>a<mark class="inline-remove">c</mark> to <mark class="inline-remove">f</mark>in<mark class="inline-remove">d</mark> where<mark class="inline-remove"> </mark>y<mark class="inline-remove">ou’</mark>re <mark class="inline-remove">signed in</mark></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text"><mark class="inline-add">If</mark> your <mark class="inline-add">Apple device is lost or you no longer w</mark>a<mark class="inline-add">nt</mark> to <mark class="inline-add">use </mark>i<mark class="inline-add">t, [lear</mark>n wh<mark class="inline-add">at to do](https://support.apple.com/en-us/102649#p</mark>er<mark class="inline-add">man</mark>e<mark class="inline-add">ntl</mark>yre<mark class="inline-add">move)</mark> <mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">### On your Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">- Choose Apple menu , then choose System Settings.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">- Choose Apple menu , then choose System Settings.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">- Click [your name], then scroll down to see a list of devices.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">- Click [your name], then scroll down to see a list of devices.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">[Image: Mac System Settings showing a list of devices]</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">[Image: Mac System Settings showing a list of devices<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- Click any device name to view that device’s information<mark class="inline-remove">, such as the device model, serial number, software version, and whether it’s a trusted device that can be used to receive Apple Account verification codes</mark>.<mark class="inline-remove"> The information might vary depending on the device type. You might need to authenticate to view device details.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">- Click any device name to view that device’s information.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">- If you want to remove that device from your account by signing out remotely, click Remove from Account. Review the message that appears, then confirm that you want to remove that device.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">- If you want to remove that device from your account by signing out remotely, click Remove from Account. Review the message that appears, then confirm that you want to remove that device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text"><mark class="inline-remove">### Use</mark> your <mark class="inline-remove">W</mark>i<mark class="inline-remove">ndow</mark>s <mark class="inline-remove">PC</mark> to <mark class="inline-remove">f</mark>in<mark class="inline-remove">d</mark> where<mark class="inline-remove"> </mark>y<mark class="inline-remove">ou’</mark>re <mark class="inline-remove">signed in</mark></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text"><mark class="inline-add">If</mark> your <mark class="inline-add">Apple dev</mark>i<mark class="inline-add">ce i</mark>s <mark class="inline-add">lost or you no longer want</mark> to <mark class="inline-add">use </mark>i<mark class="inline-add">t, [lear</mark>n wh<mark class="inline-add">at to do](https://support.apple.com/en-us/102649#p</mark>er<mark class="inline-add">man</mark>e<mark class="inline-add">ntl</mark>yre<mark class="inline-add">move)</mark> <mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text"><mark class="inline-remove">-</mark> O<mark class="inline-remove">pe</mark>n <mark class="inline-remove">iCloud</mark> <mark class="inline-remove">for Windo</mark>w<mark class="inline-remove">s.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text"><mark class="inline-add">###</mark> On <mark class="inline-add">the</mark> w<mark class="inline-add">eb</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">- At the top, click Account Details.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- You can see a list of devices that you’re signed in to. The information displayed might vary depending on the device type.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">### Use the web to find where you’re signed in</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">If you use a Windows PC, Android mobile device, or don’t have any Apple devices, you can sign in on the web to check your Apple Account device list.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">If you use a Windows PC, Android mobile device, or don’t have any Apple devices, you can sign in on the web to check your Apple Account device list.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">- Sign in to your Apple Account at [account.apple.com](https://account.apple.com/) <mark class="inline-remove">, then select Devices</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">- Sign in to your Apple Account at [account.apple.com](https://account.apple.com/) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text"><mark class="inline-remove">[Imag</mark>e<mark class="inline-remove">: App</mark>le <mark class="inline-remove">A</mark>c<mark class="inline-remove">c</mark>ount <mark class="inline-remove">w</mark>e<mark class="inline-remove">bsit</mark>e <mark class="inline-remove">sh</mark>o<mark class="inline-remove">wing</mark> devices as<mark class="inline-remove">s</mark>oc<mark class="inline-remove">i</mark>ate<mark class="inline-remove">d with</mark> an a<mark class="inline-remove">ccount]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text"><mark class="inline-add">- S</mark>ele<mark class="inline-add">ct</mark> <mark class="inline-add">Devi</mark>c<mark class="inline-add">es. If y</mark>ou<mark class="inline-add"> do</mark>n<mark class="inline-add">’</mark>t <mark class="inline-add">s</mark>ee <mark class="inline-add">y</mark>o<mark class="inline-add">ur</mark> devices <mark class="inline-add">right </mark>a<mark class="inline-add">way, click View Detail</mark>s<mark class="inline-add"> t</mark>o<mark class="inline-add"> authenti</mark>cate an<mark class="inline-add">d</mark> <mark class="inline-add">view device det</mark>a<mark class="inline-add">ils.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">If</mark> <mark class="inline-remove">y</mark>ou<mark class="inline-remove"> do</mark>n<mark class="inline-remove">’</mark>t s<mark class="inline-remove">e</mark>e <mark class="inline-remove">y</mark>o<mark class="inline-remove">ur</mark> devices <mark class="inline-remove">r</mark>i<mark class="inline-remove">ght away, click View Details to authentic</mark>ate an<mark class="inline-remove">d</mark> <mark class="inline-remove">view devi</mark>c<mark class="inline-remove">e de</mark>t<mark class="inline-remove">ails</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text"><mark class="inline-add">[Image:</mark> <mark class="inline-add">Apple</mark> <mark class="inline-add">Acc</mark>ount <mark class="inline-add">web</mark>s<mark class="inline-add">it</mark>e <mark class="inline-add">sh</mark>o<mark class="inline-add">wing</mark> devices <mark class="inline-add">assoc</mark>iate<mark class="inline-add">d with</mark> an <mark class="inline-add">a</mark>c<mark class="inline-add">coun</mark>t.<mark class="inline-add">]</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">- Click any device name to view that device’s information<mark class="inline-remove">, such as the device model, serial number, software version, and whether it’s a trusted device that can be used to receive Apple Account verification codes</mark>.<mark class="inline-remove"> The information might vary depending on the device type.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">- Click any device name to view that device’s information.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">- If you want to remove that device from your account by signing out remotely, click Remove from Account. Review the message that appears, then confirm that you want to remove that device.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">- If you want to remove that device from your account by signing out remotely, click Remove from Account. Review the message that appears, then confirm that you want to remove that device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">#<mark class="inline-remove"># P</mark>ermanently<mark class="inline-remove"> </mark>remove <mark class="inline-remove">a device from your account page</mark></code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text"><mark class="inline-add">If your Apple device is lost or you no longer want to use it, [learn what to do](https://support.apple.com/en-us/102649</mark>#<mark class="inline-add">p</mark>ermanentlyremove<mark class="inline-add">)</mark> <mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">If<mark class="inline-remove"> you’re still signed in to</mark> your Apple <mark class="inline-remove">Account on the device, it might reappear on your Apple Account screen the next time your </mark>device <mark class="inline-remove">c</mark>onn<mark class="inline-remove">ec</mark>t<mark class="inline-remove">s</mark> to <mark class="inline-remove">th</mark>e i<mark class="inline-remove">n</mark>t<mark class="inline-remove">ernet. To permanently remove the device from your account screen, sign out of iCloud, Media &amp; Purchases, iMessage, FaceTime, and Game Center on that device, or erase that device.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text"><mark class="inline-add">## </mark>If your Apple device <mark class="inline-add">is lost or you no l</mark>on<mark class="inline-add">ger wa</mark>nt to <mark class="inline-add">us</mark>e it</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">If you’re still signed in to your Apple Account on the device, it might reappear on your Apple Account screen the next time your device connects to the internet.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">- To permanently remove an Apple device from your account, [go to Settings on that device and sign out](https://support.apple.com/en-us/104958) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">- If your Apple device is lost or missing, keep your account data safe. [Use Find My to turn on Lost Mode or erase your device remotely](https://support.apple.com/en-us/120837) .</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

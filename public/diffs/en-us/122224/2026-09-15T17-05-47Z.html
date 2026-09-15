@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Add or remove a device from your AppleCare One plan — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Add or remove a device from your AppleCare One plan</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/122224">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+43 ajouts</span>
+      <span class="badge removed">−69 suppressions</span>
+      <span class="badge">3 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Add or remove a device from your AppleCare One plan</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Add or remove a device from your AppleCare One plan</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">After you start <mark class="inline-remove">your</mark> AppleCare One plan, you can <mark class="inline-remove">choo</mark>se <mark class="inline-remove">w</mark>hic<mark class="inline-remove">h product</mark>s you want to cover.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">After you start <mark class="inline-add">an</mark> AppleCare One plan, you can <mark class="inline-add">ea</mark>s<mark class="inline-add">ily manag</mark>e <mark class="inline-add">t</mark>h<mark class="inline-add">e dev</mark>ic<mark class="inline-add">e</mark>s you want to cover.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">- [Add a device to your AppleCare One plan](https://support.apple.com/en-us/122224#add)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">- [Add a device to your AppleCare One plan](https://support.apple.com/en-us/122224#add)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">- [<mark class="inline-remove">Com</mark>ple<mark class="inline-remove">t</mark>e <mark class="inline-remove">a devic</mark>e <mark class="inline-remove">ch</mark>e<mark class="inline-remove">ck for </mark>y<mark class="inline-remove">our device</mark>](https://support.apple.com/en-us/122224#<mark class="inline-remove">d</mark>e<mark class="inline-remove">v</mark>i<mark class="inline-remove">cecheck</mark>)</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">- [<mark class="inline-add">Understand Ap</mark>ple<mark class="inline-add">Car</mark>e <mark class="inline-add">On</mark>e e<mark class="inline-add">ligibilit</mark>y](https://support.apple.com/en-us/122224#e<mark class="inline-add">l</mark>i<mark class="inline-add">gibility</mark>)</code></div>
+<div class="diff-line previous removed"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">- [Understand AppleCare One device eligibility](https://support.apple.com/en-us/122224#eligibility)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">- [Remove a device from your AppleCare One plan](https://support.apple.com/en-us/122224#remove)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">- [Remove a device from your AppleCare One plan](https://support.apple.com/en-us/122224#remove)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">[Image: Play the video]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">[Image: Play the video]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">Wh<mark class="inline-remove">en you [start an</mark> AppleCare One<mark class="inline-remove"> plan](https://support.apple.com/en-us/127207) </mark>, you <mark class="inline-remove">h</mark>a<mark class="inline-remove">v</mark>e <mark class="inline-remove">cov</mark>e<mark class="inline-remove">ra</mark>g<mark class="inline-remove">e for up to thre</mark>e devices<mark class="inline-remove">,</mark> a<mark class="inline-remove">n</mark>d <mark class="inline-remove">you can manage </mark>w<mark class="inline-remove">h</mark>i<mark class="inline-remove">ch devices you want to cover. Learn more about </mark>th<mark class="inline-remove">e details of</mark> your pl<mark class="inline-remove">a</mark>n in <mark class="inline-remove">th</mark>e <mark class="inline-remove">applicable [</mark>AppleCare <mark class="inline-remove">One Terms </mark>an<mark class="inline-remove">d</mark> <mark class="inline-remove">Conditions](https://www.apple.com/legal/applecare/applecareone/) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">W<mark class="inline-add">it</mark>h AppleCare One, you <mark class="inline-add">c</mark>a<mark class="inline-add">n prot</mark>e<mark class="inline-add">ct</mark> <mark class="inline-add">all </mark>e<mark class="inline-add">li</mark>g<mark class="inline-add">ibl</mark>e devices a<mark class="inline-add">ssociate</mark>d with your <mark class="inline-add">Ap</mark>pl<mark class="inline-add">e Accou</mark>n<mark class="inline-add">t</mark> in <mark class="inline-add">on</mark>e AppleCare <mark class="inline-add">pl</mark>an<mark class="inline-add">.</mark> <mark class="inline-add">1</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- For AppleCare One Individual, you start with coverage for three eligible devices, and you can swap covered devices, add more devices, or remove devices from your plan. 2</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- For AppleCare One Family, all of your eligible devices will be automatically added to your plan Other devices may require additional steps when you add them manually. 2</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- For iPhone, iPad, and Apple Watch, Theft and Loss coverage is included with AppleCare One.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">Learn [how to get AppleCare One](https://support.apple.com/en-us/127207) , or learn more [about AppleCare coverage benefits](https://www.apple.com/applecare/) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">## Add a device to your AppleCare One plan</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">## Add a device to your AppleCare One plan</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text"><mark class="inline-remove">After</mark> you <mark class="inline-remove">s</mark>t<mark class="inline-remove">art</mark> your AppleCare One plan, <mark class="inline-remove">you</mark> need<mark class="inline-remove"> to add device</mark>s to <mark class="inline-remove">th</mark>e <mark class="inline-remove">pl</mark>a<mark class="inline-remove">n </mark>i<mark class="inline-remove">n or</mark>d<mark class="inline-remove">er to cover them</mark> with AppleCare One.</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text"><mark class="inline-add">To add</mark> you<mark class="inline-add">r</mark> <mark class="inline-add">device </mark>t<mark class="inline-add">o</mark> your AppleCare One plan, <mark class="inline-add">it</mark> needs to <mark class="inline-add">b</mark>e a<mark class="inline-add">ssoc</mark>i<mark class="inline-add">ate</mark>d with<mark class="inline-add"> your Apple Account. For</mark> AppleCare One<mark class="inline-add"> Family, the device needs to be associated with an Apple Account in the Family Sharing group</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text"><mark class="inline-remove">When purchasing a pr</mark>o<mark class="inline-remove">duct from Apple, you can select AppleCare One to add your new device to you</mark>r AppleCare One <mark class="inline-remove">p</mark>l<mark class="inline-remove">an. If</mark> you<mark class="inline-remove">r</mark> <mark class="inline-remove">pl</mark>an<mark class="inline-remove"> is </mark>al<mark class="inline-remove">read</mark>y co<mark class="inline-remove">v</mark>e<mark class="inline-remove">ring</mark> th<mark class="inline-remove">ree or mor</mark>e devices, you can swap cover<mark class="inline-remove">ag</mark>e<mark class="inline-remove"> with one of your other</mark> devices<mark class="inline-remove">,</mark> or y<mark class="inline-remove">ou can purchase an</mark> Add-<mark class="inline-remove">O</mark>n Subscription to cover <mark class="inline-remove">an additi</mark>o<mark class="inline-remove">nal</mark> device.</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text"><mark class="inline-add">F</mark>or AppleCare One <mark class="inline-add">Individua</mark>l<mark class="inline-add">,</mark> you <mark class="inline-add">need to m</mark>an<mark class="inline-add">u</mark>al<mark class="inline-add">l</mark>y c<mark class="inline-add">h</mark>o<mark class="inline-add">os</mark>e the devices<mark class="inline-add"> you want to cover</mark>,<mark class="inline-add"> and</mark> you can swap covere<mark class="inline-add">d</mark> devices or <mark class="inline-add">bu</mark>y Add-<mark class="inline-add">o</mark>n Subscription<mark class="inline-add">s</mark> to cover <mark class="inline-add">m</mark>o<mark class="inline-add">re</mark> device<mark class="inline-add">s</mark>.<mark class="inline-add"> For Family plans, eligible devices will automatically be added to your plan. Some devices might require device checks, and others might not be eligible to add to your plan.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text"><mark class="inline-remove">To</mark> <mark class="inline-remove">a</mark>dd a device to <mark class="inline-remove">your plan, you need to sign in to the device using the Apple Account used to start your </mark>AppleCare One <mark class="inline-remove">p</mark>l<mark class="inline-remove">an.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">A</mark>dd a device to AppleCare One <mark class="inline-add">Individua</mark>l</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text"><mark class="inline-remove">Y</mark>ou can <mark class="inline-remove">[</mark>add device<mark class="inline-remove">s</mark> to your AppleCare One plan <mark class="inline-remove">on</mark>l<mark class="inline-remove">in</mark>e<mark class="inline-remove">](https://check</mark>cover<mark class="inline-remove">a</mark>ge<mark class="inline-remove">.appl</mark>e<mark class="inline-remove">.com) ,</mark> or <mark class="inline-remove">us</mark>e<mark class="inline-remove"> any</mark> device as<mark class="inline-remove">s</mark>o<mark class="inline-remove">ciat</mark>ed <mark class="inline-remove">w</mark>it<mark class="inline-remove">h</mark> your <mark class="inline-remove">Ap</mark>pl<mark class="inline-remove">e</mark> <mark class="inline-remove">Account th</mark>at <mark class="inline-remove">mee</mark>ts<mark class="inline-remove"> </mark>t<mark class="inline-remove">hese requirements:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text"><mark class="inline-add">When purchasing a product from Apple, y</mark>ou can <mark class="inline-add">choose to </mark>add<mark class="inline-add"> your new</mark> device to your AppleCare One <mark class="inline-add">Individual plan. If your </mark>plan <mark class="inline-add">is a</mark>l<mark class="inline-add">r</mark>e<mark class="inline-add">ady </mark>cover<mark class="inline-add">in</mark>g<mark class="inline-add"> thr</mark>ee or <mark class="inline-add">mor</mark>e device<mark class="inline-add">s,</mark> <mark class="inline-add">you c</mark>a<mark class="inline-add">n </mark>s<mark class="inline-add">wap c</mark>o<mark class="inline-add">ver</mark>ed <mark class="inline-add">dev</mark>i<mark class="inline-add">ces or add more devices </mark>t<mark class="inline-add">o</mark> your pl<mark class="inline-add">an</mark> at <mark class="inline-add">an addi</mark>t<mark class="inline-add">ional co</mark>st<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">[Add devices to your AppleCare One Individual plan online](https://checkcoverage.apple.com) , or use a device associated with your Apple Account that meets these requirements:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">- iPhone with iOS 18.5 or later</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">- iPhone with iOS 18.5 or later</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">- Apple Vision Pro with visionOS 2.5 or later</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">- Apple Vision Pro with visionOS 2.5 or later</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text"><mark class="inline-remove">To a</mark>dd<mark class="inline-remove"> a</mark> device <mark class="inline-remove">t</mark>o your AppleCare <mark class="inline-remove">One</mark> <mark class="inline-remove">pl</mark>an<mark class="inline-remove">,</mark> <mark class="inline-remove">follow the</mark>se<mark class="inline-remove"> </mark>s<mark class="inline-remove">teps:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text"><mark class="inline-add">A</mark>dd device<mark class="inline-add">s</mark> o<mark class="inline-add">r swap covered devices in</mark> your AppleCare <mark class="inline-add">&amp;</mark> <mark class="inline-add">Warr</mark>an<mark class="inline-add">ty</mark> se<mark class="inline-add">tting</mark>s<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- [Open AppleCare &amp; Warranty<mark class="inline-remove"> settings</mark> on your device](https://coverage.apple.com/cc/acW4820)<mark class="inline-remove"> , or open the Settings app, select General, then select AppleCare &amp; Warranty.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- [Op<mark class="inline-add">en Settings, then General, th</mark>en AppleCare &amp; Warranty on your device](https://coverage.apple.com/cc/acW4820)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">- In the AppleCare One Devices section, select Add Device.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">- In the AppleCare One Devices section, select Add Device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">- Next, choose the device you want to add.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">- Next, choose the device you want to add.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">- If the device appears under Ready to Add, follow the onscreen prompts to add it to your plan. <mark class="inline-remove">1</mark></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">- If the device appears under Ready to Add, follow the onscreen prompts to add it to your plan. <mark class="inline-add">3</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- If the device appears under Action Needed, you might need to [complete a device check](https://support.apple.com/en-us/12<mark class="inline-remove">222</mark>4<mark class="inline-remove">#devicecheck</mark>) before it can be added to your plan.</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">- If the device appears under Action Needed, you might need to [complete a device check](https://support.apple.com/en-us/12<mark class="inline-add">787</mark>4) before it can be added to your plan.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">- If you don&#x27;t see one of your devices, tap or click &quot;Don&#x27;t see one of your devices?&quot; to learn more. If you still don&#x27;t see your device in the &quot;Not Eligible for Plan&quot; section, you might need to [sign in to your Apple Account](https://support.apple.com/111001) on that device or pair it with one of your other Apple devices associated with your account.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">- If you don&#x27;t see one of your devices, tap or click &quot;Don&#x27;t see one of your devices?&quot; to learn more. If you still don&#x27;t see your device in the &quot;Not Eligible for Plan&quot; section, you might need to [sign in to your Apple Account](https://support.apple.com/111001) on that device or pair it with one of your other Apple devices associated with your account.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">## <mark class="inline-remove">Complete</mark> a device <mark class="inline-remove">ch</mark>e<mark class="inline-remove">ck</mark> <mark class="inline-remove">for</mark> y<mark class="inline-remove">our device</mark></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text"><mark class="inline-add">#</mark>## <mark class="inline-add">Add</mark> a device <mark class="inline-add">to Appl</mark>e<mark class="inline-add">Care</mark> <mark class="inline-add">One</mark> <mark class="inline-add">Famil</mark>y</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text"><mark class="inline-remove">A</mark>f<mark class="inline-remove">ter selecting the device</mark> you want to add to your AppleCare One plan, you <mark class="inline-remove">m</mark>ig<mark class="inline-remove">ht </mark>ne<mark class="inline-remove">e</mark>d to con<mark class="inline-remove">firm</mark> <mark class="inline-remove">that</mark> the device is in <mark class="inline-remove">good</mark> <mark class="inline-remove">condi</mark>ti<mark class="inline-remove">o</mark>n be<mark class="inline-remove">f</mark>o<mark class="inline-remove">re </mark>i<mark class="inline-remove">t </mark>ca<mark class="inline-remove">n be</mark> added<mark class="inline-remove">.</mark> <mark class="inline-remove">Th</mark>ese<mark class="inline-remove"> steps can </mark>i<mark class="inline-remove">nclud</mark>e a <mark class="inline-remove">remote </mark>device check<mark class="inline-remove">, </mark>t<mark class="inline-remove">aking </mark>p<mark class="inline-remove">hoto</mark>s<mark class="inline-remove"> of yo</mark>u<mark class="inline-remove">r device, </mark>or <mark class="inline-remove">visit</mark>ing a<mark class="inline-remove">n Appl</mark>e<mark class="inline-remove"> Store for further inspection</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text"><mark class="inline-add">I</mark>f you want to add<mark class="inline-add"> a device</mark> to your AppleCare One <mark class="inline-add">Family </mark>plan, <mark class="inline-add">make sure </mark>you <mark class="inline-add">are s</mark>igned<mark class="inline-add"> in</mark> to <mark class="inline-add">your Apple Ac</mark>co<mark class="inline-add">u</mark>n<mark class="inline-add">t</mark> <mark class="inline-add">on</mark> the device<mark class="inline-add">, or you pair</mark> i<mark class="inline-add">t with a device a</mark>s<mark class="inline-add">sociated with your Apple Account. To cover an eligible display, connect it to your Mac and add it</mark> in <mark class="inline-add">System</mark> <mark class="inline-add">Set</mark>tin<mark class="inline-add">gs. Eligible devices will</mark> be<mark class="inline-add"> aut</mark>o<mark class="inline-add">mat</mark>ica<mark class="inline-add">lly</mark> added <mark class="inline-add">to your Family plan, but some devic</mark>es<mark class="inline-add"> might r</mark>e<mark class="inline-add">qu</mark>i<mark class="inline-add">r</mark>e a <mark class="inline-add">[</mark>device check<mark class="inline-add">](h</mark>t<mark class="inline-add">t</mark>ps<mark class="inline-add">://s</mark>u<mark class="inline-add">pp</mark>or<mark class="inline-add">t.apple.com/en-us/127874)</mark> <mark class="inline-add">before be</mark>ing a<mark class="inline-add">dd</mark>e<mark class="inline-add">d</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text"><mark class="inline-remove">If</mark> <mark class="inline-remove">your </mark>de<mark class="inline-remove">vice check is successful, follow the onsc</mark>r<mark class="inline-remove">een in</mark>st<mark class="inline-remove">ructions to add the device. If further inspection is needed, you c</mark>an<mark class="inline-remove"> also sche</mark>d<mark class="inline-remove">ule an appointment at an</mark> Apple<mark class="inline-remove"> Sto</mark>re <mark class="inline-remove">to help determi</mark>ne i<mark class="inline-remove">f </mark>t<mark class="inline-remove">he device can be added to </mark>y<mark class="inline-remove">our plan.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text"><mark class="inline-add">##</mark> <mark class="inline-add">Un</mark>derstand Apple<mark class="inline-add">Ca</mark>re <mark class="inline-add">O</mark>ne <mark class="inline-add">el</mark>i<mark class="inline-add">gibili</mark>ty</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text"><mark class="inline-remove">If the d</mark>evice i<mark class="inline-remove">s</mark> n<mark class="inline-remove">ot in good</mark> co<mark class="inline-remove">ndition, it</mark> might be <mark class="inline-remove">el</mark>i<mark class="inline-remove">gible </mark>t<mark class="inline-remove">o add to your plan after an [Apple-certifi</mark>ed r<mark class="inline-remove">ep</mark>air<mark class="inline-remove">](h</mark>t<mark class="inline-remove">tp</mark>s<mark class="inline-remove">://support</mark>.<mark class="inline-remove">apple.com/repair) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text"><mark class="inline-add">D</mark>evice <mark class="inline-add">el</mark>i<mark class="inline-add">gibility</mark> <mark class="inline-add">for AppleCare O</mark>n<mark class="inline-add">e</mark> co<mark class="inline-add">verage</mark> might be i<mark class="inline-add">mpac</mark>ted <mark class="inline-add">by seve</mark>ra<mark class="inline-add">l c</mark>ir<mark class="inline-add">cums</mark>t<mark class="inline-add">ance</mark>s.</code></div>
+<div class="diff-line previous removed"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">### For iPhone or iPad</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">Start the device check process on the iPhone or iPad you want to add.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">If you are required to take photos of the iPhone or iPad you want to add, you will need a separate iPhone or iPad to complete this part of the process. Or, you can have your device checked at an Apple Store by following the link on your device.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">#### Guidelines for the separate iPhone or iPad used to take photos:</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">- You need an iPhone with iOS 18.5 or later or iPad with iPadOS 18.5 or later. [Find the software version of your iPhone or iPad](https://support.apple.com/109065)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">- Wi-Fi should be turned on for both devices used in this process.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">- The iPhone or iPad you use to capture images needs to have a 12 MP camera. [Identify the model of your Apple device](https://support.apple.com/102604)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">- You don&#x27;t need to be signed in to your Apple Account on the device used for capturing images.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text">#### Tips for successfully taking photos of the device you want to add:</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">- Choose a flat area with bright, indirect light.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">- Remove your case, stickers, and screen protector, if damaged.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text">- [Clean your device](https://support.apple.com/103258) to remove any smudges.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">- [Adjust the screen brightness](https://support.apple.com/109351) of your device to maximum brightness.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">### For Mac</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">85</span><code class="line-text">For the Mac you want to add, start the device check process on an iPhone or iPad associated with your Apple Account. You need to be connected to Wi-Fi, and your Mac should be charged over 20% or is currently charging.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text">The results of the device check will be shown on the iPhone or iPad you used.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text">### For Apple Watch</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text">To complete the remote device check for the Apple Watch you want to add, use the iPhone that your Apple Watch is paired with to start and complete the process.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">## Understand AppleCare One device eligibility</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">95</span><code class="line-text">Device eligibility for AppleCare One coverage might be impacted by several factors, including the following conditions:</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">97</span><code class="line-text">- The age of your device</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">- The age of your device</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text">- A failed device check</code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">- A failed device check<mark class="inline-add"> 4</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">101</span><code class="line-text">- The country or region of device purchase</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">- The country or region of device purchase</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">105</span><code class="line-text">- Marked as lost and Lost Mode is turned on</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">- Marked as lost and Lost Mode is turned on</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">107</span><code class="line-text">- Coverage by another AppleCare product <mark class="inline-remove">2</mark></code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">- Coverage by another AppleCare product <mark class="inline-add">5</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">109</span><code class="line-text">- Device is not associated with your Apple Account <mark class="inline-remove">3</mark></code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">- Device is not associated with your Apple Account <mark class="inline-add">6</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">111</span><code class="line-text">If you are unable to add your <mark class="inline-remove">pro</mark>d<mark class="inline-remove">u</mark>c<mark class="inline-remove">t</mark> to your plan, refer to the message on your device for more information.</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">If you are unable to add your d<mark class="inline-add">evi</mark>c<mark class="inline-add">e</mark> to your plan, refer to the message on your device for more information.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">113</span><code class="line-text">## Remove a device from your AppleCare One plan</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">## Remove a device from your AppleCare One plan</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">115</span><code class="line-text">When you remove a device from your AppleCare One plan, that device will immediately lose coverage. <mark class="inline-remove">If you cancel AppleCare coverage for your device, y</mark>ou might be able to get new AppleCare coverage later if you change your mind. If you have Add-on Subscriptions, removing any device from your AppleCare One plan will cancel an Add-on Subscription.</code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">When you remove a device from your AppleCare One plan, that device will immediately lose coverage. <mark class="inline-add">Y</mark>ou might be able to<mark class="inline-add"> add the device back to your AppleCare One plan or</mark> get new AppleCare coverage later if you change your mind. <mark class="inline-add">For AppleCare One </mark>I<mark class="inline-add">ndividual, i</mark>f you have Add-on Subscriptions, removing any device from your AppleCare One plan will cancel an Add-on Subscription.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">117</span><code class="line-text">If you sign out of your Apple Account on a device that is covered by AppleCare One, the device will be removed from your AppleCare One plan after 24 hours.</code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">If you sign out of your Apple Account on a device that is covered by <mark class="inline-add">an </mark>AppleCare On<mark class="inline-add">e plan, and another Apple Account signs in to the devic</mark>e, the device will be removed from your AppleCare One plan after 24 hours.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">119</span><code class="line-text">### Remove a device</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">### Remove a device</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">121</span><code class="line-text">You can sign in to your Apple Account and [remove a device from your plan online](https://checkcoverage.apple.com) ,<mark class="inline-remove"> or</mark> you can<mark class="inline-remove"> use your iPhone, iPad, Mac, or Apple Vision Pro to</mark> remove a device <mark class="inline-remove">f</mark>ro<mark class="inline-remove">m</mark> your <mark class="inline-remove">plan</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">You can sign in to your Apple Account and [remove a device from your plan online](https://checkcoverage.apple.com<mark class="inline-add">/</mark>) <mark class="inline-add">. Or</mark>, you can remove a device <mark class="inline-add">in the AppleCa</mark>r<mark class="inline-add">e &amp; Warranty settings </mark>o<mark class="inline-add">n</mark> your <mark class="inline-add">device</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">123</span><code class="line-text">- [Open AppleCare &amp; Warranty <mark class="inline-remove">settings </mark>on <mark class="inline-remove">this</mark> device](https://coverage.apple.com/cc/acW4820)<mark class="inline-remove"> , or open the Settings app, select General, then select AppleCare &amp; Warranty.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">- [Op<mark class="inline-add">en Settings, then General, th</mark>en AppleCare &amp; Warranty on <mark class="inline-add">your</mark> device](https://coverage.apple.com/cc/acW4820)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">125</span><code class="line-text">- <mark class="inline-remove">In the AppleCare One Devices section, s</mark>elect the device you want to remove.</code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">- <mark class="inline-add">S</mark>elect the device you want to remove<mark class="inline-add"> from AppleCare One</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">127</span><code class="line-text">- Select Remove Device.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">- Select Remove Device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">129</span><code class="line-text">- On the next window, select Remove Device to confirm that you want to remove the device from your AppleCare One plan.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">- On the next window, select Remove Device to confirm that you want to remove the device from your AppleCare One plan.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">131</span><code class="line-text">### Remov<mark class="inline-remove">ing</mark> all devices</code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text">### Remov<mark class="inline-add">e</mark> all devices</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">133</span><code class="line-text">If you remove all devices from<mark class="inline-remove"> your AppleCare One plan, or if you only have one device on</mark> your AppleCare One plan, your plan will remain active until the end of your current billing cycle. During this time, you can still add devices to continue your plan.</code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">If you remove all devices from your AppleCare One plan, your plan will remain active until the end of your current billing cycle. During this time, you can still add devices to continue your plan.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">135</span><code class="line-text">If you want to immediately cancel AppleCare One coverage for all of your devices, or understand refund expectations when coverage is canceled, [learn more about canceling AppleCare coverage](https://support.apple.com/118218) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">103</span><code class="line-text">If you want to immediately cancel AppleCare One coverage for all of your devices, or understand refund expectations when coverage is canceled, [learn more about canceling AppleCare coverage](https://support.apple.com/118218) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">137</span><code class="line-text">-<mark class="inline-remove"> If you add a device that has AppleCare+ or AppleCare+ with Theft and Loss coverage, it will be covered by</mark> AppleCare One <mark class="inline-remove">a</mark>nd<mark class="inline-remove"> [your pre</mark>vi<mark class="inline-remove">o</mark>us <mark class="inline-remove">AppleCa</mark>r<mark class="inline-remove">e+ plan will be c</mark>ance<mark class="inline-remove">l</mark>e<mark class="inline-remove">d](https://suppo</mark>r<mark class="inline-remove">t.</mark>a<mark class="inline-remove">pple.com/118218) . You will receive a refu</mark>n<mark class="inline-remove">d based on</mark> the <mark class="inline-remove">p</mark>e<mark class="inline-remove">rc</mark>enta<mark class="inline-remove">g</mark>e<mark class="inline-remove"> of unexpired</mark> AppleCare <mark class="inline-remove">p</mark>lan <mark class="inline-remove">coverage. If</mark> the <mark class="inline-remove">or</mark>i<mark class="inline-remove">ginal plan was pai</mark>d <mark class="inline-remove">upfron</mark>t<mark class="inline-remove"> in full, </mark>t<mark class="inline-remove">hi</mark>s<mark class="inline-remove"> may be sent as an Apple Gift Card</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">105</span><code class="line-text">- AppleCare One <mark class="inline-add">I</mark>nd<mark class="inline-add">i</mark>vi<mark class="inline-add">dual is available in A</mark>us<mark class="inline-add">tralia,</mark> <mark class="inline-add">F</mark>rance<mark class="inline-add">, G</mark>er<mark class="inline-add">m</mark>an<mark class="inline-add">y,</mark> the <mark class="inline-add">Unit</mark>e<mark class="inline-add">d Kingdom, and th</mark>e<mark class="inline-add"> U</mark>n<mark class="inline-add">ited S</mark>ta<mark class="inline-add">t</mark>e<mark class="inline-add">s.</mark> AppleCare <mark class="inline-add">One Family is avai</mark>la<mark class="inline-add">ble o</mark>n<mark class="inline-add">ly</mark> <mark class="inline-add">in</mark> the <mark class="inline-add">Un</mark>i<mark class="inline-add">te</mark>d <mark class="inline-add">S</mark>t<mark class="inline-add">a</mark>t<mark class="inline-add">e</mark>s.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">107</span><code class="line-text">- Only one Apple Vision Pro can be covered with AppleCare One Individual, and only six Apple Vision Pro devices can be covered with AppleCare One Family. You can swap covered devices or purchase a single AppleCare+ plan for additional Apple Vision Pro devices.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">109</span><code class="line-text">- If you add a device that has AppleCare+ or AppleCare+ with Theft and Loss coverage, it will be covered by AppleCare One and [your previous AppleCare+ plan will be canceled](https://support.apple.com/118218) . You will receive a refund based on the percentage of unexpired AppleCare plan coverage. If the original plan was paid upfront in full, this will be sent as an Apple Gift Card.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text">- Some devices might be eligible for coverage after an Apple-certified repair.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">139</span><code class="line-text">- If your device is covered by an AppleCare Services plan, you need to contact your AppleCare Services vendor for options before being able to add it to your AppleCare One plan.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">113</span><code class="line-text">- If your device is covered by an AppleCare Services plan, you need to contact your AppleCare Services vendor for options before being able to add it to your AppleCare One plan.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

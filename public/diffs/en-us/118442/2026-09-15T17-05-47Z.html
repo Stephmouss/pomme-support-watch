@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Use Notes on your iPhone, iPad, and iPod touch — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Use Notes on your iPhone, iPad, and iPod touch</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/118442">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+12 ajouts</span>
+      <span class="badge removed">−10 suppressions</span>
+      <span class="badge">6 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 47 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">To add a file, photo, or video, tap in a note, then tap the Attachment button . Tap Take Photo or Video to create a new photo or video, or Choose Photo or Video to add an existing one. Tap Use Photo or Use Video, or tap Add to add an existing one. You can also [scan documents](https://support.apple.com/108963) and add them to your notes.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">To add a file, photo, or video, tap in a note, then tap the Attachment button . Tap Take Photo or Video to create a new photo or video, or Choose Photo or Video to add an existing one. Tap Use Photo or Use Video, or tap Add to add an existing one. You can also [scan documents](https://support.apple.com/108963) and add them to your notes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">[Image: <mark class="inline-remove">When you add an attachment to a note, you can choose which</mark> note to add the attachment <mark class="inline-remove">t</mark>o.]</code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">[Image: <mark class="inline-add">A</mark> note <mark class="inline-add">for Lacy&#x27;s Birthday has a cupcake pho</mark>to a<mark class="inline-add">lrea</mark>d<mark class="inline-add">y an</mark>d the attachment <mark class="inline-add">menu </mark>o<mark class="inline-add">pen</mark>.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">### Record and transcribe audio</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">### Record and transcribe audio</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">[Image: No alt supplied for Image]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">[Image: No alt supplied for Image]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">[Image: <mark class="inline-remove">T</mark>o<mark class="inline-remove"> add a li</mark>n<mark class="inline-remove">k in</mark> Notes<mark class="inline-remove">,</mark> to<mark class="inline-remove">uch</mark> and <mark class="inline-remove">hold</mark> <mark class="inline-remove">bla</mark>n<mark class="inline-remove">k</mark> <mark class="inline-remove">space or h</mark>i<mark class="inline-remove">ghlight text to bring up </mark>th<mark class="inline-remove">e</mark> options <mark class="inline-remove">m</mark>e<mark class="inline-remove">nu. Then, tap</mark> Add Link.]</code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">[Image: <mark class="inline-add">iPh</mark>on<mark class="inline-add">e</mark> Notes <mark class="inline-add">app showing a pho</mark>to<mark class="inline-add"> of pastries</mark> and <mark class="inline-add">a</mark> <mark class="inline-add">me</mark>n<mark class="inline-add">u</mark> <mark class="inline-add">w</mark>ith options <mark class="inline-add">lik</mark>e Add Link.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">- Enter the title of the note that you want to link to and select it from the list.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">- Enter the title of the note that you want to link to and select it from the list.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">- In the Folders list, tap the New Folder button .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">- In the Folders list, tap the New Folder button .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text">[Image: <mark class="inline-remove">I</mark>n Notes<mark class="inline-remove">,</mark> <mark class="inline-remove">y</mark>o<mark class="inline-remove">u</mark> <mark class="inline-remove">c</mark>an <mark class="inline-remove">v</mark>i<mark class="inline-remove">ew all y</mark>o<mark class="inline-remove">ur tags and folders simulta</mark>neo<mark class="inline-remove">usly.</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text">[Image: <mark class="inline-add">The Folders list i</mark>n Notes o<mark class="inline-add">n</mark> an i<mark class="inline-add">Ph</mark>one<mark class="inline-add"> 17 Pr</mark>o]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">89</span><code class="line-text">- Choose where to add the folder. To create a subfolder, drag the folder that you want to be a subfolder to the main folder. It will move below the main folder and be indented.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">89</span><code class="line-text">- Choose where to add the folder. To create a subfolder, drag the folder that you want to be a subfolder to the main folder. It will move below the main folder and be indented.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">99</span><code class="line-text">- Tap the notes that you want to move.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">99</span><code class="line-text">- Tap the notes that you want to move.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">101</span><code class="line-text">[Image: <mark class="inline-remove">T</mark>o <mark class="inline-remove">m</mark>o<mark class="inline-remove">v</mark>e notes<mark class="inline-remove"> to different folders, go to your Notes list and tap the notes that you want to move</mark>.]</code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">[Image: <mark class="inline-add">N</mark>o<mark class="inline-add">tes</mark> <mark class="inline-add">app sh</mark>o<mark class="inline-add">ws thr</mark>e<mark class="inline-add">e selected</mark> notes.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">103</span><code class="line-text">- Tap <mark class="inline-remove">M</mark>o<mark class="inline-remove">v</mark>e, then select the folder you want to move them to.</code></div>
+<div class="diff-line current added"><span class="line-number">103</span><code class="line-text">- Tap <mark class="inline-add">the F</mark>o<mark class="inline-add">ld</mark>e<mark class="inline-add">r button </mark>, then select the folder you want to move them to.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">105</span><code class="line-text">## See your notes in Gallery view</code></div>
+<div class="diff-line current unchanged"><span class="line-number">105</span><code class="line-text">## See your notes in Gallery view</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">117</span><code class="line-text">- Choose how you want to sort your notes.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">117</span><code class="line-text">- Choose how you want to sort your notes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">119</span><code class="line-text"><mark class="inline-remove">T</mark>o sort all of your notes automatically<mark class="inline-remove">,</mark> <mark class="inline-remove">go</mark> t<mark class="inline-remove">o</mark> Settings <mark class="inline-remove">&gt;</mark> Apps <mark class="inline-remove">&gt;</mark> Notes<mark class="inline-remove">,</mark> <mark class="inline-remove">a</mark>n<mark class="inline-remove">d</mark> tap Sort Notes By<mark class="inline-remove">.</mark> <mark class="inline-remove">The</mark>n choose how you want to sort your notes.</code></div>
+<div class="diff-line current added"><span class="line-number">119</span><code class="line-text"><mark class="inline-add">Y</mark>o<mark class="inline-add">u can</mark> sort all of your notes automatically<mark class="inline-add">.</mark> <mark class="inline-add">In</mark> t<mark class="inline-add">he</mark> Settings <mark class="inline-add">app, tap</mark> Apps<mark class="inline-add">,</mark> <mark class="inline-add">then tap</mark> Notes<mark class="inline-add">.</mark> <mark class="inline-add">Scroll the</mark>n tap Sort Notes By <mark class="inline-add">a</mark>n<mark class="inline-add">d</mark> choose how you want to sort your notes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">121</span><code class="line-text">## Search for a note or attachment</code></div>
+<div class="diff-line current unchanged"><span class="line-number">121</span><code class="line-text">## Search for a note or attachment</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">123</span><code class="line-text">To search for a specific note, just tap the Search field, then enter what you’re looking for. You can search for typed and handwritten notes. Search can recognize what&#x27;s in the images inside of your notes. For example, if you search for &quot;bike,&quot; search will show you all images that you have with a bike. Search can also find specific text inside scanned documents or images, like receipts or bills. Learn [what to do if you can&#x27;t find a note](https://support.apple.com/102476) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">123</span><code class="line-text">To search for a specific note, just tap the Search field, then enter what you’re looking for. You can search for typed and handwritten notes. Search can recognize what&#x27;s in the images inside of your notes. For example, if you search for &quot;bike,&quot; search will show you all images that you have with a bike. Search can also find specific text inside scanned documents or images, like receipts or bills. Learn [what to do if you can&#x27;t find a note](https://support.apple.com/102476) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">125</span><code class="line-text">To search for something in a specific note, <mark class="inline-remove">s</mark>e<mark class="inline-remove">lect</mark> the note, tap the More button , then tap Find in Note and type what you&#x27;re searching for.</code></div>
+<div class="diff-line current added"><span class="line-number">125</span><code class="line-text">To search for something in a specific note, <mark class="inline-add">op</mark>e<mark class="inline-add">n</mark> the note, tap the More button , then tap Find in Note and type what you&#x27;re searching for.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">127</span><code class="line-text"><mark class="inline-remove">You can als</mark>o search for attachments<mark class="inline-remove">.</mark> <mark class="inline-remove">W</mark>h<mark class="inline-remove">il</mark>e<mark class="inline-remove"> you&#x27;re in a</mark> Notes list, tap the More button , then tap View Attachments. To go to the note with the attachment, touch and hold the thumbnail of the attachment, then tap Show in Note.</code></div>
+<div class="diff-line current added"><span class="line-number">127</span><code class="line-text"><mark class="inline-add">T</mark>o search for attachments<mark class="inline-add">,</mark> <mark class="inline-add">go to t</mark>he Notes list, tap the More button , then tap View Attachments. To go to the note with the attachment, touch and hold the thumbnail of the attachment, then tap Show in Note.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">129</span><code class="line-text">In iOS 27, you can also [use Siri AI to search for notes or search within notes](https://support.apple.com/guide/iphone/siri-ai-ask-siri-about-whats-on-your-screen-iphmk4p88mkuky/ios) . [Activate Siri](https://support.apple.com/guide/iphone/turn-on-and-activate-siri-iph83aad8922/27/ios/27) , then say something like, “What was the note with the cookie recipe?&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">129</span><code class="line-text">## Delete a note</code></div>
+<div class="diff-line current unchanged"><span class="line-number">131</span><code class="line-text">## Delete a note</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 23 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">155</span><code class="line-text">## Proofread, summarize, and more with Writing Tools and Apple Intelligence in Notes</code></div>
+<div class="diff-line current unchanged"><span class="line-number">157</span><code class="line-text">## Proofread, summarize, and more with Writing Tools and Apple Intelligence in Notes</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">157</span><code class="line-text">On Apple Intelligence capable devices with iOS 18.1 and iPadOS 18.1, you can [use Writing Tools to proofread, rewrite, summarize, or change the tone of text](https://support.apple.com/guide/iphone/use-writing-tools-iph6f08da1d2/ios) . Select the text you want to change, tap the Forward button <mark class="inline-remove">&gt;</mark>, then tap Writing Tools to get started.</code></div>
+<div class="diff-line current added"><span class="line-number">159</span><code class="line-text">On Apple Intelligence capable devices with iOS 18.1 and iPadOS 18.1, you can [use Writing Tools to proofread, rewrite, summarize, or change the tone of text](https://support.apple.com/guide/iphone/use-writing-tools-iph6f08da1d2/ios) . Select the text you want to change, tap the Forward button , then tap Writing Tools to get started.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">159</span><code class="line-text"><mark class="inline-remove">To use Apple Intelligence features on your iPhone, you need an iPhone 16, iPhone 16 Plus, iPhone 16 Pro, iPhone 16 Pro Max, iPhone 15 Pro, or iPhone 15 Pro Max. </mark>Apple Intelligence is available in beta starting with iOS 18.1, iPadOS 18.1, and macOS Sequoia 15.1 when your device language and Siri language are set to the same [supported language](https://support.apple.com/121115#supportedlanguages) .</code></div>
+<div class="diff-line current added"><span class="line-number">161</span><code class="line-text">Apple Intelligence is available in beta starting with iOS 18.1, iPadOS 18.1, and macOS Sequoia 15.1 when your device language and Siri language are set to the same [supported language](https://support.apple.com/121115#supportedlanguages) .<mark class="inline-add"> [Learn which iPhone models are compatible with Apple Intelligence](https://www.apple.com/apple-intelligence/) .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">161</span><code class="line-text">Apple Intelligence uses generative models and outputs may vary. Check important information for accuracy.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">163</span><code class="line-text">Apple Intelligence uses generative models and outputs may vary. Check important information for accuracy.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 15 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

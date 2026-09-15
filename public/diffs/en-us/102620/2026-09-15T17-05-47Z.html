@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>If an item or device is connected to another Apple Account — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>If an item or device is connected to another Apple Account</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/102620">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+13 ajouts</span>
+      <span class="badge removed">−21 suppressions</span>
+      <span class="badge">1 bloc modifié</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># If an item or device is connected to another Apple Account</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># If an item or device is connected to another Apple Account</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text"><mark class="inline-remove">If</mark> you try to set up an Apple device like AirPods<mark class="inline-remove">,</mark> or an item like an AirTag<mark class="inline-remove"> or another Find My network accessory</mark>, <mark class="inline-remove">and</mark> see a message in the Find My app that says it&#x27;s paired to another Apple Account<mark class="inline-remove">,</mark> the device or item <mark class="inline-remove">needs to be removed </mark>from th<mark class="inline-remove">at</mark> Apple Account before you can pair it with a new account.<mark class="inline-remove"> If there&#x27;s a previous owner, they might have to follow the steps to unpair.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text"><mark class="inline-add">When</mark> you try to set up an Apple device like AirPods or an item like an AirTag, <mark class="inline-add">you might</mark> see a message in the Find My app that says it&#x27;s paired to another Apple Account<mark class="inline-add">. The previous owner needs to remove</mark> the device or item from th<mark class="inline-add">eir</mark> Apple Account before you can pair it with a new account.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## Remove a device, item, or Find My network accessory from an Apple Account</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## Remove a device, item, or Find My network accessory from an Apple Account</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text"><mark class="inline-remove">You can pair d</mark>evices, items, and other Find My network accessories to only one Apple Account to use them in the Find My app. <mark class="inline-remove">But, i</mark>f you want to use someone else’s accessory, they must remove it from their Apple Account before you can pair and use t<mark class="inline-remove">hem</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text"><mark class="inline-add">D</mark>evices, items, and other Find My network accessories<mark class="inline-add"> must be paired</mark> to only one Apple Account to use them in the Find My app. <mark class="inline-add">I</mark>f you want to use someone else’s accessory, they must remove it from their Apple Account before you can pair and use <mark class="inline-add">i</mark>t.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text"><mark class="inline-remove">Us</mark>e the<mark class="inline-remove">s</mark>e <mark class="inline-remove">s</mark>te<mark class="inline-remove">ps</mark> to remove <mark class="inline-remove">devices, items, or other </mark>Find My <mark class="inline-remove">n</mark>e<mark class="inline-remove">twork</mark> a<mark class="inline-remove">cce</mark>ssorie<mark class="inline-remove">s</mark> <mark class="inline-remove">from</mark> an Apple Account.</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text"><mark class="inline-add">Wh</mark>e<mark class="inline-add">n you unpair</mark> the<mark class="inline-add"> devic</mark>e <mark class="inline-add">or i</mark>te<mark class="inline-add">m from</mark> t<mark class="inline-add">he Apple Account, you als</mark>o remove Find My <mark class="inline-add">Lock, th</mark>e asso<mark class="inline-add">ciation of the device o</mark>r<mark class="inline-add"> </mark>i<mark class="inline-add">t</mark>e<mark class="inline-add">m</mark> <mark class="inline-add">with</mark> an Apple Account.<mark class="inline-add"> Find My Lock needs to be removed before you can pair the device or item with a different Apple Account. Apple can&#x27;t remove Find My Lock for you.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">T<mark class="inline-remove">h</mark>e<mark class="inline-remove">s</mark>e <mark class="inline-remove">steps</mark> a<mark class="inline-remove">l</mark>s<mark class="inline-remove">o unpair</mark> the <mark class="inline-remove">d</mark>evi<mark class="inline-remove">ce</mark> or <mark class="inline-remove">i</mark>tem<mark class="inline-remove"> fr</mark>o<mark class="inline-remove">m an Appl</mark>e<mark class="inline-remove"> Account. When you unpair</mark> the device or item from the Apple Account<mark class="inline-remove">,</mark> <mark class="inline-remove">you also remove Find My Lock, which is the association o</mark>f the device or item with an Apple Account<mark class="inline-remove">. Find My Lock needs to be removed before you can pair</mark> the <mark class="inline-remove">devi</mark>ce <mark class="inline-remove">or</mark> <mark class="inline-remove">i</mark>te<mark class="inline-remove">m with a diffe</mark>r<mark class="inline-remove">ent Apple Account</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">T<mark class="inline-add">o r</mark>e<mark class="inline-add">mov</mark>e <mark class="inline-add">Find My Lock,</mark> as<mark class="inline-add">k</mark> the <mark class="inline-add">pr</mark>evi<mark class="inline-add">ous</mark> o<mark class="inline-add">wne</mark>r t<mark class="inline-add">o r</mark>emo<mark class="inline-add">v</mark>e the device or item from the<mark class="inline-add">ir</mark> Apple Account<mark class="inline-add">.</mark> <mark class="inline-add">I</mark>f the device or item <mark class="inline-add">is Bluetooth-connected and </mark>with<mark class="inline-add">in</mark> <mark class="inline-add">Bluetooth r</mark>an<mark class="inline-add">ge of the iPhone or other Apple device being used to remove it from their</mark> Apple Account<mark class="inline-add">,</mark> the <mark class="inline-add">pro</mark>ce<mark class="inline-add">ss</mark> <mark class="inline-add">may</mark> <mark class="inline-add">be fas</mark>ter.</code></div>
+<div class="diff-line previous removed"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">- If the device or item is paired with the Apple Account of the previous owner, the previous owner needs to follow these steps to remove the device or item from their Apple Account.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- The device or item doesn&#x27;t have to be connected via Bluetooth to the iPhone or other Apple device that is used to remove it from an Apple Account — but the process might happen more quickly if it&#x27;s Bluetooth-connected and within Bluetooth range.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">These steps are the required way to remove and unpair a device or item from an Apple Account, and to remove Find My Lock. Apple can&#x27;t remove Find My Lock for you.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">### How to remove AirPods, an AirTag, or another Find My network accessory or device from an Apple Account on an iPhone or iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">### How to remove AirPods, an AirTag, or another Find My network accessory or device from an Apple Account on an iPhone or iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">- Open the Find My app, then tap Devices or Items.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">- Open the Find My app, then tap Devices or Items.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- Tap the device or item that you want to remove, then <mark class="inline-remove">swi</mark>p<mark class="inline-remove">e up on</mark> the <mark class="inline-remove">h</mark>an<mark class="inline-remove">dle</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- Tap the device or item that you want to remove, then <mark class="inline-add">ta</mark>p the <mark class="inline-add">Det</mark>a<mark class="inline-add">ils butto</mark>n<mark class="inline-add"> </mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">[Image: After you tap an item or device in the Find My app, <mark class="inline-remove">swi</mark>pe u<mark class="inline-remove">p</mark> to see more options.]</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">[Image: After you tap an item or device in the Find My app, <mark class="inline-add">ta</mark>p<mark class="inline-add"> th</mark>e <mark class="inline-add">More b</mark>u<mark class="inline-add">tton</mark> to see more options.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">- Tap Remove, Remove Item, or Remove This Device, then tap Remove to confirm.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">- Tap Remove, Remove Item, or Remove This Device, then tap Remove to confirm.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">[Image: Tap Remove or Remove Item to remove an t<mark class="inline-remove">i</mark>m<mark class="inline-remove">e</mark> from Find My and remove Find My Lock.]</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">[Image: Tap Remove or Remove Item to remove an <mark class="inline-add">i</mark>t<mark class="inline-add">e</mark>m from Find My and remove Find My Lock.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">### How to remove AirPods or another<mark class="inline-remove"> Find My network</mark> device from an Apple Account on a Mac</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">### How to remove AirPods or another device from an Apple Account on a Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">- Open the Find My app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">- Open the Find My app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">- Click Devices.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">- Click Devices.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- Select the device that you want to remove.</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- Select the device that you want to remove<mark class="inline-add">, then click the More button </mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">- On the map, click the More Info button .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">- On the map, click the More Info button .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">[Image: No alt supplied for Image]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">[Image: No alt supplied for Image]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">- Click Remove This Device.</code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- Click<mark class="inline-add"> Remove or</mark> Remove This Device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">You can&#x27;t remove items, such as an AirTag or Find My network accessories from an Apple Account on a Mac.</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">You can&#x27;t remove items, such as an AirTag or Find My network accessories<mark class="inline-add">,</mark> from an Apple Account on a Mac.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">## How to remove AirPods on iCloud.com</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text"><mark class="inline-add">#</mark>## How to remove AirPods on iCloud.com</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">- Go to [i<mark class="inline-remove">C</mark>loud.com](https://icloud.com/) and sign in with your Apple Account.</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- Go to [i<mark class="inline-add">c</mark>loud.com<mark class="inline-add">/find</mark>](https://<mark class="inline-add">www.</mark>icloud.com<mark class="inline-add">/find</mark>/) and sign in with your Apple Account.</code></div>
+<div class="diff-line previous removed"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">- Go to the Find My app (or Find My Devices).</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">- In the devices list, find the AirPods that you want to remove.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">- In the devices list, find the AirPods that you want to remove.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 17 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

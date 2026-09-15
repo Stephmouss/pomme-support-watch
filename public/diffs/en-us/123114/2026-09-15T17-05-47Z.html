@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>About Recovery Assistant for iPhone and iPad — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>About Recovery Assistant for iPhone and iPad</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/123114">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+7 ajouts</span>
+      <span class="badge removed">−13 suppressions</span>
+      <span class="badge">2 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># About Recovery Assistant for iPhone and iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># About Recovery Assistant for iPhone and iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text"><mark class="inline-remove">If your device has an issue while starting up or experiences crashes, your device may start Recovery Assistant. </mark>Recovery Assistant <mark class="inline-remove">down</mark>l<mark class="inline-remove">oad</mark>s<mark class="inline-remove"> a software package to</mark> resolve startup issues.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Recovery Assistant <mark class="inline-add">he</mark>l<mark class="inline-add">p</mark>s resolve startup issues<mark class="inline-add"> by downloading a software package</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">If Recovery Assistant appears, click Continue to start the recovery process. The recovery process may take several minutes to complete.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">If Recovery Assistant appears, click Continue to start the recovery process. The recovery process may take several minutes to complete.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">[Image: iPhone showing the Recovery Assistant screen.]</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">[Image: iPhone showing the Recovery Assistant screen<mark class="inline-add"> in iOS 26</mark>.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">The recovery process requires a Wi-Fi connection.<mark class="inline-remove">*</mark></code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">The recovery process requires a Wi-Fi connection.<mark class="inline-add"> 1</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">After the recovery process completes, restart your device. If the startup issue continues, make sure your device is on the [latest version of iOS or iPadOS](https://support.apple.com/en-us/118575) . If your device is on latest version of iOS or iPadOS, use recovery mode to restore your iPhone or iPad. If the issue persists, [get service](https://getsupport.apple.com/?caller=kbase) .</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">After the recovery process completes, restart your device. If the startup issue continues, make sure your device is on the [latest version of iOS or iPadOS](https://support.apple.com/en-us/118575) . If your device is on <mark class="inline-add">the </mark>latest version of iOS or iPadOS, use recovery mode to restore your iPhone or iPad. If the issue persists, [get service](https://getsupport.apple.com/?caller=kbase) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">If you need to manually start Recovery Assistant:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">If you need to manually start Recovery Assistant:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 15 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">To help diagnose the problem, you can choose to share diagnostic and log files from this device with Apple. Sharing diagnostic and log files will include data from before the issue occurred and could contain sensitive or personal information, such as your name, device serial number, or file names. Sharing this data is optional.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">To help diagnose the problem, you can choose to share diagnostic and log files from this device with Apple. Sharing diagnostic and log files will include data from before the issue occurred and could contain sensitive or personal information, such as your name, device serial number, or file names. Sharing this data is optional.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text"><mark class="inline-remove">Th</mark>e<mark class="inline-remove"> following data gets</mark> collected during the recovery process<mark class="inline-remove">:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text"><mark class="inline-add">Appl</mark>e collect<mark class="inline-add">s d</mark>e<mark class="inline-add">vice meta</mark>d<mark class="inline-add">ata (model, software version, disk size, free space), system stability logs, and recent activity logs</mark> during the recovery process<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">D</mark>evice <mark class="inline-remove">m</mark>etadata <mark class="inline-remove">(</mark>m<mark class="inline-remove">o</mark>de<mark class="inline-remove">l,</mark> s<mark class="inline-remove">oftwa</mark>r<mark class="inline-remove">e </mark>v<mark class="inline-remove">ersion, disk size, free sp</mark>ace)</code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text"><mark class="inline-add">Apple</mark> <mark class="inline-add">will use the data you send to troubleshoot d</mark>evice <mark class="inline-add">issu</mark>e<mark class="inline-add">s and won&#x27;</mark>t<mark class="inline-add"> sh</mark>a<mark class="inline-add">re the </mark>data <mark class="inline-add">with any other co</mark>m<mark class="inline-add">pany. Apple handles this data as </mark>de<mark class="inline-add">scribed</mark> <mark class="inline-add">in it</mark>s<mark class="inline-add"> [p</mark>r<mark class="inline-add">i</mark>vac<mark class="inline-add">y policy](https://www.appl</mark>e<mark class="inline-add">.com/legal/privacy/en-ww/</mark>)<mark class="inline-add"> .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- <mark class="inline-remove">S</mark>ys<mark class="inline-remove">tem </mark>sta<mark class="inline-remove">b</mark>i<mark class="inline-remove">lity</mark> logs</code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- <mark class="inline-add">[Recover</mark>y<mark class="inline-add"> A</mark>s<mark class="inline-add">si</mark>sta<mark class="inline-add">nt doesn&#x27;t support networks that requ</mark>i<mark class="inline-add">re a</mark> log<mark class="inline-add">in page or 802.1X authentication](http</mark>s<mark class="inline-add">://support.apple.com/en-us/102554) .</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">- Recent system activity logs</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">Apple will use the data you send to troubleshoot device issues and won&#x27;t share the data with any other company. Apple will treat this data in accordance with its [privacy policy](https://www.apple.com/legal/privacy/en-ww/) at all times.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">*Captive networks and networks that require 802.1X authentication aren&#x27;t supported.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

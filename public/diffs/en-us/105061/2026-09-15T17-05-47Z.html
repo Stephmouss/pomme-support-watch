@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Manage your photo and video storage — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Manage your photo and video storage</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/105061">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+13 ajouts</span>
+      <span class="badge removed">−11 suppressions</span>
+      <span class="badge">4 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">Learn how photos and videos use the storage on your iPhone and iPad, and how you can optimize storage and save space on your devices using iCloud Photos.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">Learn how photos and videos use the storage on your iPhone and iPad, and how you can optimize storage and save space on your devices using iCloud Photos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">The photos, music, apps, and other content that you use and enjoy on your iPhone and iPad take up space in your device’s storage capacity. Your device can fill up<mark class="inline-remove"> quickly</mark> depending on [the size of its storage capacity](https://support.apple.com/en-us/108044) and how much content you have. If you see a message that your device&#x27;s storage is full, you can free up space by using iCloud Photos or deleting content on your device.</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">The photos, music, apps, and other content that you use and enjoy on your iPhone and iPad take up space in your device’s storage capacity. Your device can fill up depending on [the size of its storage capacity](https://support.apple.com/en-us/108044) and how much content you have. If you see a message that your device&#x27;s storage is full, you can free up space by using iCloud Photos or deleting content on your device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">## Check to see how much storage you have</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">## Check to see how much storage you have</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">- Tap [device] Storage.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">- Tap [device] Storage.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">[Image: iPhone storage se<mark class="inline-remove">ctio</mark>n o<mark class="inline-remove">f Settings display</mark>ing a recommendation<mark class="inline-remove"> to Offload Unu</mark>s<mark class="inline-remove">ed Apps</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">[Image: iPhone storage s<mark class="inline-add">cr</mark>e<mark class="inline-add">e</mark>n <mark class="inline-add">sh</mark>o<mark class="inline-add">w</mark>ing <mark class="inline-add">us</mark>a<mark class="inline-add">ge breakdown and</mark> recommendations<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">You might see [recommendations](https://support.apple.com/<mark class="inline-remove">kb/HT</mark>2<mark class="inline-remove">01656</mark>#recommendations) <mark class="inline-remove">for optimizing your storage</mark>, a list of your apps, and the amount of space that each one uses.</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">You might see [recommendations<mark class="inline-add"> for optimizing your storage</mark>](https://support.apple.com/<mark class="inline-add">1084</mark>2<mark class="inline-add">9</mark>#recommendations) , a list of your apps, and the amount of space that each one uses.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">### iCloud storage</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">### iCloud storage</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">- Tap iCloud.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">- Tap iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">[Image: iCloud storage <mark class="inline-remove">s</mark>e<mark class="inline-remove">ction of Settings sh</mark>ow<mark class="inline-remove">i</mark>n<mark class="inline-remove">g recommendations and app options</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">[Image: i<mark class="inline-add">Phone screen showing storage management with i</mark>Clou<mark class="inline-add">d Photos icon an</mark>d storage <mark class="inline-add">br</mark>e<mark class="inline-add">akd</mark>own<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">You see how much space you have left in iCloud and <mark class="inline-remove">if y</mark>o<mark class="inline-remove">u n</mark>e<mark class="inline-remove">ed</mark> to [upgrade your storage plan](https://support.apple.com/en-us/108349) . Tap <mark class="inline-remove">Manage Account </mark>Storage to see how apps are using your storage.</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">You<mark class="inline-add"> can</mark> see how much space you have left in iCloud and <mark class="inline-add">ch</mark>o<mark class="inline-add">os</mark>e to [upgrade your storage plan](https://support.apple.com/en-us/108349) . Tap Storage to see how apps are using your storage.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">## Store your photos and videos in iCloud</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">## Store your photos and videos in iCloud</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">By default, your photos and videos are stored on your device in their original, high-resolution version. This means that they use a lot of space on your iPhone and iPad. W<mark class="inline-remove">it</mark>h [iCloud Photos](https://support.apple.com/en-us/108782) , you <mark class="inline-remove">can</mark> make more space available on your device and still have access to your entire full-resolution collection wherever you go.</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">By default, your photos and videos are stored on your device in their original, high-resolution version. This means that they use a lot of space on your iPhone and iPad. Wh<mark class="inline-add">en you use</mark> [iCloud Photos](https://support.apple.com/en-us/108782) , <mark class="inline-add">Optimize Storage is on by default, allowing </mark>you <mark class="inline-add">to</mark> make more space available on your device and still have access to your entire full-resolution collection wherever you go.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">- Tap Settings, tap [your name], tap iCloud, then tap Photos.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">- Tap Settings, tap [your name], tap iCloud, then tap Photos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- Turn on Sync this iPhone.<mark class="inline-remove"> In iOS 15 or earlier, tap to turn on iCloud Photos.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- Turn on Sync this iPhone.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">- Se<mark class="inline-remove">lec</mark>t<mark class="inline-remove"> O</mark>p<mark class="inline-remove">timize</mark> iPhone Storage<mark class="inline-remove"> to save space on your device</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">- <mark class="inline-add">In iO</mark>S<mark class="inline-add"> 27 or lat</mark>e<mark class="inline-add">r, </mark>t<mark class="inline-add">a</mark>p iPhone Storage.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">[Image: i<mark class="inline-remove">Cl</mark>o<mark class="inline-remove">ud</mark> Photos se<mark class="inline-remove">ction of iCloud se</mark>ttings <mark class="inline-remove">sho</mark>wi<mark class="inline-remove">ng s</mark>t<mark class="inline-remove">atus and p</mark>h<mark class="inline-remove">oto</mark> storage options]</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">[Image: i<mark class="inline-add">Ph</mark>o<mark class="inline-add">ne screen showing</mark> Photos settings with storage <mark class="inline-add">management </mark>options<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- Make sure that Optimize iPhone Storage is turned on to save space on your device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">When Optimize Storage is turned on, full-resolution photos and videos are stored in iCloud, and, when needed, space-saving copies are stored on your device. And [as long as you have enough space in iCloud](https://support.apple.com/en-us/108922) , you can store as many photos and videos as you want.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">When Optimize Storage is turned on, full-resolution photos and videos are stored in iCloud, and, when needed, space-saving copies are stored on your device. And [as long as you have enough space in iCloud](https://support.apple.com/en-us/108922) , you can store as many photos and videos as you want.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">## If you need more storage</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">## If you need more storage</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">- When you sign up for iCloud, you automatically get 5GB of free storage. If you need more iCloud storage, you can [upgrade to iCloud+](https://support.apple.com/en-us/108349) .</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">- When you sign up for iCloud, you automatically get 5<mark class="inline-add"> </mark>GB of free storage. If you need more iCloud storage, you can [upgrade to iCloud+](https://support.apple.com/en-us/108349) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">- If you need more storage on your device, you can [transfer the photos and videos that you don&#x27;t want to store in iCloud to your computer.](https://support.apple.com/en-us/120267)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">- If you need more storage on your device, you can [transfer the photos and videos that you don&#x27;t want to store in iCloud to your computer.](https://support.apple.com/en-us/120267)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">## Need more help?</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">## Need more help?</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">Tell us more about what&#x27;s happening, and we<mark class="inline-remove">’</mark>ll suggest what you can do next.</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">Tell us more about what&#x27;s happening, and we<mark class="inline-add">&#x27;</mark>ll suggest what you can do next.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">[Get suggestions](https://getsupport.apple.com/?caller=ikb)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">[Get suggestions](https://getsupport.apple.com/?caller=ikb)</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

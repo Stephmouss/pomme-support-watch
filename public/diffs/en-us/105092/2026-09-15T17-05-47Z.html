@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Change Siri volume and speaking rate — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Change Siri volume and speaking rate</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/105092">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+17 ajouts</span>
+      <span class="badge removed">−15 suppressions</span>
+      <span class="badge">4 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous removed"><span class="line-number">1</span><code class="line-text"># <mark class="inline-remove">How to c</mark>hange Siri volume and speaking rate</code></div>
+<div class="diff-line current added"><span class="line-number">1</span><code class="line-text"># <mark class="inline-add">C</mark>hange Siri volume and speaking rate</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Learn how to change how loudly, <mark class="inline-remove">sof</mark>tly, or quickly Siri speaks on your iPhone, iPad, Apple Watch, Mac, HomePod, and in CarPlay.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Learn how to change how loudly, <mark class="inline-add">quie</mark>tly, or quickly Siri speaks on your iPhone, iPad, Apple Watch, Mac, HomePod, and in CarPlay.<mark class="inline-add"> You can also adjust how long Siri waits for you to finish speaking.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">## Change Siri&#x27;s volume<mark class="inline-remove"> on your iPhone and iPad</mark></code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">## Change Siri&#x27;s volume</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">For most devices, you can ask Siri to speak louder or quieter. You can also use the volume buttons on the device while Siri is speaking.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">### Change Siri&#x27;s volume on your iPhone and iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">If you want to change Siri&#x27;s speaking volume, press the volume buttons on the side of your iPhone, iPad, or your headphones while Siri is speaking.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">If you want to change Siri&#x27;s speaking volume, press the volume buttons on the side of your iPhone, iPad, or your headphones while Siri is speaking.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">If you can&#x27;t hear Siri on your iPhone, you might need to [turn the ringer on](https://support.apple.com/guide/iphone/iph37c04838/ios) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">If you can&#x27;t hear Siri on your iPhone, you might need to [turn the ringer on](https://support.apple.com/guide/iphone/iph37c04838/ios) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">[Image: Siri responding on iPhone with &quot;I&#x27;ll speak<mark class="inline-remove">er</mark> <mark class="inline-remove">softer.</mark>&quot;.]</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">[Image: Siri responding on iPhone with &quot;I&#x27;ll speak <mark class="inline-add">up</mark>&quot;.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">## Change Siri&#x27;s volume on your Apple Watch</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text"><mark class="inline-add">#</mark>## Change Siri&#x27;s volume on your Apple Watch</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">Raise your wrist and speak into your Apple Watch. Just say &quot;Hey Siri, speak louder&quot; or &quot;Hey Siri, speak quieter.&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">Raise your wrist and speak into your Apple Watch. Just say &quot;Hey Siri, speak louder&quot; or &quot;Hey Siri, speak quieter.&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">[Image: Siri responding on Apple Watch with &quot;I&#x27;ll speak louder.&quot;<mark class="inline-remove">.</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">[Image: Siri responding on Apple Watch with &quot;I&#x27;ll speak louder.&quot;]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">## Change Siri&#x27;s volume on your Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">## Change Siri&#x27;s volume on your Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">[Image: The Sound slider in macOS Control Center.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">[Image: The Sound slider in macOS Control Center.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">## Change Siri&#x27;s volume on your HomePod</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text"><mark class="inline-add">#</mark>## Change Siri&#x27;s volume on your HomePod</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">You can ask Siri to speak louder, quieter, or at a specific volume. Say &quot;Hey Siri,&quot; then say something like:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">You can ask Siri to speak louder, quieter, or at a specific volume. Say &quot;Hey Siri,&quot; then say something like:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">HomePod automatically adjusts Siri&#x27;s response volume based on the level of noise in the room, your distance from HomePod, and how loudly you&#x27;re speaking to Siri. You can turn automatic volume on or off by saying, &quot;Hey Siri, turn on automatic Siri volume,&quot; or &quot;Hey Siri, turn off automatic Siri volume.&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">HomePod automatically adjusts Siri&#x27;s response volume based on the level of noise in the room, your distance from HomePod, and how loudly you&#x27;re speaking to Siri. You can turn automatic volume on or off by saying, &quot;Hey Siri, turn on automatic Siri volume,&quot; or &quot;Hey Siri, turn off automatic Siri volume.&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">## Change Siri&#x27;s volume in CarPlay</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text"><mark class="inline-add">#</mark>## Change Siri&#x27;s volume in CarPlay</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">While Siri is speaking, or while you are holding the button to activate Siri, use your car&#x27;s volume controls to adjust the volume. This control is usually on the steering wheel or on the car’s display.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">While Siri is speaking, or while you are holding the button to activate Siri, use your car&#x27;s volume controls to adjust the volume. This control is usually on the steering wheel or on the car’s display.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">## Change Siri&#x27;s speaking rate</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">## Change Siri&#x27;s speaking rate</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text"><mark class="inline-remove">Wit</mark>h iOS 17, iPadOS 17, <mark class="inline-remove">and</mark> later, you can change how quickly or slowly Siri speaks on an iPhone or iPad. This change also affects a paired Apple Watch and CarPlay.</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text"><mark class="inline-add">If you </mark>h<mark class="inline-add">ave</mark> iOS 17, iPadOS 17, <mark class="inline-add">or</mark> later, you can change how quickly or slowly Siri speaks on an iPhone or iPad. This change also affects a paired Apple Watch and CarPlay.<mark class="inline-add"> With iOS 27 and iPadOS 27, you can also adjust Siri&#x27;s pause time.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">- Open Settings.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">- Open Settings.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">- Tap Siri.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">- Tap Siri.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- Choose Default, Longer, or Longest for Siri Pause Time.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">- Slide the Speaking Rate slider to the right for faster speech or to the left for slower speech.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">- Slide the Speaking Rate slider to the right for faster speech or to the left for slower speech.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">[Image: Speaking rate slider showing 1<mark class="inline-remove">3</mark>0% speed.]</code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">[Image: Speaking rate slider showing 1<mark class="inline-add">2</mark>0% speed.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">- Siri&#x27;s speaking speed on Apple Watch automatically updates to match the setting on a paired iPhone or iPad. It cannot be changed on Apple Watch directly.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">- Siri&#x27;s speaking speed on Apple Watch automatically updates to match the setting on a paired iPhone or iPad. It cannot be changed on Apple Watch directly.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">- Siri&#x27;s speaking speed in CarPlay automatically updates to match the setting on a paired iPhone. It cannot be changed in CarPlay directly.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">- Siri&#x27;s speaking speed in CarPlay automatically updates to match the setting on a paired iPhone. It cannot be changed in CarPlay directly.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">N</mark>eed <mark class="inline-remove">m</mark>ore help<mark class="inline-remove">?</mark></code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text"><mark class="inline-add">With</mark> <mark class="inline-add">Siri AI (B</mark>e<mark class="inline-add">ta), you can </mark>e<mark class="inline-add">nable Expressive Voices to customize Siri&#x27;s speaking pace an</mark>d <mark class="inline-add">expressiveness. Open Settings and tap Siri. Tap Voice, then use the Pace slider to change the speaking rate </mark>or<mark class="inline-add"> th</mark>e <mark class="inline-add">Expressivity slider to adjust ot</mark>he<mark class="inline-add">r aspects of Siri&#x27;s voice. [Siri AI requires iOS 27](https://support.app</mark>l<mark class="inline-add">e.com/en-us/127893) and is available in [select languages and regions](htt</mark>p<mark class="inline-add">s://support.apple.com/en-us/148218) .</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">Tell us more about what&#x27;s happening, and we’ll suggest what you can do next.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">[Get suggestions](https://getsupport.apple.com/?caller=ikb)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

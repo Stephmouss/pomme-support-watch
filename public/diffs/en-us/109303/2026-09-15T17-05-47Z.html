@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Set up Apple Card Family and add a Co-Owner and Participants — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Set up Apple Card Family and add a Co-Owner and Participants</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/109303">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+34 ajouts</span>
+      <span class="badge removed">−30 suppressions</span>
+      <span class="badge">5 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous removed"><span class="line-number">1</span><code class="line-text"># Set up Apple Card Family and add a <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wner and <mark class="inline-remove">p</mark>articipants</code></div>
+<div class="diff-line current added"><span class="line-number">1</span><code class="line-text"># Set up Apple Card Family and add a <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wner and <mark class="inline-add">P</mark>articipants</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">Learn how to share Apple Card with trusted members of your Family Sharing group. You can even co-own the account with one other person.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">Learn how to share Apple Card with trusted members of your Family Sharing group. You can even co-own the account with one other person.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## About Apple Card Family</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## About Apple Card Family</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">Apple Card Family 1 lets you co-own your Apple Card account with one member of [your Family Sharing group](https://support.apple.com/en-us/108380) . You can share your credit line with a <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wner 2 and build credit together as equals 3 . You can even invite another Apple Card owner to combine credit limits 4 with you and form one co-owned account. You can also share your Apple Card with members of [your Family Sharing group](https://support.apple.com/en-us/108380) , including teens and adults. Everyone on the shared account can use Apple Card and view their spending. Account owners and <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wners can see a <mark class="inline-remove">p</mark>articipant&#x27;s 5 activity, set transaction limits, and more. And there&#x27;s a single monthly bill.</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">Apple Card Family 1 lets you co-own your Apple Card account with one member of [your Family Sharing group](https://support.apple.com/en-us/108380) . You can share your credit line with a <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wner 2 and build credit together as equals 3 . You can even invite another Apple Card owner to combine credit limits 4 with you and form one co-owned account. You can also share your Apple Card with members of [your Family Sharing group](https://support.apple.com/en-us/108380) , including teens and adults. Everyone on the shared account can use Apple Card and view their spending. Account owners and <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wners can see a <mark class="inline-add">P</mark>articipant&#x27;s 5 activity, set transaction limits, and more. And there&#x27;s a single monthly bill.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">Six people — including you — can be on a shared Apple Card account. You can invite up to five members of your Family Sharing group to join and one of those five can be an account co-owner. Participants must be 13 years or older and account <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wners must be 18 years or older.</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">Six people — including you — can be on a shared Apple Card account. You can invite up to five members of your Family Sharing group to join and one of those five can be an account co-owner. Participants must be 13 years or older and account <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wners must be 18 years or older.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">## What account owners and <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wners can do on a shared Apple Card</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">## What account owners and <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wners can do on a shared Apple Card</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">- They share full responsibility for the account balance and all payments, even if one account <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wner does not pay.</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- They share full responsibility for the account balance and all payments, even if one account <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wner does not pay.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- They can build credit together equally, which means that account owners and <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wners are each reported in their own name. Credit reporting includes positive and negative payment history, credit utilization, and additional information. Card usage and payment history might impact each account <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wners credit score differently because each individual&#x27;s credit history will include information that&#x27;s unique to them.</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- They can build credit together equally, which means that account owners and <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wners are each reported in their own name. Credit reporting includes positive and negative payment history, credit utilization, and additional information. Card usage and payment history might impact each account <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wner<mark class="inline-add">&#x27;</mark>s credit score differently because each individual&#x27;s credit history will include information that&#x27;s unique to them.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">- They can get unlimited Daily Cash 6 back on their own transactions.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">- They can get unlimited Daily Cash 6 back on their own transactions.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- They can add or remove <mark class="inline-remove">p</mark>articipants and order a titanium Apple Card for <mark class="inline-remove">p</mark>articipants who are under 18 years old.</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- They can add or remove <mark class="inline-add">P</mark>articipants and order a titanium Apple Card for <mark class="inline-add">P</mark>articipants who are under 18 years old.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">- They can view <mark class="inline-remove">p</mark>articipant activity and account <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wner activity.</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">- They can view <mark class="inline-add">P</mark>articipant activity and account <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wner activity.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- They can set transaction limits 7 for <mark class="inline-remove">p</mark>articipants, lock a <mark class="inline-remove">p</mark>articipant&#x27;s ability to spend, and receive notifications on <mark class="inline-remove">p</mark>articipants spending.</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- They can set transaction limits 7 for <mark class="inline-add">P</mark>articipants, lock a <mark class="inline-add">P</mark>articipant&#x27;s ability to spend, and receive notifications on <mark class="inline-add">P</mark>articipants spending.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">- They can request a credit limit increase.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">- They can request a credit limit increase.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">- They can close the shared Apple Card account at any time, but are still responsible for paying any remaining balance. 8</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">- They can close the shared Apple Card account at any time, but are still responsible for paying any remaining balance. 8</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">## What <mark class="inline-remove">p</mark>articipants can do on a shared Apple Card</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">## What <mark class="inline-add">P</mark>articipants can do on a shared Apple Card</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">- They can view their own transactions and information.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">- They can view their own transactions and information.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">- They&#x27;re not responsible for payments.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">- They&#x27;re not responsible for payments.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- They can spend up to the credit limit on the account but might have an optional transaction limit set by an account owner or <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wner.</code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- They can spend up to the credit limit on the account but might have an optional transaction limit set by an account owner or <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wner.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">- They can immediately use their shared Apple Card and get unlimited Daily Cash on all of their own transactions.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">- They can immediately use their shared Apple Card and get unlimited Daily Cash on all of their own transactions.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">- If they&#x27;re 18 years or older, they can opt in to build their credit and be reported as an authorized user on the account.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">- If they&#x27;re 18 years or older, they can opt in to build their credit and be reported as an authorized user on the account.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">If a <mark class="inline-remove">p</mark>articipant is 18 years or older and doesn&#x27;t want to be part of Apple Card Family, they can apply for their own Apple Card account. 9 If their application is approved and they accept their Apple Card offer, they get their own account and are removed from the shared Apple Card account.</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">If a <mark class="inline-add">P</mark>articipant is 18 years or older and doesn&#x27;t want to be part of Apple Card Family, they can apply for their own Apple Card account. 9 If their application is approved and they accept their Apple Card offer, they get their own account and are removed from the shared Apple Card account.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">## Information about credit reporting</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">## Information about credit reporting</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">It&#x27;s important for everyone on an Apple Card Family account to understand how credit reporting can impact their credit file. Information about the Apple Card Family account, such as payment history and credit utilization, is reported to credit bureaus and shown in credit bureau reports for account owners and <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wners. This information might also be shown in credit bureau reports for a <mark class="inline-remove">p</mark>articipant if they&#x27;re being reported on the Apple Card Family account as an authorized user. Being credit reported can assist with building credit history for account <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wners and <mark class="inline-remove">p</mark>articipants. Generally, accounts that have been established for a while, show consistent on-time payments, and have low balances (e.g. below 30% of the total credit limit), might result in a more positive credit impact.</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">It&#x27;s important for everyone on an Apple Card Family account to <mark class="inline-add">[</mark>understand how credit reporting can impact their credit file<mark class="inline-add">](https://support.apple.com/en-us/109297) </mark>. Information about the Apple Card Family account, such as payment history and credit utilization, is reported to credit bureaus and shown in credit bureau reports for account owners and <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wners. This information might also be shown in credit bureau reports for a <mark class="inline-add">P</mark>articipant if they&#x27;re being reported on the Apple Card Family account as an authorized user. Being credit reported can assist with building credit history for account <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wners and <mark class="inline-add">P</mark>articipants. Generally, accounts that have been established for a while, show consistent on-time payments, and have low balances (e.g. below 30% of the total credit limit), might result in a more positive credit impact.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">## Requirements</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">## Requirements</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">- [Set up Family Sharing](https://support.apple.com/en-us/108380) or be part of a Family Sharing group.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">- [Set up Family Sharing](https://support.apple.com/en-us/108380) or be part of a Family Sharing group.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">- Account <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wners must be 18 years or older and a member of your Family Sharing group.</code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- Account <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wners must be 18 years or older and a member of your Family Sharing group.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">- Participants must be 13 years or older and a member of your Family Sharing group.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">- Participants must be 13 years or older and a member of your Family Sharing group.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Make sure that your device region is set to the United States.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">- Make sure that your device region is set to the United States.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">## Invite an Apple Card Family <mark class="inline-remove">p</mark>articipant or account <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wner</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">## Invite an Apple Card Family <mark class="inline-add">P</mark>articipant or account <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wner</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">- Open the Wallet app and tap your Apple Card.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">- Open the Wallet app and tap your Apple Card.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">- Under Apple Card Family, tap Add User, then tap Continue.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">- Under Apple Card Family, tap Add User, then tap Continue.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">- Select a member of your Family Sharing group. To invite someone to join your Family Sharing group, tap Invite <mark class="inline-remove">Som</mark>eon<mark class="inline-remove">e</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">- Select a member of your Family Sharing group. To invite someone to join your Family Sharing group, tap Invite <mark class="inline-add">P</mark>eo<mark class="inline-add">ple to Family Shari</mark>n<mark class="inline-add">g</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">- To [invite an account <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wner](https://support.apple.com/en-us/109303#owner) , tap <mark class="inline-remove">Become </mark>Co-Owner<mark class="inline-remove">s</mark>. To [invite a <mark class="inline-remove">p</mark>articipant](https://support.apple.com/en-us/109303#participant) , tap <mark class="inline-remove">Add as </mark>Participant.</code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">- To [invite an account <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wner](https://support.apple.com/en-us/109303#owner) , tap Co-Owner. To [invite a <mark class="inline-add">P</mark>articipant](https://support.apple.com/en-us/109303#participant) , tap Participant.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">- Follow the instructions on your screen to provide the requested information.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">79</span><code class="line-text">- Follow the instructions on your screen to provide the requested information.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">81</span><code class="line-text">- Tap Send Invitation, then authenticate with your passcode.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">- Tap Send Invitation, then authenticate with your passcode.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">On your iPad, open the Settings app <mark class="inline-remove">&gt;</mark> Wallet &amp; Apple Pay <mark class="inline-remove">&gt;</mark> Apple Card <mark class="inline-remove">&gt;</mark> Info tab. Then follow these steps:</code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">On your iPad, open the Settings app<mark class="inline-add">,</mark> <mark class="inline-add">tap</mark> Wallet &amp; Apple Pay<mark class="inline-add">,</mark> <mark class="inline-add">tap</mark> Apple Card<mark class="inline-add">,</mark> <mark class="inline-add">then tap the</mark> Info tab. Then follow these steps:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">- Under Apple Card Family, tap Add User, then tap Continue.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">- Under Apple Card Family, tap Add User, then tap Continue.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">87</span><code class="line-text">- Select a member of your Family Sharing group. To invite someone to join your Family Sharing group, tap Invite Someone.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">- Select a member of your Family Sharing group. To invite someone to join your Family Sharing group, tap Invite Someone.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text">- To [invite an account <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wner](https://support.apple.com/en-us/109303#owner) , tap <mark class="inline-remove">Become </mark>Co-Owner<mark class="inline-remove">s</mark>. To [invite a <mark class="inline-remove">p</mark>articipant](https://support.apple.com/en-us/109303#participant) , tap <mark class="inline-remove">Add as </mark>Participant.</code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">- To [invite an account <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wner](https://support.apple.com/en-us/109303#owner) , tap Co-Owner. To [invite a <mark class="inline-add">P</mark>articipant](https://support.apple.com/en-us/109303#participant) , tap Participant.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">- Follow the instructions on your screen to provide the requested information.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">91</span><code class="line-text">- Follow the instructions on your screen to provide the requested information.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">93</span><code class="line-text">- Tap Send Invitation, then authenticate with your passcode.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">93</span><code class="line-text">- Tap Send Invitation, then authenticate with your passcode.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">95</span><code class="line-text">If you invite a <mark class="inline-remove">p</mark>articipant who is under 18 years old, [set up Apple Cash Family](https://support.apple.com/en-us/105010) so that they can use their Daily Cash with Apple Cash. 10</code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text">If you invite a <mark class="inline-add">P</mark>articipant who is under 18 years old, [set up Apple Cash Family](https://support.apple.com/en-us/105010) so that they can use their Daily Cash with Apple Cash. 10</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">97</span><code class="line-text">If you want to set up Apple Card Family with someone who already has an Apple Card, [contact an Apple Card Specialist at Goldman Sachs](https://getsupport.apple.com/?caller=kbase) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">If you want to set up Apple Card Family with someone who already has an Apple Card, [contact an Apple Card Specialist at Goldman Sachs](https://getsupport.apple.com/?caller=kbase) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">105</span><code class="line-text">- Tap Continue.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">105</span><code class="line-text">- Tap Continue.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">107</span><code class="line-text">- If you&#x27;re a <mark class="inline-remove">p</mark>articipant, tap Accept Apple Card. If you&#x27;re an account <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wner, follow the instructions on your screen to complete your Apple Card application. This includes [a credit check](https://support.apple.com/en-us/102585#whycreditscore) .</code></div>
+<div class="diff-line current added"><span class="line-number">107</span><code class="line-text">- If you&#x27;re a <mark class="inline-add">P</mark>articipant, tap Accept Apple Card. If you&#x27;re an account <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wner, follow the instructions on your screen to complete your Apple Card application. This includes [a credit check](https://support.apple.com/en-us/102585#whycreditscore) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">109</span><code class="line-text">On your iPad, tap the invite notification or open the Settings app <mark class="inline-remove">&gt;</mark> Wallet &amp; Apple Pay. Under Pending Invitations, tap Apple Card to accept the invite.</code></div>
+<div class="diff-line current added"><span class="line-number">109</span><code class="line-text">On your iPad, tap the invite notification or open the Settings app<mark class="inline-add">,</mark> <mark class="inline-add">then tap</mark> Wallet &amp; Apple Pay. Under Pending Invitations, tap Apple Card to accept the invite.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">111</span><code class="line-text">To become an account <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wner, your application must be approved and you must accept your Apple Card offer.</code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text">To become an account <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wner, your application must be approved and you must accept your Apple Card offer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">113</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Appl</mark>e <mark class="inline-remove">C</mark>a<mark class="inline-remove">rd Family Participants and</mark> Co-Owner<mark class="inline-remove">s do not need to have a familial relationship but must be part of the same Apple Family Sharing group.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text"><mark class="inline-add">##</mark> <mark class="inline-add">Remov</mark>e a Co-Owner</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">115</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">E</mark>a<mark class="inline-remove">ch</mark> Co-Owner <mark class="inline-remove">is individually liable </mark>fo<mark class="inline-remove">r all balances on the Co-Owned Apple Card, including a</mark>m<mark class="inline-remove">ounts due on your Co-Owner&#x27;s account before the accounts merged. Each Co-Owner will be reported to credit bureaus as an owner on the account. In addition, Co-Owners will have full visibility into all account activity and each Co-Owner is responsible for the other Co-Owner’s instructions or requests. Co-Ownership involves risk, including payment history and other information about</mark> your Apple Card<mark class="inline-remove">, including negative items like missed payments. Addition of new Co-Owner or merging existing</mark> account<mark class="inline-remove">s</mark> <mark class="inline-remove">is</mark> <mark class="inline-remove">subjec</mark>t to <mark class="inline-remove">cre</mark>d<mark class="inline-remove">it appr</mark>o<mark class="inline-remove">val and general eligibility requirements. For Apple Card eligibility requirements, [click here</mark>](https://support.apple.com/<mark class="inline-remove">en-us/</mark>102<mark class="inline-remove">585) . Eith</mark>e<mark class="inline-remove">r C</mark>o-<mark class="inline-remove">O</mark>wner <mark class="inline-remove">can close the account at any time, which may negatively impact your credit, and you will still be responsible for paying all balances on the account</mark>.<mark class="inline-remove"> For details on account-sharing options, including some of the risks and benefits, [click here.](https://support.apple.com/en-us/109303)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">115</span><code class="line-text"><mark class="inline-add">If</mark> <mark class="inline-add">you w</mark>a<mark class="inline-add">nt to remove a</mark> Co-Owner f<mark class="inline-add">r</mark>om your Apple Card account<mark class="inline-add">,</mark> <mark class="inline-add">[learn</mark> <mark class="inline-add">wha</mark>t to do](https://support.apple.com/102<mark class="inline-add">240#r</mark>e<mark class="inline-add">move-c</mark>o-<mark class="inline-add">o</mark>wner<mark class="inline-add">)</mark> .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">117</span><code class="line-text">-<mark class="inline-remove"> Building credit “equally” means that the payment history and other information about your Apple Card, will be reported to credit bureaus for each Co-Owner. Each Co-Owner is individually liable for all balances on the Co-Owned</mark> Apple Card an<mark class="inline-remove">d each will be repor</mark>t<mark class="inline-remove">ed to credit bureaus a</mark>s an<mark class="inline-remove"> owner on the account. Cre</mark>d<mark class="inline-remove">it reporting includes payment history and other information about your Apple Card, including negative items like missed payments. Card usage and payment history may impact each</mark> Co-Owner<mark class="inline-remove">&#x27;</mark>s <mark class="inline-remove">c</mark>re<mark class="inline-remove">dit score different</mark>l<mark class="inline-remove">y, because each individual’s credit history will include inform</mark>ation<mark class="inline-remove"> t</mark>h<mark class="inline-remove">at </mark>i<mark class="inline-remove">s unique to them. Either Co-Owner can close the account at any time</mark>, but <mark class="inline-remove">yo</mark>u<mark class="inline-remove"> will </mark>st<mark class="inline-remove">ill</mark> be <mark class="inline-remove">responsible for </mark>pa<mark class="inline-remove">ying all balances on </mark>t<mark class="inline-remove">he account. For details on account-sharing options, including some</mark> of the <mark class="inline-remove">ri</mark>s<mark class="inline-remove">ks</mark> <mark class="inline-remove">and benefits, [click here](https://support.a</mark>pple.<mark class="inline-remove">com/en-us/109303) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">117</span><code class="line-text">- Apple Card <mark class="inline-add">Family Particip</mark>ants and Co-Owners <mark class="inline-add">do not need to have a familial </mark>relation<mark class="inline-add">s</mark>hi<mark class="inline-add">p</mark>, but <mark class="inline-add">m</mark>ust be pa<mark class="inline-add">r</mark>t of the s<mark class="inline-add">ame</mark> <mark class="inline-add">A</mark>pple<mark class="inline-add"> Family Sharing group</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">119</span><code class="line-text">- Each Co-Owner is individually liable for all balances on the co-owned Apple Card including amounts due on your Co-Owner’s account before the accounts are merged. Each Co-Owner will be reported to credit bureaus as an Owner on the account. In addition, Co-Owners will have full visibility into all account activity and each Co-Owner is responsible for the other Co-Owner’s instructions or requests. Co-ownership involves risk, including payment history and other information about your Apple Card, including negative items like missed payments. Addition of new Co-Owner or merging existing accounts is subject to credit approval and general eligibility requirements. For Apple Card eligibility requirements, [click here](https://support.apple.com/en-us/102585) . Either Co-Owner can close the account at any time which may negatively impact your credit and you will still be responsible for paying all balances on the account. For details on account sharing options including some of the risks and benefits, [click here](https://support.apple.com/en-us/109303) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">121</span><code class="line-text">- Building credit “equally” means that the payment history and other information about your Apple Card will be reported to credit bureaus for each co-owner. Each co-owner is individually liable for all balances on the co-owned Apple Card and each will be reported to credit bureaus as an owner on the account. Credit reporting includes payment history and other information about your Apple Card, including negative items like missed payments. Card usage and payment history may impact each co-owners credit score differently because each individual’s credit history will include information that is unique to them. Goldman Sachs Bank USA may discontinue credit reporting if it sells, transfers, or no longer services the account. Either co-owner can close the account at any time but you will still be responsible for paying all balances on the account. For details on account sharing options including some of the risks and benefits, [click here](https://support.apple.com/en-us/HT212020.) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">119</span><code class="line-text">- Credit limits can only be combined when an existing Apple Card customer requests to share and merge their account with another existing Apple Card customer. Merging accounts is subject to credit approval and general eligibility requirements.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">123</span><code class="line-text">- Credit limits can only be combined when an existing Apple Card customer requests to share and merge their account with another existing Apple Card customer. Merging accounts is subject to credit approval and general eligibility requirements.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">121</span><code class="line-text">- If you are a Participant, you are able to spend on the account but are not responsible for payments. Being a Participant who is reported to the credit bureaus on an account that has a negative payment history (e.g. the account goes past due) or is overutilized can have negative effects on your credit. The account owner remains responsible for all purchases made by a Participant. For more details including some risks and benefits of being a Participant, [click here](https://support.apple.com/en-us/102063) .</code></div>
+<div class="diff-line current added"><span class="line-number">125</span><code class="line-text">- If you are a Participant, you are able to spend on the account but are not responsible for payments. Being a Participant who is reported to the credit bureaus on an account that has a negative payment history (e.g. the account goes past due) or is overutilized can have negative effects on your credit. The account owner remains responsible for all purchases made by a Participant. For more details including some risks and benefits of being a Participant, [click here](https://support.apple.com/en-us/102063<mark class="inline-add">?cid=general-applecard-marcom-08152025</mark>) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">123</span><code class="line-text">- An Apple Cash account is required. Participants under 18 on Apple Card Family <mark class="inline-remove">A</mark>ccounts must have the family organizer of their Apple Cash Family set up their own Apple Cash account. If you do not have an Apple Cash account, Daily Cash can be applied as a credit on account <mark class="inline-remove">o</mark>wner’s statement balance by contacting Goldman Sachs Bank USA.</code></div>
+<div class="diff-line current added"><span class="line-number">127</span><code class="line-text">- An Apple Cash account is required. Participants under 18 on Apple Card Family <mark class="inline-add">a</mark>ccounts must have the family organizer of their Apple Cash Family set up their own Apple Cash account. If you do not have an Apple Cash account, Daily Cash can be applied as a credit on account <mark class="inline-add">O</mark>wner’s statement balance by contacting Goldman Sachs Bank USA.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">125</span><code class="line-text">- Apple Cash services are provided by Green Dot Bank, Member FDIC. Apple Payments Services LLC, a subsidiary of Apple Inc., is a service provider of Green Dot Bank for Apple Cash accounts. Neither Apple Inc. nor Apple Payments Services LLC is a bank.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">129</span><code class="line-text">- Apple Cash services are provided by Green Dot Bank, Member FDIC. Apple Payments Services LLC, a subsidiary of Apple Inc., is a service provider of Green Dot Bank for Apple Cash accounts. Neither Apple Inc. nor Apple Payments Services LLC is a bank.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">127</span><code class="line-text">- Owners can set transaction limits at any time for Participants through the Wallet app, but this does not limit a Participant’s ability to spend up to the available credit limit on the account. Participant cards can also be locked to pause spending at any time through the Wallet app.</code></div>
+<div class="diff-line current added"><span class="line-number">131</span><code class="line-text">- Owners can set transaction limits at any time for Participants through the Wallet app, but this does not limit a Participant’s ability to spend up to the available credit limit on the account. Participant cards can also be locked to pause <mark class="inline-add">their </mark>spending at any time through the Wallet app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">129</span><code class="line-text">- When an account is closed, account <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wners and <mark class="inline-remove">p</mark>articipants can&#x27;t make new transactions, but account owners and <mark class="inline-remove">c</mark>o-<mark class="inline-remove">o</mark>wners will remain on the account until it is paid in full.</code></div>
+<div class="diff-line current added"><span class="line-number">133</span><code class="line-text">- When an account is closed, account <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wners and <mark class="inline-add">P</mark>articipants can&#x27;t make new transactions, but account owners and <mark class="inline-add">C</mark>o-<mark class="inline-add">O</mark>wners will remain on the account until it is paid in full.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">131</span><code class="line-text">- All applicants are subject to credit approval. Individual applicants must have an independent ability to make the required minimum periodic payments for an Apple Card.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">135</span><code class="line-text">- All applicants are subject to credit approval. Individual applicants must have an independent ability to make the required minimum periodic payments for an Apple Card.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Add your Desktop and Documents files to iCloud Drive — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Add your Desktop and Documents files to iCloud Drive</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/109344">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+12 ajouts</span>
+      <span class="badge removed">−14 suppressions</span>
+      <span class="badge">6 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Add your Desktop and Documents files to iCloud Drive</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Add your Desktop and Documents files to iCloud Drive</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">When you stor<mark class="inline-remove">e</mark> your Desktop and Documents folders in iCloud Drive<mark class="inline-remove">,</mark> you<mark class="inline-remove"> can</mark> access the files from your Mac on all your devices.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">When you <mark class="inline-add">turn on De</mark>s<mark class="inline-add">k</mark>to<mark class="inline-add">p &amp; Documents Folde</mark>r<mark class="inline-add">s,</mark> your Desktop<mark class="inline-add"> folder</mark> and Documents folder<mark class="inline-add"> are </mark>s<mark class="inline-add">tored</mark> in iCloud Drive<mark class="inline-add">. This lets</mark> you access the files from your Mac on all your devices.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">- [Turn on Desktop &amp; Documents Folders](https://support.apple.com/en-us/109344#turn_on)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">- [Turn on Desktop &amp; Documents Folders](https://support.apple.com/en-us/109344#turn_on)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">- Click Drive (or iCloud Drive).</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">- Click Drive (or iCloud Drive).</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">[Image:<mark class="inline-remove"> In</mark> iCloud settings <mark class="inline-remove">i</mark>n <mark class="inline-remove">m</mark>ac<mark class="inline-remove">OS Tahoe 26, find</mark> Drive in<mark class="inline-remove"> th</mark>e Saved to iCloud<mark class="inline-remove"> section to enable iCloud Drive and sync Desktop and Documents folders</mark>.]</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">[Image: iCloud settings <mark class="inline-add">o</mark>n <mark class="inline-add">a M</mark>ac<mark class="inline-add">.</mark> Drive i<mark class="inline-add">s located u</mark>n<mark class="inline-add">d</mark>e<mark class="inline-add">r</mark> Saved to iCloud.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">- Below iCloud Drive, check that you turned on Sync this Mac.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">- Below iCloud Drive, check that you turned on Sync this Mac.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">- Turn on Desktop &amp; Documents Folders.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">- Turn on Desktop &amp; Documents Folders.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">[Image:<mark class="inline-remove"> A settings window in macOS Tahoe 26 showing</mark> iCloud Drive <mark class="inline-remove">a</mark>n<mark class="inline-remove">d</mark> Desktop &amp; Documents Folders turned on.]</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">[Image: iCloud Drive <mark class="inline-add">setti</mark>n<mark class="inline-add">gs showing</mark> Desktop &amp; Documents Folders turned on.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">- Click Done.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">- Click Done.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">If you want to store your files in iCloud Drive and another cloud storage service, you can keep separate copies of your files in both. To store folders from a third-party cloud service, use a different place on your Mac, like the home folder.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">If you want to store your files in iCloud Drive and another cloud storage service, you can keep separate copies of your files in both. To store folders from a third-party cloud service, use a different place on your Mac, like the home folder.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">If you use a feature from another cloud provider that syncs or manages your Desktop and Documents folder<mark class="inline-remove">s</mark>, you need to turn it off to use Desktop <mark class="inline-remove">and</mark> Documents.</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">If you use a feature from another cloud provider that syncs or manages your Desktop <mark class="inline-add">folder </mark>and Documents folder, you need to turn it off to use Desktop <mark class="inline-add">&amp;</mark> Documents<mark class="inline-add"> Folders</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">### If you have media libraries</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">### If you have media libraries</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">iCloud Drive won&#x27;t upload these types of library files from your Desktop and Documents folder to your other devices:</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">iCloud Drive won&#x27;t upload these types of library files from your Desktop <mark class="inline-add">folder </mark>and Documents folder to your other devices:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">- iMovie libraries</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">- iMovie libraries</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">## Find your Desktop and Documents files on your device</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">## Find your Desktop and Documents files on your device</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">When you add your Desktop and Documents to iCloud Drive, all of your files move to iCloud and any new files you create are automatically stored in iCloud. Then you can find your files on all of your devices.</code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">When you add your Desktop <mark class="inline-add">folder </mark>and Documents<mark class="inline-add"> folder</mark> to iCloud Drive, all of your files move to iCloud and any new files you create are automatically stored in iCloud. Then you can find your files on all of your devices.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">Your files sync with iCloud each time your device connects to the internet. Depending on your internet speed, the time it takes for you to see your files on your other devices might vary.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">Your files sync with iCloud each time your device connects to the internet. Depending on your internet speed, the time it takes for you to see your files on your other devices might vary.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">### On your Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">### On your Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">- In macOS Tahoe 26 or later, you can find <mark class="inline-remove">your</mark> Desktop and Documents folder<mark class="inline-remove">s</mark> in iCloud Drive in the Finder sidebar, under Favorites. Each folder has a cloud icon next to its name.</code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">- In macOS Tahoe 26 or later, you can find <mark class="inline-add">the</mark> Desktop<mark class="inline-add"> folder</mark> and Documents folder in iCloud Drive in the Finder sidebar, under Favorites. Each folder has a cloud icon next to its name.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">- In earlier versions of macOS, you can find your Desktop and Documents folder<mark class="inline-remove">s</mark> in the iCloud section of the Finder sidebar.</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">- In earlier versions of macOS, you can find your Desktop <mark class="inline-add">folder </mark>and Documents folder in the iCloud section of the Finder sidebar.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">- If you add a second Mac Desktop, you can find those files in the Desktop folder in iCloud Drive. The folder has the same name as your second Mac.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">- If you add a second Mac Desktop, you can find those files in the Desktop folder in iCloud Drive. The folder has the same name as your second Mac.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">- Under Locations, tap iCloud Drive.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">- Under Locations, tap iCloud Drive.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">- Tap the Desktop or Documents folder<mark class="inline-remove">s</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">- Tap the Desktop<mark class="inline-add"> folder</mark> or Documents folder.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">You can use any compatible app to access and edit your files.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">79</span><code class="line-text">You can use any compatible app to access and edit your files.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">- Go to iCloud Drive.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">- Go to iCloud Drive.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text">- Double-click the Desktop or Documents folder<mark class="inline-remove">s</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text">- Double-click the Desktop <mark class="inline-add">folder </mark>or Documents folder.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">89</span><code class="line-text">To edit or use the file, click the Download button to download it. When you&#x27;re done, upload the file to iCloud Drive so that the latest version syncs across your devices. You can edit Pages, Numbers, or Keynote files on the web, and changes save directly to iCloud Drive.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">89</span><code class="line-text">To edit or use the file, click the Download button to download it. When you&#x27;re done, upload the file to iCloud Drive so that the latest version syncs across your devices. You can edit Pages, Numbers, or Keynote files on the web, and changes save directly to iCloud Drive.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text">[Image: No alt supplied for Image]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">93</span><code class="line-text">## Delete files from Desktop and Documents folders</code></div>
+<div class="diff-line current unchanged"><span class="line-number">91</span><code class="line-text">## Delete files from Desktop and Documents folders</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">95</span><code class="line-text">The files that you keep in Desktop and Documents folder<mark class="inline-remove">s</mark> in iCloud Drive are stored in iCloud and use your iCloud storage. When you delete a file on one device, it deletes on every device that you&#x27;re signed in to with the same Apple Account. You can find deleted files in the Recently Deleted folder in the Files app or on [iCloud.com](https://www.icloud.com) for 30 days. After that, the deleted files are removed.</code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">The files that you keep in <mark class="inline-add">your </mark>Desktop<mark class="inline-add"> folder</mark> and Documents folder in iCloud Drive are stored in iCloud and use your iCloud storage. When you delete a file on one device, it deletes on every device that you&#x27;re signed in to with the same Apple Account. You can find deleted files in the Recently Deleted folder in the Files app or on [iCloud.com](https://www.icloud.com) for 30 days. After that, the deleted files are removed.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">97</span><code class="line-text">To free up local storage on your device without deleting the file, touch and hold the file, then select Remove Download.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">To free up local storage on your device without deleting the file, touch and hold the file, then select Remove Download.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">99</span><code class="line-text">## Turn off Desktop &amp; Documents Folders</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">## Turn off Desktop &amp; Documents Folders</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">101</span><code class="line-text">When you turn off Desktop &amp; Documents Folders on your Mac, your files stay in iCloud Drive, and new Desktop and Documents folder<mark class="inline-remove">s</mark> are created locally on your Mac in the home folder. If you turn off iCloud Drive or sign out of iCloud, new Desktop and Documents folder<mark class="inline-remove">s</mark> are created in your home folder and you can choose to keep a local copy of your files.</code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text">When you turn off Desktop &amp; Documents Folders on your Mac, your files stay in iCloud Drive, and <mark class="inline-add">a </mark>new Desktop<mark class="inline-add"> folder</mark> and Documents folder are created locally on your Mac in the home folder. If you turn off iCloud Drive or sign out of iCloud, <mark class="inline-add">a </mark>new Desktop<mark class="inline-add"> folder</mark> and Documents folder are created in your home folder and you can choose to keep a local copy of your files.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">103</span><code class="line-text">[Learn what happens when you turn off Desktop &amp; Documents Folders](https://support.apple.com/en-us/126628)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">101</span><code class="line-text">[Learn what happens when you turn off Desktop &amp; Documents Folders](https://support.apple.com/en-us/126628)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

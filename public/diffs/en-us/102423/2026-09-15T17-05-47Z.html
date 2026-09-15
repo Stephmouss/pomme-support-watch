@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Backup disks you can use with Time Machine — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Backup disks you can use with Time Machine</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/102423">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+6 ajouts</span>
+      <span class="badge removed">−12 suppressions</span>
+      <span class="badge">4 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">## External storage device connected to Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">## External storage device connected to Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">[Image: Mac laptop with a connected external storage device.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">Time Machine can back up to an external storage device connected to a compatible [port on your Mac](https://support.apple.com/en-us/109523) , such as a USB-C or Thunderbolt port. This is the most common Time Machine setup.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">Time Machine can back up to an external storage device connected to a compatible [port on your Mac](https://support.apple.com/en-us/109523) , such as a USB-C or Thunderbolt port. This is the most common Time Machine setup.</code></div>
+<div class="diff-line previous removed"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">[Image: Mac laptop with a connected external storage device.]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">Compatibility : Some older versions of macOS created backup disks using Mac OS Extended as the file system format instead of APFS. If you have an existing Time Machine backup disk, and you chose to encrypt that backup, [learn about support for encrypted Mac OS Extended disks in macOS 28 or later](https://support.apple.com/en-us/125615) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">Compatibility : Some older versions of macOS created backup disks using Mac OS Extended as the file system format instead of APFS. If you have an existing Time Machine backup disk, and you chose to encrypt that backup, [learn about support for encrypted Mac OS Extended disks in macOS 28 or later](https://support.apple.com/en-us/125615) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">Time Machine can back up to the built-in disk of another Mac on your network, or to an external storage device connected to that Mac.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">Time Machine can back up to the built-in disk of another Mac on your network, or to an external storage device connected to that Mac.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">Compatibility : This solution is recommended only when both computers are using [macOS 11 or later](https://support.apple.com/en-us/109033) . When either Mac is using an earlier macOS, network backup uses Apple Filing Protocol (AFP), which <mark class="inline-remove">wo</mark>n&#x27;t<mark class="inline-remove"> be</mark> supported in macOS 27 or later.</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">Compatibility : This solution is recommended only when both computers are using [macOS 11 or later](https://support.apple.com/en-us/109033) . When either Mac is using an earlier macOS, network backup uses Apple Filing Protocol (AFP), which <mark class="inline-add">is</mark>n&#x27;t supported in macOS 27 or later.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">### macOS Ventura 13 or later</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">### macOS Ventura 13 or later</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 39 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">Time Machine can back up to a third-party NAS device that supports Time Machine over the SMB network protocol. Check the documentation of your NAS device for help setting it up for use with Time Machine.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">Time Machine can back up to a third-party NAS device that supports Time Machine over the SMB network protocol. Check the documentation of your NAS device for help setting it up for use with Time Machine.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">Compatibility : Time Machine backup to NAS devices over Apple Filing Protocol (AFP) is not recommended and <mark class="inline-remove">wo</mark>n&#x27;t<mark class="inline-remove"> be</mark> supported in macOS 27 or later.</code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">Compatibility : Time Machine backup <mark class="inline-add">or other data transfer </mark>to<mark class="inline-add"> or from</mark> NAS devices over Apple Filing Protocol (AFP) is not recommended and <mark class="inline-add">is</mark>n&#x27;t supported in macOS 27 or later.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">## AirPort Extreme Base Station or Time Capsule</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">## AirPort Extreme Base Station or Time Capsule</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">Compatibility : These solutions are no longer recommended, because the<mark class="inline-remove">y</mark> use Apple Filing Protocol (AFP), which <mark class="inline-remove">w</mark>i<mark class="inline-remove">ll </mark>n<mark class="inline-remove">o</mark>t<mark class="inline-remove"> be</mark> supported in macOS 27 or later.</code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">Compatibility : These solutions are no longer recommended, because <mark class="inline-add">Time Machine backup and o</mark>the<mark class="inline-add">r data transfer to or from these devices</mark> use Apple Filing Protocol (AFP), which i<mark class="inline-add">s</mark>n<mark class="inline-add">&#x27;</mark>t supported in macOS 27 or later.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">77</span><code class="line-text">Time Machine can back up to the built-in disk of an AirPort Time Capsule on your network. Simply select the Time Capsule as the backup disk when [setting up Time Machine](https://support.apple.com/en-us/104984) on your Mac.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">77</span><code class="line-text">Time Machine can back up to the built-in disk of an AirPort Time Capsule on your network. Simply select the Time Capsule as the backup disk when [setting up Time Machine](https://support.apple.com/en-us/104984) on your Mac.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">Time Machine can also back up to an external storage device connected to the USB port of an AirPort Extreme Base Station (802.11ac model) or AirPort Time Capsule on your network:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">79</span><code class="line-text">Time Machine can also back up to an external storage device connected to the USB port of an AirPort Extreme Base Station (802.11ac model) or AirPort Time Capsule on your network:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">- If the storage device isn’t using Mac OS Extended (Journaled) format, connect it to your Mac and [reformat it with Disk Utility](https://support.apple.com/guide/disk-utility/<mark class="inline-remove">erase-and-reformat-a-storage-device-</mark>dskutl14079/mac) .</code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text">- If the storage device isn’t using Mac OS Extended (Journaled) format, connect it to your Mac and [reformat it with Disk Utility](https://support.apple.com/guide/disk-utility/dskutl14079/mac) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">- Connect the storage device to a USB port on your base station, then turn it on.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">83</span><code class="line-text">- Connect the storage device to a USB port on your base station, then turn it on.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 10 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">95</span><code class="line-text">- If more than one user on your network will back up to this disk with Time Machine, you can use the Secure Shared Disks pop-up menu to make sure that they can view only their own backups, not yours. Choose “With accounts” from the menu, then click the add button (+) to add users.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">- If more than one user on your network will back up to this disk with Time Machine, you can use the Secure Shared Disks pop-up menu to make sure that they can view only their own backups, not yours. Choose “With accounts” from the menu, then click the add button (+) to add users.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">97</span><code class="line-text">- Click Update to restart your base station and apply the settings.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">- Click Update to restart your base station and apply the settings.</code></div>
+<div class="diff-line previous removed"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text">## Need more help?</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">101</span><code class="line-text">Tell us more about what&#x27;s happening, and we’ll suggest what you can do next.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">103</span><code class="line-text">[Get suggestions](https://getsupport.apple.com/?caller=ikb)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

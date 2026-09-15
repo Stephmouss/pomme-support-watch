@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>How to download and install macOS — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>How to download and install macOS</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/102662">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+58 ajouts</span>
+      <span class="badge removed">−52 suppressions</span>
+      <span class="badge">4 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># How to download and install macOS</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># How to download and install macOS</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Use any of these methods to download and install current or previous versions of the Mac operating system on compatible Mac computers. Each macOS includes the latest built-in apps available for that macOS, including Safari, Ma<mark class="inline-remove">il</mark>, and Apple Music<mark class="inline-remove"> (formerly iTunes)</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Use any of these methods to download and install current or previous versions of the Mac operating system on compatible Mac computers. Each macOS includes the latest built-in apps available for that macOS, including Safari, <mark class="inline-add">Notes, </mark>M<mark class="inline-add">ess</mark>a<mark class="inline-add">ges</mark>, and Apple Music.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">- [Use Software Update](https://support.apple.com/en-us/102662#softwareupdate)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">- [Use Software Update](https://support.apple.com/en-us/102662#softwareupdate)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">- [Use macOS Recovery](https://support.apple.com/en-us/102662#recovery)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">- [Use macOS Recovery](https://support.apple.com/en-us/102662#recovery)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">- [Use the App Store](https://support.apple.com/en-us/102662#appstore)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">- [Use a web browser for older versions](https://support.apple.com/en-us/102662#browser)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">- [Use Terminal](https://support.apple.com/en-us/102662#terminal)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">- [Use Terminal](https://support.apple.com/en-us/102662#terminal)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">- [Use a bootable installer](https://support.apple.com/en-us/102662#bootable)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">- [Use a bootable installer](https://support.apple.com/en-us/102662#bootable)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- [Other methods for older macOS versions](https://support.apple.com/en-us/102662#othermethods)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">- [Check macOS compatibility](https://support.apple.com/en-us/102662#compatibility)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">- [Check macOS compatibility](https://support.apple.com/en-us/102662#compatibility)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">## Use Software Update</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">## Use Software Update</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">Software Update is the fastest and easiest way to get macOS updates<mark class="inline-remove"> and upgrades</mark>, and it can use less storage space to download and install <mark class="inline-remove">them. Software U</mark>pdate<mark class="inline-remove"> shows only software that i</mark>s compa<mark class="inline-remove">tibl</mark>e<mark class="inline-remove"> with your Mac: if it says that your Mac is up</mark> to <mark class="inline-remove">date, </mark>the<mark class="inline-remove">n no new software is currently available fo</mark>r <mark class="inline-remove">y</mark>o<mark class="inline-remove">ur Mac</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">Software Update is the fastest and easiest way to get macOS updates, and it <mark class="inline-add">shows only updates that are compatible with your Mac. Software Update </mark>can<mark class="inline-add"> also</mark> use less storage space to download and install <mark class="inline-add">u</mark>pdates compa<mark class="inline-add">r</mark>e<mark class="inline-add">d</mark> to <mark class="inline-add">o</mark>ther <mark class="inline-add">meth</mark>o<mark class="inline-add">ds</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">[How to update or upgrade macOS using Software Update](https://support.apple.com/en-us/108382)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">[How to update or upgrade macOS using Software Update](https://support.apple.com/en-us/108382)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">## Use macOS Recovery</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">## Use macOS Recovery</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">If you want to reinstall macOS, or installation using Software Update <mark class="inline-remove">wa</mark>s unsuccessful, or your <mark class="inline-remove">[</mark>Mac doesn&#x27;t start up all the way<mark class="inline-remove">](https://support.apple.com/en-us/102675)</mark> because it doesn&#x27;t have a working operating system, you can start up from macOS Recovery, then reinstall macOS from there.</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">If you want to reinstall macOS, or installation using Software Update <mark class="inline-add">i</mark>s unsuccessful, or your Mac doesn&#x27;t start up all the way because it doesn&#x27;t have a working operating system, you can start up from macOS Recovery, then reinstall macOS from there.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">[How to reinstall macOS from macOS Recovery](https://support.apple.com/en-us/102655)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">[How to reinstall macOS from macOS Recovery](https://support.apple.com/en-us/102655)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">## Use <mark class="inline-remove">th</mark>e<mark class="inline-remove"> App Sto</mark>r<mark class="inline-remove">e</mark></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">## Use <mark class="inline-add">T</mark>er<mark class="inline-add">minal</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">You can use Terminal to download the installer for compatible macOS versions no earlier than the version that came with your Mac, or the closest version still available.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- Make sure that your Mac is using macOS Catalina 10.15 or later.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- Open Terminal, which is in the Utilities folder of the Applications folder. Or Use Spotlight or Siri AI in the menu bar to find and open Terminal.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- Type or paste this command in Terminal, replacing &quot;[number]&quot; with the [latest macOS version number](https://support.apple.com/en-us/109033#latest) for the compatible macOS that you want to download: softwareupdate --fetch-full-installer --full-installer-version [number]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">- Example: softwareupdate --fetch-full-installer --full-installer-version 26.6.2</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">- Press Return to enter the command.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- As macOS downloads to the Applications folder, Terminal shows the percentage it’s installing (downloading).</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- If Terminal says update not found, that version of macOS is not available for your Mac. You can enter softwareupdate --list-full-installers to get a list of macOS versions that are currently available for your Mac model.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- When Terminal says that the install finished successfully, the download is complete. Open the Applications folder and double-click the macOS installer, named Install [Version Name], then follow the onscreen installation instructions. Or leave the installer in the Applications folder for later use.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">## Use a bootable installer</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">A bootable installer can be useful when you want to install macOS on multiple computers without downloading the installer each time, or when you can&#x27;t install using other methods.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">- Download the macOS installer [using Terminal](https://support.apple.com/en-us/102662#terminal) or one of the [other methods for older macOS versions](https://support.apple.com/en-us/102662#othermethods) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">- Follow the steps to [create the bootable installer](https://support.apple.com/en-us/101578) , which include instructions for using it to install macOS.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">## Other methods for older macOS versions</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">Some older macOS versions are also available via the App Store or as direct downloads via web browser.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">### Download via the App Store</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">- Make sure that the Mac you’re using to download macOS is [compatible with that macOS](https://support.apple.com/en-us/102662#compatibility) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">- Make sure that the Mac you’re using to download macOS is [compatible with that macOS](https://support.apple.com/en-us/102662#compatibility) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- If you&#x27;re downloading macOS in order to [<mark class="inline-remove">m</mark>a<mark class="inline-remove">k</mark>e a bootable installer](https://support.apple.com/en-us/102662#bootable) , make sure that your Mac is using macOS Mojave 10.14 or later.</code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">- If you&#x27;re downloading macOS in order to [<mark class="inline-add">cre</mark>a<mark class="inline-add">t</mark>e a bootable installer](https://support.apple.com/en-us/102662#bootable) , make sure that your Mac is using macOS Mojave 10.14 or later.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- Use these links to find macOS in the App Store. If the<mark class="inline-remove">se links</mark> don&#x27;t work as expected, try again using Safari, which is in the Applications folder.</code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">- Use these links to find macOS in the App Store. If the<mark class="inline-add">y</mark> don&#x27;t work as expected, try again using Safari, which is in the Applications folder.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">- <mark class="inline-remove">T</mark>a<mark class="inline-remove">h</mark>o<mark class="inline-remove">e</mark> <mark class="inline-remove">26 </mark>(<mark class="inline-remove">u</mark>s<mark class="inline-remove">e [S</mark>o<mark class="inline-remove">ftwa</mark>re<mark class="inline-remove"> Update](http</mark>s://<mark class="inline-remove">su</mark>pp<mark class="inline-remove">ort</mark>.apple.com/<mark class="inline-remove">en-us/102662#softwareupdate) or [Terminal](https://support.</mark>app<mark class="inline-remove">le.</mark>com<mark class="inline-remove">/en-us/</mark>1<mark class="inline-remove">0</mark>2<mark class="inline-remove">662#terminal</mark>)<mark class="inline-remove"> )</mark></code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">- <mark class="inline-add">[m</mark>a<mark class="inline-add">cOS Sequ</mark>o<mark class="inline-add">ia</mark> <mark class="inline-add">15]</mark>(<mark class="inline-add">macapp</mark>s<mark class="inline-add">t</mark>ores://<mark class="inline-add">a</mark>pp<mark class="inline-add">s</mark>.apple.com/app<mark class="inline-add">/ma</mark>co<mark class="inline-add">s-sequoia/id6596773750?</mark>m<mark class="inline-add">t=</mark>12)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">- [S<mark class="inline-remove">equ</mark>o<mark class="inline-remove">i</mark>a 1<mark class="inline-remove">5</mark>](macappstores://apps.apple.com/app/macos-s<mark class="inline-remove">equ</mark>o<mark class="inline-remove">i</mark>a/id65<mark class="inline-remove">96</mark>7<mark class="inline-remove">73</mark>750?mt=12)</code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">- [<mark class="inline-add">macO</mark>S<mark class="inline-add"> S</mark>o<mark class="inline-add">nom</mark>a 1<mark class="inline-add">4</mark>](macappstores://apps.apple.com/app/macos-so<mark class="inline-add">nom</mark>a/id6<mark class="inline-add">4</mark>5<mark class="inline-add">0</mark>7<mark class="inline-add">1</mark>750<mark class="inline-add">9</mark>?mt=12)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">- [S<mark class="inline-remove">o</mark>n<mark class="inline-remove">om</mark>a 1<mark class="inline-remove">4</mark>](macappstores://apps.apple.com/app/macos-<mark class="inline-remove">so</mark>n<mark class="inline-remove">om</mark>a/id6<mark class="inline-remove">450</mark>7<mark class="inline-remove">1</mark>7<mark class="inline-remove">50</mark>9?mt=12)</code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">- [<mark class="inline-add">macO</mark>S<mark class="inline-add"> Ve</mark>n<mark class="inline-add">tur</mark>a 1<mark class="inline-add">3</mark>](macappstores://apps.apple.com/app/macos-<mark class="inline-add">ve</mark>n<mark class="inline-add">tur</mark>a/id<mark class="inline-add">1</mark>6<mark class="inline-add">38</mark>7<mark class="inline-add">8</mark>7<mark class="inline-add">99</mark>9?mt=12)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- [<mark class="inline-remove">Ve</mark>nt<mark class="inline-remove">u</mark>r<mark class="inline-remove">a</mark> 1<mark class="inline-remove">3</mark>](macappstores://apps.apple.com/app/macos-<mark class="inline-remove">ve</mark>nt<mark class="inline-remove">u</mark>r<mark class="inline-remove">a</mark>/id1638<mark class="inline-remove">787</mark>9<mark class="inline-remove">99</mark>?mt=12)</code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">- [<mark class="inline-add">macOS Mo</mark>nt<mark class="inline-add">e</mark>r<mark class="inline-add">ey</mark> 1<mark class="inline-add">2</mark>](macappstores://apps.apple.com/app/macos-<mark class="inline-add">mo</mark>nt<mark class="inline-add">e</mark>r<mark class="inline-add">ey</mark>/id1<mark class="inline-add">57</mark>6<mark class="inline-add">7</mark>38<mark class="inline-add">2</mark>9<mark class="inline-add">4</mark>?mt=12)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">- [<mark class="inline-remove">Monte</mark>r<mark class="inline-remove">ey</mark> 1<mark class="inline-remove">2</mark>](macappstores://apps.apple.com/app/macos-<mark class="inline-remove">monte</mark>r<mark class="inline-remove">ey</mark>/id157<mark class="inline-remove">67</mark>3<mark class="inline-remove">8</mark>2<mark class="inline-remove">94</mark>?mt=12)</code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">- [<mark class="inline-add">macOS Big Su</mark>r 1<mark class="inline-add">1</mark>](macappstores://apps.apple.com/app/macos-<mark class="inline-add">big-su</mark>r/id15<mark class="inline-add">268</mark>7<mark class="inline-add">81</mark>32?mt=12)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">- [<mark class="inline-remove">B</mark>i<mark class="inline-remove">g Sur</mark> 11](macappstores://apps.apple.com/app/macos-<mark class="inline-remove">b</mark>i<mark class="inline-remove">g-sur</mark>/id1<mark class="inline-remove">52</mark>68<mark class="inline-remove">78</mark>13<mark class="inline-remove">2</mark>?mt=12)</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">- [<mark class="inline-add">macOS Catal</mark>i<mark class="inline-add">na</mark> 1<mark class="inline-add">0.</mark>1<mark class="inline-add">5</mark>](macappstores://apps.apple.com/app/macos-<mark class="inline-add">catal</mark>i<mark class="inline-add">na</mark>/id1<mark class="inline-add">46</mark>68<mark class="inline-add">4</mark>13<mark class="inline-add">14</mark>?mt=12)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">- [<mark class="inline-remove">C</mark>a<mark class="inline-remove">t</mark>a<mark class="inline-remove">lina</mark> 10.1<mark class="inline-remove">5</mark>](macappstores://apps.apple.com/app/macos-<mark class="inline-remove">c</mark>a<mark class="inline-remove">talina</mark>/id1<mark class="inline-remove">466</mark>8<mark class="inline-remove">41314</mark>?mt=12)</code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text">- [<mark class="inline-add">m</mark>a<mark class="inline-add">cOS Moj</mark>a<mark class="inline-add">ve</mark> 10.1<mark class="inline-add">4</mark>](macappstores://apps.apple.com/app/macos-<mark class="inline-add">moj</mark>a<mark class="inline-add">ve</mark>/id1<mark class="inline-add">39</mark>8<mark class="inline-add">502828</mark>?mt=12)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">- [<mark class="inline-remove">Moj</mark>a<mark class="inline-remove">v</mark>e 10.1<mark class="inline-remove">4</mark>](macappstores://apps.apple.com/app/macos-<mark class="inline-remove">moj</mark>a<mark class="inline-remove">ve</mark>/id1<mark class="inline-remove">39850</mark>28<mark class="inline-remove">28</mark>?mt=12)</code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">- [<mark class="inline-add">m</mark>a<mark class="inline-add">cOS High Si</mark>e<mark class="inline-add">rra</mark> 10.1<mark class="inline-add">3</mark>](macappstores://apps.apple.com/app/macos-<mark class="inline-add">high-sierr</mark>a/id1<mark class="inline-add">246</mark>28<mark class="inline-add">4741</mark>?mt=12)</code></div>
+<div class="diff-line previous removed"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">- [High Sierra 10.13](macappstores://apps.apple.com/app/macos-high-sierra/id1246284741?mt=12)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">- Click the Get button in the App Store to begin downloading.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">- Click the Get button in the App Store to begin downloading.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">- If Software Update opens and asks if you want to download macOS, allow the download.</code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text">- If Software Update opens and asks if you want to download macOS, allow the download<mark class="inline-add"> via Software Update</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">- If the macOS you’re trying to download isn’t compatible with your Mac, the App Store might dim the Get button<mark class="inline-remove">,</mark> or <mark class="inline-remove">you might see a mes</mark>sa<mark class="inline-remove">ge</mark> that the macOS is not compatible with this device, or that the requested version of macOS is not available.</code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">- If the macOS you’re trying to download isn’t compatible with your Mac, the App Store might dim the Get button or sa<mark class="inline-add">y</mark> that the macOS is not compatible with this device, or that the requested version of macOS is not available.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">- After downloading to the Applications folder, the installer opens automatically. Follow the onscreen installation instructions<mark class="inline-remove">.</mark> <mark class="inline-remove">O</mark>r quit<mark class="inline-remove"> without installing to leave</mark> the installer in the Applications folder for later use.</code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">- After downloading to the Applications folder, the installer opens automatically. Follow the onscreen installation instructions<mark class="inline-add">,</mark> <mark class="inline-add">o</mark>r quit the installer<mark class="inline-add"> to leave it</mark> in the Applications folder for later use.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">## <mark class="inline-remove">Use</mark> a web browser<mark class="inline-remove"> for older versions</mark></code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text"><mark class="inline-add">#</mark>## <mark class="inline-add">Download</mark> <mark class="inline-add">vi</mark>a web browser</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">- Make sure that the Mac you’re using to download macOS is compatible with that macOS. If it isn&#x27;t compatible, you won&#x27;t be able to complete these steps.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">- Make sure that the Mac you’re using to download macOS is compatible with that macOS. If it isn&#x27;t compatible, you won&#x27;t be able to complete these steps.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">- [Lion 10.7](https://updates.cdn-apple.com/2021/macos/041-7683-20210614-E610947E-C7CE-46EB-8860-D26D71F0D3EA/InstallMacOSX.dmg)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">107</span><code class="line-text">- [Lion 10.7](https://updates.cdn-apple.com/2021/macos/041-7683-20210614-E610947E-C7CE-46EB-8860-D26D71F0D3EA/InstallMacOSX.dmg)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">- By default, Safari downloads the disk image to your Downloads folder, which you can open from the Dock or <mark class="inline-remove">by choosing Downloads from Go menu in </mark>the Finder. [Learn more about downloading it<mark class="inline-remove">ems using</mark> Safari](https://support.apple.com/guide/safari/sfri40598/mac) .</code></div>
+<div class="diff-line current added"><span class="line-number">109</span><code class="line-text">- By default, Safari downloads the disk image to your Downloads folder, which you can open from the Dock or the<mark class="inline-add"> sidebar of a</mark> Finder<mark class="inline-add"> window</mark>. [Learn more about downloading <mark class="inline-add">w</mark>it<mark class="inline-add">h</mark> Safari](https://support.apple.com/guide/safari/sfri40598/mac) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">- Double-click the .dmg file to open it and see the package (.pkg) file within.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">111</span><code class="line-text">- Double-click the .dmg file to open it and see the package (.pkg) file within.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">87</span><code class="line-text">- Open the Applications folder and double-click the macOS installer, named Install [ Version Name ]. Follow the onscreen installation instructions.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">115</span><code class="line-text">- Open the Applications folder and double-click the macOS installer, named Install [ Version Name ]. Follow the onscreen installation instructions.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text">## Use Terminal</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text">You can use Terminal to download the installer for compatible macOS versions no earlier than the version that came with your Mac, or the closest version still available.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">- Make sure that your Mac is using macOS Catalina 10.15 or later.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">95</span><code class="line-text">- Open Terminal, which is in the Utilities folder of the Applications folder. Or use Spotlight in the menu bar to find and open Terminal.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">97</span><code class="line-text">- Type the following command in Terminal, replacing &quot;[number]&quot; with the [latest macOS version number](https://support.apple.com/en-us/109033#latest) for the compatible macOS that you want to download: softwareupdate --fetch-full-installer --full-installer-version [number]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text">- Example: softwareupdate --fetch-full-installer --full-installer-version 26.3</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">101</span><code class="line-text">- Example: softwareupdate --fetch-full-installer --full-installer-version 15.7.4</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">103</span><code class="line-text">- Press Return to enter the command. As macOS downloads to the Applications folder, Terminal shows the percentage it’s installing (downloading). If Terminal says update not found, that version of macOS is not available for your Mac. You can enter softwareupdate --list-full-installers to get a list of macOS versions that are currently available for your Mac.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">105</span><code class="line-text">- When Terminal says that the install finished successfully, the download is complete. Open the Applications folder and double-click the macOS installer, named Install [ Version Name ], then follow the onscreen installation instructions. Or leave the installer in the Applications folder for later use.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">107</span><code class="line-text">## Use a bootable installer</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">109</span><code class="line-text">A bootable installer can be useful when you want to install macOS on multiple computers without downloading the installer each time, or when you can&#x27;t install using macOS Recovery or the other methods.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">111</span><code class="line-text">To download an installer suitable for creating a bootable installer, follow the steps in this article to use the App Store, a web browser, or Terminal to download from a compatible Mac.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">113</span><code class="line-text">[How to create a bootable installer for macOS](https://support.apple.com/en-us/101578)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">115</span><code class="line-text">## Check macOS compatibility</code></div>
+<div class="diff-line current unchanged"><span class="line-number">117</span><code class="line-text">## Check macOS compatibility</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">117</span><code class="line-text">Find out which computers are compatible with the most recent versions of macOS:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">119</span><code class="line-text">Find out which computers are compatible with the most recent versions of macOS:</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">121</span><code class="line-text">- [macOS 27 Golden Gate is compatible with these computers](https://support.apple.com/en-us/127255)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">119</span><code class="line-text">- [macOS Tahoe 26 is compatible with these computers](https://support.apple.com/en-us/122867)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">123</span><code class="line-text">- [macOS Tahoe 26 is compatible with these computers](https://support.apple.com/en-us/122867)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">133</span><code class="line-text">## Learn more</code></div>
+<div class="diff-line current unchanged"><span class="line-number">137</span><code class="line-text">## Learn more</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">135</span><code class="line-text">- [Learn about Apple software updates](https://support.apple.com/en-us/125039) , including why it’s important to update your software<mark class="inline-remove">,</mark> how software updates work<mark class="inline-remove">, and their performance and battery impact</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">139</span><code class="line-text">- [Learn about Apple software updates](https://support.apple.com/en-us/125039) , including why it’s important to update your software<mark class="inline-add"> and</mark> how software updates work.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">137</span><code class="line-text">- [If an error occurs while updating or installing macOS](https://support.apple.com/en-us/102531)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">141</span><code class="line-text">- [If an error occurs while updating or installing macOS](https://support.apple.com/en-us/102531)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">139</span><code class="line-text">- [If your Mac doesn&#x27;t start up all the way](https://support.apple.com/en-us/102675)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">143</span><code class="line-text">- [If your Mac doesn&#x27;t start up all the way](https://support.apple.com/en-us/102675)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">145</span><code class="line-text">- [How to use an external storage device as a Mac startup disk](https://support.apple.com/en-us/111336)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">141</span><code class="line-text">## Need more help?</code></div>
+<div class="diff-line current unchanged"><span class="line-number">147</span><code class="line-text">## Need more help?</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

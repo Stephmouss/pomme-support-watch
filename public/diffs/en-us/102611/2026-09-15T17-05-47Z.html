@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>How to repair a Mac storage device with Disk Utility — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>How to repair a Mac storage device with Disk Utility</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/102611">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+10 ajouts</span>
+      <span class="badge removed">−8 suppressions</span>
+      <span class="badge">2 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 19 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">Disk Utility is also available in the Utilities folder of your Applications folder.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">Disk Utility is also available in the Utilities folder of your Applications folder.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">[Image: <mark class="inline-remove">List of</mark> utilities in macOS Recovery.]</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">[Image: <mark class="inline-add">The</mark> utilities<mark class="inline-add"> window</mark> in macOS Recovery.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">## Use First Aid in Disk Utility</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">## Use First Aid in Disk Utility</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">[Image: Show All Devices menu item in Disk Utility,.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">[Image: Show All Devices menu item in Disk Utility,.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">- The sidebar in Disk Utility now shows each available storage device, beginning with your startup disk. Listed under each device are any containers and volumes on that device. [Don&#x27;t see your device?](https://support.apple.com/en-us/102611#help)</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- The sidebar in Disk Utility now shows each available storage device, beginning with your startup disk. Listed under each device are any containers<mark class="inline-add">, volume groups,</mark> and volumes on that device<mark class="inline-add">. Your device might not have a container or volume group, and it might have a different number of volumes</mark>. [Don&#x27;t see your device?](https://support.apple.com/en-us/102611#help)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- In the following example, the startup disk (APPLE SSD) has one container (Container disk4) and two volumes (Macintosh HD<mark class="inline-remove">,</mark> Macintosh HD - Data). <mark class="inline-remove">Y</mark>ou<mark class="inline-remove">r</mark> <mark class="inline-remove">disk</mark> might not<mark class="inline-remove"> </mark>h<mark class="inline-remove">av</mark>e a <mark class="inline-remove">contai</mark>ne<mark class="inline-remove">r, and i</mark>t <mark class="inline-remove">mig</mark>h<mark class="inline-remove">t hav</mark>e a<mark class="inline-remove"> diff</mark>e<mark class="inline-remove">rent number</mark> of volume<mark class="inline-remove">s</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- In the following example, the startup disk (APPLE SSD) has one container (Container disk4)<mark class="inline-add">, a volume group (the first Macintosh HD),</mark> and two volumes <mark class="inline-add">in that volume group </mark>(<mark class="inline-add">the second </mark>Macintosh HD<mark class="inline-add"> and</mark> Macintosh HD - Data). <mark class="inline-add">To show all volumes in a volume gr</mark>ou<mark class="inline-add">p,</mark> <mark class="inline-add">you</mark> might n<mark class="inline-add">eed t</mark>o<mark class="inline-add"> click </mark>the a<mark class="inline-add">rrow</mark> <mark class="inline-add">(&gt;) </mark>ne<mark class="inline-add">x</mark>t <mark class="inline-add">to t</mark>he <mark class="inline-add">n</mark>a<mark class="inline-add">m</mark>e of<mark class="inline-add"> the</mark> volume<mark class="inline-add"> group</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">[Image: Selecting the container in Disk Utility]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">[Image: Selecting the container in Disk Utility]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">- For each device that you&#x27;re repairing, start by selecting the last volume on that device. In the example above, Macintosh HD - Data is the last volume.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">- For each device that you&#x27;re repairing, start by selecting the last volume on that device. In the example above, Macintosh HD - Data is the last volume.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">- Click the First Aid button or tab, then click Run (or Repair Disk) to begin checking the selected volume for errors.<mark class="inline-remove"> If the button is dimmed and you can&#x27;t click it, skip this step for the disk, container, or volume you selected. If asked for a password to unlock the disk, enter your administrator password.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">- Click the First Aid button or tab, then click Run (or Repair Disk) to begin checking the selected volume for errors.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text"><mark class="inline-remove">[</mark>I<mark class="inline-remove">mage: Run </mark>f<mark class="inline-remove">irst Aid on</mark> the selected<mark class="inline-remove"> volume?]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text"><mark class="inline-add">- </mark>If the<mark class="inline-add"> button is dimmed and you can&#x27;t click it, skip this step for the disk, container, or volume you</mark> selected<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">- <mark class="inline-remove">A</mark>f<mark class="inline-remove">ter</mark> <mark class="inline-remove">Di</mark>sk<mark class="inline-remove"> Utility is don</mark>e<mark class="inline-remove"> checking the volume, select the next item above it in the sidebar, then run First Aid again. Keep moving up the list, running First Ai</mark>d for <mark class="inline-remove">e</mark>ac<mark class="inline-remove">h volume on</mark> the d<mark class="inline-remove">ev</mark>i<mark class="inline-remove">ce</mark>, <mark class="inline-remove">th</mark>en <mark class="inline-remove">e</mark>ach <mark class="inline-remove">conta</mark>i<mark class="inline-remove">ner, then finally</mark> the d<mark class="inline-remove">evic</mark>e it<mark class="inline-remove">self</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- <mark class="inline-add">I</mark>f <mark class="inline-add">a</mark>sked for a<mark class="inline-add"> password to unlo</mark>c<mark class="inline-add">k</mark> the di<mark class="inline-add">sk</mark>, en<mark class="inline-add">ter</mark> <mark class="inline-add">your </mark>a<mark class="inline-add">dministrator password, whi</mark>ch i<mark class="inline-add">s</mark> the <mark class="inline-add">passwor</mark>d<mark class="inline-add"> you us</mark>e <mark class="inline-add">to log </mark>i<mark class="inline-add">n </mark>t<mark class="inline-add">o your Mac</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text"><mark class="inline-remove">[Image: Running First</mark> A<mark class="inline-remove">id in</mark> Disk Utility.<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text"><mark class="inline-add">-</mark> A<mark class="inline-add">fter</mark> Disk Utility<mark class="inline-add"> is done checking the volume, select the next item above it in the sidebar, then run First Aid again</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">- <mark class="inline-remove">Wh</mark>en<mark class="inline-remove"> done, quit Disk Utility. If you</mark> u<mark class="inline-remove">sed Disk Utility from macOS Recovery, you can now restart your Mac: From</mark> the A<mark class="inline-remove">pp</mark>le men<mark class="inline-remove">u</mark> <mark class="inline-remove"></mark>, cho<mark class="inline-remove">o</mark>se<mark class="inline-remove"> Restart</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- <mark class="inline-add">K</mark>e<mark class="inline-add">ep movi</mark>n<mark class="inline-add">g</mark> u<mark class="inline-add">p</mark> the <mark class="inline-add">list, running First </mark>A<mark class="inline-add">id for each vo</mark>l<mark class="inline-add">um</mark>e <mark class="inline-add">and volu</mark>me<mark class="inline-add"> group o</mark>n <mark class="inline-add">the device</mark>, <mark class="inline-add">then ea</mark>ch<mark class="inline-add"> c</mark>o<mark class="inline-add">ntainer, then finally the device it</mark>se<mark class="inline-add">lf</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">- When done, quit Disk Utility. If you used Disk Utility from macOS Recovery, you can now choose Restart from the Apple menu  to restart your Mac.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">## If Disk Utility can’t repair or see your device</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">## If Disk Utility can’t repair or see your device</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

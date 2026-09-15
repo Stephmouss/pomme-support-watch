@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Bring your photos to life — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Bring your photos to life</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/104966">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+25 ajouts</span>
+      <span class="badge removed">−45 suppressions</span>
+      <span class="badge">3 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">- Open the Camera app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">- Open the Camera app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">- Make sure that your camera is [set to <mark class="inline-remove">p</mark>hoto mode](https://support.apple.com/guide/iphone/camera-basics-iph263472f78/ios) and that Live Photo<mark class="inline-remove">s</mark> is turned on. Tap the <mark class="inline-remove">c</mark>amera <mark class="inline-remove">c</mark>ontrols button , then tap the Live Photo button to turn Live Photo<mark class="inline-remove">s</mark> on or off.</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">- Make sure that your camera is [set to <mark class="inline-add">P</mark>hoto mode](https://support.apple.com/guide/iphone/camera-basics-iph263472f78/ios) and that Live Photo is turned on. Tap the <mark class="inline-add">C</mark>amera <mark class="inline-add">C</mark>ontrols button , then tap the Live Photo button to turn Live Photo on or off.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">[Image: <mark class="inline-remove">N</mark>o <mark class="inline-remove">alt suppl</mark>i<mark class="inline-remove">ed f</mark>o<mark class="inline-remove">r Image</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">[Image: <mark class="inline-add">Camera app shows a monarch butterfly on a flower, with a shutter button and Live Phot</mark>o i<mark class="inline-add">c</mark>o<mark class="inline-add">n.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text"><mark class="inline-remove">[Imag</mark>e<mark class="inline-remove">: Cam</mark>e<mark class="inline-remove">ra app</mark> s<mark class="inline-remove">how</mark>i<mark class="inline-remove">ng the camera contro</mark>l<mark class="inline-remove">s button in the upper-right corner]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text"><mark class="inline-add">- Hold your d</mark>e<mark class="inline-add">vic</mark>e s<mark class="inline-add">t</mark>il<mark class="inline-add">l.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- <mark class="inline-remove">Hold</mark> <mark class="inline-remove">yo</mark>ur<mark class="inline-remove"> devic</mark>e <mark class="inline-remove">still [*](h</mark>tt<mark class="inline-remove">ps://supp</mark>o<mark class="inline-remove">rt.apple.com/e</mark>n<mark class="inline-remove">-us/104966#notes)</mark> .</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- <mark class="inline-add">Tap</mark> <mark class="inline-add">the Take Pict</mark>ure <mark class="inline-add">bu</mark>tton .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text"><mark class="inline-remove">- Tap th</mark>e s<mark class="inline-remove">hutter</mark> <mark class="inline-remove">butt</mark>on .</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text"><mark class="inline-add">Liv</mark>e <mark class="inline-add">Photo i</mark>s on <mark class="inline-add">by default</mark>.<mark class="inline-add"> You can [turn Live Photo off](https://support.apple.com/en-us/104966#turnoff) temporarily or permanently.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text"><mark class="inline-remove">[Im</mark>age<mark class="inline-remove">:</mark> <mark class="inline-remove">N</mark>o <mark class="inline-remove">a</mark>l<mark class="inline-remove">t </mark>s<mark class="inline-remove">upplied</mark> for <mark class="inline-remove">Im</mark>a<mark class="inline-remove">g</mark>e<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text"><mark class="inline-add">You c</mark>a<mark class="inline-add">n take Live Photos on iPhone 6s and later, iPad (5th </mark>ge<mark class="inline-add">neration)</mark> <mark class="inline-add">and later, iPad Air (3rd generation) and later, iPad mini (5th generation) and later, and iPad Pr</mark>o <mark class="inline-add">mode</mark>ls f<mark class="inline-add">rom 2016 </mark>or <mark class="inline-add">l</mark>a<mark class="inline-add">t</mark>e<mark class="inline-add">r.</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">Live Photos is on by default. You can [turn Live Photos off](https://support.apple.com/en-us/104966#turnoff) temporarily or permanently. For quick access to Live Photos, turn on the Live Photos indicator:</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- Go to Settings, then tap Camera.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- Tap Indicators, then turn on Live Photo.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">## How to find and play your Live Photos</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">## How to find and play your Live Photos</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">- Open the Photos app, then tap Collections.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">- Open the Photos app, then tap Collections.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">- Scroll to Media Types and tap Live Photos.</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- Scroll to Media Types<mark class="inline-add">,</mark> and tap Live Photos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">[Image: <mark class="inline-remove">T</mark>o<mark class="inline-remove"> fi</mark>n<mark class="inline-remove">d your Liv</mark>e Photos a<mark class="inline-remove">lbum,</mark> <mark class="inline-remove">go to Photo</mark>s<mark class="inline-remove"> th</mark>en <mark class="inline-remove">tap</mark> Collections, <mark class="inline-remove">t</mark>h<mark class="inline-remove">en sc</mark>r<mark class="inline-remove">oll to M</mark>ed<mark class="inline-remove">i</mark>a<mark class="inline-remove"> Typ</mark>es and <mark class="inline-remove">tap Live Ph</mark>otos.]</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">[Image: <mark class="inline-add">iPh</mark>one Photos a<mark class="inline-add">pp</mark> s<mark class="inline-add">cre</mark>en <mark class="inline-add">showing</mark> Collections, <mark class="inline-add">S</mark>h<mark class="inline-add">a</mark>red<mark class="inline-add"> Albums, People, Pl</mark>a<mark class="inline-add">c</mark>es<mark class="inline-add">,</mark> and ot<mark class="inline-add">her categ</mark>o<mark class="inline-add">rie</mark>s.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">- Tap one of the photos to open it.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">- Tap one of the photos to open it.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">- Press and hold the screen to play the Live Photo.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">- Press and hold the screen to play the Live Photo.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">When you receive a Live Photo on your iPhone or iPad via Messages, tap the photo to open it, then press and hold to see it come to life.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">If you&#x27;re using Messages on your Mac, double-click the Live Photo to open it. The Live Photo plays through once. To play it again, click the LIVE button in the bottom-left corner of the photo.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">## How to change the key photo</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">## How to change the key photo</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">- Open the Live Photo and tap the Edit button .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">- Open the Live Photo and tap the Edit button .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">- Tap the Live Photo<mark class="inline-remove">s</mark> button .</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">- Tap the Live Photo button .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text"><mark class="inline-remove">[Im</mark>age<mark class="inline-remove">:</mark> <mark class="inline-remove">N</mark>o a<mark class="inline-remove">l</mark>t <mark class="inline-remove">s</mark>u<mark class="inline-remove">pp</mark>l<mark class="inline-remove">ied for Image]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text"><mark class="inline-add">- Dr</mark>ag<mark class="inline-add"> th</mark>e <mark class="inline-add">white frame t</mark>o <mark class="inline-add">choose </mark>a<mark class="inline-add"> differen</mark>t <mark class="inline-add">th</mark>u<mark class="inline-add">mbnai</mark>l<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">- Move the slider to change the frame.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">- Release your finger, then tap Make Key Photo.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">- Release your finger, then tap Make Key Photo.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">[Image: <mark class="inline-remove">Y</mark>o<mark class="inline-remove">u</mark> can <mark class="inline-remove">c</mark>h<mark class="inline-remove">a</mark>nge the Key Photo <mark class="inline-remove">f</mark>o<mark class="inline-remove">r</mark> <mark class="inline-remove">y</mark>o<mark class="inline-remove">ur Li</mark>ve <mark class="inline-remove">Pho</mark>t<mark class="inline-remove">os in the Camera app</mark>.]</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">[Image: <mark class="inline-add">Tw</mark>o<mark class="inline-add"> people smile at the</mark> ca<mark class="inline-add">mera i</mark>n <mark class="inline-add">a Live P</mark>h<mark class="inline-add">oto bei</mark>ng<mark class="inline-add"> </mark>e<mark class="inline-add">dited on a phone. A white frame surrounds a</mark> th<mark class="inline-add">umbnail with the Mak</mark>e Key Photo <mark class="inline-add">butt</mark>o<mark class="inline-add">n</mark> <mark class="inline-add">ab</mark>ove <mark class="inline-add">i</mark>t.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">- Tap Done.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">- Tap Done.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">You can also toggle the Live Photo effect<mark class="inline-remove"> between</mark> off and on. When you&#x27;re editing a Live Photo, tap the LIVE button at the top of the screen to turn Live Photo off or back on.</code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">You can also toggle the Live Photo effect off and on. When you&#x27;re editing a Live Photo, tap the LIVE button at the top of the screen to turn Live Photo off or back on.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">## How to add Live Photo effects</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">## How to add Live Photo effects</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">- Open the Live Photo.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">- Open the Live Photo.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">- Tap the Live Photo<mark class="inline-remove">s</mark> button near the top of the screen.</code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- Tap the Live Photo button near the top of the screen.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">[Image: <mark class="inline-remove">N</mark>o a<mark class="inline-remove">l</mark>t s<mark class="inline-remove">upplied for Image</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">[Image: <mark class="inline-add">iPhone screen showing a Live Phot</mark>o <mark class="inline-add">of two people smiling, with </mark>a<mark class="inline-add"> menu open to edi</mark>t <mark class="inline-add">the Live Photo effect</mark>s<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous removed"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">[Image: You can switch your Live Photos to other effects or to a normal photo in the Photos app.]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">- Choose Loop, Bounce, or Long Exposure.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">- Choose Loop, Bounce, or Long Exposure.</code></div>
+<div class="diff-line previous removed"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">Learn how to [turn a Live Photo into a video on your iPhone](https://support.apple.com/105029)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">## How to change the key photo</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text">- Open the Live Photo that you want to edit.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">- Tap the Edit button , then tap the Live button.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">- Drag the white frame to choose a different thumbnail, tap Make Key Photo, then tap Done.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">If you edit your Live Photo in a third-party app, you might lose any Live Photo effects that you&#x27;ve applied.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">If you edit your Live Photo in a third-party app, you might lose any Live Photo effects that you&#x27;ve applied.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">- Open the photo that you want to share, then tap the Share button .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">- Open the photo that you want to share, then tap the Share button .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">85</span><code class="line-text">- If you want to share the still photo and not the Live Photo, tap L<mark class="inline-remove">ive</mark> in the upper-left corner of the photo.</code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">- If you want to share the still photo and not the Live Photo, tap L<mark class="inline-add">IVE</mark> in the upper-left corner of the photo.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text">- Choose how you want to share your photo.<mark class="inline-remove"> Note that if you share via Mail, the Live Photo is sent as a still image.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">- Choose how you want to share your photo.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text"><mark class="inline-remove">When</mark> you r<mark class="inline-remove">eceiv</mark>e a Live Photo on your iPhone<mark class="inline-remove"> </mark>or<mark class="inline-remove"> iPad via Messages, </mark>tap<mark class="inline-remove"> th</mark>e<mark class="inline-remove"> photo to open it, then press and hold to see it </mark>com<mark class="inline-remove">e</mark> <mark class="inline-remove">to life</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text"><mark class="inline-add">If</mark> you <mark class="inline-add">sha</mark>re a Live Phot<mark class="inline-add">o via Mail, the Live Photo is sent as a still image. You can [turn a Live Photo into a vide</mark>o on your iPhone<mark class="inline-add">](https://supp</mark>ort<mark class="inline-add">.</mark>ap<mark class="inline-add">pl</mark>e<mark class="inline-add">.</mark>com<mark class="inline-add">/105029)</mark> .</code></div>
+<div class="diff-line previous removed"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text">If you&#x27;re using Messages on your Mac, double-click the Live Photo to open it. The Live Photo plays through once. To play it again, click the LIVE button in the bottom-left corner of the photo.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">93</span><code class="line-text">## How to turn off Live Photos</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">## How to turn off Live Photos</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">95</span><code class="line-text">From the Camera app, tap the <mark class="inline-remove">c</mark>amera <mark class="inline-remove">c</mark>ontrols button <mark class="inline-remove">, then tap the Live Photos button to turn off Live Photos</mark>.<mark class="inline-remove"> A slash through the Live Photos button means that the feature is off.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text"><mark class="inline-add">- </mark>From the Camera app, tap the <mark class="inline-add">C</mark>amera <mark class="inline-add">C</mark>ontrols button .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">97</span><code class="line-text"><mark class="inline-remove">[Im</mark>a<mark class="inline-remove">g</mark>e<mark class="inline-remove">:</mark> <mark class="inline-remove">N</mark>o a<mark class="inline-remove">l</mark>t s<mark class="inline-remove">upplied</mark> f<mark class="inline-remove">or Image]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text"><mark class="inline-add">- T</mark>a<mark class="inline-add">p th</mark>e <mark class="inline-add">Live Phot</mark>o <mark class="inline-add">button to turn off Live Photo. A sl</mark>a<mark class="inline-add">sh through the Live Photo button means tha</mark>t <mark class="inline-add">Live Photo i</mark>s <mark class="inline-add">o</mark>f<mark class="inline-add">f.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text">The Camera app turns Live Photo<mark class="inline-remove">s</mark> on again automatically. To keep Live Photo<mark class="inline-remove">s</mark> off permanently<mark class="inline-remove">, follow these steps</mark>:</code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text">The Camera app turns Live Photo on again automatically. To keep Live Photo off permanently:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">101</span><code class="line-text">- Go to Settings.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">83</span><code class="line-text">- Go to Settings.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">105</span><code class="line-text">- Make sure that the switch next to Live Photo is turned on.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">- Make sure that the switch next to Live Photo is turned on.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">107</span><code class="line-text">* You can take Live Photos on iPhone 6s and later, iPad (5th generation) and later, iPad Air (3rd generation) and later, iPad mini (5th generation) and later, and iPad Pro models from 2016 or later.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">109</span><code class="line-text">## Need more help?</code></div>
+<div class="diff-line current unchanged"><span class="line-number">89</span><code class="line-text">## Need more help?</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">111</span><code class="line-text">Tell us more about what&#x27;s happening, and we<mark class="inline-remove">’</mark>ll suggest what you can do next.</code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">Tell us more about what&#x27;s happening, and we<mark class="inline-add">&#x27;</mark>ll suggest what you can do next.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">113</span><code class="line-text">[Get suggestions](https://getsupport.apple.com/?caller=ikb)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">93</span><code class="line-text">[Get suggestions](https://getsupport.apple.com/?caller=ikb)</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

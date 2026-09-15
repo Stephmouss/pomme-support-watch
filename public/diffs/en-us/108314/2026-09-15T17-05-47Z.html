@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>How to use Shared Albums in Photos on your iPhone, iPad, or Apple Vision Pro — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>How to use Shared Albums in Photos on your iPhone, iPad, or Apple Vision Pro</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/108314">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+133 ajouts</span>
+      <span class="badge removed">−93 suppressions</span>
+      <span class="badge">9 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># How to use Shared Albums in Photos on your iPhone, iPad, or Apple Vision Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># How to use Shared Albums in Photos on your iPhone, iPad, or Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Shared Albums let you share photos and videos with the people you choose<mark class="inline-remove"> </mark>—<mark class="inline-remove"> </mark>and they can add their own photos, videos, and comments. Learn how to turn on Shared Albums, manage a shared album, and save photos from a <mark class="inline-remove">S</mark>hared <mark class="inline-remove">A</mark>lbum on your iPhone, iPad, or Apple Vision Pro.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text"><mark class="inline-add">iCloud </mark>Shared Albums let you share photos and videos with the people you choose—and they can add their own photos, videos, and comments. Learn how to turn on Shared Albums, manage a shared album, and save photos from a <mark class="inline-add">s</mark>hared <mark class="inline-add">a</mark>lbum on your iPhone, iPad, or Apple Vision Pro.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">- [Turn on Shared Albums](https://support.apple.com/en-us/108314#turn-on)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">- [Turn on Shared Albums](https://support.apple.com/en-us/108314#turn-on)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">- [Invite more people](https://support.apple.com/en-us/108314#invite-ios)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">- [Invite more people](https://support.apple.com/en-us/108314#invite-ios)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- [Join a shared album](https://support.apple.com/en-us/108314#join)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">- [Remove a subscriber](https://support.apple.com/en-us/108314#remove-ios)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">- [Remove a subscriber](https://support.apple.com/en-us/108314#remove-ios)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">- [Add photos and videos to a shared album](https://support.apple.com/en-us/108314#add-ios)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">- [Add photos and videos to a shared album](https://support.apple.com/en-us/108314#add-ios)</code></div>
+<div class="fold"><span>••• 2 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">- [Save photos and videos from a shared album](https://support.apple.com/en-us/108314#save-ios)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">- [Save photos and videos from a shared album](https://support.apple.com/en-us/108314#save-ios)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">- [<mark class="inline-remove">F</mark>ile types <mark class="inline-remove">that you c</mark>an<mark class="inline-remove"> use in</mark> Shared Albums](https://support.apple.com/en-us/108314#filetypes)</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- [<mark class="inline-add">Learn about supported f</mark>ile types an<mark class="inline-add">d</mark> Shared Album<mark class="inline-add"> limit</mark>s](https://support.apple.com/en-us/108314#filetypes<mark class="inline-add">-storagelimits</mark>)</code></div>
+<div class="diff-line previous removed"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- [Shared Album storage limits](https://support.apple.com/en-us/108314#storagelimits)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">## Turn on Shared Albums</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">## Turn on Shared Albums</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">- Under Saved to iCloud, tap Photos.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">- Under Saved to iCloud, tap Photos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- <mark class="inline-remove">Scroll dow</mark>n and turn on <mark class="inline-remove">Shared Albums</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- <mark class="inline-add">I</mark>n <mark class="inline-add">iOS 27, iP</mark>a<mark class="inline-add">dOS 27, or visio</mark>n<mark class="inline-add">OS 27 or later, [make sure that iClou</mark>d<mark class="inline-add"> Photos is</mark> turn<mark class="inline-add">ed</mark> on<mark class="inline-add">](https://support.apple.com/en-us/108782)</mark> .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">- Scroll down and tap Shared Albums. Turn on Shared Albums.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">[Learn how to set up and use Shared Albums on your Mac](https://support.apple.com/en-us/124160) and [your other devices](https://support.apple.com/guide/icloud/mma821a5bd93/) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">[Learn how to set up and use Shared Albums on your Mac](https://support.apple.com/en-us/124160) and [your other devices](https://support.apple.com/guide/icloud/mma821a5bd93/) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">## Create a new shared album</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">## Create a new shared album</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">With Shared Albums, you can create albums to share photos and videos with others—and they can add their own photos, videos, and comments for everyone to see.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">Starting in iOS 27, iPadOS 27, macOS 27, Shared Albums adds support for full-resolution sharing, new filters and sorting, emoji reactions, and new ways to invite others to collaborate on an album. Friends and family will be able to join and contribute their own photos on the web, even without an Apple Account or Apple device.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">### In iOS 27, iPadOS 27, or visionOS 27 or later</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">- Open the Photos app and tap Collections.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">- Scroll down to Shared Albums, then tap Shared Albums.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">- Tap the Add button .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- Give the shared album a name, and choose some images to add to the shared album. Tap Sharing Options to choose whether to invite and approve participants, or share the album with a link.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">[Image: iPhone showing the screen for creating a new shared album. It shows a food photo as the cover, with a field to name the album, sharing options, and a button to make the album temporary.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">- To [create a temporary shared album](https://support.apple.com/en-us/127875) , turn on Make Album Temporary.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">- Tap the Done button .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">### In iOS 26, iPadOS 26, or visionOS 26</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">- Open the Photos app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">- Open the Photos app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- <mark class="inline-remove">In iOS 26 or later, t</mark>ap Collections, then scroll down to Shared Albums.<mark class="inline-remove"> In iOS 18, scroll down to Shared Albums.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">- <mark class="inline-add">T</mark>ap Collections, then scroll down to Shared Albums.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">[Image: An iPhone with the Photos app open. Collections is at the bottom of the screen, next to Library.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">[Image: An iPhone with the Photos app open. Collections is at the bottom of the screen, next to Library.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">- Tap Shared Albums.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">- Tap Shared Albums.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">- <mark class="inline-remove">In iOS 26 or later t</mark>ap the Add button .<mark class="inline-remove"> In iOS 18 and visionOS, tap Create.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">- <mark class="inline-add">T</mark>ap the Add button .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">- Give the shared album a name, and choose some images to add to the shared album.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">77</span><code class="line-text">- Give the shared album a name, and choose some images to add to the shared album.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">- Choose people to invite from your contacts, or type an email address or iMessage phone number. Tap Done.</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">- Choose people to invite from your contacts, or type an email address or iMessage phone number. Tap <mark class="inline-add">the </mark>Done<mark class="inline-add"> button </mark>.</code></div>
+<div class="diff-line previous removed"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">- Tap Create.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">In iOS 17 or earlier:</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">- In Photos, go to the Albums tab and tap the Add button .</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">[Image: Add button]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">- Tap New Shared Album .</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">[Image: Shared Album]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">- Give the shared album a name, then tap Next.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">- Choose people to invite from your contacts, or type an email address or iMessage phone number.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">- Tap Create.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">- Tap Create.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">77</span><code class="line-text">- Open the shared album.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">- Open the shared album.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text">- Tap the More button .<mark class="inline-remove"> In iOS 17 or earlier, tap the People button .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text">- Tap the More button .</code></div>
+<div class="diff-line previous removed"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">[Image: People button]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">- Tap Delete Shared Album.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">89</span><code class="line-text">- Tap Delete Shared Album.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">- Tap Delete to confirm.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">91</span><code class="line-text">- Tap Delete to confirm.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">- iOS 27, iPadOS 27, or visionOS 27 or later, you can tap Make Album Temporary to make the shared album temporary instead, and it will be deleted in 30 days.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">87</span><code class="line-text">When you delete a shared album, the shared album is automatically removed from all of your devices and the devices of your subscribers. If you turned on Public Website, the shared album is removed from the web, too. Deleting a shared album permanently deletes all of its photos. Before continuing, [save any photos that you want to keep](https://support.apple.com/en-us/108314#save-ios) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">When you delete a shared album, the shared album is automatically removed from all of your devices and the devices of your subscribers. If you turned on Public Website, the shared album is removed from the web, too. Deleting a shared album permanently deletes all of its photos. Before continuing, [save any photos that you want to keep](https://support.apple.com/en-us/108314#save-ios) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">89</span><code class="line-text">## Invite more people</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">## Invite more people</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">S</mark>e<mark class="inline-remove">l</mark>e<mark class="inline-remove">c</mark>t a shared album<mark class="inline-remove"> that you created</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text"><mark class="inline-add">You</mark> <mark class="inline-add">can invit</mark>e<mark class="inline-add"> oth</mark>e<mark class="inline-add">rs </mark>t<mark class="inline-add">o view or</mark> a<mark class="inline-add">dd to your</mark> shared album.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">### In iOS 27, iPadOS 27, or visionOS 27 or later</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">103</span><code class="line-text">- Tap a shared album that you created.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">105</span><code class="line-text">- Tap the Manage Shared Album button .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">107</span><code class="line-text">- Under Participants, tap Invite Participants. Choose a contact or app to use to share the link to the shared album. You can also tap Copy Album Link to copy the link so that you can send or post it.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">109</span><code class="line-text">[Image: iPhone screen showing the Manage Shared Album settings for a Beautiful Food shared album. The Invite Participants button is under the list of participants.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text">- Tap the Done button .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text">#### Accept or decline access requests</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">115</span><code class="line-text">When you turn on Access Requests in an album&#x27;s Sharing Options, additional people with the link to the shared album can request access to be approved by you. To accept or decline an access request:</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">117</span><code class="line-text">- Tap the Shared Albums access request notification. You can also open the Photos app, tap Collections, tap the Profile button in the top-right corner, then tap Invitations and Access Requests.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">119</span><code class="line-text">- Tap Approve or Decline.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">121</span><code class="line-text">### In iOS 26, iPadOS 26, or visionOS 26</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">123</span><code class="line-text">- Tap a shared album that you created.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">93</span><code class="line-text">- Tap the More button .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">125</span><code class="line-text">- Tap the More button .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">101</span><code class="line-text">- Tap Done.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">133</span><code class="line-text">- Tap Done.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">103</span><code class="line-text"><mark class="inline-remove">I</mark>n i<mark class="inline-remove">OS</mark> <mark class="inline-remove">17</mark> or e<mark class="inline-remove">ar</mark>l<mark class="inline-remove">ier</mark>:</code></div>
+<div class="diff-line current added"><span class="line-number">135</span><code class="line-text"><mark class="inline-add">To share a</mark>n <mark class="inline-add">album w</mark>i<mark class="inline-add">th</mark> <mark class="inline-add">friends</mark> or <mark class="inline-add">family who don&#x27;t us</mark>e<mark class="inline-add"> iC</mark>l<mark class="inline-add">oud</mark>:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">105</span><code class="line-text">- <mark class="inline-remove">I</mark>n<mark class="inline-remove"> Albums, select</mark> a shared album that you created.</code></div>
+<div class="diff-line current added"><span class="line-number">137</span><code class="line-text">- <mark class="inline-add">Ope</mark>n a shared album that you created<mark class="inline-add">, tap the More button , then tap Shared Album Details</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">107</span><code class="line-text">- Ta<mark class="inline-remove">p</mark> the <mark class="inline-remove">P</mark>e<mark class="inline-remove">opl</mark>e <mark class="inline-remove">b</mark>u<mark class="inline-remove">t</mark>to<mark class="inline-remove">n</mark> .</code></div>
+<div class="diff-line current added"><span class="line-number">139</span><code class="line-text">- T<mark class="inline-add">urn on Public Website. Your photos publish to </mark>a<mark class="inline-add"> website</mark> th<mark class="inline-add">at anyon</mark>e <mark class="inline-add">can s</mark>ee <mark class="inline-add">in an </mark>u<mark class="inline-add">p-</mark>to<mark class="inline-add">-date</mark> <mark class="inline-add">web browser</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">109</span><code class="line-text"><mark class="inline-remove">[Im</mark>a<mark class="inline-remove">g</mark>e<mark class="inline-remove">:</mark> <mark class="inline-remove">Peop</mark>l<mark class="inline-remove">e </mark>bu<mark class="inline-remove">tton]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">141</span><code class="line-text"><mark class="inline-add">## Join </mark>a<mark class="inline-add"> shar</mark>e<mark class="inline-add">d</mark> <mark class="inline-add">a</mark>lbu<mark class="inline-add">m</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">111</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">T</mark>a<mark class="inline-remove">p</mark> <mark class="inline-remove">I</mark>nvite <mark class="inline-remove">P</mark>eo<mark class="inline-remove">p</mark>l<mark class="inline-remove">e</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">143</span><code class="line-text"><mark class="inline-add">You</mark> <mark class="inline-add">c</mark>a<mark class="inline-add">n</mark> <mark class="inline-add">joi</mark>n<mark class="inline-add"> a shared album that someone created in iOS 27, iPadOS 27, </mark>vi<mark class="inline-add">sionOS 27, or later by opening the link to the album on an Apple or non-Apple device. Any participants with devices that aren&#x27;t on the latest software will have to upda</mark>te <mark class="inline-add">th</mark>e<mark class="inline-add">ir devices </mark>o<mark class="inline-add">r view the a</mark>l<mark class="inline-add">bum on iCloud</mark>.<mark class="inline-add">com.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">113</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">E</mark>n<mark class="inline-remove">t</mark>er the <mark class="inline-remove">n</mark>am<mark class="inline-remove">e</mark>s o<mark class="inline-remove">f</mark> people tha<mark class="inline-remove">t y</mark>o<mark class="inline-remove">u want</mark> to s<mark class="inline-remove">ha</mark>r<mark class="inline-remove">e this</mark> al<mark class="inline-remove">bum</mark> with.</code></div>
+<div class="diff-line current added"><span class="line-number">145</span><code class="line-text"><mark class="inline-add">The</mark> <mark class="inline-add">album ow</mark>ner<mark class="inline-add"> can choose in</mark> the a<mark class="inline-add">lbu</mark>m<mark class="inline-add">&#x27;</mark>s <mark class="inline-add">Sharing Opti</mark>o<mark class="inline-add">ns to only allow</mark> people th<mark class="inline-add">ey invite or </mark>a<mark class="inline-add">ppr</mark>o<mark class="inline-add">ve</mark> to <mark class="inline-add">acce</mark>s<mark class="inline-add">s o</mark>r al<mark class="inline-add">low anyone</mark> with<mark class="inline-add"> the link to join without approval, and they can choose whether to require additional people with the link to request access</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">115</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">T</mark>a<mark class="inline-remove">p</mark> <mark class="inline-remove">A</mark>d<mark class="inline-remove">d.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">147</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">Request </mark>a<mark class="inline-add">ccess</mark> <mark class="inline-add">to a share</mark>d<mark class="inline-add"> album</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">117</span><code class="line-text"><mark class="inline-remove">To</mark> <mark class="inline-remove">share an album with friends or family who don&#x27;t use iCloud, o</mark>pen a shared album<mark class="inline-remove"> that you created, tap the More button , then tap Shared Album Details</mark>.<mark class="inline-remove"> In iOS 17 or earlier, go to the People tab. Turn on Public Website. Your photos publish to a website that anyone can see in an up-to-date web browser.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">149</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">O</mark>pen<mark class="inline-add"> the link you received to</mark> a shared album.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">151</span><code class="line-text">- If prompted, tap or click Send Request.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">153</span><code class="line-text">You&#x27;ll be notified when the album is shared with you.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">155</span><code class="line-text">### In iOS 26, iPadOS 26, or visionOS 26</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">157</span><code class="line-text">[Learn how to accept a shared album invite](https://support.apple.com/en-us/119865)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">119</span><code class="line-text">## Remove a subscriber</code></div>
+<div class="diff-line current unchanged"><span class="line-number">159</span><code class="line-text">## Remove a subscriber</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">121</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">S</mark>e<mark class="inline-remove">l</mark>e<mark class="inline-remove">c</mark>t a shared album<mark class="inline-remove"> that</mark> you create<mark class="inline-remove">d</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">161</span><code class="line-text"><mark class="inline-add">As</mark> <mark class="inline-add">th</mark>e<mark class="inline-add"> cr</mark>e<mark class="inline-add">a</mark>t<mark class="inline-add">or of</mark> a shared album<mark class="inline-add">,</mark> you c<mark class="inline-add">ontrol who can access it. You can </mark>re<mark class="inline-add">move subscribers </mark>at<mark class="inline-add"> any tim</mark>e.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">163</span><code class="line-text">### In iOS 27, iPadOS 27, or visionOS 27 or later</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">165</span><code class="line-text">- Tap a shared album that you created.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">167</span><code class="line-text">- Tap the Manage Shared Album button .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">169</span><code class="line-text">- Tap the participant that you want to remove.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">171</span><code class="line-text">- Tap Remove Participant at the bottom of the screen.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">173</span><code class="line-text">### In iOS 26, iPadOS 26, or visionOS 26</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">175</span><code class="line-text">- Tap a shared album that you created.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">123</span><code class="line-text">- Tap the More button .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">177</span><code class="line-text">- Tap the More button .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">125</span><code class="line-text">- Tap the Shared Album name.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">179</span><code class="line-text">- Tap the Shared Album name.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">127</span><code class="line-text">- <mark class="inline-remove">Select</mark> the participant that you want to remove.</code></div>
+<div class="diff-line current added"><span class="line-number">181</span><code class="line-text">- <mark class="inline-add">Tap</mark> the participant that you want to remove.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">129</span><code class="line-text">- Tap Remove Subscriber at the bottom of the screen.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">183</span><code class="line-text">- Tap Remove Subscriber at the bottom of the screen.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">184</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">131</span><code class="line-text"><mark class="inline-remove">I</mark>n i<mark class="inline-remove">OS</mark> <mark class="inline-remove">17</mark> <mark class="inline-remove">or</mark> <mark class="inline-remove">e</mark>arl<mark class="inline-remove">ier:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">185</span><code class="line-text"><mark class="inline-add">## Add photos a</mark>n<mark class="inline-add">d</mark> <mark class="inline-add">v</mark>i<mark class="inline-add">deos</mark> <mark class="inline-add">to</mark> <mark class="inline-add">a</mark> <mark class="inline-add">sh</mark>ar<mark class="inline-add">ed a</mark>l<mark class="inline-add">bum</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">186</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">133</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Ope</mark>n t<mark class="inline-remove">h</mark>e<mark class="inline-remove"> sha</mark>r<mark class="inline-remove">ed album.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">187</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">I</mark>n <mark class="inline-add">iOS 27, iPadOS 27, or visionOS 27 or la</mark>ter</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">188</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">135</span><code class="line-text">- <mark class="inline-remove">T</mark>ap t<mark class="inline-remove">he</mark> <mark class="inline-remove">More butto</mark>n<mark class="inline-remove"> ,</mark> then t<mark class="inline-remove">ap Shared Album Details. In iOS 17 or earlier, tap</mark> the <mark class="inline-remove">P</mark>eo<mark class="inline-remove">ple</mark> <mark class="inline-remove">b</mark>utto<mark class="inline-remove">n</mark> .</code></div>
+<div class="diff-line current added"><span class="line-number">189</span><code class="line-text">- <mark class="inline-add">From your Library or from within an album, t</mark>ap <mark class="inline-add">Selec</mark>t <mark class="inline-add">a</mark>n<mark class="inline-add">d</mark> then <mark class="inline-add">selec</mark>t the <mark class="inline-add">photos and vid</mark>eo<mark class="inline-add">s</mark> <mark class="inline-add">that yo</mark>u<mark class="inline-add"> wan</mark>t<mark class="inline-add"> </mark>to <mark class="inline-add">share</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">190</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">137</span><code class="line-text"><mark class="inline-remove">[Im</mark>a<mark class="inline-remove">g</mark>e<mark class="inline-remove">:</mark> <mark class="inline-remove">Peopl</mark>e button<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">191</span><code class="line-text"><mark class="inline-add">- T</mark>a<mark class="inline-add">p th</mark>e <mark class="inline-add">Shar</mark>e button<mark class="inline-add"> , then tap Add to Shared Album.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">192</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">139</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Select t</mark>he s<mark class="inline-remove">ubs</mark>crib<mark class="inline-remove">er</mark> that <mark class="inline-remove">you w</mark>ant <mark class="inline-remove">t</mark>o r<mark class="inline-remove">emove</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">193</span><code class="line-text"><mark class="inline-add">[Image:</mark> <mark class="inline-add">iP</mark>h<mark class="inline-add">on</mark>e scr<mark class="inline-add">een show</mark>i<mark class="inline-add">ng a shared al</mark>b<mark class="inline-add">um</mark> <mark class="inline-add">wi</mark>th<mark class="inline-add"> </mark>a<mark class="inline-add"> food pho</mark>t<mark class="inline-add">o,</mark> <mark class="inline-add">particip</mark>ant <mark class="inline-add">ic</mark>o<mark class="inline-add">ns,</mark> <mark class="inline-add">and app icons fo</mark>r<mark class="inline-add"> sharing</mark>.<mark class="inline-add">]</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">194</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">141</span><code class="line-text">- <mark class="inline-remove">Tap R</mark>e<mark class="inline-remove">move Subscriber at</mark> the bot<mark class="inline-remove">t</mark>o<mark class="inline-remove">m of the </mark>s<mark class="inline-remove">creen</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">195</span><code class="line-text">- <mark class="inline-add">Choos</mark>e the <mark class="inline-add">al</mark>b<mark class="inline-add">um where you want to share your ph</mark>otos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">196</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">143</span><code class="line-text"><mark class="inline-remove">As</mark> the <mark class="inline-remove">cr</mark>e<mark class="inline-remove">a</mark>to<mark class="inline-remove">r</mark> o<mark class="inline-remove">f</mark> a shared album<mark class="inline-remove">,</mark> <mark class="inline-remove">you </mark>c<mark class="inline-remove">o</mark>nt<mark class="inline-remove">rol who can acce</mark>s<mark class="inline-remove">s it. You can</mark> re<mark class="inline-remove">mo</mark>ve <mark class="inline-remove">subs</mark>c<mark class="inline-remove">ribers </mark>at<mark class="inline-remove"> a</mark>n<mark class="inline-remove">y time</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">197</span><code class="line-text"><mark class="inline-add">- Tap</mark> the <mark class="inline-add">Don</mark>e<mark class="inline-add"> but</mark>to<mark class="inline-add">n</mark> <mark class="inline-add">. When y</mark>o<mark class="inline-add">u</mark> a<mark class="inline-add">dd new photos,</mark> shared album <mark class="inline-add">parti</mark>c<mark class="inline-add">ipa</mark>nts re<mark class="inline-add">cei</mark>ve <mark class="inline-add">a notifi</mark>cat<mark class="inline-add">io</mark>n.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">145</span><code class="line-text"><mark class="inline-remove">##</mark> Add photos and videos to a<mark class="inline-remove"> share</mark>d<mark class="inline-remove"> album</mark></code></div>
+<div class="diff-line current added"><span class="line-number">199</span><code class="line-text"><mark class="inline-add">If you have a shared album open, you can also tap the</mark> Add<mark class="inline-add"> button to select</mark> photos and videos to ad<mark class="inline-add">d.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">200</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">201</span><code class="line-text">### In iOS 26, iPadOS 26, or visionOS 26 or earlier</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">202</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">147</span><code class="line-text">- From your Library or from within an album, tap Select and then select the photos and videos that you want to share.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">203</span><code class="line-text">- From your Library or from within an album, tap Select and then select the photos and videos that you want to share.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">204</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">206</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">151</span><code class="line-text">- Choose the album where you want to share your photos.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">207</span><code class="line-text">- Choose the album where you want to share your photos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">208</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">153</span><code class="line-text">- Tap Post. When you add new photos, shared album participants receive a notification.</code></div>
+<div class="diff-line current added"><span class="line-number">209</span><code class="line-text">- Tap<mark class="inline-add"> the</mark> Post. When you add new photos, shared album participants receive a notification.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">210</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">155</span><code class="line-text">If you have a shared album open, you can also tap the Add button to select photos and videos to add.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">211</span><code class="line-text">If you have a shared album open, you can also tap the Add button to select photos and videos to add.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">212</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">157</span><code class="line-text">If a participant can&#x27;t add their photos or videos<mark class="inline-remove">:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">213</span><code class="line-text"><mark class="inline-add">## </mark>If a participant can&#x27;t add their photos or videos<mark class="inline-add"> to a shared album</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">214</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">159</span><code class="line-text"><mark class="inline-remove">-</mark> In iOS <mark class="inline-remove">18</mark> or later<mark class="inline-remove">, tap the More button , then tap the Shared Album name. Check that you turned on Participants Can Add Photos.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">215</span><code class="line-text"><mark class="inline-add">###</mark> In iOS <mark class="inline-add">27, iPadOS 27, or visionOS 27</mark> or later</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">216</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">161</span><code class="line-text">- <mark class="inline-remove">In iOS 17 or earlier, t</mark>ap the M<mark class="inline-remove">ore butto</mark>n<mark class="inline-remove"> then choos</mark>e Shared Album <mark class="inline-remove">De</mark>t<mark class="inline-remove">ails</mark> <mark class="inline-remove">. Check</mark> th<mark class="inline-remove">at you</mark> t<mark class="inline-remove">u</mark>rn<mark class="inline-remove">ed on Subscriber</mark>s <mark class="inline-remove">C</mark>a<mark class="inline-remove">n Post</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">217</span><code class="line-text">- <mark class="inline-add">T</mark>ap the M<mark class="inline-add">a</mark>n<mark class="inline-add">ag</mark>e Shared Album <mark class="inline-add">bu</mark>t<mark class="inline-add">ton</mark> <mark class="inline-add">,</mark> th<mark class="inline-add">en</mark> t<mark class="inline-add">ap a pa</mark>r<mark class="inline-add">ticipa</mark>n<mark class="inline-add">t&#x27;</mark>s <mark class="inline-add">n</mark>a<mark class="inline-add">me</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">218</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">219</span><code class="line-text">- Check that you selected Can Add Photos.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">220</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">221</span><code class="line-text">### In iOS 26, iPadOS 26, or visionOS 26</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">222</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">223</span><code class="line-text">- Tap the More button , then tap the Shared Album name.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">224</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">225</span><code class="line-text">- Check that you turned on Participants Can Add Photos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">226</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">163</span><code class="line-text">## Delete photos and videos from a shared album</code></div>
+<div class="diff-line current unchanged"><span class="line-number">227</span><code class="line-text">## Delete photos and videos from a shared album</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">228</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">229</span><code class="line-text">If you&#x27;re the owner of a shared album, you can delete any photos, videos, or comments from anyone. Subscribers can delete anything that they personally added. Anything you delete is automatically deleted from the album on all your devices and the devices of subscribers.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">230</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">231</span><code class="line-text">Any photos that you saved or downloaded from a shared album to your Photos library stay in your library even if the shared album is deleted or the person who created it stops sharing it.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">232</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">233</span><code class="line-text">### In iOS 27, iPadOS 27, or visionOS 27</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">234</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">235</span><code class="line-text">- Open the shared album.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">236</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">237</span><code class="line-text">- Tap the photo or video.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">238</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">239</span><code class="line-text">- Tap the Delete button .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">240</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">241</span><code class="line-text">- Tap Delete From All Devices.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">242</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">243</span><code class="line-text">### In iOS 26, iPadOS 26, or visionOS 26 or earlier</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">244</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">165</span><code class="line-text">- Open the shared album.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">245</span><code class="line-text">- Open the shared album.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">246</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 2 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">169</span><code class="line-text">- Tap the Trash button .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">249</span><code class="line-text">- Tap the Trash button .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">250</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">171</span><code class="line-text">- Tap Delete Photo.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">251</span><code class="line-text">- Tap Delete Photo.</code></div>
+<div class="diff-line previous removed"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">173</span><code class="line-text">If you&#x27;re the owner of a shared album, you can delete any photos, videos, or comments from anyone. Subscribers can delete anything that they personally added. Anything you delete is automatically deleted from the album on all your devices and the devices of subscribers.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">175</span><code class="line-text">Any photos that you saved or downloaded from a shared album to your Photos library stay in your library even if the shared album is deleted or the person who created it stops sharing it.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">252</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">177</span><code class="line-text">## Save photos and videos from a shared album</code></div>
+<div class="diff-line current unchanged"><span class="line-number">253</span><code class="line-text">## Save photos and videos from a shared album</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">254</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">186</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">262</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">187</span><code class="line-text">Shared Albums upload a copy of your data. Downloaded content may not contain the same information as the original.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">263</span><code class="line-text">Shared Albums upload a copy of your data. Downloaded content may not contain the same information as the original.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">188</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">264</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">189</span><code class="line-text">## <mark class="inline-remove">F</mark>ile types <mark class="inline-remove">that you c</mark>an<mark class="inline-remove"> use in</mark> Shared Albums</code></div>
+<div class="diff-line current added"><span class="line-number">265</span><code class="line-text">## <mark class="inline-add">Learn about supported f</mark>ile types an<mark class="inline-add">d</mark> Shared Album<mark class="inline-add"> limit</mark>s</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">190</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">266</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">191</span><code class="line-text"><mark class="inline-remove">###</mark> <mark class="inline-remove">Im</mark>a<mark class="inline-remove">ge</mark> file types and <mark class="inline-remove">f</mark>orm<mark class="inline-remove">at</mark>s</code></div>
+<div class="diff-line current added"><span class="line-number">267</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">[Le</mark>a<mark class="inline-add">rn which</mark> file types <mark class="inline-add">you c</mark>an<mark class="inline-add"> use in Share</mark>d <mark class="inline-add">Albums](https://supp</mark>or<mark class="inline-add">t.apple.co</mark>m<mark class="inline-add">/en-u</mark>s<mark class="inline-add">/148676)</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">192</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">268</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">193</span><code class="line-text">- <mark class="inline-remove">HEIF</mark></code></div>
+<div class="diff-line current added"><span class="line-number">269</span><code class="line-text">- <mark class="inline-add">[Learn about Shared Album storage limits](https://support.apple.com/en-us/148868)</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">194</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">195</span><code class="line-text">- JPEG</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">196</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">197</span><code class="line-text">- RAW*</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">199</span><code class="line-text">- PNG</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">200</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">201</span><code class="line-text">- GIF</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">202</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">203</span><code class="line-text">- TIFF</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">204</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">205</span><code class="line-text">* You can&#x27;t upload RAW photos to Shared Albums on your Windows PC.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">206</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">207</span><code class="line-text">### Special formats</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">208</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">209</span><code class="line-text">Shared Albums also support special formats that you capture with your iPhone, like slo-mo, time-lapse, Live Photos, and [Memory videos](https://support.apple.com/guide/iphone/iphd4f70e68f/) . When shared, photos are reduced to 2048 pixels on the long edge, except panoramic photos, which can be up to 5400 pixels wide. You can share GIFs that are 100MB or smaller.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">210</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">211</span><code class="line-text">### Video file types and formats</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">212</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">213</span><code class="line-text">- HEVC</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">214</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">215</span><code class="line-text">- MP4</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">216</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">217</span><code class="line-text">- QuickTime</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">218</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">219</span><code class="line-text">- H.264</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">220</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">221</span><code class="line-text">- MPEG-4</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">222</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">223</span><code class="line-text">Videos can be up to fifteen minutes in length and are delivered at up to 720p resolution.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">224</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">225</span><code class="line-text">## Shared Album storage limits</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">226</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">227</span><code class="line-text">A shared album can hold up to 5000 photos and videos. If you reach [your Shared Album limit](https://support.apple.com/en-us/108916) , you need to delete some photos or videos before adding new ones. The photos and videos you share (and the comments or likes associated with those photos) stay in iCloud until you or the contributor delete them manually, or until you delete the shared album completely.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">228</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">229</span><code class="line-text">The photos and videos in your Shared Albums are kept in iCloud, but they don&#x27;t [count against your iCloud storage limit](https://support.apple.com/en-us/105061) .</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">230</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">270</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">231</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">271</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
