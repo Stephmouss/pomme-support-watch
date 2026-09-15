@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>How to set a Screen Time passcode on an iPhone or iPad — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>How to set a Screen Time passcode on an iPhone or iPad</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/126533">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+11 ajouts</span>
+      <span class="badge removed">−13 suppressions</span>
+      <span class="badge">1 bloc modifié</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># How to set a Screen Time passcode on an iPhone or iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># How to set a Screen Time passcode on an iPhone or iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text"><mark class="inline-remove">Wi</mark>t<mark class="inline-remove">h</mark> a Screen Time passcode<mark class="inline-remove">,</mark> <mark class="inline-remove">y</mark>o<mark class="inline-remove">u can</mark> ensure the settings you choose for your child&#x27;s device remain in place. That means the passcode must be entered before chang<mark class="inline-remove">i</mark>n<mark class="inline-remove">g</mark> Screen Time settings. When a Screen Time passcode is enabled for a child&#x27;s device, you receive a notification any time i<mark class="inline-remove">t&#x27;</mark>s used on <mark class="inline-remove">you</mark>r<mark class="inline-remove"> child&#x27;s</mark> device.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text"><mark class="inline-add">You can crea</mark>t<mark class="inline-add">e</mark> a Screen Time passcode <mark class="inline-add">t</mark>o ensure the settings you choose for your child&#x27;s<mark class="inline-add"> device or your own</mark> device remain in place. That means the passcode must be entered before <mark class="inline-add">you can </mark>chang<mark class="inline-add">e a</mark>n<mark class="inline-add">y</mark> Screen Time settings. When a Screen Time passcode is enabled for a child&#x27;s device, you<mark class="inline-add">&#x27;ll</mark> receive a notification any time <mark class="inline-add">the passcode </mark>is used on <mark class="inline-add">thei</mark>r device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">[Image: Play the video]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">[Image: Play the video]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">A Screen Time passcode isn’t the same as the passcode you use to unlock your device. It’s important to keep track of your Screen Time passcode because you need it to change the Screen Time settings for your device or a child’s device. You can change or remove a Screen Time passcode at any time.</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">A Screen Time passcode isn’t the same as the passcode you use to unlock your<mark class="inline-add"> device or a child&#x27;s</mark> device. It’s important to keep track of your Screen Time passcode because you need it to change the Screen Time settings for your device or a child’s device. You can change or remove a Screen Time passcode at any time.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">If you use [Family Sharing](https://support.apple.com/108380) to manage a child’s Apple Account, the Family organizer needs to set the child&#x27;s Screen Time passcode on their own device, not the child&#x27;s device.</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">If you use [Family Sharing](https://support.apple.com/108380) to manage a child’s Apple Account, the Family <mark class="inline-add">Sharing </mark>organizer<mark class="inline-add"> or a parent/guardian</mark> needs to set the child&#x27;s Screen Time passcode on their own device, not the child&#x27;s device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">[Learn what to do if you <mark class="inline-remove">f</mark>o<mark class="inline-remove">r</mark>ge<mark class="inline-remove">t</mark> your Screen Time passcode](https://support.apple.com/102677)</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">[Learn what to do if you <mark class="inline-add">need t</mark>o<mark class="inline-add"> chan</mark>ge your Screen Time passcode](https://support.apple.com/102677)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">## Set a Screen Time passcode for your child’s iPhone or iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">## Set a Screen Time passcode for your child’s iPhone or iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">- Open the Settings app, then tap Screen Time.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">- Open the Settings app, then tap Screen Time.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">- Scroll down and tap your child’s name under Family. If you don’t see your child’s name under Family, make sure you’re both <mark class="inline-remove">[</mark>signed in t<mark class="inline-remove">o</mark> your own Apple Account<mark class="inline-remove">](https://support.apple.com/guide/iphone/setup-basics-iph9374b7411/26/ios/26#iph1fbc8c5cf)</mark> and <mark class="inline-remove">[</mark>have Family Sharing set up<mark class="inline-remove">](https://setup</mark>.<mark class="inline-remove">iCloud.com/family/messages?aaaction=showFamilyInvite&amp;inviteCode=organizer_create&amp;campaign=kbArticle) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- Scroll down and tap your child’s name under Family. If you don’t see your child’s name under Family, make sure you’re both signed in <mark class="inline-add">wi</mark>t<mark class="inline-add">h</mark> your own Apple Account and have Family Sharing set up.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">- Tap Manage Screen Time, then tap Lock Screen Time Settings.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">- Tap Manage Screen Time, then tap Lock Screen Time Settings.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">E</mark>n<mark class="inline-remove">t</mark>e<mark class="inline-remove">r</mark> <mark class="inline-remove">a 4-digit pas</mark>sc<mark class="inline-remove">od</mark>e<mark class="inline-remove">, th</mark>en ente<mark class="inline-remove">r the passco</mark>d<mark class="inline-remove">e again to confirm</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text"><mark class="inline-add">[Image:</mark> <mark class="inline-add">iPho</mark>ne sc<mark class="inline-add">r</mark>een <mark class="inline-add">showing Manage Scre</mark>en<mark class="inline-add"> Time settings for child with Lock Screen Time Settings highligh</mark>ted.<mark class="inline-add">]</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text"><mark class="inline-remove">[Im</mark>ag<mark class="inline-remove">e:</mark> <mark class="inline-remove">iPhone </mark>sc<mark class="inline-remove">r</mark>een <mark class="inline-remove">showi</mark>n<mark class="inline-remove">g</mark> the <mark class="inline-remove">L</mark>o<mark class="inline-remove">ck</mark> <mark class="inline-remove">Scree</mark>n <mark class="inline-remove">Time Settings but</mark>to<mark class="inline-remove">n for a</mark> c<mark class="inline-remove">h</mark>i<mark class="inline-remove">ld&#x27;s device</mark>.<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text"><mark class="inline-add">- Enter </mark>a<mark class="inline-add"> four-di</mark>g<mark class="inline-add">it</mark> <mark class="inline-add">pas</mark>sc<mark class="inline-add">od</mark>e<mark class="inline-add">, th</mark>en <mark class="inline-add">e</mark>n<mark class="inline-add">ter</mark> the <mark class="inline-add">passc</mark>o<mark class="inline-add">de</mark> <mark class="inline-add">agai</mark>n to c<mark class="inline-add">onf</mark>i<mark class="inline-add">rm</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">## Set a Screen Time passcode for your iPhone or iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">## Set a Screen Time passcode for your iPhone or iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">- Open the Settings app, then tap Screen Time.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">- Open the Settings app, then tap Screen Time.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">- Scroll down, then tap Lock Screen Time Settings.</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">- Scroll down<mark class="inline-add">, tap Manage Screen Time</mark>, then tap Lock Screen Time Settings.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">[Image: Lock Screen Time<mark class="inline-remove"> Settings button for an adult&#x27;s device</mark>.]</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">[Image:<mark class="inline-add"> iPhone screen showing Manage Screen Time settings with a button to</mark> Lock Screen Time.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- Enter a <mark class="inline-remove">4</mark>-digit passcode, then enter the passcode again to confirm.</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- Enter a <mark class="inline-add">four</mark>-digit passcode, then enter the passcode again to confirm.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">- To add a Screen Time Passcode Recovery, enter the email address or phone number and password for your Apple Account.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">- To add a Screen Time Passcode Recovery, enter the email address or phone number and password for your Apple Account.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">[Image: iPhone screen showing <mark class="inline-remove">the </mark>Screen Time Pass<mark class="inline-remove">w</mark>o<mark class="inline-remove">r</mark>d Recovery s<mark class="inline-remove">c</mark>re<mark class="inline-remove">e</mark>n.]</code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">[Image: iPhone screen showing Screen Time Pass<mark class="inline-add">c</mark>od<mark class="inline-add">e</mark> Recovery <mark class="inline-add">option</mark>s<mark class="inline-add">, with fields fo</mark>r<mark class="inline-add"> Appl</mark>e<mark class="inline-add"> ID a</mark>n<mark class="inline-add">d password</mark>.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">It’s recommended that you don’t skip adding a Screen Time Passcode Recovery. That way, if you forget your Screen Time passcode, you can use your Apple Account to reset it. If you have more than one Apple Account, you must use the same account you entered when you first set up the Screen Time Passcode Recovery.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">It’s recommended that you don’t skip adding a Screen Time Passcode Recovery. That way, if you forget your Screen Time passcode, you can use your Apple Account to reset it. If you have more than one Apple Account, you must use the same account you entered when you first set up the Screen Time Passcode Recovery.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">It&#x27;s important to remember the Apple Account that you used for your Screen Time Passcode Recovery because without it, you won&#x27;t be able to remove or reset your Screen Time passcode, and Apple won&#x27;t be able to provide that information.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">It&#x27;s important to remember the Apple Account that you used for your Screen Time Passcode Recovery because without it, you won&#x27;t be able to remove or reset your Screen Time passcode, and Apple won&#x27;t be able to provide that information.</code></div>
+<div class="diff-line previous removed"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">[Learn more about managing a Screen Time passcode](https://support.apple.com/guide/iphone/create-manage-track-a-screen-time-passcode-iph272b4c4bd/26/ios/26#iphf0cdda19c)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Mettre à jour macOS sur votre Mac - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Mettre à jour macOS sur votre Mac - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/108382">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+18 ajouts</span>
+      <span class="badge removed">−18 suppressions</span>
+      <span class="badge">2 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Mettre à jour macOS sur votre Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Mettre à jour macOS sur votre Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Pour assurer la sécurité, la stabilité et la compatibilité de votre ordinateur, Apple vous recommande d’utiliser la dernière version de macOS compatible avec votre Mac. Les mises à jour <mark class="inline-remove">et les mises à niveau </mark>de macOS c<mark class="inline-remove">omprennent éga</mark>l<mark class="inline-remove">em</mark>ent les dernières fonctionnalités et apps intégrées telles que Safari, Ma<mark class="inline-remove">il</mark> et Apple Music. Utilisez Mise à jour de logiciels pour maintenir votre Mac à jour.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Pour assurer la sécurité, la stabilité et la compatibilité de votre ordinateur, Apple vous recommande d’utiliser la dernière version de macOS compatible avec votre Mac. Les mises à jour de macOS <mark class="inline-add">in</mark>cl<mark class="inline-add">u</mark>ent les dernières fonctionnalités et apps intégrées<mark class="inline-add">,</mark> telles que Safari, <mark class="inline-add">Notes, </mark>M<mark class="inline-add">ess</mark>a<mark class="inline-add">ges</mark> et Apple Music. Utilisez Mise à jour de logiciels pour maintenir votre Mac à jour.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## Obtenir des mises à jour avec Mise à jour de logiciels</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## Obtenir des mises à jour avec Mise à jour de logiciels</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">[Image: Lire la vidéo]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">[Image: Lire la vidéo]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text"><mark class="inline-remove">La fonctionnalité </mark>Mise à jour de logiciels recherche, télécharge et installe les mises à jour e<mark class="inline-remove">t mises à niveau</mark> logiciel<mark class="inline-remove">le</mark>s Apple<mark class="inline-remove"> qui sont</mark> compatibles avec votre modèle de Mac. Avant d’installer un nouveau logiciel, nous vous conseillons de [sauvegarder les données de votre Mac](https://support.apple.com/fr-fr/102307) .</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">Mise à jour de logiciels recherche, télécharge et installe les mises à jour <mark class="inline-add">d</mark>e logiciels Apple compatibles avec votre modèle de Mac. Avant d’installer un nouveau logiciel, nous vous conseillons de [sauvegarder les données de votre Mac](https://support.apple.com/fr-fr/102307) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">- Ouvrez Mise à jour de logiciels :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">- Ouvrez Mise à jour de logiciels :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">- [Utilisez](https://support.apple.com/guide/mac-help/<mark class="inline-remove">search-with-spotlight-</mark>mchlp1008/mac) [Spotlight](https://support.apple.com/guide/mac-help/<mark class="inline-remove">search-with-spotlight-</mark>mchlp1008/mac) dans la barre des menus pour rechercher <mark class="inline-remove">« </mark>Mise à jour de logiciels<mark class="inline-remove"> »</mark>, puis cliquez <mark class="inline-remove">dessus </mark>pour l’ouvrir d<mark class="inline-remove">epuis l</mark>es résultats de la recherche.</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- [Utilisez](https://support.apple.com/guide/mac-help/mchlp1008/mac) [Spotlight](https://support.apple.com/guide/mac-help/mchlp1008/mac)<mark class="inline-add"> ou Siri AI</mark> dans la barre des menus pour rechercher Mise à jour de logiciels, puis cliquez pour l’ouvrir <mark class="inline-add">à partir </mark>des résultats de la recherche.</code></div>
+<div class="diff-line previous removed"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">- Sinon, sélectionnez Réglages Système dans le menu Apple  situé dans l’angle de votre écran. Dans la fenêtre qui s’ouvre, cliquez sur Général dans la barre latérale, puis sur Mise à jour logicielle sur la droite.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">- Sinon, sélectionnez Réglages Système dans le menu Apple  situé dans l’angle de votre écran. Dans la fenêtre qui s’ouvre, cliquez sur Général dans la barre latérale, puis sur Mise à jour logicielle sur la droite.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">- Si votre ancien Mac ne dispose pas de Mise à jour de logiciels, [utilisez d’autres moyens de télécharger et d’installer macOS](https://support.apple.com/fr-fr/102662) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">- Si votre ancien Mac ne dispose pas de Mise à jour de logiciels, [utilisez d’autres moyens de télécharger et d’installer macOS](https://support.apple.com/fr-fr/102662) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">-<mark class="inline-remove"> Lorsque la fonctionnalité</mark> Mise à jour de logiciels <mark class="inline-remove">s’ouv</mark>re<mark class="inline-remove">, </mark>e<mark class="inline-remove">lle vé</mark>r<mark class="inline-remove">ifi</mark>e automatiquement s<mark class="inline-remove">i de</mark> nouve<mark class="inline-remove">lles versions de</mark> logiciels <mark class="inline-remove">sont</mark> disponibles<mark class="inline-remove">. Si un nouveau logiciel est disponible</mark> pour votre Mac<mark class="inline-remove">, cliquez sur le bouton Mettre à jour, Mettre à niveau ou Redémarrer pour l’installer</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- Mise à jour de logiciels re<mark class="inline-add">ch</mark>er<mark class="inline-add">ch</mark>e automatiquement <mark class="inline-add">le</mark>s nouve<mark class="inline-add">aux</mark> logiciels <mark class="inline-add">Apple</mark> disponibles pour votre <mark class="inline-add">modèle de </mark>Mac.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text"><mark class="inline-remove">[Image:</mark> <mark class="inline-remove">Fonct</mark>i<mark class="inline-remove">onnalité Mise à jour</mark> de logiciels so<mark class="inline-remove">us macOS Sequoia avec u</mark>n<mark class="inline-remove">e mise à jour</mark> disponible.<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">S</mark>i de<mark class="inline-add">s</mark> logiciels son<mark class="inline-add">t</mark> disponible<mark class="inline-add">s pour votre Mac, installez-les en cliquant sur le bouton pour mettre à jour, mettre à niveau ou redémarrer maintenant</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text"><mark class="inline-remove">- Si </mark>a<mark class="inline-remove">ucun nouv</mark>e<mark class="inline-remove">au logiciel n’est disponible pour votre modèle de Mac,</mark> Mise à jour de logiciels<mark class="inline-remove"> indique que votre Mac est à jour. Pour vérifier à nouveau, cliquez sur Rechercher les mises à jour</mark>, a<mark class="inline-remove">pp</mark>u<mark class="inline-remove">yez sur Cmd + R sur votr</mark>e <mark class="inline-remove">clavier, ou fer</mark>m<mark class="inline-remove">ez et rouvrez M</mark>ise à jour de<mark class="inline-remove"> logiciels</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text"><mark class="inline-add">[Im</mark>a<mark class="inline-add">g</mark>e<mark class="inline-add">:</mark> Mise à jour de logiciels, a<mark class="inline-add">ffichant </mark>u<mark class="inline-add">n</mark>e mise à jour d<mark class="inline-add">isponibl</mark>e.<mark class="inline-add">]</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text"><mark class="inline-remove">[Im</mark>age<mark class="inline-remove">:</mark> <mark class="inline-remove">F</mark>onc<mark class="inline-remove">tionnalité</mark> Mise à jour de logiciels sous ma<mark class="inline-remove">cOS S</mark>e<mark class="inline-remove">quoia</mark> san<mark class="inline-remove">s aucun</mark>e mise à jour dis<mark class="inline-remove">ponible</mark>.<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text"><mark class="inline-add">- Si </mark>a<mark class="inline-add">ucun lo</mark>g<mark class="inline-add">ici</mark>e<mark class="inline-add">l</mark> <mark class="inline-add">n’est disp</mark>on<mark class="inline-add">ible pour votre Ma</mark>c<mark class="inline-add">,</mark> Mise à jour de logiciels <mark class="inline-add">indique que votre Mac e</mark>s<mark class="inline-add">t à j</mark>ou<mark class="inline-add">r. Pour vérifier de nouveau, cliquez sur Rechercher le</mark>s m<mark class="inline-add">ises à jour, </mark>a<mark class="inline-add">ppuy</mark>e<mark class="inline-add">z</mark> s<mark class="inline-add">ur les touches Comm</mark>an<mark class="inline-add">d</mark>e <mark class="inline-add">et R, ou fer</mark>m<mark class="inline-add">ez et rouvrez M</mark>ise à jour d<mark class="inline-add">e log</mark>i<mark class="inline-add">ciel</mark>s.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Av</mark>ant que<mark class="inline-remove"> l’installation commence, il vous sera demandé de saisir votre mot de passe administrateur. Il s’agit du mot de passe que vous utilisez pour vous connecter à</mark> votre Mac<mark class="inline-remove">.</mark> <mark class="inline-remove">[V</mark>ou<mark class="inline-remove">s</mark> ave<mark class="inline-remove">z oub</mark>l<mark class="inline-remove">ié votr</mark>e mot d<mark class="inline-remove">e pa</mark>s<mark class="inline-remove">se ?](https://sup</mark>po<mark class="inline-remove">rt.app</mark>le.<mark class="inline-remove">com/fr-fr/102633)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text"><mark class="inline-add">[Image:</mark> <mark class="inline-add">Mise à jour de logiciels indiqu</mark>ant que votre Mac <mark class="inline-add">est à j</mark>ou<mark class="inline-add">r, car</mark> a<mark class="inline-add">ucune nou</mark>vel<mark class="inline-add">l</mark>e m<mark class="inline-add">ise à j</mark>o<mark class="inline-add">ur n’es</mark>t d<mark class="inline-add">i</mark>spo<mark class="inline-add">nib</mark>le.<mark class="inline-add">]</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">- Avant que l’installation commence, il vous est demandé de saisir votre mot de passe administrateur. Il s’agit du mot de passe que vous utilisez pour vous connecter à votre Mac. [Vous avez oublié votre mot de passe ?](https://support.apple.com/fr-fr/102633)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">- Patientez jusqu’à la fin de l’installation sans mettre en veille votre Mac, ni fermer son couvercle. Au cours de l’installation, votre Mac peut redémarrer et afficher une barre de progression ou un écran vide à plusieurs reprises.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">- Patientez jusqu’à la fin de l’installation sans mettre en veille votre Mac, ni fermer son couvercle. Au cours de l’installation, votre Mac peut redémarrer et afficher une barre de progression ou un écran vide à plusieurs reprises.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">Découvrez la marche à suivre [si une erreur se produit au cours de l’installation](https://support.apple.com/fr-fr/102531) ou que votre [Mac ne démarre pas complètement](https://support.apple.com/fr-fr/102675) .</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text"><mark class="inline-add">- </mark>Découvrez la marche à suivre [si une erreur se produit au cours de l’installation](https://support.apple.com/fr-fr/102531) ou que votre [Mac ne démarre pas complètement](https://support.apple.com/fr-fr/102675) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- Si l’installation de macOS réussit, mais que vous devez le réinstaller ultérieurement, vous pouvez [réinstaller macOS à partir de la fonctionnalité Récupération macOS](https://support.apple.com/fr-fr/102655) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">## Si Mise à jour de logiciels n’affiche pas de mise à jour</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">## Si Mise à jour de logiciels n’affiche pas de mise à jour</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">La fonctionnalité Mise à jour de logiciels ne montre que les logiciels compatibles avec votre modèle de Mac. Si votre Mac n’est pas compatible avec <mark class="inline-remove">un</mark>e<mark class="inline-remove"> m</mark>i<mark class="inline-remove">se à jour ou une mise à niveau ou s’il n’en a pas besoin</mark>,<mark class="inline-remove"> la fonctionnalité</mark> Mise à jour de logiciels ne vous la propose pas et indique que votre Mac est à jour.</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">La fonctionnalité Mise à jour de logiciels ne montre que les logiciels compatibles avec votre modèle de Mac. Si votre Mac n’<mark class="inline-add">a pas besoin d’une mise à jour ou n’</mark>est pas compatible avec <mark class="inline-add">c</mark>e<mark class="inline-add">lle-c</mark>i, Mise à jour de logiciels ne vous la propose pas et indique que votre Mac est à jour.<mark class="inline-add"> Voici les dernières versions majeures de macOS et les ordinateurs qui peuvent les utiliser :</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">Vo<mark class="inline-remove">i</mark>c<mark class="inline-remove">i</mark> <mark class="inline-remove">la li</mark>ste <mark class="inline-remove">d</mark>e<mark class="inline-remove">s</mark> mise<mark class="inline-remove">s</mark> à <mark class="inline-remove">niv</mark>e<mark class="inline-remove">au de macOS </mark>les <mark class="inline-remove">plu</mark>s<mark class="inline-remove"> récentes et des </mark>o<mark class="inline-remove">rdinateurs qui peuve</mark>nt les ut<mark class="inline-remove">il</mark>iser <mark class="inline-remove">:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">Vo<mark class="inline-add">tre Ma</mark>c <mark class="inline-add">e</mark>st<mark class="inline-add">-il compatibl</mark>e <mark class="inline-add">av</mark>e<mark class="inline-add">c cette</mark> mise à <mark class="inline-add">jour ? | Qu</mark>e<mark class="inline-add">l</mark>les sont les <mark class="inline-add">nouvea</mark>ut<mark class="inline-add">és de cette m</mark>ise<mark class="inline-add"> à jou</mark>r <mark class="inline-add">?</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text"><mark class="inline-remove">Votre Mac est-il c</mark>ompatible <mark class="inline-remove">?</mark> | Nouveautés de <mark class="inline-remove">cette version de </mark>macOS</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text"><mark class="inline-add">C</mark>ompatib<mark class="inline-add">i</mark>l<mark class="inline-add">ité av</mark>e<mark class="inline-add">c</mark> <mark class="inline-add">macOS 27 Golden Gate</mark> | Nouveautés de macOS<mark class="inline-add"> 27 Golden Gate</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">Compatibilité avec macOS Tahoe 26 | Nouveautés de macOS Tahoe 26</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">Compatibilité avec macOS Tahoe 26 | Nouveautés de macOS Tahoe 26</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">## Informations supplémentaires</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">## Informations supplémentaires</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">[Dé</mark>couvre<mark class="inline-remove">z</mark> c<mark class="inline-remove">om</mark>ment con<mark class="inline-remove">fig</mark>urer les réglages <mark class="inline-remove">de</mark> Mise à jour de logiciels](https://support.apple.com/guide/mac-help/mchla7037245/mac) pour contrôler <mark class="inline-remove">le</mark>s<mark class="inline-remove"> m</mark>i<mark class="inline-remove">ses à jour que</mark> votre Mac télécharge ou installe automatiquement.</code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text"><mark class="inline-add">Une</mark> <mark class="inline-add">mise à jour de ma</mark>c<mark class="inline-add">OS peut être une n</mark>ouv<mark class="inline-add">elle version mineu</mark>re <mark class="inline-add">du ma</mark>c<mark class="inline-add">OS actuelle</mark>ment <mark class="inline-add">installé, par exemple de ma</mark>c<mark class="inline-add">OS 26 à macOS 26.4, ou une nouvelle versi</mark>on<mark class="inline-add"> maje</mark>ure<mark class="inline-add"> de macOS, pa</mark>r<mark class="inline-add"> exemple de macOS 26 à macOS 27. [Utilisez</mark> les réglages <mark class="inline-add">«</mark> Mise à jour de logiciels<mark class="inline-add"> »</mark>](https://support.apple.com/guide/mac-help/mchla7037245/mac) pour contrôler si votre Mac télécharge ou installe <mark class="inline-add">ces mises à jour </mark>automatiquement.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text"><mark class="inline-remove">- Une mise à jour est une version mineure du </mark>[<mark class="inline-remove">logiciel macOS actuellement installé](https://support.apple.com/fr-fr/109033) ou d’un autre logiciel, par exemple une mise à jour de macOS Tahoe 26 vers macOS Tahoe 26.4. Une mise à niveau est une nouvelle version majeure de macOS portant un nouveau nom, par exemple une mise à niveau de macOS Sequoia 15 vers macOS Tahoe 26. </mark>En savoir plus <mark class="inline-remove">[à</mark> <mark class="inline-remove">propos d</mark>es mises à jour logicielles Apple](https://support.apple.com/fr-fr/125039)<mark class="inline-remove"> .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">[En savoir plus <mark class="inline-add">sur</mark> <mark class="inline-add">l</mark>es mises à jour logicielles Apple](https://support.apple.com/fr-fr/125039)</code></div>
+<div class="diff-line previous removed"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">- Découvrez comment [réinstaller la version de macOS actuellement installée](https://support.apple.com/fr-fr/102655) .</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
