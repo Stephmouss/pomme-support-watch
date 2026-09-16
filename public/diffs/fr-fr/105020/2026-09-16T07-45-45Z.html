@@ -1,0 +1,634 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Utiliser Siri sur tous vos appareils Apple - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Utiliser Siri sur tous vos appareils Apple - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/105020">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+105 ajouts</span>
+      <span class="badge removed">−167 suppressions</span>
+      <span class="badge">1 bloc modifié</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">Siri est là au quotidien pour vous aider à réaliser toutes sortes de choses, à vous informer ou à trouver tout ce que vous recherchez. Sélectionnez votre appareil Apple ci-dessous pour savoir comment utiliser Siri.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">Siri est là au quotidien pour vous aider à réaliser toutes sortes de choses, à vous informer ou à trouver tout ce que vous recherchez. Sélectionnez votre appareil Apple ci-dessous pour savoir comment utiliser Siri.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">[</mark>i<mark class="inline-remove">Ph</mark>one<mark class="inline-remove">](https://suppo</mark>r<mark class="inline-remove">t.apple.com/fr-fr/105020#</mark>i<mark class="inline-remove">os)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">Ident</mark>i<mark class="inline-add">fier votre versi</mark>on<mark class="inline-add"> d</mark>e<mark class="inline-add"> Si</mark>ri</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">[</mark>i<mark class="inline-remove">P</mark>ad<mark class="inline-remove">](http</mark>s<mark class="inline-remove">://sup</mark>port<mark class="inline-remove">.</mark>apple<mark class="inline-remove">.</mark>c<mark class="inline-remove">om/fr-fr/105020#</mark>i<mark class="inline-remove">pa</mark>dos<mark class="inline-remove">)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text"><mark class="inline-add">Les</mark> <mark class="inline-add">fonct</mark>i<mark class="inline-add">onn</mark>a<mark class="inline-add">lités et les interactions </mark>d<mark class="inline-add">i</mark>spo<mark class="inline-add">nibles dépendent du maté</mark>r<mark class="inline-add">iel de vo</mark>t<mark class="inline-add">re </mark>app<mark class="inline-add">arei</mark>l<mark class="inline-add">, d</mark>e<mark class="inline-add"> la version du logi</mark>ci<mark class="inline-add">el et </mark>d<mark class="inline-add">e v</mark>os<mark class="inline-add"> réglages.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">Pour connaître la version que vous possédez, ouvrez Réglages sur votre appareil, puis touchez ou cliquez sur Siri. Dans certaines versions du logiciel, les préférences de Siri se trouvent dans Réglages, sous Apple Intelligence et Siri.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">- Siri AI (bêta) : vous pouvez l’ [activer dans Réglages](https://support.apple.com/fr-fr/127893) sur les [appareils compatibles avec Apple Intelligence](https://support.apple.com/fr-fr/121115) dans les langues et les régions prises en charge. Lorsque vous disposez de Siri AI, le mot « bêta » apparaît sur le logo de Siri dans Réglages.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- Siri avec Apple Intelligence : la version de Siri que vous avez lorsque votre appareil utilise Apple Intelligence et que Siri AI n’est pas activé. Apparaît sous le nom « Siri (classique) » lorsque vous avez le choix entre plusieurs versions de Siri.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- Siri : pour l’Apple TV, le HomePod et les autres appareils non compatibles avec Apple Intelligence, lorsque Apple Intelligence n’est pas disponible dans votre région ou si vous avez désactivé Apple Intelligence.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">Sur les modèles compatibles avec Apple Intelligence, l’Apple Watch utilise la même version de Siri que l’iPhone auquel elle est jumelée.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">## Parler à Siri</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">Sur la plupart des appareils, il vous suffit de dire « Siri » ou « Dis Siri », puis d’énoncer immédiatement votre demande.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">Pour régler l’activation vocale de Siri, ouvrez Réglages sur votre appareil, touchez ou cliquez sur Siri*, puis touchez ou cliquez sur Demandes. Sur certaines versions d’iOS et d’iPadOS, vous devrez peut-être toucher Parler et écrire à Siri, Parler à Siri ou Détecter « Dis Siri ».</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">*Sur certaines versions d’iOS et d’iPadOS, les préférences de Siri se trouvent dans Réglages, sous Apple Intelligence et Siri.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">## Écrire à Siri</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">Si vous utilisez Siri AI (bêta), vous pouvez toujours écrire à Siri.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- Sur l’iPhone ou l’iPad, effectuez un balayage vers le bas depuis le centre de l’écran, puis saisissez votre demande dans le champ Rechercher ou demander. Vous pouvez également écrire à Siri dans l’app Siri, ou toucher un élément (texte, image, document, etc.) et maintenir le doigt dessus, puis toucher Demander à Siri pour ouvrir le champ Rechercher ou demander.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- Sur Mac, appuyez sur Commande + barre d’espacement ou cliquez sur le bouton Siri dans la barre des menus pour ouvrir Spotlight, puis saisissez votre demande. Vous pouvez également écrire à Siri dans l’app Siri, ou effectuer un Contrôle + clic sur un élément et choisir Demander à Siri pour saisir votre demande directement dans le menu.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">Pour Siri avec Apple Intelligence :</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- Sur l’iPhone ou l’iPad, activez [Écrire à Siri](https://support.apple.com/guide/iphone/change-siri-accessibility-settings-iphaff1d606/ios) , puis touchez deux fois le bas de l’écran et saisissez votre demande.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">- Sur un Mac, écrivez à Siri en cliquant sur le bouton Siri . Sur l’Apple Watch, maintenez la Digital Crown enfoncée, puis saisissez votre demande.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">Si vous n’utilisez pas Apple Intelligence, ou si vous souhaitez toujours saisir vos demandes au lieu de les formuler oralement, Écrire à Siri est un réglage d’accessibilité :</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- Sur l’iPhone ou l’iPad, ouvrez Réglages, touchez Accessibilité, touchez Siri, puis activez Écrire à Siri.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- Sur Mac, ouvrez Réglages Système, cliquez sur Accessibilité, cliquez sur Siri, puis activez Écrire à Siri.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- Sur l’Apple Watch, appuyez sur la Digital Crown, ouvrez Réglages, touchez Accessibilité, touchez Siri, puis activez Écrire à Siri. La fonctionnalité Écrire à Siri n’est actuellement pas disponible avec Siri AI sur l’Apple Watch.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">Après avoir activé Écrire à Siri, activez Siri à l’aide d’un bouton, puis saisissez votre demande.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">## Activer Siri à l’aide d’un bouton</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">Au lieu de dire « Siri » ou « Dis Siri », maintenez un bouton enfoncé ou touchez l’appareil et énoncez votre demande.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">### Sur l’iPhone et l’iPad</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">[Image: Un iPhone avec une flèche pointant vers le bouton latéral pour l’activation de Siri.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">[Image: Un iPad avec une flèche pointant vers le bouton supérieur pour l’activation de Siri.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">Appuyez sur le bouton latéral de l’iPhone ou sur le bouton supérieur de l’iPad, puis formulez votre demande. Si votre appareil est doté d’un bouton principal, appuyez sur ce dernier.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">Pour activer ou désactiver l’activation par bouton, ouvrez Réglages, touchez Siri, touchez Demandes, puis activez Bouton latéral pour Siri. Dans certaines versions d’iOS et d’iPadOS, les préférences de Siri se trouvent dans Réglages, sous Apple Intelligence et Siri.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">Découvrez la marche à suivre si [Siri ne fonctionne pas sur votre iPhone ou iPad](https://support.apple.com/fr-fr/105037) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">### Sur un Mac</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">Sur un clavier Apple doté de touches de fonction, maintenez la touche Dictée enfoncée ou cliquez sur le bouton Siri dans la barre des menus pour activer Siri. Si vous disposez de Siri AI, appuyez sur Commande + barre d’espacement pour ouvrir Spotlight, puis saisissez votre demande pour Siri.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">[Image: La barre Siri apparaît lorsque vous cliquez sur le bouton Siri dans l’angle supérieur droit de l’écran d’un Mac.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">Découvrez la marche à suivre si [Siri ne fonctionne pas sur votre Mac](https://support.apple.com/guide/mac-help/if-siri-doesnt-work-as-expected-mchl4e4b758d/mac) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">### Sur une Apple Watch</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">Appuyez de manière prolongée sur la Digital Crown, puis dites ce dont vous avez besoin.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">Pour activer ou désactiver l’activation via la Digital Crown, ouvrez Réglages, touchez Siri, puis touchez Appuyer sur la Digital Crown.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text">[Image: Une Apple Watch avec une flèche pointant vers la Digital Crown pour l’activation de Siri.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">Découvrez la marche à suivre si [Siri ne fonctionne pas sur votre Apple Watch](https://support.apple.com/fr-fr/105026) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">### Sur un HomePod</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text">Touchez de manière prolongée le dessus du HomePod, puis formulez votre demande.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">[Image: Vue du dessus d&#x27;un HomePod avec lumières multicolores allumées.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">Découvrez la marche à suivre si [Siri ne fonctionne pas sur votre HomePod](https://support.apple.com/fr-fr/105031) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">Le HomePod n’est pas disponible dans tous les pays et toutes les régions.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text">### Sur une Apple TV</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">97</span><code class="line-text">Maintenez le bouton Siri enfoncé sur le côté de votre Siri Remote, énoncez votre demande, puis relâchez le bouton Siri. Sur certaines télécommandes, le bouton Siri se trouve à l’avant. [En savoir plus sur l’utilisation de Siri sur votre Apple TV](https://support.apple.com/fr-fr/105019) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text">[Image: Une Apple TV Remote avec une flèche bleue pointant vers le bouton Siri pour l’activation de Siri.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">## Découvrir comment utiliser Siri sur votre appareil</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">103</span><code class="line-text">- [iPhone](https://support.apple.com/guide/iphone/turn-on-and-activate-siri-iph83aad8922/ios)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">105</span><code class="line-text">- [iPad](https://support.apple.com/guide/ipad/turn-on-and-activate-siri-ipad4bce70ef/ipados)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">- [AirPods](https://support.apple.com/guide/airpods/use-siri-devc2c0f438a/web)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">107</span><code class="line-text">- [AirPods](https://support.apple.com/guide/airpods/use-siri-devc2c0f438a/web)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">- [Mac](https://support.apple.com/<mark class="inline-remove">f</mark>r-<mark class="inline-remove">f</mark>r/<mark class="inline-remove">105020#</mark>mac)</code></div>
+<div class="diff-line current added"><span class="line-number">109</span><code class="line-text">- [Mac](https://support.apple.com/<mark class="inline-add">guide/mac-help/tu</mark>r<mark class="inline-add">n</mark>-<mark class="inline-add">on-and-activate-si</mark>r<mark class="inline-add">i-mchlb66b4ad6</mark>/mac)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">- [Apple Watch](https://support.apple.com/<mark class="inline-remove">fr-fr</mark>/<mark class="inline-remove">105020#apple-</mark>watch)</code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text">- [Apple Watch](https://support.apple.com/<mark class="inline-add">guide</mark>/watch<mark class="inline-add">/use-siri-apd02f71f945/watchos</mark>)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- [HomePod](https://support.apple.com/f<mark class="inline-remove">r-fr</mark>/<mark class="inline-remove">105020#</mark>homepod)</code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text">- [HomePod](https://support.apple.com/<mark class="inline-add">guide/homepod/set-up-siri-apd1841a8</mark>f<mark class="inline-add">81</mark>/homepod)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">- [Apple TV](https://support.apple.com/fr-fr/1050<mark class="inline-remove">20#apple-tv</mark>)</code></div>
+<div class="diff-line current added"><span class="line-number">115</span><code class="line-text">- [Apple TV](https://support.apple.com/fr-fr/1050<mark class="inline-add">19</mark>)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- [CarPlay](https://support.apple.com/<mark class="inline-remove">f</mark>r-<mark class="inline-remove">fr/105020#</mark>carp<mark class="inline-remove">l</mark>a<mark class="inline-remove">y</mark>)</code></div>
+<div class="diff-line current added"><span class="line-number">117</span><code class="line-text">- [CarPlay](https://support.apple.com/<mark class="inline-add">guide/iphone/use-siri-in-you</mark>r-car<mark class="inline-add">-i</mark>p<mark class="inline-add">h0</mark>a<mark class="inline-add">a8c80e6/ios</mark>)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">- [Apple Vision Pro](https://support.apple.com/guide/apple-vision-pro/tanf53b300e4/visionos)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">119</span><code class="line-text">- [Apple Vision Pro](https://support.apple.com/guide/apple-vision-pro/tanf53b300e4/visionos)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">## Utiliser Siri sur votre iPhone</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">Voici plusieurs manières d’activer Siri.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">### Avec votre voix</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">Dites simplement « Siri »* ou « Dis Siri », puis énoncez immédiatement ce dont vous avez besoin.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">Pour ajuster la méthode d’activation vocale de Siri, ouvrez Réglages, touchez Apple Intelligence et Siri (ou Siri), puis Parler et écrire à Siri (ou Parler à Siri).</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">### Appuyer sur le bouton et le relâcher</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">[Image: Un iPhone avec une flèche pointant vers le bouton latéral pour l’activation de Siri.]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- Si votre iPhone n’a pas de bouton principal, appuyez sur le bouton latéral, puis formulez votre demande.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">- Si votre iPhone est doté d’un bouton principal, appuyez dessus, puis formulez votre demande.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">- Pour formuler une demande plus longue, maintenez le bouton latéral ou principal enfoncé jusqu’à ce que vous l’ayez énoncée en intégralité.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">Pour autoriser ou empêcher l’activation de Siri à l’aide du bouton latéral, ouvrez Réglages, touchez Apple Intelligence et Siri (ou Siri), puis Parler et écrire à Siri (ou Parler à Siri).</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">### Saisir du texte au lieu de parler à Siri</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">Si vous avez activé à la fois [Écrire à Siri](https://support.apple.com/guide/iphone/change-siri-accessibility-settings-iphaff1d606/ios) et Apple Intelligence, touchez deux fois le bas de l’écran et saisissez votre demande. Si vous avez activé Écrire à Siri, mais pas Apple Intelligence, appuyez sur le bouton pour activer Siri, puis saisissez votre demande.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">## Utiliser Siri sur votre iPad</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">Voici plusieurs manières d’activer Siri.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">### Avec votre voix</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">Dites simplement « Siri »* ou « Dis Siri », puis énoncez immédiatement ce dont vous avez besoin.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">Pour ajuster la méthode d’activation vocale de Siri, ouvrez Réglages, touchez Apple Intelligence et Siri (ou Siri), puis Parler et écrire à Siri (ou Parler à Siri).</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">### Appuyer sur le bouton et le relâcher</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">[Image: Un iPad avec une flèche pointant vers le bouton supérieur pour l’activation de Siri.]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">- Si votre iPad n’a pas de bouton principal, maintenez le bouton supérieur enfoncé, puis formulez votre demande.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">- Si votre iPad est doté d’un bouton principal, maintenez-le enfoncé, puis formulez votre demande.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">- Pour formuler une demande plus longue, maintenez le bouton principal ou supérieur enfoncé jusqu’à ce que vous l’ayez énoncée en intégralité.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">Pour autoriser ou empêcher l’activation de Siri à l’aide du bouton supérieur, ouvrez Réglages, touchez Apple Intelligence et Siri (ou Siri), puis Parler et écrire à Siri (ou Parler à Siri).</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">### Saisir du texte au lieu de parler à Siri</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text">[Activez Écrire à Siri](https://support.apple.com/guide/ipad/siri-ipadd58b8673/ipados) . Ensuite, appuyez sur le bouton d’activation de Siri et saisissez votre demande.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">## Utiliser Siri sur votre Mac</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">Voici plusieurs manières d’activer Siri.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text">### Avec votre voix</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">Sur les [ordinateurs Mac avec puce Apple](https://support.apple.com/fr-fr/116943) , dites « Siri »* ou « Dis Siri », puis formulez votre demande.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">Pour ajuster la méthode d’activation vocale de Siri, choisissez Réglages Système (ou Préférences Système) dans le m enu Pomme, cliquez sur Apple Intelligence et Siri (ou Siri), puis sur Détecter (ou Activer Demander à Siri).</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">85</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text">### Utiliser le bouton Siri</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text">[Image: La barre Siri apparaît lorsque vous cliquez sur le bouton Siri dans l’angle supérieur droit de l’écran d’un Mac.]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text">- Dans la barre des menus ou le Dock, cliquez sur le bouton Siri , puis dites ce dont vous avez besoin.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">95</span><code class="line-text">- Sur un Mac doté d’une Touch Bar, touchez le bouton Siri , puis formulez votre demande.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">97</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text">- Sur un clavier Apple avec touches de fonction, maintenez la touche Dictée enfoncée, puis formulez votre demande.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">101</span><code class="line-text">[Image: touche Dictée]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">103</span><code class="line-text">- Pour formuler une demande plus longue, maintenez le bouton Siri enfoncé jusqu’à ce que vous l’ayez énoncée en intégralité.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">105</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">107</span><code class="line-text">### Saisir du texte au lieu de parler à Siri</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">109</span><code class="line-text">[Si vous avez activé Apple Intelligence](https://support.apple.com/guide/mac-help/intro-to-apple-intelligence-mchl46361784/mac) , vous pouvez automatiquement écrire à Siri en cliquant sur le bouton Siri. Si vous n’avez pas activé Apple Intelligence, [activez Écrire à Siri](https://support.apple.com/guide/mac-help/mchl5715a9f2) , puis cliquez sur le bouton Siri.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">111</span><code class="line-text">## Utiliser Siri sur votre Apple Watch</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">113</span><code class="line-text">Voici plusieurs manières d’activer Siri.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">115</span><code class="line-text">### Avec votre voix</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">117</span><code class="line-text">Regardez votre Apple Watch ou touchez son écran. Ensuite, dites « Siri »* ou « Dis Siri » et énoncez votre demande.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">119</span><code class="line-text">Pour ajuster la méthode d’activation vocale de Siri, ouvrez Réglages, touchez Siri, puis Détecter.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">121</span><code class="line-text">### Lever votre montre pour parler</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">123</span><code class="line-text">Sur votre Apple Watch Series 3 ou modèle ultérieur, levez le poignet pour approcher votre Apple Watch de votre bouche, puis dites ce dont vous avez besoin.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">125</span><code class="line-text">### Appuyer sur la Digital Crown</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">127</span><code class="line-text">[Image: Une Apple Watch avec une flèche pointant vers la Digital Crown pour l’activation de Siri.]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">129</span><code class="line-text">- Appuyez de manière prolongée sur la Digital Crown, puis dites ce dont vous avez besoin.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">131</span><code class="line-text">- Pour formuler une demande plus longue, maintenez la Digital Crown enfoncée jusqu’à ce que vous l’ayez énoncée en intégralité.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">133</span><code class="line-text">Pour autoriser ou empêcher l’activation de Siri à l’aide de la Digital Crown, ouvrez Réglages, touchez Siri, puis Appuyer sur la Digital Crown.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">135</span><code class="line-text">### Saisir du texte au lieu de parler à Siri</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">137</span><code class="line-text">- Accédez à Réglages.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">139</span><code class="line-text">- Touchez Accessibilité.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">141</span><code class="line-text">- Touchez Siri.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">143</span><code class="line-text">- Touchez Écrire à Siri.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">145</span><code class="line-text">- Activez Écrire à Siri.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">147</span><code class="line-text">- Appuyez de manière prolongée sur la Digital Crown et saisissez votre demande.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">149</span><code class="line-text">## Utiliser Siri sur votre HomePod</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">151</span><code class="line-text">Voici plusieurs manières d’activer Siri.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">153</span><code class="line-text">### Avec votre voix</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">155</span><code class="line-text">Dites simplement « Siri »* ou « Dis Siri », puis énoncez immédiatement ce dont vous avez besoin.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">157</span><code class="line-text">### Toucher le dessus du HomePod</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">159</span><code class="line-text">[Image: Vue du dessus d&#x27;un HomePod avec lumières multicolores allumées.]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">161</span><code class="line-text">- Touchez de manière prolongée le dessus du HomePod, puis formulez votre demande.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">163</span><code class="line-text">- Pour formuler une demande plus longue, maintenez votre doigt sur le dessus du HomePod jusqu’à ce que vous l’ayez énoncée en intégralité.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">165</span><code class="line-text">Le HomePod n’est pas disponible dans tous les pays et toutes les régions.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">167</span><code class="line-text">## Utiliser Siri sur votre Apple TV</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">169</span><code class="line-text">[Image: Une Apple TV Remote avec une flèche bleue pointant vers le bouton Siri pour l’activation de Siri.]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">171</span><code class="line-text">Maintenez le bouton Siri de votre télécommande Siri Remote enfoncé, énoncez votre demande, puis relâchez le bouton Siri.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">173</span><code class="line-text">[En savoir plus sur l’utilisation de Siri sur votre Apple TV](https://support.apple.com/fr-fr/105019)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">175</span><code class="line-text">## Utiliser Siri avec CarPlay</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">177</span><code class="line-text">Si votre [véhicule est compatible avec CarPlay ou la technologie Siri Eyes Free](https://www.apple.com/fr/ios/carplay/available-models/) , maintenez le bouton de commande vocale du volant enfoncé et formulez votre demande.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">179</span><code class="line-text">## Plus de possibilités avec Siri</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">181</span><code class="line-text">Que ce soit pour rechercher des informations ou contrôler votre domicile, [découvrez d’autres façons d’utiliser Siri pour vous aider à réaliser vos tâches quotidiennes](https://support.apple.com/fr-fr/siri) .</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">183</span><code class="line-text">* La disponibilité et les fonctionnalités de Siri varient selon la langue, le pays et la région. Découvrez les fonctionnalités de Siri disponibles dans votre pays ou région sous [iOS](https://www.apple.com/fr/ios/feature-availability/#siri) , [iPadOS](https://www.apple.com/fr/ios/feature-availability/#siri) , [macOS](https://www.apple.com/fr/macos/feature-availability/#siri) , [watchOS](https://www.apple.com/fr/watchos/feature-availability) et [tvOS](https://support.apple.com/fr-fr/105019) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">121</span><code class="line-text">* La disponibilité et les fonctionnalités de Siri varient selon la langue, le pays et la région. Découvrez les fonctionnalités de Siri disponibles dans votre pays ou région sous [iOS](https://www.apple.com/fr/ios/feature-availability/#siri) , [iPadOS](https://www.apple.com/fr/ios/feature-availability/#siri) , [macOS](https://www.apple.com/fr/macos/feature-availability/#siri) , [watchOS](https://www.apple.com/fr/watchos/feature-availability) et [tvOS](https://support.apple.com/fr-fr/105019) .</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
