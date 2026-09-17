@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>How to subscribe to Apple One — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>How to subscribe to Apple One</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/111766">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+26 ajouts</span>
+      <span class="badge removed">−16 suppressions</span>
+      <span class="badge">4 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous removed"><span class="line-number">1</span><code class="line-text"># <mark class="inline-remove">Bundle</mark> <mark class="inline-remove">Apple</mark> subscri<mark class="inline-remove">p</mark>t<mark class="inline-remove">i</mark>o<mark class="inline-remove">ns with</mark> Apple One</code></div>
+<div class="diff-line current added"><span class="line-number">1</span><code class="line-text"># <mark class="inline-add">How</mark> <mark class="inline-add">to</mark> subscri<mark class="inline-add">be </mark>to Apple One</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">With Apple One, bundle Apple Music, Apple TV, Apple Arcade, iCloud+, and more into one plan. <mark class="inline-remove">Wit</mark>h a Family<mark class="inline-remove"> plan</mark> or Premier plan<mark class="inline-remove">,</mark> <mark class="inline-remove">y</mark>o<mark class="inline-remove">u can</mark> share i<mark class="inline-remove">t all</mark> with <mark class="inline-remove">y</mark>o<mark class="inline-remove">ur</mark> f<mark class="inline-remove">am</mark>il<mark class="inline-remove">y</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">With Apple One, bundle Apple Music, Apple TV, Apple Arcade, iCloud+, and more into one plan. <mark class="inline-add">C</mark>h<mark class="inline-add">oose</mark> a Family or Premier plan <mark class="inline-add">t</mark>o share <mark class="inline-add">serv</mark>i<mark class="inline-add">ces</mark> with <mark class="inline-add">up t</mark>o fi<mark class="inline-add">ve peop</mark>l<mark class="inline-add">e</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">H</mark>o<mark class="inline-remove">w</mark> <mark class="inline-remove">to</mark> subscribe to Apple One<mark class="inline-remove"> on yo</mark>u<mark class="inline-remove">r iPhone </mark>or<mark class="inline-remove"> iP</mark>a<mark class="inline-remove">d</mark></code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text"><mark class="inline-add">[If</mark> <mark class="inline-add">y</mark>o<mark class="inline-add">u</mark> <mark class="inline-add">already</mark> subscribe to <mark class="inline-add">an Apple service included with </mark>Apple One<mark class="inline-add">](https://s</mark>u<mark class="inline-add">pp</mark>or<mark class="inline-add">t.</mark>a<mark class="inline-add">pple.com/en-us/111766#users)</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">[What&#x27;s included with Apple One](https://support.apple.com/en-us/111766#bundle)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">## Subscribe to Apple One on your device</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">You can subscribe to Apple One on your iPhone, iPad, or Mac.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">### Subscribe to Apple One on your iPhone or iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">- In Settings, tap your name.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">- In Settings, tap your name.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">- Tap Subscriptions.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">- Tap Subscriptions.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">- Tap Apple One.</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- Tap Apple One<mark class="inline-add">, then choose a plan</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Ch</mark>oose <mark class="inline-remove">a</mark> pl<mark class="inline-remove">a</mark>n<mark class="inline-remove">.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text"><mark class="inline-add">####</mark> <mark class="inline-add">If y</mark>o<mark class="inline-add">u d</mark>o<mark class="inline-add">n&#x27;t </mark>se<mark class="inline-add">e</mark> <mark class="inline-add">the</mark> <mark class="inline-add">option to subscribe to Ap</mark>pl<mark class="inline-add">e O</mark>n<mark class="inline-add">e</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">### If you don&#x27;t see the option to subscribe to Apple One on your iPhone or iPad</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">[Update your iPhone or iPad](https://support.apple.com/en-us/118575) , then go to Settings and look for the option again.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">[Update your iPhone or iPad](https://support.apple.com/en-us/118575) , then go to Settings and look for the option again.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">## <mark class="inline-remove">How to s</mark>ubscribe to Apple One on your Mac</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text"><mark class="inline-add">#</mark>## <mark class="inline-add">S</mark>ubscribe to Apple One on your Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">- <mark class="inline-remove">G</mark>o to System <mark class="inline-remove">Pr</mark>e<mark class="inline-remove">fere</mark>n<mark class="inline-remove">ce</mark>s.</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- <mark class="inline-add">Fr</mark>o<mark class="inline-add">m</mark> t<mark class="inline-add">he Apple menu , ch</mark>o<mark class="inline-add">ose</mark> System <mark class="inline-add">S</mark>e<mark class="inline-add">tti</mark>n<mark class="inline-add">g</mark>s.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- Click Apple Account.</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">- Click<mark class="inline-add"> your name. Or, click Sign In and sign in to your</mark> Apple Account.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">- Click Media &amp; Purchases.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">- Click Media &amp; Purchases.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">- Next to Subscriptions, click Manage.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">- Next to Subscriptions, click Manage.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- Click Apple One, then choose a plan.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">## If you already subscribe to an Apple service included with Apple One</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">## If you already subscribe to an Apple service included with Apple One</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">- You’ll receive a prorated refund for any individual services you’re already subscribed to (except iCloud+). If you receive a trial of Apple One, this happens at the end of your trial.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">- You’ll receive a prorated refund for any individual services you’re already subscribed to (except iCloud+). If you receive a trial of Apple One, this happens at the end of your trial.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- If Apple One costs less than your existing Apple service subscriptions combined, you will be transitioned to the Apple One subscription without a <mark class="inline-remove">free </mark>trial.</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- If Apple One costs less than your existing Apple service subscriptions combined, you will be transitioned to the Apple One subscription without a trial.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">### If you already have an iCloud storage plan</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">### If you already have an iCloud storage plan</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">## What&#x27;s included with Apple One</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">## What&#x27;s included with Apple One</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">Apple One in<mark class="inline-remove">cl</mark>u<mark class="inline-remove">d</mark>es a <mark class="inline-remove">free</mark> <mark class="inline-remove">1-m</mark>ont<mark class="inline-remove">h</mark> <mark class="inline-remove">trial f</mark>or <mark class="inline-remove">services that you don’t al</mark>re<mark class="inline-remove">ady have. If you have existin</mark>g<mark class="inline-remove"> subscript</mark>ion<mark class="inline-remove">s</mark> <mark class="inline-remove">to</mark> <mark class="inline-remove">services included with </mark>Apple One<mark class="inline-remove">,</mark> t<mark class="inline-remove">he</mark>y <mark class="inline-remove">will</mark> <mark class="inline-remove">no</mark>t<mark class="inline-remove"> b</mark>e<mark class="inline-remove"> included</mark> in your trial.</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">Apple One <mark class="inline-add">ava</mark>i<mark class="inline-add">lability a</mark>n<mark class="inline-add">d feat</mark>u<mark class="inline-add">r</mark>es <mark class="inline-add">v</mark>a<mark class="inline-add">ry</mark> <mark class="inline-add">by</mark> <mark class="inline-add">c</mark>o<mark class="inline-add">u</mark>nt<mark class="inline-add">ry</mark> or region<mark class="inline-add">.</mark> <mark class="inline-add">Check</mark> <mark class="inline-add">[</mark>Apple One <mark class="inline-add">availabili</mark>ty <mark class="inline-add">and</mark> <mark class="inline-add">fea</mark>t<mark class="inline-add">ur</mark>e<mark class="inline-add">s</mark> in your <mark class="inline-add">coun</mark>tr<mark class="inline-add">y or reg</mark>i<mark class="inline-add">on](https://www.</mark>a<mark class="inline-add">pp</mark>l<mark class="inline-add">e</mark>.<mark class="inline-add">com/apple-one/) .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">A<mark class="inline-remove">f</mark>t<mark class="inline-remove">er your free</mark> trial<mark class="inline-remove">,</mark> services that you <mark class="inline-remove">p</mark>rev<mark class="inline-remove">i</mark>ous<mark class="inline-remove">ly</mark> subscri<mark class="inline-remove">bed</mark> to <mark class="inline-remove">a</mark>re <mark class="inline-remove">au</mark>to<mark class="inline-remove">ma</mark>t<mark class="inline-remove">ically</mark> included in <mark class="inline-remove">Apple One. If </mark>you<mark class="inline-remove"> </mark>r<mark class="inline-remove">ecently canceled a service, you might not be eligible for the free</mark> trial.<mark class="inline-remove"> Your plan automatically renews after the trial.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">A<mark class="inline-add">pple One includes a 1-mon</mark>t<mark class="inline-add">h</mark> trial<mark class="inline-add"> for</mark> services that you <mark class="inline-add">don’t al</mark>re<mark class="inline-add">ady ha</mark>v<mark class="inline-add">e. If y</mark>ou<mark class="inline-add"> have exi</mark>s<mark class="inline-add">ting</mark> subscri<mark class="inline-add">ptions</mark> to <mark class="inline-add">se</mark>r<mark class="inline-add">vices included with Appl</mark>e <mark class="inline-add">One, </mark>t<mark class="inline-add">hey w</mark>o<mark class="inline-add">n&#x27;</mark>t<mark class="inline-add"> be</mark> included in your trial.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text"><mark class="inline-remove">[S</mark>ee<mark class="inline-remove"> p</mark>rices<mark class="inline-remove">](</mark>htt<mark class="inline-remove">ps://www.</mark>apple.com<mark class="inline-remove">/</mark>a<mark class="inline-remove">pp</mark>le<mark class="inline-remove">-o</mark>ne<mark class="inline-remove">/)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text"><mark class="inline-add">Aft</mark>e<mark class="inline-add">r your trial, s</mark>er<mark class="inline-add">v</mark>ices<mark class="inline-add"> t</mark>h<mark class="inline-add">a</mark>t<mark class="inline-add"> you previously subscribed </mark>t<mark class="inline-add">o </mark>a<mark class="inline-add">re automatically included in A</mark>pple<mark class="inline-add"> One</mark>.<mark class="inline-add"> If you re</mark>c<mark class="inline-add">ently canceled a service, you might not be eligible for the trial. Your plan aut</mark>oma<mark class="inline-add">tica</mark>l<mark class="inline-add">ly r</mark>ene<mark class="inline-add">ws after the trial.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">[See Apple One prices](https://www.apple.com/apple-one/)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">If Apple One isn’t available to new subscribers in your country or region, some Apple services might be included with an iCloud+ subscription. See [what Apple services are included with iCloud+ in your country or region](https://apple.co/icloud-plus-tv-arcade) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">### Individual</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">### Individual</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 34 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">87</span><code class="line-text">- iCloud+ with 2TB of storage</code></div>
+<div class="diff-line current unchanged"><span class="line-number">99</span><code class="line-text">- iCloud+ with 2TB of storage</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">89</span><code class="line-text">Share them all with up to five other family members.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">101</span><code class="line-text">Share them all with up to five other family members.</code></div>
+<div class="diff-line previous removed"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text">[See if Apple One is available in your country or region](https://support.apple.com/en-us/118205)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
