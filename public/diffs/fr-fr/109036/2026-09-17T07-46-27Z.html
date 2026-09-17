@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Configurer l’Apple Watch d’un membre de la famille - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Configurer l’Apple Watch d’un membre de la famille - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/109036">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+16 ajouts</span>
+      <span class="badge removed">−16 suppressions</span>
+      <span class="badge">8 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">Notez que [certaines fonctionnalités de l’Apple Watch](https://support.apple.com/fr-fr/109036#features) sont tributaires d’un iPhone compagnon, et ne sont pas disponibles sur une Apple Watch que vous jumelez à l’aide d’Apple Watch pour vos enfants.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">Notez que [certaines fonctionnalités de l’Apple Watch](https://support.apple.com/fr-fr/109036#features) sont tributaires d’un iPhone compagnon, et ne sont pas disponibles sur une Apple Watch que vous jumelez à l’aide d’Apple Watch pour vos enfants.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">Apple Watch pour vos enfants n’est pas disponible en Italie, en Corée, ni dans <mark class="inline-remove">certains </mark>autres pays. Découvrez [ce qui est disponible dans votre pays ou région](https://www.apple.com/fr/watch/cellular/#table-family-setup) .</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">Apple Watch pour vos enfants n’est pas disponible en Italie, en Corée, <mark class="inline-add">e</mark>n<mark class="inline-add"> Ch</mark>i<mark class="inline-add">ne continentale et</mark> dans <mark class="inline-add">d’</mark>autres pays. Découvrez [ce qui est disponible dans votre pays ou région](https://www.apple.com/fr/watch/cellular/#table-family-setup) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">## Éléments requis</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">## Éléments requis</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">- Une [Apple Watch Series 4 ou <mark class="inline-remove">v</mark>e<mark class="inline-remove">rsion</mark> ultérieur<mark class="inline-remove">e</mark>](https://support.apple.com/108056) avec connectivité <mark class="inline-remove">mob</mark>i<mark class="inline-remove">l</mark>e*<mark class="inline-remove">,</mark> ou une Apple Watch SE avec connectivité <mark class="inline-remove">mobi</mark>l<mark class="inline-remove">e, avec [watchOS 7 ou version </mark>ul<mark class="inline-remove">tér</mark>i<mark class="inline-remove">eu</mark>re<mark class="inline-remove">](https://support</mark>.<mark class="inline-remove">apple.com/108926) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- Une [Apple Watch Series 4 ou <mark class="inline-add">modèl</mark>e ultérieur](https://support.apple.com/108056) avec connectivité <mark class="inline-add">cellula</mark>i<mark class="inline-add">r</mark>e<mark class="inline-add">,</mark>* ou une Apple Watch SE <mark class="inline-add">ou modèle ultérieur </mark>avec connectivité <mark class="inline-add">ce</mark>l<mark class="inline-add">l</mark>ul<mark class="inline-add">a</mark>ire.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- [watchOS 7 ou une version ultérieure](https://support.apple.com/108926) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">- Un [iPhone 6s ou version ultérieure](https://support.apple.com/108044) avec [iOS 14 ou version ultérieure](https://support.apple.com/118575) pour la configuration initiale de la montre. En savoir plus sur la [compatibilité entre l’Apple Watch et l’iPhone](https://support.apple.com/118490) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">- Un [iPhone 6s ou version ultérieure](https://support.apple.com/108044) avec [iOS 14 ou version ultérieure](https://support.apple.com/118575) pour la configuration initiale de la montre. En savoir plus sur la [compatibilité entre l’Apple Watch et l’iPhone](https://support.apple.com/118490) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">Mettez ensuite l’Apple Watch ou demandez au membre de votre famille concerné de la mettre. Appuyez sur le bouton latéral et maintenez-le enfoncé jusqu’à ce que le logo Apple apparaisse.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">Mettez ensuite l’Apple Watch ou demandez au membre de votre famille concerné de la mettre. Appuyez sur le bouton latéral et maintenez-le enfoncé jusqu’à ce que le logo Apple apparaisse.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">[Image: Apple Watch en train de démarrer, affichant l’emplacement du bouton latéral]</code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">[Image: Apple Watch en train de démarrer, affichant l’emplacement du bouton latéral<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">## Placer l’Apple Watch à proximité de votre iPhone</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">## Placer l’Apple Watch à proximité de votre iPhone</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">Touchez Configurer pour un membre de la famille, puis Continuer sur l’écran suivant.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">Touchez Configurer pour un membre de la famille, puis Continuer sur l’écran suivant.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">[Image: Apple Watch et iPhone affichant les écrans de jumelage sur chaque appareil]</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">[Image: Apple Watch et iPhone affichant les écrans de jumelage sur chaque appareil<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">## Jumeler l’Apple Watch avec votre iPhone</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">## Jumeler l’Apple Watch avec votre iPhone</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">Tenez votre iPhone au-dessus de l’animation qui apparaît sur l’Apple Watch. Centrez le cadran dans le viseur de votre iPhone, puis attendez le message indiquant que votre Apple Watch est jumelée. Si vous ne parvenez pas à utiliser l’appareil photo, touchez Jumeler l’Apple Watch manuellement, puis suivez la procédure qui s’affiche.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">Tenez votre iPhone au-dessus de l’animation qui apparaît sur l’Apple Watch. Centrez le cadran dans le viseur de votre iPhone, puis attendez le message indiquant que votre Apple Watch est jumelée. Si vous ne parvenez pas à utiliser l’appareil photo, touchez Jumeler l’Apple Watch manuellement, puis suivez la procédure qui s’affiche.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">[Image: Apple Watch et iPhone affichant l<mark class="inline-remove">’</mark>an<mark class="inline-remove">imation</mark> de jumelage sur chaque appareil]</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">[Image: Apple Watch et iPhone affichant l<mark class="inline-add">es écr</mark>an<mark class="inline-add">s</mark> de jumelage sur chaque appareil<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">Touchez ensuite Configurer l’Apple Watch.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">Touchez ensuite Configurer l’Apple Watch.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">Ensuite, définissez un code d’accès pour sécuriser l’Apple Watch.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">Ensuite, définissez un code d’accès pour sécuriser l’Apple Watch.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">[Image: iPhone affichant l’écran de configuration du code d<mark class="inline-remove">’accès d</mark>e l’Apple Watch]</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">[Image: iPhone affichant l’écran de configuration du code de l’Apple Watch<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">## Choisir un membre de la famille</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">## Choisir un membre de la famille</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">63</span><code class="line-text">Saisissez le mot de passe du compte Apple du membre de la famille, puis touchez Suivant.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">Saisissez le mot de passe du compte Apple du membre de la famille, puis touchez Suivant.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">[Image: iPhone affichant l’écran sur lequel un utilisateur choisit un membre de la famille qui utilisera la montre]</code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">[Image: iPhone affichant l’écran sur lequel un utilisateur choisit un membre de la famille qui utilisera la montre<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">## Activer l’option Demander l’autorisation d’achat</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">## Activer l’option Demander l’autorisation d’achat</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">Activez l’option [Demander l’autorisation d’achat](https://support.apple.com/105055) si vous souhaitez approuver tout téléchargement ou achat effectué sur l’Apple Watch.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">Activez l’option [Demander l’autorisation d’achat](https://support.apple.com/105055) si vous souhaitez approuver tout téléchargement ou achat effectué sur l’Apple Watch.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">[Image: iPhone affichant l’écran sur lequel un utilisateur active la fonction Demander l’autorisation d’achat]</code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">[Image: iPhone affichant l’écran sur lequel un utilisateur active la fonction Demander l’autorisation d’achat<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">## Configurer le réseau mobile et le réseau Wi-Fi</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">## Configurer le réseau mobile et le réseau Wi-Fi</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">81</span><code class="line-text">*Certains forfaits mobiles d’entreprise ne prennent pas en charge Apple Watch pour vos enfants.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">83</span><code class="line-text">*Certains forfaits mobiles d’entreprise ne prennent pas en charge Apple Watch pour vos enfants.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">[Image: iPhone affichant l’écran de configuration de la connectivité mobile de l’Apple Watch]</code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">[Image: iPhone affichant l’écran de configuration de la connectivité mobile de l’Apple Watch<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">## Activer d’autres fonctionnalités</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">## Activer d’autres fonctionnalités</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">87</span><code class="line-text">Sur les écrans suivants, indiquez si vous souhaitez activer et configurer des fonctionnalités supplémentaires sur l’Apple Watch : service de localisation pour l’app Localiser, Siri, Apple Cash familial, Messages sur iCloud, Données Santé, Contacts d’urgence, Fiche médicale, Activité, Durée d’exposition à la lumière du jour, Suivi des parcours d’exercice et Photos.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">89</span><code class="line-text">Sur les écrans suivants, indiquez si vous souhaitez activer et configurer des fonctionnalités supplémentaires sur l’Apple Watch : service de localisation pour l’app Localiser, Siri, Apple Cash familial, Messages sur iCloud, Données Santé, Contacts d’urgence, Fiche médicale, Activité, Durée d’exposition à la lumière du jour, Suivi des parcours d’exercice et Photos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text">[Image: iPhone affichant l’écran de configuration Activité de l’Apple Watch]</code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">[Image: iPhone affichant l’écran de configuration <mark class="inline-add">de l’app </mark>Activité de l’Apple Watch<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">## Configurer les contacts partagés et le mode École</code></div>
+<div class="diff-line current unchanged"><span class="line-number">93</span><code class="line-text">## Configurer les contacts partagés et le mode École</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">Maintenant, vous êtes invité à configurer les contacts qui seront disponibles sur l’Apple Watch. Pour cela, vous devez activer Contacts dans iCloud sur votre iPhone. Ouvrez Réglages, touchez [votre nom], touchez iCloud, puis touchez Enregistré sur iCloud. Faites défiler <mark class="inline-remove">ve</mark>r<mark class="inline-remove">s le b</mark>a<mark class="inline-remove">s</mark> jusqu’à Contacts et assurez-vous qu’i<mark class="inline-remove">l</mark> est activé<mark class="inline-remove">*</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text">Maintenant, vous êtes invité à configurer les contacts qui seront disponibles sur l’Apple Watch. Pour cela, vous devez activer Contacts dans iCloud sur votre iPhone. Ouvrez Réglages, touchez [votre nom], touchez iCloud, puis touchez Enregistré sur iCloud. Faites défiler <mark class="inline-add">l’éc</mark>ra<mark class="inline-add">n</mark> jusqu’à Contacts et assurez-vous qu<mark class="inline-add">e l</mark>’<mark class="inline-add">opt</mark>i<mark class="inline-add">on</mark> est activé<mark class="inline-add">e</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">95</span><code class="line-text">L’étape suivante consiste à choisir des personnes fiables dans votre app Contacts pour les partager sur l’Apple Watch. Vous pourrez gérer ces contacts partagés plus tard et configurer des restrictions dans [Temps d’écran](https://support.apple.com/108806) sur votre iPhone.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">L’étape suivante consiste à choisir des personnes fiables dans votre app Contacts pour les partager sur l’Apple Watch. Vous pourrez gérer ces contacts partagés plus tard et configurer des restrictions dans [Temps d’écran](https://support.apple.com/108806) sur votre iPhone.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">97</span><code class="line-text">Pour terminer, configurez un code d’accès Temps d’écran pour l’Apple Watch et activez le [mode École](https://support.apple.com/105091) . Lorsque vous avez terminé, touchez OK pour commencer à utiliser l’Apple Watch.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">99</span><code class="line-text">Pour terminer, configurez un code d’accès Temps d’écran pour l’Apple Watch et activez le [mode École](https://support.apple.com/105091) . Lorsque vous avez terminé, touchez OK pour commencer à utiliser l’Apple Watch.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text"><mark class="inline-remove">* Si vous êt</mark>e<mark class="inline-remove">s en Chine continentale, vous devez également vous assurer que l’app Contacts sur votre</mark> iPhone <mark class="inline-remove">peu</mark>t <mark class="inline-remove">uti</mark>l<mark class="inline-remove">ise</mark>r de<mark class="inline-remove">s</mark> <mark class="inline-remove">d</mark>on<mark class="inline-remove">nées sans </mark>fi<mark class="inline-remove">l. Ouvrez Contacts, puis touchez l’une des options po</mark>ur<mark class="inline-remove"> autoriser l’utilis</mark>ation de<mark class="inline-remove">s</mark> d<mark class="inline-remove">onné</mark>e<mark class="inline-remove">s</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text"><mark class="inline-add">[Imag</mark>e<mark class="inline-add">:</mark> iPhone <mark class="inline-add">affichan</mark>t l<mark class="inline-add">’éc</mark>r<mark class="inline-add">an</mark> de <mark class="inline-add">c</mark>onfi<mark class="inline-add">g</mark>uration d<mark class="inline-add">u mod</mark>e<mark class="inline-add"> École</mark> de<mark class="inline-add"> l’Apple Watch</mark>.<mark class="inline-add">]</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">101</span><code class="line-text">[Image: iPhone affichant l’écran de configuration du mode École de l’Apple Watch]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">103</span><code class="line-text">## Gérer l’Apple Watch d’un membre de la famille après l’avoir configurée</code></div>
+<div class="diff-line current unchanged"><span class="line-number">103</span><code class="line-text">## Gérer l’Apple Watch d’un membre de la famille après l’avoir configurée</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">111</span><code class="line-text">- Choisissez un réglage à ajuster.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">111</span><code class="line-text">- Choisissez un réglage à ajuster.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">113</span><code class="line-text">[Image: iPhone affichant l’écran Réglages d’une Apple Watch gérée]</code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text">[Image: iPhone affichant l’écran Réglages d’une Apple Watch gérée<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">115</span><code class="line-text">## Disponibilité des fonctionnalités et des apps</code></div>
+<div class="diff-line current unchanged"><span class="line-number">115</span><code class="line-text">## Disponibilité des fonctionnalités et des apps</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 15 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">133</span><code class="line-text">- Apple Pay avec carte de crédit ou de débit dans l’app Cartes n’est pas disponible avec Apple Watch pour vos enfants.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">133</span><code class="line-text">- Apple Pay avec carte de crédit ou de débit dans l’app Cartes n’est pas disponible avec Apple Watch pour vos enfants.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">135</span><code class="line-text">Les fonctionnalités et apps suivantes ne sont pas disponibles : <mark class="inline-remove">Tr</mark>a<mark class="inline-remove">ite</mark>ments, <mark class="inline-remove">f</mark>réquence respiratoire, <mark class="inline-remove">n</mark>otifications d’arythmie, ECG, Historique de FA, Suivi de cycle, Sommeil, Température au poignet, Oxygène sanguin, Stabilité de la marche, Livres audio, News, Raccourcis, le geste Toucher deu<mark class="inline-remove">x</mark> <mark class="inline-remove">f</mark>oi<mark class="inline-remove">s</mark> et l’itinérance <mark class="inline-remove">i</mark>n<mark class="inline-remove">t</mark>er<mark class="inline-remove">nationale</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">135</span><code class="line-text">Les fonctionnalités et apps suivantes ne sont pas disponibles : <mark class="inline-add">Médic</mark>aments, <mark class="inline-add">F</mark>réquence respiratoire, <mark class="inline-add">N</mark>otifications d’arythmie, ECG, Historique de FA, Suivi de cycle, Sommeil, Température au poignet, Oxygène sanguin, Stabilité de la marche, Livres audio, News, Raccourcis, le<mark class="inline-add">s</mark> geste<mark class="inline-add">s</mark> Toucher <mark class="inline-add">et le geste </mark>d<mark class="inline-add">’effl</mark>eu<mark class="inline-add">rement</mark> <mark class="inline-add">du p</mark>oi<mark class="inline-add">gnet,</mark> et l’itinérance <mark class="inline-add">à l’étra</mark>n<mark class="inline-add">g</mark>er.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">137</span><code class="line-text">## Étapes suivantes</code></div>
+<div class="diff-line current unchanged"><span class="line-number">137</span><code class="line-text">## Étapes suivantes</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

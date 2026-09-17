@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Localiser un objet accroché à un AirTag (2e génération) à l’aide de votre Apple Watch - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Localiser un objet accroché à un AirTag (2e génération) à l’aide de votre Apple Watch - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/120373">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+41 ajouts</span>
+      <span class="badge removed">−25 suppressions</span>
+      <span class="badge">1 bloc modifié</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Localiser un objet accroché à un AirTag (2e génération) à l’aide de votre Apple Watch</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Localiser un objet accroché à un AirTag (2e génération) à l’aide de votre Apple Watch</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text"><mark class="inline-remove">Si vous possédez une Apple Watch Series 9 ou modèle ultérieur (à l’exception des modèles d’Apple Watch SE) ou une Apple Watch Ultra 2 ou modèle ultérieur avec watchOS 26.2.1 ou version ultérieure, v</mark>ous pouvez ajouter un o<mark class="inline-remove">bjet</mark> au centre de contrôle, puis <mark class="inline-remove">loca</mark>liser <mark class="inline-remove">u</mark>n<mark class="inline-remove"> AirTag (2e généra</mark>tion<mark class="inline-remove">) situé à proxim</mark>ité <mark class="inline-remove">à l’aide de la l</mark>ocalisation précise.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text"><mark class="inline-add">V</mark>ous pouvez ajouter un <mark class="inline-add">AirTag (2ᵉ générati</mark>o<mark class="inline-add">n)</mark> au centre de contrôle<mark class="inline-add"> de votre Apple Watch</mark>, puis <mark class="inline-add">uti</mark>liser <mark class="inline-add">la fo</mark>n<mark class="inline-add">c</mark>tion<mark class="inline-add">nal</mark>ité <mark class="inline-add">L</mark>ocalisation précise<mark class="inline-add"> pour le retrouver s’il se trouve à portée de Bluetooth</mark>.<mark class="inline-add"> Vous pouvez également utiliser l’app Localiser sur l’Apple Watch pour voir tous vos objets sur un plan.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">## <mark class="inline-remove">Ajou</mark>ter<mark class="inline-remove"> u</mark>n<mark class="inline-remove"> objet </mark>a<mark class="inline-remove">u cent</mark>re<mark class="inline-remove"> de contrôle</mark></code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">## <mark class="inline-add">É</mark>t<mark class="inline-add">ap</mark>e<mark class="inline-add">s p</mark>r<mark class="inline-add">élimi</mark>na<mark class="inline-add">i</mark>re<mark class="inline-add">s</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text"><mark class="inline-remove">- S</mark>ur votre Apple Watch, <mark class="inline-remove">accé</mark>dez <mark class="inline-remove">au c</mark>e<mark class="inline-remove">nt</mark>r<mark class="inline-remove">e</mark> de cont<mark class="inline-remove">rôl</mark>e<mark class="inline-remove">.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text"><mark class="inline-add">Po</mark>ur<mark class="inline-add"> utiliser la fonctionnalité Localisation précise afin de localiser un AirTag (2ᵉ génération) avec</mark> votre Apple Watch, <mark class="inline-add">vous </mark>d<mark class="inline-add">ev</mark>ez <mark class="inline-add">dispos</mark>er de <mark class="inline-add">la </mark>con<mark class="inline-add">figura</mark>t<mark class="inline-add">ion suivant</mark>e<mark class="inline-add"> :</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">- Une Apple Watch Series 9 ou un modèle ultérieur, ou une Apple Watch Ultra 2 ou un modèle ultérieur.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">- watchOS 26.2.1 ou une version ultérieure.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">## Ajouter un AirTag (2ᵉ génération) au centre de contrôle de votre Apple Watch</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- Sur votre Apple Watch, appuyez sur le bouton latéral pour ouvrir le centre de contrôle.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">- Faites défiler l’écran vers le bas et touchez Modifier.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">- Faites défiler l’écran vers le bas et touchez Modifier.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">- Touchez le bouton Ajouter .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">- Touchez le bouton Ajouter .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text"><mark class="inline-remove">[Im</mark>a<mark class="inline-remove">g</mark>e<mark class="inline-remove">:</mark> nul<mark class="inline-remove">l]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text"><mark class="inline-add">- F</mark>a<mark class="inline-add">it</mark>e<mark class="inline-add">s</mark> <mark class="inline-add">défiler l’écra</mark>n<mark class="inline-add"> vers le bas, p</mark>u<mark class="inline-add">is touchez Loca</mark>l<mark class="inline-add">iser.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Fait</mark>e<mark class="inline-remove">s</mark> <mark class="inline-remove">défiler l’écran vers </mark>le <mark class="inline-remove">b</mark>a<mark class="inline-remove">s</mark> <mark class="inline-remove">jusqu’à</mark> Localiser des<mark class="inline-remove"> objets</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text"><mark class="inline-add">[Image:</mark> <mark class="inline-add">Un</mark>e <mark class="inline-add">App</mark>le <mark class="inline-add">W</mark>a<mark class="inline-add">tch</mark> <mark class="inline-add">affichant</mark> Localiser d<mark class="inline-add">ans une liste avec Domicile et Not</mark>es.<mark class="inline-add">]</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text"><mark class="inline-remove">[Image:</mark> <mark class="inline-remove">L’écran d’</mark>u<mark class="inline-remove">ne Apple Wat</mark>ch<mark class="inline-remove"> affichant l’option</mark> Localiser <mark class="inline-remove">des objets dans </mark>un<mark class="inline-remove">e</mark> <mark class="inline-remove">l</mark>i<mark class="inline-remove">ste comp</mark>r<mark class="inline-remove">en</mark>a<mark class="inline-remove">nt é</mark>g<mark class="inline-remove">alement Boussole, Maison et Notes</mark>.<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">To</mark>uch<mark class="inline-add">ez</mark> Localiser un <mark class="inline-add">A</mark>ir<mark class="inline-add">T</mark>ag.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- Touchez <mark class="inline-remove">Loca</mark>l<mark class="inline-remove">iser des objets, puis Find </mark>AirTag <mark class="inline-remove">(L</mark>o<mark class="inline-remove">c</mark>a<mark class="inline-remove">l</mark>i<mark class="inline-remove">s</mark>er<mark class="inline-remove"> un AirTag)</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- Touchez l<mark class="inline-add">’</mark>AirTag <mark class="inline-add">que v</mark>o<mark class="inline-add">us souh</mark>ai<mark class="inline-add">tez ajout</mark>er.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Tou</mark>ch<mark class="inline-remove">ez</mark> <mark class="inline-remove">C</mark>h<mark class="inline-remove">oisir,</mark> <mark class="inline-remove">puis sé</mark>le<mark class="inline-remove">ctionnez un</mark> objet.</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text"><mark class="inline-add">[Image:</mark> <mark class="inline-add">Une Apple Wat</mark>ch <mark class="inline-add">affic</mark>h<mark class="inline-add">ant</mark> le<mark class="inline-add">s</mark> objet<mark class="inline-add">s pouvant être recherchés à l’aide de la localisation précise</mark>.<mark class="inline-add"> Clés et Sac à dos s’affichent dans la liste.]</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text"><mark class="inline-remove">[Image:</mark> <mark class="inline-remove">Une Apple Watch affichant les objets p</mark>ou<mark class="inline-remove">vant être re</mark>che<mark class="inline-remove">rchés</mark> <mark class="inline-remove">à l’aide de la localisation précise</mark>.<mark class="inline-remove"> La liste contient les objets House Keys (Clés de la maison) et Umbrella (Parapluie).]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">T</mark>ouche<mark class="inline-add">z</mark> <mark class="inline-add">OK</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">T</mark>ou<mark class="inline-remove">ch</mark>e<mark class="inline-remove">z</mark> le <mark class="inline-remove">b</mark>outon<mark class="inline-remove"> OK , puis touchez OK.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text"><mark class="inline-add">##</mark> <mark class="inline-add">Utiliser la f</mark>o<mark class="inline-add">nctionnalité Localisation précise s</mark>u<mark class="inline-add">r votr</mark>e <mark class="inline-add">App</mark>le <mark class="inline-add">Watch p</mark>ou<mark class="inline-add">r localiser un AirTag (2ᵉ généra</mark>t<mark class="inline-add">i</mark>on<mark class="inline-add">)</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text"><mark class="inline-remove">[Im</mark>a<mark class="inline-remove">g</mark>e<mark class="inline-remove">:</mark> null<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text"><mark class="inline-add">- Sur votre Apple W</mark>a<mark class="inline-add">tch, appuy</mark>e<mark class="inline-add">z</mark> <mark class="inline-add">sur le bouto</mark>n<mark class="inline-add"> latéral po</mark>u<mark class="inline-add">r ouvrir </mark>l<mark class="inline-add">e centre de contrô</mark>l<mark class="inline-add">e.</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">[Image: Une Apple Watch affichant l’objet Umbrella (Parapluie) dans la section Item (Objet), avec une icône de parapluie. Le bouton OK se trouve dans l’angle supérieur.]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">## Utiliser la localisation précise sur votre Apple Watch</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- Sur votre Apple Watch, accédez au centre de contrôle.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">- Faites défiler l’écran vers le bas et touchez le bouton Find AirTag (Localiser un AirTag).</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">- Faites défiler l’écran vers le bas et touchez le bouton Find AirTag (Localiser un AirTag).</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">[Image: <mark class="inline-remove">L’écran d’u</mark>ne Apple Watch affichant le centre de contrôle. Deux boutons <mark class="inline-remove">Find AirTag (</mark>Localiser un AirTag<mark class="inline-remove">)</mark> <mark class="inline-remove">a</mark>p<mark class="inline-remove">pa</mark>r<mark class="inline-remove">ais</mark>sent : un<mark class="inline-remove"> premier avec une icône de parapluie et un second</mark> avec une icône de clé.]</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">[Image: <mark class="inline-add">U</mark>ne Apple Watch affichant le centre de contrôle. Deux boutons Localiser un AirTag <mark class="inline-add">sont </mark>pr<mark class="inline-add">é</mark>sent<mark class="inline-add">s</mark> : un avec une icône de clé<mark class="inline-add"> et un avec une icône de sac à dos</mark>.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">- Suivez les instructions à l’écran et déplacez-vous jusqu’à ce que votre Apple Watch se connecte à votre AirTag.</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">- Suivez les instructions à l’écran et déplacez-vous jusqu’à ce que votre Apple Watch se connecte à votre AirTag.<mark class="inline-add"> Votre AirTag doit se trouver à portée de Bluetooth pour que la fonctionnalité Localisation précise fonctionne.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">- Suivez les informations de distance et de direction qui s’affichent sur votre Apple Watch. Lorsque vous <mark class="inline-remove">ête</mark>s <mark class="inline-remove">à </mark>pro<mark class="inline-remove">ximité</mark> de <mark class="inline-remove">l’</mark>AirTag, l’écran de la montre devient vert.</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- Suivez les informations de distance et de direction qui s’affichent sur votre Apple Watch. Lorsque vous <mark class="inline-add">vou</mark>s <mark class="inline-add">ap</mark>pro<mark class="inline-add">chez</mark> de <mark class="inline-add">votre </mark>AirTag, l’écran de la montre devient vert<mark class="inline-add"> et indique la distance approximative à mesure que vous vous rapprochez</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">[Image: Une Apple Watch exécutant Localisation précise pour retrouver un objet. L’écran affiche la distance « 3 ft » (3 pieds) dans un cercle blanc entouré de deux anneaux verts concentriques.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">[Image: Une Apple Watch exécutant Localisation précise pour retrouver un objet. L’écran affiche la distance « 3 ft » (3 pieds) dans un cercle blanc entouré de deux anneaux verts concentriques.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">## Si vous ne parvenez pas à utiliser la localisation précise<mark class="inline-remove"> sur votre Apple Watch</mark></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text"><mark class="inline-add">#</mark>## Si vous ne parvenez pas à utiliser la <mark class="inline-add">fonctionna</mark>l<mark class="inline-add">ité L</mark>ocalisation précise</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">Si vous ne parvenez pas à configurer ou à utiliser la localisation précise sur votre Apple Watch, vérifiez <mark class="inline-remove">qu</mark>e<mark class="inline-remove"> votre appareil répond à la</mark> con<mark class="inline-remove">f</mark>i<mark class="inline-remove">gura</mark>tion <mark class="inline-remove">minimale req</mark>uis<mark class="inline-remove">e</mark> :</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">Si vous ne parvenez pas à configurer ou à utiliser la <mark class="inline-add">fonctionna</mark>l<mark class="inline-add">ité L</mark>ocalisation précise sur votre Apple Watch, vérifiez <mark class="inline-add">l</mark>e<mark class="inline-add">s</mark> con<mark class="inline-add">d</mark>ition<mark class="inline-add">s</mark> <mark class="inline-add">s</mark>ui<mark class="inline-add">vante</mark>s :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">- <mark class="inline-remove">Vot</mark>re A<mark class="inline-remove">pple</mark> <mark class="inline-remove">W</mark>at<mark class="inline-remove">ch</mark> doi<mark class="inline-remove">t être u</mark>ne <mark class="inline-remove">Appl</mark>e <mark class="inline-remove">W</mark>a<mark class="inline-remove">t</mark>ch<mark class="inline-remove"> Se</mark>r<mark class="inline-remove">ies 9 ou modèl</mark>e <mark class="inline-remove">u</mark>lté<mark class="inline-remove">r</mark>i<mark class="inline-remove">eur (à l’excep</mark>tion <mark class="inline-remove">de</mark>s<mark class="inline-remove"> modèles d’Apple Watch SE) ou une Apple Watch Ultra 2 ou modèle ultérieur avec watchOS 26.2.1 ou version ultérieur</mark>e.</code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">- <mark class="inline-add">Assu</mark>re<mark class="inline-add">z-vous que vous disposez d’un</mark> A<mark class="inline-add">irTag</mark> <mark class="inline-add">(2ᵉ génér</mark>at<mark class="inline-add">ion). L’AirTag</mark> d<mark class="inline-add">’</mark>o<mark class="inline-add">r</mark>i<mark class="inline-add">gi</mark>ne <mark class="inline-add">n</mark>e <mark class="inline-add">prend p</mark>a<mark class="inline-add">s en </mark>ch<mark class="inline-add">a</mark>r<mark class="inline-add">g</mark>e l<mark class="inline-add">a fonctionnali</mark>té<mark class="inline-add"> Local</mark>i<mark class="inline-add">sa</mark>tion <mark class="inline-add">préci</mark>se.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">- Vous devez disposer d’une Apple Watch Series 9 ou d’un modèle ultérieur, ou d’une Apple Watch Ultra 2 ou d’un modèle ultérieur, exécutant watchOS 26.2.1 ou une version ultérieure. Les modèles d’Apple Watch SE ne prennent pas en charge la fonctionnalité Localisation précise.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">- Pour vous assurer que tous vos objets apparaissent dans Localiser, mettez à jour votre iPhone ou votre Apple Watch vers la dernière version d’iOS ou de watchOS. L’AirTag (2e génération) requiert iOS ou watchOS 26.2.1 ou version ultérieure.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">- Pour vous assurer que tous vos objets apparaissent dans Localiser, mettez à jour votre iPhone ou votre Apple Watch vers la dernière version d’iOS ou de watchOS. L’AirTag (2e génération) requiert iOS ou watchOS 26.2.1 ou version ultérieure.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">## <mark class="inline-remove">S</mark>i vo<mark class="inline-remove">tre AirTag est hor</mark>s <mark class="inline-remove">d</mark>e<mark class="inline-remove"> por</mark>t<mark class="inline-remove">ée</mark></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">## <mark class="inline-add">Ut</mark>i<mark class="inline-add">liser l’app Localiser sur l’Apple Watch pour localiser tous</mark> vos <mark class="inline-add">obj</mark>et<mark class="inline-add">s</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">Si votre AirTag e<mark class="inline-remove">s</mark>t hors de<mark class="inline-remove"> la</mark> portée Bluetooth de votre Apple Watch, <mark class="inline-remove">[</mark>utilise<mark class="inline-remove">z</mark> Localiser<mark class="inline-remove"> des objets](https://support.apple.com/guide/watch/apdc6e9ac73a)</mark> pour le localiser sur un<mark class="inline-remove">e</mark> <mark class="inline-remove">c</mark>a<mark class="inline-remove">r</mark>te<mark class="inline-remove">,</mark> <mark class="inline-remove">s</mark>ui<mark class="inline-remove">v</mark>re <mark class="inline-remove">d</mark>es i<mark class="inline-remove">ndica</mark>tion<mark class="inline-remove">s pour le retrouver</mark> ou<mark class="inline-remove"> le</mark> faire sonner<mark class="inline-remove"> par l’intermédiaire de</mark> son haut-parleur intégré. Une fois que vous êtes à portée, vous pouvez réessayer d’utiliser la localisation précise.</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">Si votre AirTag <mark class="inline-add">s</mark>e<mark class="inline-add"> </mark>t<mark class="inline-add">rouve</mark> hors de portée Bluetooth de votre Apple Watch, <mark class="inline-add">vous pouvez </mark>utilise<mark class="inline-add">r l’app</mark> Localiser pour le localiser sur un <mark class="inline-add">pl</mark>a<mark class="inline-add">n, ob</mark>te<mark class="inline-add">nir</mark> u<mark class="inline-add">n </mark>i<mark class="inline-add">tinérai</mark>re <mark class="inline-add">v</mark>e<mark class="inline-add">r</mark>s <mark class="inline-add">sa pos</mark>ition ou faire sonner son haut-parleur intégré. Une fois que vous êtes à portée, vous pouvez réessayer d’utiliser la localisation précise.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">- Sur votre Apple Watch, ouvrez l’app Localiser.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">- Touchez le bouton situé dans le coin supérieur gauche de l’écran.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">- Touchez Objets. Chaque AirTag et AirTag (2ᵉ génération) associé à votre compte Apple s’affiche sur un plan.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">- Utilisez la Digital Crown pour faire défiler vos objets.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">- Touchez le nom de l’objet pour afficher les options permettant de le retrouver. Selon l’objet et la distance à laquelle il se trouve, vous pouvez utiliser la fonctionnalité Localisation précise, le faire sonner ou obtenir un itinéraire vers sa position.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">L’app Localiser est disponible sur watchOS 27 et les versions ultérieures. Les versions antérieures de watchOS comportaient trois apps distinctes : Localiser des appareils, Localiser des objets et Localiser des personnes.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
