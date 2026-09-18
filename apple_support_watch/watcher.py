@@ -14,7 +14,7 @@ from .feeds import write_feed
 from .http import HttpClient
 from .models import Event, Source
 from .site import write_index
-from .sitemaps import fetch_articles
+from .sitemaps import canonical_article_url, fetch_articles
 from .thematic import ThematicWatcher
 
 
@@ -59,7 +59,74 @@ class Watcher:
 
     def _load_events(self, locale: str) -> list[Event]:
         events = [Event.from_dict(item) for item in load_json(self._events_path(locale), [])]
-        return [event for event in events if event.kind in {"new", "updated"}]
+        return self._deduplicate_events(
+            [event for event in events if event.kind in {"new", "updated"}]
+        )
+
+    @staticmethod
+    def _event_preference(event: Event) -> tuple[int, int]:
+        canonical = canonical_article_url(event.url)
+        return (int(event.url == canonical), event.added + event.removed)
+
+    @classmethod
+    def _deduplicate_events(cls, events: list[Event]) -> list[Event]:
+        result: list[Event] = []
+        indexes: dict[tuple[str, ...], int] = {}
+        event_ids: set[str] = set()
+        for event in events:
+            if event.event_id in event_ids:
+                continue
+            key = (event.kind, event.locale, event.article_id, event.detected_at)
+            if key not in indexes:
+                indexes[key] = len(result)
+                result.append(event)
+                event_ids.add(event.event_id)
+                continue
+            index = indexes[key]
+            existing = result[index]
+            if cls._event_preference(event) > cls._event_preference(existing):
+                event_ids.discard(existing.event_id)
+                result[index] = event
+                event_ids.add(event.event_id)
+        return result
+
+    @staticmethod
+    def _normalize_state(state: dict[str, Any]) -> bool:
+        records = state.setdefault("articles", {})
+        grouped: dict[str, list[tuple[str, dict[str, Any]]]] = {}
+        for key, original in records.items():
+            record = dict(original)
+            source_url = record.get("url") or key
+            canonical = canonical_article_url(source_url)
+            grouped.setdefault(canonical, []).append((source_url, record))
+
+        normalized: dict[str, dict[str, Any]] = {}
+        migrated = False
+        for canonical, candidates in grouped.items():
+            if len(candidates) > 1 or candidates[0][0] != canonical or canonical not in records:
+                migrated = True
+            source_url, record = max(
+                candidates,
+                key=lambda item: (
+                    item[0] == canonical,
+                    bool(item[1].get("baselined")),
+                    item[1].get("last_checked") or "",
+                ),
+            )
+            record["url"] = canonical
+            record["article_id"] = article_id_from_url(canonical)
+            if len(candidates) > 1:
+                # All variants share one snapshot path. Rebuild it from the
+                # canonical page without emitting a synthetic update.
+                record["baselined"] = False
+                record["new_pending"] = False
+                record["last_checked"] = ""
+            normalized[canonical] = record
+
+        if migrated:
+            state["articles"] = normalized
+            state["canonical_urls"] = True
+        return migrated
 
     def _save_events(self, locale: str, events: list[Event]) -> None:
         save_json(self._events_path(locale), [event.as_dict() for event in events[:1000]])
@@ -177,8 +244,13 @@ class Watcher:
         for source in sources:
             current = fetched_maps[source.locale]
             state = states[source.locale]
+            migrated = self._normalize_state(state)
             initial = not bool(state.get("initialized"))
             previous_count = int(state.get("sitemap_count", 0))
+            if migrated:
+                # The old count included several device-type variants of the
+                # same article and cannot be compared with the canonical count.
+                previous_count = 0
             if previous_count and len(current) < previous_count * 0.8:
                 raise ValueError(
                     f"Refusing unusually large sitemap shrink for {source.locale}: "

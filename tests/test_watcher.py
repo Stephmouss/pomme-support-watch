@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
-from apple_support_watch.models import Article
+from apple_support_watch.models import Article, Event
 from apple_support_watch.watcher import Watcher
 
 
@@ -93,6 +93,63 @@ class WatcherTests(unittest.TestCase):
         self.assertEqual(events, [])
         feed = (self.root / "public/feeds/en-us-updated.xml").read_text(encoding="utf-8")
         self.assertNotIn("REMOVED", feed)
+
+    def test_migrates_device_variants_and_keeps_one_canonical_event(self):
+        variant_urls = [
+            self.url,
+            f"{self.url}?device-type=iphone",
+            f"{self.url}?device-type=ipad",
+            f"{self.url}?device-type=mac",
+        ]
+        state = {
+            "initialized": "2026-01-01T00:00:00Z",
+            "sitemap_count": len(variant_urls),
+            "articles": {
+                url: {
+                    "url": url,
+                    "article_id": "123456",
+                    "active": True,
+                    "baselined": True,
+                    "new_pending": False,
+                    "hash": "old-hash",
+                    "last_checked": "2026-01-01T00:00:00Z",
+                    "sitemap_lastmod": "2026-01-01",
+                }
+                for url in variant_urls
+            },
+        }
+        (self.root / "state").mkdir()
+        (self.root / "state/en-us.json").write_text(json.dumps(state), encoding="utf-8")
+        (self.root / "events").mkdir()
+        events = [
+            Event(
+                event_id=f"event-{index}",
+                kind="updated",
+                locale="en-us",
+                article_id="123456",
+                title="Test article",
+                url=url,
+                detected_at="2026-01-02T00:00:00Z",
+                added=10 if url == self.url else 1,
+                removed=8 if url == self.url else 1,
+            ).as_dict()
+            for index, url in enumerate(variant_urls)
+        ]
+        (self.root / "events/en-us.json").write_text(json.dumps(events), encoding="utf-8")
+
+        with patch("apple_support_watch.watcher.fetch_articles", return_value={self.url: "2026-01-01"}), patch.object(
+            Watcher, "_fetch_article", return_value=make_article("Canonical version")
+        ):
+            Watcher(self.root, self.config).run()
+
+        migrated_state = json.loads((self.root / "state/en-us.json").read_text(encoding="utf-8"))
+        self.assertEqual(list(migrated_state["articles"]), [self.url])
+        self.assertTrue(migrated_state["articles"][self.url]["baselined"])
+        migrated_events = json.loads((self.root / "events/en-us.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(migrated_events), 1)
+        self.assertEqual(migrated_events[0]["url"], self.url)
+        feed = (self.root / "public/feeds/en-us-updated.xml").read_text(encoding="utf-8")
+        self.assertEqual(feed.count("[UPDATED] Test article"), 1)
 
 
 if __name__ == "__main__":
