@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Afficher ou annuler des précommandes d’apps, de films, de musique ou de livres - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Afficher ou annuler des précommandes d’apps, de films, de musique ou de livres - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/118414">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+14 ajouts</span>
+      <span class="badge removed">−18 suppressions</span>
+      <span class="badge">6 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">Gérez les précommandes de l’App Store et d’autres services multimédias Apple.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">Gérez les précommandes de l’App Store et d’autres services multimédias Apple.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">## Co<mark class="inline-remove">mme</mark>nt<mark class="inline-remove"> affich</mark>er ou annuler les précommandes</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">## Con<mark class="inline-add">sul</mark>ter ou annuler les précommandes</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">Vous pouvez [consulter une liste des articles que vous avez précommandés](https://apple.co/36VNN62) ou annuler une précommande.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">Vous pouvez [consulter une liste des articles que vous avez précommandés](https://apple.co/36VNN62) ou annuler une précommande.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">### Afficher ou annuler une précommande sur votre iPhone ou votre iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">### Afficher ou annuler une précommande sur votre iPhone ou votre iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">- <mark class="inline-remove">Ouvrez</mark> l’<mark class="inline-remove">app </mark>App Store.</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- <mark class="inline-add">Dans</mark> l’App Store<mark class="inline-add">, touchez votre photo ou vos initiales</mark>.<mark class="inline-add"> Ou touchez le bouton Mon compte et connectez-vous à votre compte Apple.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- <mark class="inline-remove">T</mark>ouchez <mark class="inline-remove">l</mark>e <mark class="inline-remove">b</mark>outon <mark class="inline-remove">d</mark>e compte <mark class="inline-remove">ou votr</mark>e<mark class="inline-remove"> photo en haut de l’écran</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- <mark class="inline-add">Sur la page qui s’affiche, t</mark>ouchez <mark class="inline-add">votr</mark>e <mark class="inline-add">nom. V</mark>ou<mark class="inline-add">s devrez peu</mark>t<mark class="inline-add">-être vous c</mark>on<mark class="inline-add">necter</mark> <mark class="inline-add">à votr</mark>e compte <mark class="inline-add">Appl</mark>e.</code></div>
+<div class="diff-line previous removed"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">[Image: Aucun texte de remplacement pour l’image]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- Touchez votre nom. Vous devrez peut-être vous connecter à votre compte Apple.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">- Touchez Précommandes pour les précommandes ou touchez Jeux Arcade en précommande pour les jeux Arcade. Si vous ne voyez pas d’option Précommandes ou Jeux Arcade en précommande, vous n’avez aucune précommande.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">- Touchez Précommandes pour les précommandes ou touchez Jeux Arcade en précommande pour les jeux Arcade. Si vous ne voyez pas d’option Précommandes ou Jeux Arcade en précommande, vous n’avez aucune précommande.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">### Afficher ou annuler une précommande sur votre Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">### Afficher ou annuler une précommande sur votre Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">- <mark class="inline-remove">Ouvrez</mark> l’<mark class="inline-remove">app </mark>App Store.</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- <mark class="inline-add">Dans</mark> l’App Store<mark class="inline-add">, cliquez sur votre nom en bas de la barre latérale</mark>.<mark class="inline-add"> Ou cliquez sur le bouton Connexion et connectez-vous à votre compte Apple.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">- <mark class="inline-remove">To</mark>uchez <mark class="inline-remove">le bo</mark>u<mark class="inline-remove">ton de connexion ou</mark> votre nom au <mark class="inline-remove">b</mark>a<mark class="inline-remove">s</mark> de <mark class="inline-remove">la</mark> <mark class="inline-remove">ba</mark>rre <mark class="inline-remove">la</mark>t<mark class="inline-remove">éra</mark>le.</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- <mark class="inline-add">S</mark>u<mark class="inline-add">r la page qui s’affi</mark>che<mark class="inline-add">, clique</mark>z <mark class="inline-add">s</mark>u<mark class="inline-add">r</mark> votre nom<mark class="inline-add">.</mark> <mark class="inline-add">Il vous ser</mark>a<mark class="inline-add"> pe</mark>u<mark class="inline-add">t-être</mark> <mark class="inline-add">dem</mark>a<mark class="inline-add">ndé</mark> de <mark class="inline-add">vous</mark> <mark class="inline-add">connecte</mark>r<mark class="inline-add"> à vot</mark>re <mark class="inline-add">comp</mark>t<mark class="inline-add">e App</mark>le.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text"><mark class="inline-remove">[Im</mark>age<mark class="inline-remove">:</mark> Aucun<mark class="inline-remove"> text</mark>e de<mark class="inline-remove"> remplacement pour l’image]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text"><mark class="inline-add">- Faites défiler la p</mark>age<mark class="inline-add"> jusqu’à la section Précommandes. Si vous ne voyez pas d’option Précommandes ou Jeux</mark> A<mark class="inline-add">rcade en précommande, vous n’avez a</mark>ucune <mark class="inline-add">précomman</mark>de<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- <mark class="inline-remove">Dans </mark>l<mark class="inline-remove">a part</mark>ie su<mark class="inline-remove">p</mark>é<mark class="inline-remove">rieure </mark>de <mark class="inline-remove">la fenêtre,</mark> cliquez sur <mark class="inline-remove">R</mark>é<mark class="inline-remove">glages du </mark>com<mark class="inline-remove">pte. Il vous sera peut-être de</mark>mand<mark class="inline-remove">é</mark> de<mark class="inline-remove"> vous connecter à votre compte Apple</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- <mark class="inline-add">C</mark>li<mark class="inline-add">qu</mark>e<mark class="inline-add">z</mark> su<mark class="inline-add">r Pr</mark>é<mark class="inline-add">comman</mark>de<mark class="inline-add">s</mark> <mark class="inline-add">ou</mark> cliquez sur <mark class="inline-add">Jeux Arcade en pr</mark>écommand<mark class="inline-add">e</mark> <mark class="inline-add">pour les jeux Arca</mark>de.</code></div>
+<div class="diff-line previous removed"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- Sur la page qui s’affiche, faites défiler l’écran jusqu’à ce que vous voyiez les précommandes.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">- Cliquez sur Précommandes ou cliquez sur Jeux Arcade en précommande pour les jeux Arcade. Si vous ne voyez pas d’option Précommandes ou Jeux Arcade en précommande, vous n’avez aucune précommande.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">[Image: App Store sur Mac affichant les précommandes dans les réglages du compte.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">[Image: App Store sur Mac affichant les précommandes dans les réglages du compte.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">- Ouvrez l’app Musique ou l’app Apple TV.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">- Ouvrez l’app Musique ou l’app Apple TV.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">- Cliquez sur votre nom dans la barre latérale<mark class="inline-remove">,</mark> <mark class="inline-remove">p</mark>u<mark class="inline-remove">is</mark> cliquez sur <mark class="inline-remove">V</mark>oi<mark class="inline-remove">r m</mark>on <mark class="inline-remove">comp</mark>t<mark class="inline-remove">e. Vous devrez peut-être vous</mark> connecte<mark class="inline-remove">r</mark> à votre compte Apple.</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">- Cliquez sur votre nom dans la barre latérale<mark class="inline-add">.</mark> <mark class="inline-add">O</mark>u cliquez sur <mark class="inline-add">C</mark>o<mark class="inline-add">nnex</mark>ion <mark class="inline-add">e</mark>t connecte<mark class="inline-add">z-vous</mark> à votre compte Apple.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- Cliquez sur Afficher mon compte. Vous devrez peut-être vous connecter à votre compte Apple.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">- Sur la page qui s’affiche, faites défiler l’écran jusqu’à ce que vous voyiez les précommandes.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">- Sur la page qui s’affiche, faites défiler l’écran jusqu’à ce que vous voyiez les précommandes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">Lorsqu’un article précommandé sera disponible, vous serez facturé via votre mode de paiement et vous recevrez un e-mail. Si vous avez activé les téléchargements automatiques, l’article se télécharge automatiquement sur l’appareil que vous avez utilisé pour l’acheter.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">Lorsqu’un article précommandé sera disponible, vous serez facturé via votre mode de paiement et vous recevrez un e-mail. Si vous avez activé les téléchargements automatiques, l’article se télécharge automatiquement sur l’appareil que vous avez utilisé pour l’acheter.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">Si un article précommandé<mark class="inline-remove"> ne s’affiche pas</mark> sur votre appareil après sa sortie<mark class="inline-remove">, recherchez l’ [app](https://support.apple.com/fr-fr/102417) , le [morceau](https://support.apple.com/fr-fr/118294) , le [film](https://support.apple.com/fr-fr/119602) ou le [livre](https://support.apple.com/fr-fr/118416) en question dans vos achats et procédez à son téléchargement. Si cet article est une app ou un jeu, vous pouvez également le rechercher dans l’App Store, puis toucher ou cliquer sur Obtenir.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text"><mark class="inline-add">### </mark>Si<mark class="inline-add"> vous ne voyez pas</mark> un article précommandé sur votre appareil après sa sortie</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">Recherchez [l’app](https://support.apple.com/fr-fr/102417) , [la musique](https://support.apple.com/fr-fr/118294) , [le film](https://support.apple.com/fr-fr/119602) ou [le livre](https://support.apple.com/fr-fr/118416) dans vos achats et téléchargez-le. Si cet article est une app ou un jeu, vous pouvez également le rechercher dans l’App Store, puis toucher ou cliquer sur Obtenir.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">### Si un achat ne peut pas être finalisé</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">### Si un achat ne peut pas être finalisé</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">71</span><code class="line-text">Si vous précommandez un album et que certains morceaux sortent avant l’album, vous pouvez être facturé pour chaque morceau à mesure qu’ils sont disponibles. Lorsque l’album sortira, le prix restant de l’album vous sera facturé.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">Si vous précommandez un album et que certains morceaux sortent avant l’album, vous pouvez être facturé pour chaque morceau à mesure qu’ils sont disponibles. Lorsque l’album sortira, le prix restant de l’album vous sera facturé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text">Tout contenu multimédia numérique que vous achetez auprès d’Apple peut être téléchargé définitivement sur un iPhone, iPad, Mac ou PC Windows. <mark class="inline-remove">[</mark>En savoir plus](https://support.apple.com/fr-fr/121877) .</code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">Tout contenu multimédia numérique que vous achetez auprès d’Apple peut être téléchargé définitivement sur un iPhone, iPad, Mac ou PC Windows. En savoir plus<mark class="inline-add"> [sur le téléchargement de médias numériques achetés auprès d’Apple</mark>](https://support.apple.com/fr-fr/121877) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">## Besoin d’aide supplémentaire ?</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">## Besoin d’aide supplémentaire ?</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

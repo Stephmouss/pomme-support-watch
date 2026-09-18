@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Utilisation de gestes avec l’Apple Vision Pro - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Utilisation de gestes avec l’Apple Vision Pro - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/117741">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+17 ajouts</span>
+      <span class="badge removed">−3 suppressions</span>
+      <span class="badge">2 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 21 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">Ce geste équivaut à toucher un élément sur votre iPhone ou à cliquer sur un élément sur votre Mac. Il permet de sélectionner une app, d’ouvrir un lien dans Safari, de sélectionner et d’afficher des notifications, et bien plus encore.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">Ce geste équivaut à toucher un élément sur votre iPhone ou à cliquer sur un élément sur votre Mac. Il permet de sélectionner une app, d’ouvrir un lien dans Safari, de sélectionner et d’afficher des notifications, et bien plus encore.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">[Image: alt]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">## Pincez et faites glisser des éléments pour les déplacer</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">## Pincez et faites glisser des éléments pour les déplacer</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">Pour déplacer des objets dans l’Apple Vision Pro, portez votre regard dessus, puis effectuez un mouvement de pince avec le pouce et l’index. Maintenez ce geste tandis que vous déplacez l’élément, puis relâchez à l’endroit où vous souhaitez le déposer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">Pour déplacer des objets dans l’Apple Vision Pro, portez votre regard dessus, puis effectuez un mouvement de pince avec le pouce et l’index. Maintenez ce geste tandis que vous déplacez l’élément, puis relâchez à l’endroit où vous souhaitez le déposer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">Utilisez-le pour, par exemple, [organiser les apps](https://support.apple.com/118515) à l’aide de leur barre de fenêtre, redimensionner une forme dans Freeform ou faire glisser une image dans un iMessage depuis Photos. Vous pouvez également pincer et glisser pour faire défiler lentement et avec précision un contenu.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">Utilisez-le pour, par exemple, [organiser les apps](https://support.apple.com/118515) à l’aide de leur barre de fenêtre, redimensionner une forme dans Freeform ou faire glisser une image dans un iMessage depuis Photos. Vous pouvez également pincer et glisser pour faire défiler lentement et avec précision un contenu.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">[Image: alt]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">## Pincez et faites glisser votre poignet pour faire défiler les éléments</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">## Pincez et faites glisser votre poignet pour faire défiler les éléments</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">Utilisez ce geste pour, par exemple, parcourir horizontalement vos apps dans la vue d’accueil, faire défiler une longue page web ou naviguer dans Photos.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">Utilisez ce geste pour, par exemple, parcourir horizontalement vos apps dans la vue d’accueil, faire défiler une longue page web ou naviguer dans Photos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">[Image: alt]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">## Regardez votre paume et touchez pour ouvrir la vue d’accueil</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">## Regardez votre paume et touchez pour ouvrir la vue d’accueil</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">Placez votre main devant vous, paume vers <mark class="inline-remove">l’intérie</mark>u<mark class="inline-remove">r</mark>. Lorsque le bouton apparaît, touchez pour ouvrir la vue d’accueil.</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">Placez votre main devant vous, <mark class="inline-add">avec la </mark>paum<mark class="inline-add">e tourné</mark>e vers <mark class="inline-add">vo</mark>u<mark class="inline-add">s</mark>. Lorsque le bouton apparaît, touchez pour ouvrir la vue d’accueil.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">[Image: alt]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">## Regardez votre paume, puis retournez votre main pour voir le centre de contrôle</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">## Regardez votre paume, puis retournez votre main pour voir le centre de contrôle</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">Placez votre main devant vous, paume vers <mark class="inline-remove">l’intérie</mark>u<mark class="inline-remove">r</mark>. Lorsque le bouton apparaît, retournez votre main de sorte que <mark class="inline-remove">votre</mark> paume soit tournée <mark class="inline-remove">vers</mark> l’e<mark class="inline-remove">xtérie</mark>u<mark class="inline-remove">r</mark> pour afficher une barre d’état <mark class="inline-remove">s</mark>i<mark class="inline-remove">mple </mark>a<mark class="inline-remove">vec</mark> l’heure et le niveau de la batterie. Touchez à nouveau pour ouvrir le centre de contrôle, ce qui vous permet d’accéder rapidement à des fonctionnalités fréquemment utilisées telles que les notifications, l’écran virtuel du Mac, et plus encore.</code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">Placez votre main devant vous, <mark class="inline-add">avec la </mark>paum<mark class="inline-add">e tourné</mark>e vers <mark class="inline-add">vo</mark>u<mark class="inline-add">s</mark>. Lorsque le bouton apparaît, retournez votre main de sorte que <mark class="inline-add">la</mark> paume soit tournée <mark class="inline-add">à</mark> l’<mark class="inline-add">opposé d</mark>e<mark class="inline-add"> vo</mark>u<mark class="inline-add">s</mark> pour afficher une <mark class="inline-add">simple </mark>barre d’état i<mark class="inline-add">ndiqu</mark>a<mark class="inline-add">nt</mark> l’heur<mark class="inline-add">e actuell</mark>e et le niveau de la batterie. Touchez à nouveau pour ouvrir le centre de contrôle, ce qui vous permet d’accéder rapidement à des fonctionnalités fréquemment utilisées telles que les notifications, l’écran virtuel du Mac, et plus encore.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">Tout en regardant la barre d’état, pincez vos doigts sans les relâcher, et déplacez-les d’un côté à l’autre pour régler le volume.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">Tout en regardant la barre d’état, pincez vos doigts sans les relâcher, et déplacez-les d’un côté à l’autre pour régler le volume.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">[Image: alt]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">Pour ouvrir le centre de contrôle dans une version antérieure de visionOS, regardez vers le haut, puis touchez le bouton du centre de contrôle qui apparaît. Si vous utilisez visionOS 2 ou version ultérieure, et que vous souhaitez ouvrir le centre de contrôle avec un geste ou en regardant vers le haut, accédez à Réglages, Accessibilité, Interaction, puis activez le réglage Regardez vers le haut pour accéder au centre de contrôle.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">Pour ouvrir le centre de contrôle dans une version antérieure de visionOS, regardez vers le haut, puis touchez le bouton du centre de contrôle qui apparaît. Si vous utilisez visionOS 2 ou version ultérieure, et que vous souhaitez ouvrir le centre de contrôle avec un geste ou en regardant vers le haut, accédez à Réglages, Accessibilité, Interaction, puis activez le réglage Regardez vers le haut pour accéder au centre de contrôle.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text"><mark class="inline-remove">[I</mark>ma<mark class="inline-remove">g</mark>e<mark class="inline-remove">:</mark> <mark class="inline-remove">null]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text"><mark class="inline-add">## Regardez votre pau</mark>m<mark class="inline-add">e, puis pincez pour </mark>a<mark class="inline-add">ctiv</mark>e<mark class="inline-add">r</mark> <mark class="inline-add">Siri.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">Placez votre main devant vous, avec la paume tournée vers vous. Lorsque le bouton apparaît, touchez votre pouce et votre index et maintenez-les en contact pour activer Siri AI.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">## Pincez sans relâcher pour voir plus d’options</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">## Pincez sans relâcher pour voir plus d’options</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">Effectuez un mouvement de pince de façon prolongée sur un élément dans l’Apple Vision Pro pour afficher plus d’options. Portez votre regard sur un élément, pincez et maintenez ce geste. Une fois que vous voyez plus d’options, relâchez, puis touchez pour sélectionner l’option de votre choix.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">Effectuez un mouvement de pince de façon prolongée sur un élément dans l’Apple Vision Pro pour afficher plus d’options. Portez votre regard sur un élément, pincez et maintenez ce geste. Une fois que vous voyez plus d’options, relâchez, puis touchez pour sélectionner l’option de votre choix.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">Utilisez ce geste pour afficher les aperçus des liens dans Safari, masquer d’autres apps en pinçant de façon prolongée le bouton de fermeture d’une app, etc.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">Utilisez ce geste pour afficher les aperçus des liens dans Safari, masquer d’autres apps en pinçant de façon prolongée le bouton de fermeture d’une app, etc.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">[Image: alt]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">## Toucher</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">## Toucher</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

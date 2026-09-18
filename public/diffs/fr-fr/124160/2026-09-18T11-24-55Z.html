@@ -1,0 +1,515 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Comment utiliser les albums partagés dans Photos sur votre Mac - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Comment utiliser les albums partagés dans Photos sur votre Mac - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/124160">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+128 ajouts</span>
+      <span class="badge removed">−30 suppressions</span>
+      <span class="badge">7 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Comment utiliser les albums partagés dans Photos sur votre Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Comment utiliser les albums partagés dans Photos sur votre Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Grâce aux albums partagés, vous pouvez partager des photos et des vidéos avec les personnes de votre choix, et les autoriser à ajouter leurs propres photos, vidéos et commentaires. Découvrez comment activer les albums partagés, gérer un album partagé et enregistrer <mark class="inline-remove">d</mark>es photos<mark class="inline-remove"> à partir</mark> d’un album partagé sur votre Mac.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Grâce aux albums partagés<mark class="inline-add"> iCloud</mark>, vous pouvez partager des photos et des vidéos<mark class="inline-add"> uniquement</mark> avec les personnes de votre choix, et les autoriser à ajouter leurs propres photos, vidéos et commentaires. Découvrez comment activer les albums partagés<mark class="inline-add"> iCloud</mark>, gérer un album partagé et enregistrer <mark class="inline-add">l</mark>es photos d’un album partagé sur votre Mac.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">- [Activer les albums partagés](https://support.apple.com/fr-fr/124160#turn-on)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">- [Activer les albums partagés](https://support.apple.com/fr-fr/124160#turn-on)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 2 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">- [Supprimer un album partagé](https://support.apple.com/fr-fr/124160#delete-album-macos)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">- [Supprimer un album partagé](https://support.apple.com/fr-fr/124160#delete-album-macos)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">- [Inviter d’autres personnes](https://support.apple.com/fr-fr/124160#invite-macos)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">- [Inviter d’autres personnes](https://support.apple.com/fr-fr/124160#invite-macos)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- [Rejoindre un album partagé](https://support.apple.com/fr-fr/124160#join)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">- [Supprimer un abonné](https://support.apple.com/fr-fr/124160#remove-macos)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">- [Supprimer un abonné](https://support.apple.com/fr-fr/124160#remove-macos)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">- Sur votre Mac, ouvrez l’app Photos.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">- Sur votre Mac, ouvrez l’app Photos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">- Dans la barre des menus<mark class="inline-remove"> située</mark> en haut de l’écran, choisissez Photos <mark class="inline-remove">&gt;</mark> Réglages. Sous macOS Monterey ou version antérieure, choisissez Photos <mark class="inline-remove">&gt;</mark> Préférences.</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- Dans la barre des menus en haut de l’écran, choisissez Photos<mark class="inline-add">,</mark> <mark class="inline-add">puis</mark> Réglages. Sous macOS Monterey ou version antérieure, choisissez Photos<mark class="inline-add">,</mark> <mark class="inline-add">puis</mark> Préférences.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">- Cliquez sur l’onglet iCloud, puis sélectionnez Albums partagés.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">- Cliquez sur l’onglet iCloud, puis sélectionnez Albums partagés.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- Sous macOS 27 ou version ultérieure, [assurez-vous que la fonctionnalité Photos iCloud est activée](https://support.apple.com/fr-fr/108782) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">[Découvrez comment configurer et utiliser les albums partagés sur votre iPhone ou iPad](https://support.apple.com/fr-fr/108314) et [vos autres appareils](https://support.apple.com/guide/icloud/mma821a5bd93/) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">[Découvrez comment configurer et utiliser les albums partagés sur votre iPhone ou iPad](https://support.apple.com/fr-fr/108314) et [vos autres appareils](https://support.apple.com/guide/icloud/mma821a5bd93/) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">## Créer un album partagé</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">## Créer un album partagé</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text"><mark class="inline-remove">- Dans l</mark>a <mark class="inline-remove">se</mark>ction<mark class="inline-remove"> Partage de la barre latér</mark>al<mark class="inline-remove">e, cl</mark>i<mark class="inline-remove">quez sur le bouton Ajouter à cô</mark>té <mark class="inline-remove">d’</mark>Albums partagés.</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text"><mark class="inline-add">L</mark>a <mark class="inline-add">fon</mark>ction<mark class="inline-add">n</mark>alité Albums partagés<mark class="inline-add"> vous permet de créer des albums et de partager des photos et des vidéos avec d’autres personnes</mark>.<mark class="inline-add"> Celles-ci peuvent à leur tour ajouter leurs propres photos, vidéos et commentaires qui seront visibles par tout le groupe.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text"><mark class="inline-remove">[I</mark>mage<mark class="inline-remove">:</mark> null<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text"><mark class="inline-add">À partir d’iOS 27, d’iPadOS 27 et de </mark>m<mark class="inline-add">acOS 27, les albums partagés prennent en charge le part</mark>age<mark class="inline-add"> de contenus en haute résolution, de</mark> n<mark class="inline-add">o</mark>u<mark class="inline-add">veaux filtres et options de tri, des réactions Emoji, ainsi que de nouve</mark>ll<mark class="inline-add">es façons d’inviter d’autres personnes à collaborer sur un album. Vos proches et les membres de votre famille pourront participer et ajouter leurs propres photos sur le Web, même sans compte Apple ni appareil Apple.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Nommez l’album partagé et saisissez les adresses e-mail des personnes avec lesquelles v</mark>ous <mark class="inline-remove">s</mark>ou<mark class="inline-remove">haitez</mark> <mark class="inline-remove">partag</mark>er<mark class="inline-remove"> l’album. Cl</mark>i<mark class="inline-remove">quez sur le bout</mark>on <mark class="inline-remove">Ajo</mark>ute<mark class="inline-remove">r po</mark>ur<mark class="inline-remove"> sél</mark>e<mark class="inline-remove">ctionner des contacts à partir d’iCloud.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">S</mark>ous <mark class="inline-add">macOS 27 </mark>ou <mark class="inline-add">v</mark>er<mark class="inline-add">s</mark>ion u<mark class="inline-add">l</mark>t<mark class="inline-add">éri</mark>eure</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text"><mark class="inline-remove">[Im</mark>age<mark class="inline-remove">:</mark> nul<mark class="inline-remove">l]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text"><mark class="inline-add">- Dans la section Part</mark>age <mark class="inline-add">de la barre latérale, cliquez sur le bouto</mark>n<mark class="inline-add"> Ajo</mark>u<mark class="inline-add">ter situé à côté d’A</mark>l<mark class="inline-add">bums partagés.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">- Donnez un nom à l’album partagé.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">[Image: Réglages permettant de créer un album partagé dans l’app Photos. Depuis cet écran, vous pouvez saisir un titre dans le champ de texte disponible, configurer les accès, activer l’option Demandes d’accès et utiliser le bouton Créer en bas à droite.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- Choisissez d’inviter ou d’approuver des personnes, ou de partager l’album via un lien.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">- Pour [créer un album partagé temporaire](https://support.apple.com/fr-fr/127875) , activez l’option Rendre l’album temporaire.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">- Cliquez sur Créer.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">### Sous macOS 26 ou version antérieure</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">- Dans la section Partage de la barre latérale, cliquez sur le bouton Ajouter situé à côté d’Albums partagés.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">- Nommez l’album partagé et saisissez les adresses e-mail des personnes avec lesquelles vous souhaitez partager l’album. Cliquez sur le bouton Ajouter pour sélectionner des contacts depuis iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">- Cliquez sur Créer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">- Cliquez sur Créer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">## Supprimer un album partagé</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">## Supprimer un album partagé</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">Lorsque vous supprimez un album partagé, celui-ci est automatiquement supprimé sur tous vos appareils et sur ceux des personnes abonnées. Si vous avez activé l’option Site web public, l’album partagé est également supprimé du Web. La suppression d’un album partagé supprime définitivement toutes les photos qu’il contient. Avant de continuer, assurez-vous d’ [enregistrer toutes les photos que vous souhaitez conserver](https://support.apple.com/fr-fr/124160#save-macos) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">### Sous macOS 27 ou version ultérieure</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">- Ouvrez l’album partagé.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">77</span><code class="line-text">- Ouvrez l’album partagé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">- Cliquez sur le bouton <mark class="inline-remove">P</mark>er<mark class="inline-remove">sonnes dans</mark> la <mark class="inline-remove">b</mark>ar<mark class="inline-remove">re</mark> <mark class="inline-remove">d’outils</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">- Cliquez sur le bouton <mark class="inline-add">Gér</mark>er l<mark class="inline-add">’</mark>a<mark class="inline-add">lbum</mark> <mark class="inline-add">p</mark>ar<mark class="inline-add">tagé</mark> .</code></div>
+<div class="diff-line previous removed"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">- Cliquez sur Supprimer l’album partagé.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">- Cliquez sur Supprimer l’album partagé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text"><mark class="inline-remove">Lors</mark>que<mark class="inline-remove"> vous</mark> supprimez un album part<mark class="inline-remove">agé,</mark> ce<mark class="inline-remove">lu</mark>i<mark class="inline-remove">-ci</mark> e<mark class="inline-remove">s</mark>t au<mark class="inline-remove">to</mark>ma<mark class="inline-remove">tiquement</mark> supprimé <mark class="inline-remove">s</mark>u<mark class="inline-remove">r</mark> <mark class="inline-remove">t</mark>ou<mark class="inline-remove">s vos appareils et sur ceux des personnes abonnées. Si vous avez activé l’option Site web public, l’album partagé est également supprimé du Web. La suppression d’un album partagé supprime définitivement toutes les photos qu’il contient. Avan</mark>t de <mark class="inline-remove">c</mark>o<mark class="inline-remove">ntinuer, ass</mark>ur<mark class="inline-remove">ez-vou</mark>s<mark class="inline-remove"> d’ [enregistrer toutes les photos que vous souhaitez conserver](https://support</mark>.<mark class="inline-remove">apple.com/fr-fr/124160#save-macos) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text"><mark class="inline-add">- Cli</mark>que<mark class="inline-add">z</mark> s<mark class="inline-add">ur S</mark>upprime<mark class="inline-add">r pour confirmer votre choix. Sinon, vous pouve</mark>z <mark class="inline-add">to</mark>u<mark class="inline-add">cher Re</mark>n<mark class="inline-add">dre</mark> <mark class="inline-add">l’</mark>album <mark class="inline-add">tem</mark>p<mark class="inline-add">or</mark>a<mark class="inline-add">i</mark>r<mark class="inline-add">e pour ac</mark>t<mark class="inline-add">iver</mark> ce<mark class="inline-add">tte opt</mark>i<mark class="inline-add">on</mark> et <mark class="inline-add">l’</mark>a<mark class="inline-add">lb</mark>um<mark class="inline-add"> ser</mark>a supprimé <mark class="inline-add">a</mark>u <mark class="inline-add">b</mark>out de <mark class="inline-add">30 j</mark>ours.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">## <mark class="inline-remove">Inviter d’a</mark>u<mark class="inline-remove">tre</mark>s <mark class="inline-remove">p</mark>ersonne<mark class="inline-remove">s</mark></code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text"><mark class="inline-add">#</mark>## <mark class="inline-add">So</mark>us <mark class="inline-add">macOS 26 ou v</mark>ers<mark class="inline-add">i</mark>on<mark class="inline-add"> a</mark>n<mark class="inline-add">téri</mark>e<mark class="inline-add">ure</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">- Ouvrez l’album partagé.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">- Ouvrez l’album partagé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">- Cliquez sur le bouton Personnes dans la barre d’outils.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">89</span><code class="line-text">- Cliquez sur le bouton Personnes dans la barre d’outils.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text"><mark class="inline-remove">[I</mark>mag<mark class="inline-remove">e: null]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text"><mark class="inline-add">- Cliquez sur Suppri</mark>m<mark class="inline-add">er l’album part</mark>ag<mark class="inline-add">é.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text"><mark class="inline-remove">- Dans le champ</mark> Inviter des personnes<mark class="inline-remove">, cliquez sur le bouton Ajouter pour ouvrir le panneau Contacts, puis choisissez les personnes à inviter parmi vos contacts.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text"><mark class="inline-add">##</mark> Inviter d<mark class="inline-add">’autr</mark>es personnes</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text"><mark class="inline-remove">[I</mark>mag<mark class="inline-remove">e: null]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text"><mark class="inline-add">Vous pouvez inviter d’autres personnes à consulter ou à ajouter du contenu à votre albu</mark>m<mark class="inline-add"> part</mark>ag<mark class="inline-add">é.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text"><mark class="inline-remove">V</mark>ous <mark class="inline-remove">p</mark>ou<mark class="inline-remove">vez également partager des albums avec des amis et des membres de</mark> v<mark class="inline-remove">otre famille qui n’utilisent pas iCloud. Il vous suffit d’ouvrir un album partagé que vous avez créé, de cliquer sur le bouton P</mark>ers<mark class="inline-remove">onnes dans la barre d’outils, puis d’activer l’opt</mark>ion <mark class="inline-remove">S</mark>i<mark class="inline-remove">te web public. Vos photos sont alors publiées sur un site web auquel tout le monde peut accéder dans un navigat</mark>eur<mark class="inline-remove"> Int</mark>e<mark class="inline-remove">rnet récent.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">97</span><code class="line-text"><mark class="inline-add">### S</mark>ous <mark class="inline-add">macOS 27 </mark>ou version <mark class="inline-add">ultér</mark>ieure</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text"><mark class="inline-remove">[I</mark>mag<mark class="inline-remove">e: null]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text"><mark class="inline-add">- Ouvrez l’albu</mark>m<mark class="inline-add"> part</mark>ag<mark class="inline-add">é.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">S</mark>u<mark class="inline-remove">pp</mark>r<mark class="inline-remove">im</mark>er u<mark class="inline-remove">n</mark> a<mark class="inline-remove">bonn</mark>é</code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">Cliq</mark>u<mark class="inline-add">ez su</mark>r<mark class="inline-add"> le bouton Gér</mark>er <mark class="inline-add">l’alb</mark>u<mark class="inline-add">m</mark> <mark class="inline-add">p</mark>a<mark class="inline-add">rtag</mark>é<mark class="inline-add"> .</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">103</span><code class="line-text">[Image: Fenêtre des réglages de la fonctionnalité Gérer l’album partagé affichant un album partagé avec les noms des membres du groupe ainsi que le bouton Inviter des membres pour en ajouter d’autres.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">105</span><code class="line-text">- Cliquez sur Inviter des membres. Choisissez une app pour partager le lien vers l’album partagé. Vous pouvez également cliquer sur Copier le lien vers l’album pour copier le lien, que vous pourrez ensuite envoyer ou publier.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">107</span><code class="line-text">#### Accepter ou refuser des demandes d’accès</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">109</span><code class="line-text">Lorsque vous activez Demandes d’accès dans les options de partage d’un album, d’autres personnes disposant du lien vers l’album partagé peuvent vous demander l’autorisation d’y accéder. Pour accepter ou refuser une demande d’accès, procédez comme suit :</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text">- Dans la section Partage de la barre latérale, cliquez sur Activité.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text">- Cliquez sur Autoriser ou Refuser.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">115</span><code class="line-text">### Sous macOS 26 ou version antérieure</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">81</span><code class="line-text">- Ouvrez l’album partagé.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">117</span><code class="line-text">- Ouvrez l’album partagé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">- Cliquez sur le bouton Personnes dans la barre d’outils.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">119</span><code class="line-text">- Cliquez sur le bouton Personnes dans la barre d’outils.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">85</span><code class="line-text"><mark class="inline-remove">[</mark>Ima<mark class="inline-remove">ge: null]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">121</span><code class="line-text"><mark class="inline-add">- Dans le champ </mark>I<mark class="inline-add">nviter des personnes, cliquez sur le bouton Ajouter pour accéder au volet Contacts, puis choisissez les personnes à inviter par</mark>m<mark class="inline-add">i vos cont</mark>a<mark class="inline-add">cts.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">123</span><code class="line-text">Pour partager des albums avec des proches et des membres de votre famille qui n’utilisent pas iCloud, procédez comme suit :</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">125</span><code class="line-text">- Ouvrez un album partagé que vous avez créé.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">127</span><code class="line-text">- Cliquez sur le bouton Personnes dans la barre d’outils.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">129</span><code class="line-text">- Activez Site web public. Vos photos sont alors publiées sur un site web auquel tout le monde peut accéder dans un navigateur Internet récent.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">131</span><code class="line-text">## Rejoindre un album partagé</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">133</span><code class="line-text">Vous pouvez rejoindre un album partagé créé par une autre personne sous macOS 27 ou version ultérieure en ouvrant le lien vers l’album sur un appareil Apple ou autre. Les membres dont les appareils ne sont pas dotés de la dernière version logicielle devront mettre à jour leurs appareils ou accéder à l’album via iCloud.com.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">135</span><code class="line-text">La personne propriétaire de l’album peut configurer les options de partage de manière à autoriser uniquement les personnes qu’elle invite à rejoindre l’album, ou à autoriser toute personne disposant du lien à rejoindre l’album avec ou sans son accord. Elle peut également décider si les autres personnes disposant du lien peuvent ou non demander l’accès.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">137</span><code class="line-text">### Demander l’accès à un album partagé</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">139</span><code class="line-text">- Ouvrez le lien vers un album partagé que vous avez reçu.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">141</span><code class="line-text">- Si un message vous y invite, touchez ou cliquez sur le bouton Envoyer la demande.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">143</span><code class="line-text">Vous recevrez une notification lorsque l’album sera partagé avec vous.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">145</span><code class="line-text">## Supprimer une personne abonnée</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">147</span><code class="line-text">En tant que créateur d’un album partagé, vous pouvez choisir les personnes qui y ont accès, et supprimer des abonnés à tout moment.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">149</span><code class="line-text">### Sous macOS 27 ou version ultérieure</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">151</span><code class="line-text">- Ouvrez l’album partagé.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">153</span><code class="line-text">- Cliquez sur le bouton Gérer l’album partagé .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">155</span><code class="line-text">- Cliquez sur le bouton Plus à côté de la personne que vous souhaitez exclure.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">157</span><code class="line-text">- Cliquez sur Exclure le membre, puis sur Supprimer.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">159</span><code class="line-text">### Sous macOS 26 ou version antérieure</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">161</span><code class="line-text">- Ouvrez l’album partagé.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">163</span><code class="line-text">- Cliquez sur le bouton Personnes dans la barre d’outils.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">87</span><code class="line-text">- Sélectionnez l’abonné à supprimer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">165</span><code class="line-text">- Sélectionnez l’abonné à supprimer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">89</span><code class="line-text">- Cliquez sur la flèche en regard de son nom, puis sur Supprimer l’abonné.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">167</span><code class="line-text">- Cliquez sur la flèche en regard de son nom, puis sur Supprimer l’abonné.</code></div>
+<div class="diff-line previous removed"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text">En tant que créateur d’un album partagé, vous pouvez choisir les personnes qui y ont accès, et supprimer des abonnés à tout moment.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">93</span><code class="line-text">## Ajouter des photos et des vidéos à un album partagé</code></div>
+<div class="diff-line current unchanged"><span class="line-number">169</span><code class="line-text">## Ajouter des photos et des vidéos à un album partagé</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">97</span><code class="line-text">- Cliquez sur le bouton Partager dans la barre d’outils, puis sélectionnez Albums partagés.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">173</span><code class="line-text">- Cliquez sur le bouton Partager dans la barre d’outils, puis sélectionnez Albums partagés.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text"><mark class="inline-remove">[I</mark>mage<mark class="inline-remove">:</mark> n<mark class="inline-remove">ull]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">175</span><code class="line-text"><mark class="inline-add">- Choisissez l’albu</mark>m<mark class="inline-add"> dans lequel vous souhaitez part</mark>age<mark class="inline-add">r vos photos. Lorsque vous ajoutez des photos, les personnes abonnées à l’album partagé reçoivent une</mark> n<mark class="inline-add">otification.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">101</span><code class="line-text">- C<mark class="inline-remove">ho</mark>i<mark class="inline-remove">siss</mark>ez <mark class="inline-remove">l’alb</mark>u<mark class="inline-remove">m dans lequel vous souhaitez partage</mark>r <mark class="inline-remove">vos photos. Lorsque vous a</mark>joute<mark class="inline-remove">z de nouvelles photos, les pe</mark>r<mark class="inline-remove">sonnes abonnées à l’album partagé reçoivent une notification</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">177</span><code class="line-text">- C<mark class="inline-add">l</mark>i<mark class="inline-add">qu</mark>ez <mark class="inline-add">s</mark>ur <mark class="inline-add">A</mark>jouter.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">103</span><code class="line-text"><mark class="inline-remove">S</mark>i <mark class="inline-remove">v</mark>ou<mark class="inline-remove">s</mark> <mark class="inline-remove">v</mark>o<mark class="inline-remove">us</mark> <mark class="inline-remove">trouvez dans</mark> un album partagé, <mark class="inline-remove">v</mark>o<mark class="inline-remove">us pouvez ég</mark>a<mark class="inline-remove">leme</mark>nt <mark class="inline-remove">cliq</mark>u<mark class="inline-remove">er sur « Ajouter des photos et des vidéos » pour sélectio</mark>n<mark class="inline-remove">ner des photos et des vidéos à ajouter. Vous pouvez également faire glisser des photos de votr</mark>e photo<mark class="inline-remove">thèqu</mark>e <mark class="inline-remove">d</mark>ire<mark class="inline-remove">ctement dans l’album partagé dans la barre latérale</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">179</span><code class="line-text"><mark class="inline-add">[Image: Boîte de d</mark>i<mark class="inline-add">alogue</mark> <mark class="inline-add">permettant d’aj</mark>ou<mark class="inline-add">ter</mark> <mark class="inline-add">une ph</mark>o<mark class="inline-add">to</mark> <mark class="inline-add">à</mark> un album partagé, <mark class="inline-add">m</mark>o<mark class="inline-add">ntr</mark>ant une photo<mark class="inline-add"> d</mark>e <mark class="inline-add">nourr</mark>i<mark class="inline-add">tu</mark>re.<mark class="inline-add">]</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">105</span><code class="line-text">Si un<mark class="inline-remove">e personne</mark> ab<mark class="inline-remove">onnée ne pe</mark>u<mark class="inline-remove">t</mark> pas ajouter <mark class="inline-remove">s</mark>es photos ou vidéos<mark class="inline-remove">,</mark> ouvre<mark class="inline-remove">z</mark> l’album partagé<mark class="inline-remove">, puis cliquez sur le bouton Personnes</mark> dans la barre <mark class="inline-remove">d’outi</mark>l<mark class="inline-remove">s. Assurez-vous que vous avez activé l’option Public</mark>at<mark class="inline-remove">ions p</mark>a<mark class="inline-remove">r </mark>le<mark class="inline-remove">s abonnés</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">181</span><code class="line-text">Si un a<mark class="inline-add">l</mark>bu<mark class="inline-add">m</mark> pa<mark class="inline-add">rtagé est ouvert, vou</mark>s <mark class="inline-add">pouvez ég</mark>a<mark class="inline-add">lement cliquer sur le bouton « A</mark>jouter <mark class="inline-add">d</mark>es photos <mark class="inline-add">à cet album partagé » </mark>ou<mark class="inline-add"> « Ajouter des photos et des</mark> vidéos <mark class="inline-add">» pour ajouter une n</mark>ouv<mark class="inline-add">elle sélection de photos et de vidéos. Vous pouvez également fai</mark>re<mark class="inline-add"> glisser des photos de votre photothèque directement dans</mark> l’album partagé dans la barre lat<mark class="inline-add">ér</mark>ale.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">107</span><code class="line-text"><mark class="inline-remove">[I</mark>mag<mark class="inline-remove">e: null]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">183</span><code class="line-text"><mark class="inline-add">## Si une personne abonnée ne parvient pas à ajouter des photos ou des vidéos à un albu</mark>m<mark class="inline-add"> part</mark>ag<mark class="inline-add">é</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">184</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">185</span><code class="line-text">Si une personne devient membre de votre groupe, mais qu’elle ne parvient pas à ajouter ses photos ou vidéos à l’album partagé, vérifiez ses réglages d’autorisation.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">186</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">187</span><code class="line-text">### Sous macOS 27 ou version ultérieure</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">188</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">189</span><code class="line-text">- Ouvrez l’album partagé.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">190</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">191</span><code class="line-text">- Cliquez sur le bouton Gérer l’album partagé .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">192</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">193</span><code class="line-text">- Cliquez sur le bouton Plus à côté de la personne concernée.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">194</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">195</span><code class="line-text">- Cliquez sur Peut ajouter des photos.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">196</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">197</span><code class="line-text">Si la personne ne parvient pas à ouvrir le lien de l’album, vérifiez si vous avez une demande d’accès en attente de sa part et, si tel est le cas, [acceptez sa demande d’accès](https://support.apple.com/fr-fr/124160#access-requests) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">199</span><code class="line-text">### Sous macOS 26 ou version antérieure</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">200</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">201</span><code class="line-text">- Ouvrez l’album partagé.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">202</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">203</span><code class="line-text">- Cliquez sur le bouton Personnes dans la barre d’outils.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">204</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">205</span><code class="line-text">- Assurez-vous que vous avez activé l’option Publications par les abonnés.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">206</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">109</span><code class="line-text">## Supprimer des photos et des vidéos d’un album partagé</code></div>
+<div class="diff-line current unchanged"><span class="line-number">207</span><code class="line-text">## Supprimer des photos et des vidéos d’un album partagé</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">208</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">210</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">113</span><code class="line-text">- Sélectionnez la photo ou la vidéo.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">211</span><code class="line-text">- Sélectionnez la photo ou la vidéo.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">212</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">115</span><code class="line-text">- Cliquez tout en maintenant la touche Contrôle enfoncée, puis cliquez sur Supprimer de l’album partagé. Cliquez sur Supprimer.</code></div>
+<div class="diff-line current added"><span class="line-number">213</span><code class="line-text">- Cliquez tout en maintenant la touche Contrôle enfoncée, puis cliquez sur Supprimer de l’album partagé. Cliquez sur Supprimer<mark class="inline-add"> de tous les appareils ou sur Supprimer</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">214</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">117</span><code class="line-text">Si vous vous trouvez dans un album partagé, vous pouvez également sélectionner une photo et appuyer sur la touche Supprimer pour la supprimer de l’album partagé.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">215</span><code class="line-text">Si vous vous trouvez dans un album partagé, vous pouvez également sélectionner une photo et appuyer sur la touche Supprimer pour la supprimer de l’album partagé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">216</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">218</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">121</span><code class="line-text">Toutes les photos d’un album partagé que vous avez enregistrées ou téléchargées dans votre photothèque sont conservées dans celle-ci, même si l’album partagé est supprimé ou si la personne qui l’a créé cesse de le partager.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">219</span><code class="line-text">Toutes les photos d’un album partagé que vous avez enregistrées ou téléchargées dans votre photothèque sont conservées dans celle-ci, même si l’album partagé est supprimé ou si la personne qui l’a créé cesse de le partager.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">220</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">123</span><code class="line-text">## Enregistrer des photos et des vidéos <mark class="inline-remove">à</mark> <mark class="inline-remove">partir d’</mark>un album partagé</code></div>
+<div class="diff-line current added"><span class="line-number">221</span><code class="line-text">## Enregistrer des photos et des vidéos <mark class="inline-add">depuis</mark> un album partagé</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">222</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">125</span><code class="line-text">Les personnes avec lesquelles vous partagez votre album peuvent enregistrer les photos et les vidéos dans leur propre photothèque.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">223</span><code class="line-text">Les personnes avec lesquelles vous partagez votre album peuvent enregistrer les photos et les vidéos dans leur propre photothèque.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">224</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">127</span><code class="line-text">- Sélectionnez la photo et la vidéo que vous souhaitez enregistrer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">225</span><code class="line-text">- Sélectionnez la photo et la vidéo que vous souhaitez enregistrer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">226</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">129</span><code class="line-text">- Cliquez dessus en maintenant la touche Contrôle enfoncée, puis cl<mark class="inline-remove">i</mark>que<mark class="inline-remove">z</mark> <mark class="inline-remove">s</mark>u<mark class="inline-remove">r</mark> Importer.</code></div>
+<div class="diff-line current added"><span class="line-number">227</span><code class="line-text">- Cliquez dessus<mark class="inline-add"> tout</mark> en maintenant la touche Contrôle enfoncée, puis <mark class="inline-add">séle</mark>c<mark class="inline-add">tionnez Enregistrer dans </mark>l<mark class="inline-add">a photothè</mark>que <mark class="inline-add">o</mark>u Importer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">228</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">131</span><code class="line-text">## En savoir plus sur les types de fichiers pris en charge et les limites des albums partagés</code></div>
+<div class="diff-line current unchanged"><span class="line-number">229</span><code class="line-text">## En savoir plus sur les types de fichiers pris en charge et les limites des albums partagés</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">230</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">133</span><code class="line-text">[Découvrez les types de fichiers <mark class="inline-remove">qu</mark>e<mark class="inline-remove"> vou</mark>s <mark class="inline-remove">pou</mark>ve<mark class="inline-remove">z utiliser dans</mark> les albums partagés](https://support.apple.com/fr-fr/1<mark class="inline-remove">0</mark>8<mark class="inline-remove">314#filetypes</mark>)</code></div>
+<div class="diff-line current added"><span class="line-number">231</span><code class="line-text"><mark class="inline-add">- </mark>[Découvrez les types de fichiers <mark class="inline-add">compatibl</mark>es <mark class="inline-add">a</mark>ve<mark class="inline-add">c</mark> les albums partagés](https://support.apple.com/fr-fr/1<mark class="inline-add">4</mark>8<mark class="inline-add">676</mark>)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">232</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">135</span><code class="line-text">[<mark class="inline-remove">E</mark>n sa<mark class="inline-remove">v</mark>o<mark class="inline-remove">ir plu</mark>s sur les limites de stockage des albums partagés](https://support.apple.com/fr-fr/1<mark class="inline-remove">0</mark>8<mark class="inline-remove">314#storagelimits</mark>)</code></div>
+<div class="diff-line current added"><span class="line-number">233</span><code class="line-text"><mark class="inline-add">- </mark>[<mark class="inline-add">Obte</mark>n<mark class="inline-add">ez</mark> <mark class="inline-add">de</mark>s<mark class="inline-add"> inform</mark>a<mark class="inline-add">ti</mark>o<mark class="inline-add">n</mark>s sur les limites de stockage des albums partagés](https://support.apple.com/fr-fr/1<mark class="inline-add">4</mark>8<mark class="inline-add">868</mark>)</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

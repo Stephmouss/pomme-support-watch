@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Mettre à niveau vos albums partagés - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Mettre à niveau vos albums partagés - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/108916">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+45 ajouts</span>
+      <span class="badge removed">−25 suppressions</span>
+      <span class="badge">1 bloc modifié</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous removed"><span class="line-number">1</span><code class="line-text"># <mark class="inline-remove">Limi</mark>t<mark class="inline-remove">es </mark>re<mark class="inline-remove">lat</mark>ive<mark class="inline-remove">s </mark>au<mark class="inline-remove">x</mark> albums partagés</code></div>
+<div class="diff-line current added"><span class="line-number">1</span><code class="line-text"># <mark class="inline-add">Me</mark>t<mark class="inline-add">t</mark>re<mark class="inline-add"> à n</mark>iveau<mark class="inline-add"> vos</mark> albums partagés</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text"><mark class="inline-remove">L</mark>es albums partagés <mark class="inline-remove">ne sont pas comptabilisés dans votre stockage iCloud, mais il existe des limites au nombre de photos, d’albums et d’invitations </mark>que vous pouve<mark class="inline-remove">z</mark> partag<mark class="inline-remove">er</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text"><mark class="inline-add">Découvrez comment mettre à niveau l</mark>es albums partagés que vous <mark class="inline-add">avez créés dans des versions antérieures du logiciel </mark>p<mark class="inline-add">our profiter de la n</mark>ouve<mark class="inline-add">lle expérience améliorée des Albums</mark> partag<mark class="inline-add">és</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">L</mark>imit<mark class="inline-remove">es</mark> <mark class="inline-remove">relatives aux a</mark>lbums partagés</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text"><mark class="inline-add">À</mark> <mark class="inline-add">part</mark>i<mark class="inline-add">r d’iOS 27, d’iPadOS 27 et de </mark>m<mark class="inline-add">acOS 27, la fonctionnal</mark>it<mark class="inline-add">é</mark> <mark class="inline-add">A</mark>lbums partagés<mark class="inline-add"> prend en charge le partage en pleine résolution, de nouveaux filtres, les réactions par Emoji et de nouvelles façons d’inviter d’autres personnes à collaborer sur un album. Vos proches et les membres de votre famille pourront participer et ajouter leurs propres photos sur le Web, même sans compte Apple ni appareil Apple.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text"><mark class="inline-remove">L</mark>es li<mark class="inline-remove">mi</mark>t<mark class="inline-remove">e</mark>s <mark class="inline-remove">horaires et quotidien</mark>ne<mark class="inline-remove">s applicables aux [albums partagés](https://support.apple.com/fr-fr/108314) *</mark> sont les <mark class="inline-remove">suiv</mark>antes <mark class="inline-remove">:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text"><mark class="inline-add">C</mark>es <mark class="inline-add">fonctionna</mark>lit<mark class="inline-add">é</mark>s ne sont <mark class="inline-add">pas disponib</mark>les <mark class="inline-add">d</mark>an<mark class="inline-add">s tous les pays ni tou</mark>tes <mark class="inline-add">les régions.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">N</mark>om<mark class="inline-remove">b</mark>re <mark class="inline-remove">m</mark>a<mark class="inline-remove">xim</mark>u<mark class="inline-remove">m de photos et de vidéos enregistrées chaque heure par</mark> un<mark class="inline-remove"> même contributeur sur tous les</mark> album<mark class="inline-remove">s</mark> partagé<mark class="inline-remove">s : 1 000</mark></code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text"><mark class="inline-add">##</mark> <mark class="inline-add">C</mark>om<mark class="inline-add">ment mett</mark>re <mark class="inline-add">à nive</mark>au un album partagé</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">N</mark>om<mark class="inline-remove">b</mark>re ma<mark class="inline-remove">x</mark>i<mark class="inline-remove">m</mark>um <mark class="inline-remove">d</mark>e <mark class="inline-remove">photo</mark>s e<mark class="inline-remove">t d</mark>e<mark class="inline-remove"> vidéo</mark>s <mark class="inline-remove">e</mark>n<mark class="inline-remove">reg</mark>is<mark class="inline-remove">t</mark>rées <mark class="inline-remove">chaq</mark>u<mark class="inline-remove">e jour</mark> par <mark class="inline-remove">un même contributeur sur tous l</mark>es albums partagés <mark class="inline-remove">:</mark> <mark class="inline-remove">10</mark> <mark class="inline-remove">000</mark></code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text"><mark class="inline-add">Tous</mark> <mark class="inline-add">les n</mark>o<mark class="inline-add">uveaux albu</mark>m<mark class="inline-add">s pa</mark>r<mark class="inline-add">tagés qu</mark>e<mark class="inline-add"> vous créez sous iOS 27, iPadOS 27,</mark> ma<mark class="inline-add">cOS 27 ou sur </mark>i<mark class="inline-add">Clo</mark>u<mark class="inline-add">d.co</mark>m <mark class="inline-add">utilis</mark>e<mark class="inline-add">nt</mark> <mark class="inline-add">le</mark>s <mark class="inline-add">nouv</mark>e<mark class="inline-add">ll</mark>es <mark class="inline-add">fo</mark>n<mark class="inline-add">ct</mark>i<mark class="inline-add">onnalité</mark>s<mark class="inline-add"> amélio</mark>rées <mark class="inline-add">des Alb</mark>u<mark class="inline-add">ms</mark> par<mark class="inline-add">tagés.</mark> <mark class="inline-add">L</mark>es albums partagés <mark class="inline-add">que</mark> <mark class="inline-add">vous</mark> <mark class="inline-add">avez créés dans des versions logicielles antérieures resteront inchangés, mais vous pouvez mettre à niveau un album partagé pour profiter de la nouvelle expérience. Après la mise à niveau, les photos et les vidéos nouvellement partagées conserveront leur résolution d’origine. Vous pouvez également autoriser les participants à gérer l’album, inviter d’autres personnes à l’aide d’un lien, et plus encore.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text"><mark class="inline-remove">Plusieu</mark>rs<mark class="inline-remove"> autres limites s’appli</mark>quen<mark class="inline-remove">t </mark>au<mark class="inline-remove">x</mark> album<mark class="inline-remove">s</mark> partagés <mark class="inline-remove">:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text"><mark class="inline-add">Lo</mark>rsque<mark class="inline-add"> vous mettez à </mark>n<mark class="inline-add">ive</mark>au<mark class="inline-add"> un</mark> album partagé<mark class="inline-add">, vou</mark>s <mark class="inline-add">pouvez l’ouvrir sur les appareils exécutant iOS 27, iPadOS 27, macOS 27 ou une version ultérieure. Vous pouvez également l’ouvrir sur iCloud.com à partir de n’importe quel appareil.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">No</mark>mbre ma<mark class="inline-remove">x</mark>i<mark class="inline-remove">m</mark>u<mark class="inline-remove">m</mark> d’album<mark class="inline-remove">s</mark> <mark class="inline-remove">p</mark>ou<mark class="inline-remove">vant être partagés par leur pr</mark>o<mark class="inline-remove">priétaire : 200</mark></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text"><mark class="inline-add">Les</mark> <mark class="inline-add">me</mark>mbre<mark class="inline-add">s dont les appareils ne sont pas dotés de la dernière version logicielle devront</mark> m<mark class="inline-add">ettre à jour leurs </mark>a<mark class="inline-add">ppare</mark>i<mark class="inline-add">ls o</mark>u <mark class="inline-add">accé</mark>d<mark class="inline-add">er à l</mark>’album <mark class="inline-add">via iCl</mark>ou<mark class="inline-add">d.c</mark>o<mark class="inline-add">m.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text"><mark class="inline-remove">- Nombr</mark>e ma<mark class="inline-remove">xim</mark>u<mark class="inline-remove">m</mark> <mark class="inline-remove">d’</mark>album<mark class="inline-remove">s</mark> partagés a<mark class="inline-remove">ux</mark>que<mark class="inline-remove">l</mark>s u<mark class="inline-remove">n</mark> <mark class="inline-remove">utilisateur pe</mark>ut <mark class="inline-remove">s</mark>’ab<mark class="inline-remove">onn</mark>er <mark class="inline-remove">:</mark> <mark class="inline-remove">200</mark></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text"><mark class="inline-add">Un</mark>e <mark class="inline-add">fois que vous avez </mark>m<mark class="inline-add">is à nive</mark>au <mark class="inline-add">un </mark>album partagé<mark class="inline-add">, le</mark>s <mark class="inline-add">photos ou vidéos exist</mark>a<mark class="inline-add">ntes </mark>qu<mark class="inline-add">’il conti</mark>e<mark class="inline-add">nt ne sont pa</mark>s <mark class="inline-add">décomptées de votre stockage iClo</mark>u<mark class="inline-add">d.</mark> <mark class="inline-add">To</mark>ut <mark class="inline-add">nouvel élément ajouté à l</mark>’a<mark class="inline-add">l</mark>b<mark class="inline-add">um partagé s</mark>er<mark class="inline-add">a</mark> <mark class="inline-add">décompté</mark> <mark class="inline-add">de l’espace de stockage du propriétaire de l’album.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">N</mark>o<mark class="inline-remove">mb</mark>re <mark class="inline-remove">max</mark>i<mark class="inline-remove">mum d’ab</mark>on<mark class="inline-remove">nés par album partagé : 100 (nombr</mark>e <mark class="inline-remove">d’abonnés p</mark>ou<mark class="inline-remove">r</mark> <mark class="inline-remove">ch</mark>a<mark class="inline-remove">que album partagé)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">Sur v</mark>o<mark class="inline-add">t</mark>re i<mark class="inline-add">Ph</mark>one ou <mark class="inline-add">iP</mark>a<mark class="inline-add">d</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">- <mark class="inline-remove">Nomb</mark>re<mark class="inline-remove"> maximum combiné de photos et de </mark>v<mark class="inline-remove">idéos de t</mark>ous les <mark class="inline-remove">c</mark>o<mark class="inline-remove">nt</mark>r<mark class="inline-remove">ibut</mark>e<mark class="inline-remove">u</mark>rs d<mark class="inline-remove">a</mark>ns<mark class="inline-remove"> u</mark>n s<mark class="inline-remove">e</mark>u<mark class="inline-remove">l album </mark>p<mark class="inline-remove">a</mark>rta<mark class="inline-remove">gé</mark> <mark class="inline-remove">: 5 000</mark></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">- <mark class="inline-add">Assu</mark>re<mark class="inline-add">z-</mark>vous <mark class="inline-add">que votre apparei</mark>l<mark class="inline-add"> </mark>es<mark class="inline-add">t</mark> <mark class="inline-add">[mis à j</mark>o<mark class="inline-add">u</mark>r<mark class="inline-add"> v</mark>ers <mark class="inline-add">la </mark>d<mark class="inline-add">er</mark>n<mark class="inline-add">ière ver</mark>s<mark class="inline-add">io</mark>n <mark class="inline-add">du logiciel](http</mark>s<mark class="inline-add">://s</mark>up<mark class="inline-add">po</mark>rt<mark class="inline-add">.</mark>a<mark class="inline-add">pple.com/fr-fr/118575)</mark> <mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- <mark class="inline-remove">Nomb</mark>re <mark class="inline-remove">m</mark>a<mark class="inline-remove">ximum</mark> <mark class="inline-remove">de commentaires par p</mark>hoto ou <mark class="inline-remove">v</mark>i<mark class="inline-remove">dé</mark>o<mark class="inline-remove"> da</mark>ns<mark class="inline-remove"> un album partagé : 200 (un commentaire peut être soit un « J’aime », soit un texte saisi)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- <mark class="inline-add">Ouv</mark>re<mark class="inline-add">z</mark> <mark class="inline-add">l’</mark>a<mark class="inline-add">pp</mark> <mark class="inline-add">P</mark>hoto<mark class="inline-add">s,</mark> <mark class="inline-add">puis t</mark>ou<mark class="inline-add">chez</mark> <mark class="inline-add">Collect</mark>ions<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- <mark class="inline-remove">Nomb</mark>re <mark class="inline-remove">m</mark>a<mark class="inline-remove">xim</mark>um<mark class="inline-remove"> de caractère</mark>s par<mark class="inline-remove"> commen</mark>tair<mark class="inline-remove">e : 1 024</mark></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- <mark class="inline-add">Faites défile</mark>r<mark class="inline-add"> l’écran vers l</mark>e <mark class="inline-add">b</mark>a<mark class="inline-add">s jusqu’à Alb</mark>ums parta<mark class="inline-add">gés, pu</mark>i<mark class="inline-add">s touchez Albums pa</mark>r<mark class="inline-add">tagés.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">- <mark class="inline-remove">N</mark>o<mark class="inline-remove">mbr</mark>e <mark class="inline-remove">maximum d’invitations qu’un propriétaire d</mark>’album partagé <mark class="inline-remove">p</mark>e<mark class="inline-remove">ut</mark> <mark class="inline-remove">en</mark>vo<mark class="inline-remove">yer</mark> <mark class="inline-remove">par j</mark>our <mark class="inline-remove">:</mark> <mark class="inline-remove">200</mark></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- <mark class="inline-add">T</mark>o<mark class="inline-add">uch</mark>e<mark class="inline-add">z</mark> <mark class="inline-add">l</mark>’album partagé <mark class="inline-add">qu</mark>e vo<mark class="inline-add">us</mark> <mark class="inline-add">s</mark>ou<mark class="inline-add">haitez mett</mark>r<mark class="inline-add">e</mark> <mark class="inline-add">à</mark> <mark class="inline-add">niveau.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text"><mark class="inline-remove">*</mark> <mark class="inline-remove">Ces fonctionnalités ne sont pas disponibles dans t</mark>ou<mark class="inline-remove">s</mark> le<mark class="inline-remove">s</mark> <mark class="inline-remove">pays ni t</mark>out<mark class="inline-remove">es les régi</mark>ons.</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">T</mark>ou<mark class="inline-add">chez</mark> le <mark class="inline-add">b</mark>outon<mark class="inline-add"> Plu</mark>s.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text"><mark class="inline-remove">##</mark> T<mark class="inline-remove">yp</mark>e<mark class="inline-remove">s</mark> <mark class="inline-remove">d</mark>e <mark class="inline-remove">f</mark>i<mark class="inline-remove">chi</mark>e<mark class="inline-remove">rs pris en ch</mark>a<mark class="inline-remove">rge par</mark> l<mark class="inline-remove">es </mark>album<mark class="inline-remove">s</mark> partagés</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text"><mark class="inline-add">-</mark> T<mark class="inline-add">ouch</mark>e<mark class="inline-add">z</mark> <mark class="inline-add">Mettr</mark>e <mark class="inline-add">à n</mark>i<mark class="inline-add">v</mark>ea<mark class="inline-add">u</mark> l<mark class="inline-add">’</mark>album partagé<mark class="inline-add">, pui</mark>s<mark class="inline-add"> suivez les instructions qui s’affichent à l’écran.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text"><mark class="inline-remove">Les</mark> <mark class="inline-remove">alb</mark>u<mark class="inline-remove">ms pa</mark>r<mark class="inline-remove">tagés chargent une copie de</mark> vo<mark class="inline-remove">s données. L</mark>e c<mark class="inline-remove">ontenu téléchargé peut ne pas contenir les mêmes informations que le contenu d’origine.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">S</mark>ur vo<mark class="inline-add">tr</mark>e <mark class="inline-add">Ma</mark>c</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- <mark class="inline-remove">F</mark>orm<mark class="inline-remove">ats</mark> <mark class="inline-remove">d’image* : HEIF, JPEG, RAW, PNG, GIF, TIFF</mark></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- <mark class="inline-add">Assurez-vous que votre Mac est [mis à jour vers la dernière version de macOS](https://supp</mark>or<mark class="inline-add">t.apple.co</mark>m<mark class="inline-add">/fr-fr/108382)</mark> <mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- <mark class="inline-remove">Ty</mark>p<mark class="inline-remove">e</mark>s<mark class="inline-remove"> et formats de fichiers vidéo : HEVC, MP4, QuickTime, H</mark>.<mark class="inline-remove">264, MPEG-4</mark></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- <mark class="inline-add">Ouvrez l’a</mark>p<mark class="inline-add">p Photo</mark>s.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text"><mark class="inline-remove">Le</mark>s album<mark class="inline-remove">s</mark> partagé<mark class="inline-remove">s prennent également en charge les formats spéciaux</mark> que vous <mark class="inline-remove">génér</mark>ez <mark class="inline-remove">av</mark>e<mark class="inline-remove">c vo</mark>tre <mark class="inline-remove">iPho</mark>n<mark class="inline-remove">e, tels que les ralentis, les accélérés, les L</mark>ive<mark class="inline-remove"> Photos et les vidéos de so</mark>u<mark class="inline-remove">venirs</mark>.<mark class="inline-remove"> La longueur des photos partagées est réduite à 2 048 pixels, à l’exception des photos panoramiques, dont la largeur peut atteindre jusqu’à 5 400 pixels. Vous pouvez partager des GIF d’une taille inférieure ou égale à 100 Mo. Les albums partagés ne prennent pas en charge les photos ni les vidéos spatiales.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text"><mark class="inline-add">- Dan</mark>s <mark class="inline-add">la section Partage de la barre latérale, choisissez l’</mark>album partagé que vous <mark class="inline-add">souhait</mark>ez <mark class="inline-add">m</mark>e<mark class="inline-add">t</mark>tre <mark class="inline-add">à </mark>nive<mark class="inline-add">a</mark>u.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text"><mark class="inline-remove">L</mark>es <mark class="inline-remove">vid</mark>é<mark class="inline-remove">os peuvent du</mark>rer <mark class="inline-remove">jusqu</mark>’<mark class="inline-remove">à quinze minutes, et leur résolution maxim</mark>ale<mark class="inline-remove"> est de 720p</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text"><mark class="inline-add">- Cliqu</mark>e<mark class="inline-add">z </mark>s<mark class="inline-add">ur</mark> <mark class="inline-add">le bouton G</mark>érer <mark class="inline-add">l</mark>’al<mark class="inline-add">bum partagé [icôn</mark>e<mark class="inline-add">]</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text"><mark class="inline-remove">Po</mark>ur <mark class="inline-remove">d</mark>e<mark class="inline-remove">s </mark>r<mark class="inline-remove">aisons d</mark>e <mark class="inline-remove">c</mark>apa<mark class="inline-remove">ci</mark>té, i<mark class="inline-remove">l e</mark>s<mark class="inline-remove">t possible que</mark> se<mark class="inline-remove">ules</mark> les <mark class="inline-remove">ph</mark>o<mark class="inline-remove">to</mark>s <mark class="inline-remove">les pl</mark>u<mark class="inline-remove">s récentes</mark> s<mark class="inline-remove">oient </mark>affiché<mark class="inline-remove">es p</mark>a<mark class="inline-remove">r votre Apple TV</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text"><mark class="inline-add">- Cliquez s</mark>ur <mark class="inline-add">M</mark>e<mark class="inline-add">tt</mark>re <mark class="inline-add">à nive</mark>a<mark class="inline-add">u l’album </mark>pa<mark class="inline-add">r</mark>t<mark class="inline-add">ag</mark>é, <mark class="inline-add">pu</mark>is s<mark class="inline-add">uiv</mark>e<mark class="inline-add">z</mark> les <mark class="inline-add">instructi</mark>o<mark class="inline-add">n</mark>s <mark class="inline-add">q</mark>u<mark class="inline-add">i</mark> s<mark class="inline-add">’</mark>affich<mark class="inline-add">ent à l’</mark>é<mark class="inline-add">cr</mark>a<mark class="inline-add">n</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text"><mark class="inline-remove">*</mark> <mark class="inline-remove">Vo</mark>u<mark class="inline-remove">s ne </mark>p<mark class="inline-remove">ouvez pas cha</mark>r<mark class="inline-remove">g</mark>er<mark class="inline-remove"> d’images HEIF, de vidéos HEVC ni de photos RAW dans</mark> un album partagé<mark class="inline-remove"> sur votre PC Windows. Les fichiers TIFF ne sont pas pris en charge sur iCloud.com. Vous ne pouvez pas charger de photos RAW dans un album partagé sur iCloud.com.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text"><mark class="inline-add">##</mark> <mark class="inline-add">Réc</mark>up<mark class="inline-add">é</mark>rer un album partagé</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">Li</mark>m<mark class="inline-remove">i</mark>te<mark class="inline-remove">s</mark> <mark class="inline-remove">relat</mark>ives au<mark class="inline-remove">x </mark>s<mark class="inline-remove">uggestions de</mark> partage</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text"><mark class="inline-add">Lorsque</mark> <mark class="inline-add">vous </mark>m<mark class="inline-add">et</mark>te<mark class="inline-add">z</mark> <mark class="inline-add">à n</mark>iv<mark class="inline-add">eau d</mark>es a<mark class="inline-add">lb</mark>u<mark class="inline-add">m</mark>s partag<mark class="inline-add">és, un</mark>e<mark class="inline-add"> copie de chaque album partagé apparaît dans les réglages des Albums partagés pendant six mois. Passé ce délai, l’album sera définitivement supprimé. Si vous récupérez la copie de l’ancienne version de l’album partagé dans votre photothèque, elle apparaîtra à côté de l’album mis à niveau dans l’app Photos et y restera à moins que vous ne la supprimiez. Vous pourrez renvoyer des invitations à tous les participants précédents et continuer à ajouter des photos et des vidéos.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text"><mark class="inline-remove">Les</mark> <mark class="inline-remove">s</mark>u<mark class="inline-remove">gges</mark>t<mark class="inline-remove">ions d</mark>e <mark class="inline-remove">partage s</mark>o<mark class="inline-remove">nt limitées à 5 000 éléments avec u</mark>ne <mark class="inline-remove">t</mark>a<mark class="inline-remove">ille </mark>d<mark class="inline-remove">e partage maximale de 1 Go.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">S</mark>u<mark class="inline-add">r vo</mark>t<mark class="inline-add">r</mark>e <mark class="inline-add">iPh</mark>one <mark class="inline-add">ou iP</mark>ad</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">- Ouvrez l’app Réglages. Touchez votre nom.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">- Touchez iCloud, puis Photos.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">- Sous Partage, touchez Albums partagés.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- Touchez Albums partagés archivés.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">- Touchez Récupérer, puis touchez à nouveau Récupérer pour confirmer.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">### Sur votre Mac</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">- Ouvrez l’app Photos.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">- Dans le menu Photos de la barre des menus, choisissez Réglages.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">- Cliquez sur l’onglet iCloud, puis sur Afficher les albums partagés archivés.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">- Cliquez sur Récupérer, puis cliquez à nouveau sur Récupérer pour confirmer.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

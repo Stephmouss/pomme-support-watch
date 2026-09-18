@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>À propos de l’audio sans perte dans Apple Music - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>À propos de l’audio sans perte dans Apple Music - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/118295">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+22 ajouts</span>
+      <span class="badge removed">−70 suppressions</span>
+      <span class="badge">8 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># À propos de l’audio sans perte dans Apple Music</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># À propos de l’audio sans perte dans Apple Music</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">Q</mark>u<mark class="inline-remove">’</mark>e<mark class="inline-remove">s</mark>t<mark class="inline-remove">-c</mark>e <mark class="inline-remove">q</mark>ue l<mark class="inline-remove">a compression </mark>audio sans perte <mark class="inline-remove">?</mark></code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text"><mark class="inline-add">Avec</mark> u<mark class="inline-add">n abonn</mark>e<mark class="inline-add">men</mark>t<mark class="inline-add"> Appl</mark>e <mark class="inline-add">M</mark>u<mark class="inline-add">sic, vous pouv</mark>e<mark class="inline-add">z activer</mark> l<mark class="inline-add">’</mark>audio sans perte <mark class="inline-add">sur tous vos appareils et entendre chaque détail conservé de l’enregistrement original.</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">La plupart des techniques de compression audio perdent une partie des données contenues dans le fichier source d’origine. La compression sans perte est une forme de compression qui préserve toutes les données d’origine.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">Apple a développé sa propre technologie de compression audio sans perte, appelée ALAC (Apple Lossless Audio Codec). En plus du format AAC, la plupart des morceaux du catalogue Apple Music sont désormais également encodés au format ALAC, avec des résolutions allant de 16 bits/44,1 kHz (qualité CD) jusqu’à 24 bits/192 kHz.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">Bien que la différence entre les formats AAC et audio sans perte soit pratiquement imperceptible, nous offrons la possibilité aux personnes abonnées à Apple Music d’accéder à la plupart des morceaux du catalogue dans un format audio compressé sans perte.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">## Informations sur les contenus audio sans perte dans Apple Music</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## Informations sur les contenus audio sans perte dans Apple Music</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 17 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">### Activer ou désactiver l’audio sans perte</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">### Activer ou désactiver l’audio sans perte</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- Accédez à Réglages<mark class="inline-remove"> &gt; Apps</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- Accédez à Réglages.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">- Touchez Applications.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">- Touchez Musique.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">- Touchez Musique.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">- Touchez Qualité audio.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">- Touchez Qualité audio.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">- Touchez Lossless Audio pour activer ou désactiver ce réglage. Vous pouvez ensuite choisir la qualité audio pour la diffusion et le téléchargement de vos contenus audio.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">- Touchez Lossless Audio pour activer ou désactiver ce réglage. Vous pouvez ensuite choisir la qualité audio pour la diffusion et le téléchargement de vos contenus audio.</code></div>
+<div class="diff-line previous removed"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">- « Lossless » pour une résolution maximale de 24 bits/48 kHz</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">- « Lossless haute qualité » pour une résolution maximale de 24 bits/192 kHz</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">## Écouter des contenus audio sans perte sur votre Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">## Écouter des contenus audio sans perte sur votre Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Ouvrez l’app Musique.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">- Ouvrez l’app Musique.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">- Dans la barre des menus, choisissez Musique <mark class="inline-remove">&gt;</mark> Préférences.</code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">- Dans la barre des menus, choisissez Musique<mark class="inline-add">,</mark> <mark class="inline-add">puis sélectionnez</mark> Préférences.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">- Cliquez sur l’onglet Lecture.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">- Cliquez sur l’onglet Lecture.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">- Sous Qualité audio, sélectionnez ou désélectionnez le réglage Lossless Audio pour l’activer ou le désactiver. Vous pouvez également modifier les réglages de diffusion et de téléchargement sans perte.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">- Sous Qualité audio, sélectionnez ou désélectionnez le réglage Lossless Audio pour l’activer ou le désactiver. Vous pouvez également modifier les réglages de diffusion et de téléchargement sans perte.</code></div>
+<div class="diff-line previous removed"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">- « Lossless » pour une résolution maximale de 24 bits/48 kHz</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">- « Lossless haute qualité » pour une résolution maximale de 24 bits/192 kHz</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">## Écouter des contenus audio sans perte sur votre HomePod</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">## Écouter des contenus audio sans perte sur votre HomePod</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 10 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">- Touchez le bouton principal .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">- Touchez le bouton principal .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">87</span><code class="line-text">[Image: Aucun texte de remplacement pour l’image]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">[Image: Aucun texte de remplacement pour l’image]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">- Touchez le bouton Plus .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">89</span><code class="line-text">- Touchez Réglages des domiciles.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">79</span><code class="line-text">- Touchez Réglages des domiciles.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">105</span><code class="line-text">### Activer ou désactiver l’audio sans perte</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">### Activer ou désactiver l’audio sans perte</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">107</span><code class="line-text">- Accédez à Réglages<mark class="inline-remove"> &gt; Apps</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">97</span><code class="line-text">- Accédez à Réglages.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text">- Sélectionnez Apps.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">109</span><code class="line-text">- Sélectionnez Musique.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">101</span><code class="line-text">- Sélectionnez Musique.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">111</span><code class="line-text">- Sélectionnez Qualité audio.</code></div>
+<div class="diff-line current added"><span class="line-number">103</span><code class="line-text">- Sélectionnez Qualité audio.<mark class="inline-add"> À partir de là, vous pouvez choisir la qualité audio pour l’audio en streaming.</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">113</span><code class="line-text">- Sélectionnez ou désélectionnez Lossless. L’Apple TV 4K ne prend actuellement pas en charge la technologie Lossless haute qualité (fréquences d’échantillonnage supérieures à 48 kHz).</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">115</span><code class="line-text">## Écouter de l’audio sans perte sur votre Apple Vision Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">105</span><code class="line-text">## Écouter de l’audio sans perte sur votre Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">121</span><code class="line-text">- Haut-parleurs intégrés</code></div>
+<div class="diff-line current unchanged"><span class="line-number">111</span><code class="line-text">- Haut-parleurs intégrés</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">123</span><code class="line-text">- AirPods 4<mark class="inline-remove">,</mark> <mark class="inline-remove">AirP</mark>od<mark class="inline-remove">s 4 avec Réduction activ</mark>e <mark class="inline-remove">d</mark>u<mark class="inline-remove"> b</mark>ru<mark class="inline-remove">it</mark>, AirPods Pro 3, AirPods Pro 2 avec boîtier de charge USB-C ou Powerbeats Pro 2</code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text">- AirPods 4 <mark class="inline-add">ou m</mark>od<mark class="inline-add">èl</mark>e u<mark class="inline-add">lté</mark>r<mark class="inline-add">ie</mark>u<mark class="inline-add">r</mark>, AirPods Pro 3, AirPods Pro 2 avec boîtier de charge USB-C ou Powerbeats Pro 2</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">125</span><code class="line-text">### Activer ou désactiver l’audio sans perte</code></div>
+<div class="diff-line current unchanged"><span class="line-number">115</span><code class="line-text">### Activer ou désactiver l’audio sans perte</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">127</span><code class="line-text">- Accédez à Réglages<mark class="inline-remove"> &gt; Apps</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">117</span><code class="line-text">- Accédez à Réglages.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">119</span><code class="line-text">- Touchez Applications.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">129</span><code class="line-text">- Touchez Musique.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">121</span><code class="line-text">- Touchez Musique.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">131</span><code class="line-text">- Sous Audio, touchez Qualité audio.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">123</span><code class="line-text">- Sous Audio, touchez Qualité audio.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">133</span><code class="line-text">- Activez ou désactivez le réglage Lossless Audio.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">125</span><code class="line-text">- Activez ou désactivez le réglage Lossless Audio.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">127</span><code class="line-text">## À propos de l’audio sans perte avec les casques et écouteurs Apple et Beats.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">129</span><code class="line-text">Les AirPods 3 ou modèles antérieurs, les AirPods Pro 1, les AirPods Pro 2 avec boîtier de charge Lightning, les AirPods Max et la plupart des casques et écouteurs sans fil Beats utilisent le codec Bluetooth AAC d’Apple pour garantir une excellente qualité audio. Cependant, les connexions Bluetooth ne sont pas sans perte.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">131</span><code class="line-text">Vous pouvez écouter des fichiers audio sans perte avec les AirPods Max 1 (USB-C) et les AirPods Max 2. Mettez à jour votre iPhone, iPad ou Mac vers la dernière version du logiciel, et mettez à jour vos AirPods Max vers la dernière version du programme interne. Utilisez le câble USB-C vers USB-C inclus pour connecter vos AirPods Max à votre iPhone, iPad ou Mac doté d’un port USB-C. Ou utilisez un câble USB-C vers USB-A pour connecter vos AirPods Max à un Mac doté d’un port USB-A.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">135</span><code class="line-text">## Écouter des contenus audio sans perte sur votre appareil Android</code></div>
+<div class="diff-line current unchanged"><span class="line-number">133</span><code class="line-text">## Écouter des contenus audio sans perte sur votre appareil Android</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">151</span><code class="line-text">[Image: le bouton Plus]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">149</span><code class="line-text">[Image: le bouton Plus]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">153</span><code class="line-text">- Touchez <mark class="inline-remove">Régl</mark>a<mark class="inline-remove">g</mark>es.</code></div>
+<div class="diff-line current added"><span class="line-number">151</span><code class="line-text">- Touchez <mark class="inline-add">P</mark>a<mark class="inline-add">ramètr</mark>es.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">155</span><code class="line-text">- Touchez Qualité audio.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">153</span><code class="line-text">- Touchez Qualité audio.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">157</span><code class="line-text">- Touchez Lossless pour activer ou désactiver ce réglage. Vous pouvez ensuite choisir la qualité audio pour la diffusion et le téléchargement de vos contenus audio.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">155</span><code class="line-text">- Touchez Lossless pour activer ou désactiver ce réglage. Vous pouvez ensuite choisir la qualité audio pour la diffusion et le téléchargement de vos contenus audio.</code></div>
+<div class="diff-line previous removed"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">159</span><code class="line-text">- « Lossless » pour une résolution maximale de 24 bits/48 kHz</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">161</span><code class="line-text">- « Lossless haute qualité » pour une résolution maximale de 24 bits/192 kHz</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">163</span><code class="line-text">## Écouter de l’audio sans perte sur votre PC</code></div>
+<div class="diff-line current unchanged"><span class="line-number">157</span><code class="line-text">## Écouter de l’audio sans perte sur votre PC</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 19 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">184</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">185</span><code class="line-text">- Sous Qualité audio, activez ou désactivez Lossless Audio. Vous pouvez ensuite choisir la qualité audio pour la diffusion et le téléchargement de vos contenus audio.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">179</span><code class="line-text">- Sous Qualité audio, activez ou désactivez Lossless Audio. Vous pouvez ensuite choisir la qualité audio pour la diffusion et le téléchargement de vos contenus audio.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">186</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">187</span><code class="line-text">- « Lossless » pour une résolution maximale de 24 bits/48 kHz</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">188</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">189</span><code class="line-text">- « Lossless haute qualité » pour une résolution maximale de 24 bits/192 kHz</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">190</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">191</span><code class="line-text">## Questions et réponses sur l’audio sans perte</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">192</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">193</span><code class="line-text">### Puis-je écouter de l’audio sans perte avec des AirPods, des AirPods Pro, des AirPods Max ou des casques ou écouteurs Beats ?</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">194</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">195</span><code class="line-text">Les AirPods 3 ou modèles antérieurs, les AirPods Pro 1, les AirPods Pro 2 avec boîtier de charge Lightning, les AirPods Max et la plupart des casques et écouteurs sans fil Beats utilisent le codec Bluetooth AAC d’Apple pour garantir une excellente qualité audio. Cependant, les connexions Bluetooth ne sont pas sans perte.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">196</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">197</span><code class="line-text">Les AirPods 4, les AirPods 4 avec Réduction active du bruit, les AirPods Pro 3, les AirPods Pro 2 avec boîtier de charge USB-C et les Powerbeats Pro 2 offrent un son sans perte à très faible latence lorsqu’ils sont associés à un Apple Vision Pro.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">199</span><code class="line-text">Vous pouvez écouter des fichiers audio sans perte avec les AirPods Max 1 (USB-C) et les AirPods Max 2. Mettez à jour votre iPhone, iPad ou Mac vers la dernière version du logiciel, et mettez à jour vos AirPods Max vers la dernière version du programme interne. Utilisez le câble USB-C vers USB-C inclus pour connecter vos AirPods Max à votre iPhone, iPad ou Mac doté d’un port USB-C. Ou utilisez un câble USB-C vers USB-A pour connecter vos AirPods Max à un Mac doté d’un port USB-A.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">200</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">201</span><code class="line-text">### Puis-je écouter des contenus audio sans perte via le Bluetooth ?</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">202</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">203</span><code class="line-text">La lecture sans perte fonctionne normalement sur les enceintes, les casques et les écouteurs Bluetooth. Toutefois, les connexions Bluetooth ne prennent pas en charge l’audio sans perte.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">204</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">205</span><code class="line-text">### Puis-je écouter des contenus audio sans perte à l’aide de l’adaptateur Apple Lightning vers prise casque 3,5 mm ?</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">206</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">207</span><code class="line-text">Oui. L’adaptateur Lightning vers prise casque 3,5 mm est conçu pour transmettre l’audio à partir du connecteur Lightning de l’iPhone. Il contient un convertisseur numérique-analogique prenant en charge l’audio sans perte jusqu’à 24 bits/48 kHz.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">208</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">209</span><code class="line-text">### Puis-je écouter des fichiers audio sans perte à l’aide du câble audio AirPods Max Lightning vers mini-jack 3,5 mm ou du câble audio USB-C vers mini-jack 3,5 mm ?</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">210</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">211</span><code class="line-text">Le câble audio Lightning vers mini-jack 3,5 mm et le [câble audio USB-C vers jack 3,5 mm](https://www.apple.com/fr/shop/product/mdv84zm/a/c%C3%A2ble-audio-usb-c-vers-jack-35-mm-12-m?fnode=7317239600fb0dd69e0d50cfc225840295107503d37f112740f6b7375f1055bca040279ddf09613b837fea212b6ad1ef163867495f7da6b10fc8f00d9eff4b5abf966968a2a27de55f6d85fe188df52cce18cd3a3de54712845e80ca3147f921) sont conçus pour permettre aux AirPods Max de se connecter à des sources analogiques. Les AirPods Max peuvent être connectés à des appareils lisant des enregistrements sans perte et haute résolution sans perte avec une qualité audio exceptionnelle. Cependant, en raison de la conversion analogique-numérique du câble, la lecture n’est pas complètement sans perte.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">212</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">213</span><code class="line-text">### Quels contenus ne sont pas disponibles en version audio sans perte ?</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">214</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">215</span><code class="line-text">- Stations de radio</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">216</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">217</span><code class="line-text">- Radio en direct et contenu à la demande provenant d’Apple Music 1, Apple Music Hits et Apple Music Country</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">218</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">219</span><code class="line-text">- Clips vidéo</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">220</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">221</span><code class="line-text">### Puis-je télécharger à nouveau mes achats iTunes au format sans perte ?</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">222</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">223</span><code class="line-text">Si vous vous abonnez à Apple Music, vous pouvez télécharger à nouveau vos morceaux au format sans perte uniquement à partir du catalogue Apple Music.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">224</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">225</span><code class="line-text">### Puis-je écouter des contenus audio sans perte via CarPlay ?</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">226</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">227</span><code class="line-text">Vous pouvez écouter des contenus audio sans perte via CarPlay à l’aide d’une connexion USB. La diffusion de contenus audio sans perte dans un véhicule connecté à un réseau mobile consomme beaucoup plus de données.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">228</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">229</span><code class="line-text">1 Pour savoir si votre appareil Android nécessite un convertisseur numérique-analogique externe, consultez le fabricant de votre appareil.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">181</span><code class="line-text">1 Pour savoir si votre appareil Android nécessite un convertisseur numérique-analogique externe, consultez le fabricant de votre appareil.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">230</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">231</span><code class="line-text">2 Pour savoir si votre PC nécessite un convertisseur numérique vers analogique externe, renseignez-vous auprès de son fabricant.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">183</span><code class="line-text">2 Pour savoir si votre PC nécessite un convertisseur numérique vers analogique externe, renseignez-vous auprès de son fabricant.</code></div>
+<div class="fold"><span>••• 4 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

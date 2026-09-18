@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Comment configurer Optic ID - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Comment configurer Optic ID - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/120145">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+8 ajouts</span>
+      <span class="badge removed">−8 suppressions</span>
+      <span class="badge">6 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">## Configurer Optic ID</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">## Configurer Optic ID</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">- A<mark class="inline-remove">ccéd</mark>ez <mark class="inline-remove">à</mark> Réglages, puis ch<mark class="inline-remove">oisiss</mark>ez Optic ID et <mark class="inline-remove">c</mark>ode.</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- A<mark class="inline-add">ll</mark>ez <mark class="inline-add">dans</mark> Réglages, puis <mark class="inline-add">tou</mark>chez Optic ID et <mark class="inline-add">C</mark>ode.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">- Sélectionnez Configurer Optic ID, et suivez les instructions à l’écran. Si vous avez besoin d’une correction de la vue, vous pouvez configurer Optic ID avec vos ZEISS Optical Inserts déjà jumelés, ou sans vos ZEISS Optical Inserts. Si vous configurez Optic ID sans ZEISS Optical Inserts, vous pourrez configurer ultérieurement Optic ID avec ZEISS Optical Inserts dans Réglages.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">- Sélectionnez Configurer Optic ID, et suivez les instructions à l’écran. Si vous avez besoin d’une correction de la vue, vous pouvez configurer Optic ID avec vos ZEISS Optical Inserts déjà jumelés, ou sans vos ZEISS Optical Inserts. Si vous configurez Optic ID sans ZEISS Optical Inserts, vous pourrez configurer ultérieurement Optic ID avec ZEISS Optical Inserts dans Réglages.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">Si vous êtes connecté à votre iPhone doté d’iOS 17.1 ou version ultérieure et à votre Apple Vision Pro avec le même compte Apple, avoir votre iPhone à proximité peut activer Optic ID lorsque vous allumez ou redémarrez votre Apple Vision Pro.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">Si vous êtes connecté à votre iPhone doté d’iOS 17.1 ou version ultérieure et à votre Apple Vision Pro avec le même compte Apple, avoir votre iPhone à proximité peut activer Optic ID lorsque vous allumez ou redémarrez votre Apple Vision Pro.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">- A<mark class="inline-remove">ccéd</mark>ez <mark class="inline-remove">à</mark> Réglages <mark class="inline-remove">&gt;</mark> Optic ID et <mark class="inline-remove">c</mark>ode.</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- A<mark class="inline-add">ll</mark>ez <mark class="inline-add">dans</mark> Réglages<mark class="inline-add">,</mark> <mark class="inline-add">puis touchez</mark> Optic ID et <mark class="inline-add">C</mark>ode.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">- Sous « L’iPhone à proximité prend en charge Optic ID », touchez votre iPhone.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">- Sous « L’iPhone à proximité prend en charge Optic ID », touchez votre iPhone.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">- Saisissez votre code d’accès, puis sélectionnez Réinitialiser Optic ID. Si vous utilisez des ZEISS Optical Inserts, sélectionnez Réinitialiser Optic ID pour [vos ZEISS Optical Inserts] ou, pour réinitialiser entièrement Optic ID, choisissez Réinitialiser Optic ID pour tous les inserts optiques.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">- Saisissez votre code d’accès, puis sélectionnez Réinitialiser Optic ID. Si vous utilisez des ZEISS Optical Inserts, sélectionnez Réinitialiser Optic ID pour [vos ZEISS Optical Inserts] ou, pour réinitialiser entièrement Optic ID, choisissez Réinitialiser Optic ID pour tous les inserts optiques.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">### Accessibilit<mark class="inline-remove">é</mark></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">### Accessibilit<mark class="inline-add">y</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">Si vous avez un œil directeur, vous pouvez choisir de contrôler l’Apple Vision Pro avec un seul œil. Lorsque vous choisissez cette option, seul cet œil est utilisé avec Optic ID.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">Si vous avez un œil directeur, vous pouvez choisir de contrôler l’Apple Vision Pro avec un seul œil. Lorsque vous choisissez cette option, seul cet œil est utilisé avec Optic ID.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">### Utiliser Optic ID pour effectuer des achats</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">### Utiliser Optic ID pour effectuer des achats</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">Pour effectuer un achat<mark class="inline-remove"> à l’aide d’Optic ID</mark> dans une app ou sur un site web dans Safari, a<mark class="inline-remove">ccéd</mark>ez <mark class="inline-remove">à</mark> Réglages <mark class="inline-remove">&gt;</mark> Optic ID et <mark class="inline-remove">c</mark>ode, <mark class="inline-remove">puis</mark> assurez-vous que l<mark class="inline-remove">e réglage «</mark> Cartes et Apple Pay <mark class="inline-remove">» </mark>est activé. Ensuite :</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">Pour <mark class="inline-add">utiliser Optic ID afin d’</mark>effectuer un achat dans une app ou sur un site web dans Safari, a<mark class="inline-add">ll</mark>ez <mark class="inline-add">dans</mark> Réglages<mark class="inline-add">,</mark> <mark class="inline-add">touchez</mark> Optic ID et <mark class="inline-add">C</mark>ode, <mark class="inline-add">et</mark> assurez-vous que l<mark class="inline-add">’option</mark> Cartes et Apple Pay est activé<mark class="inline-add">e</mark>. Ensuite<mark class="inline-add">, procédez comme suit</mark> :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Touchez le bouton Acheter avec Apple Pay ou sélectionnez Apple Pay comme mode de paiement. Vérifiez vos informations de paiement.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">- Touchez le bouton Acheter avec Apple Pay ou sélectionnez Apple Pay comme mode de paiement. Vérifiez vos informations de paiement.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">- Attendez que la mention OK et une coche s’affichent à l’écran.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">- Attendez que la mention OK et une coche s’affichent à l’écran.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">Pour acheter du contenu <mark class="inline-remove">à l’aide d’Optic ID dan</mark>s l’iTunes Store, l’App Store et la <mark class="inline-remove">l</mark>ibrairie, a<mark class="inline-remove">ccéd</mark>ez <mark class="inline-remove">à</mark> Réglages <mark class="inline-remove">&gt;</mark> Optic ID et <mark class="inline-remove">c</mark>ode, <mark class="inline-remove">puis</mark> assurez-vous que l<mark class="inline-remove">e réglage «</mark> iTunes<mark class="inline-remove"> Store</mark> et App Store <mark class="inline-remove">» </mark>est activé. Ensuite, procédez comme suit :</code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">Pour <mark class="inline-add">utiliser Optic ID afin d’</mark>acheter du contenu s<mark class="inline-add">ur</mark> l’iTunes Store, l’App Store et <mark class="inline-add">dans </mark>la <mark class="inline-add">L</mark>ibrairie, a<mark class="inline-add">ll</mark>ez <mark class="inline-add">dans</mark> Réglages<mark class="inline-add">,</mark> <mark class="inline-add">touchez</mark> Optic ID et <mark class="inline-add">C</mark>ode, <mark class="inline-add">et</mark> assurez-vous que l<mark class="inline-add">’option</mark> iTunes et App Store est activé<mark class="inline-add">e</mark>. Ensuite, procédez comme suit :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">- Ouvrez l’iTunes Store, l’App Store ou la librairie, puis sélectionnez l’article que vous souhaitez acheter.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">- Ouvrez l’iTunes Store, l’App Store ou la librairie, puis sélectionnez l’article que vous souhaitez acheter.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">81</span><code class="line-text">- Regardez directement l’icône Optic ID pour vous connecter.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">- Regardez directement l’icône Optic ID pour vous connecter.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">Pour <mark class="inline-remove">c</mark>o<mark class="inline-remove">nsulte</mark>r et contrôler les apps <mark class="inline-remove">aux</mark>que<mark class="inline-remove">lles</mark> <mark class="inline-remove">vous pouvez vous connecter à l’aide d’</mark>Optic ID, a<mark class="inline-remove">ccéd</mark>ez <mark class="inline-remove">à</mark> Réglages <mark class="inline-remove">&gt;</mark> Optic ID et <mark class="inline-remove">c</mark>ode, puis touchez <mark class="inline-remove">« </mark>Autres apps<mark class="inline-remove"> »</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">Pour <mark class="inline-add">v</mark>o<mark class="inline-add">i</mark>r et contrôler les apps qu<mark class="inline-add">i utilis</mark>e<mark class="inline-add">nt</mark> Optic ID<mark class="inline-add"> pour la connexion</mark>, a<mark class="inline-add">ll</mark>ez <mark class="inline-add">dans</mark> Réglages<mark class="inline-add">,</mark> <mark class="inline-add">touchez</mark> Optic ID et <mark class="inline-add">C</mark>ode, puis touchez Autres apps.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">85</span><code class="line-text">Certaines apps iPad sur l’Apple Vision Pro peuvent vous <mark class="inline-remove">i</mark>n<mark class="inline-remove">vit</mark>er <mark class="inline-remove">à</mark> vous connecter avec Face ID. Vous pouvez utiliser Optic ID à la place.</code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">Certaines apps<mark class="inline-add"> pour</mark> iPad sur l’Apple Vision Pro peuvent vous <mark class="inline-add">dema</mark>n<mark class="inline-add">d</mark>er <mark class="inline-add">de</mark> vous connecter avec Face ID. Vous pouvez utiliser Optic ID à la place.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">87</span><code class="line-text">### Remplissage automatique du champ du mot de passe dans Safari</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">### Remplissage automatique du champ du mot de passe dans Safari</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text">- A<mark class="inline-remove">ccéd</mark>ez <mark class="inline-remove">à</mark> Réglages <mark class="inline-remove">&gt;</mark> Optic ID et <mark class="inline-remove">c</mark>ode, puis activez<mark class="inline-remove"> «</mark> Remplissage automatique des mots de passe<mark class="inline-remove"> »</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">- A<mark class="inline-add">ll</mark>ez <mark class="inline-add">dans</mark> Réglages<mark class="inline-add">,</mark> <mark class="inline-add">touchez</mark> Optic ID et <mark class="inline-add">C</mark>ode, puis activez Remplissage automatique des mots de passe.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">- Ouvrez Safari et allez sur un site web.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">91</span><code class="line-text">- Ouvrez Safari et allez sur un site web.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 35 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

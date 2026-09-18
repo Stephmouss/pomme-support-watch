@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Ajouter ou supprimer un appareil de votre contrat AppleCare One - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Ajouter ou supprimer un appareil de votre contrat AppleCare One - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/122224">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+36 ajouts</span>
+      <span class="badge removed">−72 suppressions</span>
+      <span class="badge">3 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Ajouter ou supprimer un appareil de votre contrat AppleCare One</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Ajouter ou supprimer un appareil de votre contrat AppleCare One</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Une fois vot<mark class="inline-remove">re</mark> contrat AppleCare One<mark class="inline-remove"> souscrit</mark>, vous pouvez c<mark class="inline-remove">ho</mark>i<mark class="inline-remove">si</mark>r les pr<mark class="inline-remove">odu</mark>i<mark class="inline-remove">t</mark>s que vous souhaitez couvrir.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Une fois <mark class="inline-add">que </mark>vo<mark class="inline-add">us avez souscri</mark>t<mark class="inline-add"> un</mark> contrat AppleCare One, vous pouvez <mark class="inline-add">fa</mark>ci<mark class="inline-add">lement gére</mark>r les <mark class="inline-add">a</mark>p<mark class="inline-add">pa</mark>r<mark class="inline-add">e</mark>i<mark class="inline-add">l</mark>s que vous souhaitez couvrir.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">- [Ajouter un appareil à votre contrat AppleCare One](https://support.apple.com/fr-fr/122224#add)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">- [Ajouter un appareil à votre contrat AppleCare One](https://support.apple.com/fr-fr/122224#add)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">- [<mark class="inline-remove">P</mark>r<mark class="inline-remove">oc</mark>é<mark class="inline-remove">der</mark> à <mark class="inline-remove">un</mark>e<mark class="inline-remove"> vérific</mark>a<mark class="inline-remove">tion de vot</mark>re <mark class="inline-remove">appar</mark>e<mark class="inline-remove">il</mark>](https://support.apple.com/fr-fr/122224#<mark class="inline-remove">d</mark>e<mark class="inline-remove">v</mark>i<mark class="inline-remove">cecheck</mark>)</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">- [<mark class="inline-add">Comp</mark>r<mark class="inline-add">endre l’admissibilit</mark>é à <mark class="inline-add">Appl</mark>e<mark class="inline-add">C</mark>are <mark class="inline-add">On</mark>e](https://support.apple.com/fr-fr/122224#e<mark class="inline-add">l</mark>i<mark class="inline-add">gibility</mark>)</code></div>
+<div class="diff-line previous removed"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">- [Comprendre l’éligibilité des appareils à AppleCare One](https://support.apple.com/fr-fr/122224#eligibility)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">- [Supprimer un appareil de votre contrat AppleCare One](https://support.apple.com/fr-fr/122224#remove)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">- [Supprimer un appareil de votre contrat AppleCare One](https://support.apple.com/fr-fr/122224#remove)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text"><mark class="inline-remove">[Im</mark>a<mark class="inline-remove">ge: Li</mark>re <mark class="inline-remove">la</mark> vidéo<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text"><mark class="inline-add">Avec AppleC</mark>are <mark class="inline-add">One,</mark> v<mark class="inline-add">ous pouvez protéger tous les appare</mark>i<mark class="inline-add">ls a</mark>d<mark class="inline-add">missibles associ</mark>é<mark class="inline-add">s à v</mark>o<mark class="inline-add">tre compte Apple dans un seul contrat AppleCare. 1</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text"><mark class="inline-remove">Lorsque</mark> <mark class="inline-remove">vous [souscri</mark>ve<mark class="inline-remove">z un </mark>c<mark class="inline-remove">ontrat</mark> AppleCare One<mark class="inline-remove">](https://s</mark>u<mark class="inline-remove">pport.</mark>a<mark class="inline-remove">pp</mark>l<mark class="inline-remove">e.com/fr-fr/127207) </mark>, vous <mark class="inline-remove">bé</mark>n<mark class="inline-remove">éfi</mark>c<mark class="inline-remove">i</mark>ez <mark class="inline-remove">d’</mark>une couverture pr<mark class="inline-remove">enant en charge jusqu’à</mark> trois appareils et vous pouvez <mark class="inline-remove">gé</mark>rer <mark class="inline-remove">l</mark>es appareils <mark class="inline-remove">que vous souhaitez </mark>couvr<mark class="inline-remove">ir.</mark> <mark class="inline-remove">C</mark>o<mark class="inline-remove">ns</mark>u<mark class="inline-remove">l</mark>te<mark class="inline-remove">z</mark> <mark class="inline-remove">l</mark>es <mark class="inline-remove">déta</mark>i<mark class="inline-remove">ls</mark> de votre contrat <mark class="inline-remove">dans les [conditions générales d’AppleCare One](https://www.apple.com/legal/applecare/applecareone/) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">A</mark>vec AppleCare One<mark class="inline-add"> Individ</mark>ual, vous <mark class="inline-add">comme</mark>ncez <mark class="inline-add">avec </mark>une couverture p<mark class="inline-add">ou</mark>r trois appareils <mark class="inline-add">admissibles, </mark>et vous pouvez r<mark class="inline-add">emplac</mark>er <mark class="inline-add">d</mark>es appareils couv<mark class="inline-add">e</mark>r<mark class="inline-add">ts,</mark> <mark class="inline-add">en aj</mark>oute<mark class="inline-add">r</mark> <mark class="inline-add">d’autr</mark>es <mark class="inline-add">ou en suppr</mark>i<mark class="inline-add">mer</mark> de votre contrat<mark class="inline-add">.</mark> <mark class="inline-add">2</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- Pour l’iPhone, l’iPad et l’Apple Watch, la couverture contre le vol et la perte est incluse avec AppleCare One.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">Découvrez [comment obtenir AppleCare One](https://support.apple.com/fr-fr/127207) , ou apprenez-en plus [sur les avantages de la couverture AppleCare](https://www.apple.com/applecare/) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">## Ajouter un appareil à votre contrat AppleCare One</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">## Ajouter un appareil à votre contrat AppleCare One</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text"><mark class="inline-remove">Un</mark>e <mark class="inline-remove">fo</mark>i<mark class="inline-remove">s</mark> votre contrat AppleCare One so<mark class="inline-remove">us</mark>c<mark class="inline-remove">r</mark>i<mark class="inline-remove">t,</mark> vo<mark class="inline-remove">us devez ajou</mark>t<mark class="inline-remove">er des appa</mark>re<mark class="inline-remove">ils au</mark> co<mark class="inline-remove">n</mark>t<mark class="inline-remove">rat pour qu’ils soi</mark>e<mark class="inline-remove">nt couverts par</mark> Apple<mark class="inline-remove">Care One</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text"><mark class="inline-add">Pour ajouter votr</mark>e <mark class="inline-add">appare</mark>i<mark class="inline-add">l à</mark> votre contrat AppleCare One<mark class="inline-add">,</mark> <mark class="inline-add">il doit être as</mark>soci<mark class="inline-add">é à</mark> votre co<mark class="inline-add">mp</mark>te Apple.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text"><mark class="inline-remove">lorsque vous achetez un produit auprès d’</mark>A<mark class="inline-remove">pple, vous pou</mark>ve<mark class="inline-remove">z séle</mark>c<mark class="inline-remove">tionner</mark> AppleCare One <mark class="inline-remove">po</mark>u<mark class="inline-remove">r </mark>a<mark class="inline-remove">jouter</mark> vo<mark class="inline-remove">tr</mark>e<mark class="inline-remove"> nou</mark>vel appareil à votre contrat<mark class="inline-remove"> AppleCare One</mark>.<mark class="inline-remove"> Si votre contrat couvre déjà trois appareils ou plus, vous pouvez échanger la couverture avec l’un de vos autres appareils, ou souscrire une extension d’abonnement pour couvrir un appareil supplémentaire.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">Avec AppleCare One <mark class="inline-add">Individ</mark>ua<mark class="inline-add">l,</mark> vo<mark class="inline-add">us d</mark>eve<mark class="inline-add">z choisir manue</mark>l<mark class="inline-add">lement les</mark> appareil<mark class="inline-add">s que vous souhaitez couvrir, et vous pouvez remplacer des appareils couverts ou acheter des abonnements complémentaires pour couvrir plus d’appareils. Certains appareils peuvent nécessiter des vérifications, et d’autres peuvent ne pas être admissibles à l’ajout</mark> à votre contrat.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text"><mark class="inline-remove">P</mark>our ajouter u<mark class="inline-remove">n</mark> appareil à<mark class="inline-remove"> votre contrat, vous devez vous connecter à l’appareil avec le compte Apple utilisé pour souscrire</mark> votre contrat AppleCare One.</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text"><mark class="inline-add">Lorsque v</mark>ou<mark class="inline-add">s achetez un produit auprès d’Apple, vous pouvez choisi</mark>r <mark class="inline-add">d’</mark>ajouter <mark class="inline-add">votre no</mark>u<mark class="inline-add">vel</mark> appareil à votre contrat AppleCare One<mark class="inline-add"> Individual</mark>.<mark class="inline-add"> Si votre contrat couvre déjà trois appareils ou plus, vous pouvez remplacer des appareils couverts ou en ajouter d’autres à votre contrat moyennant des frais supplémentaires.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text"><mark class="inline-remove">Vous pouvez </mark>[<mark class="inline-remove">a</mark>joute<mark class="inline-remove">r</mark> des appareils à votre contrat AppleCare One en ligne](https://checkcoverage.apple.com) , ou utilise<mark class="inline-remove">r</mark> n<mark class="inline-remove">’importe quel</mark> appareil associé à votre compte Apple qui r<mark class="inline-remove">em</mark>p<mark class="inline-remove">lit</mark> <mark class="inline-remove">l</mark>es c<mark class="inline-remove">onditions suivant</mark>es :</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">[<mark class="inline-add">A</mark>joute<mark class="inline-add">z</mark> des appareils à votre contrat AppleCare One<mark class="inline-add"> Individual</mark> en ligne](https://checkcoverage.apple.com) , ou utilise<mark class="inline-add">z</mark> <mark class="inline-add">u</mark>n appareil associé à votre compte Apple qui r<mark class="inline-add">é</mark>p<mark class="inline-add">ond</mark> <mark class="inline-add">à c</mark>es <mark class="inline-add">exigen</mark>ces :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">- iPhone doté d’iOS 18.5 ou version ultérieure</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">- iPhone doté d’iOS 18.5 ou version ultérieure</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">- Apple Vision Pro doté de visionOS 2.5 ou version ultérieure</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">- Apple Vision Pro doté de visionOS 2.5 ou version ultérieure</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text"><mark class="inline-remove">Pour a</mark>joute<mark class="inline-remove">r</mark> <mark class="inline-remove">un</mark> appareil <mark class="inline-remove">à</mark> vo<mark class="inline-remove">t</mark>re<mark class="inline-remove"> contrat</mark> AppleCare <mark class="inline-remove">On</mark>e<mark class="inline-remove">, procédez comme sui</mark>t <mark class="inline-remove">:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text"><mark class="inline-add">A</mark>joute<mark class="inline-add">z</mark> <mark class="inline-add">des</mark> appareil<mark class="inline-add">s</mark> <mark class="inline-add">ou remplacez des appareils couverts dans</mark> vo<mark class="inline-add">s </mark>r<mark class="inline-add">églag</mark>e<mark class="inline-add">s</mark> AppleCare et <mark class="inline-add">garantie.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- [Ouvrez <mark class="inline-remove">les r</mark>églages AppleCare et garantie sur votre appareil](https://coverage.apple.com/cc/acW4820)<mark class="inline-remove"> , ou ouvrez l’app Réglages, sélectionnez Général, puis AppleCare et garantie.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">- [Ouvrez <mark class="inline-add">R</mark>églage<mark class="inline-add">s, puis Général, pui</mark>s AppleCare et garantie sur votre appareil](https://coverage.apple.com/cc/acW4820)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">- Dans la section AppleCare One Appareils, sélectionnez Ajouter un appareil.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">- Dans la section AppleCare One Appareils, sélectionnez Ajouter un appareil.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">- Ensuite, choisissez l’appareil que vous souhaitez ajouter.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">- Ensuite, choisissez l’appareil que vous souhaitez ajouter.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">- Si l’appareil apparaît sous Prêt à ajouter, suivez les instructions à l’écran pour l’ajouter à votre contrat. <mark class="inline-remove">1</mark></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- Si l’appareil apparaît sous Prêt à ajouter, suivez les instructions à l’écran pour l’ajouter à votre contrat. <mark class="inline-add">3</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- Si l’appareil apparaît sous Action requise, vous devrez peut-être [procéder à une vérification de l’appareil](https://support.apple.com/fr-fr/12<mark class="inline-remove">222</mark>4<mark class="inline-remove">#devicecheck</mark>) avant de pouvoir l’ajouter à votre contrat.</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- Si l’appareil apparaît sous Action requise, vous devrez peut-être [procéder à une vérification de l’appareil](https://support.apple.com/fr-fr/12<mark class="inline-add">787</mark>4) avant de pouvoir l’ajouter à votre contrat.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">- Si vous ne voyez pas l’un de vos appareils, touchez ou cliquez sur « Vous ne voyez pas l’un de vos appareils ? » pour en savoir plus. Si vous ne voyez toujours pas votre appareil dans la section « Non éligibles au contrat », vous devrez peut-être [vous connecter à votre compte Apple](https://support.apple.com/111001) sur cet appareil ou le jumeler avec l’un de vos autres appareils Apple associés à votre compte.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">- Si vous ne voyez pas l’un de vos appareils, touchez ou cliquez sur « Vous ne voyez pas l’un de vos appareils ? » pour en savoir plus. Si vous ne voyez toujours pas votre appareil dans la section « Non éligibles au contrat », vous devrez peut-être [vous connecter à votre compte Apple](https://support.apple.com/111001) sur cet appareil ou le jumeler avec l’un de vos autres appareils Apple associés à votre compte.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">## <mark class="inline-remove">P</mark>r<mark class="inline-remove">oc</mark>é<mark class="inline-remove">der</mark> à <mark class="inline-remove">un</mark>e<mark class="inline-remove"> vérific</mark>a<mark class="inline-remove">tion de vot</mark>re <mark class="inline-remove">appar</mark>e<mark class="inline-remove">il</mark></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">## <mark class="inline-add">Comp</mark>r<mark class="inline-add">endre l’admissibilit</mark>é à <mark class="inline-add">Appl</mark>e<mark class="inline-add">C</mark>are <mark class="inline-add">On</mark>e</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text"><mark class="inline-remove">Aprè</mark>s <mark class="inline-remove">avoir sélectionné l’</mark>appareil<mark class="inline-remove"> que vou</mark>s<mark class="inline-remove"> souhaitez ajouter</mark> à <mark class="inline-remove">votre</mark> co<mark class="inline-remove">n</mark>tr<mark class="inline-remove">at</mark> AppleCare One<mark class="inline-remove">, vous devrez</mark> peut<mark class="inline-remove">-</mark>être con<mark class="inline-remove">firmer que l’appareil est en bon état avant de pouvoir l’ajouter. Ces étapes peuvent inclure une vérification à di</mark>stance<mark class="inline-remove"> de l’appareil, la pri</mark>s<mark class="inline-remove">e de photos de celui-ci ou une visite dans un Apple Store pour une inspection plus approfondie</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text"><mark class="inline-add">L’admissibilité de</mark>s appareils à <mark class="inline-add">la</mark> co<mark class="inline-add">uver</mark>t<mark class="inline-add">u</mark>r<mark class="inline-add">e</mark> AppleCare One peut<mark class="inline-add"> </mark>être <mark class="inline-add">affectée par plusieurs cir</mark>constances.</code></div>
+<div class="diff-line previous removed"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">Si la vérification de votre appareil est réussie, suivez les instructions à l’écran pour ajouter l’appareil. Si une inspection plus approfondie est nécessaire, vous pouvez également prendre rendez-vous dans un Apple Store pour déterminer si l’appareil peut être ajouté à votre contrat.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">Si l’appareil n’est pas en bon état, il pourra peut-être être ajouté à votre contrat après une [réparation certifiée par Apple](https://support.apple.com/fr-fr/repair) .</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">### Pour l’iPhone ou l’iPad</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">Lancez le processus de vérification de l’appareil sur l’iPhone ou l’iPad que vous souhaitez ajouter.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">S’il vous est demandé de prendre des photos de l’iPhone ou de l’iPad que vous souhaitez ajouter, vous aurez besoin d’un autre iPhone ou iPad pour effectuer cette partie du processus. Vous pouvez également faire vérifier votre appareil dans un Apple Store en suivant le lien sur votre appareil.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">#### Instructions pour l’iPhone ou l’iPad distinct utilisé pour prendre des photos :</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">- Vous avez besoin d’un iPhone doté d’iOS 18.5 ou version ultérieure, ou d’un iPad doté d’iPadOS 18.5 ou version ultérieure. [Identifiez la version du logiciel de votre iPhone ou iPad.](https://support.apple.com/109065)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">- Le Wi-Fi doit être activé sur les deux appareils utilisés pour ce processus.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">- L’iPhone ou l’iPad que vous utilisez pour capturer des images doit être doté d’une caméra 12 Mpx. [Identifiez le modèle de votre appareil Apple.](https://support.apple.com/102604)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">- Votre compte Apple n’a pas besoin d’être connecté sur l’appareil utilisé pour capturer des images.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text">#### Conseils pour prendre des photos de l’appareil que vous souhaitez ajouter :</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">- Choisissez une surface plane bénéficiant d’une lumière vive et indirecte.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">- Retirez la coque, les autocollants et le protège-écran, si celui-ci est endommagé.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text">- [Nettoyez votre appareil](https://support.apple.com/103258) pour retirer les éventuelles taches.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">- [Réglez la luminosité de l’écran](https://support.apple.com/109351) de votre appareil sur le niveau maximal.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">### Pour le Mac</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">85</span><code class="line-text">Pour le Mac que vous souhaitez ajouter, lancez le processus de vérification de l’appareil sur un iPhone ou iPad associé à votre compte Apple. Vous devez bénéficier d’une connexion Wi-Fi, et votre Mac doit être chargé à plus de 20 % ou être en cours de charge.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text">Les résultats de la vérification de l’appareil s’afficheront sur l’iPhone ou l’iPad que vous avez utilisé.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text">### Apple Watch</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text">Pour terminer la vérification à distance de l’Apple Watch que vous souhaitez ajouter, utilisez l’iPhone avec lequel votre Apple Watch est jumelée pour lancer et terminer le processus.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">## Comprendre l’éligibilité des appareils à AppleCare One</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">95</span><code class="line-text">L’éligibilité des appareils à la couverture AppleCare One peut être influencée par plusieurs facteurs, dont les suivants :</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">97</span><code class="line-text">- L’ancienneté de votre appareil</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">- L’ancienneté de votre appareil</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text">- <mark class="inline-remove">L’é</mark>chec de la vérification de l’appareil</code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- <mark class="inline-add">É</mark>chec de la vérification de l’appareil<mark class="inline-add"> 4</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">101</span><code class="line-text">- Le pays ou la région d’achat de l’appareil</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">- Le pays ou la région d’achat de l’appareil</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">105</span><code class="line-text">- Le fait que l’appareil ait été marqué comme perdu et que le mode Perdu soit activé</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">- Le fait que l’appareil ait été marqué comme perdu et que le mode Perdu soit activé</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">107</span><code class="line-text">- <mark class="inline-remove">Une c</mark>ouverture par un autre produit AppleCare <mark class="inline-remove">2</mark></code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">- <mark class="inline-add">C</mark>ouverture par un autre produit AppleCare <mark class="inline-add">5</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">109</span><code class="line-text">- <mark class="inline-remove">Le fait que l’a</mark>ppareil n<mark class="inline-remove">e s</mark>o<mark class="inline-remove">it pas</mark> associé à votre compte Apple <mark class="inline-remove">3</mark></code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">- <mark class="inline-add">A</mark>ppareil no<mark class="inline-add">n</mark> associé à votre compte Apple <mark class="inline-add">6</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">111</span><code class="line-text">Si vous ne parvenez pas à ajouter votre pr<mark class="inline-remove">odu</mark>i<mark class="inline-remove">t</mark> à votre contrat, consultez le message sur votre appareil pour plus<mark class="inline-remove"> d’informations</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">Si vous ne parvenez pas à ajouter votre <mark class="inline-add">a</mark>p<mark class="inline-add">pa</mark>r<mark class="inline-add">e</mark>i<mark class="inline-add">l</mark> à votre contrat, consultez le message <mark class="inline-add">qui s’affiche </mark>sur votre appareil pour <mark class="inline-add">en savoir </mark>plus.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">113</span><code class="line-text">## Supprimer un appareil de votre contrat AppleCare One</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">## Supprimer un appareil de votre contrat AppleCare One</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">115</span><code class="line-text">Lorsque vous supprimez un appareil de votre contrat AppleCare One, sa couverture prend fin immédiatement. <mark class="inline-remove">Si vous résiliez la couverture AppleCare de votre appareil, v</mark>ous pourrez peut-être <mark class="inline-remove">s</mark>ou<mark class="inline-remove">s</mark>crir<mark class="inline-remove">e</mark> une nouvelle couverture AppleCare u<mark class="inline-remove">l</mark>t<mark class="inline-remove">é</mark>r<mark class="inline-remove">ieurement</mark> si vous changez d’avis. <mark class="inline-remove">S</mark>i vous avez <mark class="inline-remove">souscrit </mark>des <mark class="inline-remove">extensions d’</mark>abonnement, la suppression d’u<mark class="inline-remove">n</mark> appareil de votre contrat AppleCare One r<mark class="inline-remove">ésili</mark>era l’<mark class="inline-remove">ex</mark>t<mark class="inline-remove">ens</mark>ion a<mark class="inline-remove">ss</mark>oci<mark class="inline-remove">é</mark>e.</code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">Lorsque vous supprimez un appareil de votre contrat AppleCare One, sa couverture prend fin immédiatement. <mark class="inline-add">V</mark>ous pourrez peut-être <mark class="inline-add">raj</mark>ou<mark class="inline-add">ter l’appareil à votre </mark>c<mark class="inline-add">ont</mark>r<mark class="inline-add">at AppleCare One ou obten</mark>ir une nouvelle couverture AppleCare <mark class="inline-add">pl</mark>u<mark class="inline-add">s </mark>t<mark class="inline-add">a</mark>r<mark class="inline-add">d</mark> si vous changez d’avis. <mark class="inline-add">Avec AppleCare One Individual, s</mark>i vous avez des abonnement<mark class="inline-add">s complémentaires</mark>, la suppression d<mark class="inline-add">e n</mark>’<mark class="inline-add">importe q</mark>u<mark class="inline-add">el</mark> appareil de votre contrat AppleCare One <mark class="inline-add">ent</mark>r<mark class="inline-add">aîn</mark>era l’<mark class="inline-add">annula</mark>tion <mark class="inline-add">d’un </mark>a<mark class="inline-add">b</mark>o<mark class="inline-add">nnement </mark>c<mark class="inline-add">omplémenta</mark>i<mark class="inline-add">r</mark>e.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">117</span><code class="line-text">Si vous vous déconnectez de votre compte Apple sur un appareil couvert par AppleCare One<mark class="inline-remove">,</mark> l’appareil sera supprimé de votre contrat AppleCare One après 24 heures.</code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">Si vous vous déconnectez de votre compte Apple sur un appareil couvert par <mark class="inline-add">un contrat </mark>AppleCare One<mark class="inline-add"> et qu’un autre compte Apple se connecte à</mark> l’appareil<mark class="inline-add">, celui-ci</mark> sera supprimé de votre contrat AppleCare One après 24 heures.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">119</span><code class="line-text">### Supprimer un appareil</code></div>
+<div class="diff-line current unchanged"><span class="line-number">77</span><code class="line-text">### Supprimer un appareil</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">121</span><code class="line-text">Vous pouvez vous connecter à votre compte Apple et [supprimer un appareil de votre contrat en ligne](https://checkcoverage.apple.com) ,<mark class="inline-remove"> ou utiliser</mark> vo<mark class="inline-remove">tre iPhone, iPad, Mac o</mark>u<mark class="inline-remove"> Apple Vi</mark>s<mark class="inline-remove">ion Pro</mark> pou<mark class="inline-remove">r</mark> supprimer un appareil de votre <mark class="inline-remove">cont</mark>r<mark class="inline-remove">at</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">Vous pouvez vous connecter à votre compte Apple et [supprimer un appareil de votre contrat en ligne](https://checkcoverage.apple.com<mark class="inline-add">/</mark>) <mark class="inline-add">. Ou</mark>, vous pou<mark class="inline-add">vez</mark> supprimer un appareil d<mark class="inline-add">ans les réglages AppleCare et garantie d</mark>e votre <mark class="inline-add">appa</mark>r<mark class="inline-add">eil</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">123</span><code class="line-text">- [Ouvrez <mark class="inline-remove">les r</mark>églages AppleCare et garantie sur votre appareil](https://coverage.apple.com/cc/acW4820)<mark class="inline-remove"> , ou ouvrez l’app Réglages, sélectionnez Général, puis AppleCare et garantie.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text">- [Ouvrez <mark class="inline-add">R</mark>églage<mark class="inline-add">s, puis Général, pui</mark>s AppleCare et garantie sur votre appareil](https://coverage.apple.com/cc/acW4820)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">125</span><code class="line-text">- <mark class="inline-remove">Dans la section Appareils AppleCare One, s</mark>électionnez l’appareil que vous souhaitez supprimer.</code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">- <mark class="inline-add">S</mark>électionnez l’appareil que vous souhaitez supprimer<mark class="inline-add"> d’AppleCare One</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">127</span><code class="line-text">- Sélectionnez Supprimer l’appareil.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">- Sélectionnez Supprimer l’appareil.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">129</span><code class="line-text">- Dans la fenêtre suivante, sélectionnez Supprimer l’appareil pour confirmer que vous souhaitez supprimer l’appareil de votre contrat AppleCare One.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">- Dans la fenêtre suivante, sélectionnez Supprimer l’appareil pour confirmer que vous souhaitez supprimer l’appareil de votre contrat AppleCare One.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">131</span><code class="line-text">### Suppre<mark class="inline-remove">ssion de</mark> tous les appareils</code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">### Suppr<mark class="inline-add">im</mark>e<mark class="inline-add">r</mark> tous les appareils</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">133</span><code class="line-text">Si vous supprimez tous les appareils de votre contrat AppleCare One<mark class="inline-remove">, ou si votre contrat AppleCare One ne couvre qu’un seul appareil</mark>, votre contrat restera actif jusqu’à la fin de votre cycle de facturation e<mark class="inline-remove">n cours</mark>. Pendant cette période, vous pouvez toujours ajouter des appareils pour conserver votre contrat.</code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">Si vous supprimez tous les appareils de votre contrat AppleCare One, votre contrat restera actif jusqu’à la fin de votre cycle de facturation <mark class="inline-add">actu</mark>e<mark class="inline-add">l</mark>. Pendant cette période, vous pouvez toujours ajouter des appareils pour conserver votre contrat.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">135</span><code class="line-text">Si vous souhaitez résilier immédiatement la couverture AppleCare One pour tous vos appareils ou connaître les modalités de remboursement lorsque la couverture est résiliée, [apprenez-en davantage sur la résiliation de la couverture AppleCare](https://support.apple.com/118218) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">93</span><code class="line-text">Si vous souhaitez résilier immédiatement la couverture AppleCare One pour tous vos appareils ou connaître les modalités de remboursement lorsque la couverture est résiliée, [apprenez-en davantage sur la résiliation de la couverture AppleCare](https://support.apple.com/118218) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">137</span><code class="line-text">-<mark class="inline-remove"> Si vous ajoutez un appareil couvert par un contrat AppleCare+ ou AppleCare+ avec couverture en cas de perte ou de vol, celui-ci sera couvert par</mark> AppleCare One et <mark class="inline-remove">[v</mark>otre anc<mark class="inline-remove">i</mark>e<mark class="inline-remove">n</mark> <mark class="inline-remove">contrat Appl</mark>e<mark class="inline-remove">Care+ sera résilié](https://support.apple.com/118218) . Vous obtiendrez un remboursemen</mark>t au <mark class="inline-remove">pr</mark>o<mark class="inline-remove">r</mark>a<mark class="inline-remove">ta de la d</mark>u<mark class="inline-remove">rée du contrat AppleCare toujours valide. Si le contrat d’origine a été payé en totalité à l’avance, ce rembourse</mark>men<mark class="inline-remove">t peut être effectué sous forme d’Apple G</mark>i<mark class="inline-remove">ft Card</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text">- AppleCare One <mark class="inline-add">Individual </mark>e<mark class="inline-add">s</mark>t <mark class="inline-add">disp</mark>o<mark class="inline-add">nible en Allemagne, en Aus</mark>tr<mark class="inline-add">ali</mark>e<mark class="inline-add">,</mark> <mark class="inline-add">aux États-Unis, en Fr</mark>ance et au <mark class="inline-add">R</mark>o<mark class="inline-add">y</mark>aume<mark class="inline-add">-U</mark>ni.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">97</span><code class="line-text">- Un seul Apple Vision Pro peut être couvert par AppleCare One Individual. Vous pouvez remplacer des appareils couverts ou souscrire un contrat AppleCare+ unique pour les appareils Apple Vision Pro supplémentaires.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text">- Si vous ajoutez un appareil couvert par un contrat AppleCare+ ou AppleCare+ avec couverture en cas de perte ou de vol, celui-ci sera couvert par AppleCare One et [votre ancien contrat AppleCare+ sera résilié](https://support.apple.com/118218) . Vous obtiendrez un remboursement au prorata de la durée du contrat AppleCare toujours valide. Si le contrat initial a été payé intégralement à l’avance, le remboursement sera envoyé sous la forme d’une Apple Gift Card.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">- Certains appareils peuvent être admissibles à une couverture après une réparation certifiée Apple.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">139</span><code class="line-text">- Si votre appareil est couvert par un contrat AppleCare Services, vous devez contacter votre fournisseur AppleCare Services pour connaître les options permettant d’ajouter cet appareil à votre contrat AppleCare One.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">103</span><code class="line-text">- Si votre appareil est couvert par un contrat AppleCare Services, vous devez contacter votre fournisseur AppleCare Services pour connaître les options permettant d’ajouter cet appareil à votre contrat AppleCare One.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
