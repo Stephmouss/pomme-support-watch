@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Use Face ID on your iPhone or iPad Pro — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Use Face ID on your iPhone or iPad Pro</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/108411">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+17 ajouts</span>
+      <span class="badge removed">−17 suppressions</span>
+      <span class="badge">6 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Use Face ID on your iPhone or iPad Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Use Face ID on your iPhone or iPad Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">Face ID lets you securely unlock your iPhone or iPad, authenticate purchases, sign in to apps, and more — all with just a glance.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">Face ID lets you securely unlock your iPhone or iPad, authenticate purchases, sign in to apps, and more — all with just a glance.</code></div>
+<div class="diff-line previous removed"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">[Image: Some of the ways Face ID works on iPhone: Setting up the feature, unlocking the phone, and authenticating purchases]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">[Set up Face ID](https://support.apple.com/en-us/108411#setup)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">[Set up Face ID](https://support.apple.com/en-us/108411#setup)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">[Sign in with Face ID](https://support.apple.com/en-us/108411#passwords)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">[Sign in with Face ID](https://support.apple.com/en-us/108411#passwords)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">[Image: setup-face-id-graphic]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">## Set up Face ID</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">## Set up Face ID</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">- In Settings, tap Face ID &amp; Passcode. If asked, enter your passcode. If you didn’t [set a passcode](https://support.apple.com/119586) , you’ll be asked to create one to use as an alternate way to verify your identity.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">- In Settings, tap Face ID &amp; Passcode. If asked, enter your passcode. If you didn’t [set a passcode](https://support.apple.com/119586) , you’ll be asked to create one to use as an alternate way to verify your identity.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- <mark class="inline-remove">T</mark>ap Set Up Face ID.</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- <mark class="inline-add">Make sure you are in an area with good lighting, then t</mark>ap Set Up Face ID.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">- Hold your device in portrait orientation, position your face in front of your device, then tap Get Started.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">- Hold your device in portrait orientation, position your face in front of your device, then tap Get Started.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">[Image: iPhone screen shows Face ID setup with a circular guide and a face icon.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">- Position your face inside the frame and gently move your head to complete the circle. If you&#x27;re unable to move your head, tap Accessibility Options.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">- Position your face inside the frame and gently move your head to complete the circle. If you&#x27;re unable to move your head, tap Accessibility Options.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">- Tap Done.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">- Tap Done.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text"><mark class="inline-remove">[Im</mark>a<mark class="inline-remove">ge: Th</mark>e <mark class="inline-remove">b</mark>egi<mark class="inline-remove">nn</mark>ing <mark class="inline-remove">of t</mark>he Face ID<mark class="inline-remove"> set up process]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text"><mark class="inline-add">M</mark>a<mark class="inline-add">k</mark>e <mark class="inline-add">sur</mark>e<mark class="inline-add"> you have </mark>g<mark class="inline-add">ood l</mark>i<mark class="inline-add">ght</mark>ing <mark class="inline-add">w</mark>he<mark class="inline-add">n you set up</mark> Face ID<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">To choose features that you want to use Face ID with or reset Face ID, go to Settings, then tap Face ID &amp; Passcode.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">To choose features that you want to use Face ID with or reset Face ID, go to Settings, then tap Face ID &amp; Passcode.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text"><mark class="inline-remove">Y</mark>o<mark class="inline-remove">u</mark> <mark class="inline-remove">c</mark>an also<mark class="inline-remove"> [use</mark> Face ID<mark class="inline-remove"> with face masks</mark>](https://support.apple.com/1024<mark class="inline-remove">52</mark>)<mark class="inline-remove"> if you use iPhone 12 or later with iOS 15.4 and later. Face ID works best when your iPhone or iPad is approximately 10–20 inches from your face.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text"><mark class="inline-add">[Learn which iPh</mark>o<mark class="inline-add">ne</mark> an<mark class="inline-add">d</mark> <mark class="inline-add">iP</mark>a<mark class="inline-add">d mode</mark>ls<mark class="inline-add"> supp</mark>o<mark class="inline-add">rt</mark> Face ID](https://support.apple.com/102<mark class="inline-add">85</mark>4)</code></div>
+<div class="diff-line previous removed"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">[Need help with Face ID](https://support.apple.com/118243) ? [Learn which iPhone and iPad models support Face ID](https://support.apple.com/102854) .</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">You can&#x27;t use Face ID in landscape mode with Face ID with a Mask turned on.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">You can&#x27;t use Face ID in landscape mode with Face ID with a Mask turned on.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text"><mark class="inline-remove">[Image:</mark> Use Face ID<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text"><mark class="inline-add">##</mark> Use Face ID</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">U</mark>se Face ID <mark class="inline-remove">t</mark>o<mark class="inline-remove"> make p</mark>ur<mark class="inline-remove">ch</mark>ase<mark class="inline-remove">s</mark></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text"><mark class="inline-add">Face</mark> <mark class="inline-add">ID works best when your iPhone or iPad is approximately 10–20 inches from your face. Face ID works in portrait and landscape orientation on iPhone 13 models and later using iOS 16 and later. For earlier models, Face ID works on iPhone only when it&#x27;s in portrait orientation and you&#x27;re facing the TrueDepth camera. On iPad, you can u</mark>se Face ID <mark class="inline-add">when y</mark>our<mark class="inline-add"> iP</mark>a<mark class="inline-add">d i</mark>s<mark class="inline-add"> in any ori</mark>e<mark class="inline-add">ntation.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">You can use Face ID t<mark class="inline-remove">o</mark> aut<mark class="inline-remove">h</mark>ent<mark class="inline-remove">ic</mark>ate <mark class="inline-remove">purchases</mark> with <mark class="inline-remove">Apple</mark> <mark class="inline-remove">P</mark>a<mark class="inline-remove">y</mark> <mark class="inline-remove">an</mark>d<mark class="inline-remove"> in the iTun</mark>es <mark class="inline-remove">S</mark>tor<mark class="inline-remove">e, App Store, and Boo</mark>k <mark class="inline-remove">St</mark>o<mark class="inline-remove">re</mark> i<mark class="inline-remove">n Apple Books</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">You can<mark class="inline-add"> [use Face ID with face masks](https://support.apple.com/102452) if you use iPhone 12 or later with iOS 15.4 and later. When you</mark> use Face ID <mark class="inline-add">wi</mark>t<mark class="inline-add">h</mark> a<mark class="inline-add"> mask on yo</mark>u<mark class="inline-add">r iPhone, i</mark>t<mark class="inline-add"> only works in portrait ori</mark>entat<mark class="inline-add">ion. Fac</mark>e <mark class="inline-add">ID</mark> with <mark class="inline-add">a</mark> <mark class="inline-add">m</mark>a<mark class="inline-add">sk</mark> d<mark class="inline-add">o</mark>es <mark class="inline-add">no</mark>t<mark class="inline-add"> w</mark>ork o<mark class="inline-add">n</mark> i<mark class="inline-add">Pad</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">Face ID works with many prescription or clear glasses. If you can&#x27;t get Face ID to work with clear or prescription glasses, try to [add an alternate appearance](https://support.apple.com/guide/iphone/set-up-face-id-iph6d162927a/ios) while wearing your glasses. If you have an appearance that can look vastly different from facial hair, heavy makeup, or other changes, you can [set up an alternate appearance](https://support.apple.com/guide/iphone/set-up-face-id-iph6d162927a/ios) so Face ID still recognizes you.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">[Need help with Face ID](https://support.apple.com/118243) ?</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">### Use Face ID with Apple Pay on your iPhone</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">### Use Face ID with Apple Pay on your iPhone</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">To make a purchase within an app or on a website in Safari:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">To make a purchase within an app or on a website in Safari:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">- Tap the Buy with Apple Pay button or choose Apple Pay as the payment method. Confirm your payment information. To choose a different card to pay with, tap the Next button <mark class="inline-remove">&gt; </mark>next to your card.</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">- Tap the Buy with Apple Pay button or choose Apple Pay as the payment method. Confirm your payment information. To choose a different card to pay with, tap the Next button next to your card.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">- Double-click the side button, then glance at your iPhone or iPad.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">- Double-click the side button, then glance at your iPhone or iPad.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">- When asked to pay, double-click the side button, then glance at your iPhone or iPad.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">- When asked to pay, double-click the side button, then glance at your iPhone or iPad.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">[Image: iPhone screen shows an App Store purchase for Night Sky, prompting to double-click and confirm with Face ID.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">77</span><code class="line-text">- Wait for Done and a checkmark to display.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">79</span><code class="line-text">- Wait for Done and a checkmark to display.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text">[Image: Confirming a purchase in the App Store on iPhone]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">81</span><code class="line-text">You might be asked to enter your Apple Account password for the first purchase you make in the iTunes Store, App Store, or Book Store.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">You might be asked to enter your Apple Account password for the first purchase you make in the iTunes Store, App Store, or Book Store.</code></div>
+<div class="diff-line previous removed"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">[Image: use-face-id-auto-fill-graphic]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">## Sign in to apps or other websites with Face ID</code></div>
+<div class="diff-line current unchanged"><span class="line-number">83</span><code class="line-text">## Sign in to apps or other websites with Face ID</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">97</span><code class="line-text">- [About Face ID advanced technology](https://support.apple.com/102381)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">- [About Face ID advanced technology](https://support.apple.com/102381)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">97</span><code class="line-text">- [About Attention Aware features on your iPhone or iPad](https://support.apple.com/102216)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">99</span><code class="line-text">- [Get help with Face ID on your iPhone or iPad](https://support.apple.com/118243)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">99</span><code class="line-text">- [Get help with Face ID on your iPhone or iPad](https://support.apple.com/118243)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">101</span><code class="line-text">- [Learn which iPhone and iPad models support Face ID](https://support.apple.com/102854)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">101</span><code class="line-text">- [Learn which iPhone and iPad models support Face ID](https://support.apple.com/102854)</code></div>
+<div class="fold"><span>••• 2 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>If your iPhone or iPad won&#x27;t update — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>If your iPhone or iPad won&#x27;t update</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/108905">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+28 ajouts</span>
+      <span class="badge removed">−22 suppressions</span>
+      <span class="badge">4 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># If your iPhone or iPad won&#x27;t update</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># If your iPhone or iPad won&#x27;t update</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">To update your iPhone or iPad, you need a compatible device, a<mark class="inline-remove"> power source, a</mark>n internet connection, and enough available storage.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">To update your iPhone or iPad, you need a compatible device, an internet connection, and enough available storage.<mark class="inline-add"> It also helps to keep your device connected to a power source.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## If you can’t install the latest version of iOS or iPadOS on your iPhone or iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## If you can’t install the latest version of iOS or iPadOS on your iPhone or iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text"><mark class="inline-remove">You</mark> <mark class="inline-remove">mig</mark>h<mark class="inline-remove">t be unable to update</mark> your iPhone or iPad wirelessly, or over the air<mark class="inline-remove">, for one of these reasons</mark>:</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text"><mark class="inline-add">Here&#x27;s</mark> <mark class="inline-add">w</mark>h<mark class="inline-add">y</mark> your iPhone or iPad<mark class="inline-add"> might not update</mark> wirelessly, or over the air:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">- [Your device doesn&#x27;t support the latest software](https://support.apple.com/en-us/108905#new-software)</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">- [Your device doesn&#x27;t support the latest software](https://support.apple.com/en-us/108905#new-software)<mark class="inline-add"> .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">- [There isn&#x27;t enough available storage space on your device](https://support.apple.com/en-us/108905#no-space)</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">- [There isn&#x27;t enough available storage space on your device](https://support.apple.com/en-us/108905#no-space)<mark class="inline-add"> .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">- [The update tak<mark class="inline-remove">es a</mark> long t<mark class="inline-remove">im</mark>e to download](https://support.apple.com/en-us/108905#download)</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- [The update <mark class="inline-add">is </mark>tak<mark class="inline-add">ing</mark> long<mark class="inline-add">er</mark> t<mark class="inline-add">han </mark>e<mark class="inline-add">xpected</mark> to download](https://support.apple.com/en-us/108905#download)<mark class="inline-add"> .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- [Your device isn&#x27;t able to reach the update server](https://support.apple.com/en-us/108905#server)</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- [Your device isn&#x27;t able to reach the update server](https://support.apple.com/en-us/108905#server)<mark class="inline-add"> .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">- [The update doesn&#x27;t complete](https://support.apple.com/en-us/108905#update)</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- [The update doesn&#x27;t complete](https://support.apple.com/en-us/108905#update)<mark class="inline-add"> .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">## If your device doesn&#x27;t support new software</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">## If your device doesn&#x27;t support new software</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">To check if your device supports new software:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">To check if your device supports new software:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- <mark class="inline-remove">[</mark>Identify your iPhone](https://support.apple.com/en-us/108044) or [iPad model](https://support.apple.com/en-us/108043) .</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- Identify <mark class="inline-add">[</mark>your iPhone](https://support.apple.com/en-us/108044) or [iPad model](https://support.apple.com/en-us/108043) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- Check whether your iPhone or iPad model is on <mark class="inline-remove">[</mark>the list of compatible devices for the latest version of iOS](https://support.apple.com/guide/iphone/supported-models-iphe3fa5df43/ios) or [iPadOS](https://support.apple.com/guide/ipad/supported-models-ipad213a25b2/ipados) .</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- Check whether your iPhone or iPad model is on the list of <mark class="inline-add">[</mark>compatible devices for the latest version of iOS](https://support.apple.com/guide/iphone/supported-models-iphe3fa5df43/ios) or [iPadOS](https://support.apple.com/guide/ipad/supported-models-ipad213a25b2/ipados) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text"><mark class="inline-remove">- </mark>If your device is compatible, <mark class="inline-remove">[</mark>update t<mark class="inline-remove">o the latest version of iOS or iPadOS](https://support.apple.com/en-us/118575) that&#x27;s available to you</mark>. If you have a compatible device <mark class="inline-remove">bu</mark>t<mark class="inline-remove"> your iP</mark>h<mark class="inline-remove">one or iP</mark>a<mark class="inline-remove">d</mark> won&#x27;t update, try the <mark class="inline-remove">steps be</mark>low.</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">If your device is compatible, <mark class="inline-add">try to </mark>update <mark class="inline-add">i</mark>t. If you have a compatible device tha<mark class="inline-add">t</mark> won&#x27;t update, try <mark class="inline-add">one of </mark>the <mark class="inline-add">fol</mark>low<mark class="inline-add">ing solutions</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">## If there&#x27;s not enough space to update</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">## If there&#x27;s not enough space to update</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">You need enough storage space on your device to download an update. Your device can remove app data t<mark class="inline-remove">h</mark>a<mark class="inline-remove">t</mark> <mark class="inline-remove">you </mark>c<mark class="inline-remove">an download again</mark> without <mark class="inline-remove">aff</mark>e<mark class="inline-remove">c</mark>ting your personal <mark class="inline-remove">d</mark>at<mark class="inline-remove">a</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">You need enough storage space on your device to download an update. Your device can <mark class="inline-add">temporarily </mark>remove app data t<mark class="inline-add">o m</mark>a<mark class="inline-add">ke</mark> <mark class="inline-add">spa</mark>c<mark class="inline-add">e,</mark> without <mark class="inline-add">d</mark>e<mark class="inline-add">le</mark>ting your personal <mark class="inline-add">inform</mark>at<mark class="inline-add">ion</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">- Go to Settings.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">- Go to Settings.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">- Tap General.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">- Tap General.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- Tap [<mark class="inline-remove">D</mark>evice] Storage.</code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- Tap [<mark class="inline-add">d</mark>evice] Storage.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">- Tap Enable next to Offload Unused Apps.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">- Tap Enable next to Offload Unused Apps.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">You can also [<mark class="inline-remove">manually </mark>delete apps <mark class="inline-remove">o</mark>n<mark class="inline-remove"> </mark>y<mark class="inline-remove">our iPhone or iPad</mark>](https://support.apple.com/guide/iphone/remove-or-delete-apps-iph248b543ca/ios) .</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">You can also [delete apps <mark class="inline-add">ma</mark>n<mark class="inline-add">uall</mark>y](https://support.apple.com/guide/iphone/remove-or-delete-apps-iph248b543ca/ios) <mark class="inline-add">on your iPhone or iPad</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">Learn w<mark class="inline-remove">hat to do if you require more space</mark> to [<mark class="inline-remove">us</mark>e <mark class="inline-remove">A</mark>p<mark class="inline-remove">ple</mark> <mark class="inline-remove">In</mark>t<mark class="inline-remove">elli</mark>g<mark class="inline-remove">enc</mark>e](https://support.apple.com/en-us/121115) .</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">Learn <mark class="inline-add">ho</mark>w to [<mark class="inline-add">fre</mark>e <mark class="inline-add">u</mark>p <mark class="inline-add">s</mark>t<mark class="inline-add">ora</mark>ge](https://support.apple.com/en-us/121115) <mark class="inline-add">to use Apple Intelligence</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">## If the download takes a long time</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">## If the download takes a long time</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">## If you can&#x27;t reach the update server or can&#x27;t verify the update</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">## If you can&#x27;t reach the update server or can&#x27;t verify the update</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">If you try to update your device, you might see one of these <mark class="inline-remove">m</mark>e<mark class="inline-remove">ssage</mark>s:</code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">If you try to update your device, you might see one of these <mark class="inline-add">al</mark>e<mark class="inline-add">rt</mark>s:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">- &quot;Unable to Check for Update. An error occurred while checking for a software update.&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">- &quot;Unable to Check for Update. An error occurred while checking for a software update.&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">- &quot;Unable to Download. This update requires a Wi-Fi network connection to download.&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">- &quot;Unable to Download. This update requires a Wi-Fi network connection to download.&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text"><mark class="inline-remove">Try u</mark>pdat<mark class="inline-remove">ing</mark> your device again using the same network. If you still see <mark class="inline-remove">o</mark>ne<mark class="inline-remove"> of </mark>t<mark class="inline-remove">hese messages</mark>, try updating<mark class="inline-remove"> your device</mark> using another network<mark class="inline-remove"> or</mark> [<mark class="inline-remove">using </mark>a Mac](https://support.apple.com/en-us/109046) or<mark class="inline-remove"> [using</mark> iTunes](https://support.apple.com/en-us/108964) .<mark class="inline-remove"> If the issue happens again after trying to update with multiple networks, [remove the update](https://support.apple.com/en-us/108905#remove) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text"><mark class="inline-add">U</mark>pdat<mark class="inline-add">e</mark> your device again using the same network. If you still see <mark class="inline-add">a</mark>n<mark class="inline-add"> al</mark>e<mark class="inline-add">r</mark>t, try updating using another network<mark class="inline-add">,</mark> [a Mac](https://support.apple.com/en-us/109046) <mark class="inline-add">, [</mark>or iTunes](https://support.apple.com/en-us/108964) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">If the issue happens again after trying to update with multiple networks, you can [remove the update](https://support.apple.com/en-us/108905#remove) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">## If the update doesn&#x27;t complete</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">## If the update doesn&#x27;t complete</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">If you&#x27;re installing the update, [<mark class="inline-remove">t</mark>he progress<mark class="inline-remove"> bar might appear to move slowly</mark>](https://support.apple.com/en-us/102317) . The time a<mark class="inline-remove">n</mark> update<mark class="inline-remove"> takes</mark> depends on the <mark class="inline-remove">size of the </mark>update and<mark class="inline-remove"> the number of files on</mark> your device.</code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">If you&#x27;re installing the update, [<mark class="inline-add">c</mark>he<mark class="inline-add">ck your update&#x27;s</mark> progress](https://support.apple.com/en-us/102317) <mark class="inline-add">if it appears to move slowly</mark>. The time <mark class="inline-add">it t</mark>a<mark class="inline-add">kes to</mark> update depends on the update<mark class="inline-add">&#x27;s size</mark> and your device<mark class="inline-add">&#x27;s storage</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text">When you&#x27;re updating <mark class="inline-remove">over the a</mark>ir, keep your device connected to a power source. If your device runs out of power, connect it to a power source and turn on the device to let the update or restore complete.</code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">When you&#x27;re updating <mark class="inline-add">w</mark>ir<mark class="inline-add">elessly</mark>, keep your device connected to a power source. If your device runs out of power, connect it to a power source and turn on the device to let the update or restore complete.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">Learn what to do if your <mark class="inline-remove">[</mark>i<mark class="inline-remove">Ph</mark>on<mark class="inline-remove">e</mark>](https://support.apple.com/en-us/116940)<mark class="inline-remove"> or [iPad](https://support.apple.com/en-us/102642) appears frozen or won&#x27;t start.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">Learn what to do if <mark class="inline-add">[</mark>your <mark class="inline-add">dev</mark>i<mark class="inline-add">ce is fr</mark>o<mark class="inline-add">ze</mark>n<mark class="inline-add">.</mark>](https://support.apple.com/en-us/116940)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">77</span><code class="line-text">## If you still can&#x27;t install the latest version of iOS or iPadOS</code></div>
+<div class="diff-line current unchanged"><span class="line-number">79</span><code class="line-text">## If you still can&#x27;t install the latest version of iOS or iPadOS</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text">If you still can&#x27;t install the latest version of iOS or iPadOS, <mark class="inline-remove">tr</mark>y download<mark class="inline-remove">ing</mark> the update again<mark class="inline-remove">:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text">If you still can&#x27;t install the latest version of iOS or iPadOS, y<mark class="inline-add">ou can</mark> download the update again<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">To delete the update:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">81</span><code class="line-text">- Go to Settings.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">- Go to Settings.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">- Tap General.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">- Tap General.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">85</span><code class="line-text">- Tap [<mark class="inline-remove">D</mark>evice] Storage.</code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">- Tap [<mark class="inline-add">d</mark>evice] Storage.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">87</span><code class="line-text">- Find the update in the list of apps.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">91</span><code class="line-text">- Find the update in the list of apps.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">89</span><code class="line-text">- Tap the update, then tap Delete Update.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">93</span><code class="line-text">- Tap the update, then tap Delete Update.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text">To download the update again:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">- Go to Settings.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">- Go to Settings.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">97</span><code class="line-text">If you don&#x27;t see the update in the list of apps or if the issue happens again, you need to update your device [using a Mac](https://support.apple.com/en-us/109046) or [using iTunes](https://support.apple.com/en-us/108964) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">103</span><code class="line-text">If you don&#x27;t see the update in the list of apps or if the issue happens again, you need to update your device [using a Mac](https://support.apple.com/en-us/109046) or [using iTunes](https://support.apple.com/en-us/108964) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text"><mark class="inline-remove">Learn how to use recovery mode i</mark>f your computer doesn&#x27;t recognize your device or your screen <mark class="inline-remove">di</mark>s<mark class="inline-remove">play</mark>s the Apple logo for several minutes without a progress bar.</code></div>
+<div class="diff-line current added"><span class="line-number">105</span><code class="line-text"><mark class="inline-add">I</mark>f your computer doesn&#x27;t recognize your device or your screen s<mark class="inline-add">how</mark>s the Apple logo for several minutes without a progress bar<mark class="inline-add">, [learn how to use recovery mode](https://support</mark>.<mark class="inline-add">apple.com/en-us/118106) .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">101</span><code class="line-text">## Need more help?</code></div>
+<div class="diff-line current unchanged"><span class="line-number">107</span><code class="line-text">## Need more help?</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

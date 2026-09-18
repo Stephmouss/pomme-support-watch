@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Using Dual SIM with two nano-SIM cards — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Using Dual SIM with two nano-SIM cards</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/108898">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+28 ajouts</span>
+      <span class="badge removed">−58 suppressions</span>
+      <span class="badge">14 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">In China mainland, Hong Kong, and Macao, certain iPhone models feature Dual SIM with two nano-SIM cards. This gives you two phone numbers to make and receive calls and text messages.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">In China mainland, Hong Kong, and Macao, certain iPhone models feature Dual SIM with two nano-SIM cards. This gives you two phone numbers to make and receive calls and text messages.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">If you have a<mark class="inline-remove">n</mark> iPhone 17e, iPhone 17, iPhone Air, iPhone 17 Pro, iPhone 17 Pro Max, iPhone 16e, iPhone 13 mini, iPhone 12 mini, iPhone SE (2nd and 3rd generation), or an iPhone XS in Hong Kong or Macao, [learn how to use Dual SIM with an eSIM](https://support.apple.com/en-us/109317) .</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">If you have <mark class="inline-add">iPhone 18 Pro, iPhone 18 Pro M</mark>a<mark class="inline-add">x,</mark> iPhone 17e, iPhone 17, iPhone Air, iPhone 17 Pro, iPhone 17 Pro Max, iPhone 16e, iPhone 13 mini, iPhone 12 mini, iPhone SE (2nd and 3rd generation), or an iPhone XS in Hong Kong or Macao, [learn how to use Dual SIM with an eSIM](https://support.apple.com/en-us/109317) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">In China mainland, iPhone 17e can be activated by either an eSIM or a physical nano-SIM, while iPhone Air is activated by eSIM only. Learn about [using eSIM with your iPhone<mark class="inline-remove"> in China mainland</mark>](https://support.apple.com/en-us/123879) .</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">In China mainland,<mark class="inline-add"> iPhone 18 Pro, iPhone 18 Pro Max, and</mark> iPhone 17e can be activated by either an eSIM or a physical nano-SIM, while iPhone Air is activated by eSIM only. Learn about [using eSIM with your iPhone](https://support.apple.com/en-us/123879) <mark class="inline-add">in China mainland</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">Here are a few of the ways you can use Dual SIM:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">Here are a few of the ways you can use Dual SIM:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">To use Dual SIM, you need two nano-SIM cards, and one of these iPhone models purchased in China mainland, Hong Kong, or Macao:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">To use Dual SIM, you need two nano-SIM cards, and one of these iPhone models purchased in China mainland, Hong Kong, or Macao:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- iPhone 1<mark class="inline-remove">7</mark> (China mainland only)</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- iPhone 1<mark class="inline-add">8 Pro, iPhone 18 Pro Max</mark> (China mainland only)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">- iPhone 17 Pro (China mainland only)</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">-<mark class="inline-add"> iPhone 17,</mark> iPhone 17 Pro<mark class="inline-add">, iPhone 17 Pro Max</mark> (China mainland only)</code></div>
+<div class="diff-line previous removed"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">- iPhone 17 Pro Max (China mainland only)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">- iPhone 16e (China mainland only)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">- iPhone 16e (China mainland only)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- iPhone 16</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- iPhone 16<mark class="inline-add">, iPhone 16 Plus, iPhone 16 Pro, iPhone 16 Pro Max</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- iPhone 1<mark class="inline-remove">6</mark> Plus</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- iPhone 1<mark class="inline-add">5, iPhone 15</mark> Plus<mark class="inline-add">, iPhone 15 Pro, iPhone 15 Pro Max</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- iPhone 1<mark class="inline-remove">6</mark> Pro</code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- iPhone 1<mark class="inline-add">4, iPhone 14 Plus, iPhone 14</mark> Pro<mark class="inline-add">, iPhone 14 Pro Max</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">- iPhone 1<mark class="inline-remove">6</mark> Pro Max</code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- iPhone 1<mark class="inline-add">3, iPhone 13 Pro, iPhone 13</mark> Pro Max</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">- iPhone 1<mark class="inline-remove">5</mark></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">- iPhone 1<mark class="inline-add">2, iPhone 12 Pro, iPhone 12 Pro Max</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">- iPhone 1<mark class="inline-remove">5</mark> P<mark class="inline-remove">lus</mark></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">- iPhone 1<mark class="inline-add">1, iPhone 11</mark> P<mark class="inline-add">ro, iPhone 11 Pro Max</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- iPhone 15 Pro</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">- iPhone 15 Pro Max</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">- iPhone 14</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">- iPhone 14 Plus</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">- iPhone 14 Pro</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">- iPhone 14 Pro Max</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">- iPhone 13</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">- iPhone 13 Pro</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">- iPhone 13 Pro Max</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">- iPhone 12</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">- iPhone 12 Pro</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">- iPhone 12 Pro Max</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">- iPhone 11</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">- iPhone 11 Pro</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text">- iPhone 11 Pro Max</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">- iPhone XS Max</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">- iPhone XS Max</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">## How to install the nano-SIM cards</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">## How to install the nano-SIM cards</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">Insert a paper clip or SIM eject tool into the small hole of the SIM card tray, then push in toward iPhone to remove your SIM tray<mark class="inline-remove">,</mark> <mark class="inline-remove">n</mark>otice the notch in one corner of the new SIM card. Place the new SIM card into the bottom of the tray — it will fit only one way, because of the notch. Then insert the other SIM card into the top tray.</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">Insert a paper clip or SIM eject tool into the small hole of the SIM card tray, then push in toward <mark class="inline-add">your </mark>iPhone to remove your SIM tray<mark class="inline-add">.</mark> <mark class="inline-add">N</mark>otice the notch in one corner of the new SIM card. Place the new SIM card into the bottom of the tray — it will fit only one way, because of the notch. Then insert the other SIM card into the top tray.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">[Image: iPhone <mark class="inline-remove">d</mark>ual SIM i<mark class="inline-remove">llus</mark>tr<mark class="inline-remove">ati</mark>on <mark class="inline-remove">of</mark> SIM cards position in SIM tray]</code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">[Image: iPhone <mark class="inline-add">D</mark>ual SIM <mark class="inline-add">w</mark>it<mark class="inline-add">h F</mark>ron<mark class="inline-add">t</mark> <mark class="inline-add">and Back</mark> SIM cards position in SIM tray]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">With the two nano-SIM cards in place, insert the SIM tray back into the device completely and in the same orientation that you removed it. The tray fits only one way.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">With the two nano-SIM cards in place, insert the SIM tray back into the device completely and in the same orientation that you removed it. The tray fits only one way.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">93</span><code class="line-text">You&#x27;ll use these labels when you choose which phone number to use for making or receiving calls and messages, to designate a number for cellular data, and to assign a number to your contacts so you know which number you will use.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">You&#x27;ll use these labels when you choose which phone number to use for making or receiving calls and messages, to designate a number for cellular data, and to assign a number to your contacts so you know which number you will use.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">95</span><code class="line-text">If you change your mind later, you can change your labels<mark class="inline-remove"> as follows</mark>:</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">If you change your mind later, you can change your labels:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">97</span><code class="line-text">- Open the Settings app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">- Open the Settings app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">111</span><code class="line-text">On this screen, choose a number to be your default, or you can choose which number is to be used only for cellular data. Your other number will be your default. If you want your iPhone to use cellular data from both plans, depending on coverage and availability, turn on Allow Cellular Data Switching.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">79</span><code class="line-text">On this screen, choose a number to be your default, or you can choose which number is to be used only for cellular data. Your other number will be your default. If you want your iPhone to use cellular data from both plans, depending on coverage and availability, turn on Allow Cellular Data Switching.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">113</span><code class="line-text">[Image: <mark class="inline-remove">d</mark>ual eSIM setup screen for selecting default number<mark class="inline-remove">.</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text">[Image: <mark class="inline-add">D</mark>ual eSIM setup screen for selecting default number]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">115</span><code class="line-text">## Use two phone numbers for calls, messages, and data</code></div>
+<div class="diff-line current unchanged"><span class="line-number">83</span><code class="line-text">## Use two phone numbers for calls, messages, and data</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">119</span><code class="line-text">### Let your iPhone remember which number to use</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">### Let your iPhone remember which number to use</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">121</span><code class="line-text">When you call one of your contacts, you don&#x27;t need to choose which number to use every time. By default, your iPhone uses the same number that you used the last time you called that contact. If you haven&#x27;t called that contact, your iPhone uses your default number. If you want to, you can specify which number to use for your calls with a contact.<mark class="inline-remove"> Follow these steps:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">When you call one of your contacts, you don&#x27;t need to choose which number to use every time. By default, your iPhone uses the same number that you used the last time you called that contact. If you haven&#x27;t called that contact, your iPhone uses your default number. If you want to, you can specify which number to use for your calls with a contact.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">123</span><code class="line-text">- Tap the contact.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">91</span><code class="line-text">- Tap the contact.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 15 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">141</span><code class="line-text">### Switch phone numbers for a call</code></div>
+<div class="diff-line current unchanged"><span class="line-number">109</span><code class="line-text">### Switch phone numbers for a call</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">143</span><code class="line-text">You can switch phone lines before you make a call.<mark class="inline-remove"> If you&#x27;re calling someone in your Favorites list, follow these steps:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text">You can switch phone lines before you make a call.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text">If you&#x27;re calling someone in your Favorites list:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">145</span><code class="line-text">- Tap the Info button .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">115</span><code class="line-text">- Tap the Info button .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">151</span><code class="line-text">- Tap your other number.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">121</span><code class="line-text">- Tap your other number.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">153</span><code class="line-text">If you&#x27;re using the keypad<mark class="inline-remove">, follow these steps</mark>:</code></div>
+<div class="diff-line current added"><span class="line-number">123</span><code class="line-text">If you&#x27;re using the keypad:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">155</span><code class="line-text">- Enter the phone number.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">125</span><code class="line-text">- Enter the phone number.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">163</span><code class="line-text">### Send messages with iMessage and SMS/MMS/RCS</code></div>
+<div class="diff-line current unchanged"><span class="line-number">133</span><code class="line-text">### Send messages with iMessage and SMS/MMS/RCS</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">165</span><code class="line-text">You can use iMessage, SMS/MMS, or RCS to send messages with either phone number.* With iOS 18, RCS messaging is available on supported carriers. You can switch phone numbers before you send an iMessage, SMS/MMS, or RCS message.<mark class="inline-remove"> Here&#x27;s how:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">135</span><code class="line-text">You can use iMessage, SMS/MMS, or RCS to send messages with either phone number.* With iOS 18, RCS messaging is available on supported carriers. You can switch phone numbers before you send an iMessage, SMS/MMS, or RCS message.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">167</span><code class="line-text">- Open Messages.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">137</span><code class="line-text">- Open Messages.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">181</span><code class="line-text">## Learn about Dual SIM status icons</code></div>
+<div class="diff-line current unchanged"><span class="line-number">151</span><code class="line-text">## Learn about Dual SIM status icons</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">183</span><code class="line-text">The icons in the status bar at the top of the screen show the signal strength of your two carriers. Learn [what the status icons mean](https://support.apple.com/en-<mark class="inline-remove">u</mark>s/<mark class="inline-remove">118</mark>2<mark class="inline-remove">03</mark>) .</code></div>
+<div class="diff-line current added"><span class="line-number">153</span><code class="line-text">The icons in the status bar at the top of the screen show the signal strength of your two carriers. Learn [what the status icons mean](https://support.apple.com/<mark class="inline-add">guid</mark>e<mark class="inline-add">/ipho</mark>n<mark class="inline-add">e/</mark>-<mark class="inline-add">iphef7bb57dc/26/io</mark>s/2<mark class="inline-add">6</mark>) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">184</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">185</span><code class="line-text">You can see more status icons when you open [Control Center](https://support.apple.com/en-us/108330) .</code></div>
+<div class="diff-line current added"><span class="line-number">155</span><code class="line-text">You can see more status icons when you open [<mark class="inline-add">access </mark>Control Center<mark class="inline-add"> on your iPhone</mark>](https://support.apple.com/en-us/108330) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">186</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">187</span><code class="line-text">[Image: The status bar shows that the device is connected to Wi-Fi and Carrier 2 is using Wi-Fi Calling]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">157</span><code class="line-text">[Image: The status bar shows that the device is connected to Wi-Fi and Carrier 2 is using Wi-Fi Calling]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">188</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">194</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">195</span><code class="line-text">## Change your cellular data number</code></div>
+<div class="diff-line current unchanged"><span class="line-number">165</span><code class="line-text">## Change your cellular data number</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">196</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">197</span><code class="line-text">One number at a time can use cellular data. To change which number uses cellular data<mark class="inline-remove">, follow these steps</mark>:</code></div>
+<div class="diff-line current added"><span class="line-number">167</span><code class="line-text">One number at a time can use cellular data. To change which number uses cellular data:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">199</span><code class="line-text">- Open the Settings app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">169</span><code class="line-text">- Open the Settings app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">200</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">202</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">203</span><code class="line-text">- Tap Cellular Data.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">173</span><code class="line-text">- Tap Cellular Data.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">204</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">205</span><code class="line-text">- Tap the number you want to use cellular data.</code></div>
+<div class="diff-line current added"><span class="line-number">175</span><code class="line-text">- Tap the number you want to use <mark class="inline-add">for </mark>cellular data.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">206</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">207</span><code class="line-text">If you turn on Allow Cellular Data Switching, then while you&#x27;re on a voice call on your voice-only number, that number automatically switches to use voice and data.* This lets you use both voice and data while on the call.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">177</span><code class="line-text">If you turn on Allow Cellular Data Switching, then while you&#x27;re on a voice call on your voice-only number, that number automatically switches to use voice and data.* This lets you use both voice and data while on the call.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">208</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">209</span><code class="line-text">If you turn off Allow Cellular Data Switching and you&#x27;re active on a voice number that isn&#x27;t your designated cellular-data number, then cellular data won&#x27;t work while you&#x27;re on the call.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">179</span><code class="line-text">If you turn off Allow Cellular Data Switching and you&#x27;re active on a voice number that isn&#x27;t your designated cellular-data number, then cellular data won&#x27;t work while you&#x27;re on the call.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">210</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">211</span><code class="line-text">To turn on Allow Cellular Data Switching<mark class="inline-remove">, follow these steps</mark>:</code></div>
+<div class="diff-line current added"><span class="line-number">181</span><code class="line-text">To turn on Allow Cellular Data Switching:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">212</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">213</span><code class="line-text">- Open the Settings app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">183</span><code class="line-text">- Open the Settings app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">214</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">184</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">228</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">229</span><code class="line-text">## Manage cellular settings</code></div>
+<div class="diff-line current unchanged"><span class="line-number">199</span><code class="line-text">## Manage cellular settings</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">230</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">200</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">231</span><code class="line-text">To change your cellular settings for each of your plans<mark class="inline-remove">, follow these steps</mark>:</code></div>
+<div class="diff-line current added"><span class="line-number">201</span><code class="line-text">To change your cellular settings for each of your plans:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">232</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">202</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">233</span><code class="line-text">- Open the Settings app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">203</span><code class="line-text">- Open the Settings app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">234</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">204</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">242</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">212</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">243</span><code class="line-text">## Learn more</code></div>
+<div class="diff-line current unchanged"><span class="line-number">213</span><code class="line-text">## Learn more</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">244</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">214</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">245</span><code class="line-text">- [Use Dual SIM with you<mark class="inline-remove">r</mark> Apple Watch](https://support.apple.com/en-us/102359)</code></div>
+<div class="diff-line current added"><span class="line-number">215</span><code class="line-text">- [Use Dual SIM with you Apple Watch<mark class="inline-add"> GPS + Cellular models</mark>](https://support.apple.com/en-us/102359)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">246</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">216</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">247</span><code class="line-text">- [Fix issues <mark class="inline-remove">w</mark>i<mark class="inline-remove">th</mark> Dual SIM with two nano-SIM cards](https://support.apple.com/en-us/109318)</code></div>
+<div class="diff-line current added"><span class="line-number">217</span><code class="line-text">- [Fix issues i<mark class="inline-add">f</mark> Dual SIM with two nano-SIM cards<mark class="inline-add"> isn’t working on your iPhone</mark>](https://support.apple.com/en-us/109318)</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
