@@ -151,6 +151,19 @@ class WatcherTests(unittest.TestCase):
         feed = (self.root / "public/feeds/en-us-updated.xml").read_text(encoding="utf-8")
         self.assertEqual(feed.count("[UPDATED] Test article"), 1)
 
+    def test_normalizes_url_of_a_retained_historical_event(self):
+        variant = Event(
+            event_id="variant-only",
+            kind="updated",
+            locale="en-us",
+            article_id="123456",
+            title="Test article",
+            url=f"{self.url}?device-type=windows-pc",
+            detected_at="2026-01-02T00:00:00Z",
+        )
+        events = Watcher._deduplicate_events([variant])
+        self.assertEqual(events[0].url, self.url)
+
 
 if __name__ == "__main__":
     unittest.main()

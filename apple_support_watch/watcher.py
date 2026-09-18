@@ -88,6 +88,8 @@ class Watcher:
                 event_ids.discard(existing.event_id)
                 result[index] = event
                 event_ids.add(event.event_id)
+        for event in result:
+            event.url = canonical_article_url(event.url)
         return result
 
     @staticmethod
