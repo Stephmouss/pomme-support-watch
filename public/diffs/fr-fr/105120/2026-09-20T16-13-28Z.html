@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>À propos du mode Isolement - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>À propos du mode Isolement - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/105120">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+32 ajouts</span>
+      <span class="badge removed">−22 suppressions</span>
+      <span class="badge">1 bloc modifié</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 71 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">- Cliquez sur Activer et redémarrer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">- Cliquez sur Activer et redémarrer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">## <mark class="inline-remove">Comment e</mark>xclure des apps ou des s<mark class="inline-remove">ites web</mark> du mode Isolement</code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">## <mark class="inline-add">E</mark>xclure<mark class="inline-add"> des sites web,</mark> des apps ou des <mark class="inline-add">contact</mark>s du mode Isolement</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">Lo<mark class="inline-remove">r</mark>s<mark class="inline-remove">qu</mark>e <mark class="inline-remove">votr</mark>e appar<mark class="inline-remove">e</mark>il<mark class="inline-remove"> </mark>est <mark class="inline-remove">en</mark> mode Isolement<mark class="inline-remove">,</mark> vo<mark class="inline-remove">u</mark>s<mark class="inline-remove"> pouvez empêcher </mark>que <mark class="inline-remove">l</mark>es<mark class="inline-remove"> rest</mark>ri<mark class="inline-remove">c</mark>t<mark class="inline-remove">ions</mark> <mark class="inline-remove">WebKit affectent et limitent une app ou un site web dans Safari en l</mark>’e<mark class="inline-remove">xcluant. E</mark>xcluez <mark class="inline-remove">uni</mark>que<mark class="inline-remove">m</mark>e<mark class="inline-remove">n</mark>t des apps ou <mark class="inline-remove">sit</mark>es <mark class="inline-remove">web</mark> de confiance et <mark class="inline-remove">se</mark>u<mark class="inline-remove">l</mark>ement si nécessaire.</code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">L<mark class="inline-add">’exclusi</mark>o<mark class="inline-add">n d’un </mark>s<mark class="inline-add">it</mark>e <mark class="inline-add">web, d’un</mark>e app<mark class="inline-add"> ou d’un cont</mark>a<mark class="inline-add">ct </mark>r<mark class="inline-add">édu</mark>i<mark class="inline-add">t </mark>les<mark class="inline-add"> pro</mark>t<mark class="inline-add">ections</mark> <mark class="inline-add">du</mark> mode Isolement<mark class="inline-add"> et peut augmenter</mark> vo<mark class="inline-add">tre ri</mark>sque <mark class="inline-add">d</mark>e<mark class="inline-add"> </mark>s<mark class="inline-add">écu</mark>rit<mark class="inline-add">é.</mark> <mark class="inline-add">N</mark>’excluez que<mark class="inline-add"> d</mark>e<mark class="inline-add">s si</mark>t<mark class="inline-add">es web,</mark> des apps ou <mark class="inline-add">d</mark>es <mark class="inline-add">contacts</mark> de confiance<mark class="inline-add">,</mark> et u<mark class="inline-add">niqu</mark>ement si nécessaire.<mark class="inline-add"> Ces options apparaissent uniquement lorsque le mode Isolement est activé.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text"><mark class="inline-remove">### S</mark>ur un i<mark class="inline-remove">Ph</mark>one o<mark class="inline-remove">u</mark> <mark class="inline-remove">u</mark>n i<mark class="inline-remove">Pa</mark>d</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text"><mark class="inline-add">Po</mark>ur un<mark class="inline-add">e</mark> <mark class="inline-add">protect</mark>ion<mark class="inline-add"> complète, mettez à jour vos appareils vers l</mark>e <mark class="inline-add">dernier l</mark>o<mark class="inline-add">giciel</mark> <mark class="inline-add">ava</mark>n<mark class="inline-add">t</mark> <mark class="inline-add">d’act</mark>i<mark class="inline-add">ver le mo</mark>d<mark class="inline-add">e Isolement.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text"><mark class="inline-remove">Pour</mark> <mark class="inline-remove">e</mark>xclure un site web<mark class="inline-remove"> lors de la navigation : touchez le bouton Menu de la page , touchez le bouton Plus pour ouvrir le menu de la page, puis désactivez le mode Isolement pour ce site web.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">E</mark>xclure un site web</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text"><mark class="inline-remove">[Im</mark>a<mark class="inline-remove">ge:</mark> null<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text"><mark class="inline-add">Lorsque vous excluez un site web d</mark>a<mark class="inline-add">ns Safari, il</mark> n<mark class="inline-add">’est pl</mark>u<mark class="inline-add">s affecté ni </mark>l<mark class="inline-add">imité par </mark>l<mark class="inline-add">es restrictions WebKit.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">85</span><code class="line-text"><mark class="inline-remove">[Image: </mark>Pour exclure un site web d<mark class="inline-remove">es</mark> <mark class="inline-remove">protec</mark>tion<mark class="inline-remove">s</mark> <mark class="inline-remove">du mode Isolement, désactivez le mode Isolement dans les Réglages de la page de Safari.]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">Pour exclure un site web <mark class="inline-add">pen</mark>d<mark class="inline-add">ant</mark> <mark class="inline-add">la naviga</mark>tion <mark class="inline-add">:</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text"><mark class="inline-remove">Po</mark>ur <mark class="inline-remove">exclure u</mark>ne<mark class="inline-remove"> app</mark> ou <mark class="inline-remove">m</mark>odifier vos site<mark class="inline-remove">s</mark> web e<mark class="inline-remove">x</mark>c<mark class="inline-remove">lu</mark>s <mark class="inline-remove">:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text"><mark class="inline-add">- S</mark>ur <mark class="inline-add">iPho</mark>ne ou <mark class="inline-add">iPad : t</mark>o<mark class="inline-add">uchez le bouton Menu </mark>d<mark class="inline-add">e la page , pu</mark>i<mark class="inline-add">s faites dé</mark>fi<mark class="inline-add">l</mark>er <mark class="inline-add">l’écran </mark>v<mark class="inline-add">ers le bas et t</mark>o<mark class="inline-add">uchez Réglage</mark>s<mark class="inline-add"> du</mark> site web<mark class="inline-add">… Désactivez</mark> e<mark class="inline-add">nsuite le mode Isolement pour </mark>c<mark class="inline-add">e </mark>s<mark class="inline-add">ite</mark> <mark class="inline-add">web.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text"><mark class="inline-remove">- Ouvrez l’app Régl</mark>ages.</code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text"><mark class="inline-add">[Im</mark>age<mark class="inline-add">: Mode I</mark>s<mark class="inline-add">olement activé pour une page dans Safari</mark>.<mark class="inline-add">]</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">- Sur Mac : dans le menu Safari, choisissez Réglages pour [site web]. Décochez ensuite la case Activer le mode Isolement. Pour inclure à nouveau le site web, cochez à nouveau la case.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">Pour modifier vos sites web exclus :</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text">- Sur iPhone ou iPad : ouvrez l’app Réglages, puis touchez Confidentialité et sécurité. Faites défiler l’écran vers le bas et touchez Mode Isolement, puis Personnaliser les sites web. Touchez Sites web Safari exclus. Dans la liste des sites web exclus, activez ou désactivez les protections du mode Isolement pour le site web. Pour supprimer un site web de la liste, touchez Modifier.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">97</span><code class="line-text">[Image: Bouton Personnaliser les sites web dans les réglages du mode Isolement.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text">- Sur Mac : dans le menu Safari, choisissez Réglages, puis Sites web. Faites défiler la barre latérale vers le bas et cliquez sur Mode Isolement. Dans le menu à côté du site web configuré, activez ou désactivez le mode Isolement.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">### Exclure une app</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">103</span><code class="line-text">Lorsque votre appareil est en mode Isolement, les apps iOS et iPadOS sont strictement limitées pour des raisons de sécurité, et certaines expériences sont complètement indisponibles. Vous pouvez exclure une app sous iOS ou iPadOS afin que les limites de contenu web soient supprimées pour cette app.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">105</span><code class="line-text">- Sur votre iPhone ou iPad, ouvrez l’app Réglages.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">- Touchez Confidentialité et sécurité.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">107</span><code class="line-text">- Touchez Confidentialité et sécurité.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">93</span><code class="line-text">- Sous Sécurité, touchez Mode Isolement.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">109</span><code class="line-text">- Sous Sécurité, touchez Mode Isolement.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">95</span><code class="line-text">- Touchez <mark class="inline-remove">C</mark>on<mark class="inline-remove">f</mark>i<mark class="inline-remove">gur</mark>er l<mark class="inline-remove">a</mark> <mark class="inline-remove">nav</mark>i<mark class="inline-remove">ga</mark>t<mark class="inline-remove">ion</mark> web.</code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text">- Touchez <mark class="inline-add">Pers</mark>on<mark class="inline-add">nal</mark>i<mark class="inline-add">s</mark>er l<mark class="inline-add">es</mark> <mark class="inline-add">s</mark>it<mark class="inline-add">es</mark> web.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">97</span><code class="line-text"><mark class="inline-remove">[Im</mark>a<mark class="inline-remove">g</mark>e<mark class="inline-remove">:</mark> <mark class="inline-remove">P</mark>ou<mark class="inline-remove">r</mark> exclure u<mark class="inline-remove">n</mark>e app ou<mark class="inline-remove"> modifi</mark>er<mark class="inline-remove"> vos si</mark>tes <mark class="inline-remove">w</mark>e<mark class="inline-remove">b excl</mark>us<mark class="inline-remove">, touchez Configurer</mark> la<mark class="inline-remove"> na</mark>v<mark class="inline-remove">ig</mark>ation <mark class="inline-remove">w</mark>e<mark class="inline-remove">b</mark>.<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text"><mark class="inline-add">- D</mark>a<mark class="inline-add">ns la list</mark>e<mark class="inline-add">,</mark> <mark class="inline-add">désactivez l’app que v</mark>ou<mark class="inline-add">s souhaitez</mark> exclure<mark class="inline-add">.</mark> <mark class="inline-add">Se</mark>u<mark class="inline-add">l</mark>e<mark class="inline-add">s les</mark> app<mark class="inline-add">s que vous avez</mark> ou<mark class="inline-add">v</mark>ertes <mark class="inline-add">d</mark>e<mark class="inline-add">p</mark>u<mark class="inline-add">i</mark>s l<mark class="inline-add">’</mark>a<mark class="inline-add">cti</mark>vation <mark class="inline-add">du mod</mark>e<mark class="inline-add"> Isolement et dont les fonctionnalités sont limitées sont affichées dans cette liste</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text"><mark class="inline-remove">Pour</mark> <mark class="inline-remove">e</mark>xclure un<mark class="inline-remove">e</mark> <mark class="inline-remove">app, dés</mark>act<mark class="inline-remove">ivez-la dans le menu. Seules les apps que vous avez ouvertes depuis l’activation du mode Isolement et dont les fonctionnalités sont limitées sont affichées dans cette liste.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">115</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">E</mark>xclure un <mark class="inline-add">cont</mark>act</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">101</span><code class="line-text"><mark class="inline-remove">Pour modifi</mark>e<mark class="inline-remove">r vo</mark>s<mark class="inline-remove"> </mark>sites <mark class="inline-remove">w</mark>e<mark class="inline-remove">b</mark> <mark class="inline-remove">exclus</mark>, <mark class="inline-remove">t</mark>ouc<mark class="inline-remove">hez </mark>S<mark class="inline-remove">ites web Safari exclus, puis Modifier.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">117</span><code class="line-text"><mark class="inline-add">Néc</mark>essite<mark class="inline-add"> la ver</mark>s<mark class="inline-add">ion</mark> <mark class="inline-add">27 ou ultéri</mark>e<mark class="inline-add">ure</mark> <mark class="inline-add">d’iOS</mark>, <mark class="inline-add">d’iPadOS </mark>ou<mark class="inline-add"> de ma</mark>c<mark class="inline-add">O</mark>S</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">103</span><code class="line-text"><mark class="inline-remove">###</mark> <mark class="inline-remove">S</mark>u<mark class="inline-remove">r</mark> un <mark class="inline-remove">M</mark>ac</code></div>
+<div class="diff-line current added"><span class="line-number">119</span><code class="line-text"><mark class="inline-add">Lorsque</mark> <mark class="inline-add">vo</mark>u<mark class="inline-add">s excluez</mark> un <mark class="inline-add">cont</mark>ac<mark class="inline-add">t du mode Isolement, les limites de messagerie sont désactivées pour ce contact.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">105</span><code class="line-text"><mark class="inline-remove">Po</mark>ur <mark class="inline-remove">exclur</mark>e u<mark class="inline-remove">n</mark> <mark class="inline-remove">s</mark>i<mark class="inline-remove">te web lors </mark>d<mark class="inline-remove">e la navigation</mark> : <mark class="inline-remove">dans</mark> l<mark class="inline-remove">e menu S</mark>a<mark class="inline-remove">fari, choisissez</mark> Réglages pou<mark class="inline-remove">r [site web]. Déco</mark>chez en<mark class="inline-remove">su</mark>ite <mark class="inline-remove">la</mark> c<mark class="inline-remove">as</mark>e <mark class="inline-remove">Activer le m</mark>ode Isolement. <mark class="inline-remove">P</mark>ou<mark class="inline-remove">r inclure à nouveau le site web, co</mark>chez <mark class="inline-remove">à</mark> nou<mark class="inline-remove">v</mark>eau l<mark class="inline-remove">a</mark> case.</code></div>
+<div class="diff-line current added"><span class="line-number">121</span><code class="line-text"><mark class="inline-add">- S</mark>ur <mark class="inline-add">iPhon</mark>e <mark class="inline-add">o</mark>u i<mark class="inline-add">Pa</mark>d : <mark class="inline-add">ouvrez</mark> l<mark class="inline-add">’</mark>a<mark class="inline-add">pp</mark> Réglages<mark class="inline-add">,</mark> p<mark class="inline-add">uis t</mark>ouchez <mark class="inline-add">Confid</mark>en<mark class="inline-add">tial</mark>it<mark class="inline-add">é </mark>e<mark class="inline-add">t</mark> <mark class="inline-add">sécurité.</mark> <mark class="inline-add">Sous Sé</mark>c<mark class="inline-add">urité, touch</mark>e<mark class="inline-add">z</mark> <mark class="inline-add">M</mark>ode Isolement. <mark class="inline-add">T</mark>ouchez <mark class="inline-add">Personnaliser</mark> <mark class="inline-add">Co</mark>n<mark class="inline-add">tacts, t</mark>ou<mark class="inline-add">ch</mark>e<mark class="inline-add">z Ajouter un cont</mark>a<mark class="inline-add">ct, p</mark>u<mark class="inline-add">is choisissez</mark> l<mark class="inline-add">e</mark> c<mark class="inline-add">ont</mark>a<mark class="inline-add">ct pour lequel vou</mark>s<mark class="inline-add"> souhaitez supprimer les limites de messageri</mark>e.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">107</span><code class="line-text">Pour m<mark class="inline-remove">odifi</mark>er <mark class="inline-remove">vo</mark>s <mark class="inline-remove">s</mark>ites <mark class="inline-remove">w</mark>e<mark class="inline-remove">b</mark> e<mark class="inline-remove">xclu</mark>s<mark class="inline-remove"> :</mark></code></div>
+<div class="diff-line current added"><span class="line-number">123</span><code class="line-text"><mark class="inline-add">- Sur Mac : dans le menu Apple, choisissez Confidentialité et sécurité. Choisissez ensuite Mode Isolement et cliquez sur le bouton « </mark>P<mark class="inline-add">ersonnaliser les contacts… ». Cliquez sur le bouton Plus, puis choisissez le contact p</mark>our <mark class="inline-add">lequel vous souhaitez suppri</mark>mer <mark class="inline-add">le</mark>s <mark class="inline-add">lim</mark>ites <mark class="inline-add">d</mark>e <mark class="inline-add">m</mark>es<mark class="inline-add">sagerie.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">109</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">D</mark>a<mark class="inline-remove">ns</mark> la <mark class="inline-remove">b</mark>arr<mark class="inline-remove">e</mark> de m<mark class="inline-remove">enus</mark> d<mark class="inline-remove">e</mark> <mark class="inline-remove">S</mark>a<mark class="inline-remove">fari,</mark> ch<mark class="inline-remove">o</mark>isisse<mark class="inline-remove">z</mark> <mark class="inline-remove">l</mark>e<mark class="inline-remove"> </mark>menu <mark class="inline-remove">Safa</mark>r<mark class="inline-remove">i. Choisiss</mark>ez <mark class="inline-remove">e</mark>n<mark class="inline-remove">suit</mark>e <mark class="inline-remove">Régl</mark>a<mark class="inline-remove">ges</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">125</span><code class="line-text"><mark class="inline-add">Si</mark> <mark class="inline-add">vous supprimez un cont</mark>a<mark class="inline-add">ct de</mark> la <mark class="inline-add">liste d’exclusion, les limites relatives aux messages réapp</mark>ar<mark class="inline-add">aissent automatiquement. Si le numé</mark>r<mark class="inline-add">o</mark> de <mark class="inline-add">téléphone ou l’adresse e-</mark>m<mark class="inline-add">ail</mark> d<mark class="inline-add">u</mark> <mark class="inline-add">cont</mark>a<mark class="inline-add">ct</mark> ch<mark class="inline-add">ange, les l</mark>i<mark class="inline-add">mite</mark>s<mark class="inline-add"> relatives aux messages réappara</mark>isse<mark class="inline-add">nt</mark> <mark class="inline-add">automatiqu</mark>emen<mark class="inline-add">t et vo</mark>u<mark class="inline-add">s</mark> r<mark class="inline-add">ecev</mark>ez <mark class="inline-add">u</mark>ne <mark class="inline-add">notific</mark>a<mark class="inline-add">tion</mark>.</code></div>
+<div class="diff-line previous removed"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">111</span><code class="line-text">- Cliquez sur Sites web.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">113</span><code class="line-text">- Dans la barre latérale, faites défiler vers le bas et cliquez sur Mode Isolement.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">115</span><code class="line-text">- Dans le menu à côté d’un site web configuré, activez ou désactivez le mode Isolement.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">117</span><code class="line-text">## Profils de configuration et appareils gérés</code></div>
+<div class="diff-line current unchanged"><span class="line-number">127</span><code class="line-text">## Profils de configuration et appareils gérés</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

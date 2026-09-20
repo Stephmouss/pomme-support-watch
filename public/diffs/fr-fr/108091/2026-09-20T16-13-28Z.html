@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Masquer et afficher des apps dans votre liste d’achats de l’App Store - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Masquer et afficher des apps dans votre liste d’achats de l’App Store - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/108091">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+24 ajouts</span>
+      <span class="badge removed">−36 suppressions</span>
+      <span class="badge">1 bloc modifié</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## Que se passe-t-il lorsque vous masquez une app dans votre liste d’achats de l’App Store ?</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## Que se passe-t-il lorsque vous masquez une app dans votre liste d’achats de l’App Store ?</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">- L’app<mark class="inline-remove">,</mark> <mark class="inline-remove">y</mark> <mark class="inline-remove">c</mark>o<mark class="inline-remove">mpri</mark>s les achats intégrés ou les abonnements, apparaîtr<mark class="inline-remove">a</mark> toujours dans votre historique d’achats complet dans Réglages.</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">- L’app <mark class="inline-add">et</mark> <mark class="inline-add">t</mark>o<mark class="inline-add">u</mark>s les achats intégrés <mark class="inline-add">Apple, y compris le contenu supplémentaire </mark>ou les abonnements<mark class="inline-add"> que vous avez achetés dans l’app</mark>, apparaîtr<mark class="inline-add">ont</mark> toujours dans votre historique d’achats complet dans Réglages.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">- L’app n’apparaîtra plus dans votre liste d’achats dans l’App Store.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">- L’app n’apparaîtra plus dans votre liste d’achats dans l’App Store.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">- Si vous utilisez le <mark class="inline-remove">p</mark>artage familial, les membres de votre famille ne peuvent p<mark class="inline-remove">lu</mark>s télécharger à nouveau l’app à partir de votre liste d’achats partagés <mark class="inline-remove">et le</mark>s achats intégrés ne sont plus partagés avec e<mark class="inline-remove">ux</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">- Si vous utilisez le <mark class="inline-add">P</mark>artage familial, les membres de votre famille ne peuvent p<mark class="inline-add">a</mark>s télécharger à nouveau l’app à partir de votre liste d’achats partagés<mark class="inline-add">.</mark> <mark class="inline-add">Vo</mark>s achats intégrés <mark class="inline-add">Apple </mark>ne s<mark class="inline-add">er</mark>ont plus partagés avec <mark class="inline-add">l</mark>e<mark class="inline-add">s membres de votre famille</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">- Le fait de masquer une app ne la supprime pas de votre appareil, de l’appareil d’un membre de votre famille ou des autres appareils connectés à votre compte Apple. Si vous souhaitez supprimer une app de l’écran d’accueil, [personnalisez l’écran d’accueil sur votre iPhone](https://support.apple.com/fr-fr/108324) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">- Le fait de masquer une app ne la supprime pas de votre appareil, de l’appareil d’un membre de votre famille ou des autres appareils connectés à votre compte Apple. Si vous souhaitez supprimer une app de l’écran d’accueil, [personnalisez l’écran d’accueil sur votre iPhone](https://support.apple.com/fr-fr/108324) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">## Masquer les apps sur votre iPhone ou iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">## Masquer les apps sur votre iPhone ou iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">- <mark class="inline-remove">Ouvrez</mark> l’<mark class="inline-remove">app </mark>App Store.</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- <mark class="inline-add">Dans</mark> l’App Store<mark class="inline-add">, touchez votre photo ou vos initiales</mark>.<mark class="inline-add"> Ou touchez le bouton Mon compte et connectez-vous à votre compte Apple.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- Touchez <mark class="inline-remove">l</mark>e <mark class="inline-remove">bouton Mon compte ou votre photo ou vos initial</mark>es <mark class="inline-remove">en </mark>ha<mark class="inline-remove">u</mark>t<mark class="inline-remove"> de l’écran</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- Touchez <mark class="inline-add">Apps et historiqu</mark>e <mark class="inline-add">d</mark>es <mark class="inline-add">ac</mark>hat<mark class="inline-add">s</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text"><mark class="inline-remove">[Im</mark>a<mark class="inline-remove">ge: null]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text"><mark class="inline-add">- Touchez Vos </mark>a<mark class="inline-add">pps.</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- Touchez Apps.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- Si vous utilisez le partage familial, touchez Mes apps.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">- Recherchez l’app que vous souhaitez masquer, puis effectuez un balayage vers la gauche sur celle-ci et touchez Masquer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">- Recherchez l’app que vous souhaitez masquer, puis effectuez un balayage vers la gauche sur celle-ci et touchez Masquer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">[Image: App Store sur iPhone, indiquant que balayer vers la gauche révèle une option Masquer sur les achats d’apps.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">[Image: App Store sur iPhone, indiquant que balayer vers la gauche révèle une option Masquer sur les achats d’apps.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">- Touchez OK.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">## Afficher les apps sur votre iPhone ou iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">## Afficher les apps sur votre iPhone ou iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text"><mark class="inline-remove">Si</mark> <mark class="inline-remove">vous avez supprimé une app de votre iPhone ou iPad, elle ne réapparaît pas automatiquement sur votre écr</mark>an<mark class="inline-remove"> d’accueil lorsque vous l’affichez à nouveau. Vous devez la retélécharger depui</mark>s l’App Store. <mark class="inline-remove">V</mark>ous <mark class="inline-remove">n’a</mark>v<mark class="inline-remove">ez pas bes</mark>o<mark class="inline-remove">in d</mark>e <mark class="inline-remove">la ra</mark>c<mark class="inline-remove">he</mark>te<mark class="inline-remove">r</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">D</mark>ans l’App Store<mark class="inline-add">, touchez votre photo ou vos initiales</mark>. <mark class="inline-add">Ou touchez le bouton Mon compte et connectez-v</mark>ous <mark class="inline-add">à </mark>vo<mark class="inline-add">tr</mark>e c<mark class="inline-add">omp</mark>te<mark class="inline-add"> Apple</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- <mark class="inline-remove">O</mark>u<mark class="inline-remove">v</mark>rez l<mark class="inline-remove">’</mark>app App<mark class="inline-remove"> Stor</mark>e.</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- <mark class="inline-add">S</mark>ur<mark class="inline-add"> la page qui s’affiche, touch</mark>ez <mark class="inline-add">votre nom. I</mark>l<mark class="inline-add"> vous ser</mark>a<mark class="inline-add"> </mark>p<mark class="inline-add">eut-être demandé de vous connecter à votre com</mark>p<mark class="inline-add">te</mark> App<mark class="inline-add">l</mark>e.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">- Touchez <mark class="inline-remove">le bou</mark>t<mark class="inline-remove">on Mon compte ou votre photo ou vo</mark>s <mark class="inline-remove">initi</mark>a<mark class="inline-remove">le</mark>s<mark class="inline-remove"> en ha</mark>u<mark class="inline-remove">t de l’</mark>é<mark class="inline-remove">cran</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- Touchez <mark class="inline-add">Acha</mark>ts <mark class="inline-add">m</mark>as<mark class="inline-add">q</mark>ué<mark class="inline-add">s</mark>.</code></div>
+<div class="diff-line previous removed"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">- Touchez votre nom ou votre compte Apple. Il vous sera peut-être demandé de vous connecter à votre compte Apple.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- Faites défiler l’écran vers le bas et touchez Achats masqués.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">[Image: App Store sur iPhone affichant les réglages du compte, avec l’option Achats masqués en surbrillance.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">[Image: App Store sur iPhone affichant les réglages du compte, avec l’option Achats masqués en surbrillance.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">- Recherchez l’app que vous souhaitez afficher à nouveau, puis touchez Afficher.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">- Recherchez l’app que vous souhaitez afficher à nouveau, puis touchez Afficher.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">- <mark class="inline-remove">P</mark>ou<mark class="inline-remove">r</mark> <mark class="inline-remove">re</mark>ven<mark class="inline-remove">ir</mark> <mark class="inline-remove">à</mark> votre <mark class="inline-remove">l</mark>i<mark class="inline-remove">st</mark>e <mark class="inline-remove">Ach</mark>ats <mark class="inline-remove">m</mark>asqu<mark class="inline-remove">és,</mark> <mark class="inline-remove">t</mark>ouchez <mark class="inline-remove">T</mark>e<mark class="inline-remove">rminé</mark>. Vous <mark class="inline-remove">pou</mark>vez a<mark class="inline-remove">ussi toucher le bouton de</mark> retélécharge<mark class="inline-remove">ment pou</mark>r <mark class="inline-remove">télécharg</mark>e<mark class="inline-remove">r à no</mark>u<mark class="inline-remove">veau</mark> l’<mark class="inline-remove">a</mark>pp.</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">- <mark class="inline-add">Si v</mark>ou<mark class="inline-add">s</mark> <mark class="inline-add">a</mark>ve<mark class="inline-add">z supprimé u</mark>n<mark class="inline-add">e</mark> <mark class="inline-add">app de</mark> votre i<mark class="inline-add">Phon</mark>e <mark class="inline-add">ou iPad, elle ne réapparaît pas autom</mark>at<mark class="inline-add">iquement </mark>s<mark class="inline-add">ur</mark> <mark class="inline-add">votre écr</mark>a<mark class="inline-add">n d’accueil lor</mark>squ<mark class="inline-add">e</mark> <mark class="inline-add">v</mark>ou<mark class="inline-add">s l’affi</mark>chez <mark class="inline-add">à nouv</mark>e<mark class="inline-add">au</mark>. Vous <mark class="inline-add">de</mark>vez <mark class="inline-add">l</mark>a retélécharger <mark class="inline-add">d</mark>e<mark class="inline-add">p</mark>u<mark class="inline-add">is</mark> l’<mark class="inline-add">A</mark>pp<mark class="inline-add"> Store</mark>.<mark class="inline-add"> Vous n’avez pas besoin de la racheter.</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">## Masquer des apps sur votre Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">## Masquer des apps sur votre Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">- <mark class="inline-remove">Sur votre M</mark>a<mark class="inline-remove">c, ouvrez</mark> l’App Store<mark class="inline-remove">. Si vous n’êtes pas déjà connecté</mark>, cliquez sur <mark class="inline-remove">C</mark>on<mark class="inline-remove">nexi</mark>o<mark class="inline-remove">n</mark> <mark class="inline-remove">en</mark> bas de la barre latérale<mark class="inline-remove">,</mark> <mark class="inline-remove">p</mark>uis connectez-vous à votre compte Apple.</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- <mark class="inline-add">D</mark>a<mark class="inline-add">ns</mark> l’App Store, cliquez sur <mark class="inline-add">v</mark>o<mark class="inline-add">tre </mark>no<mark class="inline-add">m</mark> <mark class="inline-add">au</mark> bas de la barre latérale<mark class="inline-add">.</mark> <mark class="inline-add">O</mark>u<mark class="inline-add"> cl</mark>i<mark class="inline-add">quez </mark>s<mark class="inline-add">ur le bouton Connexion et</mark> connectez-vous à votre compte Apple.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">- Cliquez sur <mark class="inline-remove">v</mark>o<mark class="inline-remove">t</mark>re <mark class="inline-remove">nom en bas </mark>d<mark class="inline-remove">e la barre latérale. L</mark>es a<mark class="inline-remove">pps que vous avez a</mark>ch<mark class="inline-remove">e</mark>t<mark class="inline-remove">ée</mark>s<mark class="inline-remove"> s’affichent</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- Cliquez sur <mark class="inline-add">Apps et hist</mark>or<mark class="inline-add">iqu</mark>e des ach<mark class="inline-add">a</mark>ts.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- Cliquez sur Vos apps.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Placez le pointeur de votre souris sur l’app et recherchez le bouton Plus . Cliquez sur le bouton Plus, puis choisissez Masquer l’achat.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">- Placez le pointeur de votre souris sur l’app et recherchez le bouton Plus . Cliquez sur le bouton Plus, puis choisissez Masquer l’achat.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">63</span><code class="line-text">[Image: le bouton Plus]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">[Image: le bouton Plus]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">[Image: <mark class="inline-remove">A</mark>pp <mark class="inline-remove">St</mark>o<mark class="inline-remove">re s</mark>ur Mac a<mark class="inline-remove">ffichant l’écran Compte, a</mark>vec <mark class="inline-remove">le</mark> menu <mark class="inline-remove">Pl</mark>u<mark class="inline-remove">s dé</mark>ve<mark class="inline-remove">loppé e</mark>t <mark class="inline-remove">l’</mark>o<mark class="inline-remove">ption</mark> <mark class="inline-remove">M</mark>asquer <mark class="inline-remove">l’</mark>a<mark class="inline-remove">chat en</mark> s<mark class="inline-remove">urbr</mark>i<mark class="inline-remove">lla</mark>n<mark class="inline-remove">c</mark>e.]</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">[Image: <mark class="inline-add">Une liste d’a</mark>pp<mark class="inline-add">s</mark> <mark class="inline-add">p</mark>our Mac avec <mark class="inline-add">un</mark> menu <mark class="inline-add">o</mark>uve<mark class="inline-add">r</mark>t <mark class="inline-add">p</mark>o<mark class="inline-add">ur</mark> <mark class="inline-add">m</mark>asquer <mark class="inline-add">une </mark>a<mark class="inline-add">pp</mark> s<mark class="inline-add">élect</mark>i<mark class="inline-add">o</mark>n<mark class="inline-add">né</mark>e.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">- Lorsqu’un message vous demande de confirmer que vous souhaitez masquer l’app, cliquez sur Masquer l’achat.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">- Lorsqu’un message vous demande de confirmer que vous souhaitez masquer l’app, cliquez sur Masquer l’achat.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">## Afficher à nouveau des apps sur votre Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">## Afficher à nouveau des apps sur votre Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">- <mark class="inline-remove">Sur votre M</mark>a<mark class="inline-remove">c, ouvrez</mark> l’App Store.</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">- <mark class="inline-add">D</mark>a<mark class="inline-add">ns</mark> l’App Store<mark class="inline-add">, cliquez sur votre nom au bas de la barre latérale</mark>.<mark class="inline-add"> Ou cliquez sur le bouton Connexion et connectez-vous à votre compte Apple.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text">- <mark class="inline-remove">C</mark>liquez sur votre nom <mark class="inline-remove">en bas de la barre latérale, p</mark>u<mark class="inline-remove">is cliquez</mark> sur <mark class="inline-remove">Réglag</mark>e<mark class="inline-remove">s du</mark> compte e<mark class="inline-remove">n</mark> <mark class="inline-remove">h</mark>aut de<mark class="inline-remove"> l’écr</mark>an<mark class="inline-remove">.</mark> <mark class="inline-remove">Si un messag</mark>e vous<mark class="inline-remove"> y invite,</mark> connecte<mark class="inline-remove">z-vous</mark> à votre compte Apple.</code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">- <mark class="inline-add">Sur la page qui s’affiche, c</mark>liquez sur votre nom <mark class="inline-add">o</mark>u sur <mark class="inline-add">votr</mark>e compte <mark class="inline-add">Appl</mark>e<mark class="inline-add">.</mark> <mark class="inline-add">Il vous ser</mark>a<mark class="inline-add"> pe</mark>ut<mark class="inline-add">-être</mark> de<mark class="inline-add">m</mark>an<mark class="inline-add">dé</mark> <mark class="inline-add">d</mark>e vous connecte<mark class="inline-add">r</mark> à votre compte Apple.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">- <mark class="inline-remove">Faites défiler la page jusqu’à la section Éléments masqués, puis c</mark>liquez sur <mark class="inline-remove">G</mark>é<mark class="inline-remove">rer</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">- <mark class="inline-add">C</mark>liquez sur <mark class="inline-add">Achats masqu</mark>é<mark class="inline-add">s</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">[Image: App Store<mark class="inline-remove"> sur Mac affichant</mark> l<mark class="inline-remove">’écr</mark>a<mark class="inline-remove">n</mark> Réglages du compte<mark class="inline-remove">,</mark> avec l’option <mark class="inline-remove">Gérer les a</mark>chats masqués en surbrillance.]</code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">[Image: <mark class="inline-add">Dans l’</mark>App Store<mark class="inline-add">,</mark> la<mark class="inline-add"> page</mark> Réglages du compte<mark class="inline-add"> est affichée</mark> avec l’option <mark class="inline-add">A</mark>chats masqués en surbrillance.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text">- Recherchez l’app que vous souhaitez afficher <mark class="inline-remove">à</mark> <mark class="inline-remove">no</mark>u<mark class="inline-remove">v</mark>e<mark class="inline-remove">a</mark>u.</code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">- Recherchez l’app que vous souhaitez afficher<mark class="inline-add">,</mark> <mark class="inline-add">puis</mark> <mark class="inline-add">cliq</mark>ue<mark class="inline-add">z s</mark>u<mark class="inline-add">r Afficher</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">-<mark class="inline-remove"> Cliquez sur Afficher, puis sur OK.</mark> L’app apparaît<mark class="inline-remove"> à nouveau</mark> dans votre liste <mark class="inline-remove">Achats. Vous pouvez cliquer sur le bouton Retélécharger pour télécharger </mark>d<mark class="inline-remove">e nouveau l</mark>’app<mark class="inline-remove">lication </mark>s<mark class="inline-remove">ur votre Mac</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">- L’app <mark class="inline-add">ré</mark>apparaît dans votre liste d’apps.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text"><mark class="inline-remove">[I</mark>ma<mark class="inline-remove">g</mark>e<mark class="inline-remove">:</mark> le <mark class="inline-remove">bo</mark>uton <mark class="inline-remove">R</mark>etélécharger<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text"><mark class="inline-add">- Si vous avez suppri</mark>m<mark class="inline-add">é une </mark>a<mark class="inline-add">pp d</mark>e<mark class="inline-add"> votre Mac,</mark> l<mark class="inline-add">’app n</mark>e <mark class="inline-add">réapparaît pas a</mark>uto<mark class="inline-add">matiqueme</mark>n<mark class="inline-add">t</mark> <mark class="inline-add">sur votre Mac lorsque vous l’affichez. Vous devez la r</mark>etélécharger<mark class="inline-add"> depuis l’App Store. Vous n’avez pas besoin de la racheter.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">## Masquer les apps sur votre Apple Vision Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">## Masquer les apps sur votre Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text">- <mark class="inline-remove">Ouvrez</mark> l’App Store.</code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">- <mark class="inline-add">Dans</mark> l’App Store<mark class="inline-add">, touchez votre photo ou vos initiales</mark>.<mark class="inline-add"> Ou, touchez le bouton Mon compte et connectez-vous à votre compte Apple.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text">- Touchez <mark class="inline-remove">l</mark>e <mark class="inline-remove">bou</mark>to<mark class="inline-remove">n Mon compt</mark>e<mark class="inline-remove"> ou votre photo en haut</mark> de<mark class="inline-remove"> l’écran, pui</mark>s <mark class="inline-remove">tou</mark>ch<mark class="inline-remove">ez Ache</mark>t<mark class="inline-remove">é</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">- Touchez <mark class="inline-add">Apps </mark>e<mark class="inline-add">t</mark> <mark class="inline-add">his</mark>to<mark class="inline-add">riqu</mark>e des <mark class="inline-add">a</mark>ch<mark class="inline-add">a</mark>t<mark class="inline-add">s</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text">- <mark class="inline-remove">Si vous utilisez le partage familial, t</mark>ouchez <mark class="inline-remove">Me</mark>s a<mark class="inline-remove">chat</mark>s.</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">- <mark class="inline-add">T</mark>ouchez <mark class="inline-add">Vo</mark>s a<mark class="inline-add">pp</mark>s.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">93</span><code class="line-text">- Recherchez l’app souhaitée, pincez, puis faite la glisser vers la gauche, puis touchez Masquer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">- Recherchez l’app souhaitée, pincez, puis faite la glisser vers la gauche, puis touchez Masquer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

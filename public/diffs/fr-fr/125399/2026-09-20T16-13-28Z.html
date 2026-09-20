@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Gérer l’accès de votre enfant aux apps et aux demandes d’app sur iPhone, iPad et Mac - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Gérer l’accès de votre enfant aux apps et aux demandes d’app sur iPhone, iPad et Mac - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/125399">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+43 ajouts</span>
+      <span class="badge removed">−31 suppressions</span>
+      <span class="badge">2 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous removed"><span class="line-number">1</span><code class="line-text"># Gérer l<mark class="inline-remove">es ex</mark>c<mark class="inline-remove">eption</mark>s d<mark class="inline-remove">’app pour</mark> votre enfant</code></div>
+<div class="diff-line current added"><span class="line-number">1</span><code class="line-text"># Gérer l<mark class="inline-add">’a</mark>c<mark class="inline-add">cè</mark>s d<mark class="inline-add">e</mark> votre enfant<mark class="inline-add"> aux apps et aux demandes d’app sur iPhone, iPad et Mac</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text"><mark class="inline-remove">L</mark>o<mark class="inline-remove">r</mark>s<mark class="inline-remove">qu</mark>e <mark class="inline-remove">la</mark> <mark class="inline-remove">f</mark>on<mark class="inline-remove">c</mark>t<mark class="inline-remove">i</mark>on<mark class="inline-remove">nali</mark>t<mark class="inline-remove">é</mark> Demander l’autorisation d’achat e<mark class="inline-remove">s</mark>t <mark class="inline-remove">activé</mark>e<mark class="inline-remove">,</mark> votre enfant <mark class="inline-remove">peut </mark>demander <mark class="inline-remove">à</mark> télécharger une app dont la classification d’âge <mark class="inline-remove">dépasse la r</mark>estric<mark class="inline-remove">ti</mark>o<mark class="inline-remove">n</mark> <mark class="inline-remove">d’âg</mark>e définie <mark class="inline-remove">po</mark>u<mark class="inline-remove">r lui ou ell</mark>e <mark class="inline-remove">d</mark>a<mark class="inline-remove">ns Tem</mark>p<mark class="inline-remove">s d’écran. Si vous</mark> approuve<mark class="inline-remove">z</mark> une e<mark class="inline-remove">xcep</mark>tion, vous pouvez <mark class="inline-remove">la suppr</mark>i<mark class="inline-remove">m</mark>er u<mark class="inline-remove">l</mark>t<mark class="inline-remove">érieure</mark>ment.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text"><mark class="inline-add">Temps d’écran pr</mark>o<mark class="inline-add">po</mark>se <mark class="inline-add">des</mark> <mark class="inline-add">c</mark>ont<mark class="inline-add">rôles parentaux, n</mark>o<mark class="inline-add">tamme</mark>nt Demander l’autorisation d’achat<mark class="inline-add">, qui</mark> e<mark class="inline-add">xigen</mark>t <mark class="inline-add">qu</mark>e votre enfant demande<mark class="inline-add"> l’autorisation d’accéde</mark>r <mark class="inline-add">aux apps qu’il souhaite télécharger. Vous recevez également une notification chaque fois que votre enfant essaie de</mark> télécharger une app dont la classification d’âge est<mark class="inline-add"> supé</mark>ri<mark class="inline-add">eure à </mark>c<mark class="inline-add">elle que v</mark>o<mark class="inline-add">us</mark> <mark class="inline-add">av</mark>e<mark class="inline-add">z</mark> définie<mark class="inline-add">.</mark> <mark class="inline-add">Chaq</mark>ue ap<mark class="inline-add">p</mark> approuv<mark class="inline-add">é</mark>e<mark class="inline-add"> est ajoutée à</mark> une <mark class="inline-add">list</mark>e<mark class="inline-add"> d’autorisa</mark>tion<mark class="inline-add">s</mark>,<mark class="inline-add"> que</mark> vous pouvez <mark class="inline-add">mod</mark>i<mark class="inline-add">fi</mark>er <mark class="inline-add">à to</mark>ut<mark class="inline-add"> mo</mark>ment.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">Fon</mark>ctionnement <mark class="inline-remove">d</mark>e<mark class="inline-remove">s</mark> <mark class="inline-remove">d</mark>e<mark class="inline-remove">mandes</mark> <mark class="inline-remove">d’ex</mark>c<mark class="inline-remove">epti</mark>on <mark class="inline-remove">d’</mark>app</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text"><mark class="inline-add">Sous</mark> <mark class="inline-add">iOS 27, iPadOS 27, ma</mark>c<mark class="inline-add">OS 27, wa</mark>t<mark class="inline-add">chOS 27 et vis</mark>ion<mark class="inline-add">OS 27, Temps d’écra</mark>n<mark class="inline-add"> introduit un nouveau contrôle parental pour aider les parents à gérer ce à quoi les enfants accèdent, les moments où ils utilisent leurs appareils et la façon dont ils restent en sécurité lorsqu’ils communiquent avec d’autres personnes. Pour accéder à ce contrôle parental mis à jour, assurez-vous que chaque appareil de votre groupe de partage familial utilise ces versions logicielles. L’organisateur du partage familial ou un parent/tuteur doit égal</mark>ement <mark class="inline-add">m</mark>e<mark class="inline-add">ttre</mark> <mark class="inline-add">à jour l</mark>e con<mark class="inline-add">trôle</mark> <mark class="inline-add">p</mark>a<mark class="inline-add">rental </mark>p<mark class="inline-add">our le grou</mark>p<mark class="inline-add">e familial.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">Si votre <mark class="inline-remove">enfant essai</mark>e de <mark class="inline-remove">téléch</mark>ar<mark class="inline-remove">ger une app don</mark>t<mark class="inline-remove"> la classification d’âge est supérieure à la restriction de classification d’âge que vous avez définie pour lui ou elle, un mess</mark>age <mark class="inline-remove">indique que les restrictions de contenu sont activées. Si votre en</mark>fa<mark class="inline-remove">nt de</mark>ma<mark class="inline-remove">nde une exception</mark>, v<mark class="inline-remove">ous recevrez un message dans l’app Messages. V</mark>ous pouvez <mark class="inline-remove">appr</mark>ou<mark class="inline-remove">v</mark>er <mark class="inline-remove">o</mark>u<mark class="inline-remove"> refu</mark>ser la de<mark class="inline-remove">ma</mark>nde <mark class="inline-remove">direct</mark>ement<mark class="inline-remove"> à</mark> part<mark class="inline-remove">ir de l</mark>a<mark class="inline-remove"> notification de message o</mark>u<mark class="inline-remove"> dans l’app Messages</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">Si<mark class="inline-add"> vous ne pouvez pas mettre à jour tous les appareils de</mark> votre <mark class="inline-add">group</mark>e de <mark class="inline-add">p</mark>artage fam<mark class="inline-add">ili</mark>a<mark class="inline-add">l</mark>, vous pouvez <mark class="inline-add">c</mark>o<mark class="inline-add">ntin</mark>uer <mark class="inline-add">à </mark>u<mark class="inline-add">tili</mark>ser la <mark class="inline-add">version précé</mark>den<mark class="inline-add">te </mark>de <mark class="inline-add">T</mark>em<mark class="inline-add">ps d’écran </mark>e<mark class="inline-add">t des co</mark>nt<mark class="inline-add">rôles</mark> par<mark class="inline-add">en</mark>tau<mark class="inline-add">x</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text"><mark class="inline-remove">[Sel</mark>o<mark class="inline-remove">n vot</mark>re <mark class="inline-remove">État, </mark>p<mark class="inline-remove">ays ou </mark>ré<mark class="inline-remove">g</mark>i<mark class="inline-remove">o</mark>n<mark class="inline-remove">](https://support.</mark>a<mark class="inline-remove">pple.com/fr-fr/125666) , vous dev</mark>re<mark class="inline-remove">z peut-être approuver à nouveau une app si celle-ci subit une modification importante (par exemple, si elle obtient une classification d’âge plus élevée ou introduit une nouvelle fonctionnalité).</mark></code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text"><mark class="inline-add">## Pr</mark>o<mark class="inline-add">cédu</mark>re pré<mark class="inline-add">l</mark>i<mark class="inline-add">mi</mark>na<mark class="inline-add">i</mark>re</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">- [Assurez-vous que le partage familial est configuré](https://setup.icloud.com/family/messages?aaaction=showFamilyInvite&amp;inviteCode=organizer_create&amp;campaign=kbArticle) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- [Créez un compte enfant pour votre enfant](https://support.apple.com/102617) , s’il n’en a pas déjà un. Assurez-vous ensuite que le compte de votre enfant fait partie de votre groupe de partage familial. Il est important que votre enfant ait son propre compte Apple et ne partage pas de compte avec quelqu’un d’autre, par exemple un autre membre de la famille.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- Mettez à jour tous les appareils de votre groupe de partage familial vers la dernière version logicielle pour que les réglages Temps d’écran se synchronisent sur tous les appareils de votre groupe de partage familial. Puis [mettez à jour vos contrôles parentaux](https://support.apple.com/guide/child-safety/jrzvk3ml3unm) pour accéder à la nouvelle expérience Temps d’écran et contrôle parental.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- Assurez-vous que l’organisateur du partage familial ou un parent/tuteur est ajouté à la liste de contacts de l’enfant afin que les demandes de l’enfant puissent être envoyées pour approbation.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">## Autoriser ou bloquer des apps sur iPhone, iPad et Mac</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">Dans Temps d’écran, vous pouvez voir une liste des apps que vous avez autorisées. Vous pouvez bloquer l’accès de votre enfant à une app à tout moment. Lorsque vous bloquez une app, votre enfant ne peut pas l’utiliser. L’app apparaît grisée sur l’écran d’accueil, mais elle n’est pas supprimée.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- Sur un iPhone ou iPad, ouvrez l’app Réglages. Sur un Mac, choisissez le menu Apple , puis cliquez sur Réglages Système.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- Touchez ou cliquez sur Temps d’écran.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- Touchez ou cliquez sur Famille, puis sélectionnez le nom de votre enfant.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">- Touchez ou cliquez sur Apps et sites web.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- Touchez ou cliquez sur Autorisées pour afficher une liste d’apps approuvées. Touchez ou cliquez sur Bloquées pour afficher la liste des apps bloquées.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- Pour bloquer une app, touchez ou cliquez sur l’app dans la liste Approuvées, puis touchez ou cliquez sur Bloquer l’app.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">[Image: Écran d’iPhone montrant l’app Marvel Strike Force avec un temps de lancement total de 4 minutes et des options pour gérer l’accès à l’app.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">## Répondre à une demande d’exception d’app</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">## Répondre à une demande d’exception d’app</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">Vous pouvez r<mark class="inline-remove">ép</mark>o<mark class="inline-remove">nd</mark>re <mark class="inline-remove">à une</mark> demande<mark class="inline-remove"> d’exception d’app sur votre appareil,</mark> directement à partir de la notification <mark class="inline-remove">ou </mark>d<mark class="inline-remove">u</mark> message. Si votre enfant <mark class="inline-remove">s</mark>e <mark class="inline-remove">tr</mark>ouve<mark class="inline-remove"> à proximité, vous pouvez répondr</mark>e d<mark class="inline-remove">irect</mark>eme<mark class="inline-remove">nt sur son appareil</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text"><mark class="inline-add">Si votre enfant essaie de télécharger une app dont la classification d’âge est supérieure à la restriction d’âge que vous avez définie, il verra un message indiquant que des restrictions de contenu sont activées et qu’il doit demander l’autorisation de son parent ou tuteur légal. Si votre enfant demande une exception, vous recevrez un message dans l’app Messages. </mark>Vous pouvez <mark class="inline-add">app</mark>ro<mark class="inline-add">uver ou </mark>re<mark class="inline-add">fuser</mark> <mark class="inline-add">la</mark> demande directement à partir de la notification d<mark class="inline-add">e</mark> message<mark class="inline-add"> ou dans l’app Messages</mark>. Si<mark class="inline-add"> vous n’approuvez pas la demande dans un délai de 24 heures,</mark> votre enfant <mark class="inline-add">devra envoyer un</mark>e <mark class="inline-add">n</mark>ouve<mark class="inline-add">ll</mark>e dem<mark class="inline-add">and</mark>e.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text"><mark class="inline-remove">###</mark> <mark class="inline-remove">S</mark>ur votre appareil</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text"><mark class="inline-add">L’option</mark> <mark class="inline-add">Demander l’autorisation d’achat est activée par défaut po</mark>ur<mark class="inline-add"> les enfants de moins de 13 ans. * [Selon</mark> votre <mark class="inline-add">État, pays ou région](https://support.</mark>app<mark class="inline-add">le.com/fr-fr/125666) , votre enfant devra peut-être demander l’autorisation d’accéder à toutes les apps, quelle que soit leur classification d’âge. Si vous avez approuvé une app, il se peut que vous deviez l’approuver à nouveau si celle-ci a fait l’objet d’une modification importante (p</mark>ar<mark class="inline-add"> </mark>e<mark class="inline-add">xemple, s</mark>i<mark class="inline-add"> e</mark>l<mark class="inline-add">le est passée à une classification d’âge supérieure ou a introduit une nouvelle fonctionnalité).</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text"><mark class="inline-remove">L</mark>ors<mark class="inline-remove">q</mark>u<mark class="inline-remove">e</mark> vo<mark class="inline-remove">us </mark>t<mark class="inline-remove">ouchez Examiner la demande, la page de l’app s’ouv</mark>re<mark class="inline-remove">. Vous pouvez alors</mark> app<mark class="inline-remove">rouver ou </mark>re<mark class="inline-remove">fuser la demande d’exception, ou consulter les déta</mark>il<mark class="inline-remove">s de la classification d’âge de l’app.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text"><mark class="inline-add">### Rép</mark>o<mark class="inline-add">nd</mark>r<mark class="inline-add">e </mark>su<mark class="inline-add">r</mark> votre app<mark class="inline-add">a</mark>reil</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text"><mark class="inline-remove">[I</mark>mage<mark class="inline-remove">:</mark> <mark class="inline-remove">N</mark>o<mark class="inline-remove">tific</mark>a<mark class="inline-remove">ti</mark>o<mark class="inline-remove">n Message</mark>s af<mark class="inline-remove">fichant</mark> la demande d’exception d<mark class="inline-remove">’</mark>a<mark class="inline-remove">pp</mark>lication de<mark class="inline-remove"> Will pour MARVEL Strike Force, avec le bouton « Examiner la</mark> de<mark class="inline-remove">m</mark>a<mark class="inline-remove">nde »</mark>.<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text"><mark class="inline-add">Lorsque vous touchez ou cliquez sur Exa</mark>m<mark class="inline-add">iner la demande, la p</mark>age <mark class="inline-add">de l’app s’</mark>o<mark class="inline-add">uvre. Vous pouvez </mark>a<mark class="inline-add">l</mark>o<mark class="inline-add">r</mark>s a<mark class="inline-add">pprouver ou re</mark>f<mark class="inline-add">user</mark> la demande d’exception<mark class="inline-add">, ou consulter les</mark> d<mark class="inline-add">ét</mark>a<mark class="inline-add">i</mark>l<mark class="inline-add">s de la classif</mark>ication d<mark class="inline-add">’âg</mark>e de<mark class="inline-add"> l’</mark>a<mark class="inline-add">pp</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text"><mark class="inline-remove">###</mark> <mark class="inline-remove">S</mark>ur <mark class="inline-remove">l</mark>’appar<mark class="inline-remove">eil</mark> <mark class="inline-remove">de votre</mark> enfant</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text"><mark class="inline-add">[Image:</mark> <mark class="inline-add">Écran d’iPhone affichant </mark>u<mark class="inline-add">ne conve</mark>r<mark class="inline-add">sation</mark> <mark class="inline-add">Messages avec une demande d</mark>’app<mark class="inline-add"> envoyée p</mark>ar <mark class="inline-add">un</mark> enfant<mark class="inline-add">.]</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">### Répondre sur l’appareil de votre enfant</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">- Ouvrez l’App Store (ou l’endroit où la demande a été effectuée) et trouvez l’app en question.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">- Ouvrez l’App Store (ou l’endroit où la demande a été effectuée) et trouvez l’app en question.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- Vous devriez voir un message indiquant qu’une demande a été envoyée et qu’elle est en attente d’approbation. Dans ce message, touchez « Autoriser en personne ».</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">- Vous devriez voir un message indiquant qu’une demande a été envoyée et qu’elle est en attente d’approbation. Dans ce message, touchez <mark class="inline-add">ou cliquez sur </mark>« Autoriser en personne »<mark class="inline-add">, puis connectez-vous avec votre compte Apple</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">[Image: Écran d<mark class="inline-remove">e l</mark>’<mark class="inline-remove">App St</mark>o<mark class="inline-remove">r</mark>e affichant l<mark class="inline-remove">a</mark> demande <mark class="inline-remove">d’</mark>exception <mark class="inline-remove">d’app envoyée au parent, avec l’option Autoriser en personne</mark>.]</code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">[Image: Écran d’<mark class="inline-add">iPh</mark>o<mark class="inline-add">n</mark>e affichant l<mark class="inline-add">es</mark> d<mark class="inline-add">étails de l’app MARVEL Strike Force: Squad RPG avec une invite « D</mark>emande<mark class="inline-add">r</mark> <mark class="inline-add">une </mark>exception <mark class="inline-add">»</mark>.]</code></div>
+<div class="diff-line previous removed"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">## Consulter et supprimer les exceptions d’app approuvées</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">Dans Temps d’écran, vous pouvez voir une liste de toutes les exceptions d’app que vous avez autorisées. Si vous changez d’avis, vous pouvez à tout moment retirer l’accès de votre enfant à une app. Lorsque vous supprimez une app de la liste des exceptions d’app, votre enfant ne peut pas l’utiliser. Elle est masquée, mais pas supprimée de l’appareil de votre enfant.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- Ouvrez Réglages (ou Réglages Système sur Mac), puis touchez ou cliquez sur Temps d’écran.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- Touchez ou cliquez sur Contenu et confidentialité.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- Touchez ou cliquez sur App Store, contenu multimédia, Web et jeux.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">- Touchez ou cliquez sur Apps pour afficher la liste des exceptions d’apps.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">- Pour supprimer une exception, touchez ou cliquez sur le bouton Supprimer, puis confirmez.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">[Image: Écran Contenu et confidentialité affichant la liste des exceptions d’app avec le bouton Supprimer.]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">## Si vous ne pouvez pas répondre à la demande d’exception de votre enfant</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">## Si vous ne pouvez pas répondre à la demande d’exception de votre enfant</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">Lorsque votre enfant envoie une demande que vous devez approuver, vous recevez un message dans l’app Messages.</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">Lorsque votre enfant envoie une demande que vous devez approuver, vous recevez un message dans l’app Messages.<mark class="inline-add"> Si vous ne recevez aucun message, vérifiez les points suivants :</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">Si vous ne recevez aucun message, vérifiez les points suivants :</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">- [Mettez à jour votre iPhone ou iPad vers la version la plus récente du logiciel](https://support.apple.com/fr-fr/118575) . Vous avez besoin de la dernière version du logiciel pour répondre à certaines demandes de votre enfant. Pour garantir que les réglages Temps d’écran et les autres contrôles parentaux fonctionnent comme prévu, veillez à ce que tous les appareils de votre groupe Partage familial soient à jour.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">- [Mettez à jour votre iPhone ou iPad vers la version la plus récente du logiciel](https://support.apple.com/fr-fr/118575) . Vous avez besoin de la dernière version du logiciel pour répondre à certaines demandes de votre enfant. Pour garantir que les réglages Temps d’écran et les autres contrôles parentaux fonctionnent comme prévu, veillez à ce que tous les appareils de votre groupe Partage familial soient à jour.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 4 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">- [Activez les notifications pour Messages](https://support.apple.com/guide/iphone/iph7c3d96bab) . Pour recevoir une notification lorsque vous recevez une demande, activez les notifications pour l’app Messages.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">- [Activez les notifications pour Messages](https://support.apple.com/guide/iphone/iph7c3d96bab) . Pour recevoir une notification lorsque vous recevez une demande, activez les notifications pour l’app Messages.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">- [Synchronisez vos contacts iCloud avec votre appareil](https://support.apple.com/guide/icloud/mm2e5b1c6686) . Assurez-vous que vos contacts iCloud sont synchronisés avec l’appareil sur lequel vous souhaitez recevoir ces demandes.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">- [Synchronisez vos contacts iCloud avec votre appareil](https://support.apple.com/guide/icloud/mm2e5b1c6686) . Assurez-vous que vos contacts iCloud sont synchronisés avec l’appareil sur lequel vous souhaitez recevoir ces demandes.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">* L’âge limite varie selon l’État, le pays ou la région. [Obtenez plus d’informations sur les réglages et fonctionnalités relatifs aux enfants en fonction des pays ou régions](https://support.apple.com/125666) .</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

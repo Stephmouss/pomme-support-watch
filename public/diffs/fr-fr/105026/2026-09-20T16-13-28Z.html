@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Si Siri ne fonctionne pas sur votre Apple Watch - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Si Siri ne fonctionne pas sur votre Apple Watch - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/105026">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+7 ajouts</span>
+      <span class="badge removed">−5 suppressions</span>
+      <span class="badge">2 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">Découvrez comment procéder si Siri ne répond pas ou vous demande de réessayer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">Découvrez comment procéder si Siri ne répond pas ou vous demande de réessayer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">Vérifiez, après chaque étape, si <mark class="inline-remove">le p</mark>r<mark class="inline-remove">oblème est</mark> ré<mark class="inline-remove">s</mark>o<mark class="inline-remove">lu</mark> :</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">Vérifiez, après chaque étape, si <mark class="inline-add">Si</mark>r<mark class="inline-add">i</mark> ré<mark class="inline-add">p</mark>o<mark class="inline-add">nd</mark> :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">- [Vérifiez la connexion Internet](https://support.apple.com/fr-fr/109319) de votre Apple Watch.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">- [Vérifiez la connexion Internet](https://support.apple.com/fr-fr/109319) de votre Apple Watch.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">- Sur votre iPhone, assurez-vous que Siri est activé. Touchez Réglages, <mark class="inline-remove">touchez </mark>Siri<mark class="inline-remove"> ou Apple Intelligence et Siri</mark>, puis <mark class="inline-remove">a</mark>ctivez l<mark class="inline-remove">’option</mark> Détecter « Dis Siri »<mark class="inline-remove">.</mark> <mark class="inline-remove">O</mark>u <mark class="inline-remove">touchez Détecter et activez</mark> Siri.</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">- Sur votre iPhone, assurez-vous que Siri est activé. Touchez Réglages, Siri<mark class="inline-add">*</mark>, puis <mark class="inline-add">Requêtes. A</mark>ctivez l<mark class="inline-add">e réglage</mark> Détecter « Dis Siri » <mark class="inline-add">o</mark>u <mark class="inline-add">«</mark> Siri<mark class="inline-add"> »</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">- Sur votre Apple Watch, vérifiez que Siri est activé. Touchez Réglages, puis Siri.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">- Sur votre Apple Watch, vérifiez que Siri est activé. Touchez Réglages, puis Siri.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">- [Redémarrez votre Apple Watch](https://support.apple.com/guide/watch/apd521a8a902) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">- [Redémarrez votre Apple Watch](https://support.apple.com/guide/watch/apd521a8a902) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- Sur votre iPhone, accédez à Réglages, <mark class="inline-remove">to</mark>u<mark class="inline-remove">chez</mark> Siri<mark class="inline-remove"> ou Apple Intelligence et Siri, sélectionnez Parler et écrire à Siri, puis touchez « Non »</mark>. Touchez ensuite <mark class="inline-remove">l’op</mark>t<mark class="inline-remove">ion « Siri » ou « Di</mark>s <mark class="inline-remove">Siri</mark> <mark class="inline-remove">» pour l’</mark>activer.</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- Sur votre iPhone, accédez à Réglages, <mark class="inline-add">p</mark>u<mark class="inline-add">is</mark> Siri. Touchez ensuite <mark class="inline-add">Requê</mark>t<mark class="inline-add">e</mark>s <mark class="inline-add">et</mark> active<mark class="inline-add">z Éc</mark>r<mark class="inline-add">ire à Siri</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">- Vérifiez que le microphone ou le haut-parleur de votre Apple Watch n’est pas obstrué. Par exemple, retirez l’étui de protection de votre appareil, le cas échéant.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">- Vérifiez que le microphone ou le haut-parleur de votre Apple Watch n’est pas obstrué. Par exemple, retirez l’étui de protection de votre appareil, le cas échéant.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- Si Siri ne s’exprime pas sur l’Apple Watch Series 3 ou modèle ultérieur, il est possible que vous deviez télécharger sa voix. Pour cela, l’Apple Watch doit être en charge et connectée à un réseau Wi-Fi. Pour permettre au téléchargement de se terminer, essayez de recharger votre Apple Watch pendant la nuit. Pour vérifier la progression du téléchargement sur votre Apple Watch, touchez Réglages, Siri, puis faites défiler l’écran jusqu’à Voix de Siri. [Découvrez les langues que Siri parle](https://www.apple.com/<mark class="inline-remove">fr/</mark>watchos/feature-availability/#siri-speaks) .</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- Si Siri ne s’exprime pas sur l’Apple Watch Series 3 ou modèle ultérieur, il est possible que vous deviez télécharger sa voix. Pour cela, l’Apple Watch doit être en charge et connectée à un réseau Wi-Fi. Pour permettre au téléchargement de se terminer, essayez de recharger votre Apple Watch pendant la nuit. Pour vérifier la progression du téléchargement sur votre Apple Watch, touchez Réglages, Siri, puis faites défiler l’écran jusqu’à Voix de Siri. [Découvrez les langues que Siri parle](https://www.apple.com/watchos/feature-availability/#siri-speaks) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">*Dans certaines versions d’iOS, les préférences de Siri se trouvent dans Réglages, sous Apple Intelligence et Siri.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">## En savoir plus sur Siri</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">## En savoir plus sur Siri</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">- [En savoir plus sur les raccourcis Siri dans le Guide d’utilisation de Raccourcis](https://support.apple.com/guide/shortcuts/welcome/ios) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">- [En savoir plus sur les raccourcis Siri dans le Guide d’utilisation de Raccourcis](https://support.apple.com/guide/shortcuts/welcome/ios) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">- Pour modifier la langue de Siri sur votre Apple Watch, vous devez également la modifier sur votre iPhone. Sur votre iPhone, touchez Réglages, touchez Siri ou Apple Intelligence et Siri, puis sélectionnez Langue. Faites votre choix dans la liste des [langues que Siri comprend](https://www.apple.com/<mark class="inline-remove">fr/</mark>watchos/feature-availability/) .</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- Pour modifier la langue de Siri sur votre Apple Watch, vous devez également la modifier sur votre iPhone. Sur votre iPhone, touchez Réglages, touchez Siri ou Apple Intelligence et Siri, puis sélectionnez Langue. Faites votre choix dans la liste des [langues que Siri comprend](https://www.apple.com/watchos/feature-availability/) .</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

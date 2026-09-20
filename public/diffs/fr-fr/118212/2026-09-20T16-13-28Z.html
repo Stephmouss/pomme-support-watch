@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Consulter l’historique de vos achats dans l’App Store et dans d’autres services multimédias Apple - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Consulter l’historique de vos achats dans l’App Store et dans d’autres services multimédias Apple - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/118212">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+45 ajouts</span>
+      <span class="badge removed">−33 suppressions</span>
+      <span class="badge">3 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Consulter l’historique de vos achats dans l’App Store et dans d’autres services multimédias Apple - Assistance Apple (FR)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Consulter l’historique de vos achats dans l’App Store et dans d’autres services multimédias Apple - Assistance Apple (FR)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text"><mark class="inline-remove">Découvr</mark>ez <mark class="inline-remove">comment accéder à </mark>l<mark class="inline-remove">’historiqu</mark>e <mark class="inline-remove">d</mark>e vo<mark class="inline-remove">s</mark> a<mark class="inline-remove">ch</mark>a<mark class="inline-remove">ts </mark>e<mark class="inline-remove">n </mark>l<mark class="inline-remove">igne</mark> pour consulter <mark class="inline-remove">l</mark>a liste des apps, abonnements, <mark class="inline-remove">morceaux </mark>de musique et autres contenus <mark class="inline-remove">que vous avez </mark>achetés<mark class="inline-remove"> ou souscrits</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text"><mark class="inline-add">Utilis</mark>ez le <mark class="inline-add">W</mark>e<mark class="inline-add">b ou</mark> vo<mark class="inline-add">tre</mark> a<mark class="inline-add">pp</mark>a<mark class="inline-add">r</mark>e<mark class="inline-add">i</mark>l pour consulter <mark class="inline-add">votre historique d’</mark>a<mark class="inline-add">chats, qui comprend une</mark> liste des apps, <mark class="inline-add">des </mark>abonnements, de<mark class="inline-add"> la</mark> musique et<mark class="inline-add"> des</mark> autres contenus achetés.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">Veuillez activer JavaScript dans votre navigateur pour une expérience optimale.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">Veuillez activer JavaScript dans votre navigateur pour une expérience optimale.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text"># Consulter l’historique de vos achats dans l’App Store et dans d’autres services multimédias Apple</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text"># Consulter l’historique de vos achats dans l’App Store et dans d’autres services multimédias Apple</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text"><mark class="inline-remove">Découvr</mark>ez <mark class="inline-remove">comment accéder à </mark>l<mark class="inline-remove">’historiqu</mark>e <mark class="inline-remove">d</mark>e vo<mark class="inline-remove">s</mark> a<mark class="inline-remove">ch</mark>a<mark class="inline-remove">ts </mark>e<mark class="inline-remove">n </mark>l<mark class="inline-remove">igne</mark> pour consulter <mark class="inline-remove">l</mark>a liste des apps, abonnements, <mark class="inline-remove">morceaux </mark>de musique et autres contenus <mark class="inline-remove">que vous avez </mark>achetés<mark class="inline-remove"> ou souscrits</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text"><mark class="inline-add">Utilis</mark>ez le <mark class="inline-add">W</mark>e<mark class="inline-add">b ou</mark> vo<mark class="inline-add">tre</mark> a<mark class="inline-add">pp</mark>a<mark class="inline-add">r</mark>e<mark class="inline-add">i</mark>l pour consulter <mark class="inline-add">votre historique d’</mark>a<mark class="inline-add">chats, qui comprend une</mark> liste des apps, <mark class="inline-add">des </mark>abonnements, de<mark class="inline-add"> la</mark> musique et<mark class="inline-add"> des</mark> autres contenus achetés.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">## Consulter <mark class="inline-remove">l’</mark>historique d<mark class="inline-remove">e vos </mark>achats en ligne</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">## Consulter <mark class="inline-add">votre </mark>historique d<mark class="inline-add">’</mark>achats en ligne</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">- Accédez à l’adresse [reportaproblem.apple.com](https://reportaproblem.apple.com/?s=6) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">- Accédez à l’adresse [reportaproblem.apple.com](https://reportaproblem.apple.com/?s=6) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- Connectez-vous à<mark class="inline-remove"> l’aide de</mark> votre compte Apple <mark class="inline-remove">et du mot de passe associé </mark>pour <mark class="inline-remove">affi</mark>c<mark class="inline-remove">h</mark>er <mark class="inline-remove">une</mark> liste de vos achats.</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- Connectez-vous à votre compte Apple pour c<mark class="inline-add">onsult</mark>er <mark class="inline-add">la</mark> liste de vos achats.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">- Si vous ne savez pas exactement à quoi correspond un prélèvement, mais que vous connaissez son montant, recherchez ce montant.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">- Si vous ne savez pas exactement à quoi correspond un prélèvement, mais que vous connaissez son montant, recherchez ce montant.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">Découvrez la marche à suivre [si vous ne trouvez pas l’article que vous recherchez](https://support.apple.com/fr-fr/118212#cannotfind) ou [si vous remarquez des prélèvements inattendus](https://support.apple.com/fr-fr/118212#unexpected) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">Découvrez la marche à suivre [si vous ne trouvez pas l’article que vous recherchez](https://support.apple.com/fr-fr/118212#cannotfind) ou [si vous remarquez des prélèvements inattendus](https://support.apple.com/fr-fr/118212#unexpected) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">## Consulter <mark class="inline-remove">l’</mark>historique d<mark class="inline-remove">e vos </mark>achats sur votre appareil</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">## Consulter <mark class="inline-add">votre </mark>historique d<mark class="inline-add">’</mark>achats sur votre appareil</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">Si vous ne trouvez pas un article dans l’historique de vos achats sur la page reportaproblem.apple.com, consultez l’historique de vos achats sur votre appareil.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">Si vous ne trouvez pas un article dans l’historique de vos achats sur la page reportaproblem.apple.com, consultez l’historique de vos achats sur votre appareil.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">### Sur votre iPhone</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">### Sur votre iPhone</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">- <mark class="inline-remove">Ouvrez</mark> l’<mark class="inline-remove">app </mark>App Store.</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- <mark class="inline-add">Dans</mark> l’App Store<mark class="inline-add">, touchez votre photo ou vos initiales</mark>.<mark class="inline-add"> Ou touchez le bouton Mon compte et connectez-vous à votre compte Apple.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">- Touchez <mark class="inline-remove">l</mark>e <mark class="inline-remove">b</mark>outo<mark class="inline-remove">n</mark> <mark class="inline-remove">C</mark>onne<mark class="inline-remove">xion</mark> <mark class="inline-remove">ou</mark> votre p<mark class="inline-remove">ho</mark>t<mark class="inline-remove">o en haut d</mark>e l<mark class="inline-remove">’écran</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">- Touchez <mark class="inline-add">Apps et historiqu</mark>e <mark class="inline-add">des achats. Il v</mark>ou<mark class="inline-add">s sera peu</mark>t<mark class="inline-add">-être demandé de v</mark>o<mark class="inline-add">us</mark> <mark class="inline-add">c</mark>onne<mark class="inline-add">cter</mark> <mark class="inline-add">à</mark> votre <mark class="inline-add">com</mark>pte <mark class="inline-add">App</mark>l<mark class="inline-add">e</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text"><mark class="inline-remove">[Imag</mark>e<mark class="inline-remove">:</mark> <mark class="inline-remove">l</mark>e <mark class="inline-remove">bou</mark>t<mark class="inline-remove">on Connexion]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text"><mark class="inline-add">- Touch</mark>e<mark class="inline-add">z</mark> <mark class="inline-add">Historiqu</mark>e <mark class="inline-add">d’acha</mark>t<mark class="inline-add">s.</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- Touchez Historique des achats pour afficher la liste de vos achats. Vous pouvez être invité à vous connecter.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">- Si vous ne savez pas exactement à quoi correspond un prélèvement, mais que vous connaissez son montant, recherchez ce montant.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">- Si vous ne savez pas exactement à quoi correspond un prélèvement, mais que vous connaissez son montant, recherchez ce montant.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">### Sur votre iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">### Sur votre iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">- <mark class="inline-remove">Ouvrez</mark> l’<mark class="inline-remove">app </mark>App Store.</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">- <mark class="inline-add">Dans</mark> l’App Store<mark class="inline-add">, touchez votre photo ou vos initiales</mark>.<mark class="inline-add"> Ou touchez le bouton Mon compte et connectez-vous à votre compte Apple.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- Touchez <mark class="inline-remove">l</mark>e <mark class="inline-remove">b</mark>outo<mark class="inline-remove">n</mark> <mark class="inline-remove">C</mark>onne<mark class="inline-remove">xion</mark> <mark class="inline-remove">ou</mark> votre p<mark class="inline-remove">ho</mark>t<mark class="inline-remove">o en haut d</mark>e l<mark class="inline-remove">’écran</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- Touchez <mark class="inline-add">Apps et historiqu</mark>e <mark class="inline-add">des achats. Il v</mark>ou<mark class="inline-add">s sera peu</mark>t<mark class="inline-add">-être demandé de v</mark>o<mark class="inline-add">us</mark> <mark class="inline-add">c</mark>onne<mark class="inline-add">cter</mark> <mark class="inline-add">à</mark> votre <mark class="inline-add">com</mark>pte <mark class="inline-add">App</mark>l<mark class="inline-add">e</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text"><mark class="inline-remove">[Imag</mark>e<mark class="inline-remove">:</mark> <mark class="inline-remove">l</mark>e <mark class="inline-remove">bou</mark>t<mark class="inline-remove">on Connexion]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text"><mark class="inline-add">- Touch</mark>e<mark class="inline-add">z</mark> <mark class="inline-add">Historiqu</mark>e <mark class="inline-add">d’acha</mark>t<mark class="inline-add">s.</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">- Touchez Apps et historique des achats.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">- Touchez Historique des achats pour afficher la liste de vos achats. Vous pouvez être invité à vous connecter.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">- Si vous ne savez pas exactement à quoi correspond un prélèvement, mais que vous connaissez son montant, recherchez ce montant.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">- Si vous ne savez pas exactement à quoi correspond un prélèvement, mais que vous connaissez son montant, recherchez ce montant.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">### Sur votre Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">### Sur votre Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">- <mark class="inline-remove">Ouvrez</mark> l’<mark class="inline-remove">app </mark>App Store.</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">- <mark class="inline-add">Dans</mark> l’App Store<mark class="inline-add">, cliquez sur votre nom au bas de la barre latérale</mark>.<mark class="inline-add"> Ou cliquez sur le bouton Connexion et connectez-vous à votre compte Apple.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">- <mark class="inline-remove">C</mark>liquez sur votre <mark class="inline-remove">n</mark>om<mark class="inline-remove"> en bas d</mark>e <mark class="inline-remove">la barre latéra</mark>le.</code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">- <mark class="inline-add">Sur la page qui s’affiche, c</mark>liquez sur <mark class="inline-add">Apps et historique d’achats. Il vous sera peut-être demandé de vous connecter à </mark>votre <mark class="inline-add">c</mark>om<mark class="inline-add">pt</mark>e <mark class="inline-add">App</mark>le.</code></div>
+<div class="diff-line previous removed"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">- Cliquez sur Réglages du compte. Vous pouvez être invité à vous connecter.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">- Cliquez sur Historique d’achats pour afficher la liste de vos achats.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">- Cliquez sur Historique d’achats pour afficher la liste de vos achats.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">- Pour afficher <mark class="inline-remove">davantage</mark> d’achats, cliquez sur «<mark class="inline-remove"> Ces</mark> 90 derniers jours » en haut de l’historique d’achats et choisissez <mark class="inline-remove">d’</mark>autre<mark class="inline-remove">s</mark> <mark class="inline-remove">cri</mark>t<mark class="inline-remove">ères </mark>de filtr<mark class="inline-remove">ag</mark>e <mark class="inline-remove">de</mark>s achats.</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">- Pour afficher <mark class="inline-add">plus</mark> d’achats, cliquez sur « 90 derniers jours » en haut de l’historique d’achats et choisissez <mark class="inline-add">une </mark>autre <mark class="inline-add">mé</mark>t<mark class="inline-add">ho</mark>de<mark class="inline-add"> pour</mark> filtre<mark class="inline-add">r</mark> <mark class="inline-add">vo</mark>s achats.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">### Sur votre PC Windows</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">### Sur votre PC Windows</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">- Ouvrez l’app <mark class="inline-remove">Apple </mark>Musi<mark class="inline-remove">c</mark> ou l’app Apple TV.</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">- Ouvrez l’app Musi<mark class="inline-add">que</mark> ou l’app Apple TV.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text">- Cliquez sur votre nom en bas de la barre latérale, pui<mark class="inline-remove">s choisissez Voir mon compte. Vous devrez peut-être vou</mark>s connecte<mark class="inline-remove">r</mark> <mark class="inline-remove">avec</mark> votre compte Apple.</code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">- Cliquez sur votre nom en bas de la barre latérale<mark class="inline-add">. Ou, cliquez sur Se connecter</mark>, puis connecte<mark class="inline-add">z-vous</mark> <mark class="inline-add">à</mark> votre compte Apple.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">- Cliquez sur Afficher mon compte. Vous devrez peut-être vous connecter à votre compte Apple.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">- Accédez à la section Historique d’achats. Cliquez ensuite sur Afficher à côté de la mention Dernier achat. L’affichage de l’historique de vos achats peut prendre quelques instants.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">- Accédez à la section Historique d’achats. Cliquez ensuite sur Afficher à côté de la mention Dernier achat. L’affichage de l’historique de vos achats peut prendre quelques instants.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">- Pour afficher <mark class="inline-remove">davantage</mark> d’achats, cliquez sur «<mark class="inline-remove"> Ces</mark> 90 derniers jours » en haut de l’historique d’achats et choisissez <mark class="inline-remove">d’</mark>autre<mark class="inline-remove">s</mark> <mark class="inline-remove">cri</mark>t<mark class="inline-remove">ères </mark>de filtr<mark class="inline-remove">ag</mark>e <mark class="inline-remove">de</mark>s achats.</code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">- Pour afficher <mark class="inline-add">plus</mark> d’achats, cliquez sur « 90 derniers jours » en haut de l’historique d’achats et choisissez <mark class="inline-add">une </mark>autre <mark class="inline-add">mé</mark>t<mark class="inline-add">ho</mark>de<mark class="inline-add"> pour</mark> filtre<mark class="inline-add">r</mark> <mark class="inline-add">vo</mark>s achats.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">## Si vous ne trouvez pas un article dans votre historique d’achats</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">## Si vous ne trouvez pas un article dans votre historique d’achats</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">Si <mark class="inline-remove">vo</mark>u<mark class="inline-remove">s</mark> <mark class="inline-remove">possédez plusieurs comptes Apple, vous avez peut-être acheté l’</mark>article <mark class="inline-remove">à l’aid</mark>e <mark class="inline-remove">d’</mark>u<mark class="inline-remove">n compte Apple différent. Connectez-vous à un aut</mark>re <mark class="inline-remove">de vo</mark>s <mark class="inline-remove">compte</mark>s<mark class="inline-remove"> Apple et vérifiez à nouveau</mark> votre historique d’achats.</code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">Si u<mark class="inline-add">n</mark> article <mark class="inline-add">n</mark>e <mark class="inline-add">fig</mark>ure <mark class="inline-add">pa</mark>s <mark class="inline-add">dan</mark>s votre historique d’achats<mark class="inline-add">, cela peut s’expliquer par plusieurs raisons</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">Si vous <mark class="inline-remove">av</mark>ez <mark class="inline-remove">reçu une notification s</mark>usp<mark class="inline-remove">ec</mark>te<mark class="inline-remove"> par e-mail à propo</mark>s<mark class="inline-remove"> d’un achat, il se peut que cet e-mail n’ait pas été envoyé par</mark> Apple<mark class="inline-remove"> ou ne corresponde pas à ce qui vous a réellement été facturé. [Découvrez comment identifier les e-mails légitimes de l’App Store ou de l’iTunes Store](https://support.apple.com/fr-fr/102406) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text"><mark class="inline-add">### </mark>Si vous <mark class="inline-add">posséd</mark>ez <mark class="inline-add">pl</mark>us<mark class="inline-add">ieurs com</mark>ptes Apple</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">85</span><code class="line-text"><mark class="inline-remove">###</mark> <mark class="inline-remove">Si</mark> <mark class="inline-remove">vous résidez dans l’Union </mark>eu<mark class="inline-remove">ropéenne e</mark>t que vous a<mark class="inline-remove">v</mark>ez utilisé <mark class="inline-remove">d</mark>’autres<mark class="inline-remove"> mod</mark>e<mark class="inline-remove">s</mark> de <mark class="inline-remove">p</mark>aie<mark class="inline-remove">men</mark>t</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text"><mark class="inline-add">Il</mark> <mark class="inline-add">se</mark> <mark class="inline-add">p</mark>eut que vous a<mark class="inline-add">y</mark>ez utilisé <mark class="inline-add">un autre compte Apple pour acheter un article. Connectez-vous à l</mark>’autre<mark class="inline-add"> compte Apple et con</mark>s<mark class="inline-add">ult</mark>e<mark class="inline-add">z</mark> de <mark class="inline-add">nouve</mark>a<mark class="inline-add">u votre h</mark>i<mark class="inline-add">storiqu</mark>e<mark class="inline-add"> d’acha</mark>t<mark class="inline-add">s.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text"><mark class="inline-remove">V</mark>ous <mark class="inline-remove">pou</mark>vez <mark class="inline-remove">avoi</mark>r ef<mark class="inline-remove">f</mark>ectu<mark class="inline-remove">é des</mark> achat<mark class="inline-remove">s de produits et de services numériques dans une app en utilisant des systèmes de paiement alternatifs ou un lien permettant d’effectuer des achats sur le site web du développeur. Ces [achats ne sont pas facturés par l’App Store ni son système d’achat intégré](https://support.apple.com/fr-fr/118126) . Contactez le développeur de l’app pour obtenir de l’aide.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text"><mark class="inline-add">### Si v</mark>ous <mark class="inline-add">a</mark>vez r<mark class="inline-add">eçu un</mark> e<mark class="inline-add">-mail de noti</mark>f<mark class="inline-add">ication susp</mark>ect<mark class="inline-add"> concernant </mark>u<mark class="inline-add">n</mark> achat</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">L’e-mail ne provient peut-être pas d’Apple ni ne correspond à des débits réels sur votre compte. [Découvrez comment identifier les e-mails légitimes de l’App Store ou de l’iTunes Store](https://support.apple.com/fr-fr/102406) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">### Si vous avez utilisé d’autres modes de paiement</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text">Vous pouvez avoir effectué des achats de produits et de services numériques dans une app en utilisant des systèmes de paiement alternatifs ou un lien permettant d’effectuer des achats sur le site web du développeur. Ces [achats ne sont pas facturés via l’App Store ou le système d’achats intégrés d’Apple](https://support.apple.com/fr-fr/118126) . Contactez le développeur de l’app pour obtenir de l’aide.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">89</span><code class="line-text">## Si vous remarquez des achats que vous ne reconnaissez pas ou des prélèvements inattendus</code></div>
+<div class="diff-line current unchanged"><span class="line-number">89</span><code class="line-text">## Si vous remarquez des achats que vous ne reconnaissez pas ou des prélèvements inattendus</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">S</mark>i un achat est<mark class="inline-remove"> él</mark>i<mark class="inline-remove">gib</mark>le<mark class="inline-remove">,</mark> <mark class="inline-remove">vou</mark>s p<mark class="inline-remove">ouvez [dem</mark>a<mark class="inline-remove">nde</mark>r un <mark class="inline-remove">r</mark>embo<mark class="inline-remove">u</mark>r<mark class="inline-remove">s</mark>em<mark class="inline-remove">ent](https://support.app</mark>le.<mark class="inline-remove">com/fr-fr/118223) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text"><mark class="inline-add">Les</mark> <mark class="inline-add">déb</mark>i<mark class="inline-add">ts</mark> <mark class="inline-add">inconn</mark>u<mark class="inline-add">s peuve</mark>n<mark class="inline-add">t correspondre à plusieurs</mark> achat<mark class="inline-add">s</mark> <mark class="inline-add">regroupés sur une seule facture ou à d</mark>es<mark class="inline-add"> ar</mark>ti<mark class="inline-add">c</mark>le<mark class="inline-add">s</mark> <mark class="inline-add">acheté</mark>s par un <mark class="inline-add">m</mark>emb<mark class="inline-add">re de v</mark>o<mark class="inline-add">t</mark>re<mark class="inline-add"> fa</mark>m<mark class="inline-add">il</mark>le.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">### Vérifier auprès des membres de votre famille</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text">- Si un article que vous ne vous rappelez pas avoir acheté figure dans votre historique d’achats, demandez aux membres de votre famille s’ils l’ont acheté. Si les membres de votre famille ont accès à votre appareil, vous pouvez [exiger un mot de passe pour chaque achat](https://support.apple.com/fr-fr/119848) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">97</span><code class="line-text">- Si une autre personne utilise votre compte Apple et le mot de passe associé, [changez le mot de passe de votre compte Apple](https://support.apple.com/fr-fr/101567) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text">### Vérifier les achats groupés</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">Apple peut regrouper plusieurs achats et abonnements sur une seule facture, selon la [façon dont Apple facture les apps, le contenu et les abonnements](https://support.apple.com/fr-fr/118244) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">103</span><code class="line-text">### Gérer l’achat ou l’abonnement</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">93</span><code class="line-text">- Vous pouvez [résilier un abonnement](https://support.apple.com/fr-fr/118428) que vous avez souscrit et que vous ne souhaitez pas conserver.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">105</span><code class="line-text">- Vous pouvez [résilier un abonnement](https://support.apple.com/fr-fr/118428) que vous avez souscrit et que vous ne souhaitez pas conserver.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">95</span><code class="line-text">- Si un a<mark class="inline-remove">rticle que vous ne vous rappelez pas avoir acheté figure dans votre historique d’a</mark>chat<mark class="inline-remove">s,</mark> <mark class="inline-remove">demandez aux membr</mark>es <mark class="inline-remove">de votre fam</mark>i<mark class="inline-remove">l</mark>le<mark class="inline-remove"> s’ils l’ont acheté. Si les membres de votre famille ont accès à votre appareil</mark>, vous pouvez [e<mark class="inline-remove">xig</mark>er un m<mark class="inline-remove">ot de passe p</mark>our<mark class="inline-remove"> chaqu</mark>e<mark class="inline-remove"> acha</mark>t](https://support.apple.com/fr-fr/11<mark class="inline-remove">9</mark>8<mark class="inline-remove">48</mark>) .<mark class="inline-remove"> Si une autre personne utilise votre compte Apple et le mot de passe associé, [changez le mot de passe de votre compte Apple](https://support.apple.com/fr-fr/101567) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">107</span><code class="line-text">- Si un achat es<mark class="inline-add">t</mark> <mark class="inline-add">él</mark>i<mark class="inline-add">gib</mark>le, vous pouvez [<mark class="inline-add">d</mark>e<mark class="inline-add">mand</mark>er un <mark class="inline-add">re</mark>m<mark class="inline-add">b</mark>our<mark class="inline-add">s</mark>e<mark class="inline-add">men</mark>t](https://support.apple.com/fr-fr/118<mark class="inline-add">223</mark>) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">97</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Pl</mark>us<mark class="inline-remove">i</mark>e<mark class="inline-remove">u</mark>r<mark class="inline-remove">s a</mark>c<mark class="inline-remove">hats et ab</mark>onne<mark class="inline-remove">ment</mark>s <mark class="inline-remove">pe</mark>u<mark class="inline-remove">ve</mark>nt <mark class="inline-remove">ê</mark>tre re<mark class="inline-remove">group</mark>é<mark class="inline-remove">s</mark> <mark class="inline-remove">sur une seul</mark>e factur<mark class="inline-remove">e, sel</mark>on<mark class="inline-remove"> la manière dont [les apps, contenus et abonnements sont facturés par Apple](https://support.apple.com/fr-fr/118244) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">109</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">Si vo</mark>us<mark class="inline-add"> n</mark>e<mark class="inline-add"> </mark>r<mark class="inline-add">e</mark>conn<mark class="inline-add">aiss</mark>e<mark class="inline-add">z pa</mark>s un<mark class="inline-add"> débi</mark>t <mark class="inline-add">sur vo</mark>tre re<mark class="inline-add">lev</mark>é <mark class="inline-add">d</mark>e factur<mark class="inline-add">ati</mark>on</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text"><mark class="inline-remove">- </mark>Découvrez la marche à suivre [si un prélèvement inconnu d’Apple apparaît sur le relevé de compte](https://support.apple.com/fr-fr/108092) de votre banque ou de votre établissement financier.</code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text">Découvrez la marche à suivre [si un prélèvement inconnu d’Apple apparaît sur le relevé de compte](https://support.apple.com/fr-fr/108092) de votre banque ou de votre établissement financier.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">101</span><code class="line-text">Les informations se rapportant à des produits non fabriqués par Apple, ou à des sites Web indépendants qui ne sont ni contrôlés ni testés par Apple, sont fournies uniquement à titre indicatif et ne constituent aucune recommandation. Apple ne saurait être tenu responsable de problèmes liés à l’utilisation de tels sites ou produits tiers, ou à leurs performances. Apple ne garantit en aucune façon la fiabilité d’un site Web tiers ni l’exactitude des informations que ce dernier propose. [Contactez le fournisseur](https://support.apple.com/fr-fr/103190) pour plus d’informations.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">113</span><code class="line-text">Les informations se rapportant à des produits non fabriqués par Apple, ou à des sites Web indépendants qui ne sont ni contrôlés ni testés par Apple, sont fournies uniquement à titre indicatif et ne constituent aucune recommandation. Apple ne saurait être tenu responsable de problèmes liés à l’utilisation de tels sites ou produits tiers, ou à leurs performances. Apple ne garantit en aucune façon la fiabilité d’un site Web tiers ni l’exactitude des informations que ce dernier propose. [Contactez le fournisseur](https://support.apple.com/fr-fr/103190) pour plus d’informations.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

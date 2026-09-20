@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>À propos de la charge rapide sur l’Apple Watch - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>À propos de la charge rapide sur l’Apple Watch - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/102454">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+21 ajouts</span>
+      <span class="badge removed">−19 suppressions</span>
+      <span class="badge">3 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">Découvrez les modèles d’Apple Watch compatibles avec la charge rapide et comment vous assurer que votre montre se charge aussi rapidement que possible.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">Découvrez les modèles d’Apple Watch compatibles avec la charge rapide et comment vous assurer que votre montre se charge aussi rapidement que possible.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text"><mark class="inline-remove">[Im</mark>a<mark class="inline-remove">ge: Câble de</mark> charge rapide ma<mark class="inline-remove">gné</mark>ti<mark class="inline-remove">qu</mark>e ve<mark class="inline-remove">rs</mark> <mark class="inline-remove">USB-C pour </mark>Apple Watch<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text"><mark class="inline-add">L</mark>a charge rapide <mark class="inline-add">est co</mark>m<mark class="inline-add">p</mark>ati<mark class="inline-add">bl</mark>e <mark class="inline-add">a</mark>ve<mark class="inline-add">c</mark> <mark class="inline-add">l’</mark>Apple Watch<mark class="inline-add"> Series 7 et les modèles ultérieurs, l’Apple Watch SE 3, et l’Apple Watch Ultra et les modèles ultérieurs.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">## <mark class="inline-remove">M</mark>od<mark class="inline-remove">èl</mark>es d’<mark class="inline-remove">App</mark>l<mark class="inline-remove">e Watch comp</mark>ati<mark class="inline-remove">bles et vitesses de charge rapide</mark></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">## <mark class="inline-add">Charger pendant 15 minutes p</mark>o<mark class="inline-add">ur obtenir </mark>d<mark class="inline-add">es heur</mark>es d’<mark class="inline-add">uti</mark>l<mark class="inline-add">is</mark>ati<mark class="inline-add">on</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text"><mark class="inline-remove">###</mark> Apple Watch Series 1<mark class="inline-remove">0</mark> <mark class="inline-remove">et</mark> m<mark class="inline-remove">odèl</mark>es u<mark class="inline-remove">l</mark>t<mark class="inline-remove">éri</mark>eurs</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text"><mark class="inline-add">-</mark> Apple Watch Series 1<mark class="inline-add">2</mark> <mark class="inline-add">: 15</mark> m<mark class="inline-add">inut</mark>es <mark class="inline-add">de recharge vo</mark>u<mark class="inline-add">s perme</mark>t<mark class="inline-add">tent jusqu’à 12 h</mark>eur<mark class="inline-add">e</mark>s<mark class="inline-add"> d’autonomie supplémentaires.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">- <mark class="inline-remove">S</mark>e cha<mark class="inline-remove">rge</mark> <mark class="inline-remove">de</mark> <mark class="inline-remove">0</mark> <mark class="inline-remove">à 80 % en 30</mark> minutes en<mark class="inline-remove">v</mark>ir<mark class="inline-remove">on</mark></code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">- <mark class="inline-add">Appl</mark>e <mark class="inline-add">Wat</mark>ch<mark class="inline-add"> Ultr</mark>a <mark class="inline-add">4</mark> <mark class="inline-add">:</mark> <mark class="inline-add">15</mark> minutes <mark class="inline-add">de recharge vous permett</mark>en<mark class="inline-add">t jusqu’à 18 heures d’autonomie supplémenta</mark>ir<mark class="inline-add">es.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text"><mark class="inline-remove">###</mark> Apple Watch S<mark class="inline-remove">er</mark>ies <mark class="inline-remove">7,</mark> <mark class="inline-remove">S</mark>er<mark class="inline-remove">i</mark>es <mark class="inline-remove">8 e</mark>t<mark class="inline-remove"> Ser</mark>ies<mark class="inline-remove"> 9</mark></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text"><mark class="inline-add">-</mark> Apple Watch S<mark class="inline-add">E 3 : 15 m</mark>i<mark class="inline-add">nut</mark>es <mark class="inline-add">de</mark> <mark class="inline-add">recharge vous p</mark>er<mark class="inline-add">mettent jusqu’à 8 heur</mark>es <mark class="inline-add">d’au</mark>t<mark class="inline-add">onom</mark>ie<mark class="inline-add"> </mark>s<mark class="inline-add">upplémentaires.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Se c</mark>harge de 0 à 80 %<mark class="inline-remove"> en 45 minutes environ</mark></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text"><mark class="inline-add">##</mark> <mark class="inline-add">C</mark>harge<mark class="inline-add">r</mark> de 0<mark class="inline-add"> %</mark> à 80 %</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text"><mark class="inline-remove">###</mark> Apple Watch S<mark class="inline-remove">E</mark> 3</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">L’</mark>Apple Watch S<mark class="inline-add">eries 10 et les modèles ultérieurs se chargent de 0 % à 80 % en</mark> 3<mark class="inline-add">0 minutes environ.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- Se charge de 0 à 80 % en 45 minutes environ</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- <mark class="inline-add">Les Apple Watch </mark>S<mark class="inline-add">eries 7, Series 8 et Series 9 s</mark>e charge<mark class="inline-add">nt</mark> de 0<mark class="inline-add"> %</mark> à 80 % en 45 minutes environ<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text"><mark class="inline-remove">###</mark> Apple Watch <mark class="inline-remove">Ultra</mark> 3</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">L’</mark>Apple Watch <mark class="inline-add">SE</mark> 3<mark class="inline-add"> se charge de 0 % à 80 % en 45 minutes environ.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- <mark class="inline-remove">S</mark>e charge de 0 à 80 % en 45 minutes environ</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- <mark class="inline-add">L’Apple Watch Ultra 3 et les modèles ultérieurs s</mark>e charge<mark class="inline-add">nt</mark> de 0<mark class="inline-add"> %</mark> à 80 % en 45 minutes environ<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text"><mark class="inline-remove">###</mark> Apple Watch Ultra et Apple Watch Ultra 2</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">L’</mark>Apple Watch Ultra et <mark class="inline-add">l’</mark>Apple Watch Ultra 2<mark class="inline-add"> se chargent de 0 % à 80 % en une heure environ.</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">- Se charge de 0 à 80 % en une heure environ</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">## Éléments requis</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">## Éléments requis</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">La charge rapide nécessite un câble de charge rapide magnétique USB-C Apple. Ce câble se distingue par son connecteur USB-C et son chargeur magnétique avec bord en aluminium.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">La charge rapide nécessite un câble de charge rapide magnétique USB-C Apple. Ce câble se distingue par son connecteur USB-C et son chargeur magnétique avec bord en aluminium.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text"><mark class="inline-remove">Si</mark> <mark class="inline-remove">votr</mark>e charge<mark class="inline-remove">u</mark>r<mark class="inline-remove"> </mark>a<mark class="inline-remove"> un</mark>e étique<mark class="inline-remove">tt</mark>e <mark class="inline-remove">«</mark> <mark class="inline-remove">WPT » s</mark>ur <mark class="inline-remove">le dispositif en aluminium, alors votre chargeur est aux normes de transmission d’énergie sans fil. [En savoir plus sur la recharge conforme aux normes de transmission d’énergie sans fil](https://support.a</mark>pple<mark class="inline-remove">.</mark>c<mark class="inline-remove">om/120920) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text"><mark class="inline-add">[Image:</mark> <mark class="inline-add">Câble d</mark>e charge<mark class="inline-add"> </mark>ra<mark class="inline-add">pid</mark>e <mark class="inline-add">magn</mark>étique<mark class="inline-add"> v</mark>e<mark class="inline-add">rs</mark> <mark class="inline-add">USB-C</mark> <mark class="inline-add">po</mark>ur <mark class="inline-add">A</mark>pple<mark class="inline-add"> Wat</mark>c<mark class="inline-add">h]</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">Dans les pays où une réglementation en matière de transmission d’énergie sans fil est en vigueur, l’Apple Watch est vendue avec un câble de charge conforme aux normes de transmission d’énergie sans fil lorsque cela s’avère nécessaire. Si votre chargeur a une étiquette « WPT » sur le dispositif en aluminium, alors votre chargeur est aux normes de transmission d’énergie sans fil. Les chargeurs conformes à la norme WPT ne prennent pas en charge la charge rapide. [En savoir plus sur la recharge de l’Apple Watch conforme aux normes de transmission d’énergie sans fil](https://support.apple.com/120920) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">Vous avez également besoin de l’un des adaptateurs secteur suivants :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">Vous avez également besoin de l’un des adaptateurs secteur suivants :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">- Adaptateur secteur USB-C tiers comparable, prenant en charge une alimentation par USB (USB-PD) de 5 W ou plus</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">- Adaptateur secteur USB-C tiers comparable, prenant en charge une alimentation par USB (USB-PD) de 5 W ou plus</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">Si vous <mark class="inline-remove">n’ê</mark>tes <mark class="inline-remove">p</mark>a<mark class="inline-remove">s</mark> <mark class="inline-remove">sûr du</mark> modèle de votre adaptateur secteur Apple, vérifiez la puissance <mark class="inline-remove">en watts </mark>indiquée sur le de<mark class="inline-remove">ssus ou</mark> le<mark class="inline-remove"> desso</mark>u<mark class="inline-remove">s de celui-ci </mark>:</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">Si vous <mark class="inline-add">avez des dou</mark>tes <mark class="inline-add">concern</mark>a<mark class="inline-add">nt</mark> <mark class="inline-add">le</mark> modèle de votre adaptateur secteur Apple, vérifiez la puissance indiquée sur l<mark class="inline-add">a partie supérieure ou inférieur</mark>e de l<mark class="inline-add">’adaptat</mark>eu<mark class="inline-add">r</mark>:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">[Image: Puissance en watts indiquée sur un adaptateur secteur Apple]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">[Image: Puissance en watts indiquée sur un adaptateur secteur Apple]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">## Conseils pour obtenir une vitesse de charge aussi rapide que possible</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">## Conseils pour obtenir une vitesse de charge aussi rapide que possible</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- Utilisez le chargeur fourni avec votre Apple Watch, car il garantit les vitesses de recharge les plus rapides pour votre modèle d’Apple Watch. Par exemple, le chargeur fourni avec l’Apple Watch Series 12 et l’Apple Watch Ultra 4 recharge ces modèles plus rapidement que les chargeurs plus anciens. Pour reconnaître le chargeur fourni avec votre Apple Watch Series 12 et votre Apple Watch Ultra 4, recherchez le numéro de modèle A3277 imprimé sur la partie du connecteur USB-C que vous insérez dans votre ordinateur ou votre adaptateur secteur.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">- Évitez les températures extrêmes lorsque vous chargez votre Apple Watch. La charge rapide peut ne pas fonctionner dans des conditions trop froides ou trop chaudes.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">- Évitez les températures extrêmes lorsque vous chargez votre Apple Watch. La charge rapide peut ne pas fonctionner dans des conditions trop froides ou trop chaudes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">- N’utilisez pas votre Apple Watch pendant qu’elle est en charge. La charge prend plus de temps si vous gardez l’écran allumé, installez des mises à jour logicielles ou transférez du contenu multimédia pendant la charge. Elle peut également prendre plus de temps si c’est la première fois que vous chargez rapidement votre Apple Watch après l’avoir jumelée avec votre iPhone.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">- N’utilisez pas votre Apple Watch pendant qu’elle est en charge. La charge prend plus de temps si vous gardez l’écran allumé, installez des mises à jour logicielles ou transférez du contenu multimédia pendant la charge. Elle peut également prendre plus de temps si c’est la première fois que vous chargez rapidement votre Apple Watch après l’avoir jumelée avec votre iPhone.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">- Si vous avez configuré la connexion mobile sur votre Apple Watch, veillez à ce que cette dernière se trouve près de l’iPhone avec lequel elle est jumelée lors de la charge.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">- Si vous avez configuré la connexion mobile sur votre Apple Watch, veillez à ce que cette dernière se trouve près de l’iPhone avec lequel elle est jumelée lors de la charge.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">Les tests de l’Apple Watch Series 12 ont été réalisés par Apple en juillet et août 2026 sur des modèles de préproduction de l’Apple Watch Series 12 (GPS) et de l’Apple Watch Series 12 (GPS + Cellular), chacun jumelé à un iPhone. Tous les appareils ont été testés avec des logiciels en version préliminaire, un Câble de charge rapide magnétique vers USB-C pour Apple Watch (modèle A3277) de préproduction et un Adaptateur secteur USB-C 20 W Apple (modèle A2305). Les tests de charge rapide ont été réalisés sur des Apple Watch déchargées. Temps calculé à compter de l’apparition du logo Apple au démarrage de l’appareil. Le temps de charge varie en fonction de l’adaptateur utilisé, de la zone géographique, des réglages, du niveau de batterie initial, de l’utilisation et de facteurs environnementaux. Les résultats réels peuvent varier.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">Les tests de l’Apple Watch Ultra 4 ont été réalisés par Apple en juillet et août 2026 sur un modèle de préproduction de l’Apple Watch Ultra 4 jumelé à un iPhone. Tous les appareils ont été testés avec des logiciels en version préliminaire, un Câble de charge rapide magnétique vers USB-C pour Apple Watch (modèle A3277) de préproduction et un Adaptateur secteur USB-C 20 W Apple (modèle A2305). Le temps de charge varie en fonction de l’adaptateur utilisé, de la zone géographique, des réglages, du niveau de batterie initial, de l’utilisation et de facteurs environnementaux. Les résultats réels peuvent varier.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">Les tests de l’Apple Watch Series 11 ont été réalisés par Apple en juillet et août 2025 sur des prototypes d’Apple Watch Series 11 (GPS) et d’Apple Watch Series 11 (GPS + Cellular) jumelés avec un iPhone. Tous les appareils étaient dotés d’une version préliminaire du logiciel et ont été testés avec le câble de charge rapide magnétique vers USB-C pour Apple Watch (modèle A2515) et l’adaptateur secteur USB-C 20 W Apple (modèle A2305). Les tests de charge rapide ont été réalisés sur des Apple Watch déchargées. Temps calculé à compter de l’apparition du logo Apple au démarrage de l’appareil. Le temps de charge varie en fonction de l’adaptateur utilisé, de la zone géographique, des réglages, du niveau de batterie initial, de l’utilisation et de facteurs environnementaux. Les résultats réels peuvent varier.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">Les tests de l’Apple Watch Series 11 ont été réalisés par Apple en juillet et août 2025 sur des prototypes d’Apple Watch Series 11 (GPS) et d’Apple Watch Series 11 (GPS + Cellular) jumelés avec un iPhone. Tous les appareils étaient dotés d’une version préliminaire du logiciel et ont été testés avec le câble de charge rapide magnétique vers USB-C pour Apple Watch (modèle A2515) et l’adaptateur secteur USB-C 20 W Apple (modèle A2305). Les tests de charge rapide ont été réalisés sur des Apple Watch déchargées. Temps calculé à compter de l’apparition du logo Apple au démarrage de l’appareil. Le temps de charge varie en fonction de l’adaptateur utilisé, de la zone géographique, des réglages, du niveau de batterie initial, de l’utilisation et de facteurs environnementaux. Les résultats réels peuvent varier.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">* Tests d’autonomie de l’Apple Watch Ultra 2 réalisés par Apple en août 2023 sur des prototypes d’Apple Watch Ultra 2 (GPS + Cellular) jumelés à un iPhone. Tous les appareils étaient équipés de préversions logicielle. L’autonomie de la batterie varie en fonction de l’utilisation, de la couverture du réseau mobile, de la configuration et de nombreux autres facteurs. Les résultats réels sont susceptibles de varier.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">* Tests d’autonomie de l’Apple Watch Ultra 2 réalisés par Apple en août 2023 sur des prototypes d’Apple Watch Ultra 2 (GPS + Cellular) jumelés à un iPhone. Tous les appareils étaient équipés de préversions logicielle. L’autonomie de la batterie varie en fonction de l’utilisation, de la couverture du réseau mobile, de la configuration et de nombreux autres facteurs. Les résultats réels sont susceptibles de varier.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">Tests d’autonomie d’une journée de l’Apple Watch réalisés par Apple en août 2023 sur des prototypes d’Apple Watch Series 9 (GPS) et d’Apple Watch Series 9 (GPS + Cellular) jumelés à un iPhone. Tous les appareils étaient équipés de préversions logicielles. L’autonomie de la batterie varie en fonction de l’utilisation, de la couverture du réseau mobile, de la configuration et de nombreux autres facteurs. Les résultats réels sont susceptibles de varier.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">Les tests d’autonomie de la batterie de l’Apple Watch Ultra, l’Apple Watch Series 8 (GPS) et l’Apple Watch Series 8 (GPS + Cellular) ont été réalisés par Apple en août 2022 sur des prototypes d’Apple Watch jumelés à un iPhone. Tous les appareils étaient équipés d’une version préliminaire du logiciel. L’autonomie de la batterie varie en fonction de l’utilisation, de la couverture du réseau mobile, de la configuration et de nombreux autres facteurs. Les résultats réels sont susceptibles de varier.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">Les tests d’autonomie de la batterie de l’Apple Watch Ultra, l’Apple Watch Series 8 (GPS) et l’Apple Watch Series 8 (GPS + Cellular) ont été réalisés par Apple en août 2022 sur des prototypes d’Apple Watch jumelés à un iPhone. Tous les appareils étaient équipés d’une version préliminaire du logiciel. L’autonomie de la batterie varie en fonction de l’utilisation, de la couverture du réseau mobile, de la configuration et de nombreux autres facteurs. Les résultats réels sont susceptibles de varier.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">Les tests d’autonomie de la batterie de l’Apple Watch Series 7 (GPS) et de l’Apple Watch Series 7 (GPS + Cellular) ont été réalisés par Apple en août 2021 sur des prototypes d’Apple Watch jumelés à un iPhone. Tous les appareils étaient équipés d’une version préliminaire du logiciel. Le temps de charge varie en fonction des zones géographiques, des réglages et de facteurs environnementaux. Les résultats réels sont susceptibles de varier.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">Les tests d’autonomie de la batterie de l’Apple Watch Series 7 (GPS) et de l’Apple Watch Series 7 (GPS + Cellular) ont été réalisés par Apple en août 2021 sur des prototypes d’Apple Watch jumelés à un iPhone. Tous les appareils étaient équipés d’une version préliminaire du logiciel. Le temps de charge varie en fonction des zones géographiques, des réglages et de facteurs environnementaux. Les résultats réels sont susceptibles de varier.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">Tous les tests ont été effectués en utilisant un câble de charge rapide magnétique USB-C pour Apple Watch et un adaptateur secteur USB-C Apple de 20 W.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">Tous les tests ont été effectués en utilisant un câble de charge rapide magnétique USB-C pour Apple Watch et un adaptateur secteur USB-C Apple de 20 W.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">L’Apple Watch Series 7 et modèles ultérieurs, l’Apple Watch Ultra et modèles ultérieurs ainsi que l’Apple Watch SE 3 sont compatibles avec la charge rapide. Dans les pays où une réglementation en matière de transmission d’énergie sans fil est en vigueur, l’Apple Watch est vendue avec un câble de charge conforme aux normes de transmission d’énergie sans fil lorsque cela s’avère nécessaire. Les chargeurs conformes aux normes de transmission d’énergie sans fil ne sont pas compatibles avec la charge rapide. [En savoir plus sur la recharge de l’Apple Watch conforme aux normes de transmission d’énergie sans fil](https://support.apple.com/120920) .</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">Les informations se rapportant à des produits non fabriqués par Apple, ou à des sites Web indépendants qui ne sont ni contrôlés ni testés par Apple, sont fournies uniquement à titre indicatif et ne constituent aucune recommandation. Apple ne saurait être tenu responsable de problèmes liés à l’utilisation de tels sites ou produits tiers, ou à leurs performances. Apple ne garantit en aucune façon la fiabilité d’un site Web tiers ni l’exactitude des informations que ce dernier propose. [Contactez le fournisseur](https://support.apple.com/fr-fr/103190) pour plus d’informations.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">Les informations se rapportant à des produits non fabriqués par Apple, ou à des sites Web indépendants qui ne sont ni contrôlés ni testés par Apple, sont fournies uniquement à titre indicatif et ne constituent aucune recommandation. Apple ne saurait être tenu responsable de problèmes liés à l’utilisation de tels sites ou produits tiers, ou à leurs performances. Apple ne garantit en aucune façon la fiabilité d’un site Web tiers ni l’exactitude des informations que ce dernier propose. [Contactez le fournisseur](https://support.apple.com/fr-fr/103190) pour plus d’informations.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

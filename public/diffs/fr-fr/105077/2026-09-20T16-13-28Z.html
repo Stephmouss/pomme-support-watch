@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Fonctionnement de Siri avec plusieurs appareils - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Fonctionnement de Siri avec plusieurs appareils - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/105077">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+10 ajouts</span>
+      <span class="badge removed">−6 suppressions</span>
+      <span class="badge">1 bloc modifié</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">Le HomePod répond à la plupart des demandes de Siri, même lorsque d’autres appareils se trouvent à proximité. Pour utiliser Siri sur un appareil spécifique, levez cet appareil pour l’activer ou appuyez sur le bouton pour utiliser Siri, puis formulez votre demande.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">Le HomePod répond à la plupart des demandes de Siri, même lorsque d’autres appareils se trouvent à proximité. Pour utiliser Siri sur un appareil spécifique, levez cet appareil pour l’activer ou appuyez sur le bouton pour utiliser Siri, puis formulez votre demande.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">## <mark class="inline-remove">Q</mark>u<mark class="inline-remove">e</mark> <mark class="inline-remove">f</mark>a<mark class="inline-remove">i</mark>re <mark class="inline-remove">si ce n’est pas l’</mark>appareil <mark class="inline-remove">souhaité qui </mark>répond<mark class="inline-remove"> ?</mark></code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">## <mark class="inline-add">Si </mark>u<mark class="inline-add">n</mark> a<mark class="inline-add">ut</mark>re appareil répond</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">- Assurez-vous que le Bluetooth est activé sur chaque appareil. Si le Bluetooth est désactivé ou si un appareil n’est pas dans le champ de portée du Bluetooth, plusieurs appareils peuvent répondre à votre demande.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">- Assurez-vous que le Bluetooth est activé sur chaque appareil. Si le Bluetooth est désactivé ou si un appareil n’est pas dans le champ de portée du Bluetooth, plusieurs appareils peuvent répondre à votre demande.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">- Assurez-vous que chaque appareil utilise la version la plus récente du logiciel Apple. Si certains appareils sont dotés d’un logiciel plus ancien, plusieurs peuvent répondre.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">- Assurez-vous que chaque appareil utilise la version la plus récente du logiciel Apple. Si certains appareils sont dotés d’un logiciel plus ancien, plusieurs peuvent répondre.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">- <mark class="inline-remove">A</mark>c<mark class="inline-remove">tiv</mark>ez<mark class="inline-remove"> le réglage « Siri » ou « Dis Siri » sur</mark> votre iPhone ou iPad <mark class="inline-remove">d</mark>a<mark class="inline-remove">n</mark>s <mark class="inline-remove">Rég</mark>la<mark class="inline-remove">ge</mark>s <mark class="inline-remove">&gt;</mark> Siri ou <mark class="inline-remove">A</mark>p<mark class="inline-remove">pl</mark>e <mark class="inline-remove">Int</mark>e<mark class="inline-remove">ll</mark>i<mark class="inline-remove">gen</mark>c<mark class="inline-remove">e </mark>et <mark class="inline-remove">Siri &gt; P</mark>arl<mark class="inline-remove">er et écrire à Siri</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- <mark class="inline-add">Pla</mark>cez votre iPhone ou <mark class="inline-add">votre </mark>iPad <mark class="inline-add">f</mark>a<mark class="inline-add">ce ver</mark>s l<mark class="inline-add">e b</mark>as <mark class="inline-add">afin que</mark> Siri <mark class="inline-add">ne v</mark>ou<mark class="inline-add">s</mark> <mark class="inline-add">ré</mark>p<mark class="inline-add">ond</mark>e <mark class="inline-add">pas d</mark>e<mark class="inline-add">pu</mark>i<mark class="inline-add">s </mark>cet <mark class="inline-add">app</mark>ar<mark class="inline-add">ei</mark>l.</code></div>
+<div class="diff-line previous removed"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- Si vous possédez un iPhone ou un iPad, vous pouvez le poser écran vers le bas afin que Siri ne réponde pas à votre voix.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">- Si vous avez un HomePod, vous pouvez dire « Dis Siri, désactive Dis Siri » ou désactiver l’option Détecter « Dis Siri » dans l’app Maison. Pour l’activer à nouveau, touchez de manière prolongée le dessus du HomePod et dites « Active Dis Siri ».</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">- Si vous avez un HomePod, vous pouvez dire « Dis Siri, désactive Dis Siri » ou désactiver l’option Détecter « Dis Siri » dans l’app Maison. Pour l’activer à nouveau, touchez de manière prolongée le dessus du HomePod et dites « Active Dis Siri ».</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- Si vous possédez un Mac qui prend en charge Siri, vous pouvez fermer son couvercle afin qu’il ne vous réponde pas. Si <mark class="inline-remove">l’</mark>o<mark class="inline-remove">p</mark>ti<mark class="inline-remove">on</mark> « Autoriser Siri lorsque l’appareil est verrouillé » <mark class="inline-remove">est désactivée </mark>dans les réglages Siri, Siri ne répond pas <mark class="inline-remove">non plus </mark>lorsque l’écran est verrouillé.</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">- Si vous possédez un Mac qui prend en charge Siri, vous pouvez fermer son couvercle afin qu’il ne vous réponde pas. Si <mark class="inline-add">v</mark>o<mark class="inline-add">us désac</mark>ti<mark class="inline-add">vez</mark> « Autoriser Siri lorsque l’appareil est verrouillé » dans les réglages Siri, Siri ne répond pas lorsque l’écran <mark class="inline-add">du Mac </mark>est verrouillé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">Les fonctionnalités de Siri <mark class="inline-remove">peuvent </mark>varie<mark class="inline-remove">r suiva</mark>nt l<mark class="inline-remove">es pays et</mark> les régions.</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">Les fonctionnalités de Siri varient <mark class="inline-add">se</mark>l<mark class="inline-add">on</mark> les régions.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">## Informations supplémentaires</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- Découvrez la marche à suivre si [Siri ne fonctionne pas sur votre iPhone ou iPad](https://support.apple.com/fr-fr/105037) , ou si [Siri ne fonctionne pas sur votre Apple Watch](https://support.apple.com/fr-fr/105026) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">- Découvrez comment [utiliser Siri sur tous vos appareils Apple](https://support.apple.com/fr-fr/105020) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">## Besoin d’aide supplémentaire ?</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">## Besoin d’aide supplémentaire ?</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

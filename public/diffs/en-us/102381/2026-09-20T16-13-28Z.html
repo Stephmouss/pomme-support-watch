@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>About Face ID advanced technology — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>About Face ID advanced technology</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/102381">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+7 ajouts</span>
+      <span class="badge removed">−7 suppressions</span>
+      <span class="badge">5 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">Learn how Face ID helps protect your information on your iPhone and iPad Pro.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">Learn how Face ID helps protect your information on your iPhone and iPad Pro.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">Much of our digital lives <mark class="inline-remove">are</mark> stored on iPhone and iPad, and it&#x27;s important to protect that information. In the same way that Touch ID revolutionized authentication using a fingerprint, Face ID revolutionizes authentication using facial recognition. Face ID provides intuitive and secure authentication enabled by the state-of-the-art TrueDepth camera system with advanced technologies to accurately map the geometry of your face.</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">Much of our digital lives <mark class="inline-add">is</mark> stored on iPhone and iPad, and it&#x27;s important to protect that information. In the same way that Touch ID revolutionized authentication using a fingerprint, Face ID revolutionizes authentication using facial recognition. Face ID provides intuitive and secure authentication enabled by the state-of-the-art TrueDepth camera system with advanced technologies to accurately map the geometry of your face.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">With a simple glance, Face ID securely unlocks your iPhone or iPad Pro. You can use it to authorize payments with Apple Pay, purchases from the App Store, Book Store, and other Apple media services, and more. Developers can also allow you to use Face ID to sign into their apps.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">With a simple glance, Face ID securely unlocks your iPhone or iPad Pro. You can use it to authorize payments with Apple Pay, purchases from the App Store, Book Store, and other Apple media services, and more. Developers can also allow you to use Face ID to sign into their apps.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">Face ID automatically adapts to changes in your appearance, such as wearing cosmetic makeup or growing facial hair. If there is a more significant change in your appearance, like shaving a full beard, Face ID confirms your identity by using your passcode before it updates your face data. Face ID is designed to work with hats, scarves, glasses, contact lenses, and many sunglasses. Furthermore, it&#x27;s designed to work indoors, outdoors, and even in total darkness. With iPhone 12 or later, Face ID even works with face masks.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">Face ID automatically adapts to changes in your appearance, such as wearing cosmetic makeup or growing facial hair. If there is a more significant change in your appearance, like shaving a full beard, Face ID confirms your identity by using your passcode before it updates your face data. Face ID is designed to work with hats, scarves, glasses, contact lenses, and many sunglasses. Furthermore, it&#x27;s designed to work indoors, outdoors, and even in total darkness. With iPhone 12 or later, Face ID even works with face masks.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">To start using Face ID, you need to first enroll your face. You might do this during the initial set<mark class="inline-remove"> </mark>up process, or at a later time by going to Settings &gt; Face ID &amp; Passcode. To unlock your device using Face ID, simply glance at it. Face ID requires that the TrueDepth camera sees your face or your eyes, whether your device is lying on a surface or you&#x27;re holding it in a natural position. The TrueDepth camera has a similar range of view as when you take a photo or make a FaceTime call with the front camera. Face ID works best when the device is arm’s length or less from your face (25–50 cm away from your face). To use Face ID while wearing a mask, set up the feature and make sure the camera can see your eyes.</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">To start using Face ID, you need to first enroll your face. You might do this during the initial setup process, or at a later time by going to Settings &gt; Face ID &amp; Passcode. To unlock your device using Face ID, simply glance at it. Face ID requires that the TrueDepth camera sees your face or your eyes, whether your device is lying on a surface or you&#x27;re holding it in a natural position. The TrueDepth camera has a similar range of view as when you take a photo or make a FaceTime call with the front camera. Face ID works best when the device is arm’s length or less from your face (25–50 cm away from your face). To use Face ID while wearing a mask, set up the feature and make sure the camera can see your eyes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">The TrueDepth camera is intelligently activated; for example, by tapping to wake your screen, from an incoming notification that wakes the screen, or by raising to wake your iPhone. Each time you unlock your device, the TrueDepth camera recognizes you by capturing accurate depth data and an infrared image. This information is matched against the stored mathematical representation to authenticate.</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">The TrueDepth camera is intelligently activated; for example, by tapping to wake your screen, from an incoming notification that wakes the screen, or by raising to wake your iPhone. Each time you unlock your device, the TrueDepth camera recognizes you by capturing accurate depth data and an infrared image. <mark class="inline-add">On iPhone 18 Pro models or later, this data is supplemented by additional image data to maintain Face ID performance. </mark>This information is matched against the stored mathematical representation to authenticate.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">## Security safeguards</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">## Security safeguards</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">The probability that a random person in the population could look at your iPhone or iPad Pro and unlock it using Face ID is less than 1 in 1,000,000 with a single enrolled appearance whether or not you&#x27;re wearing a mask. As an additional protection, Face ID allows only five unsuccessful match attempts before a passcode is required. The statistical probability is higher — and further increased if using Face ID with a mask — for twins and siblings that look like you, and among children under the age of 13, because their distinct facial features might not have fully developed. If you&#x27;re concerned about this, we recommend using a passcode to authenticate. You can also use Face ID without enabling Face ID with a mask.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">The probability that a random person in the population could look at your iPhone or iPad Pro and unlock it using Face ID is less than 1 in 1,000,000 with a single enrolled appearance whether or not you&#x27;re wearing a mask. As an additional protection, Face ID allows only five unsuccessful match attempts before a passcode is required. The statistical probability is higher — and further increased if using Face ID with a mask — for twins and siblings that look like you, and among children under the age of 13, because their distinct facial features might not have fully developed. If you&#x27;re concerned about this, we recommend using a passcode to authenticate. You can also use Face ID without enabling Face ID with a mask.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">Face ID <mark class="inline-remove">m</mark>a<mark class="inline-remove">tch</mark>es<mark class="inline-remove"> against</mark> depth information, which isn’t found in print or 2D digital photographs. It&#x27;s designed to protect against spoofing by masks or other techniques through the use of sophisticated anti-spoofing neural networks. Face ID is even attention-aware, and Face ID with a mask will always confirm attention. <mark class="inline-remove">F</mark>a<mark class="inline-remove">ce ID</mark> recognizes if your eyes are open<mark class="inline-remove"> and your attention is directed towards the device</mark>. This makes it more difficult for someone to unlock your device without your knowledge (such as when you are sleeping).</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">Face ID a<mark class="inline-add">lways requir</mark>es depth information, which isn’t found in print or 2D digital photographs. It&#x27;s designed to protect against spoofing by masks or other techniques through the use of sophisticated anti-spoofing neural networks. Face ID is even attention-aware, and Face ID with a mask will always confirm attention. <mark class="inline-add">It </mark>a<mark class="inline-add">lso</mark> recognizes if your eyes are open. This makes it more difficult for someone to unlock your device without your knowledge (such as when you are sleeping).</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">To use Face ID, you must set up a passcode on your device. You must enter your passcode for additional security validation when:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">To use Face ID, you must set up a passcode on your device. You must enter your passcode for additional security validation when:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">## Privacy</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">## Privacy</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">At Apple, we believe privacy is a fundamental human right and we’ve designed Face ID to protect your privacy. Face ID data — including mathematical representations of your face — is encrypted and protected by the Secure Enclave. <mark class="inline-remove">Th</mark>is data will be refined and updated as you use Face ID to improve your experience, including when you successfully authenticate. Face ID will also update this data when it detects a close match but a passcode is subsequently entered to unlock the device. Face ID data doesn’t leave your device and is never backed up to iCloud or anywhere else.</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">At Apple, we believe privacy is a fundamental human right and we’ve designed Face ID to protect your privacy. Face ID data — including mathematical representations of your face — is encrypted and protected by the Secure Enclave. <mark class="inline-add">Supplemental image data used for Face ID on some devices </mark>is<mark class="inline-add"> processed by the Secure Exclave — a hardware-isolated compartment built into the silicon to process sensor data separately from the rest of the system. Data that is processed and analyzed in the Secure Exclave cannot be accessed by iOS, apps, the user, or Apple. Face ID</mark> data will be refined and updated as you use Face ID to improve your experience, including when you successfully authenticate. Face ID will also update this data when it detects a close match but a passcode is subsequently entered to unlock the device. Face ID data doesn’t leave your device<mark class="inline-add">, is never available to iOS or iPadOS, apps, or Apple,</mark> and is never backed up to iCloud or anywhere else.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">If you choose to enroll in Face ID, you can control how it&#x27;s used or disable it at any time. For example, if you don’t want to use Face ID to unlock your device, open Settings &gt; Face ID &amp; Passcode, and disable iPhone Unlock or iPad Unlock. You can also use Face ID without setting up the ability to use it with a face mask. To disable Face ID entirely, open Settings &gt; Face ID &amp; Passcode, and tap Reset Face ID. Doing so will delete Face ID data, including mathematical representations of your face, from your device. If you choose to erase or reset your device using Find My or erasing all content and settings, all Face ID data will be deleted.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">If you choose to enroll in Face ID, you can control how it&#x27;s used or disable it at any time. For example, if you don’t want to use Face ID to unlock your device, open Settings &gt; Face ID &amp; Passcode, and disable iPhone Unlock or iPad Unlock. You can also use Face ID without setting up the ability to use it with a face mask. To disable Face ID entirely, open Settings &gt; Face ID &amp; Passcode, and tap Reset Face ID. Doing so will delete Face ID data, including mathematical representations of your face, from your device. If you choose to erase or reset your device using Find My or erasing all content and settings, all Face ID data will be deleted.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">Even if you don’t enroll in Face ID, the TrueDepth camera intelligently activates to support attention<mark class="inline-remove"> </mark>aware features, like dimming the display <mark class="inline-remove">if you aren&#x27;t looking at your device </mark>or lowering the volume of alerts<mark class="inline-remove"> if you&#x27;re looking at your device. For example, when using Safari, your device checks to determine if you&#x27;re looking at your device and turns the screen off if you aren’t</mark>. If you don’t want to use these features, you can open Settings &gt; Face ID &amp; Passcode and turn off Attention Aware Features.</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">Even if you don’t enroll in Face ID, the TrueDepth camera intelligently activates to support attention<mark class="inline-add">-</mark>aware features, like dimming the display or lowering the volume of alerts. If you don’t want to use these features, you can open Settings &gt; Face ID &amp; Passcode and turn off Attention Aware Features.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">Within supported apps, you can enable Face ID for authentication. Apps are notified only as to whether the authentication is successful. Apps can’t access Face ID data associated with the enrolled face.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">Within supported apps, you can enable Face ID for authentication. Apps are notified only as to whether the authentication is successful. Apps can’t access Face ID data associated with the enrolled face.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">63</span><code class="line-text">Accessibility is an integral part of Apple products. Users with physical limitations can select “Accessibility Options” during enrollment. This setting doesn&#x27;t require the full range of head motion to capture different angles and is still secure to use but requires more consistency in how you look at your iPhone or iPad Pro.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">Accessibility is an integral part of Apple products. Users with physical limitations can select “Accessibility Options” during enrollment. This setting doesn&#x27;t require the full range of head motion to capture different angles and is still secure to use but requires more consistency in how you look at your iPhone or iPad Pro.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">Face ID also has an accessibility feature to support individuals who are blind or have low vision. If you <mark class="inline-remove">d</mark>o<mark class="inline-remove">n&#x27;t</mark> <mark class="inline-remove">want</mark> Face ID<mark class="inline-remove"> to require that you look at your device with your eyes open</mark>, you can open Settings &gt; Accessibility &gt; Face ID &amp; Attention, and turn off Require Attention for Face ID. This setting is automatically turned off if you enable VoiceOver during initial set<mark class="inline-remove"> </mark>up.</code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">Face ID also has an accessibility feature to support individuals who are blind or have low vision. If <mark class="inline-add">attention awareness makes it difficult for </mark>you <mark class="inline-add">t</mark>o <mark class="inline-add">use</mark> Face ID, you can open Settings &gt; Accessibility &gt; Face ID &amp; Attention, and turn off Require Attention for Face ID. This setting is automatically turned off if you enable VoiceOver during initial setup.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">## Learn more</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">## Learn more</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

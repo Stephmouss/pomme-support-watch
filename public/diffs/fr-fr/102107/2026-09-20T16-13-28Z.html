@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Résoudre les erreurs de synchronisation -5000, -69, 13010 et 13014 - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Résoudre les erreurs de synchronisation -5000, -69, 13010 et 13014 - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/102107">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+25 ajouts</span>
+      <span class="badge removed">−13 suppressions</span>
+      <span class="badge">1 bloc modifié</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous removed"><span class="line-number">1</span><code class="line-text"># <mark class="inline-remove">Affichage </mark>de l<mark class="inline-remove">’</mark>erreur -5000, -69, 13010 <mark class="inline-remove">ou</mark> 13014<mark class="inline-remove"> lors de la synchronisation de musique à partir de votre Mac</mark></code></div>
+<div class="diff-line current added"><span class="line-number">1</span><code class="line-text"># <mark class="inline-add">Résou</mark>d<mark class="inline-add">r</mark>e l<mark class="inline-add">es </mark>erreur<mark class="inline-add">s de synchronisation</mark> -5000, -69, 13010 <mark class="inline-add">et</mark> 13014</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Découvrez c<mark class="inline-remove">omm</mark>e<mark class="inline-remove">nt</mark> <mark class="inline-remove">p</mark>r<mark class="inline-remove">océd</mark>e<mark class="inline-remove">r</mark> si vous <mark class="inline-remove">ne pa</mark>r<mark class="inline-remove">v</mark>enez <mark class="inline-remove">pa</mark>s <mark class="inline-remove">à</mark> synchroniser <mark class="inline-remove">vos morceaux </mark>de musique depuis iTunes ou le Finder <mark class="inline-remove">entr</mark>e votre Mac <mark class="inline-remove">et</mark> votre iPhone, iPad ou iPod touch.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Découvrez <mark class="inline-add">la mar</mark>c<mark class="inline-add">h</mark>e <mark class="inline-add">à suiv</mark>re si vous ren<mark class="inline-add">contr</mark>ez <mark class="inline-add">de</mark>s <mark class="inline-add">difficultés pour</mark> synchroniser de<mark class="inline-add"> la</mark> musique depuis iTunes ou le Finder <mark class="inline-add">d</mark>e votre Mac <mark class="inline-add">sur</mark> votre iPhone, iPad ou iPod touch.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## Mettre à jour vos logiciels</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## Mettre à jour vos logiciels</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text"><mark class="inline-remove">Vérifi</mark>ez <mark class="inline-remove">q</mark>u<mark class="inline-remove">e</mark> votre Mac <mark class="inline-remove">di</mark>s<mark class="inline-remove">pose de</mark> [la dernière version de macOS](https://support.apple.com/fr-fr/109033) <mark class="inline-remove">et que votre iPhone, iPad ou iPod touch a été mis à jour avec la [dernière version d’iOS ou d’iPadOS](https://support</mark>.<mark class="inline-remove">apple.com/fr-fr/118575) . Si vous utilisez macOS Mojave ou version antérieure, assurez-vous d’utiliser la [dernière version d’iTunes](https://support.apple.com/fr-fr/118290) . Retentez la synchronisation.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text"><mark class="inline-add">- Mett</mark>ez <mark class="inline-add">à jo</mark>u<mark class="inline-add">r</mark> votre Mac <mark class="inline-add">ver</mark>s [la dernière version de macOS](https://support.apple.com/fr-fr/109033) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">- Mettez à jour votre appareil vers la [dernière version d’iOS ou d’iPadOS](https://support.apple.com/fr-fr/118575) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">- Si vous utilisez macOS Mojave ou une version antérieure, [mettez à jour iTunes vers la dernière version.](https://support.apple.com/fr-fr/118290)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- Synchronisez de nouveau.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">## Consolider les fichiers multimédias de votre bibliothèque musicale</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">## Consolider les fichiers multimédias de votre bibliothèque musicale</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text"><mark class="inline-remove">Les fichiers multimédias de v</mark>otre bibliothèque musicale peu<mark class="inline-remove">ven</mark>t<mark class="inline-remove"> être</mark> stockés à plusieurs emplacements. <mark class="inline-remove">[C</mark>onsolidez vos fichiers<mark class="inline-remove">](https://support.apple.com/guide/itunes/move-your-itunes-library-to-another-computer-itns3230/windows) pour</mark> vous <mark class="inline-remove">assurer que le contenu est stocké à un seul endroit, </mark>p<mark class="inline-remove">uis essayez d’effectuer une n</mark>ouve<mark class="inline-remove">l</mark>le synchronisation.</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text"><mark class="inline-add">V</mark>otre bibliothèque musicale peut stock<mark class="inline-add">er des fichiers multim</mark>é<mark class="inline-add">dia</mark>s à plusieurs emplacements. <mark class="inline-add">Si vous c</mark>onsolidez vos fichiers<mark class="inline-add">,</mark> vous pouve<mark class="inline-add">z corriger </mark>le<mark class="inline-add">s autorisations et simplifier la</mark> synchronisation.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text"><mark class="inline-remove">La</mark> <mark class="inline-remove">c</mark>onsolid<mark class="inline-remove">ati</mark>o<mark class="inline-remove">n de</mark>s fichiers<mark class="inline-remove"> </mark>p<mark class="inline-remove">e</mark>u<mark class="inline-remove">t rétablir ce</mark>rtaines<mark class="inline-remove"> </mark>a<mark class="inline-remove">u</mark>tor<mark class="inline-remove">isati</mark>o<mark class="inline-remove">ns et facili</mark>ter <mark class="inline-remove">l</mark>e p<mark class="inline-remove">ro</mark>ce<mark class="inline-remove">ssus d</mark>e<mark class="inline-remove"> sy</mark>n<mark class="inline-remove">chronisa</mark>t<mark class="inline-remove">ion</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">[C</mark>onsolid<mark class="inline-add">ez v</mark>os fichiers<mark class="inline-add">](htt</mark>p<mark class="inline-add">s://s</mark>u<mark class="inline-add">ppo</mark>rt<mark class="inline-add">.</mark>a<mark class="inline-add">pple.com/gu</mark>i<mark class="inline-add">de/itu</mark>nes<mark class="inline-add">/move-your-itunes-libr</mark>a<mark class="inline-add">ry-</mark>to<mark class="inline-add">-anothe</mark>r<mark class="inline-add">-c</mark>o<mark class="inline-add">mpu</mark>ter<mark class="inline-add">-itns3230/windows)</mark> <mark class="inline-add">pour stocker votr</mark>e <mark class="inline-add">contenu à un seul em</mark>p<mark class="inline-add">la</mark>ce<mark class="inline-add">m</mark>ent.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">- Synchronisez de nouveau.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">## Rechercher d’éventuels problèmes liés à des logiciels de sécurité tiers</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">## Rechercher d’éventuels problèmes liés à des logiciels de sécurité tiers</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">Certains logiciels tiers, notamment les logiciels de sécurité, peuvent interférer avec le processus de synchronisation entre votre ordinateur et votre appareil.<mark class="inline-remove"> [Modifiez la configuration de votre logiciel de sécurité](https://support.apple.com/fr-fr/111760) , puis essayez d’effectuer une nouvelle synchronisation.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">Certains logiciels tiers, notamment les logiciels de sécurité, peuvent interférer avec le processus de synchronisation entre votre ordinateur et votre appareil.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- [Vérifiez si votre logiciel de sécurité est à l’origine du problème](https://support.apple.com/fr-fr/111760) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">- Synchronisez de nouveau.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">## Si l’erreur persiste</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">## Si l’erreur persiste</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">Dans certains cas, il se peut qu’il y ait un problème avec les morceaux spécifiques que vous essayez de synchroniser.<mark class="inline-remove"> Pour identifier les morceaux :</mark></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">Dans certains cas, il se peut qu’il y ait un problème avec les morceaux spécifiques que vous essayez de synchroniser.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- Vérifiez si le message d’erreur in<mark class="inline-remove">diqu</mark>e les morceaux à l’origine du problème.</code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- Vérifiez si le message d’erreur <mark class="inline-add">ment</mark>i<mark class="inline-add">o</mark>n<mark class="inline-add">n</mark>e les morceaux à l’origine du problème.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- <mark class="inline-remove">S</mark>ynchronisez <mark class="inline-remove">s</mark>e<mark class="inline-remove">ulement</mark> quelques morceaux à la fois<mark class="inline-remove">,</mark> <mark class="inline-remove">et a</mark>joutez-en da<mark class="inline-remove">van</mark>t<mark class="inline-remove">ag</mark>e jusqu’à ce que le problème se <mark class="inline-remove">re</mark>produise.</code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- <mark class="inline-add">Ne s</mark>ynchronisez <mark class="inline-add">qu</mark>e quelques morceaux à la fois<mark class="inline-add">.</mark> <mark class="inline-add">A</mark>joutez-en d<mark class="inline-add">’</mark>a<mark class="inline-add">u</mark>t<mark class="inline-add">r</mark>e<mark class="inline-add">s</mark> jusqu’à ce que le problème se produise<mark class="inline-add"> de nouveau</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">Si vous <mark class="inline-remove">rencontr</mark>ez <mark class="inline-remove">d</mark>e<mark class="inline-remove">s</mark> <mark class="inline-remove">problèmes avec des</mark> morceau<mark class="inline-remove">x achetés</mark> sur l’iTunes Store, supprimez <mark class="inline-remove">et</mark> <mark class="inline-remove">[</mark>téléchargez <mark class="inline-remove">à</mark> nouveau<mark class="inline-remove"> les apps](https://support.apple.com/fr-fr/102417) , puis [téléchargez à nouveau les morceaux</mark>](https://support.apple.com/fr-fr/118294) . Vous pouvez également <mark class="inline-remove">[</mark>t<mark class="inline-remove">élécharg</mark>er des <mark class="inline-remove">apps](https://supp</mark>or<mark class="inline-remove">t.</mark>a<mark class="inline-remove">pple.com/fr-fr/102417) et [de la m</mark>u<mark class="inline-remove">sique](https://support.apple.com/fr-fr/118294)</mark> directement sur votre iPhone, iPad ou iPod touch.</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">Si vous <mark class="inline-add">av</mark>ez <mark class="inline-add">ach</mark>e<mark class="inline-add">té</mark> <mark class="inline-add">un</mark> morceau sur l’iTunes Store, <mark class="inline-add">[</mark>supprimez<mark class="inline-add">-le,</mark> <mark class="inline-add">puis</mark> téléchargez<mark class="inline-add">-le</mark> <mark class="inline-add">de</mark> nouveau](https://support.apple.com/fr-fr/118294) . Vous pouvez également <mark class="inline-add">ob</mark>te<mark class="inline-add">ni</mark>r des <mark class="inline-add">m</mark>or<mark class="inline-add">ce</mark>au<mark class="inline-add">x</mark> directement sur votre iPhone, iPad ou iPod touch.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text"><mark class="inline-remove">Un</mark> <mark class="inline-remove">pr</mark>o<mark class="inline-remove">blème peut a</mark>us<mark class="inline-remove">si se produire</mark> avec des morceaux <mark class="inline-remove">co</mark>pi<mark class="inline-remove">és</mark> d<mark class="inline-remove">epuis </mark>un CD ou <mark class="inline-remove">qu</mark>i n<mark class="inline-remove">’ont</mark> pas<mark class="inline-remove"> été</mark> achetés <mark class="inline-remove">dan</mark>s l’iTunes Store<mark class="inline-remove">. Dans ce cas</mark>, supprimez-les<mark class="inline-remove"> et</mark> [<mark class="inline-remove">réi</mark>mportez-les à partir de la source d’origine](https://support.apple.com/guide/itunes/import-items-already-on-your-computer-itns3081/windows)<mark class="inline-remove"> .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text"><mark class="inline-add">Si</mark> <mark class="inline-add">v</mark>ous ave<mark class="inline-add">z </mark>c<mark class="inline-add">opié</mark> des morceaux <mark class="inline-add">à </mark>p<mark class="inline-add">art</mark>i<mark class="inline-add">r</mark> d<mark class="inline-add">’</mark>un CD ou <mark class="inline-add">s</mark>i <mark class="inline-add">vous </mark>n<mark class="inline-add">e les avez</mark> pas achetés s<mark class="inline-add">ur</mark> l’iTunes Store, supprimez-les<mark class="inline-add">.</mark> [<mark class="inline-add">I</mark>mportez-les<mark class="inline-add"> de nouveau</mark> à partir de la source d’origine<mark class="inline-add">.</mark>](https://support.apple.com/guide/itunes/import-items-already-on-your-computer-itns3081/windows)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">## Assistance supplémentaire</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">## Assistance supplémentaire</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- <mark class="inline-remove">Découvrez la procédure à suivre pour </mark>[<mark class="inline-remove">r</mark>ésoudre l’erreur -54](https://support.apple.com/fr-fr/108299) .</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- [<mark class="inline-add">R</mark>ésoudre l’erreur -54](https://support.apple.com/fr-fr/108299) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- <mark class="inline-remove">Découvrez la marche à suivre si vous recevez un message vous demandant </mark>[<mark class="inline-remove">l’a</mark>utoris<mark class="inline-remove">ation d</mark>e votre compte Apple](https://support.apple.com/fr-fr/118<mark class="inline-remove">3</mark>9<mark class="inline-remove">4</mark>) .</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- [<mark class="inline-add">A</mark>utorise<mark class="inline-add">r</mark> votre compte Apple](https://support.apple.com/fr-fr/118<mark class="inline-add">2</mark>9<mark class="inline-add">2</mark>) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">Les informations se rapportant à des produits non fabriqués par Apple, ou à des sites Web indépendants qui ne sont ni contrôlés ni testés par Apple, sont fournies uniquement à titre indicatif et ne constituent aucune recommandation. Apple ne saurait être tenu responsable de problèmes liés à l’utilisation de tels sites ou produits tiers, ou à leurs performances. Apple ne garantit en aucune façon la fiabilité d’un site Web tiers ni l’exactitude des informations que ce dernier propose. [Contactez le fournisseur](https://support.apple.com/fr-fr/103190) pour plus d’informations.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">Les informations se rapportant à des produits non fabriqués par Apple, ou à des sites Web indépendants qui ne sont ni contrôlés ni testés par Apple, sont fournies uniquement à titre indicatif et ne constituent aucune recommandation. Apple ne saurait être tenu responsable de problèmes liés à l’utilisation de tels sites ou produits tiers, ou à leurs performances. Apple ne garantit en aucune façon la fiabilité d’un site Web tiers ni l’exactitude des informations que ce dernier propose. [Contactez le fournisseur](https://support.apple.com/fr-fr/103190) pour plus d’informations.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
