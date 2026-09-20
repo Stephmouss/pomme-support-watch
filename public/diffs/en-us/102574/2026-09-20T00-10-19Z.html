@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Fast charge your iPhone — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Fast charge your iPhone</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/102574">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+22 ajouts</span>
+      <span class="badge removed">−8 suppressions</span>
+      <span class="badge">3 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## What you need</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## What you need</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text"><mark class="inline-remove">You can fast charge your</mark> iPhone 8 <mark class="inline-remove">or later up to 50 percent battery in a</mark>ro<mark class="inline-remove">und 30 minutes. [Find testing information for various iPhone</mark> models<mark class="inline-remove">](https://support.apple.com/en-us/102574#testing)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text"><mark class="inline-add">###</mark> iPhone <mark class="inline-add">1</mark>8 <mark class="inline-add">P</mark>ro models</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">To fast charge<mark class="inline-remove">, you need an</mark> iPhone 15 <mark class="inline-remove">o</mark>r <mark class="inline-remove">l</mark>ater <mark class="inline-remove">w</mark>ith<mark class="inline-remove"> a</mark> [USB-C cable](https://www.apple.com/shop/product/<mark class="inline-remove">MW</mark>493<mark class="inline-remove">AM</mark>/<mark class="inline-remove">A</mark>/60w-usb-c-charge-cable-1-m) <mark class="inline-remove">, like the one </mark>that came in the box,<mark class="inline-remove"> or an earlier iPhone model with a USB-C to Lightning cable</mark> and one of these adapters:</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">To fast charge iPhone 1<mark class="inline-add">8 Pro and iPhone 18 Pro Max up to </mark>5<mark class="inline-add">0</mark> <mark class="inline-add">pe</mark>r<mark class="inline-add">cent</mark> <mark class="inline-add">b</mark>a<mark class="inline-add">t</mark>ter<mark class="inline-add">y</mark> i<mark class="inline-add">n around 15 minutes, use </mark>th<mark class="inline-add">e</mark> [USB-C cable](https://www.apple.com/shop/product/<mark class="inline-add">mw</mark>493<mark class="inline-add">am</mark>/<mark class="inline-add">a</mark>/60w-usb-c-charge-cable-1-m) that came in the box, and one of these adapters:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">- Apple <mark class="inline-remove">18</mark>W<mark class="inline-remove">*</mark> <mark class="inline-remove">or gre</mark>a<mark class="inline-remove">ter USB-C</mark> Power Adapter</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">- Apple <mark class="inline-add">40</mark>W <mark class="inline-add">Dyn</mark>a<mark class="inline-add">mic</mark> Power Adapter<mark class="inline-add"> with 60W Max</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">- A comparable third-party <mark class="inline-remove">USB</mark>-<mark class="inline-remove">C</mark> <mark class="inline-remove">p</mark>o<mark class="inline-remove">w</mark>er adapter that supports USB Power Delivery (USB-PD)</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- A comparable third-party <mark class="inline-add">60W</mark>-<mark class="inline-add">capable</mark> <mark class="inline-add">(</mark>o<mark class="inline-add">r great</mark>er<mark class="inline-add">)</mark> adapter that<mark class="inline-add"> uses Adjustable Voltage Supply (AVS) and</mark> supports USB Power Delivery (USB-PD)<mark class="inline-add"> 3.2</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text"><mark class="inline-remove">You can fast charge an iPhone 17e or iPhone Air up to 50 percent battery in 30 minutes with a 20W adapter or higher. For iPhone 17,</mark> iPhone 17 <mark class="inline-remove">Pr</mark>o<mark class="inline-remove">,</mark> and iPhone <mark class="inline-remove">17 P</mark>r<mark class="inline-remove">o Max, you can charge up to 50 percent battery in around 20 minutes with a 40W adapter or higher.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text"><mark class="inline-add">###</mark> iPhone 17 <mark class="inline-add">m</mark>o<mark class="inline-add">dels</mark> and iPhone <mark class="inline-add">Ai</mark>r</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text"><mark class="inline-remove">T</mark>o <mark class="inline-remove">wirelessly</mark> fast charge<mark class="inline-remove">, you need an</mark> iPhone 1<mark class="inline-remove">6</mark> or <mark class="inline-remove">l</mark>ater with a <mark class="inline-remove">[MagSafe Charger](https://support.apple.com/en-us/1</mark>0<mark class="inline-remove">5047) and one of these</mark> adapters<mark class="inline-remove">:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text"><mark class="inline-add">Y</mark>o<mark class="inline-add">u</mark> <mark class="inline-add">can</mark> fast charge iPhone 1<mark class="inline-add">7,</mark> <mark class="inline-add">iPh</mark>o<mark class="inline-add">ne 17 P</mark>r<mark class="inline-add">o,</mark> a<mark class="inline-add">nd iPhone 17 Pro Max up to 50 percent bat</mark>ter<mark class="inline-add">y in around 20 minutes</mark> with a <mark class="inline-add">4</mark>0<mark class="inline-add">W</mark> adapter<mark class="inline-add"> or higher. For iPhone 17e and iPhone Air, u</mark>s<mark class="inline-add">e a 20W adapter or higher to charge up to 50 percent battery in around 30 minutes.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">### Earlier iPhone models</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">To fast charge an iPhone 15 or later, use a [USB-C cable](https://www.apple.com/shop/product/MW493AM/A/60w-usb-c-charge-cable-1-m) , like the one that came in the box, or use a USB-C to Lightning cable with an earlier iPhone model. You need one of these adapters:</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- Apple 18W or greater USB-C Power Adapter</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- A comparable third-party USB-C power adapter that supports USB-PD</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">### Wireless fast charging</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">To wirelessly charge iPhone 18 Pro and iPhone 18 Pro Max up to 50 percent in around 30 minutes, use a [MagSafe Charger](https://support.apple.com/en-us/105047) and a 35W or higher adapter.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">For iPhone 16, iPhone 17, and iPhone Air use a [MagSafe Charger](https://support.apple.com/en-us/105047) and one of these adapters:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">- Apple 30W or greater USB-C Power Adapter</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">- Apple 30W or greater USB-C Power Adapter</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 12 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">[Image: Image of a 20w Apple Adapter displaying the location of the certification label]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">[Image: Image of a 20w Apple Adapter displaying the location of the certification label]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">## iPhone charge-testing information</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">## iPhone charge-testing information</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">- Testing conducted by Apple in July 2026 using preproduction iPhone 18 Pro and iPhone 18 Pro Max units and software, and either USB‑C Charge Cable or Apple MagSafe Chargers (1‑meter Model A3502 and 2‑meter Model A3503), both with Apple 40W Dynamic Power Adapter with 60W Max (Model A3351). Wired fast charge supported with 60W-capable USB-C cable and USB PD 3.1 (or better) power adapters with Adjustable Voltage Supply (AVS). Fast‑charge testing conducted with drained iPhone units. Times measured from the appearance of the Apple logo as the unit started up. Charge time varies with adapter, settings, usage, and environmental factors; actual results will vary.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">- Testing conducted by Apple in January 2026 using preproduction iPhone 17e units and software, and USB‑C Charge Cable with Apple 20W USB‑C Power Adapter (Model A2305). Fast-charge testing conducted with drained iPhone units. Times measured from the appearance of the Apple logo as the unit started up. Charge time varies with settings and environmental factors; actual results will vary.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">- Testing conducted by Apple in January 2026 using preproduction iPhone 17e units and software, and USB‑C Charge Cable with Apple 20W USB‑C Power Adapter (Model A2305). Fast-charge testing conducted with drained iPhone units. Times measured from the appearance of the Apple logo as the unit started up. Charge time varies with settings and environmental factors; actual results will vary.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 19 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">- Testing conducted by Apple in August 2017 using preproduction iPhone X, iPhone 8, and iPhone 8 Plus units and software, and in August 2018 using preproduction iPhone XS, iPhone XS Max, and iPhone XR units and software, with accessory Apple USB-C Power Adapters (18W Model A1720, 29W Model A1540, 30W Model A1882, 61W Model A1718, 87W Model A1719).</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">- Testing conducted by Apple in August 2017 using preproduction iPhone X, iPhone 8, and iPhone 8 Plus units and software, and in August 2018 using preproduction iPhone XS, iPhone XS Max, and iPhone XR units and software, with accessory Apple USB-C Power Adapters (18W Model A1720, 29W Model A1540, 30W Model A1882, 61W Model A1718, 87W Model A1719).</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">* You need a 20W or higher power adapter to fast charge your iPhone 12 and later.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">63</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">77</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
