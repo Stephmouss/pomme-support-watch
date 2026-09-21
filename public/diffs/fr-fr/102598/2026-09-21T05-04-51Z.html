@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Si votre iPhone ou votre iPad est lent - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Si votre iPhone ou votre iPad est lent - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/102598">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+23 ajouts</span>
+      <span class="badge removed">−27 suppressions</span>
+      <span class="badge">1 bloc modifié</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## Vérifier l’état de votre réseau</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## Vérifier l’état de votre réseau</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">Les apps ont souvent besoin d’une connexion Internet, et les performances peuvent être ralenties à cause d’une surcharge du réseau ou lorsqu’un appareil se reconnecte à des antennes-relais pendant que vous vous déplacez. Même avec un signal fort, vous devrez peut-être patienter, essayer de vous déplacer à un autre endroit ou utiliser un réseau Wi-Fi. <mark class="inline-remove">Contactez votre opérateur s</mark>i <mark class="inline-remove">d</mark>es problèmes <mark class="inline-remove">liés aux</mark> données <mark class="inline-remove">mob</mark>i<mark class="inline-remove">l</mark>es persistent à plusieurs endroits.</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">Les apps ont souvent besoin d’une connexion Internet, et les performances peuvent être ralenties à cause d’une surcharge du réseau ou lorsqu’un appareil se reconnecte à des antennes-relais pendant que vous vous déplacez. Même avec un signal fort, vous devrez peut-être patienter, essayer de vous déplacer à un autre endroit ou utiliser un réseau Wi-Fi. <mark class="inline-add">S</mark>i <mark class="inline-add">l</mark>es problèmes <mark class="inline-add">de</mark> données <mark class="inline-add">cellula</mark>i<mark class="inline-add">r</mark>es persistent à plusieurs endroits<mark class="inline-add">, contactez votre opérateur</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">[<mark class="inline-remove">En </mark>s<mark class="inline-remove">av</mark>o<mark class="inline-remove">i</mark>r<mark class="inline-remove"> plus sur</mark> les données <mark class="inline-remove">mob</mark>i<mark class="inline-remove">l</mark>es](https://support.apple.com/fr-fr/120000)</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">[<mark class="inline-add">Ré</mark>so<mark class="inline-add">ud</mark>r<mark class="inline-add">e</mark> les<mark class="inline-add"> problèmes de</mark> données <mark class="inline-add">cellula</mark>i<mark class="inline-add">r</mark>es](https://support.apple.com/fr-fr/120000)<mark class="inline-add"> .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">## Fermer une app qui ne répond pas</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">## Fermer une app qui ne répond pas</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text"><mark class="inline-remove">P</mark>ou<mark class="inline-remove">r forcer la fermeture</mark> d<mark class="inline-remove">’</mark>u<mark class="inline-remove">n</mark>e<mark class="inline-remove"> app</mark> sur <mark class="inline-remove">votr</mark>e <mark class="inline-remove">iPh</mark>on<mark class="inline-remove">e ou iPad,</mark> pr<mark class="inline-remove">o</mark>c<mark class="inline-remove">édez comme</mark> sui<mark class="inline-remove">t</mark> <mark class="inline-remove">:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text"><mark class="inline-add">- Balayez l’écran vers le haut depuis le bas de l’écran (</mark>ou d<mark class="inline-add">o</mark>u<mark class="inline-add">bl</mark>e<mark class="inline-add">-cliquez</mark> sur <mark class="inline-add">l</mark>e <mark class="inline-add">bout</mark>on pr<mark class="inline-add">in</mark>c<mark class="inline-add">ipal</mark> su<mark class="inline-add">r les modèles d’appare</mark>i<mark class="inline-add">ls</mark> <mark class="inline-add">plus anciens).</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- Effectuez un balayage vers le haut à partir du bas de l’écran (ou appuyez deux fois sur le bouton principal sur les anciens modèles d’iPhone et d’iPad).</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">- Recherchez l’app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">- Recherchez l’app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">- Effectuez un balayage vers le haut sur l’aperçu de l’app pour fermer celle-ci.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">- Effectuez un balayage vers le haut sur l’aperçu de l’app pour fermer celle-ci.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text"><mark class="inline-remove">Le fait de f</mark>orcer la fermeture d’<mark class="inline-remove">une </mark>app<mark class="inline-remove"> san</mark>s <mark class="inline-remove">ra</mark>i<mark class="inline-remove">so</mark>n<mark class="inline-remove"> valab</mark>le peut ralentir votre appareil<mark class="inline-remove">,</mark> <mark class="inline-remove">c</mark>ar <mark class="inline-remove">il</mark> f<mark class="inline-remove">au</mark>d<mark class="inline-remove">ra</mark> plus de temps <mark class="inline-remove">p</mark>o<mark class="inline-remove">ur</mark> recharger toutes <mark class="inline-remove">l</mark>es données<mark class="inline-remove"> lorsque vous rouvrirez l’app</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text"><mark class="inline-add">F</mark>orcer la fermeture d’apps in<mark class="inline-add">uti</mark>le<mark class="inline-add">ment</mark> peut ralentir votre appareil<mark class="inline-add">.</mark> <mark class="inline-add">L</mark>a<mark class="inline-add"> </mark>r<mark class="inline-add">éouverture</mark> <mark class="inline-add">d’une app</mark> f<mark class="inline-add">ermée pren</mark>d plus de temps<mark class="inline-add">,</mark> <mark class="inline-add">car elle d</mark>o<mark class="inline-add">it</mark> recharger toutes <mark class="inline-add">s</mark>es données.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">[<mark class="inline-remove">Proc</mark>é<mark class="inline-remove">du</mark>re<mark class="inline-remove"> à suiv</mark>r<mark class="inline-remove">e si</mark> une app <mark class="inline-remove">cesse</mark> <mark class="inline-remove">d</mark>e répond<mark class="inline-remove">re</mark> <mark class="inline-remove">de m</mark>a<mark class="inline-remove">nière répétée</mark>](https://support.apple.com/fr-fr/119876)</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">[<mark class="inline-add">R</mark>é<mark class="inline-add">pa</mark>rer une app <mark class="inline-add">qui</mark> <mark class="inline-add">n</mark>e répond <mark class="inline-add">p</mark>a<mark class="inline-add">s</mark>](https://support.apple.com/fr-fr/119876)<mark class="inline-add"> .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">## Vérifier l’espace de stockage disponible sur votre appareil</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">## Vérifier l’espace de stockage disponible sur votre appareil</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">iOS et iPadOS gèrent automatiquement l<mark class="inline-remove">’espace d</mark>e stockage <mark class="inline-remove">pendant </mark>l<mark class="inline-remove">e</mark>s <mark class="inline-remove">tâches comm</mark>e l<mark class="inline-remove">es </mark>installation<mark class="inline-remove">s</mark> et l<mark class="inline-remove">es</mark> mise<mark class="inline-remove">s</mark> à jour d<mark class="inline-remove">’</mark>apps <mark class="inline-remove">en</mark> supprim<mark class="inline-remove">a</mark>nt les éléments qu<mark class="inline-remove">i</mark> p<mark class="inline-remove">euvent être de n</mark>ouve<mark class="inline-remove">au</mark> télécharg<mark class="inline-remove">és</mark> ou <mark class="inline-remove">qui ne s</mark>ont plus <mark class="inline-remove">néc</mark>es<mark class="inline-remove">sa</mark>i<mark class="inline-remove">res</mark>. Pour éviter tout ralentissement, gardez au moins 1 Go d’espace libre.</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">iOS et iPadOS gèrent automatiquement le stockage l<mark class="inline-add">or</mark>s <mark class="inline-add">d</mark>e l<mark class="inline-add">’</mark>installation et <mark class="inline-add">de </mark>l<mark class="inline-add">a</mark> mise à jour d<mark class="inline-add">es </mark>apps<mark class="inline-add">.</mark> <mark class="inline-add">Ils</mark> supprim<mark class="inline-add">e</mark>nt les éléments qu<mark class="inline-add">e vous</mark> pouve<mark class="inline-add">z</mark> télécharg<mark class="inline-add">er à nouveau</mark> ou <mark class="inline-add">d</mark>ont<mark class="inline-add"> vous n’avez</mark> plus <mark class="inline-add">b</mark>es<mark class="inline-add">o</mark>i<mark class="inline-add">n</mark>. Pour éviter tout ralentissement, gardez au moins 1 Go d’espace libre.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">- <mark class="inline-remove">Accéd</mark>ez<mark class="inline-remove"> à</mark> Réglages</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- <mark class="inline-add">Ouvr</mark>ez Réglages<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">- Touchez Général.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">- Touchez Général.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- Touchez Stockage [appareil].<mark class="inline-remove">.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- Touchez Stockage [appareil].</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">## Décharger ou supprimer des apps pour libérer de l’espace de stockage</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">## Décharger ou supprimer des apps pour libérer de l’espace de stockage</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text"><mark class="inline-remove">Vos</mark> a<mark class="inline-remove">pps sont</mark> répertori<mark class="inline-remove">é</mark>es sur l’écran Stockage [appareil]<mark class="inline-remove">,</mark> e<mark class="inline-remove">t</mark> la quantité d’espace qu’elles utilisent<mark class="inline-remove"> s’affiche à côté de chacune d’elles</mark>. iOS et iPadOS proposent des recommandations pour économiser de l’espace de stockage sur l’écran Stockage [appareil].</code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text"><mark class="inline-add">iOS</mark> <mark class="inline-add">et iP</mark>a<mark class="inline-add">dOS</mark> répertorie<mark class="inline-add">nt vos app</mark>s sur l’écran Stockage <mark class="inline-add">de </mark>[<mark class="inline-add">l’</mark>appareil] <mark class="inline-add">av</mark>e<mark class="inline-add">c</mark> la quantité d’espace qu’elles utilisent. iOS et iPadOS proposent des recommandations pour économiser de l’espace de stockage sur l’écran Stockage <mark class="inline-add">de </mark>[<mark class="inline-add">l’</mark>appareil].</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">Vous pouvez appliquer ces recommandations ou passer en revue vos apps pour libérer de l’espace. Si vous ne voyez aucune recommandation ou si vous avez besoin de libérer encore davantage d’espace, passez en revue les apps installées sur votre appareil.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">Vous pouvez appliquer ces recommandations ou passer en revue vos apps pour libérer de l’espace. Si vous ne voyez aucune recommandation ou si vous avez besoin de libérer encore davantage d’espace, passez en revue les apps installées sur votre appareil.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">Touchez une app, puis choisissez parmi les options :</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">Touchez une app, puis choisissez parmi les options <mark class="inline-add">1 </mark>:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">- Désinstaller l’app, ce qui libère l’espace utilisé par l’app, mais en conserve les documents et les données.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">- Désinstaller l’app, ce qui libère l’espace utilisé par l’app, mais en conserve les documents et les données.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">- Supprimer l’app, ce qui retire l’app et ses données.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">- Supprimer l’app, ce qui retire l’app et ses données.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text"><mark class="inline-remove">- C</mark>er<mark class="inline-remove">taines</mark> <mark class="inline-remove">a</mark>p<mark class="inline-remove">ps vo</mark>us pe<mark class="inline-remove">rmettent</mark> de supp<mark class="inline-remove">rimer une pa</mark>rt<mark class="inline-remove">ie de </mark>le<mark class="inline-remove">u</mark>r<mark class="inline-remove">s</mark> <mark class="inline-remove">documents et de leurs données</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text"><mark class="inline-add">[Libér</mark>er p<mark class="inline-add">l</mark>us <mark class="inline-add">d’es</mark>p<mark class="inline-add">ac</mark>e de s<mark class="inline-add">tockage](https://s</mark>upp<mark class="inline-add">o</mark>rt<mark class="inline-add">.app</mark>le<mark class="inline-add">.com/f</mark>r<mark class="inline-add">-fr/108429)</mark> .</code></div>
+<div class="diff-line previous removed"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">[En savoir plus sur les moyens d’optimiser votre stockage](https://support.apple.com/fr-fr/108429)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">## Désactiver le mode économie d’énergie</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">## Désactiver le mode économie d’énergie</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">Le mode économie d’énergie est une fonctionnalité qui permet de prolonger l’autonomie de la batterie en <mark class="inline-remove">l</mark>i<mark class="inline-remove">mit</mark>ant l’énergie <mark class="inline-remove">consommé</mark>e <mark class="inline-remove">pa</mark>r <mark class="inline-remove">l’</mark>appareil. Lorsqu<mark class="inline-remove">e ce mode</mark> est activé, certaines fonctionnalités <mark class="inline-remove">s</mark>o<mark class="inline-remove">nt</mark> <mark class="inline-remove">désactivé</mark>es <mark class="inline-remove">ou fonctionnent plus </mark>lent<mark class="inline-remove">emen</mark>t, et l’icône de la batterie devient jaune.</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">Le mode économie d’énergie est une fonctionnalité qui permet de prolonger l’autonomie de la batterie en <mark class="inline-add">rédu</mark>i<mark class="inline-add">s</mark>ant l<mark class="inline-add">a consommation d</mark>’énergie <mark class="inline-add">d</mark>e <mark class="inline-add">vot</mark>r<mark class="inline-add">e</mark> appareil. Lorsqu<mark class="inline-add">’il</mark> est activé,<mark class="inline-add"> le mode économie d’énergie désactive</mark> certaines fonctionnalités o<mark class="inline-add">u</mark> <mark class="inline-add">l</mark>es <mark class="inline-add">ra</mark>lent<mark class="inline-add">i</mark>t, et l’icône de la batterie devient jaune.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">Le mode économie d’énergie peut être activé en accédant à Réglages et en touchant Batterie. <mark class="inline-remove">Envisagez de désactiver le mode économie d’énergie s</mark>i vous avez besoin que votre iPhone ou <mark class="inline-remove">votre </mark>iPad fonctionne sans les restrictions i<mark class="inline-remove">mp</mark>o<mark class="inline-remove">sée</mark>s par ce mode.</code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">Le mode économie d’énergie peut être activé en accédant à Réglages et en touchant Batterie. <mark class="inline-add">S</mark>i vous avez besoin que votre iPhone ou iPad fonctionne sans les restrictions <mark class="inline-add">du mode économ</mark>i<mark class="inline-add">e d’énergie, v</mark>o<mark class="inline-add">u</mark>s p<mark class="inline-add">ouvez l</mark>a<mark class="inline-add">isse</mark>r ce mode<mark class="inline-add"> désactivé</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">[<mark class="inline-remove">En savoi</mark>r<mark class="inline-remove"> plus su</mark>r le mode économie d’énergie](https://support.apple.com/fr-fr/101604)</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">[<mark class="inline-add">Gé</mark>r<mark class="inline-add">e</mark>r le mode économie d’énergie](https://support.apple.com/fr-fr/101604)<mark class="inline-add"> .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">## Éviter que votre appareil soit trop chaud ou trop froid</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">## Éviter que votre appareil soit trop chaud ou trop froid</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">Lorsque votre appareil iOS ou iPadOS devient trop chaud ou trop froid, il peut fonctionner plus lentement. Pour résoudre ce problème, placez-le à un endroit où la température n’est ni trop élevée, ni trop basse.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">Lorsque votre appareil iOS ou iPadOS devient trop chaud ou trop froid, il peut fonctionner plus lentement. Pour résoudre ce problème, placez-le à un endroit où la température n’est ni trop élevée, ni trop basse.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">[<mark class="inline-remove">En savo</mark>i<mark class="inline-remove">r plus su</mark>r les température<mark class="inline-remove">s</mark> de fonctionnement<mark class="inline-remove"> acceptables</mark>](https://support.apple.com/fr-fr/118431)</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">[<mark class="inline-add">Vér</mark>i<mark class="inline-add">fie</mark>r les<mark class="inline-add"> limites de</mark> température de fonctionnement](https://support.apple.com/fr-fr/118431)<mark class="inline-add"> .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">## Vérifier l’état de votre batterie</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">## Vérifier l’état de votre batterie</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">Toutes les batteries rechargeables sont des composants <mark class="inline-remove">con</mark>s<mark class="inline-remove">ommabl</mark>e<mark class="inline-remove">s do</mark>nt <mark class="inline-remove">l’</mark>e<mark class="inline-remove">ffi</mark>c<mark class="inline-remove">acité s’amenuise à mesure que</mark> le<mark class="inline-remove">ur</mark> <mark class="inline-remove">âge chimique augmen</mark>te. A<mark class="inline-remove">u</mark> <mark class="inline-remove">fi</mark>l<mark class="inline-remove"> du</mark> temps, la capacité et <mark class="inline-remove">l</mark>es performances <mark class="inline-remove">max</mark>imales <mark class="inline-remove">des</mark> <mark class="inline-remove">bat</mark>ter<mark class="inline-remove">i</mark>e<mark class="inline-remove">s</mark> <mark class="inline-remove">rechargeable</mark>s de<mark class="inline-remove"> tous</mark> l<mark class="inline-remove">es modèles d’iPhone et d’iP</mark>a<mark class="inline-remove">d diminuent, ce qui nécessite de les</mark> remplacer.<mark class="inline-remove"> iOS peut afficher l’état de la batterie* et indiquer si la batterie d’un iPhone a besoin d’être remplacée.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">Toutes les batteries rechargeables sont des composants <mark class="inline-add">qui </mark>s<mark class="inline-add">’us</mark>ent <mark class="inline-add">av</mark>ec le te<mark class="inline-add">mps</mark>. A<mark class="inline-add">vec</mark> l<mark class="inline-add">e</mark> temps, l<mark class="inline-add">a batterie de votre iPhone ou iPad perd de s</mark>a capacité et <mark class="inline-add">de s</mark>es performances <mark class="inline-add">opt</mark>imales<mark class="inline-add">.</mark> <mark class="inline-add">À</mark> ter<mark class="inline-add">m</mark>e<mark class="inline-add">,</mark> <mark class="inline-add">vou</mark>s de<mark class="inline-add">vrez</mark> la remplacer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Ac</mark>céde<mark class="inline-remove">z</mark> <mark class="inline-remove">à Rég</mark>la<mark class="inline-remove">g</mark>es.</code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text"><mark class="inline-add">Si</mark> <mark class="inline-add">une batterie doit être rempla</mark>cé<mark class="inline-add">e, iOS et iPadOS peuvent afficher l’état </mark>de la<mark class="inline-add"> batt</mark>e<mark class="inline-add">rie et recommander </mark>s<mark class="inline-add">on remplacement</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">- Ouvrez Réglages.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">71</span><code class="line-text">- Touchez Batterie.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">- Touchez Batterie.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">- Touchez État de la batterie.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">- Touchez État de la batterie.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">*L’état de la batterie est disponible uniquement sur l’iPhone.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">[Découvrez comment vérifier la batterie de votre iPhone](https://support.apple.com/fr-fr/101575#health)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">## Assistance supplémentaire</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">## Assistance supplémentaire</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">- Votre appareil peut sembler lent si l’écran tactile ne répond pas correctement lorsque vous le touchez. Si vous pensez que [votre écran tactile ne répond pas correctement](https://support.apple.com/<mark class="inline-remove">HT</mark>2<mark class="inline-remove">0140</mark>6) , essayez de redémarrer votre [iPhone](https://support.apple.com/<mark class="inline-remove">HT</mark>2<mark class="inline-remove">015</mark>59) ,<mark class="inline-remove"> votre</mark> [iPad](https://support.apple.com/<mark class="inline-remove">HT2</mark>1063<mark class="inline-remove">1</mark>) ou<mark class="inline-remove"> votre</mark> [iPod touch](https://support.apple.com/<mark class="inline-remove">HT</mark>21<mark class="inline-remove">06</mark>3<mark class="inline-remove">2</mark>) .</code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">- Votre appareil peut sembler lent si l’écran tactile ne répond pas correctement lorsque vous le touchez. Si vous pensez que [votre écran tactile ne répond pas correctement](https://support.apple.com/<mark class="inline-add">fr-fr/10</mark>2<mark class="inline-add">5</mark>6<mark class="inline-add">7</mark>) , essayez de redémarrer votre [iPhone](https://support.apple.com/<mark class="inline-add">fr-fr/118</mark>259) , [iPad](https://support.apple.com/<mark class="inline-add">fr-fr/</mark>10<mark class="inline-add">1</mark>6<mark class="inline-add">0</mark>3)<mark class="inline-add"> ,</mark> ou [iPod touch](https://support.apple.com/<mark class="inline-add">fr-fr/10</mark>213<mark class="inline-add">7</mark>) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">- Si l’écran tactile de votre iPhone ou de votre iPad ne répond toujours pas, il est possible qu’une réparation soit nécessaire. [<mark class="inline-remove">Bé</mark>n<mark class="inline-remove">éf</mark>i<mark class="inline-remove">cie</mark>r <mark class="inline-remove">d’</mark>une <mark class="inline-remove">rép</mark>a<mark class="inline-remove">r</mark>a<mark class="inline-remove">tio</mark>n](https://getsupport.apple.com/?caller=kbase)</code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">- Si l’écran tactile de votre iPhone ou de votre iPad ne répond toujours pas, il est possible qu’une réparation soit nécessaire. [<mark class="inline-add">Obte</mark>nir une a<mark class="inline-add">ssist</mark>an<mark class="inline-add">ce</mark>](https://getsupport.apple.com/?caller=kbase)<mark class="inline-add"> .</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">- Certaines apps vous permettent de supprimer une partie de leurs documents et de leurs données.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">Les informations se rapportant à des produits non fabriqués par Apple, ou à des sites Web indépendants qui ne sont ni contrôlés ni testés par Apple, sont fournies uniquement à titre indicatif et ne constituent aucune recommandation. Apple ne saurait être tenu responsable de problèmes liés à l’utilisation de tels sites ou produits tiers, ou à leurs performances. Apple ne garantit en aucune façon la fiabilité d’un site Web tiers ni l’exactitude des informations que ce dernier propose. [Contactez le fournisseur](https://support.apple.com/fr-fr/103190) pour plus d’informations.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">Les informations se rapportant à des produits non fabriqués par Apple, ou à des sites Web indépendants qui ne sont ni contrôlés ni testés par Apple, sont fournies uniquement à titre indicatif et ne constituent aucune recommandation. Apple ne saurait être tenu responsable de problèmes liés à l’utilisation de tels sites ou produits tiers, ou à leurs performances. Apple ne garantit en aucune façon la fiabilité d’un site Web tiers ni l’exactitude des informations que ce dernier propose. [Contactez le fournisseur](https://support.apple.com/fr-fr/103190) pour plus d’informations.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
