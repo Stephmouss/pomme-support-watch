@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Utiliser le mode Jeu - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Utiliser le mode Jeu - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/105118">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+22 ajouts</span>
+      <span class="badge removed">−20 suppressions</span>
+      <span class="badge">1 bloc modifié</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">## Configuration requise pour utiliser le mode Jeu</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">## Configuration requise pour utiliser le mode Jeu</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">- iPhone doté d’iOS 18 ou version ultérieure et d’un jeu compatible<mark class="inline-remove">.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- iPhone doté d’iOS 18 ou version ultérieure et d’un jeu compatible</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- iPad doté d’iPadOS 18 ou version ultérieure et d’un jeu compatible<mark class="inline-remove">.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- iPad doté d’iPadOS 18 ou version ultérieure et d’un jeu compatible</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">- [Mac avec puce Apple](https://support.apple.com/fr-fr/116943) et<mark class="inline-remove"> doté de</mark> [macOS Sonoma 14 ou version ultérieure](https://support.apple.com/fr-fr/109033) <mark class="inline-remove">,</mark> <mark class="inline-remove">ainsi que d’</mark>un jeu c<mark class="inline-remove">omp</mark>a<mark class="inline-remove">tibl</mark>e<mark class="inline-remove"> avec</mark> le [mode plein écran <mark class="inline-remove">intégré à</mark> macOS](https://support.apple.com/guide/mac-help/mchl9c21d2be/mac) . Si votre jeu prend en charge ce mode plein écran, il affiche le bouton <mark class="inline-remove">p</mark>lein écran de macOS dans l<mark class="inline-remove">’a</mark>n<mark class="inline-remove">gle</mark> de la fenêtre du jeu.</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- [Mac avec puce Apple](https://support.apple.com/fr-fr/116943) et [macOS Sonoma 14 ou version ultérieure](https://support.apple.com/fr-fr/109033) <mark class="inline-add">et</mark> un jeu <mark class="inline-add">qui prend en </mark>c<mark class="inline-add">h</mark>a<mark class="inline-add">rg</mark>e le [mode plein écran <mark class="inline-add">de</mark> macOS](https://support.apple.com/guide/mac-help/mchl9c21d2be/mac) . Si votre jeu prend en charge ce <mark class="inline-add">type de </mark>mode plein écran, il affiche le bouton <mark class="inline-add">P</mark>lein écran de macOS dans l<mark class="inline-add">e coi</mark>n de la fenêtre du jeu<mark class="inline-add">, et un clic sur ce bouton active le mode plein écran</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text"><mark class="inline-remove">[I</mark>m<mark class="inline-remove">ag</mark>e<mark class="inline-remove">:</mark> <mark class="inline-remove">n</mark>u<mark class="inline-remove">ll]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text"><mark class="inline-add">## Activer ou désactiver le </mark>m<mark class="inline-add">od</mark>e <mark class="inline-add">Je</mark>u</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">A</mark>ctiver ou désactiver le mode Jeu su<mark class="inline-remove">r iPhon</mark>e ou i<mark class="inline-remove">P</mark>a<mark class="inline-remove">d</mark></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text"><mark class="inline-add">Lorsque</mark> <mark class="inline-add">votre jeu passe en mode plein écran, cela active automatiquement le mode Jeu. Lorsque vous quittez le jeu, le mode Jeu est automatiquement désactivé. Vous pouvez également a</mark>ctiver ou désactiver <mark class="inline-add">manuellement </mark>le mode Jeu <mark class="inline-add">lor</mark>s<mark class="inline-add">q</mark>ue <mark class="inline-add">v</mark>o<mark class="inline-add">tre je</mark>u <mark class="inline-add">est en mode ple</mark>i<mark class="inline-add">n écr</mark>a<mark class="inline-add">n.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text"><mark class="inline-remove">Lorsque</mark> <mark class="inline-remove">votre jeu passe en mode plein écran, cela active automatiquement le mode Jeu. Lorsque vous quittez le jeu, le mode Jeu est automatiquement désactivé. Vous pouvez également suivre les étapes ci-dessous po</mark>ur <mark class="inline-remove">désact</mark>i<mark class="inline-remove">v</mark>e<mark class="inline-remove">r</mark> ou <mark class="inline-remove">activer le mode Je</mark>u<mark class="inline-remove"> pendant que votre jeu est encore e</mark>n <mark class="inline-remove">ple</mark>i<mark class="inline-remove">n écr</mark>a<mark class="inline-remove">n.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">S</mark>ur <mark class="inline-add">un </mark>i<mark class="inline-add">Phon</mark>e ou un i<mark class="inline-add">P</mark>a<mark class="inline-add">d</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- Pendant que votre jeu est en mode plein écran, <mark class="inline-remove">effect</mark>uez <mark class="inline-remove">un ba</mark>la<mark class="inline-remove">yage</mark> <mark class="inline-remove">v</mark>ers<mark class="inline-remove"> le bas à par</mark>ti<mark class="inline-remove">r</mark> de <mark class="inline-remove">l’angle supéri</mark>eu<mark class="inline-remove">r</mark> <mark class="inline-remove">droit de votre écran pour ouvrir le centre de contrôle.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- Pendant que votre jeu est <mark class="inline-add">ouvert et </mark>en mode plein écran, <mark class="inline-add">o</mark>u<mark class="inline-add">vr</mark>ez la <mark class="inline-add">sup</mark>er<mark class="inline-add">po</mark>s<mark class="inline-add">i</mark>ti<mark class="inline-add">on</mark> de <mark class="inline-add">j</mark>eu <mark class="inline-add">:</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- Effectuez un balayage vers le bas à partir de l’angle supérieur droit de l’écran pour ouvrir le centre de contrôle.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">- Dans le centre de contrôle, en haut de l’écran, le nom de votre jeu suivi de « Incrustation dans les jeux » doit s’afficher. Touchez Incrustation dans les jeux.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">- Dans le centre de contrôle, en haut de l’écran, le nom de votre jeu suivi de « Incrustation dans les jeux » doit s’afficher. Touchez Incrustation dans les jeux.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">- Touchez le bouton Commandes <mark class="inline-remove">, puis touchez Mo</mark>d<mark class="inline-remove">e Jeu. Si vous dés</mark>a<mark class="inline-remove">ctivez le mode Jeu de cette faço</mark>n<mark class="inline-remove">, il reste désactivé pour ce jeu jusqu’à ce que vou</mark>s le<mark class="inline-remove"> </mark>r<mark class="inline-remove">éac</mark>ti<mark class="inline-remove">viez,</mark> <mark class="inline-remove">même si vous quittez et rouvrez l</mark>e jeu.</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- Touchez le bouton Commandes dans l<mark class="inline-add">a sup</mark>er<mark class="inline-add">posi</mark>ti<mark class="inline-add">on</mark> <mark class="inline-add">d</mark>e jeu.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text"><mark class="inline-remove">[I</mark>ma<mark class="inline-remove">g</mark>e<mark class="inline-remove">:</mark> <mark class="inline-remove">n</mark>ull<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text"><mark class="inline-add">- Touchez Mode Jeu. Si vous désactivez le mode Jeu de cette </mark>ma<mark class="inline-add">nièr</mark>e<mark class="inline-add">,</mark> <mark class="inline-add">il restera désactivé po</mark>u<mark class="inline-add">r ce jeu jusqu’à ce que vous </mark>l<mark class="inline-add">e réactiviez, même si vous quittez et rouvrez </mark>l<mark class="inline-add">e jeu.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">[Image: Affichage de la fonctionnalité Incrustation dans les jeux sur iPhone. Le bouton Commandes se trouve en haut de l’écran.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">[Image: Affichage de la fonctionnalité Incrustation dans les jeux sur iPhone. Le bouton Commandes se trouve en haut de l’écran.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">## <mark class="inline-remove">Active</mark>r <mark class="inline-remove">o</mark>u<mark class="inline-remove"> désactiver le mode Jeu sur</mark> Mac</code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text"><mark class="inline-add">#</mark>## <mark class="inline-add">Su</mark>r u<mark class="inline-add">n</mark> Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text"><mark class="inline-remove">Lorsq</mark>u<mark class="inline-remove">e votre jeu passe en mode plein écran, cela act</mark>ive<mark class="inline-remove"> automatiquement le mode Jeu. Le fait de quitter le mode plein écran ou de quitter le jeu désactive automatiquement le mode Jeu. Vous pouve</mark>z<mark class="inline-remove"> également suivre</mark> les étapes <mark class="inline-remove">c</mark>i<mark class="inline-remove">-d</mark>es<mark class="inline-remove">s</mark>o<mark class="inline-remove">us pour désa</mark>ctiver <mark class="inline-remove">ou activer l</mark>e m<mark class="inline-remove">ode Jeu pend</mark>a<mark class="inline-remove">nt</mark> que vot<mark class="inline-remove">r</mark>e<mark class="inline-remove"> jeu est encore en plein écran</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text"><mark class="inline-add">S</mark>uivez les étapes <mark class="inline-add">appropr</mark>i<mark class="inline-add">é</mark>es<mark class="inline-add">, en f</mark>o<mark class="inline-add">n</mark>cti<mark class="inline-add">on de la </mark>ver<mark class="inline-add">sion</mark> <mark class="inline-add">d</mark>e ma<mark class="inline-add">cOS</mark> que vo<mark class="inline-add">us u</mark>t<mark class="inline-add">ilis</mark>e<mark class="inline-add">z</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">### macOS Tahoe 26 ou version ultérieure</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text"><mark class="inline-add">#</mark>### macOS Tahoe 26 ou version ultérieure</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">- Pendant que votre jeu est en <mark class="inline-remove">plein écran, appuyez sur les touches Commande + Échap ⎋ pour ouvrir Incrustation dans les jeux dans l’angle de l’écran. Vous pouvez également cliquer sur l’icône Jeu dans la barre des menus. (Pour afficher la barre des menus lorsque l’affichage est en </mark>mode plein écran, <mark class="inline-remove">déplac</mark>ez <mark class="inline-remove">vot</mark>r<mark class="inline-remove">e </mark>poin<mark class="inline-remove">teur vers le haut</mark> de <mark class="inline-remove">l’écran.)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- Pendant que votre jeu est en mode plein écran, <mark class="inline-add">ouvr</mark>ez <mark class="inline-add">la supe</mark>rpo<mark class="inline-add">s</mark>i<mark class="inline-add">tio</mark>n de <mark class="inline-add">jeu :</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text"><mark class="inline-remove">[I</mark>mage: null<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text"><mark class="inline-add">- Cliquez sur l’icône Jeu dans la barre des </mark>m<mark class="inline-add">enus. (Pour afficher la barre des menus lorsque l’affich</mark>age<mark class="inline-add"> est en mode plein écran, déplacez votre pointeur vers le haut de l’écran.) Si vous utilisez également un mode de [concentration Jeux](https</mark>:<mark class="inline-add">//support.apple.com/guide/mac-help/mchl613dc43f/mac)</mark> <mark class="inline-add">, la barre des me</mark>nu<mark class="inline-add">s peut afficher une icône Jeu pour </mark>l<mark class="inline-add">e mode de concentration et une autre pour Game Over</mark>l<mark class="inline-add">ay.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- <mark class="inline-remove">D</mark>a<mark class="inline-remove">ns Incr</mark>u<mark class="inline-remove">station dans les jeux, cliqu</mark>ez sur <mark class="inline-remove">le b</mark>o<mark class="inline-remove">uto</mark>n<mark class="inline-remove"> Réglages , puis cliquez sur Mo</mark>de <mark class="inline-remove">Jeu</mark>.<mark class="inline-remove"> Si vous désactivez le mode Jeu de cette façon, il reste désactivé pour ce jeu jusqu’à ce que vous le réactiviez, même si vous quittez et rouvrez le jeu.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- <mark class="inline-add">Ou </mark>a<mark class="inline-add">pp</mark>u<mark class="inline-add">y</mark>ez sur <mark class="inline-add">C</mark>o<mark class="inline-add">mma</mark>nde<mark class="inline-add">-Esc</mark> <mark class="inline-add">⎋</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text"><mark class="inline-remove">[I</mark>mage<mark class="inline-remove">:</mark> n<mark class="inline-remove">u</mark>l<mark class="inline-remove">l]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text"><mark class="inline-add">- Ga</mark>m<mark class="inline-add">e Overlay s’affiche dans le coin de votre écran. Cliquez sur le bouton Régl</mark>age<mark class="inline-add">s</mark> <mark class="inline-add">da</mark>n<mark class="inline-add">s Game Over</mark>l<mark class="inline-add">ay.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">- Cliquez sur Mode Jeu. Si vous désactivez le mode Jeu de cette manière, il restera désactivé pour ce jeu jusqu’à ce que vous le réactiviez, même si vous quittez et rouvrez le jeu.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">[Image: Affichage du volet Réglages de la fonctionnalité Incrustation dans les jeux sur Mac.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">[Image: Affichage du volet Réglages de la fonctionnalité Incrustation dans les jeux sur Mac.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">### macOS Sequoia 15 ou macOS Sonoma 14</code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text"><mark class="inline-add">#</mark>### macOS Sequoia 15 ou macOS Sonoma 14</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">- Pendant que votre jeu est en plein écran, cliquez sur le menu Jeu dans la barre des menus. (Pour afficher la barre des menus lorsque l’affichage est en mode plein écran, déplacez votre pointeur vers le haut de l’écran.)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">- Pendant que votre jeu est en plein écran, cliquez sur le menu Jeu dans la barre des menus. (Pour afficher la barre des menus lorsque l’affichage est en mode plein écran, déplacez votre pointeur vers le haut de l’écran.)</code></div>
+<div class="diff-line previous removed"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">- Choisissez Désactiver le mode Jeu ou Activer le mode Jeu. Si vous désactivez le mode Jeu de cette façon, il reste désactivé pour ce jeu jusqu’à ce que vous le réactiviez, même si vous quittez et rouvrez le jeu.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">- Choisissez Désactiver le mode Jeu ou Activer le mode Jeu. Si vous désactivez le mode Jeu de cette façon, il reste désactivé pour ce jeu jusqu’à ce que vous le réactiviez, même si vous quittez et rouvrez le jeu.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">## Informations supplémentaires</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">## Informations supplémentaires</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">- <mark class="inline-remove">V</mark>ou<mark class="inline-remove">s</mark> p<mark class="inline-remove">ouvez ég</mark>al<mark class="inline-remove">ement</mark> <mark class="inline-remove">utiliser </mark>une manette de jeu sans fil compatible pour a<mark class="inline-remove">ccéd</mark>er<mark class="inline-remove"> à </mark>la <mark class="inline-remove">fonctionnalité Incrustation dans les j</mark>eux, en fonction des réglages de votre manette. <mark class="inline-remove">Déc</mark>ou<mark class="inline-remove">v</mark>r<mark class="inline-remove">ez comment</mark> [<mark class="inline-remove">c</mark>onnecte<mark class="inline-remove">r</mark> <mark class="inline-remove">une</mark> manette<mark class="inline-remove"> de jeu sans fil à votre appareil</mark>](https://support.apple.com/fr-fr/111099) .</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">- <mark class="inline-add">Une pression sur le b</mark>ou<mark class="inline-add">ton</mark> p<mark class="inline-add">rincip</mark>al <mark class="inline-add">d’</mark>une manette de jeu sans fil compatible p<mark class="inline-add">eut </mark>ou<mark class="inline-add">vri</mark>r <mark class="inline-add">G</mark>a<mark class="inline-add">me Ov</mark>erla<mark class="inline-add">y,</mark> <mark class="inline-add">J</mark>eux<mark class="inline-add"> ou Spotlight</mark>, en fonction<mark class="inline-add"> du jeu et</mark> des réglages de votre manette. <mark class="inline-add">En sav</mark>o<mark class="inline-add">ir pl</mark>u<mark class="inline-add">s su</mark>r [<mark class="inline-add">la pers</mark>onn<mark class="inline-add">alisation d</mark>e<mark class="inline-add">s boutons et des fon</mark>ct<mark class="inline-add">ionnalités d</mark>e <mark class="inline-add">la</mark> manette](https://support.apple.com/fr-fr/111099) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">63</span><code class="line-text">- Pour filtrer les notifications et les distractions pendant que vous jouez, vous pouvez configurer un mode de concentration Jeu vidéo sur votre [iPhone](https://support.apple.com/guide/iphone/iphd6288a67f/26/ios) , [iPad](https://support.apple.com/guide/ipad/ipad2789d162/ipados) , ou [Mac](https://support.apple.com/guide/mac-help/mchl613dc43f/mac) . Par défaut, le mode de concentration Jeu vidéo s’active chaque fois que vous connectez une manette de jeu sans fil à votre appareil.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">- Pour filtrer les notifications et les distractions pendant que vous jouez, vous pouvez configurer un mode de concentration Jeu vidéo sur votre [iPhone](https://support.apple.com/guide/iphone/iphd6288a67f/26/ios) , [iPad](https://support.apple.com/guide/ipad/ipad2789d162/ipados) , ou [Mac](https://support.apple.com/guide/mac-help/mchl613dc43f/mac) . Par défaut, le mode de concentration Jeu vidéo s’active chaque fois que vous connectez une manette de jeu sans fil à votre appareil.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

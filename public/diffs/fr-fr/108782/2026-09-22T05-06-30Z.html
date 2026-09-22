@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Configuration et utilisation de Photos iCloud - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Configuration et utilisation de Photos iCloud - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/108782">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+25 ajouts</span>
+      <span class="badge removed">−13 suppressions</span>
+      <span class="badge">5 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">- [Télécharger des copies de vos photos et vidéos](https://support.apple.com/fr-fr/108782#download)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">- [Télécharger des copies de vos photos et vidéos](https://support.apple.com/fr-fr/108782#download)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">- [<mark class="inline-remove">V</mark>ér<mark class="inline-remove">ifi</mark>er <mark class="inline-remove">votre </mark>espace de stockage](https://support.apple.com/fr-fr/108782#storage)</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- [<mark class="inline-add">G</mark>érer <mark class="inline-add">l’</mark>espace d<mark class="inline-add">e stockage de votre appareil avec Optimiser l</mark>e stockage](https://support.apple.com/fr-fr/108782#storage)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">- [Suspendre les chargements de la photothèque sur iCloud](https://support.apple.com/fr-fr/108782#pause)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">- [Suspendre les chargements de la photothèque sur iCloud](https://support.apple.com/fr-fr/108782#pause)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- [Donner la priorité aux chargements de la photothèque sur iCloud](https://support.apple.com/fr-fr/108782#prioritize)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">## Fonctionnement de Photos iCloud</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">## Fonctionnement de Photos iCloud</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 23 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">- Activez Synchroniser ce Mac.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">- Activez Synchroniser ce Mac.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">### Activer Photos iCloud sur votre Apple TV 4K <mark class="inline-remove">et</mark> votre Apple TV HD</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">### Activer Photos iCloud sur votre Apple TV 4K <mark class="inline-add">ou</mark> votre Apple TV HD</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">- Accédez à Réglages, puis sélectionnez Utilisateurs et comptes.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">- Accédez à Réglages, puis sélectionnez Utilisateurs et comptes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 15 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">### Les photos sont supprimées de tous vos appareils</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">### Les photos sont supprimées de tous vos appareils</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">Lorsque vous [supprimez des photos et des vidéos](https://support.apple.com/fr-fr/104967) <mark class="inline-remove">sur </mark>un appareil, elles sont supprimées partout où vous utilisez Photos iCloud. Si vous supprimez un élément accidentellement, vous pouvez le récupérer dans le dossier Supprimées récemment pendant 30 jours. Passé ce délai, il sera définitivement supprimé, et vous ne pourrez pas le récupérer.</code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">Lorsque vous [supprimez des photos et des vidéos](https://support.apple.com/fr-fr/104967) <mark class="inline-add">d’</mark>un appareil, elles sont supprimées partout où vous utilisez Photos iCloud. Si vous supprimez un élément accidentellement, vous pouvez le récupérer dans le dossier Supprimées récemment pendant 30 jours. Passé ce délai, il sera définitivement supprimé, et vous ne pourrez pas le récupérer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">## Télécharger des copies de vos photos et vidéos</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">## Télécharger des copies de vos photos et vidéos</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">71</span><code class="line-text">Lorsque vous activez Photos iCloud, vos photos et vidéos sont automatiquement chargées sur iCloud. Comme elles ne sont pas copiées dans votre sauvegarde iCloud, il est conseillé de conserver des [copies de sauvegarde de votre photothèque](https://support.apple.com/fr-fr/111762) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">Lorsque vous activez Photos iCloud, vos photos et vidéos sont automatiquement chargées sur iCloud. Comme elles ne sont pas copiées dans votre sauvegarde iCloud, il est conseillé de conserver des [copies de sauvegarde de votre photothèque](https://support.apple.com/fr-fr/111762) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text">## <mark class="inline-remove">V</mark>ér<mark class="inline-remove">ifi</mark>er <mark class="inline-remove">votre </mark>espace de stockage</code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">## <mark class="inline-add">G</mark>érer <mark class="inline-add">l’</mark>espace de stockage<mark class="inline-add"> de votre appareil avec Optimiser le stockage</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">Les photos et vidéos que vous conservez dans Photos iCloud <mark class="inline-remove">occ</mark>u<mark class="inline-remove">p</mark>ent <mark class="inline-remove">d</mark>e <mark class="inline-remove">l’</mark>espace de stockage <mark class="inline-remove">sur votre compte </mark>iCloud et <mark class="inline-remove">s</mark>u<mark class="inline-remove">r</mark> votre appareil<mark class="inline-remove">. En vous abonnant à iCloud, vous bénéficiez de 5 Go d’espace de stockage gratuit. Si vous avez besoin de plus d’espace de stockage ou si vous souhaitez accéder aux fonctionnalités avancées, vous pouvez passer à iCloud+. Dans vos réglages iCloud, vous pouvez également consulter des recommandations [pour libérer de l’espace</mark>](https://support.apple.com/fr-fr/10<mark class="inline-remove">89</mark>2<mark class="inline-remove">2#recommended</mark>) .</code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">Les photos et vidéos que vous conservez dans Photos iCloud u<mark class="inline-add">tilis</mark>ent <mark class="inline-add">[votr</mark>e espace de stockage iCloud et <mark class="inline-add">cel</mark>u<mark class="inline-add">i de</mark> votre appareil](https://support.apple.com/fr-fr/102<mark class="inline-add">670</mark>) .<mark class="inline-add"> Pour économiser de l’espace sur votre appareil, vous pouvez activer le réglage Optimiser le stockage.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text"><mark class="inline-remove">V</mark>ous avez besoin de libérer de l’espace sur votre appareil<mark class="inline-remove"> ? Activer le réglage Optimiser le stockage. Dans de tels cas</mark> Photos iCloud <mark class="inline-remove">c</mark>o<mark class="inline-remove">n</mark>s<mark class="inline-remove">erv</mark>e vos photos et vidéos <mark class="inline-remove">dans leur version d’origine haute résolution et les versions occupant moins d’espace sont conservées sur votre appareil. Votre photothèque optimise également vos photos et vidéos lors</mark>que vous <mark class="inline-remove">avez besoin d’espace, en </mark>co<mark class="inline-remove">mme</mark>n<mark class="inline-remove">çan</mark>t<mark class="inline-remove"> par celles auxquelles vous accéd</mark>ez le moins<mark class="inline-remove">,</mark> <mark class="inline-remove">et v</mark>ous pouvez télécharger <mark class="inline-remove">vo</mark>s <mark class="inline-remove">photos et vidéos d’</mark>origin<mark class="inline-remove">e</mark> via un réseau <mark class="inline-remove">Wi-Fi ou de données </mark>mobile<mark class="inline-remove">s</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text"><mark class="inline-add">Lorsque vous activez Optimiser le stockage, votre appareil conserve des versions moins volumineuses de vos photos et vidéos, tandis que Photos iCloud stocke les originaux en haute résolution. Lorsque v</mark>ous avez besoin de libérer de l’espace <mark class="inline-add">de stockage </mark>sur votre appareil<mark class="inline-add">,</mark> Photos iCloud o<mark class="inline-add">ptimi</mark>se vo<mark class="inline-add">tre photothèque en commençant par le</mark>s photos et vidéos que vous con<mark class="inline-add">sul</mark>tez le moins<mark class="inline-add">.</mark> <mark class="inline-add">V</mark>ous pouvez télécharger <mark class="inline-add">le</mark>s origin<mark class="inline-add">aux</mark> via<mark class="inline-add"> le Wi-Fi ou</mark> un réseau mobile.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">### Activer Optimiser le stockage sur votre iPhone, iPad ou Apple Vision Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">### Activer Optimiser le stockage sur votre iPhone, iPad ou Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">- Sous Enregistré sur iCloud, touchez Photos.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">- Sous Enregistré sur iCloud, touchez Photos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">85</span><code class="line-text">- <mark class="inline-remove">A</mark>cti<mark class="inline-remove">v</mark>ez <mark class="inline-remove">l’o</mark>ptimis<mark class="inline-remove">ation</mark> <mark class="inline-remove">du</mark> stockage.</code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text">- <mark class="inline-add">Touchez Stockage de l’iPhone, puis séle</mark>cti<mark class="inline-add">onn</mark>ez <mark class="inline-add">O</mark>ptimis<mark class="inline-add">er</mark> <mark class="inline-add">le</mark> stockage.<mark class="inline-add"> Sous iOS 26 ou version antérieure, sélectionnez simplement Optimiser le stockage.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">87</span><code class="line-text">### Activer Optimiser le stockage sur votre Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">89</span><code class="line-text">### Activer Optimiser le stockage sur votre Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text">- Dans l’app Photos, c<mark class="inline-remove">liquez sur P</mark>ho<mark class="inline-remove">tos, pu</mark>is<mark class="inline-remove"> </mark>s<mark class="inline-remove">électionn</mark>ez Réglages ou Préférences.</code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">- Dans l’app Photos, chois<mark class="inline-add">i</mark>s<mark class="inline-add">s</mark>ez Réglages <mark class="inline-add">(</mark>ou Préférences<mark class="inline-add">) dans le menu Photos de la barre de menus</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text">- C<mark class="inline-remove">ho</mark>i<mark class="inline-remove">siss</mark>ez u<mark class="inline-remove">n </mark>r<mark class="inline-remove">églage de stockage dans</mark> l’onglet iCloud.</code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">- C<mark class="inline-add">l</mark>i<mark class="inline-add">qu</mark>ez <mark class="inline-add">s</mark>ur l’onglet iCloud<mark class="inline-add">, puis choisissez une option de stockage</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">Pour conserver vos photos et vidéos originales en taille réelle dans iCloud et sur votre a<mark class="inline-remove">ppareil</mark>, sélectionnez Télécharger les originaux sur ce Mac.</code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text">Pour conserver vos photos et vidéos originales en taille réelle dans iCloud et sur votre <mark class="inline-add">M</mark>a<mark class="inline-add">c</mark>, sélectionnez Télécharger les originaux sur ce Mac.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">95</span><code class="line-text">## Suspendre les chargements de la photothèque sur iCloud</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">## Suspendre les chargements de la photothèque sur iCloud</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">97</span><code class="line-text">Lorsque vous activez Photos iCloud, le temps de chargement de<mark class="inline-remove"> vo</mark>s photos et vidéos sur iCloud dépend de la taille de votre collection et de la vitesse de votre connexion Internet. Le temps de chargement peut être plus long pour les collections volumineuses. Vous pouvez v<mark class="inline-remove">o</mark>ir l<mark class="inline-remove">’é</mark>tat du chargement et le <mark class="inline-remove">s</mark>us<mark class="inline-remove">pendr</mark>e pendant une journée. <mark class="inline-remove">Sel</mark>on <mark class="inline-remove">l’é</mark>tat de votre photothèque, la mise en pause peut ne pas être disponible.</code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text">Lorsque vous activez Photos iCloud, le temps de chargement des photos et vidéos sur iCloud dépend de la taille de votre collection et de la vitesse de votre connexion Internet. Le temps de chargement peut être plus long pour les collections volumineuses. Vous pouvez <mark class="inline-add">[</mark>v<mark class="inline-add">ér</mark>i<mark class="inline-add">fie</mark>r l<mark class="inline-add">e s</mark>ta<mark class="inline-add">tu</mark>t du chargement<mark class="inline-add">](https://support.apple.com/fr-fr/101559)</mark> et le <mark class="inline-add">mettre en pa</mark>use pendant une journée. <mark class="inline-add">En foncti</mark>on <mark class="inline-add">du s</mark>ta<mark class="inline-add">tu</mark>t de votre photothèque, la mise en pause peut ne pas être disponible.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">99</span><code class="line-text">### Sur votre iPhone, iPad ou Apple Vision Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">101</span><code class="line-text">### Sur votre iPhone, iPad ou Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">107</span><code class="line-text">### Sur un Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">109</span><code class="line-text">### Sur un Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">109</span><code class="line-text">- Dans l’app Photos, sélectionnez <mark class="inline-remove">Bibli</mark>othèque.</code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text">- Dans<mark class="inline-add"> la barre latérale de</mark> l’app Photos, sélectionnez <mark class="inline-add">Phot</mark>othèque.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">111</span><code class="line-text">- Cliquez sur Toutes les photos.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">113</span><code class="line-text">- Cliquez sur Toutes les photos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">113</span><code class="line-text">- Faites défiler l’écran vers le bas et cliquez sur Pause.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">115</span><code class="line-text">- Faites défiler l’écran vers le bas et cliquez sur Pause.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">115</span><code class="line-text"><mark class="inline-remove">[E</mark>n<mark class="inline-remove"> savoi</mark>r plu<mark class="inline-remove">s</mark> sur iCloud<mark class="inline-remove"> en Chine continentale](https://support.apple.com/fr-fr/111754) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">117</span><code class="line-text"><mark class="inline-add">## Do</mark>n<mark class="inline-add">ne</mark>r <mark class="inline-add">la </mark>p<mark class="inline-add">riorité aux chargements de </mark>l<mark class="inline-add">a photothèq</mark>u<mark class="inline-add">e</mark> sur iCloud</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">119</span><code class="line-text">Pour donner la priorité à la synchronisation de votre photothèque Photos iCloud, vous pouvez activer Synchroniser immédiatement sous iOS, iPadOS et visionOS 27, ou versions ultérieures. Si vous autorisez Photos à [utiliser les données cellulaires](https://support.apple.com/fr-fr/109323) , votre consommation de données risque d’augmenter.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">121</span><code class="line-text">- Accédez à Réglages. Touchez votre nom, puis iCloud.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">123</span><code class="line-text">- Sous Enregistré sur iCloud, touchez Photos.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">125</span><code class="line-text">- Touchez Synchroniser immédiatement.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">127</span><code class="line-text">- Choisissez Pour aujourd’hui.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">117</span><code class="line-text">Les informations se rapportant à des produits non fabriqués par Apple, ou à des sites Web indépendants qui ne sont ni contrôlés ni testés par Apple, sont fournies uniquement à titre indicatif et ne constituent aucune recommandation. Apple ne saurait être tenu responsable de problèmes liés à l’utilisation de tels sites ou produits tiers, ou à leurs performances. Apple ne garantit en aucune façon la fiabilité d’un site Web tiers ni l’exactitude des informations que ce dernier propose. [Contactez le fournisseur](https://support.apple.com/fr-fr/103190) pour plus d’informations.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">129</span><code class="line-text">Les informations se rapportant à des produits non fabriqués par Apple, ou à des sites Web indépendants qui ne sont ni contrôlés ni testés par Apple, sont fournies uniquement à titre indicatif et ne constituent aucune recommandation. Apple ne saurait être tenu responsable de problèmes liés à l’utilisation de tels sites ou produits tiers, ou à leurs performances. Apple ne garantit en aucune façon la fiabilité d’un site Web tiers ni l’exactitude des informations que ce dernier propose. [Contactez le fournisseur](https://support.apple.com/fr-fr/103190) pour plus d’informations.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

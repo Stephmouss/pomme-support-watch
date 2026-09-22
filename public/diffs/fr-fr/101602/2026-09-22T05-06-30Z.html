@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Ajouter un AirTag dans l’app Localiser - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Ajouter un AirTag dans l’app Localiser - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/101602">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+15 ajouts</span>
+      <span class="badge removed">−13 suppressions</span>
+      <span class="badge">5 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Ajouter un AirTag dans l’app Localiser</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Ajouter un AirTag dans l’app Localiser</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Pour vous aider à <mark class="inline-remove">g</mark>a<mark class="inline-remove">rder</mark> t<mark class="inline-remove">race</mark> de vos effets personnels, <mark class="inline-remove">par exe</mark>m<mark class="inline-remove">pl</mark>e des clés ou un sac à dos, <mark class="inline-remove">vous pouvez </mark>ajoute<mark class="inline-remove">r à l’app Localiser</mark> un AirTag ou <mark class="inline-remove">tout </mark>autre accessoire<mark class="inline-remove"> ré</mark>s<mark class="inline-remove">eau</mark> compatible avec la <mark class="inline-remove">f</mark>o<mark class="inline-remove">n</mark>c<mark class="inline-remove">tionn</mark>ali<mark class="inline-remove">té</mark> Localiser. Vous pouvez ajouter des éléments à l’aide de la configuration AirTag ou de l’app Localiser.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Pour vous aider à <mark class="inline-add">suivre l</mark>a <mark class="inline-add">posi</mark>t<mark class="inline-add">ion</mark> de vos effets personnels, <mark class="inline-add">co</mark>m<mark class="inline-add">m</mark>e des clés ou un sac à dos, ajoute<mark class="inline-add">z</mark> un AirTag ou <mark class="inline-add">d’</mark>autre<mark class="inline-add">s</mark> accessoires compatible<mark class="inline-add">s</mark> avec l<mark class="inline-add">e rése</mark>a<mark class="inline-add">u</mark> <mark class="inline-add">L</mark>ocali<mark class="inline-add">ser dans l’app</mark> Localiser. Vous pouvez ajouter des éléments à l’aide de la configuration AirTag ou de l’app Localiser.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">- [Ajouter un AirTag à Localiser à l’aide de la configuration AirTag](https://support.apple.com/fr-fr/101602#add-airtag)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">- [Ajouter un AirTag à Localiser à l’aide de la configuration AirTag](https://support.apple.com/fr-fr/101602#add-airtag)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">- Tenez votre AirTag à proximité de votre iPhone ou de votre iPad, puis touchez Connecter. Si vous possédez plusieurs AirTags et que le message « Plusieurs AirTag détectés » s’affiche, assurez-vous qu’un seul AirTag est placé à proximité de votre appareil.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">- Tenez votre AirTag à proximité de votre iPhone ou de votre iPad, puis touchez Connecter. Si vous possédez plusieurs AirTags et que le message « Plusieurs AirTag détectés » s’affiche, assurez-vous qu’un seul AirTag est placé à proximité de votre appareil.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">[Image: <mark class="inline-remove">É</mark>cran d’iPhone mon<mark class="inline-remove">t</mark>ran<mark class="inline-remove">t</mark> <mark class="inline-remove">l</mark>e bouton Connecter<mark class="inline-remove"> un AirTag</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">[Image: <mark class="inline-add">Un é</mark>cran d’iPhone <mark class="inline-add">affiche un </mark>m<mark class="inline-add">essage de c</mark>on<mark class="inline-add">figu</mark>ra<mark class="inline-add">tio</mark>n <mark class="inline-add">d’un AirTag av</mark>e<mark class="inline-add">c un</mark> bouton Connecter<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">- Sélectionnez une catégorie pour nommer votre AirTag. Si vous choisissez Nom personnalisé, sélectionnez un Emoji.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">- Sélectionnez une catégorie pour nommer votre AirTag. Si vous choisissez Nom personnalisé, sélectionnez un Emoji.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">[Image: <mark class="inline-remove">É</mark>cran d’iPhone m<mark class="inline-remove">on</mark>t<mark class="inline-remove">r</mark>ant <mark class="inline-remove">c</mark>omment sélectionn<mark class="inline-remove">er</mark> un <mark class="inline-remove">nom</mark> d’<mark class="inline-remove">A</mark>i<mark class="inline-remove">rTag</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">[Image: <mark class="inline-add">Un é</mark>cran d’iPhone <mark class="inline-add">affiche un </mark>m<mark class="inline-add">essage perme</mark>t<mark class="inline-add">t</mark>ant <mark class="inline-add">de n</mark>omme<mark class="inline-add">r u</mark>n<mark class="inline-add"> AirTag, avec le mo</mark>t<mark class="inline-add"> « Clés »</mark> sélectionn<mark class="inline-add">é dans</mark> un<mark class="inline-add">e</mark> <mark class="inline-add">liste</mark> d’<mark class="inline-add">opt</mark>i<mark class="inline-add">ons.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">- Pour associer l’AirTag à votre compte Apple, touchez à nouveau Accepter ou Continuer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">- Pour associer l’AirTag à votre compte Apple, touchez à nouveau Accepter ou Continuer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">- Touchez OK.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">- Touchez OK.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">## Ajouter un accessoire <mark class="inline-remove">réseau </mark>compatible avec la<mark class="inline-remove"> fonctionnalité</mark> Localiser ou un AirTag à l’aide de l’app Localiser</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">## Ajouter un accessoire compatible avec l<mark class="inline-add">e rése</mark>a<mark class="inline-add">u</mark> Localiser ou un AirTag à l’aide de l’app Localiser</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">Pour ajouter un AirTag ou un accessoire réseau<mark class="inline-remove"> compatible avec la fonctionnalité</mark> Localiser, vous devez disposer d<mark class="inline-remove">&#x27;</mark>iOS ou d’iPadOS 14.5 ou version ultérieure. Pour ajouter un AirTag (2e génération), vous devez disposer d’iOS ou d’iPadOS 26.2.1 ou version ultérieure.</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">Pour ajouter un AirTag ou un accessoire <mark class="inline-add">du </mark>réseau Localiser, vous devez disposer d<mark class="inline-add">’</mark>iOS ou d’iPadOS 14.5 ou version ultérieure. Pour ajouter un AirTag (2e génération), vous devez disposer d’iOS ou d’iPadOS 26.2.1 ou version ultérieure.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">- Suivez les instructions du fabricant pour connecter votre accessoire <mark class="inline-remove">réseau </mark>compatible avec la<mark class="inline-remove"> fonctionnalité</mark> Localiser à votre iPhone ou iPad.</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- Suivez les instructions du fabricant pour connecter votre accessoire compatible avec l<mark class="inline-add">e rése</mark>a<mark class="inline-add">u</mark> Localiser à votre iPhone ou iPad.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">- Ouvrez l’app Localiser sur votre iPhone ou iPad.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">- Ouvrez l’app Localiser sur votre iPhone ou iPad.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">[Image: Aucun texte de remplacement pour l’image]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">[Image: Aucun texte de remplacement pour l’image]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">[Image: Dans l’app Localiser, <mark class="inline-remove">touchez </mark>le bouton <mark class="inline-remove">d’ajout pour a</mark>jouter un a<mark class="inline-remove">cc</mark>ess<mark class="inline-remove">oire tier</mark>s d<mark class="inline-remove">u</mark> <mark class="inline-remove">rése</mark>a<mark class="inline-remove">u</mark> <mark class="inline-remove">Loca</mark>lise<mark class="inline-remove">r</mark>.]</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">[Image: Dans l’app Localiser, le bouton <mark class="inline-add">A</mark>jouter <mark class="inline-add">se tro</mark>u<mark class="inline-add">ve e</mark>n <mark class="inline-add">reg</mark>a<mark class="inline-add">rd de l’intitulé Objets, au-d</mark>ess<mark class="inline-add">u</mark>s d<mark class="inline-add">e</mark> <mark class="inline-add">l</mark>a lis<mark class="inline-add">t</mark>e<mark class="inline-add"> de vos objets</mark>.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">- Touchez A<mark class="inline-remove">jouter un A</mark>irTag ou <mark class="inline-remove">un a</mark>utre objet.</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">- Touchez AirTag ou <mark class="inline-add">A</mark>utre objet.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">[Image: Dans l’app Localiser, to<mark class="inline-remove">uchez</mark> A<mark class="inline-remove">joute</mark>r <mark class="inline-remove">un objet pour ajouter un a</mark>ccessoire tier<mark class="inline-remove">s</mark> <mark class="inline-remove">du réseau</mark> Localiser.]</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">[Image: Dans l’app Localiser, <mark class="inline-add">les op</mark>t<mark class="inline-add">i</mark>o<mark class="inline-add">ns</mark> A<mark class="inline-add">i</mark>r<mark class="inline-add">Tag,</mark> <mark class="inline-add">A</mark>ccessoire <mark class="inline-add">MagSafe et Autre objet apparaissent sous le </mark>ti<mark class="inline-add">tre de section Ajout</mark>er <mark class="inline-add">à</mark> Localiser.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">- Suivez les instructions à l’écran pour terminer la configuration de l’objet.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">- Suivez les instructions à l’écran pour terminer la configuration de l’objet.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">- Ouvrez l’app Réglages, touchez Confidentialité et sécurité, Service de localisation, puis assurez-vous que Service de localisation est activé. Faites ensuite défiler l’écran vers le bas, touchez Localiser, puis choisissez un niveau d’accès. Activez l’option Position exacte pour que la localisation soit la plus précise possible.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">- Ouvrez l’app Réglages, touchez Confidentialité et sécurité, Service de localisation, puis assurez-vous que Service de localisation est activé. Faites ensuite défiler l’écran vers le bas, touchez Localiser, puis choisissez un niveau d’accès. Activez l’option Position exacte pour que la localisation soit la plus précise possible.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">- [Activez le trousseau iCloud](https://support.apple.com/109016)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Vérifiez que la configuration de votre compte Apple est terminée. Ouvrez l’app Réglages, puis touchez votre nom. Vérifiez si une alerte vous invite à mettre à jour les réglages du compte Apple.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">- Vérifiez que la configuration de votre compte Apple est terminée. Ouvrez l’app Réglages, puis touchez votre nom. Vérifiez si une alerte vous invite à mettre à jour les réglages du compte Apple.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">63</span><code class="line-text">- Si vous recevez une notification indiquant « Certaines données iCloud ne se synchronisent pas », touchez « Reprendre la synchronisation des données ».</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">- Si vous recevez une notification indiquant « Certaines données iCloud ne se synchronisent pas », touchez « Reprendre la synchronisation des données ».</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">- Vérifiez que vous avez [activé le réseau Localiser](https://support.apple.com/fr-fr/102648) pour votre iPhone ou iPad.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">- [Activez le trousseau iCloud](https://support.apple.com/109016) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">- Assurez-vous d’avoir une connexion Wi-Fi ou mobile forte.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">- Assurez-vous d’avoir une connexion Wi-Fi ou mobile forte.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">- Vous devrez peut-être [remplacer la pile de votre AirTag](https://support.apple.com/fr-fr/102600) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">77</span><code class="line-text">- Vous devrez peut-être [remplacer la pile de votre AirTag](https://support.apple.com/fr-fr/102600) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">- Si votre AirTag ne se connecte toujours pas, vous devrez peut-être le [réinitialiser](https://support.apple.com/102577) .</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">- Si votre AirTag ne se connecte toujours pas, vous devrez peut-être le [réinitialiser](https://support.apple.com/<mark class="inline-add">fr-fr/</mark>102577) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">- [Redémarrez votre iPhone](https://support.apple.com/fr-fr/118259) ou [votre iPad](https://support.apple.com/fr-fr/101603) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">- [Redémarrez votre iPhone](https://support.apple.com/fr-fr/118259) ou [votre iPad](https://support.apple.com/fr-fr/101603) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">### Si de nouveaux objets<mark class="inline-remove"> ne peuvent pas être ajoutés</mark></code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">### Si<mark class="inline-add"> vous ne pouvez pas ajouter</mark> de nouveaux objets</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">Si vous recevez un message indiquant que vous ne pouvez pas ajouter de nouveaux objets, gérez les objets figurant déjà dans l’app Localiser :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">Si vous recevez un message indiquant que vous ne pouvez pas ajouter de nouveaux objets, gérez les objets figurant déjà dans l’app Localiser :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

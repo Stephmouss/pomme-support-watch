@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Payer avec des récompenses à l’aide d’Apple Pay - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Payer avec des récompenses à l’aide d’Apple Pay - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/120479">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+24 ajouts</span>
+      <span class="badge removed">−18 suppressions</span>
+      <span class="badge">1 bloc modifié</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Payer avec des récompenses à l’aide d’Apple Pay</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Payer avec des récompenses à l’aide d’Apple Pay</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Utilisez les récompenses pour effectuer des achats en ligne<mark class="inline-remove"> et</mark> dans les applications sur votre iPhone ou votre iPad.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Utilisez les récompenses pour effectuer des achats en ligne<mark class="inline-add">,</mark> dans les applications<mark class="inline-add"> et en magasin</mark> sur votre iPhone ou votre iPad.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">Pour payer avec des récompenses à l’aide d’Apple Pay<mark class="inline-remove"> en ligne et dans les applications</mark>, vous devez <mark class="inline-remove">remplir les conditions suivantes </mark>:</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">Pour payer avec des récompenses à l’aide d’Apple Pay, vous devez :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">- <mark class="inline-remove">Utili</mark>ser un iPhone ou un iPad dot<mark class="inline-remove">é</mark> <mark class="inline-remove">d’</mark> <mark class="inline-remove">[</mark>iOS 18 ou <mark class="inline-remove">d’</mark>iPadOS 18 ou version ultérieure](https://support.apple.com/<mark class="inline-remove">fr-fr/</mark>118575) .</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">- <mark class="inline-add">Po</mark>s<mark class="inline-add">séd</mark>er un <mark class="inline-add">[</mark>iPhone ou un iPad <mark class="inline-add">compatible](https://support.apple.com/gui</mark>d<mark class="inline-add">e/iph</mark>o<mark class="inline-add">ne/iphone-models-compa</mark>t<mark class="inline-add">ible-with-ios-18-iphe3fa5df43/ios)</mark> <mark class="inline-add">avec</mark> iOS 18 ou iPadOS 18<mark class="inline-add"> ou version ultérieure pour les achats en ligne et dans les apps. Vous pouvez effectuer des achats en magasin avec un iPhone doté [d’iOS 26</mark> ou version ultérieure](https://support.apple.com/118575) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">- Avoir [configuré Apple Pay](https://support.apple.com/<mark class="inline-remove">fr-fr/HT2</mark>0<mark class="inline-remove">4506</mark>) .</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">- Avoir [configuré Apple Pay](https://support.apple.com/<mark class="inline-add">1</mark>0<mark class="inline-add">8398</mark>) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">- Utiliser une carte de débit ou de crédit fournie par [un émetteur de carte participant dans l’app Cartes](https://support.apple.com/fr-fr/HT204916#rewards) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">- Utiliser une carte de débit ou de crédit fournie par [un émetteur de carte participant dans l’app Cartes](https://support.apple.com/fr-fr/HT204916#rewards) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text"><mark class="inline-remove">P</mark>our <mark class="inline-remove">savo</mark>ir <mark class="inline-remove">si</mark> votre carte pre<mark class="inline-remove">nd</mark> en c<mark class="inline-remove">h</mark>a<mark class="inline-remove">rge le paieme</mark>nt a<mark class="inline-remove">v</mark>ec de<mark class="inline-remove">s</mark> récompenses, contactez l’émetteur de <mark class="inline-remove">votre</mark> carte.</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text"><mark class="inline-add">Toutes les offres de récompense sont f</mark>our<mark class="inline-add">nies</mark> <mark class="inline-add">d</mark>ir<mark class="inline-add">ectement</mark> <mark class="inline-add">par l’émetteur de</mark> votre carte <mark class="inline-add">et sont soumises aux conditions générales de cet émetteur. Pour tout </mark>pr<mark class="inline-add">oblèm</mark>e <mark class="inline-add">ou qu</mark>e<mark class="inline-add">stio</mark>n c<mark class="inline-add">oncern</mark>ant <mark class="inline-add">vos récompenses ou vos </mark>a<mark class="inline-add">chats eff</mark>ec<mark class="inline-add">tués à l’aide</mark> de récompenses, contactez l’émetteur de <mark class="inline-add">la</mark> carte.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">## Fonctionnement</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">## Fonctionnement</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">Vous pouvez utiliser les récompenses de carte de débit ou de crédit éligibles pour effectuer des achats lorsque vous effectuez votre paiement avec Apple Pay<mark class="inline-remove"> en ligne et dans les applications</mark> sur votre iPhone ou iPad. 1 Quel que soit le type de récompense dont vous disposez (remise en argent, points ou miles), l’émetteur de votre carte les convertira en un montant en dollars pour vous permettre de les appliquer à votre achat au moment du paiement avec Apple Pay.</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">Vous pouvez utiliser les récompenses de carte de débit ou de crédit éligibles pour effectuer des achats lorsque vous effectuez votre paiement avec Apple Pay sur votre iPhone ou iPad. 1 Quel que soit le type de récompense dont vous disposez (remise en argent, points ou miles), l’émetteur de votre carte les convertira en un montant en dollars pour vous permettre de les appliquer à votre achat au moment du paiement avec Apple Pay.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">Lorsque vous utilisez les récompenses pour un achat, le montant total de l’achat est facturé. L’émetteur de votre carte de débit ou de crédit fournira un relevé de crédit égal à la valeur des récompenses utilisées pour l’achat une fois l’achat terminé.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">Lorsque vous utilisez les récompenses pour un achat, le montant total de l’achat est facturé. L’émetteur de votre carte de débit ou de crédit fournira un relevé de crédit égal à la valeur des récompenses utilisées pour l’achat une fois l’achat terminé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">## Utiliser les récompenses pour f<mark class="inline-remove">ai</mark>r<mark class="inline-remove">e</mark> des achats</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">## Utiliser les récompenses pour <mark class="inline-add">e</mark>f<mark class="inline-add">fectue</mark>r des achats<mark class="inline-add"> en ligne et dans les applications</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">Pour payer avec des récompenses en utilisant votre carte :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">Pour payer avec des récompenses en utilisant votre carte :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">- Touchez le bouton Apple Pay ou choisissez Apple Pay comme mode de paiement.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">- Touchez le bouton Apple Pay ou choisissez Apple Pay comme mode de paiement.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">- <mark class="inline-remove">Touchez u</mark>n<mark class="inline-remove">e </mark>ca<mark class="inline-remove">r</mark>t<mark class="inline-remove">e qu</mark>i<mark class="inline-remove"> prend e</mark>n <mark class="inline-remove">cha</mark>r<mark class="inline-remove">ge</mark> les récompenses<mark class="inline-remove">.</mark> <mark class="inline-remove">Si</mark> votre carte prend en charge cette fonctionnalité<mark class="inline-remove">, vous verrez une indication Récompenses sous votre carte</mark>. Votre solde de récompenses disponible sera également affiché. 2 Pour utiliser une autre carte, appuyez sur Changer de mode de paiement ou Autres cartes et options de paiement différé.</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- <mark class="inline-add">L’i</mark>n<mark class="inline-add">di</mark>cati<mark class="inline-add">o</mark>n <mark class="inline-add">« Utilise</mark>r les récompenses <mark class="inline-add">» apparaît sous</mark> votre carte<mark class="inline-add"> si celle-ci</mark> prend en charge cette fonctionnalité. Votre solde de récompenses disponible sera également affiché. 2 Pour utiliser une autre carte, appuyez sur Changer de mode de paiement ou Autres cartes et options de paiement différé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">[Image: <mark class="inline-remove">iPho</mark>n<mark class="inline-remove">e aff</mark>ic<mark class="inline-remove">h</mark>a<mark class="inline-remove">nt les op</mark>tions<mark class="inline-remove"> d</mark>e<mark class="inline-remove"> paiement avec</mark> les récompenses di<mark class="inline-remove">spon</mark>ibles lors du <mark class="inline-remove">pai</mark>ement.]</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">[Image: <mark class="inline-add">I</mark>n<mark class="inline-add">d</mark>ication<mark class="inline-add"> « Utili</mark>se<mark class="inline-add">r</mark> les récompenses <mark class="inline-add">» sous une carte de cré</mark>di<mark class="inline-add">t élig</mark>ible<mark class="inline-add"> </mark>s<mark class="inline-add">électionnée</mark> lors du <mark class="inline-add">règl</mark>ement<mark class="inline-add"> avec Apple Pay</mark>.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">- Touchez Utiliser les récompenses.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">- Touchez Utiliser les récompenses.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">- Entrez le montant de récompenses que vous souhaitez appliquer à votre achat. Vous pouvez appliquer des récompenses pour le montant total de l’achat ou pour une partie du montant seulement, en fonction de votre solde disponible.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">- Entrez le montant de récompenses que vous souhaitez appliquer à votre achat. Vous pouvez appliquer des récompenses pour le montant total de l’achat ou pour une partie du montant seulement, en fonction de votre solde disponible.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- Touchez <mark class="inline-remove">OK</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- Touchez <mark class="inline-add">Appliquer les récompenses</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">- Confirmez le paiement à l’aide de Face ID, Touch ID ou de votre code d’accès.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">- Confirmez le paiement à l’aide de Face ID, Touch ID ou de votre code d’accès.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text"><mark class="inline-remove">Si</mark> <mark class="inline-remove">votre carte est prise en charge mais que vous ne voyez pas l’option d’utilisation des récompenses, contactez l’émetteur de votre carte pour plus d’informations. Certains émetteurs de cartes peuvent vous demander de vous inscrire via une application bancaire ou un site Web avant d’u</mark>tiliser les récompenses <mark class="inline-remove">av</mark>ec <mark class="inline-remove">Appl</mark>e <mark class="inline-remove">P</mark>a<mark class="inline-remove">y.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text"><mark class="inline-add">##</mark> <mark class="inline-add">U</mark>tiliser les récompenses <mark class="inline-add">pour eff</mark>ec<mark class="inline-add">tuer</mark> <mark class="inline-add">d</mark>e<mark class="inline-add">s</mark> a<mark class="inline-add">chats en magasin</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text"><mark class="inline-remove">###</mark> <mark class="inline-remove">C</mark>onsulter le<mark class="inline-remove"> solde de vo</mark>s récompenses et <mark class="inline-remove">l</mark>es <mark class="inline-remove">dé</mark>t<mark class="inline-remove">ails d’utilisation</mark></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">Double-cliquez sur le bout</mark>on<mark class="inline-add"> latéral, pui</mark>s<mark class="inline-add"> to</mark>u<mark class="inline-add">chez </mark>l<mark class="inline-add">a car</mark>t<mark class="inline-add">e de crédit ou de débit que vous souhaitez utiliser. Si la carte que vous souhaitez utiliser est éligible, l’option « Utilis</mark>er les récompenses <mark class="inline-add">» </mark>e<mark class="inline-add">s</mark>t <mark class="inline-add">affiché</mark>e<mark class="inline-add"> sou</mark>s <mark class="inline-add">la car</mark>t<mark class="inline-add">e.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text"><mark class="inline-remove">Les</mark> a<mark class="inline-remove">cha</mark>ts<mark class="inline-remove"> effectués à </mark>l<mark class="inline-remove">’ai</mark>de de récompenses <mark class="inline-remove">seront</mark> <mark class="inline-remove">libellés Récompenses utilisées dans [</mark>votr<mark class="inline-remove">e dernier historique d</mark>e transactions<mark class="inline-remove">](https://suppo</mark>r<mark class="inline-remove">t.app</mark>le<mark class="inline-remove">.</mark>com<mark class="inline-remove">/fr-fr/104954) da</mark>ns<mark class="inline-remove"> l’app Cart</mark>es.</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text"><mark class="inline-add">- Pour</mark> a<mark class="inline-add">ppliquer vo</mark>t<mark class="inline-add">re </mark>s<mark class="inline-add">o</mark>lde de récompenses <mark class="inline-add">à</mark> votre transaction<mark class="inline-add">, touchez Utili</mark>s<mark class="inline-add">e</mark>r<mark class="inline-add"> </mark>le<mark class="inline-add">s ré</mark>com<mark class="inline-add">pe</mark>nses.<mark class="inline-add"> Touchez ensuite Choisir un montant pour saisir le montant précis de récompenses que vous souhaitez utiliser.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">[Image: Boutons « Payer en intégralité » et « Utiliser les récompenses » sous une carte éligible.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- Pour régler en appliquant vos récompenses, maintenez le haut de votre iPhone près du lecteur de carte jusqu’à ce que la mention « OK » ou une coche apparaisse à l’écran.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">Si votre carte est prise en charge mais que vous ne voyez pas l’option d’utilisation des récompenses, contactez l’émetteur de votre carte pour plus d’informations. Certains émetteurs de cartes peuvent vous demander de vous inscrire via une application bancaire ou un site web avant d’utiliser les récompenses avec Apple Pay.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">## Consulter le solde de vos récompenses et les détails d’utilisation</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">Les achats effectués à l’aide de récompenses apparaissent dans l’ [historique de vos transactions récentes](https://support.apple.com/104954) dans Cartes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">- Pour consulter votre solde de récompenses, touchez votre carte prise en charge dans l’application Cartes. Votre solde de récompenses est indiqué sous votre carte. Vous pouvez également voir le solde de vos récompenses lorsque vous effectuez un achat.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">- Pour consulter votre solde de récompenses, touchez votre carte prise en charge dans l’application Cartes. Votre solde de récompenses est indiqué sous votre carte. Vous pouvez également voir le solde de vos récompenses lorsque vous effectuez un achat.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">- Pour voir vos derniers rachats à un seul emplacement, appuyez sur le solde des récompenses au recto de votre carte.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">- Pour voir vos derniers rachats à un seul emplacement, appuyez sur le solde des récompenses au recto de votre carte.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text"><mark class="inline-remove">T</mark>oute<mark class="inline-remove">s</mark> les offr<mark class="inline-remove">es de récompense sont fournies direc</mark>te<mark class="inline-remove">ment</mark> par l’émetteur de votre carte et s<mark class="inline-remove">on</mark>t soumise<mark class="inline-remove">s</mark> aux conditions gén<mark class="inline-remove">érale</mark>s de <mark class="inline-remove">cet </mark>émetteur. <mark class="inline-remove">P</mark>our tout <mark class="inline-remove">pr</mark>o<mark class="inline-remove">blè</mark>me <mark class="inline-remove">ou</mark> <mark class="inline-remove">qu</mark>estion con<mark class="inline-remove">cern</mark>ant <mark class="inline-remove">vos</mark> récompenses ou <mark class="inline-remove">v</mark>os <mark class="inline-remove">acha</mark>ts<mark class="inline-remove"> effectués à l’aide</mark> de r<mark class="inline-remove">écom</mark>pense<mark class="inline-remove">s,</mark> contactez l’émetteur de <mark class="inline-remove">la</mark> carte.</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text"><mark class="inline-add">- D</mark>o<mark class="inline-add">it avoir </mark>u<mark class="inline-add">ne car</mark>te <mark class="inline-add">éligib</mark>le<mark class="inline-add">. Cette fonctionnalité e</mark>s<mark class="inline-add">t</mark> off<mark class="inline-add">e</mark>rte par l’émetteur de votre carte et <mark class="inline-add">e</mark>st soumise aux conditions <mark class="inline-add">d’éli</mark>g<mark class="inline-add">ibilit</mark>é<mark class="inline-add"> et à d’autres co</mark>n<mark class="inline-add">dition</mark>s de <mark class="inline-add">l’</mark>émetteur. <mark class="inline-add">Cette fonctionnalité n’est pas disponible sur tous les marchés et peut ne pas être disponible p</mark>our tou<mark class="inline-add">s les types d’achats, notammen</mark>t <mark class="inline-add">les ab</mark>o<mark class="inline-add">nne</mark>me<mark class="inline-add">nts</mark> <mark class="inline-add">et</mark> <mark class="inline-add">l</mark>es<mark class="inline-add"> transactions récurrentes. Le montant total de la transac</mark>tion <mark class="inline-add">sera facturé sur votre carte au moment de l’achat et un crédit au </mark>co<mark class="inline-add">mpte du mo</mark>n<mark class="inline-add">t</mark>ant <mark class="inline-add">de la</mark> récompense<mark class="inline-add"> utili</mark>s<mark class="inline-add">ée sera appliqué. Disponible en magasin sur iPhone, et en ligne et dans les apps sur iPhone</mark> ou <mark class="inline-add">iPad. La c</mark>o<mark class="inline-add">nfiguration logicielle requise s’applique. Certain</mark>s <mark class="inline-add">éme</mark>t<mark class="inline-add">teur</mark>s de <mark class="inline-add">ca</mark>r<mark class="inline-add">tes </mark>pe<mark class="inline-add">uvent vous demander de vous i</mark>ns<mark class="inline-add">crir</mark>e<mark class="inline-add"> à</mark> c<mark class="inline-add">ette fonctionnalité pour qu’elle vous soit mise à disposition. C</mark>ontactez l’émetteur de <mark class="inline-add">votre</mark> carte<mark class="inline-add"> pour plus d’informations</mark>.<mark class="inline-add"> Des conditions supplémentaires peuvent s’appliquer concernant l’éligibilité.</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">- Doit avoir une carte éligible . Cette fonctionnalité est offerte par l’émetteur de votre carte et est soumise aux conditions d’éligibilité et à d’autres conditions de l’émetteur. Cette fonctionnalité n’est pas disponible sur tous les marchés et peut ne pas être disponible pour tous les types d’achats, notamment les abonnements et les transactions récurrentes. Le montant total de la transaction sera facturé sur votre carte au moment de l’achat et un crédit au compte du montant de la récompense utilisée sera appliqué. Cette fonctionnalité est disponible avec Apple Pay en ligne et dans les applications, sur iPhone ou iPad. Non disponible en magasin. La configuration logicielle requise s’applique. Pour vous assurer de disposer de toutes les fonctionnalités de ce produit, mettez à jour votre appareil vers la dernière version du logiciel. Certains émetteurs de cartes peuvent vous demander de vous inscrire à cette fonctionnalité pour qu’elle vous soit mise à disposition. Contactez l’émetteur de votre carte pour plus d’informations.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">- Votre solde disponible de récompenses et d’autres données affichées dans Cartes peuvent ne pas apparaître immédiatement en raison de divers facteurs, tels que le service Internet.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">- Votre solde disponible de récompenses et d’autres données affichées dans Cartes peuvent ne pas apparaître immédiatement en raison de divers facteurs, tels que le service Internet.</code></div>
+<div class="diff-line previous removed"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">Apple Pay est un service fourni par certaines filiales d’Apple, comme indiqué dans l’ [avis de confidentialité Apple Pay](https://www.apple.com/legal/privacy/data/en/en/apple-pay/) . Ni Apple Inc. ni ses filiales ne sont une banque. Toute carte utilisée dans Apple Pay est proposée par l’émetteur de la carte.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Comment réparer un périphérique de stockage Mac avec Utilitaire de disque - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Comment réparer un périphérique de stockage Mac avec Utilitaire de disque - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/102611">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+10 ajouts</span>
+      <span class="badge removed">−10 suppressions</span>
+      <span class="badge">2 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 15 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">## Ouvrir Utilitaire de disque</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">## Ouvrir Utilitaire de disque</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">Si vous réparez le disque de démarrage de votre Mac ou si votre Mac ne démarre pas complètement, [démarrez à partir de la fonctionnalité Récupération macOS](https://support.apple.com/fr-fr/102518) . Lorsque la liste des utilitaires s’affiche dans Récupération, sélectionnez Utilitaire de disque, puis cliquez sur Continuer.</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">Si vous réparez le disque de démarrage de votre Mac ou si votre Mac ne démarre pas complètement, [démarrez à partir de la fonctionnalité Récupération macOS](https://support.apple.com/fr-fr/102518) . Lorsque la liste des utilitaires s’affiche dans Récupération<mark class="inline-add"> de </mark>, sélectionnez Utilitaire de disque, puis cliquez sur Continuer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">Utilitaire de disque est également disponible dans le dossier Utilitaires de votre dossier Applications.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">Utilitaire de disque est également disponible dans le dossier Utilitaires de votre dossier Applications.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">[Image: <mark class="inline-remove">Lis</mark>te <mark class="inline-remove">des u</mark>tilitaires dan<mark class="inline-remove">s</mark> Récupération macOS.]</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">[Image: <mark class="inline-add">Fenê</mark>t<mark class="inline-add">r</mark>e <mark class="inline-add">U</mark>tilitaires d<mark class="inline-add">e l</mark>a<mark class="inline-add"> fo</mark>n<mark class="inline-add">ctionnalité</mark> Récupération macOS.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">## Exécuter S.O.S. dans Utilitaire de disque</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">## Exécuter S.O.S. dans Utilitaire de disque</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">[Image: Élément de menu Afficher tous les appareils dans Utilitaire de disque.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">[Image: Élément de menu Afficher tous les appareils dans Utilitaire de disque.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">- La barre latérale d’Utilitaire de disque affiche maintenant tous les disques de stockage disponibles, en commençant par votre disque de démarrage. Sous chaque péri<mark class="inline-remove">ph</mark>é<mark class="inline-remove">rique,</mark> les conteneurs et volumes c<mark class="inline-remove">orrespondants s</mark>ont indi<mark class="inline-remove">qu</mark>é<mark class="inline-remove">s</mark>. [Vous ne voyez pas votre périphérique?](https://support.apple.com/fr-fr/102611#help)</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- La barre latérale d’Utilitaire de disque affiche maintenant tous les disques de stockage disponibles, en commençant par votre disque de démarrage. Sous chaque <mark class="inline-add">a</mark>p<mark class="inline-add">pareil sont r</mark>é<mark class="inline-add">perto</mark>rié<mark class="inline-add">s</mark> les conteneurs<mark class="inline-add">, groupes de volumes</mark> et volumes <mark class="inline-add">qu’il </mark>cont<mark class="inline-add">ient.</mark> <mark class="inline-add">Votre appare</mark>i<mark class="inline-add">l peut </mark>n<mark class="inline-add">e pas comporter de conteneur ou de groupe de volumes, et avoir un nombre de volumes </mark>di<mark class="inline-add">ff</mark>é<mark class="inline-add">rent</mark>. [Vous ne voyez pas votre périphérique?](https://support.apple.com/fr-fr/102611#help)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- Dans l’exemple suivant, le disque de démarrage (APPLE SSD) po<mark class="inline-remove">ssèd</mark>e un conteneur (<mark class="inline-remove">c</mark>onteneur disk4) et deux volumes (Macintosh HD<mark class="inline-remove">,</mark> Macintosh HD - D<mark class="inline-remove">ata</mark>). <mark class="inline-remove">I</mark>l<mark class="inline-remove"> </mark>es<mark class="inline-remove">t possible que</mark> vo<mark class="inline-remove">tr</mark>e<mark class="inline-remove"> di</mark>s<mark class="inline-remove">que ne comporte pas de conteneur et qu’il dispose</mark> d’un <mark class="inline-remove">n</mark>o<mark class="inline-remove">mbr</mark>e de volumes d<mark class="inline-remove">iffé</mark>ren<mark class="inline-remove">t</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- Dans l’exemple suivant, le disque de démarrage (APPLE SSD) <mark class="inline-add">com</mark>po<mark class="inline-add">rt</mark>e un conteneur (<mark class="inline-add">C</mark>onteneur disk4<mark class="inline-add">), un groupe de volumes (le premier Macintosh HD</mark>) et deux volumes <mark class="inline-add">dans ce groupe de volumes </mark>(<mark class="inline-add">le second </mark>Macintosh HD<mark class="inline-add"> et</mark> Macintosh HD - D<mark class="inline-add">onnées</mark>). <mark class="inline-add">Pour afficher tous </mark>les vo<mark class="inline-add">lum</mark>es d’un <mark class="inline-add">gr</mark>o<mark class="inline-add">up</mark>e de volumes<mark class="inline-add">, vous</mark> d<mark class="inline-add">ev</mark>re<mark class="inline-add">z peut-être cliquer sur la flèche (&gt;) située e</mark>n<mark class="inline-add"> regard du nom du groupe de volumes</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">[Image: Sélection du conteneur dans Utilitaire de disque]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">[Image: Sélection du conteneur dans Utilitaire de disque]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">- Pour chaque périphérique que vous réparez, commencez par sélectionner le dernier volume. Dans l’exemple ci-dessus, Macintosh HD - Data est le dernier volume.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">- Pour chaque périphérique que vous réparez, commencez par sélectionner le dernier volume. Dans l’exemple ci-dessus, Macintosh HD - Data est le dernier volume.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">- Cliquez sur l’onglet ou le bouton S.O.S. , puis cliquez sur Exécuter (ou Réparer le disque) pour commencer à rechercher des erreurs sur le volume sélectionné.<mark class="inline-remove"> Si le bouton est grisé et que vous ne pouvez pas cliquer dessus, ignorez cette étape pour le disque, le conteneur ou le volume que vous avez sélectionné. Si vous devez saisir un mot de passe pour déverrouiller le disque, saisissez votre mot de passe administrateur.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">- Cliquez sur l’onglet ou le bouton S.O.S. , puis cliquez sur Exécuter (ou Réparer le disque) pour commencer à rechercher des erreurs sur le volume sélectionné.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text"><mark class="inline-remove">[Ima</mark>ge<mark class="inline-remove">:</mark> null<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text"><mark class="inline-add">- Si le bouton est </mark>g<mark class="inline-add">risé </mark>e<mark class="inline-add">t que vous</mark> n<mark class="inline-add">e po</mark>u<mark class="inline-add">vez pas c</mark>l<mark class="inline-add">iquer dessus, ignorez cette étape pour </mark>l<mark class="inline-add">e disque, le conteneur ou le volume que vous avez sélectionné.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text"><mark class="inline-remove">[I</mark>ma<mark class="inline-remove">g</mark>e<mark class="inline-remove">: Exéc</mark>u<mark class="inline-remove">t</mark>er <mark class="inline-remove">S.O.S.</mark> sur <mark class="inline-remove">l</mark>e <mark class="inline-remove">volume séle</mark>c<mark class="inline-remove">tionné ?]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text"><mark class="inline-add">- Si un mot de passe vous est de</mark>ma<mark class="inline-add">ndé pour dév</mark>e<mark class="inline-add">rro</mark>u<mark class="inline-add">ill</mark>er <mark class="inline-add">le disque, saisissez votre mot de passe d’administrateur, qui correspond au mot de passe que vous utilisez pour ouvrir une session</mark> sur <mark class="inline-add">votr</mark>e <mark class="inline-add">Ma</mark>c<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- Une fois qu’Utilitaire de disque a terminé de vérifier le volume, sélectionnez l’élément suivant au-dessus dans la barre latérale, puis exécutez à nouveau S.O.S.<mark class="inline-remove"> Continuez à remonter la liste, en exécutant S.O.S. pour chaque volume du périphérique, pour chaque conteneur, puis pour le périphérique lui-même.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- Une fois qu’Utilitaire de disque a terminé de vérifier le volume, sélectionnez l’élément suivant au-dessus dans la barre latérale, puis exécutez à nouveau S.O.S.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text"><mark class="inline-remove">[I</mark>ma<mark class="inline-remove">g</mark>e<mark class="inline-remove">:</mark> <mark class="inline-remove">E</mark>xécut<mark class="inline-remove">io</mark>n<mark class="inline-remove"> de</mark> S.O.S. <mark class="inline-remove">d</mark>a<mark class="inline-remove">ns</mark> <mark class="inline-remove">U</mark>t<mark class="inline-remove">ilitai</mark>re de disque<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text"><mark class="inline-add">- Re</mark>m<mark class="inline-add">ontez ensuite d</mark>a<mark class="inline-add">ns la list</mark>e <mark class="inline-add">en e</mark>xécut<mark class="inline-add">a</mark>n<mark class="inline-add">t</mark> S.O.S. <mark class="inline-add">pour ch</mark>a<mark class="inline-add">que</mark> <mark class="inline-add">volume e</mark>t<mark class="inline-add"> g</mark>r<mark class="inline-add">oup</mark>e de <mark class="inline-add">volumes </mark>d<mark class="inline-add">e l’appareil, pu</mark>is<mark class="inline-add"> pour cha</mark>que<mark class="inline-add"> conteneur et enfin pour l’appareil lui-même.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">- Une fois l’opération terminée, quittez Utilitaire de disque. Si vous avez utilisé l<mark class="inline-remove">a fonction </mark>Utilitaire de disque de <mark class="inline-remove">la fonctionnalité de r</mark>écupération<mark class="inline-remove"> de</mark> macOS, vous pouvez maintenant redémarrer<mark class="inline-remove"> votre Mac :</mark> dans le menu Pomme <mark class="inline-remove">,</mark> <mark class="inline-remove">ch</mark>o<mark class="inline-remove">isissez</mark> <mark class="inline-remove">R</mark>edémarrer.</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">- Une fois l’opération terminée, quittez Utilitaire de disque. Si vous avez utilisé l<mark class="inline-add">’</mark>Utilitaire de disque de<mark class="inline-add">puis</mark> <mark class="inline-add">R</mark>écupération macOS, vous pouvez maintenant <mark class="inline-add">choisi</mark>r<mark class="inline-add"> R</mark>edémarrer dans le menu Pomme  <mark class="inline-add">p</mark>o<mark class="inline-add">ur</mark> <mark class="inline-add">r</mark>edémarrer<mark class="inline-add"> votre Mac</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">## Si Utilitaire de disque ne peut pas réparer ou détecter votre périphérique</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">## Si Utilitaire de disque ne peut pas réparer ou détecter votre périphérique</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
