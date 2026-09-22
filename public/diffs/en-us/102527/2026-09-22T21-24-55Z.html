@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Using Intel-based apps on a Mac with Apple silicon — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Using Intel-based apps on a Mac with Apple silicon</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/102527">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+47 ajouts</span>
+      <span class="badge removed">−31 suppressions</span>
+      <span class="badge">4 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">- [About Intel-based apps, Rosetta, and the transition to Apple silicon](https://support.apple.com/en-us/102527#about)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">- [About Intel-based apps, Rosetta, and the transition to Apple silicon](https://support.apple.com/en-us/102527#about)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">- [Update Intel-based apps for Apple silicon](https://support.apple.com/en-us/102527#update)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">- [Identify Intel-based apps](https://support.apple.com/en-us/102527#identify)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">- [Identify Intel-based apps](https://support.apple.com/en-us/102527#identify)</code></div>
+<div class="diff-line previous removed"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">- [Update Intel-based apps for Apple silicon](https://support.apple.com/en-us/102527#update)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">- [Install and use Rosetta to run Intel-based apps](https://support.apple.com/en-us/102527#use)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">- [Install and use Rosetta to run Intel-based apps](https://support.apple.com/en-us/102527#use)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">## About Intel-based apps, Rosetta, and the transition to Apple silicon</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">## About Intel-based apps, Rosetta, and the transition to Apple silicon</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">In 2020 [Apple announced the transition](https://www.apple.com/newsroom/2020/06/apple-announces-mac-transition-to-apple-silicon/) from Mac computers with Intel processors to [Mac computers with Apple silicon](https://support.apple.com/en-us/116943) . To ease this transition, Apple created Rosetta<mark class="inline-remove">, which works in the background to automatically translate Intel-based apps for use with Apple silicon. This has given app developers and users more time to update their apps for Apple silicon.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">In 2020 [Apple announced the transition](https://www.apple.com/newsroom/2020/06/apple-announces-mac-transition-to-apple-silicon/) from Mac computers with Intel processors to [Mac computers with Apple silicon](https://support.apple.com/en-us/116943) . To ease this transition, Apple created Rosetta<mark class="inline-add">:</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">Rosetta <mark class="inline-remove">i</mark>s a<mark class="inline-remove">v</mark>aila<mark class="inline-remove">bl</mark>e <mark class="inline-remove">f</mark>or a<mark class="inline-remove">ny</mark> <mark class="inline-remove">M</mark>a<mark class="inline-remove">c with A</mark>pp<mark class="inline-remove">le </mark>s<mark class="inline-remove">ilicon using [macOS 27 or earlier</mark>](https://support.apple.com/en-us/10<mark class="inline-remove">9033</mark>) <mark class="inline-remove">.</mark> <mark class="inline-remove">Starting</mark> with ma<mark class="inline-remove">cOS 28,</mark> the<mark class="inline-remove"> next majo</mark>r <mark class="inline-remove">m</mark>a<mark class="inline-remove">cOS relea</mark>s<mark class="inline-remove">e, Rosetta functionality will be available only</mark> for c<mark class="inline-remove">ertain older, unmaintained games that rely </mark>on<mark class="inline-remove"> Intel-based frameworks</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text"><mark class="inline-add">- </mark>Rosetta <mark class="inline-add">work</mark>s <mark class="inline-add">in the b</mark>a<mark class="inline-add">ckground to </mark>a<mark class="inline-add">utomat</mark>i<mark class="inline-add">cally trans</mark>la<mark class="inline-add">t</mark>e <mark class="inline-add">y</mark>o<mark class="inline-add">u</mark>r <mark class="inline-add">[Intel-b</mark>a<mark class="inline-add">sed</mark> apps](https://support.apple.com/en-us/10<mark class="inline-add">2527#identify</mark>) <mark class="inline-add">for</mark> <mark class="inline-add">use</mark> with <mark class="inline-add">Apple silicon. This has given app developers and users </mark>m<mark class="inline-add">ore time to upd</mark>a<mark class="inline-add">te</mark> the<mark class="inline-add">i</mark>r a<mark class="inline-add">pp</mark>s for <mark class="inline-add">Apple sili</mark>con.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">I</mark>denti<mark class="inline-remove">f</mark>y Intel-based a<mark class="inline-remove">pp</mark>s</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">Rosetta is available for any Mac with Apple silicon using [macOS 27 or earlier](https://support.apple.com/en-us/109033) . Starting with macOS 28, the next major macOS release, Rosetta functionality will be available only for certain ol</mark>de<mark class="inline-add">r, unmai</mark>nt<mark class="inline-add">a</mark>i<mark class="inline-add">ned games that rel</mark>y<mark class="inline-add"> on</mark> Intel-based <mark class="inline-add">fr</mark>a<mark class="inline-add">mework</mark>s<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text"><mark class="inline-remove">To</mark> <mark class="inline-remove">l</mark>e<mark class="inline-remove">arn which of</mark> your apps<mark class="inline-remove"> need to be updated</mark> for Apple silicon<mark class="inline-remove">, use the Finder or System Settings.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text"><mark class="inline-add">##</mark> <mark class="inline-add">Updat</mark>e your <mark class="inline-add">Intel-based </mark>apps for Apple silicon</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">For optimal performance and future compatibility, update your [Intel-based apps](https://support.apple.com/en-us/102527#identify) by replacing them with a &quot;Universal&quot; or &quot;Apple silicon&quot; version of the app, instead of relying on Rosetta to translate the app for use with Apple silicon.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- If you got the app from the App Store, you can [use the App Store to find and install updates](https://support.apple.com/en-us/102629) , if available.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- Or check the developer’s website for a &quot;Universal&quot; or &quot;Apple silicon&quot; version of the app. A link to their website might be offered in the notification you received about the app.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">- Some apps offer a built-in way to get updates. Look for a &quot;Check for Updates&quot; option or similar in the app’s menus or settings.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- If necessary, [contact the app developer](https://support.apple.com/en-us/103190) to learn whether an update for Apple silicon is available or planned.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">Some apps might include or use components, such as extensions or updaters, that need to be updated separately. If you added functionality to your app by installing Intel-based plug-ins, extensions, or other add-ons from a different developer, remember to update those as well.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">## Identify your Intel-based apps</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">When opening an Intel-based app, you might be notified that support is ending for Intel-based apps, and that your app or a component used by your app will not work with a future release of macOS (macOS 28). You can also use the Finder or System Settings to learn which apps require an update for Apple silicon.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">### Use the Finder</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">### Use the Finder</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">- In the Info window that opens, find the information shown after Kind:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">- In the Info window that opens, find the information shown after Kind:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- Application (Intel): The app is made for a Mac with an Intel processor. You should update the app for Apple silicon.</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">- Application (Intel): The app is made for a Mac with an Intel processor. You should <mark class="inline-add">[</mark>update the app for Apple silicon<mark class="inline-add">](https://support</mark>.<mark class="inline-add">apple.com/en-us/102527#update) .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">- Application (Universal): The app is made for both a Mac with Apple silicon and a Mac with an Intel processor.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">- Application (Universal): The app is made for both a Mac with Apple silicon and a Mac with an Intel processor.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">[Image: Info window for an Intel-based app.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">[Image: Info window for an Intel-based app.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">For Universal apps, app developers can include an &quot;Open using Rosetta&quot; setting in the Info window. If this setting is available for your app, you can use it in macOS 27 or earlier to force the app to open as an Intel-based app, which allows it to use Intel-only plug-ins, extensions, and other add-ons. If you later update the add-on for Apple silicon, deselect this setting.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">### Use System Settings</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">### Use System Settings</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- Make sure that you’re using macOS 27 or later.</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">- Make sure that you’re using macOS 27 <mark class="inline-add">Golden Gate </mark>or later.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">- From the Apple menu , choose System Settings.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">- From the Apple menu , choose System Settings.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">[Image: List of Intel-based apps in System Settings.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">[Image: List of Intel-based apps in System Settings.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">## Update Intel-based apps for Apple silicon</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">For optimal performance and future compatibility, update your Intel-based apps by replacing them with a &quot;Universal&quot; or &quot;Apple silicon&quot; version of the app.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">- If you got the app from the App Store, you can [use the App Store to find and install updates](https://support.apple.com/en-us/102629) , if available.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">- You can also check the developer’s website for a &quot;Universal&quot; or &quot;Apple silicon&quot; version of the app. A link to their website might be offered in the notification you received about the app.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">- Some apps offer a built-in way to get updates. Look for a &quot;Check for Updates&quot; option or similar in the app’s menus or settings.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">- If necessary, [contact the app developer](https://support.apple.com/en-us/103190) to learn whether an update for Apple silicon is available or planned.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">Some apps might include or use components, such as extensions or updaters, that need to be updated separately. If you added functionality to your app by installing Intel-based plug-ins, extensions, or other add-ons from a different developer, remember to update those as well.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">## Install and use Rosetta to run Intel-based apps</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">## Install and use Rosetta to run Intel-based apps</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text"><mark class="inline-remove">T</mark>o install Rosetta, open <mark class="inline-remove">any</mark> <mark class="inline-remove">I</mark>ntel<mark class="inline-remove">-</mark>ba<mark class="inline-remove">se</mark>d<mark class="inline-remove"> app</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text"><mark class="inline-add">Use either of these methods t</mark>o install Rosetta<mark class="inline-add"> for [macOS 27 or earlier](https://support.apple.com/en-us/109033) . Remember</mark>,<mark class="inline-add"> Rosetta is not an app that you manually</mark> open <mark class="inline-add">or</mark> <mark class="inline-add">i</mark>nte<mark class="inline-add">ract with, but works automatica</mark>l<mark class="inline-add">ly in the </mark>ba<mark class="inline-add">ckgroun</mark>d.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text"><mark class="inline-remove">-</mark> I<mark class="inline-remove">f </mark>t<mark class="inline-remove">h</mark>e app<mark class="inline-remove"> opens, Rosetta is already installed and working. Rosetta is not an app that you interact with, but works automatically in the background to translate the app for Apple silicon.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text"><mark class="inline-add">### Open any</mark> I<mark class="inline-add">n</mark>te<mark class="inline-add">l-based</mark> app</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text">- <mark class="inline-remove">If you’re asked to install Rosetta, m</mark>ake sure that your Mac is connected to the internet<mark class="inline-remove">, then click Install and enter your macOS user name and password to allow installation to proceed</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">- <mark class="inline-add">M</mark>ake sure that your Mac is connected to the internet.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">Or<mark class="inline-remove"> </mark>use <mark class="inline-remove">Terminal to install Rosetta:</mark></code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text"><mark class="inline-add">- </mark>O<mark class="inline-add">pen any [Intel-based app](https://suppo</mark>r<mark class="inline-add">t.apple.com/en-</mark>us<mark class="inline-add">/102527#id</mark>e<mark class="inline-add">ntify)</mark> <mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">- <mark class="inline-remove">Make sure that your Mac is connected to</mark> the <mark class="inline-remove">internet. Then</mark> open<mark class="inline-remove"> Terminal</mark>, <mark class="inline-remove">which</mark> is in the <mark class="inline-remove">Utilities folde</mark>r<mark class="inline-remove"> of y</mark>ou<mark class="inline-remove">r Applicatio</mark>n<mark class="inline-remove">s fol</mark>d<mark class="inline-remove">er</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">- <mark class="inline-add">If</mark> the <mark class="inline-add">app</mark> open<mark class="inline-add">s</mark>, <mark class="inline-add">Rosetta</mark> is<mark class="inline-add"> already installed and working</mark> in the <mark class="inline-add">backg</mark>round.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">85</span><code class="line-text">- <mark class="inline-remove">T</mark>y<mark class="inline-remove">p</mark>e so<mark class="inline-remove">ftwareupdate</mark> <mark class="inline-remove">--</mark>install<mark class="inline-remove">-r</mark>osetta in<mark class="inline-remove"> </mark>t<mark class="inline-remove">he Termin</mark>al<mark class="inline-remove"> window, then press Return</mark> and <mark class="inline-remove">f</mark>ollow <mark class="inline-remove">the onscreen </mark>inst<mark class="inline-remove">ruc</mark>tion<mark class="inline-remove">s</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">- <mark class="inline-add">If </mark>y<mark class="inline-add">ou’r</mark>e <mark class="inline-add">a</mark>s<mark class="inline-add">ked t</mark>o install<mark class="inline-add"> R</mark>osetta<mark class="inline-add">,</mark> <mark class="inline-add">cl</mark>i<mark class="inline-add">ck I</mark>n<mark class="inline-add">s</mark>tal<mark class="inline-add">l</mark> and <mark class="inline-add">enter y</mark>o<mark class="inline-add">ur macOS user name and password to a</mark>llow inst<mark class="inline-add">alla</mark>tion<mark class="inline-add"> to proceed</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text">[Image: Prompt to install Rosetta <mark class="inline-remove">i</mark>n o<mark class="inline-remove">rd</mark>e<mark class="inline-remove">r to use</mark> an Intel-based app.]</code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text">[Image: Prompt to install Rosetta <mark class="inline-add">whe</mark>n o<mark class="inline-add">p</mark>e<mark class="inline-add">ning</mark> an Intel-based app.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">### Or use Terminal</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">- Make sure that your Mac is connected to the internet.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">- Open Terminal, which is in the Utilities folder of your Applications folder.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text">- Type or paste this command in the Terminal window:</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">97</span><code class="line-text">- softwareupdate --install-rosetta</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text">- Press Return and follow the onscreen instructions.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">## Learn more</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">103</span><code class="line-text">If the Info window for an app shows an &quot;Open using Rosetta&quot; setting, the app is Universal and the app developer chose to include this setting. It forces the app to open as an Intel-based app instead of an app for Apple silicon, which allows it to use Intel-only plug-ins, extensions, and other add-ons. If you later update the add-on for Apple silicon, deselect this setting.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
