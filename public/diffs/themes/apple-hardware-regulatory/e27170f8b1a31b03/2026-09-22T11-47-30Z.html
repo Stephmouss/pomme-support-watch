@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>AirPods Pro 3 — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>AirPods Pro 3</h1></div>
+      <a class="source" href="https://regulatoryinfo.apple.com/hearingprotection">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+13 ajouts</span>
+      <span class="badge removed">−11 suppressions</span>
+      <span class="badge">11 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 164 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">165</span><code class="line-text">            },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">165</span><code class="line-text">            },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">166</span><code class="line-text">            {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">166</span><code class="line-text">            {</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">167</span><code class="line-text">              &quot;country_name&quot;: &quot;Austria&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">167</span><code class="line-text">              &quot;country_name&quot;: &quot;Austria&quot;,</code></div>
+<div class="diff-line previous removed"><span class="line-number">168</span><code class="line-text">              &quot;<mark class="inline-remove">f</mark>ile<mark class="inline-remove">Id</mark>&quot;: <mark class="inline-remove">&quot;hearingProtection/A3063_A3064_HP_DS_EN-352_DE_AT_1782984501047.pdf&quot;</mark>,</code></div>
+<div class="diff-line current added"><span class="line-number">168</span><code class="line-text">              &quot;<mark class="inline-add">extractedF</mark>ile<mark class="inline-add">s</mark>&quot;: <mark class="inline-add">[]</mark>,</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">169</span><code class="line-text">              &quot;fileId&quot;: &quot;hearingProtection/A3063_A3064_HP_DS_EN-352_DE_AT_1790067955329.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">169</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_DE_AT.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">170</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_DE_AT.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">170</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="diff-line current unchanged"><span class="line-number">171</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">171</span><code class="line-text">            },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">172</span><code class="line-text">            },</code></div>
+<div class="fold"><span>••• 17 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">189</span><code class="line-text">            },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">190</span><code class="line-text">            },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">190</span><code class="line-text">            {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">191</span><code class="line-text">            {</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">191</span><code class="line-text">              &quot;country_name&quot;: &quot;Belgium&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">192</span><code class="line-text">              &quot;country_name&quot;: &quot;Belgium&quot;,</code></div>
+<div class="diff-line previous removed"><span class="line-number">192</span><code class="line-text">              &quot;<mark class="inline-remove">f</mark>ile<mark class="inline-remove">Id</mark>&quot;: <mark class="inline-remove">&quot;hearingProtection/A3063_A3064_HP_DS_EN-352_FR-NL-DE_BE_1783071162225.pdf&quot;</mark>,</code></div>
+<div class="diff-line current added"><span class="line-number">193</span><code class="line-text">              &quot;<mark class="inline-add">extractedF</mark>ile<mark class="inline-add">s</mark>&quot;: <mark class="inline-add">[]</mark>,</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">194</span><code class="line-text">              &quot;fileId&quot;: &quot;hearingProtection/A3063_A3064_HP_DS_EN-352_FR-NL-DE_BE_1790067891426.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">193</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_FR-NL-DE_BE.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">195</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_FR-NL-DE_BE.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">194</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="diff-line current unchanged"><span class="line-number">196</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">195</span><code class="line-text">            },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">197</span><code class="line-text">            },</code></div>
+<div class="fold"><span>••• 233 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">429</span><code class="line-text">            },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">431</span><code class="line-text">            },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">430</span><code class="line-text">            {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">432</span><code class="line-text">            {</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">431</span><code class="line-text">              &quot;country_name&quot;: &quot;Germany&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">433</span><code class="line-text">              &quot;country_name&quot;: &quot;Germany&quot;,</code></div>
+<div class="diff-line previous removed"><span class="line-number">432</span><code class="line-text">              &quot;<mark class="inline-remove">f</mark>ile<mark class="inline-remove">Id</mark>&quot;: <mark class="inline-remove">&quot;hearingProtection/A3063_A3064_HP_DS_EN-352_DE_DE_1782986944323.pdf&quot;</mark>,</code></div>
+<div class="diff-line current added"><span class="line-number">434</span><code class="line-text">              &quot;<mark class="inline-add">extractedF</mark>ile<mark class="inline-add">s</mark>&quot;: <mark class="inline-add">[]</mark>,</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">435</span><code class="line-text">              &quot;fileId&quot;: &quot;hearingProtection/A3063_A3064_HP_DS_EN-352_DE_DE_1790067838958.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">433</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_DE_DE.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">436</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_DE_DE.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">434</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="diff-line current unchanged"><span class="line-number">437</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">435</span><code class="line-text">            },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">438</span><code class="line-text">            },</code></div>
+<div class="fold"><span>••• 155 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">591</span><code class="line-text">            },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">594</span><code class="line-text">            },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">592</span><code class="line-text">            {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">595</span><code class="line-text">            {</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">593</span><code class="line-text">              &quot;country_name&quot;: &quot;Liechtenstein&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">596</span><code class="line-text">              &quot;country_name&quot;: &quot;Liechtenstein&quot;,</code></div>
+<div class="diff-line previous removed"><span class="line-number">594</span><code class="line-text">              &quot;<mark class="inline-remove">f</mark>ile<mark class="inline-remove">Id</mark>&quot;: <mark class="inline-remove">&quot;hearingProtection/A3063_A3064_HP_DS_EN-352_DE_LI_1782991196496.pdf&quot;</mark>,</code></div>
+<div class="diff-line current added"><span class="line-number">597</span><code class="line-text">              &quot;<mark class="inline-add">extractedF</mark>ile<mark class="inline-add">s</mark>&quot;: <mark class="inline-add">[]</mark>,</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">598</span><code class="line-text">              &quot;fileId&quot;: &quot;hearingProtection/A3063_A3064_HP_DS_EN-352_DE_LI_1790067931772.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">595</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_DE_LI.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">599</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_DE_LI.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">596</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="diff-line current unchanged"><span class="line-number">600</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">597</span><code class="line-text">            },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">601</span><code class="line-text">            },</code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">603</span><code class="line-text">            },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">607</span><code class="line-text">            },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">604</span><code class="line-text">            {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">608</span><code class="line-text">            {</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">605</span><code class="line-text">              &quot;country_name&quot;: &quot;Luxembourg&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">609</span><code class="line-text">              &quot;country_name&quot;: &quot;Luxembourg&quot;,</code></div>
+<div class="diff-line previous removed"><span class="line-number">606</span><code class="line-text">              &quot;<mark class="inline-remove">f</mark>ile<mark class="inline-remove">Id</mark>&quot;: <mark class="inline-remove">&quot;hearingProtection/A3063_A3064_HP_DS_EN-352_FR-DE_LU_1783071579949.pdf&quot;</mark>,</code></div>
+<div class="diff-line current added"><span class="line-number">610</span><code class="line-text">              &quot;<mark class="inline-add">extractedF</mark>ile<mark class="inline-add">s</mark>&quot;: <mark class="inline-add">[]</mark>,</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">611</span><code class="line-text">              &quot;fileId&quot;: &quot;hearingProtection/A3063_A3064_HP_DS_EN-352_FR-DE_LU_1790067911814.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">607</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_FR-DE_LU.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">612</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_FR-DE_LU.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">608</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="diff-line current unchanged"><span class="line-number">613</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">609</span><code class="line-text">            },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">614</span><code class="line-text">            },</code></div>
+<div class="fold"><span>••• 47 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">657</span><code class="line-text">            },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">662</span><code class="line-text">            },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">658</span><code class="line-text">            {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">663</span><code class="line-text">            {</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">659</span><code class="line-text">              &quot;country_name&quot;: &quot;Mauritius&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">664</span><code class="line-text">              &quot;country_name&quot;: &quot;Mauritius&quot;,</code></div>
+<div class="diff-line previous removed"><span class="line-number">660</span><code class="line-text">              &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">661</span><code class="line-text">              &quot;fileId&quot;: &quot;hearingProtection/A3063_A3064_HP_DS_EN-352_FR-EN_MU_1783081739199.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">665</span><code class="line-text">              &quot;fileId&quot;: &quot;hearingProtection/A3063_A3064_HP_DS_EN-352_FR-EN_MU_1783081739199.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">662</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_FR-EN_MU.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">666</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_FR-EN_MU.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">663</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="diff-line current unchanged"><span class="line-number">667</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="fold"><span>••• 30 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">694</span><code class="line-text">            },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">698</span><code class="line-text">            },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">695</span><code class="line-text">            {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">699</span><code class="line-text">            {</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">696</span><code class="line-text">              &quot;country_name&quot;: &quot;Morocco&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">700</span><code class="line-text">              &quot;country_name&quot;: &quot;Morocco&quot;,</code></div>
+<div class="diff-line previous removed"><span class="line-number">697</span><code class="line-text">              &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">698</span><code class="line-text">              &quot;fileId&quot;: &quot;hearingProtection/A3063_A3064_HP_DS_EN-352_AR-FR_MA_1783081656064.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">701</span><code class="line-text">              &quot;fileId&quot;: &quot;hearingProtection/A3063_A3064_HP_DS_EN-352_AR-FR_MA_1783081656064.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">699</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_AR-FR_MA.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">702</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_AR-FR_MA.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">700</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="diff-line current unchanged"><span class="line-number">703</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="fold"><span>••• 90 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">791</span><code class="line-text">            },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">794</span><code class="line-text">            },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">792</span><code class="line-text">            {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">795</span><code class="line-text">            {</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">793</span><code class="line-text">              &quot;country_name&quot;: &quot;Rwanda&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">796</span><code class="line-text">              &quot;country_name&quot;: &quot;Rwanda&quot;,</code></div>
+<div class="diff-line previous removed"><span class="line-number">794</span><code class="line-text">              &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">795</span><code class="line-text">              &quot;fileId&quot;: &quot;hearingProtection/A3063_A3064_HP_DS_EN-352_FR-EN_RW_1783081675211.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">797</span><code class="line-text">              &quot;fileId&quot;: &quot;hearingProtection/A3063_A3064_HP_DS_EN-352_FR-EN_RW_1783081675211.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">796</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_FR-EN_RW.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">798</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_FR-EN_RW.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">797</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="diff-line current unchanged"><span class="line-number">799</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="fold"><span>••• 42 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">840</span><code class="line-text">            },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">842</span><code class="line-text">            },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">841</span><code class="line-text">            {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">843</span><code class="line-text">            {</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">842</span><code class="line-text">              &quot;country_name&quot;: &quot;Serbia&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">844</span><code class="line-text">              &quot;country_name&quot;: &quot;Serbia&quot;,</code></div>
+<div class="diff-line previous removed"><span class="line-number">843</span><code class="line-text">              &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">844</span><code class="line-text">              &quot;fileId&quot;: &quot;hearingProtection/A3063_A3064_HP_DS_EN-352_SR_RS_1783081710623.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">845</span><code class="line-text">              &quot;fileId&quot;: &quot;hearingProtection/A3063_A3064_HP_DS_EN-352_SR_RS_1783081710623.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">845</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_SR_RS.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">846</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_SR_RS.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">846</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="diff-line current unchanged"><span class="line-number">847</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="fold"><span>••• 60 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">907</span><code class="line-text">            },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">908</span><code class="line-text">            },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">908</span><code class="line-text">            {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">909</span><code class="line-text">            {</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">909</span><code class="line-text">              &quot;country_name&quot;: &quot;Switzerland&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">910</span><code class="line-text">              &quot;country_name&quot;: &quot;Switzerland&quot;,</code></div>
+<div class="diff-line previous removed"><span class="line-number">910</span><code class="line-text">              &quot;<mark class="inline-remove">f</mark>ile<mark class="inline-remove">Id</mark>&quot;: <mark class="inline-remove">&quot;hearingProtection/A3063_A3064_HP_DS_EN-352_FR-DE-IT_CH_1783081366169.pdf&quot;</mark>,</code></div>
+<div class="diff-line current added"><span class="line-number">911</span><code class="line-text">              &quot;<mark class="inline-add">extractedF</mark>ile<mark class="inline-add">s</mark>&quot;: <mark class="inline-add">[]</mark>,</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">912</span><code class="line-text">              &quot;fileId&quot;: &quot;hearingProtection/A3063_A3064_HP_DS_EN-352_FR-DE-IT_CH_1790067874162.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">911</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_FR-DE-IT_CH.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">913</span><code class="line-text">              &quot;originalFileName&quot;: &quot;A3063_A3064_HP_DS_EN-352_FR-DE-IT_CH.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">912</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="diff-line current unchanged"><span class="line-number">914</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">913</span><code class="line-text">            },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">915</span><code class="line-text">            },</code></div>
+<div class="fold"><span>••• 100 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">1014</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1016</span><code class="line-text">              &quot;urlVersion&quot;: 0</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">1015</span><code class="line-text">            }</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1017</span><code class="line-text">            }</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">1016</span><code class="line-text">          ],</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1018</span><code class="line-text">          ],</code></div>
+<div class="diff-line previous removed"><span class="line-number">1017</span><code class="line-text">          &quot;modifiedDate&quot;: &quot;2026-07<mark class="inline-remove">-</mark>0<mark class="inline-remove">3T12:31:11</mark>.8<mark class="inline-remove">03</mark>+00:00&quot;</code></div>
+<div class="diff-line current added"><span class="line-number">1019</span><code class="line-text">          &quot;modifiedDate&quot;: &quot;2026-0<mark class="inline-add">9-22T09:0</mark>7<mark class="inline-add">:</mark>0<mark class="inline-add">9</mark>.8<mark class="inline-add">92</mark>+00:00&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">1018</span><code class="line-text">        }</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1020</span><code class="line-text">        }</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">1019</span><code class="line-text">      ]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1021</span><code class="line-text">      ]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">1020</span><code class="line-text">    }</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1022</span><code class="line-text">    }</code></div>
+<div class="fold"><span>••• 4 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
