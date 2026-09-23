@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Comment retrouver votre iPhone ou iPad égaré - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Comment retrouver votre iPhone ou iPad égaré - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/101593">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+36 ajouts</span>
+      <span class="badge removed">−32 suppressions</span>
+      <span class="badge">4 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Comment retrouver votre iPhone ou iPad égaré</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Comment retrouver votre iPhone ou iPad égaré</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Si vous avez perdu votre iPhone ou iPad, vous pouvez utiliser Localiser pour essayer de le retrouver et le marquer comme perdu afin de protéger vos informations personnelles.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Si vous avez perdu votre iPhone ou iPad, vous pouvez utiliser <mark class="inline-add">la fonctionnalité </mark>Localiser pour essayer de le retrouver et<mark class="inline-add"> de</mark> le marquer comme perdu afin de protéger vos informations personnelles.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## Méthodes pour localiser votre iPhone ou iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## Méthodes pour localiser votre iPhone ou iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">Vous pouvez retrouver un iPhone ou iPad <mark class="inline-remove">éga</mark>r<mark class="inline-remove">é s</mark>u<mark class="inline-remove">r le Web</mark> à l’ad<mark class="inline-remove">ress</mark>e <mark class="inline-remove">[iClou</mark>d<mark class="inline-remove">.com/find](http://iCloud.com/find) ou av</mark>e<mark class="inline-remove">c</mark> l’app Localiser sur un autre appareil.</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">Vous pouvez retrouver un iPhone ou <mark class="inline-add">un </mark>iPad <mark class="inline-add">pe</mark>r<mark class="inline-add">d</mark>u à l’a<mark class="inline-add">i</mark>de de l’app Localiser sur un autre appareil<mark class="inline-add"> ou sur le Web à l’adresse [icloud</mark>.<mark class="inline-add">com/find](https://icloud.com/find) . Si vous ne retrouvez pas votre appareil immédiatement, [marquez-le comme perdu pour le protéger](https://support.apple.com/fr-fr/101593#lost) .</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">Si vous ne retrouvez pas votre appareil immédiatement, [marquez-le comme perdu pour le protéger](https://support.apple.com/fr-fr/101593#lost) .</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">[Découvrez la marche à suivre si votre iPhone ou iPad a été volé](https://support.apple.com/fr-fr/120837)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">[Découvrez la marche à suivre si votre iPhone ou iPad a été volé](https://support.apple.com/fr-fr/120837)</code></div>
+<div class="diff-line previous removed"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">### Utiliser Localiser appareils sur iCloud.com/find</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">Lorsque vous vous connectez à [iCloud.com/find](https://www.icloud.com/find/) , vous pouvez vous servir de l’app Localiser appareils pour localiser vos appareils. Une fois dans l’app, examinez la liste de vos appareils sous Tous les appareils et touchez l’appareil à retrouver. Sur la carte d’information de l’appareil, vous pouvez le faire sonner pour le localiser plus facilement, le marquer comme perdu ou effacer son contenu.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">### Utiliser l’app Localiser sur un autre appareil</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">### Utiliser l’app Localiser sur un autre appareil</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">[Comment utiliser l’iPhone d’un membre de la famille pour localiser votre appareil égaré](https://support.apple.com/guide/iphone/iph6231f621a)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">[Comment utiliser l’iPhone d’un membre de la famille pour localiser votre appareil égaré](https://support.apple.com/guide/iphone/iph6231f621a)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">### Utiliser la fonctionnalité Localiser appareils sur icloud.com/find</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">Lorsque vous vous connectez à [icloud.com/find](https://www.icloud.com/find/) , vous pouvez utiliser la fonctionnalité Localiser pour retrouver vos appareils. Une fois dans l’app Localiser, consultez la liste de vos appareils sous la section Tous les appareils, puis touchez l’appareil à retrouver. Vous pouvez ensuite le faire sonner pour le retrouver, le marquer comme perdu ou effacer son contenu.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">## Méthodes pour marquer votre iPhone ou iPad comme perdu</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">## Méthodes pour marquer votre iPhone ou iPad comme perdu</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text"><mark class="inline-remove">Il existe plusieurs méthodes pour marquer votre iPhone ou iPad comme perdu. </mark>Lorsque vous marquez votre appareil comme perdu, votre appareil est placé en mode Perdu, ce qui signifie qu’il est verrouillé avec votre code d’accès, et que les cartes de paiement et autres cartes que vous utilisez avec Apple Pay sont suspendues. Vous pouvez en <mark class="inline-remove">outre </mark>a<mark class="inline-remove">ff</mark>i<mark class="inline-remove">ch</mark>er un numéro de téléphone et un message p<mark class="inline-remove">our p</mark>ermett<mark class="inline-remove">re</mark> à d’autres personnes de vous contacter si elles trouvent votre appareil.</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">Lorsque vous marquez votre appareil comme perdu, votre appareil est placé en mode Perdu, ce qui signifie qu’il est verrouillé avec votre code d’accès, et que les cartes de paiement et autres cartes que vous utilisez avec Apple Pay sont suspendues. Vous pouvez <mark class="inline-add">égalem</mark>en<mark class="inline-add">t</mark> <mark class="inline-add">l</mark>ai<mark class="inline-add">ss</mark>er un numéro de téléphone et un message permett<mark class="inline-add">ant</mark> à d’autres personnes de vous contacter si elles <mark class="inline-add">re</mark>trouvent votre appareil.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">Apple ne vous contactera jamais pour vous informer que votre iPhone ou iPad a été retrouvé. Ne partagez jamais le code d’accès de votre appareil, vos mots de passe, vos codes de validation ou toute autre information relative à votre compte avec qui que ce soit, même si on vous le demande.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">Restez vigilant(e) pour éviter les procédés d’ingénierie sociale comme les messages d’hameçonnage, les faux appels d’assistance et autres escroqueries.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">[Découvrez comment protéger vos données personnelles contre l’ingénierie sociale.](https://support.apple.com/fr-fr/102568)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">[Image: Réglages du mode Perdu sur un iPhone, affichant les options permettant d’activer le mode Perdu ainsi qu’un aperçu du message personnalisé et du numéro de téléphone qui s’afficheront sur l’appareil perdu.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">Lorsque vous marquez un appareil comme perdu :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">Lorsque vous marquez un appareil comme perdu :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- <mark class="inline-remove">L’apparei</mark>l <mark class="inline-remove">n’</mark>apparaît<mark class="inline-remove">ra pas</mark> en ligne et en mode Perdu <mark class="inline-remove">ta</mark>nt <mark class="inline-remove">qu</mark>’il <mark class="inline-remove">n’</mark>a<mark class="inline-remove">ura pas</mark> été allumé et connecté à un réseau Wi-Fi ou <mark class="inline-remove">mob</mark>i<mark class="inline-remove">l</mark>e.</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">- <mark class="inline-add">I</mark>l apparaît en ligne et en mode Perdu <mark class="inline-add">uniqueme</mark>nt <mark class="inline-add">si l</mark>’<mark class="inline-add">appare</mark>il a été allumé e<mark class="inline-add">t qu’il es</mark>t connecté à un réseau Wi-Fi ou <mark class="inline-add">cellula</mark>i<mark class="inline-add">r</mark>e.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- Si <mark class="inline-remove">vous utilisez </mark>la protection en cas de vol de l’appareil <mark class="inline-remove">po</mark>ur iPhone, Face ID ou Touch ID es<mark class="inline-remove">t</mark> nécessaire pour désactiver le mode Perdu. <mark class="inline-remove">E</mark>n<mark class="inline-remove"> l’occu</mark>r<mark class="inline-remove">renc</mark>e, même si une personne <mark class="inline-remove">a</mark> votre iPhone et connaît votre code d’accès, votre appareil<mark class="inline-remove"> restera verrouillé pour elle</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- Si la <mark class="inline-add">[</mark>protection en cas de vol de l’appareil <mark class="inline-add">est activée s</mark>ur <mark class="inline-add">l’</mark>iPhone<mark class="inline-add">](https://support.apple.com/fr-fr/120340) </mark>, Face ID ou Touch ID <mark class="inline-add">s</mark>e<mark class="inline-add">ra alor</mark>s nécessaire pour désactiver le mode Perdu. <mark class="inline-add">De cette ma</mark>n<mark class="inline-add">iè</mark>re, même si une personne <mark class="inline-add">détient</mark> votre iPhone et connaît votre code d’accès, <mark class="inline-add">il lui sera impossible de déverrouiller </mark>votre appareil.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">- Si vous possédez un contrat AppleCare+ avec couverture en cas de perte ou de vol, ne supprimez pas votre iPhone de Localiser ni de votre compte Apple tant que votre réclamation n’a pas été totalement approuvée.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">- Si vous possédez un contrat AppleCare+ avec couverture en cas de perte ou de vol, ne supprimez pas votre iPhone de Localiser ni de votre compte Apple tant que votre réclamation n’a pas été totalement approuvée.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text"><mark class="inline-remove">App</mark>le n<mark class="inline-remove">e</mark> <mark class="inline-remove">vou</mark>s <mark class="inline-remove">cont</mark>acte<mark class="inline-remove">ra</mark> <mark class="inline-remove">jamai</mark>s<mark class="inline-remove"> po</mark>ur<mark class="inline-remove"> vous informer que votre iPhone ou iPad a été retrouvé. Ne partagez jamais le code d’accès de</mark> votre appareil ni d<mark class="inline-remove">’</mark>a<mark class="inline-remove">utres informatio</mark>ns <mark class="inline-remove">d</mark>e com<mark class="inline-remove">pte (telles que des </mark>m<mark class="inline-remove">ots de passe ou des codes de vérification) avec une autr</mark>e personne.</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text"><mark class="inline-add">Si </mark>l<mark class="inline-add">a fonctionnalité Localis</mark>e<mark class="inline-add">r</mark> n<mark class="inline-add">’était</mark> <mark class="inline-add">pa</mark>s act<mark class="inline-add">ivé</mark>e sur votre appareil <mark class="inline-add">avant qu’il ne soit perdu, celui-ci n’apparaîtra pas sur la page [icloud.com/find](https://www.icloud.com/find/) </mark>ni dans <mark class="inline-add">l’app Localis</mark>e<mark class="inline-add">r, et vous ne pourrez pas le marquer</mark> comme per<mark class="inline-add">du ni effacer </mark>son<mark class="inline-add"> co</mark>n<mark class="inline-add">tenu à distanc</mark>e.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text"><mark class="inline-remove">Res</mark>t<mark class="inline-remove">ez vig</mark>il<mark class="inline-remove">ant(e) pour év</mark>i<mark class="inline-remove">t</mark>er l<mark class="inline-remove">es</mark> <mark class="inline-remove">pr</mark>oc<mark class="inline-remove">édés d’</mark>i<mark class="inline-remove">ngénierie sociale comme les messages d’hameç</mark>onna<mark class="inline-remove">g</mark>e<mark class="inline-remove">, les faux</mark> appels d<mark class="inline-remove">’ass</mark>i<mark class="inline-remove">sta</mark>n<mark class="inline-remove">ce et autres escroqueries.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text"><mark class="inline-add">### U</mark>tili<mark class="inline-add">s</mark>er l<mark class="inline-add">a</mark> <mark class="inline-add">f</mark>o<mark class="inline-add">n</mark>c<mark class="inline-add">t</mark>ionna<mark class="inline-add">lité Localis</mark>e<mark class="inline-add">r</mark> app<mark class="inline-add">ar</mark>e<mark class="inline-add">i</mark>ls <mark class="inline-add">sur iclou</mark>d<mark class="inline-add">.com/f</mark>in<mark class="inline-add">d</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text"><mark class="inline-remove">[Ob</mark>tenez p<mark class="inline-remove">lu</mark>s <mark class="inline-remove">d’</mark>in<mark class="inline-remove">f</mark>o<mark class="inline-remove">rm</mark>ation<mark class="inline-remove">s</mark> <mark class="inline-remove">sur l’ingénierie sociale et les mesures que v</mark>ous pouvez <mark class="inline-remove">p</mark>r<mark class="inline-remove">endre po</mark>u<mark class="inline-remove">r protég</mark>er vo<mark class="inline-remove">s</mark> <mark class="inline-remove">d</mark>o<mark class="inline-remove">nné</mark>e<mark class="inline-remove">s</mark> personnelles<mark class="inline-remove">](https://suppo</mark>r<mark class="inline-remove">t.</mark>appl<mark class="inline-remove">e</mark>.<mark class="inline-remove">com/fr-fr/102568) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text"><mark class="inline-add">Pour vous connec</mark>te<mark class="inline-add">r à [icloud.com/fi</mark>n<mark class="inline-add">d](https://www.icloud.com/find/) , vous n’av</mark>ez p<mark class="inline-add">a</mark>s <mark class="inline-add">beso</mark>in<mark class="inline-add"> de c</mark>o<mark class="inline-add">de de valid</mark>ation<mark class="inline-add">.</mark> <mark class="inline-add">V</mark>ous pouvez <mark class="inline-add">donc ma</mark>r<mark class="inline-add">q</mark>uer vo<mark class="inline-add">tre</mark> <mark class="inline-add">appareil c</mark>o<mark class="inline-add">mm</mark>e per<mark class="inline-add">du, même </mark>s<mark class="inline-add">’il s’agit de votre appareil de confiance. Si un code de validation vous est demandé, sélecti</mark>onne<mark class="inline-add">z p</mark>l<mark class="inline-add">utôt </mark>le<mark class="inline-add"> bouton Locali</mark>s<mark class="inline-add">e</mark>r<mark class="inline-add"> </mark>app<mark class="inline-add">arei</mark>l<mark class="inline-add">s</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text"><mark class="inline-remove">### Utilis</mark>er <mark class="inline-remove">L</mark>o<mark class="inline-remove">calis</mark>e<mark class="inline-remove">r</mark> appareil<mark class="inline-remove">s</mark> sur i<mark class="inline-remove">C</mark>loud.com/find</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text"><mark class="inline-add">[Marqu</mark>er <mark class="inline-add">v</mark>o<mark class="inline-add">tr</mark>e appareil<mark class="inline-add"> comme perdu</mark> sur i<mark class="inline-add">c</mark>loud.com/find<mark class="inline-add">](https://www.icloud.com/find/)</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">Pour vous connecter à iCloud.com/find, vous n’avez pas besoin de code de vérification. Vous pouvez donc marquer votre appareil comme perdu, même si vous avez perdu votre appareil de confiance. Si un code de vérification vous est demandé, sélectionnez plutôt le bouton Localiser appareils.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">[Marquer votre appareil comme perdu sur iCloud.com/find](https://www.icloud.com/find/)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">[En savoir plus sur l’utilisation du mode Perdu sur iCloud.com](https://support.apple.com/com/guide/icloud/mmfc0f0165/icloud)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">[En savoir plus sur l’utilisation du mode Perdu sur iCloud.com](https://support.apple.com/com/guide/icloud/mmfc0f0165/icloud)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">### Utiliser l’app Localiser sur un autre appareil ou sur l’appareil d’un membre d’un groupe de partage familial</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">### Utiliser l’app Localiser sur un autre appareil ou sur l’appareil d’un membre d’un groupe de partage familial</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">- Dans l’app Localiser<mark class="inline-remove"> (ou Localiser appareils</mark> s<mark class="inline-remove">ur App</mark>le<mark class="inline-remove"> Wa</mark>t<mark class="inline-remove">ch), accéd</mark>ez<mark class="inline-remove"> à</mark> l’onglet Appareils.</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">- Dans l’app Localiser<mark class="inline-add">,</mark> s<mark class="inline-add">é</mark>le<mark class="inline-add">c</mark>t<mark class="inline-add">ionn</mark>ez l’onglet Appareils.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">- Faites défiler vers le bas et sélectionnez votre iPhone ou iPad égaré.</code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">- Faites défiler<mark class="inline-add"> l’écran</mark> vers le bas et sélectionnez votre iPhone ou iPad égaré.<mark class="inline-add"> Sur l’appareil d’un membre d’un groupe de partage familial, votre iPhone ou iPad apparaît en dessous de ses appareils.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">- Touchez le bouton Plus .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Faites défiler vers le bas jusqu’à [Appareil] perdu, puis activez le mode Perdu.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">- Faites défiler vers le bas jusqu’à [Appareil] perdu, puis activez le mode Perdu.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">63</span><code class="line-text">- Suivez les étapes à l’écran si vous souhaitez afficher vos coordonnées sur votre appareil égaré.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">- Suivez les étapes à l’écran si vous souhaitez afficher vos coordonnées sur votre appareil égaré.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">- Touchez Activer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">- Touchez Activer.</code></div>
+<div class="diff-line previous removed"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">Sur l’appareil d’un membre d’un groupe de partage familial, votre iPhone ou iPad apparaît en dessous de ses appareils.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">Si Localiser n’était pas activé sur votre appareil avant qu’il soit perdu, il n’apparaîtra pas sur la page [iCloud.com/find](https://www.icloud.com/find/) ni dans l’app Localiser, et vous ne pourrez pas le marquer comme perdu ni effacer son contenu à distance.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">71</span><code class="line-text">## Si votre iPhone ou iPad est définitivement perdu</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">## Si votre iPhone ou iPad est définitivement perdu</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 17 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">### Effacer le contenu de votre iPhone ou iPad à distance</code></div>
+<div class="diff-line current unchanged"><span class="line-number">91</span><code class="line-text">### Effacer le contenu de votre iPhone ou iPad à distance</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">Vous pouvez effacer le contenu de votre appareil à distance à l’aide de l’app Localiser sur un autre appareil ou s<mark class="inline-remove">ur</mark> [i<mark class="inline-remove">C</mark>loud.com/find](https://www.icloud.com/find/) . Toutefois, assurez-vous d’avoir tout essayé pour le retrouver, car l’effacement du contenu de votre appareil ne peut pas être annulé.</code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">Vous pouvez effacer le contenu de votre appareil à distance à l’aide de l’app Localiser sur un autre appareil ou <mark class="inline-add">à l’adre</mark>s<mark class="inline-add">se</mark> [i<mark class="inline-add">c</mark>loud.com/find](https://www.icloud.com/find/) . Toutefois, assurez-vous d’avoir tout essayé pour le retrouver, car l’effacement du contenu de votre appareil ne peut pas être annulé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">95</span><code class="line-text">Ne retirez pas l’appareil de Localiser, même si vous l’effacez à distance. En effet, la suppression de l’appareil de votre liste Localiser supprime le verrouillage d’activation, ce qui permettra au voleur de déverrouiller et de revendre plus facilement votre appareil.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">Ne retirez pas l’appareil de Localiser, même si vous l’effacez à distance. En effet, la suppression de l’appareil de votre liste Localiser supprime le verrouillage d’activation, ce qui permettra au voleur de déverrouiller et de revendre plus facilement votre appareil.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">99</span><code class="line-text">Si votre appareil est hors ligne, l’effacement à distance démarrera la prochaine fois qu’il sera en ligne.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">99</span><code class="line-text">Si votre appareil est hors ligne, l’effacement à distance démarrera la prochaine fois qu’il sera en ligne.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">101</span><code class="line-text">[Effacer le contenu de votre iPhone ou iPad à distance sur i<mark class="inline-remove">C</mark>loud.com/find](https://support.apple.com/guide/icloud/mmfc0ef36f/icloud)</code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">[Effacer le contenu de votre iPhone ou iPad à distance sur i<mark class="inline-add">c</mark>loud.com/find](https://support.apple.com/guide/icloud/mmfc0ef36f/icloud)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">103</span><code class="line-text">[Effacer <mark class="inline-remove">l</mark>e <mark class="inline-remove">contenu d’</mark>un appareil<mark class="inline-remove"> à distance</mark> dans l’app Localiser sur l’iPhone](https://support.apple.com/<mark class="inline-remove">com</mark>/guide/iphone/iph21a030ae3/ios)</code></div>
+<div class="diff-line current added"><span class="line-number">103</span><code class="line-text">[Effacer <mark class="inline-add">à distanc</mark>e un appareil dans l’app Localiser sur l’iPhone](https://support.apple.com/<mark class="inline-add">fr-fr</mark>/guide/iphone/iph21a030ae3/ios)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">105</span><code class="line-text">### Examiner les informations de votre compte Apple</code></div>
+<div class="diff-line current unchanged"><span class="line-number">105</span><code class="line-text">### Examiner les informations de votre compte Apple</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">107</span><code class="line-text">Assurez-vous que votre compte Apple est sécurisé en examinant les informations de votre compte Apple. Si vous trouvez des modifications que vous ne reconnaissez pas ou que vous n’avez pas apportées, mettez à jour ces informations et modifiez le mot de passe de votre compte Apple.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">107</span><code class="line-text">Assurez-vous que votre compte Apple est sécurisé en examinant les informations de votre compte Apple. Si vous trouvez des modifications que vous ne reconnaissez pas ou que vous n’avez pas apportées, mettez à jour ces informations et modifiez le mot de passe de votre compte Apple.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">109</span><code class="line-text">#### <mark class="inline-remove">S</mark>i vou<mark class="inline-remove">s possédez</mark> un autre appareil de confiance</code></div>
+<div class="diff-line current added"><span class="line-number">109</span><code class="line-text">#### <mark class="inline-add">Exam</mark>i<mark class="inline-add">ner</mark> vo<mark class="inline-add">tre compte s</mark>u<mark class="inline-add">r</mark> un autre appareil de confiance</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">111</span><code class="line-text">Utilisez votre autre appareil de confiance (comme un iPad ou un Mac) pour examiner votre compte.<mark class="inline-remove"> Accédez à Réglages ou Réglages Système, touchez [votre nom], puis touchez Connexion et sécurité pour examiner vos réglages de sécurité.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text">Utilisez votre autre appareil de confiance (comme un iPad ou un Mac) pour examiner votre compte.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">113</span><code class="line-text"><mark class="inline-remove">####</mark> Si vo<mark class="inline-remove">us fai</mark>te<mark class="inline-remove">s l’acquisition d’un</mark> nou<mark class="inline-remove">vel</mark> a<mark class="inline-remove">pp</mark>a<mark class="inline-remove">r</mark>e<mark class="inline-remove">il</mark> Apple</code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text"><mark class="inline-add">-</mark> S<mark class="inline-add">ur </mark>i<mark class="inline-add">Phone ou iPad, accédez à Réglages, puis touchez</mark> vot<mark class="inline-add">r</mark>e no<mark class="inline-add">m. S</mark>u<mark class="inline-add">r Mac,</mark> a<mark class="inline-add">ccédez </mark>a<mark class="inline-add">u m</mark>e<mark class="inline-add">nu</mark> Apple<mark class="inline-add"> , choisissez Réglages Système, puis touchez votre nom.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">115</span><code class="line-text">- Pour vérifier vos réglages de sécurité, touchez Connexion et sécurité.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">117</span><code class="line-text">#### Examiner votre compte sur un nouvel appareil Apple</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">115</span><code class="line-text">Une fois connecté(e) à l’aide de votre compte Apple, vous pouvez examiner les informations de votre compte. Vous devrez peut-être patienter avant de pouvoir apporter des modifications à vos réglages de sécurité.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">119</span><code class="line-text">Une fois connecté(e) à l’aide de votre compte Apple, vous pouvez examiner les informations de votre compte. Vous devrez peut-être patienter avant de pouvoir apporter des modifications à vos réglages de sécurité.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">117</span><code class="line-text">#### <mark class="inline-remove">S</mark>ur le Web</code></div>
+<div class="diff-line current added"><span class="line-number">121</span><code class="line-text">#### <mark class="inline-add">Examiner votre compte s</mark>ur le Web</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">119</span><code class="line-text">- Vous pouvez examiner les informations de votre compte sur [account.apple.com](https://account.apple.com/) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">123</span><code class="line-text">- Vous pouvez examiner les informations de votre compte sur [account.apple.com](https://account.apple.com/) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Paiements échelonnés à l’aide d’Apple Pay - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Paiements échelonnés à l’aide d’Apple Pay - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/120477">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+14 ajouts</span>
+      <span class="badge removed">−16 suppressions</span>
+      <span class="badge">5 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Paiements échelonnés à l’aide d’Apple Pay</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Paiements échelonnés à l’aide d’Apple Pay</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Réglez vos achats en plusieurs fois avec Apple Pay et choisissez l’option de paiement <mark class="inline-remove">d</mark>i<mark class="inline-remove">ffér</mark>é qui vous convient le mieux.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Réglez vos achats en plusieurs fois avec Apple Pay et choisissez l’option de paiement <mark class="inline-add">fract</mark>i<mark class="inline-add">onn</mark>é qui vous convient le mieux.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">Pour être éligible aux paiements échelonnés à l’aide d’Apple Pay, vous devez :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">Pour être éligible aux paiements échelonnés à l’aide d’Apple Pay, vous devez :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">- Posséder un [iPhone ou un iPad compatible](https://support.apple.com/guide/iphone/iphone-models-compatible-with-ios-18-iphe3fa5df43/ios) avec iOS 18 ou iPadOS 18 ou version ultérieure pour les achats en ligne et dans les apps. Vous pouvez effectuer des achats en magasin avec un iPhone doté <mark class="inline-remove">[</mark>d’iOS 26 ou version ultérieure](https://support.apple.com/118575) .</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">- Posséder un [iPhone ou un iPad compatible](https://support.apple.com/guide/iphone/iphone-models-compatible-with-ios-18-iphe3fa5df43/ios) avec iOS 18 ou iPadOS 18 ou version ultérieure pour les achats en ligne et dans les apps. Vous pouvez effectuer des achats en magasin avec un iPhone doté d’<mark class="inline-add"> [</mark>iOS 26 ou version ultérieure](https://support.apple.com/118575) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">- Avoir [configuré Apple Pay](https://support.apple.com/108398) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">- Avoir [configuré Apple Pay](https://support.apple.com/108398) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">## Fonctionnement</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">## Fonctionnement</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">Le paiement différé et les plans de paiements mensuels vous permettent de faire des achats sans avoir à régler le montant intégral au moment de l<mark class="inline-remove">&#x27;</mark>achat. Ces plans de versement vous permettent de payer un achat en plusieurs fois et de le rembourser par mensualités fixes au fil du temps. Vous pouvez désormais effectuer des achats avec paiement échelonné lorsque vous effectuez votre paiement avec Apple Pay sur votre iPhone ou iPad, puis sélectionner l’option de paiement <mark class="inline-remove">d</mark>i<mark class="inline-remove">ffér</mark>é qui vous convient<mark class="inline-remove">.</mark> 1 Les offres de paiement échelonné sont disponibles sur les cartes de débit et de crédit prises en charge [des banques et des fournisseurs de paiements échelonnés](https://support.apple.com/109524#paylater) .</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">Le paiement différé et les plans de paiements mensuels vous permettent de faire des achats sans avoir à régler le montant intégral au moment de l<mark class="inline-add">’</mark>achat. Ces plans de versement vous permettent de payer un achat en plusieurs fois et de le rembourser par mensualités fixes au fil du temps. Vous pouvez désormais effectuer des achats avec paiement échelonné lorsque vous effectuez votre paiement avec Apple Pay sur votre iPhone ou iPad, puis sélectionner l’option de paiement <mark class="inline-add">fract</mark>i<mark class="inline-add">onn</mark>é qui vous convient 1<mark class="inline-add"> .</mark> Les offres de paiement échelonné sont disponibles sur les cartes de débit et de crédit prises en charge [des banques et des fournisseurs de paiements échelonnés](https://support.apple.com/109524#paylater) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">Si votre carte prend en charge les paiements échelonnés, vous verrez une indication Payer plus tard sous votre carte lorsque vous paierez avec Apple Pay en ligne et dans les applications. Lorsque vous payez en magasin, vous verrez les options Pay Later après avoir sélectionné votre mode de paiement. Certaines banques et fournisseurs de paiements échelonnés peuvent vous demander de remplir une demande soumise à l’éligibilité et à l’approbation.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">Si votre carte prend en charge les paiements échelonnés, vous verrez une indication Payer plus tard sous votre carte lorsque vous paierez avec Apple Pay en ligne et dans les applications. Lorsque vous payez en magasin, vous verrez les options Pay Later après avoir sélectionné votre mode de paiement. Certaines banques et fournisseurs de paiements échelonnés peuvent vous demander de remplir une demande soumise à l’éligibilité et à l’approbation.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">- Touchez le bouton Apple Pay ou choisissez Apple Pay comme mode de paiement.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">- Touchez le bouton Apple Pay ou choisissez Apple Pay comme mode de paiement.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">-<mark class="inline-remove"> Touchez une carte qui prend en charge le paiement différé.</mark> Pour savoir si votre carte par défaut prend en charge le paiement différé, recherchez l’indication Payer plus tard sous la carte. Pour utiliser une autre carte, <mark class="inline-remove">app</mark>u<mark class="inline-remove">y</mark>ez<mark class="inline-remove"> sur</mark> Changer de mode de paiement ou Autres cartes et options de paiement <mark class="inline-remove">d</mark>i<mark class="inline-remove">ffér</mark>é.</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- Pour savoir si votre carte par défaut prend en charge le paiement différé, recherchez l’indication Payer plus tard sous la carte. Pour utiliser une autre carte, <mark class="inline-add">to</mark>u<mark class="inline-add">ch</mark>ez Changer de mode de paiement ou Autres cartes et options de paiement <mark class="inline-add">fract</mark>i<mark class="inline-add">onn</mark>é.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">[Image: Indication<mark class="inline-remove">s « Paiement en intégralité » et</mark> « Payer plus tard » su<mark class="inline-remove">r</mark> <mark class="inline-remove">la</mark> carte de <mark class="inline-remove">pa</mark>ie<mark class="inline-remove">ment</mark> sélectionnée.]</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">[Image: Indication « Payer plus tard » <mark class="inline-add">affichée </mark>s<mark class="inline-add">o</mark>u<mark class="inline-add">s</mark> <mark class="inline-add">une</mark> carte de <mark class="inline-add">créd</mark>i<mark class="inline-add">t éligibl</mark>e sélectionnée<mark class="inline-add"> lors d’un paiement avec Apple Pay</mark>.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">- Touchez Payer plus tard sur l’écran Options de paiement.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">- Touchez Payer plus tard sur l’écran Options de paiement.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 21 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">- Pour finaliser le paiement, maintenez le haut de votre iPhone près du lecteur de carte jusqu’à ce que la mention « OK » ou une coche apparaisse à l’écran.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">- Pour finaliser le paiement, maintenez le haut de votre iPhone près du lecteur de carte jusqu’à ce que la mention « OK » ou une coche apparaisse à l’écran.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">Pour les cartes éligibles, vous pouvez également configurer votre plan de paiements échelonnés après votre achat. Pour ce faire, touchez Configurer après l’achat, puis effectuez votre transaction en magasin normalement. Lorsque vous recevez une notification, suivez les instructions pour choisir un plan<mark class="inline-remove">.</mark> 2</code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">Pour les cartes éligibles, vous pouvez également configurer votre plan de paiements échelonnés après votre achat. Pour ce faire, touchez Configurer après l’achat, puis effectuez votre transaction en magasin normalement. Lorsque vous recevez une notification, suivez les instructions pour choisir un plan 2<mark class="inline-add"> .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">## Demander et utiliser des options supplémentaires de paiement <mark class="inline-remove">d</mark>i<mark class="inline-remove">ff</mark>é<mark class="inline-remove">ré</mark></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">## Demander et utiliser des options supplémentaires de paiement <mark class="inline-add">fract</mark>i<mark class="inline-add">onn</mark>é</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">Sous réserve de disponibilité, vous pouvez, au moment du paiement, souscrire un plan de paiements échelonnés pour votre achat Apple Pay auprès d’un fournisseur de paiements mensualisés proposé, ou directement dans l’app Cartes.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">Sous réserve de disponibilité, vous pouvez, au moment du paiement, souscrire un plan de paiements échelonnés pour votre achat Apple Pay auprès d’un fournisseur de paiements mensualisés proposé, ou directement dans l’app Cartes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Touchez le bouton Apple Pay ou choisissez Apple Pay comme mode de paiement lors de vos achats en ligne et dans les apps.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">- Touchez le bouton Apple Pay ou choisissez Apple Pay comme mode de paiement lors de vos achats en ligne et dans les apps.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">- Touchez Autres cartes et options de paiement <mark class="inline-remove">d</mark>i<mark class="inline-remove">ffér</mark>é. Si des options sont disponibles, elles s’affichent sous Options de paiement <mark class="inline-remove">d</mark>i<mark class="inline-remove">ffér</mark>é supplémentaires.</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">- Touchez Autres cartes et options de paiement <mark class="inline-add">fract</mark>i<mark class="inline-add">onn</mark>é. Si des options sont disponibles, elles s’affichent sous Options de paiement <mark class="inline-add">fract</mark>i<mark class="inline-add">onn</mark>é supplémentaires.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">- Touchez Configurer à côté de l’option de paiement <mark class="inline-remove">d</mark>i<mark class="inline-remove">ffér</mark>é que vous souhaitez utiliser.</code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">- Touchez Configurer à côté de l’option de paiement <mark class="inline-add">fract</mark>i<mark class="inline-add">onn</mark>é que vous souhaitez utiliser.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">[Image:<mark class="inline-remove"> L’écran Mode de paiement. Les fournisseurs de paiement différé disponibles sont répertoriés sous</mark> Options de paiement di<mark class="inline-remove">ffé</mark>r<mark class="inline-remove">é</mark> s<mark class="inline-remove">u</mark>ppl<mark class="inline-remove">ém</mark>e<mark class="inline-remove">nt</mark>a<mark class="inline-remove">ires</mark>.]</code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">[Image: Options de paiement <mark class="inline-add">fractionné </mark>di<mark class="inline-add">sponibles pou</mark>r <mark class="inline-add">une tran</mark>s<mark class="inline-add">action A</mark>pple<mark class="inline-add"> P</mark>a<mark class="inline-add">y</mark>.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">- Des informations sur le fournisseur de versements échelonnés apparaissent. Touchez Continuer vers [Nom du fournisseur] pour être transféré vers le service du fournisseur de paiements échelonnés et suivez les instructions pour compléter votre demande de plan de paiements mensualisés.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">- Des informations sur le fournisseur de versements échelonnés apparaissent. Touchez Continuer vers [Nom du fournisseur] pour être transféré vers le service du fournisseur de paiements échelonnés et suivez les instructions pour compléter votre demande de plan de paiements mensualisés.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">Vous disposerez d’une carte du fournisseur de versements dans l’application Cartes en vue de l’utiliser pour de futurs achats Apple Pay éligibles.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">Vous disposerez d’une carte du fournisseur de versements dans l’application Cartes en vue de l’utiliser pour de futurs achats Apple Pay éligibles.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">Pour demander et utiliser des options supplémentaires de paiement <mark class="inline-remove">d</mark>i<mark class="inline-remove">ffér</mark>é dans l’app Cartes, ouvrez l’app Cartes, touchez le bouton Ajouter une carte , puis touchez Options de paiement <mark class="inline-remove">d</mark>i<mark class="inline-remove">ffér</mark>é et suivez les instructions pour soumettre votre demande. Si la demande est approuvée, vous ajouterez une carte du fournisseur de paiements dans l’app Cartes pour finaliser votre achat.</code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">Pour demander et utiliser des options supplémentaires de paiement <mark class="inline-add">fract</mark>i<mark class="inline-add">onn</mark>é dans l’app Cartes, ouvrez l’app Cartes, touchez le bouton Ajouter une carte , puis touchez Options de paiement <mark class="inline-add">fract</mark>i<mark class="inline-add">onn</mark>é et suivez les instructions pour soumettre votre demande. Si la demande est approuvée, vous ajouterez une carte du fournisseur de paiements dans l’app Cartes pour finaliser votre achat.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text"><mark class="inline-remove">[I</mark>ma<mark class="inline-remove">ge:</mark> null]</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text"><mark class="inline-add">Si les options de paie</mark>m<mark class="inline-add">ent fr</mark>a<mark class="inline-add">ctionné</mark> n<mark class="inline-add">e s’affichent pas, contactez l’émette</mark>u<mark class="inline-add">r de </mark>l<mark class="inline-add">a carte pour obtenir une assistance supp</mark>l<mark class="inline-add">émentaire. Dans de rares cas, il est possible que vous ne puissiez pas ajouter de carte pour le paiement fractionné, et ce [pour des raisons de sécurité</mark>]<mark class="inline-add">(http://support.apple.com/126755) .</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">Si les options de paiement différé ne s’affichent pas, contactez l’émetteur de la carte pour obtenir une assistance supplémentaire.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">## Comment gérer les ajustements de commande, les retours ou les remboursements</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">## Comment gérer les ajustements de commande, les retours ou les remboursements</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">Lorsque vous payez en plusieurs fois à l’aide d’Apple Pay, vous pouvez apporter des modifications à votre commande de la même manière que pour les autres achats par carte effectués à l’aide d’Apple Pay. Pour toute question sur les modifications de commande, les retours ou les remboursements, contactez l’émetteur de votre carte.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">83</span><code class="line-text">Lorsque vous payez en plusieurs fois à l’aide d’Apple Pay, vous pouvez apporter des modifications à votre commande de la même manière que pour les autres achats par carte effectués à l’aide d’Apple Pay. Pour toute question sur les modifications de commande, les retours ou les remboursements, contactez l’émetteur de votre carte.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text"><mark class="inline-remove">-</mark> Tous les <mark class="inline-remove">p</mark>r<mark class="inline-remove">ê</mark>ts sont proposés par votre <mark class="inline-remove">f</mark>o<mark class="inline-remove">u</mark>rnis<mark class="inline-remove">s</mark>e<mark class="inline-remove">ur</mark> de <mark class="inline-remove">p</mark>r<mark class="inline-remove">ê</mark>t et sont soumis <mark class="inline-remove">aux</mark> conditions d’éligibilité<mark class="inline-remove"> et</mark> à <mark class="inline-remove">l’</mark>approbation <mark class="inline-remove">du</mark> <mark class="inline-remove">fournisseur de prêt, ainsi qu’</mark>à toute autre condition <mark class="inline-remove">du</mark> <mark class="inline-remove">fourn</mark>i<mark class="inline-remove">sseur</mark> de pr<mark class="inline-remove">ê</mark>t. Non disponible sur tous les marchés, et peut ne pas être disponible pour tous les types d’achats, notamment les abonnements et les transactions récurrentes. Peut nécessiter une carte éligible. <mark class="inline-remove">La c</mark>on<mark class="inline-remove">f</mark>igur<mark class="inline-remove">at</mark>ion logicielle<mark class="inline-remove"> requi</mark>s<mark class="inline-remove">e</mark> s’applique. <mark class="inline-remove">Pour vous assurer de disposer de tout</mark>es <mark class="inline-remove">les f</mark>on<mark class="inline-remove">c</mark>tion<mark class="inline-remove">nalité</mark>s d<mark class="inline-remove">e ce produ</mark>i<mark class="inline-remove">t, mettez à jour votre appareil avec la dernière version du lo</mark>gi<mark class="inline-remove">c</mark>i<mark class="inline-remove">el. Selon votre carte, pour éviter de rembourser votre prêt plus tôt, vous devrez peut-être ajuster la manière dont vous réglez la facture de votre carte. Par exemple, l’intégra</mark>lité <mark class="inline-remove">d</mark>u<mark class="inline-remove"> </mark>pr<mark class="inline-remove">êt</mark> peu<mark class="inline-remove">t être reflétée dans le solde de </mark>v<mark class="inline-remove">otre carte, et le paiem</mark>ent <mark class="inline-remove">du </mark>s<mark class="inline-remove">olde de votre relevé (</mark>a<mark class="inline-remove">u </mark>li<mark class="inline-remove">e</mark>u<mark class="inline-remove">, par exemple, du paiement minimum dû ou d’un solde ajusté) rembours</mark>er<mark class="inline-remove">ait alors la totalité de votre prêt de manière anticipée</mark>.<mark class="inline-remove"> Contactez l’émetteur de votre carte pour plus de détails.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text"><mark class="inline-add">1. Paiements échelonnés sur Apple Pay : les offres de crédits ne sont pas proposées par Apple.</mark> Tous les <mark class="inline-add">c</mark>r<mark class="inline-add">édi</mark>ts sont proposés par votre or<mark class="inline-add">ga</mark>nis<mark class="inline-add">m</mark>e de <mark class="inline-add">c</mark>r<mark class="inline-add">édi</mark>t et sont soumis <mark class="inline-add">à ses</mark> conditions d’éligibilité<mark class="inline-add">,</mark> à <mark class="inline-add">son </mark>approba<mark class="inline-add">­­</mark>tion <mark class="inline-add">et</mark> à toute<mark class="inline-add">s ses</mark> autre<mark class="inline-add">s</mark> condition<mark class="inline-add">s.</mark> <mark class="inline-add">Votre</mark> <mark class="inline-add">act</mark>i<mark class="inline-add">vité</mark> de <mark class="inline-add">crédit </mark>p<mark class="inline-add">eut êt</mark>r<mark class="inline-add">e signalée aux agences de crédit par votre organisme de crédit, ce qui peut affecter votre score de crédi</mark>t. Non disponible sur tous les marchés, et peut ne pas être disponible pour tous les types d’achats, notamment les abonnements et les transactions récurrentes. Peut nécessiter une carte éligible. <mark class="inline-add">Disp</mark>on<mark class="inline-add">ible en magasin sur iPhone, ainsi qu’en l</mark>ig<mark class="inline-add">ne et dans les apps s</mark>ur<mark class="inline-add"> </mark>i<mark class="inline-add">Ph</mark>on<mark class="inline-add">e ou iPad. Des exigences</mark> logicielles s’applique<mark class="inline-add">nt</mark>. <mark class="inline-add">D</mark>es <mark class="inline-add">c</mark>on<mark class="inline-add">di</mark>tions d<mark class="inline-add">’él</mark>igi<mark class="inline-add">b</mark>ilité <mark class="inline-add">s</mark>up<mark class="inline-add">plémentai</mark>r<mark class="inline-add">es</mark> peuvent s<mark class="inline-add">’</mark>a<mark class="inline-add">pp</mark>li<mark class="inline-add">q</mark>uer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text"><mark class="inline-remove">-</mark> Pour recevoir cette notification, assurez-vous que les notifications <mark class="inline-remove">W</mark>a<mark class="inline-remove">ll</mark>e<mark class="inline-remove">t</mark> sont activées.</code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text"><mark class="inline-add">2.</mark> Pour recevoir cette notification, assurez-vous que les notifications <mark class="inline-add">de l’</mark>a<mark class="inline-add">pp Cart</mark>e<mark class="inline-add">s</mark> sont activées.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

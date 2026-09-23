@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Utilisation d’applications Intel sur un Mac avec puce Apple - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Utilisation d’applications Intel sur un Mac avec puce Apple - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/102527">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+47 ajouts</span>
+      <span class="badge removed">−31 suppressions</span>
+      <span class="badge">4 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">- [À propos des apps basées sur Intel, de Rosetta et de la transition vers la puce Apple](https://support.apple.com/fr-fr/102527#about)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">- [À propos des apps basées sur Intel, de Rosetta et de la transition vers la puce Apple](https://support.apple.com/fr-fr/102527#about)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">- [Mettre à jour les apps basées sur Intel pour la puce Apple](https://support.apple.com/fr-fr/102527#update)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">- [Identifier les apps basées sur Intel](https://support.apple.com/fr-fr/102527#identify)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">- [Identifier les apps basées sur Intel](https://support.apple.com/fr-fr/102527#identify)</code></div>
+<div class="diff-line previous removed"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">- [Mettre à jour les apps basées sur Intel pour la puce Apple](https://support.apple.com/fr-fr/102527#update)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">- [Installer et utiliser Rosetta pour exécuter les apps basées sur Intel](https://support.apple.com/fr-fr/102527#use)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">- [Installer et utiliser Rosetta pour exécuter les apps basées sur Intel](https://support.apple.com/fr-fr/102527#use)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">## À propos des applications Intel, de Rosetta et de la transition vers la puce Apple</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">## À propos des applications Intel, de Rosetta et de la transition vers la puce Apple</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">En 2020, [Apple a annoncé la transition](https://www.apple.com/fr/newsroom/2020/06/apple-announces-mac-transition-to-apple-silicon/) des ordinateurs Mac à processeur Intel vers [des ordinateurs Mac avec puce Apple](https://support.apple.com/fr-fr/116943) . Pour faciliter cette transition, Apple a créé Rosetta<mark class="inline-remove">,</mark> <mark class="inline-remove">qui s’exécute en arrière-plan pour traduire automatiquement les apps basées sur Intel afin qu’elles puissent être utilisées avec la puce Apple. Cela a donné plus de temps aux développeurs d’apps et aux utilisateurs pour mettre à jour leurs apps pour la puce Apple.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">En 2020, [Apple a annoncé la transition](https://www.apple.com/fr/newsroom/2020/06/apple-announces-mac-transition-to-apple-silicon/) des ordinateurs Mac à processeur Intel vers [des ordinateurs Mac avec puce Apple](https://support.apple.com/fr-fr/116943) . Pour faciliter cette transition, Apple a créé Rosetta <mark class="inline-add">:</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">Rosetta e<mark class="inline-remove">s</mark>t <mark class="inline-remove">d</mark>i<mark class="inline-remove">s</mark>p<mark class="inline-remove">o</mark>n<mark class="inline-remove">ible</mark> pour t<mark class="inline-remove">o</mark>ut<mark class="inline-remove"> M</mark>a<mark class="inline-remove">c avec puce Apple u</mark>ti<mark class="inline-remove">lisa</mark>nt [<mark class="inline-remove">m</mark>a<mark class="inline-remove">cOS</mark> <mark class="inline-remove">27</mark> <mark class="inline-remove">o</mark>u <mark class="inline-remove">une version a</mark>nt<mark class="inline-remove">éri</mark>e<mark class="inline-remove">ure</mark>](https://support.apple.com/fr-fr/10<mark class="inline-remove">9033</mark>) <mark class="inline-remove">.</mark> <mark class="inline-remove">À</mark> p<mark class="inline-remove">ar</mark>tir <mark class="inline-remove">d</mark>e<mark class="inline-remove"> ma</mark>c<mark class="inline-remove">OS 28,</mark> la p<mark class="inline-remove">ro</mark>c<mark class="inline-remove">hain</mark>e <mark class="inline-remove">v</mark>e<mark class="inline-remove">rsi</mark>on <mark class="inline-remove">maje</mark>u<mark class="inline-remove">re</mark> de ma<mark class="inline-remove">cOS,</mark> la <mark class="inline-remove">fonc</mark>ti<mark class="inline-remove">onna</mark>lit<mark class="inline-remove">é Ro</mark>s<mark class="inline-remove">etta ne sera disponible que</mark> pour <mark class="inline-remove">certains jeux plus anciens </mark>et<mark class="inline-remove"> non mis</mark> à jour <mark class="inline-remove">q</mark>u<mark class="inline-remove">i</mark> <mark class="inline-remove">re</mark>po<mark class="inline-remove">sent s</mark>ur <mark class="inline-remove">d</mark>e<mark class="inline-remove">s</mark> <mark class="inline-remove">fram</mark>e<mark class="inline-remove">works basés sur Intel</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text"><mark class="inline-add">- </mark>Rosetta <mark class="inline-add">s’</mark>e<mark class="inline-add">xécu</mark>t<mark class="inline-add">e</mark> <mark class="inline-add">en arr</mark>i<mark class="inline-add">ère-</mark>p<mark class="inline-add">la</mark>n pour t<mark class="inline-add">raduire a</mark>ut<mark class="inline-add">om</mark>ati<mark class="inline-add">queme</mark>nt <mark class="inline-add">vos </mark>[a<mark class="inline-add">pps</mark> <mark class="inline-add">basées</mark> <mark class="inline-add">s</mark>u<mark class="inline-add">r</mark> <mark class="inline-add">I</mark>nte<mark class="inline-add">l</mark>](https://support.apple.com/fr-fr/10<mark class="inline-add">2527#identify</mark>) <mark class="inline-add">afin</mark> <mark class="inline-add">que vous</mark> p<mark class="inline-add">uissiez les u</mark>ti<mark class="inline-add">lise</mark>r <mark class="inline-add">av</mark>ec la p<mark class="inline-add">u</mark>ce <mark class="inline-add">Appl</mark>e<mark class="inline-add">. Cela a d</mark>on<mark class="inline-add">né</mark> <mark class="inline-add">pl</mark>u<mark class="inline-add">s</mark> de <mark class="inline-add">te</mark>m<mark class="inline-add">ps </mark>a<mark class="inline-add">ux</mark> <mark class="inline-add">déve</mark>l<mark class="inline-add">oppeurs d’</mark>a<mark class="inline-add">pps</mark> <mark class="inline-add">et aux u</mark>tili<mark class="inline-add">sa</mark>t<mark class="inline-add">eur</mark>s pour <mark class="inline-add">m</mark>et<mark class="inline-add">tre</mark> à jour <mark class="inline-add">le</mark>u<mark class="inline-add">rs</mark> <mark class="inline-add">apps </mark>pour <mark class="inline-add">la puc</mark>e <mark class="inline-add">Appl</mark>e.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">I</mark>denti<mark class="inline-remove">f</mark>ier<mark class="inline-remove"> l</mark>es<mark class="inline-remove"> </mark>applications Intel</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">Rosetta est </mark>d<mark class="inline-add">isponibl</mark>e<mark class="inline-add"> pour tout Mac avec puce Apple utilisa</mark>nt<mark class="inline-add"> [macOS 27 ou une vers</mark>i<mark class="inline-add">on antér</mark>ie<mark class="inline-add">u</mark>re<mark class="inline-add">](http</mark>s<mark class="inline-add">://support.</mark>appl<mark class="inline-add">e.com/fr-fr/109033) . À part</mark>i<mark class="inline-add">r de ma</mark>c<mark class="inline-add">OS 28, l</mark>a<mark class="inline-add"> prochaine version majeure de macOS, la fonc</mark>tion<mark class="inline-add">nalité Ro</mark>s<mark class="inline-add">etta ne sera disponible que pour certains jeux plus anciens et non mis à jour qui reposent sur des frameworks basés sur</mark> Intel<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text"><mark class="inline-remove">P</mark>our<mark class="inline-remove"> savoir lesquelles de</mark> vos apps <mark class="inline-remove">doivent être mi</mark>ses <mark class="inline-remove">à jo</mark>ur pour la puce Apple<mark class="inline-remove">, utilisez le Finder ou Réglages Système.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text"><mark class="inline-add">## Mettez à j</mark>our vos apps <mark class="inline-add">ba</mark>s<mark class="inline-add">é</mark>es <mark class="inline-add">s</mark>ur<mark class="inline-add"> Intel</mark> pour la puce Apple</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">Pour des performances optimales et une compatibilité future, mettez à jour vos [apps basées sur Intel](https://support.apple.com/fr-fr/102527#identify) en les remplaçant par une version « Universelle » ou « Puce Apple » de l’app, plutôt que de vous fier à Rosetta pour traduire l’app afin de l’utiliser avec la puce Apple.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- Si vous avez obtenu l’app sur l’App Store, vous pouvez [utiliser l’App Store pour rechercher et installer des mises à jour](https://support.apple.com/fr-fr/102629) , si elles sont disponibles.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- Ou consultez le site web du développeur pour obtenir une version « universelle » ou « Apple silicon » de l’app. Un lien vers leur site web peut être proposé dans la notification que vous avez reçue concernant l’app.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">- Certaines apps disposent d’une option intégrée permettant d’obtenir des mises à jour. Vérifiez s’il existe une option de recherche de mises à jour dans les menus ou les réglages de l’app.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- Si nécessaire, [contactez le développeur de l’app](https://support.apple.com/fr-fr/103190) pour savoir si une mise à jour pour la puce Apple est disponible ou prévue.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">Certaines apps peuvent intégrer ou utiliser des composants, tels que des extensions ou des modules de mise à jour, qui doivent être mis à jour séparément. Si vous avez ajouté des fonctionnalités à votre app en installant des modules, des extensions ou d’autres ajouts basés sur Intel provenant d’un autre développeur, pensez également à les mettre à jour.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">## Identifier vos apps basées sur Intel</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">Lorsque vous ouvrez une app basée sur Intel, vous pourriez recevoir une notification indiquant que l’assistance pour les apps basées sur Intel prendra bientôt fin et que votre app ou un de ses composants ne fonctionnera pas avec une future version de macOS (macOS 28). Vous pouvez également utiliser le Finder ou les Réglages Système pour savoir quelles apps nécessitent une mise à jour pour la puce Apple.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">### Utiliser le Finder</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">### Utiliser le Finder</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">- Dans la fenêtre d’informations qui s’ouvre, recherchez les informations affichées après « Type » :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">- Dans la fenêtre d’informations qui s’ouvre, recherchez les informations affichées après « Type » :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- Application (Intel) : L’app est conçue pour un Mac doté d’un processeur Intel. Vous dev<mark class="inline-remove">ri</mark>ez mettre à jour l’app pour la puce Apple.</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">- Application (Intel) : L’app est conçue pour un Mac doté d’un processeur Intel. Vous devez <mark class="inline-add">[</mark>mettre à jour l’app pour <mark class="inline-add">qu’elle soit compatible avec </mark>la puce Apple<mark class="inline-add">](https://support</mark>.<mark class="inline-add">apple.com/fr-fr/102527#update) .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">- Application (universelle) : L’app est conçue à la fois pour un Mac avec puce Apple et pour un Mac avec processeur Intel.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">- Application (universelle) : L’app est conçue à la fois pour un Mac avec puce Apple et pour un Mac avec processeur Intel.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">[Image: Fenêtre d’informations d’une app basée sur Intel.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">[Image: Fenêtre d’informations d’une app basée sur Intel.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">Pour les apps universelles, les développeurs d’apps peuvent inclure un réglage « Ouvrir avec Rosetta » dans la fenêtre d’informations. Si ce réglage est disponible pour votre app, vous pouvez l’utiliser sous macOS 27 ou une version antérieure pour forcer l’ouverture de l’app en tant qu’app basée sur Intel, ce qui lui permet d’utiliser des modules, des extensions et d’autres ajouts réservés à Intel. Si vous mettez à jour le module complémentaire pour puce Apple ultérieurement, désactivez ce réglage.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">### Utiliser Réglages Système</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">### Utiliser Réglages Système</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- Assurez-vous que vous utilisez macOS 27 ou une version ultérieure.</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">- Assurez-vous que vous utilisez macOS 27 <mark class="inline-add">Golden Gate </mark>ou une version ultérieure.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">- Dans le menu Apple , choisissez Réglages Système.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">- Dans le menu Apple , choisissez Réglages Système.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">[Image: Liste des apps basées sur Intel dans Réglages Système.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">[Image: Liste des apps basées sur Intel dans Réglages Système.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">## Adapter les applications Intel à la puce Apple</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">Pour des performances optimales et une compatibilité future, mettez à jour vos apps basées sur Intel en les remplaçant par une version « universelle » ou « puce Apple » de l’app.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">- Si vous avez obtenu l’app sur l’App Store, vous pouvez [utiliser l’App Store pour rechercher et installer des mises à jour](https://support.apple.com/fr-fr/102629) , si elles sont disponibles.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">- Vous pouvez également vous rendre sur le site web de la société de développement pour rechercher une version « universelle » ou « compatible avec la puce Apple » de l’app. Un lien vers leur site web peut être proposé dans la notification que vous avez reçue concernant l’app.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">- Certaines apps disposent d’une option intégrée permettant d’obtenir des mises à jour. Vérifiez s’il existe une option de recherche de mises à jour dans les menus ou les réglages de l’app.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">- Si nécessaire, [contactez le développeur de l’app](https://support.apple.com/fr-fr/103190) pour savoir si une mise à jour pour la puce Apple est disponible ou prévue.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">Certaines apps peuvent intégrer ou utiliser des composants, tels que des extensions ou des modules de mise à jour, qui doivent être mis à jour séparément. Si vous avez ajouté des fonctionnalités à votre app en installant des modules, des extensions ou d’autres ajouts basés sur Intel provenant d’un autre développeur, pensez également à les mettre à jour.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">## Installer et utiliser Rosetta pour exécuter les apps basées sur Intel</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">## Installer et utiliser Rosetta pour exécuter les apps basées sur Intel</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text"><mark class="inline-remove">P</mark>our installer Rosetta<mark class="inline-remove">,</mark> ouvrez <mark class="inline-remove">n’imp</mark>o<mark class="inline-remove">rt</mark>e quelle a<mark class="inline-remove">pp</mark> <mark class="inline-remove">b</mark>as<mark class="inline-remove">é</mark>e su<mark class="inline-remove">r</mark> <mark class="inline-remove">I</mark>ntel.</code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text"><mark class="inline-add">Utilisez l’une de ces méthodes p</mark>our installer Rosetta<mark class="inline-add"> pour [macOS 27 ou une version antérieure](https://support.apple.com/fr-fr/109033) . N’oubliez pas que Rosetta n’est pas une app que vous</mark> ouvrez o<mark class="inline-add">u av</mark>e<mark class="inline-add">c</mark> <mark class="inline-add">la</mark>quelle <mark class="inline-add">vous inter</mark>a<mark class="inline-add">gissez</mark> <mark class="inline-add">m</mark>a<mark class="inline-add">nuellement, mai</mark>s<mark class="inline-add"> qu’ell</mark>e s<mark class="inline-add">’exéc</mark>u<mark class="inline-add">te</mark> <mark class="inline-add">automatiqueme</mark>nt<mark class="inline-add"> </mark>e<mark class="inline-add">n arrière-p</mark>l<mark class="inline-add">an</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Si l’app s’o</mark>uvr<mark class="inline-remove">e, c’est que Rosetta est déjà </mark>i<mark class="inline-remove">nstallé et fonctionne. Rosetta</mark> n’<mark class="inline-remove">es</mark>t<mark class="inline-remove"> pas un</mark>e <mark class="inline-remove">app avec la</mark>quelle <mark class="inline-remove">vous </mark>i<mark class="inline-remove">nter</mark>a<mark class="inline-remove">gissez. Elle fonc</mark>tion<mark class="inline-remove">ne</mark> <mark class="inline-remove">automatiqueme</mark>nt<mark class="inline-remove"> </mark>e<mark class="inline-remove">n arrière-p</mark>l<mark class="inline-remove">an pour traduire une app et la rendre compatible avec la puce Apple.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">O</mark>uvri<mark class="inline-add">r</mark> n’<mark class="inline-add">impor</mark>te quelle <mark class="inline-add">appl</mark>i<mark class="inline-add">c</mark>ation <mark class="inline-add">I</mark>ntel</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text">- <mark class="inline-remove">S’il vous est demandé d’installer Rosetta, a</mark>ssurez-vous que votre Mac est connecté à Internet<mark class="inline-remove">, puis cliquez sur Installer et saisissez votre nom d’utilisateur et votre mot de passe macOS pour autoriser la poursuite de l’installation</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">- <mark class="inline-add">A</mark>ssurez-vous que votre Mac est connecté à Internet.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">Ou<mark class="inline-remove"> utilis</mark>ez <mark class="inline-remove">T</mark>e<mark class="inline-remove">rmin</mark>a<mark class="inline-remove">l</mark> pour <mark class="inline-remove">i</mark>nsta<mark class="inline-remove">l</mark>ler <mark class="inline-remove">Rosetta :</mark></code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text"><mark class="inline-add">- </mark>Ou<mark class="inline-add">vr</mark>ez <mark class="inline-add">n’import</mark>e<mark class="inline-add"> quelle [</mark>a<mark class="inline-add">pp à</mark> p<mark class="inline-add">r</mark>o<mark class="inline-add">cesse</mark>ur <mark class="inline-add">I</mark>n<mark class="inline-add">tel](http</mark>s<mark class="inline-add">://suppor</mark>t<mark class="inline-add">.</mark>a<mark class="inline-add">pp</mark>le<mark class="inline-add">.com/f</mark>r<mark class="inline-add">-fr/102527#identify)</mark> <mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">- <mark class="inline-remove">A</mark>s<mark class="inline-remove">s</mark>ure<mark class="inline-remove">z-vou</mark>s que <mark class="inline-remove">v</mark>ot<mark class="inline-remove">re M</mark>a<mark class="inline-remove">c</mark> est <mark class="inline-remove">connect</mark>é<mark class="inline-remove"> </mark>à <mark class="inline-remove">I</mark>nte<mark class="inline-remove">rnet. Ouvrez</mark> en<mark class="inline-remove">su</mark>i<mark class="inline-remove">t</mark>e<mark class="inline-remove"> Termina</mark>l<mark class="inline-remove">, qui se trouve d</mark>an<mark class="inline-remove">s le dossier Utilitaires de votre dossier Applications</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">- <mark class="inline-add">Si l’app </mark>s<mark class="inline-add">’o</mark>u<mark class="inline-add">v</mark>re<mark class="inline-add">, cela </mark>s<mark class="inline-add">ignifie</mark> que <mark class="inline-add">R</mark>o<mark class="inline-add">se</mark>t<mark class="inline-add">t</mark>a est <mark class="inline-add">d</mark>é<mark class="inline-add">j</mark>à <mark class="inline-add">i</mark>n<mark class="inline-add">stallée et s’exécu</mark>te en<mark class="inline-add"> arr</mark>i<mark class="inline-add">èr</mark>e<mark class="inline-add">-p</mark>lan.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">85</span><code class="line-text">- Saisissez <mark class="inline-remove">s</mark>o<mark class="inline-remove">f</mark>t<mark class="inline-remove">wa</mark>reu<mark class="inline-remove">pd</mark>ate <mark class="inline-remove">--</mark>install<mark class="inline-remove">-rosett</mark>a<mark class="inline-remove"> dans la fenêtre de Terminal, puis appuyez sur la touche Retour et suivez les instruc</mark>tion<mark class="inline-remove">s à l’écran</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">- S<mark class="inline-add">’il vous est demandé d’installer Rosetta, cliquez sur Installer, puis s</mark>aisissez <mark class="inline-add">v</mark>otre<mark class="inline-add"> nom d’</mark>u<mark class="inline-add">tilis</mark>ate<mark class="inline-add">ur</mark> <mark class="inline-add">et votre mot de passe macOS pour autoriser l’</mark>installation.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text">[Image: <mark class="inline-remove">I</mark>nvitat<mark class="inline-remove">ion</mark> à installer Rosetta <mark class="inline-remove">p</mark>ou<mark class="inline-remove">r utilis</mark>er une app basée sur Intel.]</code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text">[Image: <mark class="inline-add">Fenêtre i</mark>nvita<mark class="inline-add">n</mark>t à installer Rosetta <mark class="inline-add">lors de l’</mark>ou<mark class="inline-add">v</mark>er<mark class="inline-add">ture</mark> <mark class="inline-add">d’</mark>une app basée sur Intel.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">### Ou utiliser Terminal</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">- Assurez-vous que votre Mac est connecté à Internet.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">- Ouvrez Terminal, dans le sous-dossier Utilitaires du dossier Applications.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text">- Saisissez ou collez cette commande dans la fenêtre de Terminal :</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">97</span><code class="line-text">- softwareupdate --install-rosetta</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text">- Appuyez sur la touche Retour, puis suivez les instructions à l’écran.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">## Informations supplémentaires</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">103</span><code class="line-text">Si la fenêtre d’informations d’une app affiche le réglage « Ouvrir avec Rosetta », cela signifie que l’app est universelle et que son développeur a choisi d’inclure ce réglage. Ce réglage force l’app à s’ouvrir en tant qu’app basée sur Intel plutôt qu’en tant qu’app pour la puce Apple, ce qui lui permet d’utiliser des modules, des extensions et d’autres compléments réservés à Intel. Si vous mettez à jour le module complémentaire pour puce Apple ultérieurement, désactivez ce réglage.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

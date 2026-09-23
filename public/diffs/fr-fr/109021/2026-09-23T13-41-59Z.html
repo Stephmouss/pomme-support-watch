@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Suivre la position de vos objets personnels avec un AirTag et l’app Localiser - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Suivre la position de vos objets personnels avec un AirTag et l’app Localiser - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/109021">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+10 ajouts</span>
+      <span class="badge removed">−8 suppressions</span>
+      <span class="badge">2 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">L’AirTag et l’app Localiser vous permettent de suivre la position de vos objets personnels, comme des clés, un sac à dos et plus encore. Si votre objet est à proximité, la fonctionnalité Localisation précise peut vous aider à le retrouver, même s’il est coincé sous un coussin de canapé ou caché dans une pile de lettres.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">L’AirTag et l’app Localiser vous permettent de suivre la position de vos objets personnels, comme des clés, un sac à dos et plus encore. Si votre objet est à proximité, la fonctionnalité Localisation précise peut vous aider à le retrouver, même s’il est coincé sous un coussin de canapé ou caché dans une pile de lettres.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">## Utiliser <mark class="inline-remove">Re</mark>c<mark class="inline-remove">h</mark>er<mark class="inline-remove">cher à proximité</mark> sur votre iPhone pour déterminer la position d’un objet à l’aide de la localisation précise</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">## Utiliser <mark class="inline-add">Lo</mark>c<mark class="inline-add">alis</mark>er sur votre iPhone pour déterminer la position d’un objet à l’aide de la localisation précise</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">La fonctionnalité Rechercher à proximité fonctionne sur l’ [iPhone 15 <mark class="inline-remove">ou</mark> modèle ultérieur](https://support.apple.com/109512) . Les performances peuvent être réduites par certains facteurs environnementaux, notamment la composition des murs ou des parois, ou encore la présence de certains objets entre votre iPhone et votre AirTag.</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">La fonctionnalité <mark class="inline-add">Localiser (</mark>Rechercher à proximité<mark class="inline-add">)</mark> fonctionne sur l’ [iPhone 15 <mark class="inline-add">et les</mark> modèle<mark class="inline-add">s</mark> ultérieur<mark class="inline-add">s</mark>](https://support.apple.com/109512) . Les performances peuvent être réduites par certains facteurs environnementaux, notamment la composition des murs ou des parois, ou encore la présence de certains objets entre votre iPhone et votre AirTag.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">- Ouvrez l’app Localiser, puis touchez Objets.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">- Ouvrez l’app Localiser, puis touchez Objets.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">- Touchez l’objet associé à votre AirTag, puis touchez Rechercher à proximité. [Découvrez la marche à suivre si vous ne pouvez pas toucher <mark class="inline-remove">Re</mark>c<mark class="inline-remove">h</mark>er<mark class="inline-remove">cher à proximité</mark>](https://support.apple.com/fr-fr/109021#no_find_nearby) .</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">- Touchez l’objet associé à votre AirTag, puis touchez <mark class="inline-add">Localiser (</mark>Rechercher à proximité<mark class="inline-add">)</mark>. [Découvrez la marche à suivre si vous ne pouvez pas toucher <mark class="inline-add">Lo</mark>c<mark class="inline-add">alis</mark>er](https://support.apple.com/fr-fr/109021#no_find_nearby) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">[Image: <mark class="inline-remove">R</mark>et<mark class="inline-remove">rouv</mark>e<mark class="inline-remove">z un AirTag a</mark>t<mark class="inline-remove">taché aux clé</mark>s de<mark class="inline-remove"> votre maison ou à tout autre objet dans</mark> l’app Localiser <mark class="inline-remove">sur</mark> un i<mark class="inline-remove">P</mark>h<mark class="inline-remove">on</mark>e.]</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">[Image: <mark class="inline-add">Écran d’iPhone affichant l’ongl</mark>et<mark class="inline-add"> Obj</mark>ets de l’app Localiser <mark class="inline-add">avec</mark> un <mark class="inline-add">A</mark>i<mark class="inline-add">rTag nommé « Clés d’As</mark>h<mark class="inline-add">l</mark>e<mark class="inline-add">y »</mark>.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">- Suivez les instructions qui s’affichent à l’écran et déplacez-vous jusqu’à ce que votre iPhone se connecte à votre AirTag.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">- Suivez les instructions qui s’affichent à l’écran et déplacez-vous jusqu’à ce que votre iPhone se connecte à votre AirTag.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">- Votre iPhone affiche la distance qui vous sépare et l’itinéraire à suivre.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">- Votre iPhone affiche la distance qui vous sépare et l’itinéraire à suivre.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- Votre iPhone vibre à mesure que vous vous rapprochez de l’AirTag. Touchez Émettre un son pour que votre AirTag émette une série de sons qui vous aideront à le retrouver.</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- Votre iPhone vibre à mesure que vous vous rapprochez de l’AirTag. Touchez <mark class="inline-add">Faire sonner (</mark>Émettre un son<mark class="inline-add">)</mark> pour que votre AirTag émette une série de sons qui vous aideront à le retrouver.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">Si un message indique que votre iPhone a besoin de plus de lumière, assurez-vous que la caméra n’est pas obstruée ou touchez le bouton Activer la lampe torche.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">Si un message indique que votre iPhone a besoin de plus de lumière, assurez-vous que la caméra n’est pas obstruée ou touchez le bouton Activer la lampe torche.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">## Si l<mark class="inline-remove">’</mark>o<mark class="inline-remove">p</mark>t<mark class="inline-remove">i</mark>on <mark class="inline-remove">Re</mark>c<mark class="inline-remove">h</mark>er<mark class="inline-remove">cher à proximité</mark> n’apparaît pas</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">## Si l<mark class="inline-add">e b</mark>o<mark class="inline-add">u</mark>ton <mark class="inline-add">Lo</mark>c<mark class="inline-add">alis</mark>er n’apparaît pas</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">Si l<mark class="inline-remove">’</mark>o<mark class="inline-remove">p</mark>t<mark class="inline-remove">i</mark>on Rechercher à proximité n’apparaît pas, vérifiez que votre appareil répond à la configuration minimale requise pour la localisation précise et que vous avez autorisé l’app Localiser à accéder à votre position.</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">Si l<mark class="inline-add">e b</mark>o<mark class="inline-add">u</mark>ton <mark class="inline-add">Localiser (</mark>Rechercher à proximité<mark class="inline-add">)</mark> n’apparaît pas, vérifiez que votre appareil répond à la configuration minimale requise pour la localisation précise et que vous avez autorisé l’app Localiser à accéder à votre position.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">### Vérifier que votre appareil répond à la configuration requise pour la localisation précise</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">### Vérifier que votre appareil répond à la configuration requise pour la localisation précise</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">- Choisissez la façon dont vous souhaitez que l’app Localiser accède à votre position. Activez l’option Position exacte pour que la localisation soit la plus précise possible.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">- Choisissez la façon dont vous souhaitez que l’app Localiser accède à votre position. Activez l’option Position exacte pour que la localisation soit la plus précise possible.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">Vous ne voyez toujours <mark class="inline-remove">pas</mark> <mark class="inline-remove">l’</mark>o<mark class="inline-remove">p</mark>t<mark class="inline-remove">i</mark>on <mark class="inline-remove">Re</mark>c<mark class="inline-remove">h</mark>er<mark class="inline-remove">cher à proximité</mark> ? Votre AirTag est peut-être hors de portée de votre iPhone. Essayez d’utiliser Localiser pour [le localiser sur une carte, suivre des indications pour le retrouver ou le faire sonner](https://support.apple.com/fr-fr/104978) par l’intermédiaire du haut-parleur intégré de l’AirTag. Une fois que vous êtes à portée, vous pouvez réessayer d’utiliser la localisation précise.</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">Vous ne voyez toujours <mark class="inline-add">le</mark> <mark class="inline-add">b</mark>o<mark class="inline-add">u</mark>ton <mark class="inline-add">Lo</mark>c<mark class="inline-add">alis</mark>er ? Votre AirTag est peut-être hors de portée de votre iPhone. Essayez d’utiliser<mark class="inline-add"> l’app</mark> Localiser pour [le localiser sur une carte, suivre des indications pour le retrouver ou le faire sonner](https://support.apple.com/fr-fr/104978) par l’intermédiaire du haut-parleur intégré de l’AirTag. Une fois que vous êtes à portée, vous pouvez réessayer d’utiliser la localisation précise.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">L’AirTag n’est pas visible sur [icloud.com/find](https://www.icloud.com/find) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">## Si vous prêtez un objet attaché à un AirTag</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">## Si vous prêtez un objet attaché à un AirTag</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
