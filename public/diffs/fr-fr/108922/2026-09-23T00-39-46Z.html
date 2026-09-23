@@ -1,0 +1,754 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Gérer votre espace de stockage iCloud sur votre appareil Apple - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Gérer votre espace de stockage iCloud sur votre appareil Apple - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/108922">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+92 ajouts</span>
+      <span class="badge removed">−76 suppressions</span>
+      <span class="badge">17 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">Besoin d’espace de stockage iCloud supplémentaire ? Vous pouvez facilement gérer votre stockage pour libérer de l’espace ou passer à iCloud+ sur votre appareil Apple.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">Besoin d’espace de stockage iCloud supplémentaire ? Vous pouvez facilement gérer votre stockage pour libérer de l’espace ou passer à iCloud+ sur votre appareil Apple.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">En vous abonnant à iCloud, vous bénéficiez automatiquement de 5 Go d’espace de stockage gratuit. Vous pouvez utiliser cet espace pour vos sauvegardes iCloud, pour enregistrer vos photos et vidéos dans Photos iCloud, pour garder vos fichiers à jour dans iCloud Drive, et bien plus encore. Vous pouvez [vérifier la quantité d’espace de stockage iCloud que vous utilisez](https://support.apple.com/guide/icloud/mm039c13d410) dans Réglages sur votre appareil ou sur [icloud.com](https://icloud.com/) . <mark class="inline-remove">Et s</mark>i votre espace de stockage iCloud est insuffisant, vous pouvez le gérer pour libérer de l’espace ou passer à iCloud+.</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">En vous abonnant à iCloud, vous bénéficiez automatiquement de 5 Go d’espace de stockage gratuit. Vous pouvez utiliser cet espace pour vos sauvegardes iCloud, pour enregistrer vos photos et vidéos dans Photos iCloud, pour garder vos fichiers à jour dans iCloud Drive, et bien plus encore. Vous pouvez [vérifier la quantité d’espace de stockage iCloud que vous utilisez](https://support.apple.com/guide/icloud/mm039c13d410) dans Réglages sur votre appareil ou sur [icloud.com](https://icloud.com/) . <mark class="inline-add">S</mark>i votre espace de stockage iCloud est insuffisant, vous pouvez le gérer pour libérer de l’espace ou passer à iCloud+.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">Vous ne savez pas faire la différence entre l’espace de stockage de votre appareil et le stockage iCloud ? [Obtenez plus d’informations sur l’espace de stockage de l’appareil et le stockage iCloud](https://support.apple.com/102670) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">Vous ne savez pas faire la différence entre l’espace de stockage de votre appareil et le stockage iCloud ? [Obtenez plus d’informations sur l’espace de stockage de l’appareil et le stockage iCloud](https://support.apple.com/102670) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">Si vous manquez d’espace de stockage iCloud, les données de votre appareil cesseront d’être sauvegardées sur iCloud, les nouvelles photos et vidéos ne seront pas chargées dans Photos iCloud, et iCloud Drive et les autres apps iCloud ne seront plus synchronisés avec l’ensemble de vos appareils. Vous ne pourrez pas non plus envoyer ni recevoir d’e-mails avec votre adresse e-mail iCloud.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">Si vous manquez d’espace de stockage iCloud, les données de votre appareil cesseront d’être sauvegardées sur iCloud, les nouvelles photos et vidéos ne seront pas chargées dans Photos iCloud, et iCloud Drive et les autres apps iCloud ne seront plus synchronisés avec l’ensemble de vos appareils. Vous ne pourrez pas non plus envoyer ni recevoir d’e-mails avec votre adresse e-mail iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">Vous pouvez libérer de l’espace dans iCloud en supprimant du contenu que vous n’utilisez pas, comme des photos en double, des fichiers, ainsi que des messages et pièces jointes dans Messages. Avant de supprimer quoi que ce soit, nous vous conseillons [d’archiver ou de copier les <mark class="inline-remove">d</mark>on<mark class="inline-remove">née</mark>s que vous stockez sur iCloud](https://support.apple.com/108306) .</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">Vous pouvez libérer de l’espace dans iCloud en supprimant du contenu que vous n’utilisez pas, comme des photos en double, des fichiers, ainsi que des messages et pièces jointes dans Messages. Avant de supprimer quoi que ce soit, nous vous conseillons [d’archiver ou de copier les <mark class="inline-add">informati</mark>ons que vous stockez sur iCloud](https://support.apple.com/108306) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">Pour supprimer le contenu que vous n’utilisez pas, sélectionnez une catégorie ci-dessous et suivez les étapes associées.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">Pour supprimer le contenu que vous n’utilisez pas, sélectionnez une catégorie ci-dessous et suivez les étapes associées.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 17 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">- [Suppression des données Apple Invitations d’iCloud](https://support.apple.com/fr-fr/108922#deleteevent)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">- [Suppression des données Apple Invitations d’iCloud](https://support.apple.com/fr-fr/108922#deleteevent)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text"><mark class="inline-remove">-</mark> [<mark class="inline-remove">G</mark>e<mark class="inline-remove">stion de</mark> votre stockage iCloud <mark class="inline-remove">dep</mark>u<mark class="inline-remove">is</mark> votre PC Windows](https://support.apple.com/121314)</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text"><mark class="inline-add">Vous pouvez également</mark> [<mark class="inline-add">gér</mark>e<mark class="inline-add">r</mark> votr<mark class="inline-add">e espace d</mark>e stockage iCloud <mark class="inline-add">s</mark>u<mark class="inline-add">r</mark> votre PC Windows](https://support.apple.com/121314)<mark class="inline-add"> .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">## Consultation de la section Recommandé pour vous</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">## Consultation de la section Recommandé pour vous</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">Si vous êtes à court d’espace de stockage sur votre iPhone ou iPad avec iOS 17 ou iPadOS 17 ou version ultérieure, accédez à Recommandé pour vous dans les réglages iCloud. À partir de là, vous pouvez supprimer certains éléments dont vous n’avez peut-être plus besoin, comme des photos, des fichiers volumineux ou d’anciennes sauvegardes.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">Si vous êtes à court d’espace de stockage sur votre iPhone ou iPad avec iOS 17 ou iPadOS 17 ou version ultérieure, accédez à Recommandé pour vous dans les réglages iCloud. À partir de là, vous pouvez supprimer certains éléments dont vous n’avez peut-être plus besoin, comme des photos, des fichiers volumineux ou d’anciennes sauvegardes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- Ouvrez l’app Réglages, touchez votre nom, puis <mark class="inline-remove">touchez </mark>iCloud.</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- Ouvrez l’app Réglages, touchez votre nom, puis iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">- Touchez Recommandé pour vous<mark class="inline-remove">, puis touchez l’une des options et suivez les instructions à l’écran pour libérer de l’espace</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- Touchez Recommandé pour vous.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text"><mark class="inline-remove">[Imag</mark>e<mark class="inline-remove">:</mark> <mark class="inline-remove">É</mark>cran<mark class="inline-remove"> d’iPhone montrant la suggestion Recommandé</mark> pour <mark class="inline-remove">v</mark>o<mark class="inline-remove">us]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text"><mark class="inline-add">- Touch</mark>e<mark class="inline-add">z</mark> <mark class="inline-add">l’une des options et suivez les instructions à l’é</mark>cran pour <mark class="inline-add">libérer de l’espace de st</mark>o<mark class="inline-add">ckage.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text"><mark class="inline-remove">S</mark>i<mark class="inline-remove"> v</mark>o<mark class="inline-remove">us </mark>ne <mark class="inline-remove">voyez p</mark>a<mark class="inline-remove">s ce que vous </mark>ch<mark class="inline-remove">erchez</mark> <mark class="inline-remove">sous</mark> Recommandé pour vous<mark class="inline-remove">,</mark> vo<mark class="inline-remove">u</mark>s po<mark class="inline-remove">uvez </mark>to<mark class="inline-remove">ujour</mark>s su<mark class="inline-remove">pprime</mark>r <mark class="inline-remove">manuellement certains contenus d’</mark>iCloud.</code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text"><mark class="inline-add">[Image: Écran d’</mark>i<mark class="inline-add">Ph</mark>one a<mark class="inline-add">ffi</mark>ch<mark class="inline-add">ant</mark> <mark class="inline-add">«</mark> Recommandé pour vous <mark class="inline-add">» a</mark>v<mark class="inline-add">ec la suggesti</mark>o<mark class="inline-add">n « Synchronisez le</mark>s p<mark class="inline-add">h</mark>otos sur iCloud<mark class="inline-add"> »</mark>.<mark class="inline-add">]</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">Si aucune suggestion de la section Recommandé pour vous ne répond à vos besoins, vous pouvez toujours supprimer manuellement du contenu depuis iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">## Réduction de la taille de votre sauvegarde iCloud</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">## Réduction de la taille de votre sauvegarde iCloud</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">Lorsque vous [sauvegardez les données de votre iPhone ou iPad sur iCloud](https://support.apple.com/118426) , les informations les plus importantes de votre appareil sont automatiquement sauvegardées. De nombreuses apps sont automatiquement sauvegardées sur iCloud après leur installation. <mark class="inline-remove">V</mark>ou<mark class="inline-remove">s pouvez</mark> réduire la taille de votre sauvegarde iCloud et libérer de l’espace dans iCloud e<mark class="inline-remove">n</mark> <mark class="inline-remove">in</mark>ter<mark class="inline-remove">rompant</mark> <mark class="inline-remove">la</mark> sauvegarde <mark class="inline-remove">d</mark>es apps que vous n’utilisez pas ou <mark class="inline-remove">en </mark>supprim<mark class="inline-remove">ant</mark> d’anciennes sauvegardes iCloud.</code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">Lorsque vous [sauvegardez les données de votre iPhone ou iPad sur iCloud](https://support.apple.com/118426) , les informations les plus importantes de votre appareil sont automatiquement sauvegardées. De nombreuses apps sont automatiquement sauvegardées sur iCloud après leur installation. <mark class="inline-add">P</mark>ou<mark class="inline-add">r</mark> réduire la taille de votre sauvegarde iCloud et libérer de l’espace dans iCloud<mark class="inline-add">,</mark> <mark class="inline-add">vous pouv</mark>e<mark class="inline-add">z</mark> <mark class="inline-add">arrê</mark>ter <mark class="inline-add">de</mark> sauvegarde<mark class="inline-add">r</mark> <mark class="inline-add">l</mark>es apps que vous n’utilisez pas ou supprim<mark class="inline-add">er</mark> d’anciennes sauvegardes iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">[En savoir plus sur les éléments sauvegardés par iCloud](https://support.apple.com/108770)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">[En savoir plus sur les éléments sauvegardés par iCloud](https://support.apple.com/108770)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">### Choix des apps à sauvegarder sur votre iPhone, iPad ou Apple Vision Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">### Choix des apps à sauvegarder sur votre iPhone, iPad ou Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">- Ouvrez l’app Réglages, touchez votre nom, puis <mark class="inline-remove">touchez </mark>iCloud.</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">- Ouvrez l’app Réglages, touchez votre nom, puis iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">- Touchez Stockage ou Gérer l’espace de stockage du compte<mark class="inline-remove">, puis Sauvegardes</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">- Touchez Stockage ou Gérer l’espace de stockage du compte.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">- Touchez le nom de l’appareil que vous utilisez.</code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">- Touchez<mark class="inline-add"> Sauvegardes, puis</mark> le nom de l’appareil que vous utilisez.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">- Désactivez les apps dont vous ne souhaitez pas sauvegarder les données.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">- Désactivez les apps dont vous ne souhaitez pas sauvegarder les données.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">- Touchez Désactiver pour confirmer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">- Touchez Désactiver pour confirmer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">La confirmation de ce choix désactive la sauvegarde iCloud de l’app en question et supprime toutes les données associées d’iCloud.</code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">La confirmation de ce choix désactive<mark class="inline-add"> également</mark> la sauvegarde iCloud de l’app en question et supprime toutes les données associées d’iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">Certaines apps sont toujours sauvegardées, et leur sauvegarde ne peut pas être désactivée.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">Certaines apps sont toujours sauvegardées, et leur sauvegarde ne peut pas être désactivée.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">### Suppression de sauvegardes et désactivation de la sauvegarde iCloud sur votre appareil</code></div>
+<div class="diff-line current unchanged"><span class="line-number">77</span><code class="line-text">### Suppression de sauvegardes et désactivation de la sauvegarde iCloud sur votre appareil</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">Vous pouvez supprimer d’anciennes sauvegardes iCloud <mark class="inline-remove">pour</mark> l’appareil que vous utilisez actuellement ou d’anciens appareils que vous n’utilisez plus. Les sauvegardes iCloud restent disponibles pendant une période de 180 jours après la désactivation de la fonction de sauvegarde iCloud ou l’arrêt de son utilisation. Les sauvegardes en cours d’utilisation pour la récupération d’un appareil ne peuvent pas être supprimées.</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">Vous pouvez supprimer d’anciennes sauvegardes iCloud <mark class="inline-add">de</mark> l’appareil que vous utilisez actuellement ou d’anciens appareils que vous n’utilisez plus. Les sauvegardes iCloud restent disponibles pendant une période de 180 jours après la désactivation de la fonction de sauvegarde iCloud ou l’arrêt de son utilisation. Les sauvegardes en cours d’utilisation pour la récupération d’un appareil ne peuvent pas être supprimées.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">#### iPhone, iPad ou Apple Vision Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">#### iPhone, iPad ou Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">- Ouvrez l’app Réglages, touchez votre nom, puis <mark class="inline-remove">touchez </mark>iCloud.</code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">- Ouvrez l’app Réglages, touchez votre nom, puis iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">- Touchez Stockage ou Gérer l’espace de stockage du compte, puis Sauvegardes.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">- Touchez Stockage ou Gérer l’espace de stockage du compte, puis Sauvegardes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">#### Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">93</span><code class="line-text">#### Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">- Dans le menu <mark class="inline-remove">Pomm</mark>e , choisissez Réglages Système.</code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text">- Dans le menu <mark class="inline-add">Appl</mark>e , choisissez Réglages Système.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">95</span><code class="line-text">- Cliquez sur votre nom, puis sur iCloud.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">- Cliquez sur votre nom, puis sur iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">97</span><code class="line-text">- Cliquez sur Gérer, puis sélectionnez Sauvegardes.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">99</span><code class="line-text">- Cliquez sur Gérer, puis sélectionnez Sauvegardes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text">- Sélectionnez l’une des sauvegardes, puis cliquez sur le bouton de suppression pour la supprimer. Pour désactiver la sauvegarde et supprimer toutes les sauvegardes de cet appareil sur iCloud, choisissez Supprimer lorsqu’il vous est demandé de confirmer votre choix.</code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">- Sélectionnez l’une des sauvegardes, puis cliquez sur le bouton de suppression<mark class="inline-add"> (–)</mark> pour la supprimer. Pour désactiver la sauvegarde et supprimer toutes les sauvegardes de cet appareil sur iCloud, choisissez Supprimer lorsqu’il vous est demandé de confirmer votre choix.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">101</span><code class="line-text">## Suppression de photos dans Photos iCloud</code></div>
+<div class="diff-line current unchanged"><span class="line-number">103</span><code class="line-text">## Suppression de photos dans Photos iCloud</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">103</span><code class="line-text">Photos iCloud maintient vos photos et vidéos à jour sur tous vos appareils à l’aide de votre espace de stockage iCloud. Vous pouvez libérer de <mark class="inline-remove">l</mark>’espace dans iCloud <mark class="inline-remove">lorsqu</mark>e<mark class="inline-remove"> vous</mark> supprim<mark class="inline-remove">ez</mark> <mark class="inline-remove">d</mark>es photos et <mark class="inline-remove">d</mark>es vidéos dont vous n’avez plus besoin de l’app Photos<mark class="inline-remove"> sur l’un de vos appareils</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">105</span><code class="line-text">Photos iCloud maintient vos photos et vidéos à jour sur tous vos appareils à l’aide de votre espace de stockage iCloud. Vous pouvez libérer d<mark class="inline-add">avantag</mark>e <mark class="inline-add">d</mark>’espace dans iCloud e<mark class="inline-add">n</mark> supprim<mark class="inline-add">ant</mark> <mark class="inline-add">l</mark>es photos et <mark class="inline-add">l</mark>es vidéos dont vous n’avez plus besoin de l’app Photos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">105</span><code class="line-text"><mark class="inline-remove">Avant de supprimer quoi que ce soit, assurez</mark>-<mark class="inline-remove">vous d’avoir [sauvegardé les photos et vidéos que vous souhaitez conserver](https://support.apple.com/108306) .</mark> Si vous utilisez Photos iCloud et que vous supprimez une photo ou une vidéo sur un appareil, celle-ci est également supprimée de tous les autres appareils connectés au même compte Apple.</code></div>
+<div class="diff-line current added"><span class="line-number">107</span><code class="line-text">- Si vous utilisez Photos iCloud et que vous supprimez une photo ou une vidéo sur un appareil, celle-ci est également supprimée de tous les autres appareils connectés au même compte Apple.<mark class="inline-add"> Avant de supprimer quoi que ce soit, assurez-vous d’avoir [sauvegardé les photos et les vidéos que vous souhaitez conserver](https://support.apple.com/108306) .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">107</span><code class="line-text">Sui<mark class="inline-remove">v</mark>e<mark class="inline-remove">z</mark> les ins<mark class="inline-remove">tructio</mark>ns c<mark class="inline-remove">i-</mark>dessou<mark class="inline-remove">s</mark> pour supprimer des <mark class="inline-remove">pho</mark>t<mark class="inline-remove">o</mark>s <mark class="inline-remove">e</mark>t<mark class="inline-remove"> de</mark>s<mark class="inline-remove"> vid</mark>é<mark class="inline-remove">o</mark>s d<mark class="inline-remove">e</mark> votre p<mark class="inline-remove">ho</mark>to<mark class="inline-remove">thèqu</mark>e<mark class="inline-remove"> iCloud. Si vous n’utilisez pas Photos</mark> iCloud, vous <mark class="inline-remove">p</mark>ou<mark class="inline-remove">v</mark>ez <mark class="inline-remove">[suppr</mark>i<mark class="inline-remove">m</mark>e<mark class="inline-remove">r des photos de</mark> votre <mark class="inline-remove">phot</mark>othèque <mark class="inline-remove">à </mark>l<mark class="inline-remove">a p</mark>l<mark class="inline-remove">ac</mark>e](https://support.apple.com/<mark class="inline-remove">fr-fr/</mark>1<mark class="inline-remove">0</mark>8<mark class="inline-remove">9</mark>22<mark class="inline-remove">#camera_roll</mark>) .</code></div>
+<div class="diff-line current added"><span class="line-number">109</span><code class="line-text"><mark class="inline-add">- </mark>S<mark class="inline-add">i vo</mark>u<mark class="inline-add">s fa</mark>i<mark class="inline-add">t</mark>e<mark class="inline-add">s partie d’une photothèque partagée iCloud,</mark> les <mark class="inline-add">photos ajoutées à cette photothèque sont un</mark>i<mark class="inline-add">queme</mark>n<mark class="inline-add">t comptabili</mark>s<mark class="inline-add">ées da</mark>ns <mark class="inline-add">l’espa</mark>c<mark class="inline-add">e </mark>de<mark class="inline-add"> </mark>s<mark class="inline-add">tockage de la per</mark>so<mark class="inline-add">nne q</mark>u<mark class="inline-add">i a créé la</mark> p<mark class="inline-add">hotothèque partagée. P</mark>our supprimer des <mark class="inline-add">élémen</mark>ts <mark class="inline-add">comp</mark>t<mark class="inline-add">abili</mark>sés d<mark class="inline-add">ans</mark> votre <mark class="inline-add">es</mark>p<mark class="inline-add">ace de s</mark>to<mark class="inline-add">ckag</mark>e iCloud, <mark class="inline-add">[assurez-</mark>vous <mark class="inline-add">que v</mark>ou<mark class="inline-add">s consult</mark>ez <mark class="inline-add">b</mark>ie<mark class="inline-add">n</mark> votre <mark class="inline-add">bibli</mark>othèque <mark class="inline-add">personne</mark>lle](https://support.apple.com/1<mark class="inline-add">1</mark>822<mark class="inline-add">9</mark>) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">109</span><code class="line-text"><mark class="inline-remove">Si</mark> <mark class="inline-remove">vous faites</mark> partie d’<mark class="inline-remove">un</mark>e <mark class="inline-remove">pho</mark>t<mark class="inline-remove">othèqu</mark>e <mark class="inline-remove">partagée </mark>i<mark class="inline-remove">Cl</mark>o<mark class="inline-remove">ud</mark>, les photos ajoutées à <mark class="inline-remove">cette</mark> p<mark class="inline-remove">ho</mark>t<mark class="inline-remove">othèque</mark> so<mark class="inline-remove">nt uniqueme</mark>nt comptabilisées dans l’espace de stockage de la personne qui a créé la<mark class="inline-remove"> photothèq</mark>u<mark class="inline-remove">e</mark> partagé<mark class="inline-remove">e</mark>. <mark class="inline-remove">P</mark>ou<mark class="inline-remove">r</mark> supprimer des éléments <mark class="inline-remove">c</mark>o<mark class="inline-remove">m</mark>pta<mark class="inline-remove">bilis</mark>és dans <mark class="inline-remove">v</mark>ot<mark class="inline-remove">re espace de stockage iCloud, [assurez-vous que vous consultez bien votre bibli</mark>othèque personnelle<mark class="inline-remove">](</mark>ht<mark class="inline-remove">tp</mark>s<mark class="inline-remove">://</mark>supp<mark class="inline-remove">o</mark>rt.apple<mark class="inline-remove">.</mark>co<mark class="inline-remove">m/118229)</mark> .</code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">À</mark> parti<mark class="inline-add">r d</mark>e<mark class="inline-add"> la version 27</mark> d’<mark class="inline-add">iOS, d’iPadOS, d</mark>e <mark class="inline-add">macOS e</mark>t<mark class="inline-add"> d</mark>e <mark class="inline-add">v</mark>i<mark class="inline-add">si</mark>o<mark class="inline-add">nOS</mark>, les photos ajoutées à <mark class="inline-add">un album</mark> p<mark class="inline-add">ar</mark>t<mark class="inline-add">agé</mark> sont comptabilisées dans l’espace de stockage de la personne qui a créé l<mark class="inline-add">’</mark>a<mark class="inline-add">lb</mark>u<mark class="inline-add">m</mark> partagé. <mark class="inline-add">Si v</mark>ou<mark class="inline-add">s</mark> supprime<mark class="inline-add">z un album pa</mark>r<mark class="inline-add">tagé, les membres</mark> d<mark class="inline-add">u group</mark>e<mark class="inline-add"> n’auront plu</mark>s<mark class="inline-add"> accès aux</mark> éléments <mark class="inline-add">qui n’</mark>o<mark class="inline-add">nt </mark>p<mark class="inline-add">as é</mark>t<mark class="inline-add">é s</mark>a<mark class="inline-add">uvegard</mark>és dans <mark class="inline-add">leur ph</mark>otothèque personnelle<mark class="inline-add">. Les p</mark>h<mark class="inline-add">o</mark>t<mark class="inline-add">o</mark>s<mark class="inline-add"> </mark>supp<mark class="inline-add">rimées d’un album pa</mark>rt<mark class="inline-add">agé sont immédiatement effacées</mark>.<mark class="inline-add"> Enregistrez-en une copie d</mark>a<mark class="inline-add">ns votre </mark>p<mark class="inline-add">hotothèque </mark>p<mark class="inline-add">ersonnel</mark>le<mark class="inline-add"> pour </mark>co<mark class="inline-add">ntinuer</mark> <mark class="inline-add">à y accéder</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">111</span><code class="line-text"><mark class="inline-remove">###</mark> iPho<mark class="inline-remove">ne</mark>, <mark class="inline-remove">iPad </mark>ou <mark class="inline-remove">A</mark>pple<mark class="inline-remove"> Visi</mark>o<mark class="inline-remove">n P</mark>ro</code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text"><mark class="inline-add">Si</mark> <mark class="inline-add">vous n’ut</mark>i<mark class="inline-add">lisez pas </mark>Pho<mark class="inline-add">tos iCloud</mark>, <mark class="inline-add">v</mark>ou<mark class="inline-add">s</mark> <mark class="inline-add">pouvez [supprimer des photos de votre photothèque à la place](https://support.a</mark>pple<mark class="inline-add">.c</mark>o<mark class="inline-add">m/fr-fr/108922#camera_</mark>ro<mark class="inline-add">ll) .</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">115</span><code class="line-text">Les photos et vidéos supprimées peuvent être restaurées à partir de l’album Supprimés récemment pendant 30 jours. Les éléments de la section Supprimées récemment ne sont pas pris en compte dans votre espace de stockage iCloud. Si vous dépassez votre limite de stockage iCloud, les photos et vidéos que vous avez supprimées sont immédiatement effacées et ne peuvent plus être restaurées à partir de l’album Supprimés récemment.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">117</span><code class="line-text">### Supprimer des photos sur iPhone, iPad ou Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">113</span><code class="line-text">- Ouvrez l’app Photos.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">119</span><code class="line-text">- Ouvrez l’app Photos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">125</span><code class="line-text">Si vous n’utilisez pas Photos iCloud, votre photothèque est intégrée à votre sauvegarde iCloud. Pour vérifier la quantité d’espace de stockage qu’occupe votre photothèque dans Sauvegarde iCloud et réduire sa taille, procédez comme suit :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">131</span><code class="line-text">Si vous n’utilisez pas Photos iCloud, votre photothèque est intégrée à votre sauvegarde iCloud. Pour vérifier la quantité d’espace de stockage qu’occupe votre photothèque dans Sauvegarde iCloud et réduire sa taille, procédez comme suit :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">127</span><code class="line-text">- Ouvrez l’app Réglages, touchez votre nom, puis <mark class="inline-remove">touchez </mark>iCloud.</code></div>
+<div class="diff-line current added"><span class="line-number">133</span><code class="line-text">- Ouvrez l’app Réglages, touchez votre nom, puis iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">129</span><code class="line-text">- Touchez Stockage ou Gérer l’espace de stockage du compte, puis Sauvegardes.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">135</span><code class="line-text">- Touchez Stockage ou Gérer l’espace de stockage du compte, puis Sauvegardes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">133</span><code class="line-text">- Pour réduire la taille de votre sauvegarde Photos, procédez comme suit :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">139</span><code class="line-text">- Pour réduire la taille de votre sauvegarde Photos, procédez comme suit :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">135</span><code class="line-text">- [Enregistrez vos photos et vidéos sur votre ordinateur](https://support.apple.com/120267) , puis [sauvegarde<mark class="inline-remove">z</mark> manuelle<mark class="inline-remove">m</mark>e<mark class="inline-remove">nt</mark> votre appareil](https://support.apple.com/118426) .</code></div>
+<div class="diff-line current added"><span class="line-number">141</span><code class="line-text">- [Enregistrez vos photos et vidéos sur votre ordinateur](https://support.apple.com/120267) , puis [<mark class="inline-add">effectuez une </mark>sauvegarde manuelle<mark class="inline-add"> d</mark>e votre appareil](https://support.apple.com/118426) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">137</span><code class="line-text">- Si vous souhaitez conserver vos photos et vidéos sur votre appareil, vous pouvez [désactiver la sauvegarde des photos](https://support.apple.com/108922#selectapps) ou [passer à iCloud+](https://support.apple.com/108349) pour obtenir plus d’espace de stockage.</code></div>
+<div class="diff-line current added"><span class="line-number">143</span><code class="line-text">- Si vous souhaitez conserver vos photos et<mark class="inline-add"> vos</mark> vidéos sur votre appareil, vous pouvez [désactiver la sauvegarde des photos](https://support.apple.com/108922#selectapps) ou [passer à iCloud+](https://support.apple.com/108349) pour obtenir plus d’espace de stockage.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">139</span><code class="line-text">### Mac</code></div>
+<div class="diff-line current added"><span class="line-number">145</span><code class="line-text">### <mark class="inline-add">Supprimer des photos sur </mark>Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">141</span><code class="line-text">- Ouvrez l’app Photos.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">147</span><code class="line-text">- Ouvrez l’app Photos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">145</span><code class="line-text">- Appuyez sur la touche de suppression de votre clavier, puis cliquez sur Supprimer pour confirmer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">151</span><code class="line-text">- Appuyez sur la touche de suppression de votre clavier, puis cliquez sur Supprimer pour confirmer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">147</span><code class="line-text">### i<mark class="inline-remove">c</mark>loud.com</code></div>
+<div class="diff-line current added"><span class="line-number">153</span><code class="line-text">### <mark class="inline-add">Suppr</mark>i<mark class="inline-add">mer des photos sur iC</mark>loud.com</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">149</span><code class="line-text">- Sur votre iPhone, iPad, Apple Vision Pro ou ordinateur, connectez-vous à [icloud.com](https://www.icloud.com/) .</code></div>
+<div class="diff-line current added"><span class="line-number">155</span><code class="line-text">- Sur votre iPhone, iPad, Apple Vision Pro ou ordinateur, connectez-vous à [icloud.com<mark class="inline-add">/photos</mark>](https://www.icloud.com/<mark class="inline-add">photos/</mark>) .</code></div>
+<div class="diff-line previous removed"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">151</span><code class="line-text">- Sélectionnez l’app Photos.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">153</span><code class="line-text">- Choisissez les photos ou vidéos à supprimer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">157</span><code class="line-text">- Choisissez les photos ou vidéos à supprimer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">155</span><code class="line-text">- Pour sélectionner plusieurs photos ou vidéos<mark class="inline-remove">, touchez Sélectionner</mark> sous iOS, iPadOS ou visionOS, ou appuyez sur la touche Commande <mark class="inline-remove">(Mac) </mark>ou<mark class="inline-remove"> Con</mark>t<mark class="inline-remove">rôle (PC) et maintenez-la</mark> en<mark class="inline-remove">foncée pendant que vous</mark> sélectionn<mark class="inline-remove">ez</mark> les éléments.</code></div>
+<div class="diff-line current added"><span class="line-number">159</span><code class="line-text">- Pour sélectionner plusieurs photos ou vidéos sous iOS, iPadOS ou visionOS, <mark class="inline-add">t</mark>ou<mark class="inline-add">chez Sélectionner. Sous macOS,</mark> appuyez<mark class="inline-add"> de manière prolongée</mark> sur la touche Commande <mark class="inline-add">t</mark>out en sélectionn<mark class="inline-add">ant</mark> les éléments.<mark class="inline-add"> Sous Windows, appuyez de manière prolongée sur la touche Contrôle tout en sélectionnant les éléments.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">157</span><code class="line-text">- Pour t<mark class="inline-remove">out sélectionner, appuyez de façon prolongée sur les touches Commande + A sous macOS ou les touches Contrôle + A sous Windows, ou touchez T</mark>out sélectionner sous iOS, iPadOS ou visionOS.</code></div>
+<div class="diff-line current added"><span class="line-number">161</span><code class="line-text">- Pour tout sélectionner sous iOS, iPadOS ou visionOS<mark class="inline-add">, touchez Tout sélectionner</mark>.<mark class="inline-add"> Sous macOS, appuyez sur les touches Commande + A ; sous Windows, appuyez sur les touches Contrôle + A.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">159</span><code class="line-text">- Touchez le bouton Supprimer ou cliquez dessus, puis touchez Supprimer ou cliquez dessus.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">163</span><code class="line-text">- Touchez le bouton Supprimer ou cliquez dessus, puis touchez Supprimer ou cliquez dessus.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">161</span><code class="line-text">[Image: bouton Supprimer]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">165</span><code class="line-text">[Image: bouton Supprimer]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">163</span><code class="line-text"><mark class="inline-remove">Les photos et vidéos supprimées peuvent être restaurées à partir de l’album Supprimés récemment pendant 30 jours. Pour supprimer plus rapidement le contenu de cet album, touchez Sélectionner, puis sélectionnez les éléments à supprimer. Touchez le bouton Plus, puis Supprimer, puis</mark> Supprimer de<mark class="inline-remove"> cet iPhone. Si vous dépassez votre limite de stockage iCloud, les photos et vidéos que vou</mark>s a<mark class="inline-remove">vez </mark>s<mark class="inline-remove">upprimées sont immédiatement effacées et ne peuvent plus être restaurées à</mark> part<mark class="inline-remove">ir de l’</mark>a<mark class="inline-remove">lbum Supprim</mark>és<mark class="inline-remove"> récemment.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">167</span><code class="line-text"><mark class="inline-add">###</mark> Supprimer des a<mark class="inline-add">lbum</mark>s parta<mark class="inline-add">g</mark>és</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">169</span><code class="line-text">Les photos supprimées d’un album partagé sont immédiatement supprimées. Veillez à enregistrer une copie dans votre photothèque personnelle pour continuer à y accéder.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">171</span><code class="line-text">[Découvrez comment supprimer un album partagé sous iOS, iPadOS ou visionOS](https://support.apple.com/fr-fr/108314#delete-album-ios)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">173</span><code class="line-text">[Découvrez comment supprimer un album partagé sous macOS](https://support.apple.com/fr-fr/124160#delete-album-macos)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">165</span><code class="line-text">## Suppression de dossiers ou de fichiers dans iCloud Drive</code></div>
+<div class="diff-line current unchanged"><span class="line-number">175</span><code class="line-text">## Suppression de dossiers ou de fichiers dans iCloud Drive</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">173</span><code class="line-text">- Sous Emplacements, touchez iCloud Drive.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">183</span><code class="line-text">- Sous Emplacements, touchez iCloud Drive.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">184</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">175</span><code class="line-text">- Pour supprimer <mark class="inline-remove">un</mark> ou <mark class="inline-remove">plusi</mark>e<mark class="inline-remove">ur</mark>s dossiers, touchez le bouton Plus , puis touchez Sélectionner et choisissez le ou les dossiers que vous souhaitez supprimer. <mark class="inline-remove">Touchez</mark> le<mark class="inline-remove"> bouton Supprimer. Pour supprimer un fichier, par exemple un</mark> fichier <mark class="inline-remove">à</mark> <mark class="inline-remove">l’in</mark>t<mark class="inline-remove">é</mark>r<mark class="inline-remove">i</mark>e<mark class="inline-remove">ur</mark> d<mark class="inline-remove">’</mark>un dossier, touchez le dossier<mark class="inline-remove"> en question</mark> pour l’ouvrir.<mark class="inline-remove"> Touchez le bouton Plus , puis touchez Sélectionner et choisissez le ou les fichiers que vous souhaitez supprimer.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">185</span><code class="line-text">- Pour supprimer <mark class="inline-add">des fichiers</mark> ou <mark class="inline-add">d</mark>es dossiers, touchez le bouton Plus , puis touchez Sélectionner et choisissez le<mark class="inline-add">s fichiers</mark> ou les dossiers que vous souhaitez supprimer. <mark class="inline-add">Si</mark> le fichier <mark class="inline-add">se</mark> tr<mark class="inline-add">ouv</mark>e d<mark class="inline-add">ans </mark>un dossier, touchez <mark class="inline-add">d’abord </mark>le dossier pour l’ouvrir.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">186</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">177</span><code class="line-text"><mark class="inline-remove">[I</mark>m<mark class="inline-remove">ag</mark>e<mark class="inline-remove">: null]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">187</span><code class="line-text"><mark class="inline-add">- Touchez le bouton Suppri</mark>me<mark class="inline-add">r.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">188</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">179</span><code class="line-text"><mark class="inline-remove">[Image:</mark> <mark class="inline-remove">b</mark>outo<mark class="inline-remove">n Pl</mark>us<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">189</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">T</mark>ou<mark class="inline-add">chez ensuite Supprimer pour supprimer le fichier ou le dossier d’iCloud Drive sur </mark>tous<mark class="inline-add"> vos appareils.</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">181</span><code class="line-text">- Touchez ensuite Supprimer pour supprimer le ou les fichiers ou dossiers d’iCloud Drive sur tous vos appareils.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">190</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">183</span><code class="line-text">### iPad ou Apple Vision Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">191</span><code class="line-text">### iPad ou Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">184</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">192</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">186</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">194</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">187</span><code class="line-text">- Sous Emplacements, touchez iCloud Drive.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">195</span><code class="line-text">- Sous Emplacements, touchez iCloud Drive.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">188</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">196</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">189</span><code class="line-text">- Pour supprimer u<mark class="inline-remove">n</mark> dossier, touchez Sélectionner, puis choisissez le<mark class="inline-remove"> do</mark>s<mark class="inline-remove">sier que vous souhaitez supprimer. Touchez Supprimer. Pour supprimer un</mark> fichier<mark class="inline-remove">, par exemple un fichier à l’intérieur d’un do</mark>s<mark class="inline-remove">sier, touchez le dossier pour l’ouvrir. Touchez ensuite Sélectionner et choisissez le</mark> ou les <mark class="inline-remove">fich</mark>iers que vous souhaitez supprimer.</code></div>
+<div class="diff-line current added"><span class="line-number">197</span><code class="line-text">- Pour supprimer <mark class="inline-add">des fichiers o</mark>u<mark class="inline-add"> des</mark> dossier<mark class="inline-add">s</mark>, touchez Sélectionner, puis choisissez les fichiers ou les <mark class="inline-add">doss</mark>iers que vous souhaitez supprimer.<mark class="inline-add"> Si le fichier se trouve dans un dossier, touchez d’abord le dossier pour l’ouvrir.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">190</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">191</span><code class="line-text">- Touchez Supprimer<mark class="inline-remove"> pour supprimer le ou les fichiers ou dossiers d’iCloud Drive sur tous vos appareils</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">199</span><code class="line-text">- Touchez Supprimer.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">200</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">201</span><code class="line-text">- Touchez Supprimer pour supprimer le fichier ou le dossier d’iCloud Drive sur tous vos appareils.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">192</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">202</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">193</span><code class="line-text">### Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">203</span><code class="line-text">### Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">194</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">204</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">195</span><code class="line-text">- Ouvrez <mark class="inline-remove">l</mark>e Finder et accédez au dossier iCloud Drive.</code></div>
+<div class="diff-line current added"><span class="line-number">205</span><code class="line-text">- Ouvrez <mark class="inline-add">un</mark>e<mark class="inline-add"> fenêtre du</mark> Finder et accédez au dossier iCloud Drive<mark class="inline-add"> dans la barre latérale</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">196</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">206</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">197</span><code class="line-text">- Faites glisser un élément dans la corbeille ou déplacez-le dans un autre dossier de votre Mac. Si vous le placez dans la corbeille, vous pourrez y accéder dans <mark class="inline-remove">Supp</mark>re<mark class="inline-remove">ss</mark>i<mark class="inline-remove">ons réc</mark>e<mark class="inline-remove">ntes</mark> pendant 30 jours.</code></div>
+<div class="diff-line current added"><span class="line-number">207</span><code class="line-text">- Faites glisser un élément dans la corbeille ou déplacez-le dans un autre dossier de votre Mac. Si vous le placez dans la corbeille, vous pourrez y accéder dans <mark class="inline-add">Co</mark>r<mark class="inline-add">b</mark>ei<mark class="inline-add">ll</mark>e pendant 30 jours.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">208</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">199</span><code class="line-text">### icloud.com</code></div>
+<div class="diff-line current unchanged"><span class="line-number">209</span><code class="line-text">### icloud.com</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">200</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">210</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">201</span><code class="line-text">- Connectez-vous à [icloud.com](https://www.icloud.com<mark class="inline-remove">) , puis sélectionnez l’app iClou</mark>d<mark class="inline-remove"> D</mark>rive.</code></div>
+<div class="diff-line current added"><span class="line-number">211</span><code class="line-text">- Connectez-vous à [icloud.com<mark class="inline-add">/drive</mark>](https://www.icloud.com<mark class="inline-add">/</mark>drive<mark class="inline-add">) </mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">202</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">212</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">203</span><code class="line-text">- Sélectionnez les fichiers <mark class="inline-remove">à</mark> supprimer, puis touchez ou cliquez sur le bouton <mark class="inline-remove">Co</mark>r<mark class="inline-remove">b</mark>e<mark class="inline-remove">ille</mark> . Vous pourrez y accéder dans le dossier Suppr<mark class="inline-remove">ess</mark>i<mark class="inline-remove">on</mark>s récent<mark class="inline-remove">es</mark> pendant 30 jours.</code></div>
+<div class="diff-line current added"><span class="line-number">213</span><code class="line-text">- Sélectionnez les fichiers <mark class="inline-add">ou les dossiers que vous souhaitez</mark> supprimer, puis touchez ou cliquez sur le bouton <mark class="inline-add">Supp</mark>r<mark class="inline-add">im</mark>e<mark class="inline-add">r</mark> . Vous pourrez y accéder dans le dossier Suppri<mark class="inline-add">mé</mark>s réce<mark class="inline-add">mme</mark>nt pendant 30 jours.</code></div>
+<div class="diff-line previous removed"><span class="line-number">204</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">205</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">206</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">207</span><code class="line-text">Vous pouvez trouver vos dossiers, sous-dossiers et fichiers supprimés dans Suppressions récentes pendant 30 jours.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">208</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">214</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">209</span><code class="line-text">## Suppression de SMS et de pièces jointes dans Messages</code></div>
+<div class="diff-line current unchanged"><span class="line-number">215</span><code class="line-text">## Suppression de SMS et de pièces jointes dans Messages</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">210</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">216</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">211</span><code class="line-text">Lorsque vous activez [Messages sur iCloud](https://support.apple.com/guide/icloud/mm0de0d4528d/) , les messages et les pièces jointes que vous envoyez et recevez utilisent votre espace de stockage iCloud. Vous pouvez libérer de <mark class="inline-remove">l</mark>’espace en supprimant des messages et des pièces jointes (par exemple, des photos, vidéos e<mark class="inline-remove">t</mark> fichiers) dont vous n’avez plus besoin.</code></div>
+<div class="diff-line current added"><span class="line-number">217</span><code class="line-text">Lorsque vous activez [Messages sur iCloud](https://support.apple.com/guide/icloud/mm0de0d4528d/) , les messages et les pièces jointes que vous envoyez et recevez utilisent votre espace de stockage iCloud. Vous pouvez libérer d<mark class="inline-add">avantag</mark>e <mark class="inline-add">d</mark>’espace en supprimant des messages et des pièces jointes (par exemple, des photos, <mark class="inline-add">des </mark>vidéos <mark class="inline-add">ou d</mark>e<mark class="inline-add">s</mark> fichiers) dont vous n’avez plus besoin.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">212</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">218</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">213</span><code class="line-text">### Suppression de pièces jointes sur votre iPhone, iPad ou Apple Vision Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">219</span><code class="line-text">### Suppression de pièces jointes sur votre iPhone, iPad ou Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">214</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">220</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">215</span><code class="line-text">- Dans une conversation par SMS, touchez le nom du contact en haut de l’écran.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">221</span><code class="line-text">- Dans une conversation par SMS, touchez le nom du contact en haut de l’écran.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">216</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">222</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">217</span><code class="line-text">-<mark class="inline-remove"> Dans la section Photos, touchez Tout afficher.</mark> Sous iOS 26, touchez Photos. Sous iOS 18 ou version antérieure, dans la section Photos, touchez Tout voir.</code></div>
+<div class="diff-line current added"><span class="line-number">223</span><code class="line-text">- Sous iOS 26<mark class="inline-add"> ou version ultérieure</mark>, touchez Photos. Sous iOS 18 ou version antérieure, dans la section Photos, touchez Tout voir.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">218</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">224</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">219</span><code class="line-text">- Touchez Modifier, puis Sélectionner. Sous iOS 18 ou version antérieure, touchez Sélectionner.</code></div>
+<div class="diff-line current added"><span class="line-number">225</span><code class="line-text">- Touchez Modifier, puis Sélectionner<mark class="inline-add"> des photos</mark>. Sous iOS 18 ou version antérieure, touchez Sélectionner.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">226</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">227</span><code class="line-text">[Image: Écran d’iPhone avec des photos de nourriture provenant d’une conversation, et l’option Sélectionner des photos activée en haut de l’écran, au-dessus de Modifier les coordonnées et Modifier l’arrière-plan.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">220</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">228</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">221</span><code class="line-text">- Touchez les images que vous souhaitez supprimer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">229</span><code class="line-text">- Touchez les images que vous souhaitez supprimer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">222</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">230</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">223</span><code class="line-text">- Touchez Supprimer, puis Supprimer la pièce jointe pour confirmer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">231</span><code class="line-text">- Touchez Supprimer, puis Supprimer la pièce jointe pour confirmer.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">232</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">233</span><code class="line-text">Vous pouvez également [supprimer automatiquement les anciens messages](https://support.apple.com/guide/iphone/iph2c9c4bfcb) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">224</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">234</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">225</span><code class="line-text">#### Supprimer une conversation entière</code></div>
+<div class="diff-line current unchanged"><span class="line-number">235</span><code class="line-text">#### Supprimer une conversation entière</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">226</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">236</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 39 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">266</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">276</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">267</span><code class="line-text">- Touchez le bouton Plus dans l’angle supérieur de l’écran, puis touchez Recommandations de nettoyage.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">277</span><code class="line-text">- Touchez le bouton Plus dans l’angle supérieur de l’écran, puis touchez Recommandations de nettoyage.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">268</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">278</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">269</span><code class="line-text"><mark class="inline-remove">[Im</mark>age<mark class="inline-remove">:</mark> nu<mark class="inline-remove">ll]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">279</span><code class="line-text"><mark class="inline-add">- Touchez Nettoy</mark>age<mark class="inline-add"> de Mail iCloud. Choisissez le type de messages à</mark> n<mark class="inline-add">ettoyer (par exemple, abonnements, promotions o</mark>u<mark class="inline-add"> transactions).</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">270</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">280</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">271</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">T</mark>o<mark class="inline-remove">u</mark>ch<mark class="inline-remove">ez</mark> Nettoyage de Mail iCloud<mark class="inline-remove">.</mark> <mark class="inline-remove">Choisiss</mark>e<mark class="inline-remove">z</mark> l<mark class="inline-remove">e</mark> <mark class="inline-remove">type de me</mark>s<mark class="inline-remove">sa</mark>ges <mark class="inline-remove">à n</mark>ettoyer <mark class="inline-remove">(p</mark>ar <mark class="inline-remove">exemple, abonnements, p</mark>romotions<mark class="inline-remove"> ou transactions)</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">281</span><code class="line-text"><mark class="inline-add">[Image:</mark> <mark class="inline-add">Écran d’iPh</mark>o<mark class="inline-add">ne affi</mark>ch<mark class="inline-add">ant l’option</mark> Nettoyage de Mail iCloud <mark class="inline-add">av</mark>e<mark class="inline-add">c</mark> l<mark class="inline-add">a</mark> s<mark class="inline-add">ug</mark>ges<mark class="inline-add">tion</mark> <mark class="inline-add">N</mark>ettoyer <mark class="inline-add">l</mark>a<mark class="inline-add"> catégo</mark>r<mark class="inline-add">ie</mark> <mark class="inline-add">P</mark>romotions.<mark class="inline-add">]</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">272</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">282</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">273</span><code class="line-text">- Suivez les étapes à l’écran pour identifier et supprimer ces messages.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">283</span><code class="line-text">- Suivez les étapes à l’écran pour identifier et supprimer ces messages.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">274</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">284</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">285</span><code class="line-text">La fonctionnalité Nettoyage de Mail iCloud continue de nettoyer ce type d’e-mail automatiquement jusqu’à ce que vous la désactiviez.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">286</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">275</span><code class="line-text">[Vous pouvez également utiliser la fonctionnalité Nettoyage de Mail iCloud sur icloud.com](https://support.apple.com/guide/icloud/mma3d15ee93e/)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">287</span><code class="line-text">[Vous pouvez également utiliser la fonctionnalité Nettoyage de Mail iCloud sur icloud.com](https://support.apple.com/guide/icloud/mma3d15ee93e/)</code></div>
+<div class="diff-line previous removed"><span class="line-number">276</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">277</span><code class="line-text">La fonctionnalité Nettoyage de Mail iCloud continue de nettoyer ce type d’e-mail automatiquement jusqu’à ce que vous la désactiviez.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">278</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">288</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">279</span><code class="line-text">### Suppression de messages sur votre iPhone, iPad ou Apple Vision Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">289</span><code class="line-text">### Suppression de messages sur votre iPhone, iPad ou Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">280</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">290</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">282</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">292</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">283</span><code class="line-text">- Accédez à vos boîtes aux lettres, puis choisissez le dossier Corbeille.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">293</span><code class="line-text">- Accédez à vos boîtes aux lettres, puis choisissez le dossier Corbeille.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">284</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">294</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">285</span><code class="line-text">- Pour supprimer les messages un par un, balayez vers la gauche sur chaque message. <mark class="inline-remove">P</mark>ou<mark class="inline-remove">r</mark> <mark class="inline-remove">t</mark>ou<mark class="inline-remove">t</mark> <mark class="inline-remove">suppri</mark>me<mark class="inline-remove">r,</mark> touche<mark class="inline-remove">z</mark> <mark class="inline-remove">Modifier, Tout s</mark>électionner, Supprimer.<mark class="inline-remove"> Confirmez en touchant Tout supprimer.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">295</span><code class="line-text">- Pour supprimer les messages un par un, balayez vers la gauche sur chaque message. <mark class="inline-add">Sinon, v</mark>ou<mark class="inline-add">s</mark> <mark class="inline-add">p</mark>ou<mark class="inline-add">vez</mark> <mark class="inline-add">égale</mark>me<mark class="inline-add">nt</mark> touche<mark class="inline-add">r</mark> <mark class="inline-add">S</mark>électionner, <mark class="inline-add">choisir les messages que vous souhaitez supprimer, puis toucher </mark>Supprimer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">286</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">296</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">287</span><code class="line-text">Vous pouvez également [déplacer des e-mails](https://support.apple.com/100627) de votre iPhone ou iPad vers votre Mac afin qu’ils n’occupent plus d’espace dans votre espace de stockage iCloud.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">297</span><code class="line-text">Vous pouvez également [déplacer des e-mails](https://support.apple.com/100627) de votre iPhone ou iPad vers votre Mac afin qu’ils n’occupent plus d’espace dans votre espace de stockage iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">288</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">298</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">290</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">300</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">291</span><code class="line-text">- Ouvrez l’app Mail.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">301</span><code class="line-text">- Ouvrez l’app Mail.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">292</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">302</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">293</span><code class="line-text">- S<mark class="inline-remove">uppr</mark>i<mark class="inline-remove">m</mark>ez les e<mark class="inline-remove">-m</mark>a<mark class="inline-remove">il</mark>s que vous <mark class="inline-remove">ne </mark>souhaitez p<mark class="inline-remove">l</mark>us con<mark class="inline-remove">se</mark>r<mark class="inline-remove">v</mark>er.</code></div>
+<div class="diff-line current added"><span class="line-number">303</span><code class="line-text">- S<mark class="inline-add">élect</mark>i<mark class="inline-add">onn</mark>ez les <mark class="inline-add">m</mark>e<mark class="inline-add">ss</mark>a<mark class="inline-add">ge</mark>s que vous souhaitez <mark class="inline-add">su</mark>p<mark class="inline-add">primer, p</mark>u<mark class="inline-add">i</mark>s c<mark class="inline-add">liquez sur le bout</mark>on<mark class="inline-add"> Supp</mark>r<mark class="inline-add">im</mark>er.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">294</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">304</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">295</span><code class="line-text">- <mark class="inline-remove">C</mark>l<mark class="inline-remove">iq</mark>u<mark class="inline-remove">ez sur</mark> Boîte aux lettres<mark class="inline-remove">.</mark> <mark class="inline-remove">C</mark>hoisissez Effacer les éléments supprimés, puis sélectionnez votre compte de messagerie iCloud dans le menu.</code></div>
+<div class="diff-line current added"><span class="line-number">305</span><code class="line-text">- <mark class="inline-add">Dans </mark>l<mark class="inline-add">e men</mark>u Boîte aux lettres <mark class="inline-add">de la barre des menus, c</mark>hoisissez Effacer les éléments supprimés, puis sélectionnez votre compte de messagerie iCloud dans le menu.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">296</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">306</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">297</span><code class="line-text">- Cliquez sur Effacer pour confirmer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">307</span><code class="line-text">- Cliquez sur Effacer pour confirmer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">298</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">308</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">299</span><code class="line-text">### Suppression de messages sur icloud.com</code></div>
+<div class="diff-line current unchanged"><span class="line-number">309</span><code class="line-text">### Suppression de messages sur icloud.com</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">300</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">310</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">301</span><code class="line-text">- Connectez-vous à [icloud.com/mail](https://www.icloud.com/mail/) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">311</span><code class="line-text">- Connectez-vous à [icloud.com/mail](https://www.icloud.com/mail/) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">312</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">313</span><code class="line-text">- Sélectionnez les messages que vous souhaitez supprimer, puis cliquez sur le bouton Supprimer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">302</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">314</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">303</span><code class="line-text">- Choisissez votre dossier Corbeille.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">315</span><code class="line-text">- Choisissez votre dossier Corbeille.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">304</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">316</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">312</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">324</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">313</span><code class="line-text">### iPhone, iPad ou Apple Vision Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">325</span><code class="line-text">### iPhone, iPad ou Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">314</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">326</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">315</span><code class="line-text">- Ouvrez l’app Réglages, touchez votre nom, puis <mark class="inline-remove">touchez </mark>iCloud.</code></div>
+<div class="diff-line current added"><span class="line-number">327</span><code class="line-text">- Ouvrez l’app Réglages, touchez votre nom, puis iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">316</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">328</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">317</span><code class="line-text">- Touchez Stockage ou Gérer le stockage du compte.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">329</span><code class="line-text">- Touchez Stockage ou Gérer le stockage du compte.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">318</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">330</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">320</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">332</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">321</span><code class="line-text">### Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">333</span><code class="line-text">### Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">322</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">334</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">323</span><code class="line-text">- Dans le menu <mark class="inline-remove">Pomm</mark>e , choisissez Réglages Système.</code></div>
+<div class="diff-line current added"><span class="line-number">335</span><code class="line-text">- Dans le menu <mark class="inline-add">Appl</mark>e , choisissez Réglages Système.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">324</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">336</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">325</span><code class="line-text">- Cliquez sur votre nom, puis sur iCloud.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">337</span><code class="line-text">- Cliquez sur votre nom, puis sur iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">326</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">338</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">327</span><code class="line-text">- Cliquez sur Gérer, puis c<mark class="inline-remove">hoisissez C</mark>ontact<mark class="inline-remove">s</mark></code></div>
+<div class="diff-line current added"><span class="line-number">339</span><code class="line-text">- Cliquez sur Gérer, puis <mark class="inline-add">sur Images de </mark>contact<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">328</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">340</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">329</span><code class="line-text">- Cliquez sur Supprimer d’iCloud.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">341</span><code class="line-text">- Cliquez sur Supprimer d’iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">330</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">342</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">342</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">354</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">343</span><code class="line-text">- Touchez Suppressions récentes.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">355</span><code class="line-text">- Touchez Suppressions récentes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">344</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">356</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">345</span><code class="line-text">- Touchez<mark class="inline-remove"> Modifier ou</mark> Sélectionner<mark class="inline-remove">,</mark> sélectionnez le mémo vocal, puis touchez Supprimer.</code></div>
+<div class="diff-line current added"><span class="line-number">357</span><code class="line-text">- Touchez Sélectionner<mark class="inline-add">. Touchez Tout supprimer ou</mark> sélectionnez le mémo vocal<mark class="inline-add"> concerné</mark>, puis touchez Supprimer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">346</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">358</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">347</span><code class="line-text">- Touchez Supprimer définitivement pour confirmer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">359</span><code class="line-text">- Touchez Supprimer définitivement pour confirmer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">348</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">360</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">354</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">366</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">355</span><code class="line-text">[Image: bouton Supprimer]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">367</span><code class="line-text">[Image: bouton Supprimer]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">356</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">368</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">357</span><code class="line-text">- Ouvrez Suppressions récentes, puis cliquez sur Tout supprimer ou Supprimer.</code></div>
+<div class="diff-line current added"><span class="line-number">369</span><code class="line-text">- Ouvrez Suppressions récentes, puis cliquez sur Tout supprimer<mark class="inline-add">.</mark> <mark class="inline-add">V</mark>ou<mark class="inline-add">s pouvez également sélectionner le mémo vocal, puis cliquer sur</mark> Supprimer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">358</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">370</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">359</span><code class="line-text">- Cliquez sur Supprimer définitivement pour confirmer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">371</span><code class="line-text">- Cliquez sur Supprimer définitivement pour confirmer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">360</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">372</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">361</span><code class="line-text">## Suppression des données FaceTime d’iCloud</code></div>
+<div class="diff-line current unchanged"><span class="line-number">373</span><code class="line-text">## Suppression des données FaceTime d’iCloud</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">362</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">374</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">363</span><code class="line-text">Lorsque vous supprimez FaceTime d’iCloud, cela supprime toutes vos données de l’app et certaines données de l’app Téléphone, y compris les messages vocaux téléphoniques et les messages vidéo et audio FaceTime. Vous ne pourrez pas récupérer vos données après avoir supprimé FaceTime d’iCloud. Selon la version de votre logiciel, vous pouvez exporter <mark class="inline-remove">l</mark>es messages vidéo <mark class="inline-remove">de </mark>FaceTime avant de supprimer FaceTime d’iCloud, afin qu’ils soient enregistrés dans votre app Photos.<mark class="inline-remove"> [Découvrez comment exporter des messages vidéo FaceTime](https://support.apple.com/108306) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">375</span><code class="line-text">Lorsque vous supprimez FaceTime d’iCloud, cela supprime toutes vos données de l’app et certaines données de l’app Téléphone, y compris les messages vocaux téléphoniques et les messages vidéo et audio FaceTime. Vous ne pourrez pas récupérer vos données après avoir supprimé FaceTime d’iCloud. Selon la version de votre logiciel, vous pouvez <mark class="inline-add">[enregistrer et </mark>exporter <mark class="inline-add">d</mark>es messages vidéo FaceTime<mark class="inline-add">](https://support.apple.com/fr-fr/108306)</mark> avant de supprimer FaceTime d’iCloud, afin qu’ils soient enregistrés dans votre app Photos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">364</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">376</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">365</span><code class="line-text">### iPhone, iPad ou Apple Vision Pro</code></div>
+<div class="diff-line current unchanged"><span class="line-number">377</span><code class="line-text">### iPhone, iPad ou Apple Vision Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">366</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">378</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">367</span><code class="line-text">- Ouvrez l’app Réglages, touchez votre nom, puis <mark class="inline-remove">touchez </mark>iCloud.</code></div>
+<div class="diff-line current added"><span class="line-number">379</span><code class="line-text">- Ouvrez l’app Réglages, touchez votre nom, puis iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">368</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">380</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">369</span><code class="line-text">- Touchez Stockage ou Gérer le stockage du compte.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">381</span><code class="line-text">- Touchez Stockage ou Gérer le stockage du compte.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">370</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">382</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">372</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">384</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">373</span><code class="line-text">### Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">385</span><code class="line-text">### Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">374</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">386</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">375</span><code class="line-text">- Dans le menu <mark class="inline-remove">Pomm</mark>e , choisissez Réglages Système.</code></div>
+<div class="diff-line current added"><span class="line-number">387</span><code class="line-text">- Dans le menu <mark class="inline-add">Appl</mark>e , choisissez Réglages Système.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">376</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">388</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">377</span><code class="line-text">- Cliquez sur votre nom, puis sur iCloud.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">389</span><code class="line-text">- Cliquez sur votre nom, puis sur iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">378</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">390</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">379</span><code class="line-text">- Cliquez sur Gérer, puis ch<mark class="inline-remove">oisiss</mark>ez FaceTime</code></div>
+<div class="diff-line current added"><span class="line-number">391</span><code class="line-text">- Cliquez sur Gérer, puis <mark class="inline-add">tou</mark>chez FaceTime<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">380</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">392</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">381</span><code class="line-text">- Cliquez sur Supprimer d’iCloud.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">393</span><code class="line-text">- Cliquez sur Supprimer d’iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">382</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">394</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">383</span><code class="line-text">## Suppression des données Apple Invitations d’iCloud</code></div>
+<div class="diff-line current unchanged"><span class="line-number">395</span><code class="line-text">## Suppression des données Apple Invitations d’iCloud</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">384</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">396</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">385</span><code class="line-text">Lorsque vous créez un évènement dans Apple Invitations, l’image d’arrière-plan e<mark class="inline-remove">t</mark> toutes les images ajoutées lorsqu’une personne invitée confirme sa participation ou non sont comptabilisées dans votre espace de stockage iCloud. <mark class="inline-remove">En tant qu’hôte, v</mark>ous pouvez supprimer <mark class="inline-remove">d</mark>es évènements que vous avez créés <mark class="inline-remove">pour</mark> libérer de l’espace de stockage iCloud. Lorsque vous supprimez un évènement, les personnes participantes n’ont plus accès à l’évènement <mark class="inline-remove">et</mark> à la plupart des informations qui y sont associées. Si les personnes participantes avaient rejoint un album partagé ou une playlist partagée, elles ont toujours accès à ceux de l’app Photos et de l’app Musique.</code></div>
+<div class="diff-line current added"><span class="line-number">397</span><code class="line-text">Lorsque vous créez un évènement dans Apple Invitations, l’image d<mark class="inline-add">e l</mark>’arrière-plan <mark class="inline-add">ainsi qu</mark>e toutes les images ajoutées lorsqu’une personne invitée confirme sa participation ou non sont comptabilisées dans votre espace de stockage iCloud. <mark class="inline-add">V</mark>ous pouvez supprimer <mark class="inline-add">tous l</mark>es évènement<mark class="inline-add">s ou les évènements individuel</mark>s que vous avez créés <mark class="inline-add">afin de</mark> libérer de l’espace de stockage iCloud. Lorsque vous supprimez un évènement, les personnes participantes n’ont plus accès à l’évènement <mark class="inline-add">ni</mark> à la plupart des informations qui y sont associées. Si les personnes participantes avaient rejoint un album partagé ou une playlist partagée, elles ont toujours accès à ceux de l’app Photos et de l’app Musique.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">386</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">398</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">387</span><code class="line-text">Si vous supprimez <mark class="inline-remove">d</mark>es données Apple Invitation<mark class="inline-remove">s par l’intermédiaire du stockage iCloud dans Réglage</mark>s, tous les évènements que vous <mark class="inline-remove">org</mark>a<mark class="inline-remove">nis</mark>ez seront supprimés,<mark class="inline-remove"> mais</mark> les évènements auxquels vous participez <mark class="inline-remove">ne le </mark>seront <mark class="inline-remove">pa</mark>s. Vous devez quitter tous ces évènements pour que vos données soient supprimées.</code></div>
+<div class="diff-line current added"><span class="line-number">399</span><code class="line-text">Si vous supprimez <mark class="inline-add">toutes l</mark>es données <mark class="inline-add">d’</mark>Apple Invitations, tous les évènements que vous a<mark class="inline-add">v</mark>ez<mark class="inline-add"> créés</mark> seront supprimés<mark class="inline-add">. En revanche</mark>, les évènements auxquels vous participez seront <mark class="inline-add">conservé</mark>s. Vous devez quitter tous ces évènements pour que vos données soient supprimées.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">388</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">400</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">389</span><code class="line-text">### iPhone ou iPad</code></div>
+<div class="diff-line current added"><span class="line-number">401</span><code class="line-text">###<mark class="inline-add"> Supprimer toutes les données d’Apple Invitations sur</mark> iPhone ou iPad</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">402</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">403</span><code class="line-text">- Ouvrez l’app Réglages, touchez votre nom, puis iCloud.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">404</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">405</span><code class="line-text">- Touchez Stockage ou Gérer le stockage du compte.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">406</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">407</span><code class="line-text">- Touchez Apple Invitations, puis touchez Supprimer les données d’iCloud.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">408</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">409</span><code class="line-text">### Supprimer des évènements individuels sur iPhone ou iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">390</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">410</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">391</span><code class="line-text">- Ouvrez l’app Apple Invitations, puis sélectionnez l’évènement.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">411</span><code class="line-text">- Ouvrez l’app Apple Invitations, puis sélectionnez l’évènement.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">392</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">412</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">393</span><code class="line-text">- Touchez le bouton Plus dans l’angle supérieur droit, puis touchez Réglages de l’évènement.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">413</span><code class="line-text">- Touchez le bouton Plus dans l’angle supérieur droit, puis touchez Réglages de l’évènement.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">394</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">414</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">395</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">396</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">397</span><code class="line-text">- Touchez Supprimer l’évènement, puis touchez une nouvelle fois pour confirmer la suppression.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">415</span><code class="line-text">- Touchez Supprimer l’évènement, puis touchez une nouvelle fois pour confirmer la suppression.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">398</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">416</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">399</span><code class="line-text">### i<mark class="inline-remove">c</mark>loud.com</code></div>
+<div class="diff-line current added"><span class="line-number">417</span><code class="line-text">### <mark class="inline-add">Suppr</mark>i<mark class="inline-add">mer des évènements individuels sur iC</mark>loud.com</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">400</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">418</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">401</span><code class="line-text">- Accédez à [icloud.com/invites](https://icloud.com/invites) , puis connectez-vous à votre [compte Apple](https://support.apple.com/guide/apple-invites/aside/dev56fb72aaa/<mark class="inline-remove">1.0/ios/1.0</mark>) (si nécessaire).</code></div>
+<div class="diff-line current added"><span class="line-number">419</span><code class="line-text">- Accédez à [icloud.com/invites](https://icloud.com/invites) , puis connectez-vous à votre [compte Apple](https://support.apple.com/guide/apple-invites/aside/dev56fb72aaa/) (si nécessaire).</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">402</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">420</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">403</span><code class="line-text">- Sélectionnez l’évènement.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">421</span><code class="line-text">- Sélectionnez l’évènement.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">404</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">422</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">405</span><code class="line-text">- Sélectionnez le bouton Réglages de l’évènement .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">423</span><code class="line-text">- Sélectionnez le bouton Réglages de l’évènement .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">406</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">424</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">407</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">408</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">409</span><code class="line-text">- Touchez ou cliquez une première fois sur Supprimer l’évènement, puis une seconde fois pour confirmer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">425</span><code class="line-text">- Touchez ou cliquez une première fois sur Supprimer l’évènement, puis une seconde fois pour confirmer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">410</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">426</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">411</span><code class="line-text">Les informations se rapportant à des produits non fabriqués par Apple, ou à des sites web indépendants qui ne sont ni contrôlés ni testés par Apple, sont fournies uniquement à titre indicatif et ne sont ni recommandées ni approuvées par Apple. Apple ne saurait être tenu responsable de problèmes liés à l’utilisation de tels sites ou produits tiers, ou à leurs performances. Apple ne garantit en aucune façon la fiabilité d’un site web tiers ni l’exactitude des informations que ce dernier propose. [Contactez le fournisseur](http://support.apple.com/<mark class="inline-remove">HT26</mark>9<mark class="inline-remove">3</mark>) pour <mark class="inline-remove">obt</mark>enir <mark class="inline-remove">des informations sup</mark>pl<mark class="inline-remove">émentaire</mark>s.</code></div>
+<div class="diff-line current added"><span class="line-number">427</span><code class="line-text">Les informations se rapportant à des produits non fabriqués par Apple, ou à des sites web indépendants qui ne sont ni contrôlés ni testés par Apple, sont fournies uniquement à titre indicatif et ne sont ni recommandées ni approuvées par Apple. Apple ne saurait être tenu responsable de problèmes liés à l’utilisation de tels sites ou produits tiers, ou à leurs performances. Apple ne garantit en aucune façon la fiabilité d’un site web tiers ni l’exactitude des informations que ce dernier propose. [Contactez le fournisseur](http<mark class="inline-add">s</mark>://support.apple.com/<mark class="inline-add">fr-fr/1031</mark>9<mark class="inline-add">0</mark>) pour en<mark class="inline-add"> savo</mark>ir pl<mark class="inline-add">u</mark>s.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
