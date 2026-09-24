@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Mettre la lecture en pause, changer de morceau et régler le volume avec vos AirPods et AirPods Pro - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Mettre la lecture en pause, changer de morceau et régler le volume avec vos AirPods et AirPods Pro - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/102628">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+31 ajouts</span>
+      <span class="badge removed">−27 suppressions</span>
+      <span class="badge">3 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">Vos AirPods vous permettent d’écouter de la musique, de passer des appels, d’utiliser Siri et bien plus encore.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">Vos AirPods vous permettent d’écouter de la musique, de passer des appels, d’utiliser Siri et bien plus encore.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">## Contrôler les<mark class="inline-remove"> réglages audi</mark>o avec vos AirPods Pro 2<mark class="inline-remove"> ou</mark> AirPods Pro 3</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">## Contrôler le<mark class="inline-add"> </mark>so<mark class="inline-add">n</mark> avec vos AirPods Pro 2<mark class="inline-add">,</mark> AirPods Pro 3<mark class="inline-add"> ou AirPods 5 avec boîtier de charge sans fil</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">- Pour lancer et mettre en pause la lecture audio ou désactiver le son pendant un appel téléphonique, appuyez sur le capteur<mark class="inline-remove">-</mark>pression situé sur la tige d’un AirPod. Pour reprendre la lecture ou réactiver le son, appuyez de nouveau dessus.</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">- Pour lancer et mettre en pause la lecture audio ou désactiver le son pendant un appel téléphonique, appuyez sur le capteur<mark class="inline-add"> de </mark>pression<mark class="inline-add"> avec réglage du volume par balayage</mark> situé sur la tige d’un AirPod. Pour reprendre la lecture ou réactiver le son, appuyez de nouveau dessus.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">- Pour passer <mark class="inline-remove">à</mark> <mark class="inline-remove">l</mark>a<mark class="inline-remove"> piste</mark> suivant<mark class="inline-remove">e</mark>, appuyez deux fois sur le capteur<mark class="inline-remove">-</mark>pression</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">- Pour passer <mark class="inline-add">au</mark> <mark class="inline-add">morce</mark>a<mark class="inline-add">u</mark> suivant, appuyez deux fois sur le capteur<mark class="inline-add"> de </mark>pression<mark class="inline-add"> avec réglage du volume par balayage.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">- Pour revenir <mark class="inline-remove">à</mark> <mark class="inline-remove">l</mark>a<mark class="inline-remove"> piste</mark> précédent<mark class="inline-remove">e</mark>, appuyez trois fois sur le capteur<mark class="inline-remove">-</mark>pression.</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">- Pour revenir <mark class="inline-add">au</mark> <mark class="inline-add">morce</mark>a<mark class="inline-add">u</mark> précédent, appuyez trois fois sur le capteur<mark class="inline-add"> de </mark>pression<mark class="inline-add"> avec réglage du volume par balayage</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">- Pour augmenter ou diminuer le volume, placez votre pouce sur la tige de l’un des AirPods et effectuez un balayage vers le haut ou vers le bas sur le capteur<mark class="inline-remove">-</mark>pression avec vo<mark class="inline-remove">tr</mark>e <mark class="inline-remove">ind</mark>e<mark class="inline-remove">x</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- Pour augmenter ou diminuer le volum<mark class="inline-add">e, enfoncez l’écouteur dans votre oreille en appuyant dessus avec votre index. Ensuit</mark>e, placez votre pouce sur la tige de l’un des AirPods et<mark class="inline-add"> à l’aide de votre index ou de votre majeur,</mark> effectuez un balayage vers le haut ou vers le bas sur le capteur<mark class="inline-add"> de </mark>pression avec <mark class="inline-add">réglage du </mark>vo<mark class="inline-add">lum</mark>e <mark class="inline-add">par balayag</mark>e.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">Vous pouvez également basculer entre les [modes d’écoute](https://support.apple.com/fr-fr/108918) en appuyant longuement sur la tige.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">Vous pouvez également basculer entre les [modes d’écoute](https://support.apple.com/fr-fr/108918) en appuyant longuement sur la tige.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">[Image: Commande tactile sur la tige des AirPods Pro.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">[Image: Commande tactile sur la tige des AirPods Pro.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">## Contrôler les<mark class="inline-remove"> réglages audi</mark>o avec vos AirPods Pro 1, AirPods 3<mark class="inline-remove"> ou</mark> AirPods 4 (les deux modèles)</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">## Contrôler le<mark class="inline-add"> </mark>so<mark class="inline-add">n</mark> avec vos AirPods Pro 1, AirPods 3<mark class="inline-add">,</mark> AirPods 4 (les deux modèles)<mark class="inline-add"> ou AirPods 5</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">- Pour lancer et interrompre la lecture audio, appuyez sur le capteur<mark class="inline-remove">-</mark>pression qui se trouve sur la tige d’un AirPod. Pour reprendre la lecture, appuyez à nouveau.</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">- Pour lancer et interrompre la lecture audio, appuyez sur le capteur<mark class="inline-add"> de </mark>pression qui se trouve sur la tige d’un AirPod. Pour reprendre la lecture, appuyez à nouveau.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- Pour passer <mark class="inline-remove">à</mark> <mark class="inline-remove">l</mark>a<mark class="inline-remove"> piste</mark> suivant<mark class="inline-remove">e</mark>, appuyez deux fois sur le capteur<mark class="inline-remove">-</mark>pression.</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- Pour passer <mark class="inline-add">au</mark> <mark class="inline-add">morce</mark>a<mark class="inline-add">u</mark> suivant, appuyez deux fois sur le capteur<mark class="inline-add"> de </mark>pression.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- Pour revenir <mark class="inline-remove">à</mark> <mark class="inline-remove">l</mark>a<mark class="inline-remove"> piste</mark> précédent<mark class="inline-remove">e</mark>, appuyez trois fois sur le capteur<mark class="inline-remove">-</mark>pression.</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- Pour revenir <mark class="inline-add">au</mark> <mark class="inline-add">morce</mark>a<mark class="inline-add">u</mark> précédent, appuyez trois fois sur le capteur<mark class="inline-add"> de </mark>pression.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">- Pour régler le volume, dites « Dis Siri », puis par exemple, « Monte le volume » ou « Baisse le volume ». Vous pouvez également faire glisser le curseur de volume dans l’app que vous écoutez, sur l’écran verrouillé de votre iPhone ou iPad, ou dans le centre de contrôle. Vous pouvez aussi ouvrir <mark class="inline-remove">À</mark> l<mark class="inline-remove">’écoute</mark> sur votre Apple Watch et tourner la Digital Crown pour régler le volume de vos AirPods Pro ou AirPods 3 ou <mark class="inline-remove">m</mark>o<mark class="inline-remove">dèle</mark> ultérieur.</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- Pour régler le volume, dites « Dis Siri », puis par exemple, « Monte le volume » ou « Baisse le volume ». Vous pouvez également faire glisser le curseur de volume dans l’app que vous écoutez, sur l’écran verrouillé de votre iPhone ou iPad, ou dans le centre de contrôle. Vous pouvez aussi ouvrir <mark class="inline-add">Now</mark> <mark class="inline-add">P</mark>l<mark class="inline-add">aying</mark> sur votre Apple Watch et tourner la Digital Crown pour régler le volume de vos AirPods Pro ou AirPods 3 ou <mark class="inline-add">versi</mark>o<mark class="inline-add">n</mark> ultérieur<mark class="inline-add">e</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">[Image: Capteurs<mark class="inline-remove">-</mark>pression sur les AirPods 4.]</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">[Image: Capteurs<mark class="inline-add"> de </mark>pression sur les AirPods 4.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">Avec les AirPods Pro 1<mark class="inline-remove"> et</mark> les AirPods 4 (ANC), vous pouvez également basculer entre les [modes d’écoute](https://support.apple.com/fr-fr/108918) en appuyant longuement sur la tige.</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">Avec les AirPods Pro 1<mark class="inline-add">,</mark> les AirPods 4 (ANC)<mark class="inline-add"> et les AirPods 5</mark>, vous pouvez également basculer entre les [modes d’écoute](https://support.apple.com/fr-fr/108918) en appuyant longuement sur la tige.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">## Contrôler les<mark class="inline-remove"> réglages audi</mark>o avec vos AirPods 1 ou 2</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">## Contrôler le<mark class="inline-add"> </mark>so<mark class="inline-add">n</mark> avec vos AirPods 1 ou 2</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">Vous pouvez utiliser Siri et contrôler la lecture du contenu audio avec vos AirPods.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">Vous pouvez utiliser Siri et contrôler la lecture du contenu audio avec vos AirPods.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">### Contrôler les<mark class="inline-remove"> réglages audi</mark>o avec vos AirPods 2</code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">### Contrôler le<mark class="inline-add"> </mark>so<mark class="inline-add">n</mark> avec vos AirPods 2</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">- Pour activer Siri, dites « Dis Siri ».</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">- Pour activer Siri, dites « Dis Siri ».</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">- Pour l<mark class="inline-remove">i</mark>re<mark class="inline-remove"> un morceau</mark> ou passer <mark class="inline-remove">à</mark> <mark class="inline-remove">l</mark>a<mark class="inline-remove"> piste</mark> suivant<mark class="inline-remove">e</mark>, touchez deux fois un AirPod.</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">- Pour l<mark class="inline-add">ancer la lectu</mark>re ou passer <mark class="inline-add">au</mark> <mark class="inline-add">morce</mark>a<mark class="inline-add">u</mark> suivant, touchez deux fois un AirPod.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">### Contrôler les<mark class="inline-remove"> réglages audi</mark>o avec vos AirPods 1</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">### Contrôler le<mark class="inline-add"> </mark>so<mark class="inline-add">n</mark> avec vos AirPods 1</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">Pour utiliser Siri, touchez deux fois un AirPod.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">Pour utiliser Siri, touchez deux fois un AirPod.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">Vous pouvez configurer chaque AirPod de sorte qu’il effectue l’une de ces actions lorsque vous le touchez deux fois :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">Vous pouvez configurer chaque AirPod de sorte qu’il effectue l’une de ces actions lorsque vous le touchez deux fois :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">- [Utiliser Siri](https://support.apple.com/fr-fr/105020)<mark class="inline-remove"> *</mark></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">- [Utiliser Siri](https://support.apple.com/fr-fr/105020)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">- Lancer et interrompre la lecture du contenu audio</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">- Lancer et interrompre la lecture du contenu audio</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">- <mark class="inline-remove">A</mark>van<mark class="inline-remove">cer</mark></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- <mark class="inline-add">Passer au morceau sui</mark>van<mark class="inline-add">t</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">- Revenir au morceau précédent</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">- Revenir au morceau précédent</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">63</span><code class="line-text">## Utiliser Siri avec vos AirPods</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">## Utiliser Siri avec vos AirPods</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">Vous pouvez utiliser Siri avec vos AirPods pour poser des questions et passer des appels. Siri vous permet également de contrôler votre musique et de vérifier les notifications sur vos AirPods. [Pour configurer un AirPod Pro <mark class="inline-remove">pour</mark> <mark class="inline-remove">l</mark>’utilis<mark class="inline-remove">ation d</mark>e Siri](https://support.apple.com/fr-fr/108764) , appuyez longuement sur le capteur<mark class="inline-remove">-</mark>pression.</code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">Vous pouvez utiliser Siri avec vos AirPods pour poser des questions et passer des appels. Siri vous permet également de contrôler votre musique et de vérifier les notifications sur vos AirPods. [Pour configurer <mark class="inline-add">l’</mark>un<mark class="inline-add"> de vos</mark> AirPod<mark class="inline-add">s</mark> Pro <mark class="inline-add">afin</mark> <mark class="inline-add">d</mark>’utilise<mark class="inline-add">r</mark> Siri](https://support.apple.com/fr-fr/108764) , appuyez longuement sur le capteur<mark class="inline-add"> de </mark>pression.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">## Répondre aux appels avec vos AirPods ou AirPods Pro</code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">## Répondre aux appel<mark class="inline-add">s téléphonique</mark>s avec vos AirPods ou AirPods Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">Lorsque vous recevez un appel alors que vous portez votre AirPod gauche ou votre AirPod droit, [Siri peut annoncer l’appel](https://support.apple.com/fr-fr/105020) . Voici comment accepter ou refuser un appel :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">Lorsque vous recevez un appel alors que vous portez votre AirPod gauche ou votre AirPod droit, [Siri peut annoncer l’appel](https://support.apple.com/fr-fr/105020) . Voici comment accepter ou refuser un appel :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">- Pour répondre avec <mark class="inline-remove">les AirP</mark>o<mark class="inline-remove">ds Pro 1, le</mark>s AirPods Pro 2<mark class="inline-remove"> ou les</mark> AirPods Pro 3<mark class="inline-remove">,</mark> ou<mark class="inline-remove"> les</mark> AirPods <mark class="inline-remove">3</mark> o<mark class="inline-remove">u 4 (l</mark>e<mark class="inline-remove">s</mark> de<mark class="inline-remove">ux</mark> <mark class="inline-remove">modè</mark>l<mark class="inline-remove">es)</mark>, appuyez sur le capteur<mark class="inline-remove">-</mark>pression.</code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">- Pour répondre a<mark class="inline-add">ux appels a</mark>vec <mark class="inline-add">v</mark>os AirPods Pro 2<mark class="inline-add">,</mark> AirPods Pro 3 ou AirPods <mark class="inline-add">5</mark> <mark class="inline-add">avec b</mark>o<mark class="inline-add">îti</mark>e<mark class="inline-add">r</mark> de <mark class="inline-add">charge sans fi</mark>l, appuyez sur le capteur<mark class="inline-add"> de </mark>pression<mark class="inline-add"> avec réglage du volume par balayage</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text">- Pour répondre avec <mark class="inline-remove">le</mark>s AirPods 1<mark class="inline-remove"> ou 2</mark>,<mark class="inline-remove"> touchez deux fois un</mark> AirPod.</code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">- Pour répondre a<mark class="inline-add">ux appels a</mark>vec <mark class="inline-add">vo</mark>s AirPods <mark class="inline-add">Pro </mark>1, AirPod<mark class="inline-add">s 3, AirPods 4 (les deux modèles) ou AirPods 5, appuyez sur le capteur de pression</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">- Pour re<mark class="inline-remove">f</mark>u<mark class="inline-remove">ser un</mark> appel<mark class="inline-remove"> téléphonique entrant et l’envoyer directement ver</mark>s<mark class="inline-remove"> la messagerie vocale, appuyez deux fois sur le capteur-pression sur les AirPods Pro 1, les AirPods Pro 2 ou les AirPods Pro 3, ou sur les AirPods 3 ou 4 (les deux modèles). Pour refuser un appel téléphonique</mark> avec <mark class="inline-remove">le</mark>s AirPods 1 ou 2, u<mark class="inline-remove">tilis</mark>ez <mark class="inline-remove">l</mark>es <mark class="inline-remove">comma</mark>n<mark class="inline-remove">des</mark> de vo<mark class="inline-remove">t</mark>r<mark class="inline-remove">e i</mark>P<mark class="inline-remove">h</mark>o<mark class="inline-remove">ne</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">- Pour r<mark class="inline-add">épondr</mark>e<mark class="inline-add"> a</mark>u<mark class="inline-add">x</mark> appels avec <mark class="inline-add">vo</mark>s AirPods 1 ou 2, <mark class="inline-add">to</mark>u<mark class="inline-add">ch</mark>ez <mark class="inline-add">d</mark>e<mark class="inline-add">ux foi</mark>s <mark class="inline-add">l’u</mark>n de vo<mark class="inline-add">s Ai</mark>rPo<mark class="inline-add">ds</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text"><mark class="inline-remove">Si</mark>r<mark class="inline-remove">i</mark> <mark class="inline-remove">p</mark>eu<mark class="inline-remove">t [annonc</mark>er les message<mark class="inline-remove">s</mark> <mark class="inline-remove">entr</mark>a<mark class="inline-remove">nts](https://support.app</mark>le<mark class="inline-remove">.</mark>c<mark class="inline-remove">om/fr-fr/102536) via</mark> vos AirPods Pro <mark class="inline-remove">et AirPods 3 ou 4 (les deux modèles). Avec les AirPods Pro </mark>2,<mark class="inline-remove"> les</mark> AirPods Pro 3 ou <mark class="inline-remove">les </mark>AirPods <mark class="inline-remove">4</mark> <mark class="inline-remove">(</mark>le<mark class="inline-remove">s</mark> deux <mark class="inline-remove">m</mark>o<mark class="inline-remove">dèles), [vou</mark>s <mark class="inline-remove">po</mark>u<mark class="inline-remove">vez également utilise</mark>r le<mark class="inline-remove">s</mark> <mark class="inline-remove">ges</mark>te<mark class="inline-remove">s</mark> de <mark class="inline-remove">la tête](htt</mark>p<mark class="inline-remove">s://support.apple.com/guide/airpods/use-controls-and-gestu</mark>res<mark class="inline-remove">-w</mark>i<mark class="inline-remove">th-y</mark>o<mark class="inline-remove">ur-</mark>a<mark class="inline-remove">irpods-d</mark>e<mark class="inline-remove">vb2</mark>c<mark class="inline-remove">431317/web) pour</mark> ré<mark class="inline-remove">pondre aux appe</mark>l<mark class="inline-remove">s téléphoniques, aux mess</mark>age<mark class="inline-remove">s,</mark> e<mark class="inline-remove">tc</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text"><mark class="inline-add">- Pou</mark>r <mark class="inline-add">r</mark>e<mark class="inline-add">f</mark>u<mark class="inline-add">s</mark>er <mark class="inline-add">un appel entrant et </mark>le<mark class="inline-add"> tran</mark>s<mark class="inline-add">férer directement vers la</mark> message<mark class="inline-add">rie</mark> <mark class="inline-add">voc</mark>ale<mark class="inline-add"> ave</mark>c vos AirPods Pro 2, AirPods Pro 3 ou AirPods <mark class="inline-add">5</mark> <mark class="inline-add">avec boîtier de charge sans fi</mark>l<mark class="inline-add">, appuy</mark>e<mark class="inline-add">z</mark> deux <mark class="inline-add">f</mark>o<mark class="inline-add">i</mark>s <mark class="inline-add">s</mark>ur le <mark class="inline-add">cap</mark>te<mark class="inline-add">ur</mark> de pres<mark class="inline-add">s</mark>io<mark class="inline-add">n </mark>a<mark class="inline-add">v</mark>ec ré<mark class="inline-add">g</mark>lage <mark class="inline-add">du volum</mark>e<mark class="inline-add"> par balayage</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text"><mark class="inline-remove">*</mark> <mark class="inline-remove">Si le d</mark>ou<mark class="inline-remove">ble touche</mark>r <mark class="inline-remove">p</mark>e<mark class="inline-remove">rmettant d’</mark>u<mark class="inline-remove">tili</mark>ser <mark class="inline-remove">Siri </mark>n<mark class="inline-remove">e fonctionne pas,</mark> a<mark class="inline-remove">ccéd</mark>e<mark class="inline-remove">z à Rég</mark>l<mark class="inline-remove">ages &gt; Siri</mark> et<mark class="inline-remove"> </mark>r<mark class="inline-remove">echerche, puis vérifiez que l’op</mark>t<mark class="inline-remove">ion « Siri</mark> avec <mark class="inline-remove">éc</mark>r<mark class="inline-remove">an</mark> <mark class="inline-remove">ver</mark>ro<mark class="inline-remove">u</mark>il<mark class="inline-remove">lé » </mark>es<mark class="inline-remove">t</mark> acti<mark class="inline-remove">vée</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">P</mark>our <mark class="inline-add">r</mark>e<mark class="inline-add">f</mark>user <mark class="inline-add">u</mark>n a<mark class="inline-add">pp</mark>el e<mark class="inline-add">n</mark>tr<mark class="inline-add">an</mark>t avec <mark class="inline-add">vos Ai</mark>r<mark class="inline-add">Pods</mark> <mark class="inline-add">P</mark>ro<mark class="inline-add"> 1, A</mark>i<mark class="inline-add">rPods 3, AirPods 4 (</mark>les<mark class="inline-add"> deux modèles) ou AirPods 5,</mark> a<mark class="inline-add">ppuyez deux fois sur le </mark>c<mark class="inline-add">ap</mark>t<mark class="inline-add">eur de press</mark>i<mark class="inline-add">on</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">M</mark>ettre <mark class="inline-remove">la l</mark>e<mark class="inline-remove">cture multimédia en pause lorsque vous vous endormez</mark></code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">Pour r</mark>e<mark class="inline-add">fuser un appel en</mark>t<mark class="inline-add">rant avec vos AirPods 1 ou 2, utilisez les commandes de vo</mark>tre <mark class="inline-add">iPhon</mark>e<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">Si<mark class="inline-remove"> vous</mark> po<mark class="inline-remove">sséd</mark>e<mark class="inline-remove">z</mark> <mark class="inline-remove">d</mark>es <mark class="inline-remove">AirPod</mark>s<mark class="inline-remove"> 4, d</mark>es <mark class="inline-remove">AirPods Pro 2 ou des AirPods Pro 3, vous pouvez choisir de [mettre automatiquem</mark>ent<mark class="inline-remove"> e</mark>n<mark class="inline-remove"> pau</mark>s<mark class="inline-remove">e la lecture multimédia</mark>](https://support.apple.com/fr-fr/10<mark class="inline-remove">87</mark>6<mark class="inline-remove">4#pause</mark>)<mark class="inline-remove"> lorsque vous vous endormez tout en écoutant un contenu audio</mark> sur vo<mark class="inline-remove">t</mark>r<mark class="inline-remove">e</mark> <mark class="inline-remove">i</mark>P<mark class="inline-remove">h</mark>o<mark class="inline-remove">ne, iPad, Mac</mark> ou Apple <mark class="inline-remove">TV</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">Si<mark class="inline-add">ri</mark> p<mark class="inline-add">eut [ann</mark>o<mark class="inline-add">nc</mark>e<mark class="inline-add">r</mark> <mark class="inline-add">l</mark>es <mark class="inline-add">me</mark>s<mark class="inline-add">sag</mark>es ent<mark class="inline-add">ra</mark>n<mark class="inline-add">t</mark>s](https://support.apple.com/fr-fr/10<mark class="inline-add">253</mark>6) sur vo<mark class="inline-add">s Ai</mark>r<mark class="inline-add">Pods</mark> P<mark class="inline-add">r</mark>o ou A<mark class="inline-add">irPods 3 ou modèles ultérieurs. Avec les AirPods Pro 2, AirPods Pro 3 ou AirPods 4 ou modèles ultérieurs, vous pouvez également répondre aux appels téléphoniques, aux messages et plus encore [en effectuant des gestes de la tête](https://support.a</mark>pple<mark class="inline-add">.com/guide/airpods/use-controls-and-gestures-with-your-airpods-devb2c431317/web)</mark> .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">## Mettre la lecture en pause lorsque vous vous endormez</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text">Si vous possédez des AirPods Pro 2 ou modèles ultérieurs ou des AirPods 4 ou modèles ultérieurs, vous pouvez choisir de [mettre la lecture en pause](https://support.apple.com/fr-fr/108764#pause) lorsque vous vous endormez tout en écoutant un contenu audio sur votre iPhone, iPad, Mac ou Apple TV.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">## Besoin d’aide supplémentaire ?</code></div>
+<div class="diff-line current unchanged"><span class="line-number">89</span><code class="line-text">## Besoin d’aide supplémentaire ?</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

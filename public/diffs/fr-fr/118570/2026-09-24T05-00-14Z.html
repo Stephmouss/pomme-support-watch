@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Utiliser votre appareil Apple pour identifier une chanson que vous entendez - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Utiliser votre appareil Apple pour identifier une chanson que vous entendez - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/118570">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+52 ajouts</span>
+      <span class="badge removed">−22 suppressions</span>
+      <span class="badge">7 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">Utilisez la Reconnaissance des morceaux et l’app Shazam sur vos appareils Apple préférés pour identifier la musique que vous entendez autour de vous.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">Utilisez la Reconnaissance des morceaux et l’app Shazam sur vos appareils Apple préférés pour identifier la musique que vous entendez autour de vous.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">[Utiliser la Reconnaissance de<mark class="inline-remove">s morceaux par</mark> Shazam](https://support.apple.com/fr-fr/118570#<mark class="inline-remove">M</mark>usic<mark class="inline-remove">_R</mark>e<mark class="inline-remove">cognition</mark>)</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">[Utiliser la<mark class="inline-add"> fonctionnalité</mark> Reconnaissance <mark class="inline-add">musicale </mark>de Shazam<mark class="inline-add"> sur l’iPhone, l’iPad ou le Mac</mark>](https://support.apple.com/fr-fr/118570#<mark class="inline-add">Reconnaissance_m</mark>usic<mark class="inline-add">al</mark>e)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">[Utiliser la fonctionnalité Reconnaissance musicale de Shazam sur l’Apple Watch](https://support.apple.com/fr-fr/118570#Reconnaissance_musicale_Watch)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">[Utiliser l’app Shazam sur un iPhone ou un iPad](https://support.apple.com/fr-fr/118570#App)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">[Utiliser l’app Shazam sur un iPhone ou un iPad](https://support.apple.com/fr-fr/118570#App)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">[Synchroniser Shazam sur tous vos appareils et sauvegarder vos morceaux sur iCloud](https://support.apple.com/fr-fr/118570#Back_up)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">[Synchroniser Shazam sur tous vos appareils et sauvegarder vos morceaux sur iCloud](https://support.apple.com/fr-fr/118570#Back_up)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">## Utiliser la Reconnaissance de<mark class="inline-remove">s morceaux par</mark> Shazam sur iPhone, iPad<mark class="inline-remove">,</mark> Mac<mark class="inline-remove"> et Apple Watch</mark></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">## Utiliser la<mark class="inline-add"> fonctionnalité</mark> Reconnaissance <mark class="inline-add">musicale </mark>de Shazam sur <mark class="inline-add">l’</mark>iPhone, <mark class="inline-add">l’</mark>iPad<mark class="inline-add"> et le</mark> Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">La Reconnaissance des morceaux par Shazam est intégrée à l’iPhone, à l’iPad, au Mac et à l’Apple Watch. Ajoutez Reconnaissance des morceaux au centre de contrôle de votre iPhone, iPad et Mac pour identifier rapidement de la musique.<mark class="inline-remove"> Sur l’Apple Watch, utilisez l’app Reconnaissance des morceaux pour identifier des morceaux avec Shazam.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">La Reconnaissance des morceaux par Shazam est intégrée à l’iPhone, à l’iPad, au Mac et à l’Apple Watch. Ajoutez Reconnaissance des morceaux au centre de contrôle de votre iPhone, iPad et Mac pour identifier rapidement de la musique.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">Lorsque l’app Shazam est également installée sur votre iPhone, iPad ou Apple Vision Pro, cette dernière :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">Lorsque l’app Shazam est également installée sur votre iPhone, iPad ou Apple Vision Pro, cette dernière :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">- o<mark class="inline-remove">ff</mark>r<mark class="inline-remove">e</mark> un emplacement central pour retrouver les morceaux <mark class="inline-remove">i</mark>de<mark class="inline-remove">n</mark>t<mark class="inline-remove">ifié</mark>s à l’aide de la <mark class="inline-remove">R</mark>econnaissance <mark class="inline-remove">d</mark>e<mark class="inline-remove">s morceaux</mark> sur vos appareils Apple<mark class="inline-remove"> ;</mark></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- <mark class="inline-add">F</mark>o<mark class="inline-add">u</mark>r<mark class="inline-add">nit</mark> un emplacement central<mark class="inline-add"> (votre bibliothèque)</mark> pour retrouver les morceaux d<mark class="inline-add">écouv</mark>e<mark class="inline-add">r</mark>ts à l’aide de la <mark class="inline-add">r</mark>econnaissance <mark class="inline-add">musical</mark>e sur vos appareils Apple<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">- peut être connectée à Apple Music ou à un autre service de diffusion afin d’écouter les morceaux que vous avez identifiés ;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">- peut être connectée à Apple Music ou à un autre service de diffusion afin d’écouter les morceaux que vous avez identifiés ;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 15 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">Vous pouvez ajouter la Reconnaissance des morceaux au centre de contrôle ou à la barre des menus pour y accéder plus rapidement.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">Vous pouvez ajouter la Reconnaissance des morceaux au centre de contrôle ou à la barre des menus pour y accéder plus rapidement.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">- Pour ajouter la <mark class="inline-remove">R</mark>econnaissance <mark class="inline-remove">d</mark>e<mark class="inline-remove">s morceaux</mark> au centre de contrôle <mark class="inline-remove">et</mark> à la barre des menus<mark class="inline-remove">, procédez comme suit</mark> :</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- Pour ajouter la <mark class="inline-add">r</mark>econnaissance <mark class="inline-add">musical</mark>e au centre de contrôle <mark class="inline-add">ou</mark> à la barre des menus :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">- Cliquez sur Centre de contrôle dans la barre des menus, puis cliquez sur Modifier les commandes.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">- Cliquez sur Centre de contrôle dans la barre des menus, puis cliquez sur Modifier les commandes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">- Dans la fenêtre qui s’ouvre, sous Sons, cliquez sur Reconnaissance des morceaux. Sinon, saisissez Reconnaissance des morceaux dans le champ de recherche des commandes.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">- Dans la fenêtre qui s’ouvre, sous Sons, cliquez sur Reconnaissance des morceaux. Sinon, saisissez Reconnaissance des morceaux dans le champ de recherche des commandes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">- Faites glisser la commande Reconnaissance <mark class="inline-remove">d</mark>e<mark class="inline-remove">s morceaux</mark> pour l’ajouter<mark class="inline-remove"> au centre de contrôle ou</mark> à la barre des menus.</code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">- Faites glisser la commande Reconnaissance <mark class="inline-add">musical</mark>e pour l’ajouter à la barre des menus.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">- Pour identifier les morceaux que vous entendez autour de vous ou sur votre appareil lorsque vous portez un casque, procédez comme suit :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">- Pour identifier les morceaux que vous entendez autour de vous ou sur votre appareil lorsque vous portez un casque, procédez comme suit :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">- Ouvrez le centre de contrôle et cliquez sur Reconnaissance des morceaux, ou cliquez sur le bouton Reconnaissance des morceaux dans la barre des menus, si vous l’y avez ajouté.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">- Ouvrez le centre de contrôle et cliquez sur Reconnaissance des morceaux, ou cliquez sur le bouton Reconnaissance des morceaux dans la barre des menus, si vous l’y avez ajouté.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">- Cliquez sur Reconnaissance des morceaux.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">- Cliquez sur Reconnaissance des morceaux.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Pour afficher la liste des morceaux identifiés, cliquez sur Reconnaissance des morceaux dans le centre de contrôle, ou cliquez sur le bouton Reconnaissance des morceaux dans la barre des menus, si vous l’y avez ajouté, puis faites défiler la liste.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">- Pour afficher la liste des morceaux identifiés, cliquez sur Reconnaissance des morceaux dans le centre de contrôle, ou cliquez sur le bouton Reconnaissance des morceaux dans la barre des menus, si vous l’y avez ajouté, puis faites défiler la liste.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text"><mark class="inline-remove">[I</mark>ma<mark class="inline-remove">g</mark>e<mark class="inline-remove">:</mark> <mark class="inline-remove">null]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text"><mark class="inline-add">## Utiliser la Reconnaissance des </mark>m<mark class="inline-add">orce</mark>a<mark class="inline-add">ux sur l’Appl</mark>e <mark class="inline-add">Watch</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text"><mark class="inline-remove">### </mark>Utilise<mark class="inline-remove">r</mark> la Reconnaissance <mark class="inline-remove">d</mark>e<mark class="inline-remove">s morceaux</mark> sur l’Apple Watch</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">Utilise<mark class="inline-add">z</mark> l<mark class="inline-add">’</mark>a<mark class="inline-add">pp</mark> Reconnaissance <mark class="inline-add">musical</mark>e sur l’Apple Watch<mark class="inline-add"> pour identifier des morceaux. Vous pouvez également identifier la musique encore plus rapidement avec Audio Intelligence sur certains modèles.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">### Identifier des morceaux avec votre Apple Watch</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">- Ouvrez l’app Reconnaissance des morceaux.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">- Ouvrez l’app Reconnaissance des morceaux.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">- Touchez le cadran de votre montre.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">- Touchez le cadran de votre montre.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">71</span><code class="line-text">- Pour afficher la liste des morceaux que vous avez identifiés, faites défiler la page vers le bas. Touchez Tout voir afin d’afficher tous les morceaux que vous avez identifiés.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">- Pour afficher la liste des morceaux que vous avez identifiés, faites défiler la page vers le bas. Touchez Tout voir afin d’afficher tous les morceaux que vous avez identifiés.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">### Identifier des morceaux avec Audio Intelligence</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">Sur les modèles d’Apple Watch compatibles*, vous pouvez trouver des morceaux plus rapidement avec Audio Intelligence. Votre montre recherche en continu la présence de musique à l’aide de l’analyse du son sur l’appareil, ce qui permet une identification rapide des morceaux.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">- Assurez-vous que vous avez activé Détection de la musique sur votre montre :</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">- Ouvrez l’app Watch sur l’iPhone jumelé.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text">- Touchez Ma montre, puis Défilement intelligent.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">- Activez Détection de la musique.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">- Si vous entendez de la musique autour de vous, ouvrez le Défilement intelligent pour voir si Shazam l’a identifiée dans le widget Shazam. Depuis le cadran de la montre, effectuez l’une des opérations suivantes :</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">87</span><code class="line-text">- Tournez la [Digital Crown](https://support.apple.com/guide/watch/aside/apd441592d89/26/watchos/26) vers le haut.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">- Balayez l’écran vers le haut depuis le bas de l’écran.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">- [Effectuez le geste Toucher deux fois](https://support.apple.com/guide/watch/use-double-tap-for-common-actions-apdabb7b275c/26/watchos/26#apdc2f1cb496) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">- Pour enregistrer un morceau identifié dans votre bibliothèque Shazam, touchez le bouton Ajouter en regard du morceau dans le widget Shazam.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text">- Pour obtenir plus d’informations sur le morceau identifié, touchez le morceau dans le widget Shazam. À partir de là, vous pouvez lancer la lecture du morceau dans Apple Music et consulter d’autres détails.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">97</span><code class="line-text">La Détection de la musique est désactivée dans les situations suivantes :</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text">- Si votre [montre est en mode Économie d’énergie](https://support.apple.com/fr-fr/108320) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">- Lorsque le mode Eau est activé.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">103</span><code class="line-text">- Lorsque votre montre est en mode de concentration Repos.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">105</span><code class="line-text">Vous pouvez toujours toucher l’app Reconnaissance musicale ou demander à Siri d’identifier la musique.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">## Utiliser l’app Shazam sur un iPhone ou un iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">107</span><code class="line-text">## Utiliser l’app Shazam sur un iPhone ou un iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 15 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">- Touchez le bouton Shazam .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">125</span><code class="line-text">- Touchez le bouton Shazam .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">95</span><code class="line-text">- Une fois que Shazam a identifié un morceau, appuyez sur le bouton de lecture pour en écouter un extrait. Si vous êtes abonné à Apple Music, vous pouvez écouter des morceaux entiers dans Shazam. Vous pouvez également connecter Shazam à d’autres services de diffusion de musique pris en charge. [Découvrez comment connecter votre service de diffusion de musique à Shazam](https://support.apple.com/fr-fr/108933)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">127</span><code class="line-text">- Une fois que Shazam a identifié un morceau, appuyez sur le bouton de lecture pour en écouter un extrait. Si vous êtes abonné à Apple Music, vous pouvez écouter des morceaux entiers dans Shazam. Vous pouvez également connecter Shazam à d’autres services de diffusion de musique pris en charge. [Découvrez comment connecter votre service de diffusion de musique à Shazam](https://support.apple.com/fr-fr/108933)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">97</span><code class="line-text">- Pour accéder aux morceaux que vous avez identifiés, touchez Bibliothèque dans l’app Shazam. Et si vous changez d’appareil ou perdez ce dernier, vous pourrez toujours accéder aux morceaux que vous avez identifiés s’ils ont été sauvegardés sur iCloud.</code></div>
+<div class="diff-line current added"><span class="line-number">129</span><code class="line-text">- Pour accéder aux morceaux que vous avez identifiés, touchez Bibliothèque dans l’app Shazam. Et si vous changez d’appareil ou perdez ce dernier, vous pourrez toujours accéder aux morceaux que vous avez identifiés s’ils ont été sauvegardés sur iCloud.<mark class="inline-add"> [Apprenez-en plus sur la synchronisation des morceaux identifiés avec l’app Shazam](https://support.apple.com/guide/shazam/sync-your-identified-songs-to-the-shazam-app-deva59a13320/web) .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text">Vous pouvez utiliser d’autres apps pendant que Shazam essaie d’identifier un morceau. Lorsque Shazam identifie le morceau, vous recevez une notification.</code></div>
+<div class="diff-line current added"><span class="line-number">131</span><code class="line-text">Vous pouvez utiliser d’autres apps pendant que Shazam essaie d’identifier un morceau. Lorsque Shazam identifie le morceau, vous recevez une notification.<mark class="inline-add"> Shazam prend également en charge les [Activités en direct sur les appareils compatibles](https://support.apple.com/guide/iphone/view-live-activities-in-the-dynamic-island-iph28f50d10d/ios) : suivez la progression et les résultats de la recherche musicale en temps réel directement dans la Dynamic Island ou sur votre écran verrouillé.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">101</span><code class="line-text">Si vous n’avez pas de connexion Internet, l’app crée tout de même une empreinte numérique unique pour rechercher le titre dans la base de données Shazam. La prochaine fois que votre appareil sera connecté à Internet, Shazam essaiera d’identifier le morceau.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">133</span><code class="line-text">Si vous n’avez pas de connexion Internet, l’app crée tout de même une empreinte numérique unique pour rechercher le titre dans la base de données Shazam. La prochaine fois que votre appareil sera connecté à Internet, Shazam essaiera d’identifier le morceau.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">117</span><code class="line-text">Avec votre appareil Apple à proximité, demandez à Siri : « Dis Siri, quel est ce morceau ? » ou « Dis Siri, identifie ce morceau ». Siri utilise la Reconnaissance des morceaux par Shazam pour identifier les morceaux. Vous n’avez donc pas besoin d’installer l’app Shazam.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">149</span><code class="line-text">Avec votre appareil Apple à proximité, demandez à Siri : « Dis Siri, quel est ce morceau ? » ou « Dis Siri, identifie ce morceau ». Siri utilise la Reconnaissance des morceaux par Shazam pour identifier les morceaux. Vous n’avez donc pas besoin d’installer l’app Shazam.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">119</span><code class="line-text">Si<mark class="inline-remove"> vous avez</mark> plusieurs appareils Apple <mark class="inline-remove">et qu’ils </mark>sont<mark class="inline-remove"> tous</mark> connectés au même compte Apple, les morceaux identifiés <mark class="inline-remove">par Siri apparaissent sur tous vos appareils. Et si vous avez l’app Shazam sur votre iPhone ou iPad, les morceaux que vous avez identifiés </mark>avec Siri apparaissent dans la <mark class="inline-remove">B</mark>ibliothèque.</code></div>
+<div class="diff-line current added"><span class="line-number">151</span><code class="line-text">Si plusieur<mark class="inline-add">s de vo</mark>s appareils Apple sont connectés au même compte Apple, les morceaux identifiés avec Siri apparaissent dans <mark class="inline-add">votre historique de Reconnaissance musica</mark>l<mark class="inline-add">e d</mark>a<mark class="inline-add">ns</mark> <mark class="inline-add">le centre de contrôle. Et si l’app Shazam est installée, ils apparaissent également dans votre b</mark>ibliothèque<mark class="inline-add"> Shazam</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">121</span><code class="line-text">## Retrouver des morceaux</code></div>
+<div class="diff-line current unchanged"><span class="line-number">153</span><code class="line-text">## Retrouver des morceaux</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">123</span><code class="line-text">- Dans l’app Shazam sur iPhone ou iPad, touchez Bibliothèque au bas de l’écran. Pour supprimer un morceau, touchez le bouton Plus en regard de ce morceau, puis touchez Supprimer de la Bibliothèque.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">155</span><code class="line-text">- Dans l’app Shazam sur iPhone ou iPad, touchez Bibliothèque au bas de l’écran. Pour supprimer un morceau, touchez le bouton Plus en regard de ce morceau, puis touchez Supprimer de la Bibliothèque.</code></div>
+<div class="diff-line previous removed"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">125</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">127</span><code class="line-text">- Sur l’Apple Watch, faites défiler vers le bas pour voir les morceaux récents, qui apparaissent sous le bouton Shazam et sont également enregistrés dans votre Bibliothèque sur l’iPhone jumelé.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">157</span><code class="line-text">- Sur l’Apple Watch, faites défiler vers le bas pour voir les morceaux récents, qui apparaissent sous le bouton Shazam et sont également enregistrés dans votre Bibliothèque sur l’iPhone jumelé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 15 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">145</span><code class="line-text">- Touchez le bouton Réglages , puis touchez iCloud Sync.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">175</span><code class="line-text">- Touchez le bouton Réglages , puis touchez iCloud Sync.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">147</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">149</span><code class="line-text">- Vérifiez que vos morceaux sont sauvegardés :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">177</span><code class="line-text">- Vérifiez que vos morceaux sont sauvegardés :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">151</span><code class="line-text">- Sur iPhone, iPad ou Apple Vision Pro, accédez à Réglages &gt; votre nom, touchez iCloud, puis Tout voir à côté de Enregistré sur iCloud. Assurez-vous que la Reconnaissance des morceaux est activée. Si vous avez aussi l’app Shazam, assurez-vous qu’elle est activée.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">179</span><code class="line-text">- Sur iPhone, iPad ou Apple Vision Pro, accédez à Réglages &gt; votre nom, touchez iCloud, puis Tout voir à côté de Enregistré sur iCloud. Assurez-vous que la Reconnaissance des morceaux est activée. Si vous avez aussi l’app Shazam, assurez-vous qu’elle est activée.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">153</span><code class="line-text">- Sur Mac, choisissez le menu <mark class="inline-remove">Pomm</mark>e  &gt; Réglages Système, cliquez sur Compte Apple, cliquez sur iCloud, puis cliquez sur Tout voir à côté de Enregistré sur iCloud. Assurez-vous que la Reconnaissance des morceaux est activée.</code></div>
+<div class="diff-line current added"><span class="line-number">181</span><code class="line-text">- Sur Mac, choisissez le menu <mark class="inline-add">Appl</mark>e  &gt; Réglages Système, cliquez sur Compte Apple, cliquez sur iCloud, puis cliquez sur Tout voir à côté de Enregistré sur iCloud. Assurez-vous que la Reconnaissance des morceaux est activée.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">155</span><code class="line-text">Si vous choisissez de ne pas sauvegarder vos morceaux sur iCloud, ils sont tout de même enregistrés sur votre appareil. Vous pouvez sauvegarder vos morceaux sur iCloud à tout moment, sauf si vous avez restauré les réglages d’origine de votre appareil ou que vous en avez acheté un neuf.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">183</span><code class="line-text">Si vous choisissez de ne pas sauvegarder vos morceaux sur iCloud, ils sont tout de même enregistrés sur votre appareil. Vous pouvez sauvegarder vos morceaux sur iCloud à tout moment, sauf si vous avez restauré les réglages d’origine de votre appareil ou que vous en avez acheté un neuf.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">184</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 2 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">159</span><code class="line-text">- [Acheter des morceaux identifiés sur iPhone et iPad](https://support.apple.com/guide/shazam/purchase-your-identified-songs-dev27f071d76/web)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">187</span><code class="line-text">- [Acheter des morceaux identifiés sur iPhone et iPad](https://support.apple.com/guide/shazam/purchase-your-identified-songs-dev27f071d76/web)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">188</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">161</span><code class="line-text">- [Utiliser Shazam sur des appareils Android](https://support.apple.com/fr-fr/118557)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">189</span><code class="line-text">- [Utiliser Shazam sur des appareils Android](https://support.apple.com/fr-fr/118557)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">190</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">191</span><code class="line-text">* La Détection de la musique est compatible avec l’Apple Watch Series 1 et l’Apple Watch Ultra 4.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
