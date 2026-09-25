@@ -1,0 +1,3 @@
+# iOS et iPadOS — Apple Intelligence: Live Translation in Messages
+
+France : French (France)

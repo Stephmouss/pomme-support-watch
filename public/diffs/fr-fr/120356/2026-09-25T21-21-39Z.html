@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Suivi des règles avec l’app Suivi de cycle - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Suivi des règles avec l’app Suivi de cycle - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/120356">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+39 ajouts</span>
+      <span class="badge removed">−35 suppressions</span>
+      <span class="badge">13 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Suivi des règles avec l’app Suivi de cycle</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Suivi des règles avec l’app Suivi de cycle</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text"><mark class="inline-remove">Vous p</mark>ouvez suivre votre cycle menstruel pour vous aider à mieux évaluer votre état de santé.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text"><mark class="inline-add">Déc</mark>ouv<mark class="inline-add">r</mark>ez<mark class="inline-add"> comment</mark> suivre votre cycle menstruel pour vous aider à mieux évaluer votre état de santé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text"><mark class="inline-remove">[Image: Icônes des </mark>app<mark class="inline-remove">s Santé et</mark> Suivi de cycle<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text"><mark class="inline-add">L’</mark>app Suivi de cycle<mark class="inline-add"> vous offre les possibilités suivantes :</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text"><mark class="inline-remove">Vo</mark>u<mark class="inline-remove">s pou</mark>vez<mark class="inline-remove"> suivre</mark> votre cycle menstruel dans <mark class="inline-remove">[</mark>l’app Santé](https://support.apple.com/fr-fr/104997) sur votre iPhone ou dans l’app Suivi de cycle sur votre Apple Watch.<mark class="inline-remove"> Vous pouvez configurer l’app de manière à recevoir des notifications à l’approche de vos prochaines règles ou de votre prochaine période de fertilité. Vous pouvez également [consigner une grossesse](https://support.apple.com/fr-fr/120075) pour suivre l’âge gestationnel et recevoir des notifications et recommandations de santé à consulter tout au long de votre grossesse.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text"><mark class="inline-add">- S</mark>u<mark class="inline-add">i</mark>vez votre cycle menstruel dans l’<mark class="inline-add"> [</mark>app Santé](https://support.apple.com/fr-fr/104997) sur votre iPhone<mark class="inline-add">,</mark> ou dans l’app Suivi de cycle sur votre Apple Watch.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">- Recevez des notifications à l’approche de vos prochaines règles ou de votre prochaine période de fertilité.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">- [Enregistrez une grossesse](https://support.apple.com/fr-fr/120075) pour suivre l’âge gestationnel et recevoir diverses notifications et recommandations de santé à consulter tout au long de votre grossesse.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- Configurez le suivi des phases de la ménopause dans l’app Santé sur votre iPhone, puis consignez les symptômes et d’autres informations sur votre iPhone ou votre Apple Watch.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">[Découvrez comment l’app Santé est conçue pour protéger vos informations.](https://support.apple.com/fr-fr/120356#data)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">[Découvrez comment l’app Santé est conçue pour protéger vos informations.](https://support.apple.com/fr-fr/120356#data)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">- Sur votre iPhone ou iPad, ouvrez l’app Santé.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">- Sur votre iPhone ou iPad, ouvrez l’app Santé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- Sur votre iPhone, touchez <mark class="inline-remove">R</mark>e<mark class="inline-remove">che</mark>rc<mark class="inline-remove">he</mark>r<mark class="inline-remove"> </mark>. Sur votre iPad, touchez barre latérale pour ouvrir la barre latérale.</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">- Sur votre iPhone, touchez <mark class="inline-add">l’ongl</mark>e<mark class="inline-add">t Pa</mark>rc<mark class="inline-add">ou</mark>r<mark class="inline-add">ir</mark>. Sur votre iPad, touchez<mark class="inline-add"> le bouton de la</mark> barre latérale pour ouvrir la barre latérale.</code></div>
+<div class="diff-line previous removed"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">- Touchez Suivi de cycle.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">- Touchez Suivi de cycle.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">- Sur votre iPhone ou iPad, ouvrez l’app Santé.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">- Sur votre iPhone ou iPad, ouvrez l’app Santé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">- Sur votre iPhone, touchez <mark class="inline-remove">R</mark>e<mark class="inline-remove">che</mark>rc<mark class="inline-remove">he</mark>r<mark class="inline-remove"> </mark>. Sur votre iPad, touchez barre latérale pour ouvrir la barre latérale.</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- Sur votre iPhone, touchez <mark class="inline-add">l’ongl</mark>e<mark class="inline-add">t Pa</mark>rc<mark class="inline-add">ou</mark>r<mark class="inline-add">ir</mark>. Sur votre iPad, touchez<mark class="inline-add"> le bouton de la</mark> barre latérale pour ouvrir la barre latérale.</code></div>
+<div class="diff-line previous removed"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">- Touchez Suivi de cycle.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">- Touchez Suivi de cycle.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">- Sur votre iPhone ou iPad, ouvrez l’app Santé.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">- Sur votre iPhone ou iPad, ouvrez l’app Santé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">- Sur votre iPhone, touchez <mark class="inline-remove">R</mark>e<mark class="inline-remove">che</mark>rc<mark class="inline-remove">he</mark>r<mark class="inline-remove"> </mark>. Sur votre iPad, touchez barre latérale pour ouvrir la barre latérale.</code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">- Sur votre iPhone, touchez <mark class="inline-add">l’ongl</mark>e<mark class="inline-add">t Pa</mark>rc<mark class="inline-add">ou</mark>r<mark class="inline-add">ir</mark>. Sur votre iPad, touchez<mark class="inline-add"> le bouton de la</mark> barre latérale pour ouvrir la barre latérale.</code></div>
+<div class="diff-line previous removed"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">- Touchez Suivi de cycle.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">- Touchez Suivi de cycle.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">- Dans la section Vos cycles, touchez Facteurs.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">- Dans la section Vos cycles, touchez Facteurs.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">- Touchez le <mark class="inline-remove">sig</mark>n<mark class="inline-remove">e</mark> <mark class="inline-remove">p</mark>lus dans le<mark class="inline-remove"> coin</mark> supérieur, puis sélectionnez Grossesse, Lactation ou Contraception. Découvrez comment [consigner une grossesse dans l’app Santé](https://support.apple.com/fr-fr/120075) .</code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- Touchez le <mark class="inline-add">bouto</mark>n <mark class="inline-add">P</mark>lus dans l<mark class="inline-add">’angl</mark>e supérieur, puis sélectionnez Grossesse, Lactation ou Contraception. Découvrez comment [consigner une grossesse dans l’app Santé](https://support.apple.com/fr-fr/120075) .</code></div>
+<div class="diff-line previous removed"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Entrez une date de début du facteur, puis touchez OK.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">- Entrez une date de début du facteur, puis touchez OK.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">63</span><code class="line-text">Si un facteur incorrect a été ajouté, touchez-le et sélectionnez Supprimer le facteur de Santé pour le supprimer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">Si un facteur incorrect a été ajouté, touchez-le et sélectionnez Supprimer le facteur de Santé pour le supprimer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">Pour mettre fin à un facteur, touchez-le et touchez Fin. Saisissez une date de fin et touchez OK. Vous pouvez toucher Afficher tous les facteurs pour afficher l’historique de vos facteurs précédents.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">Pour mettre fin à un facteur, touchez-le et touchez Fin. Saisissez une date de fin et touchez OK. Vous pouvez toucher Afficher tous les facteurs pour afficher l’historique de vos facteurs précédents.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">### Suivre les phases de la ménopause</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">- Sur votre iPhone ou iPad, ouvrez l’app Santé.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">- Sur votre iPhone, touchez l’onglet Parcourir. Sur votre iPad, touchez le bouton de la barre latérale pour ouvrir la barre latérale.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">- Touchez Suivi de cycle.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">- Touchez Phases de la ménopause.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">- Touchez le bouton Plus dans l’angle supérieur.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">- Touchez Suivant, puis suivez les instructions à l’écran pour configurer les informations relatives à la périménopause ou aux phases de la ménopause.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">En savoir plus sur le [suivi de la périménopause et des phases de la ménopause](https://support.apple.com/guide/watch/pym0x6ny1te5) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">### Signification des couleurs</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">### Signification des couleurs</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">[Image: Ovale violet clair]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">89</span><code class="line-text">[Image: Ovale violet clair]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">L’ovale violet clair marque l’estimation rétrospective de votre jour d’ovulation 1</code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">L’ovale violet clair marque l’estimation rétrospective de votre jour d’ovulation<mark class="inline-add">.</mark> 1</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">[Image: Ovale vert clair avec un contour plein]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">93</span><code class="line-text">[Image: Ovale vert clair avec un contour plein]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 23 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">105</span><code class="line-text">- Sur votre iPhone ou iPad, ouvrez l’app Santé.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">119</span><code class="line-text">- Sur votre iPhone ou iPad, ouvrez l’app Santé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">107</span><code class="line-text">- Sur votre iPhone, touchez <mark class="inline-remove">R</mark>e<mark class="inline-remove">che</mark>rc<mark class="inline-remove">he</mark>r<mark class="inline-remove"> </mark>. Sur votre iPad, touchez barre latérale pour ouvrir la barre latérale.</code></div>
+<div class="diff-line current added"><span class="line-number">121</span><code class="line-text">- Sur votre iPhone, touchez <mark class="inline-add">l’ongl</mark>e<mark class="inline-add">t Pa</mark>rc<mark class="inline-add">ou</mark>r<mark class="inline-add">ir</mark>. Sur votre iPad, touchez<mark class="inline-add"> le bouton de la</mark> barre latérale pour ouvrir la barre latérale.</code></div>
+<div class="diff-line previous removed"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">109</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">111</span><code class="line-text">- Touchez Suivi de cycle.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">123</span><code class="line-text">- Touchez Suivi de cycle.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">123</span><code class="line-text">- Sur votre iPhone ou iPad, ouvrez l’app Santé.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">135</span><code class="line-text">- Sur votre iPhone ou iPad, ouvrez l’app Santé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">125</span><code class="line-text">- Sur votre iPhone, touchez <mark class="inline-remove">R</mark>e<mark class="inline-remove">che</mark>rc<mark class="inline-remove">he</mark>r<mark class="inline-remove"> </mark>. Sur votre iPad, touchez barre latérale pour ouvrir la barre latérale.</code></div>
+<div class="diff-line current added"><span class="line-number">137</span><code class="line-text">- Sur votre iPhone, touchez <mark class="inline-add">l’ongl</mark>e<mark class="inline-add">t Pa</mark>rc<mark class="inline-add">ou</mark>r<mark class="inline-add">ir</mark>. Sur votre iPad, touchez<mark class="inline-add"> le bouton de la</mark> barre latérale pour ouvrir la barre latérale.</code></div>
+<div class="diff-line previous removed"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">127</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">129</span><code class="line-text">- Touchez Suivi de cycle.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">139</span><code class="line-text">- Touchez Suivi de cycle.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 23 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">155</span><code class="line-text">Outre les informations que vous avez consignées concernant les règles précédentes et la durée du cycle, Santé peut s’appuyer sur les données de fréquence cardiaque de votre Apple Watch pour améliorer vos prédictions de suivi de cycle 2 . Les données de fréquence cardiaque de l’Apple Watch sont activées par défaut pour améliorer les prédictions, mais vous pouvez les désactiver à tout moment.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">165</span><code class="line-text">Outre les informations que vous avez consignées concernant les règles précédentes et la durée du cycle, Santé peut s’appuyer sur les données de fréquence cardiaque de votre Apple Watch pour améliorer vos prédictions de suivi de cycle 2 . Les données de fréquence cardiaque de l’Apple Watch sont activées par défaut pour améliorer les prédictions, mais vous pouvez les désactiver à tout moment.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">157</span><code class="line-text">- Sur votre iPhone, ouvrez l’app Santé et touchez <mark class="inline-remove">R</mark>e<mark class="inline-remove">che</mark>rc<mark class="inline-remove">he</mark>r<mark class="inline-remove"> </mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">167</span><code class="line-text">- Sur votre iPhone, ouvrez l’app Santé et touchez <mark class="inline-add">l’ongl</mark>e<mark class="inline-add">t Pa</mark>rc<mark class="inline-add">ou</mark>r<mark class="inline-add">ir</mark>.</code></div>
+<div class="diff-line previous removed"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">159</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">161</span><code class="line-text">- Touchez Suivi de cycle.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">169</span><code class="line-text">- Touchez Suivi de cycle.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">169</span><code class="line-text">L’app Suivi de cycle peut vous informer si l’historique des cycles que vous avez enregistrés au cours des six mois précédents montre un schéma de cycles irréguliers, de règles peu fréquentes ou longues, ou de spotting persistant. Si vous recevez une alerte ou une notification sur un possible écart de cycle, vous pourrez consulter l’historique de vos cycles enregistrés. Si celui-ci est exact, vous pourrez connaître l’écart de cycle détecté et exporter les 12 derniers mois de l’historique de vos cycles au format PDF pour le partager avec votre professionnel de santé. Lorsqu’un cycle récent ou en cours est enregistré, la fonctionnalité de détection des écarts de cycle est désactivée automatiquement.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">177</span><code class="line-text">L’app Suivi de cycle peut vous informer si l’historique des cycles que vous avez enregistrés au cours des six mois précédents montre un schéma de cycles irréguliers, de règles peu fréquentes ou longues, ou de spotting persistant. Si vous recevez une alerte ou une notification sur un possible écart de cycle, vous pourrez consulter l’historique de vos cycles enregistrés. Si celui-ci est exact, vous pourrez connaître l’écart de cycle détecté et exporter les 12 derniers mois de l’historique de vos cycles au format PDF pour le partager avec votre professionnel de santé. Lorsqu’un cycle récent ou en cours est enregistré, la fonctionnalité de détection des écarts de cycle est désactivée automatiquement.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">179</span><code class="line-text">Les personnes âgées de 40 ans et plus peuvent recevoir une notification d’écart de cycle si leurs cycles enregistrés suggèrent une périménopause ou une pathologie sous-jacente.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">171</span><code class="line-text">## Masquer l’app Suivi de cycle</code></div>
+<div class="diff-line current unchanged"><span class="line-number">181</span><code class="line-text">## Masquer l’app Suivi de cycle</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">173</span><code class="line-text">Vous pouvez supprimer des apps directement depuis l’écran d’accueil de votre Apple Watch :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">183</span><code class="line-text">Vous pouvez supprimer des apps directement depuis l’écran d’accueil de votre Apple Watch :</code></div>
+<div class="fold"><span>••• 2 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">186</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">177</span><code class="line-text">- Touchez de manière prolongée l’app Suivi de cycle jusqu’à ce que l’icône de l’app s’anime. Si les apps ne s’animent pas, recommencez en appuyant moins fort.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">187</span><code class="line-text">- Touchez de manière prolongée l’app Suivi de cycle jusqu’à ce que l’icône de l’app s’anime. Si les apps ne s’animent pas, recommencez en appuyant moins fort.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">188</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">179</span><code class="line-text">- Touchez le bouton <mark class="inline-remove">de s</mark>uppre<mark class="inline-remove">ssion</mark> , puis touchez Supprimer l’app. Certaines apps intégrées Apple ne peuvent pas être supprimées.</code></div>
+<div class="diff-line current added"><span class="line-number">189</span><code class="line-text">- Touchez le bouton <mark class="inline-add">S</mark>uppr<mark class="inline-add">im</mark>e<mark class="inline-add">r</mark> , puis touchez Supprimer l’app. Certaines apps intégrées Apple ne peuvent pas être supprimées.</code></div>
+<div class="diff-line previous removed"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">181</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">190</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">183</span><code class="line-text">- Appuyez sur la Digital Crown pour terminer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">191</span><code class="line-text">- Appuyez sur la Digital Crown pour terminer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">184</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">192</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">190</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">191</span><code class="line-text">- Sur votre iPhone, ouvrez l’app Santé.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">199</span><code class="line-text">- Sur votre iPhone, ouvrez l’app Santé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">192</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">200</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">193</span><code class="line-text">- Touchez <mark class="inline-remove">R</mark>e<mark class="inline-remove">che</mark>rc<mark class="inline-remove">he</mark>r<mark class="inline-remove"> </mark>, puis Suivi de cycle.</code></div>
+<div class="diff-line current added"><span class="line-number">201</span><code class="line-text">- Touchez <mark class="inline-add">l’ongl</mark>e<mark class="inline-add">t Pa</mark>rc<mark class="inline-add">ou</mark>r<mark class="inline-add">ir</mark>, puis Suivi de cycle.</code></div>
+<div class="diff-line previous removed"><span class="line-number">194</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">195</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">196</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">202</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">197</span><code class="line-text">- Touchez Afficher les éléments de suivi de cycle.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">203</span><code class="line-text">- Touchez Afficher les éléments de suivi de cycle.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">204</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">200</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">206</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">201</span><code class="line-text">- Touchez Modifier dans l’angle supérieur.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">207</span><code class="line-text">- Touchez Modifier dans l’angle supérieur.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">202</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">208</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">203</span><code class="line-text">- Touchez le bouton Supprimer <mark class="inline-remove">en</mark> <mark class="inline-remove">regard de</mark> chaque élément, puis touchez Supprimer. Vous pouvez également toucher Tout supprimer dans le coin supérieur.</code></div>
+<div class="diff-line current added"><span class="line-number">209</span><code class="line-text">- Touchez le bouton Supprimer <mark class="inline-add">associé</mark> <mark class="inline-add">à</mark> chaque élément, puis touchez Supprimer. Vous pouvez également toucher Tout supprimer dans le coin supérieur.</code></div>
+<div class="diff-line previous removed"><span class="line-number">204</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">205</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">206</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">210</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">207</span><code class="line-text">## À propos des données sur votre santé et de la confidentialité</code></div>
+<div class="diff-line current unchanged"><span class="line-number">211</span><code class="line-text">## À propos des données sur votre santé et de la confidentialité</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">208</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">212</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">212</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">216</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">213</span><code class="line-text">Cela signifie que lorsque vous utilisez la fonctionnalité Suivi de cycle, et que vous avez activé l’identification à deux facteurs, vos données de santé sont synchronisées avec iCloud de bout en bout et Apple ne disposant pas de la clé permettant de déchiffrer les données, elle ne peut pas les lire.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">217</span><code class="line-text">Cela signifie que lorsque vous utilisez la fonctionnalité Suivi de cycle, et que vous avez activé l’identification à deux facteurs, vos données de santé sont synchronisées avec iCloud de bout en bout et Apple ne disposant pas de la clé permettant de déchiffrer les données, elle ne peut pas les lire.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">214</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">218</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">215</span><code class="line-text">[En savoir plus sur la façon dont l’app Santé est conçue pour sécuriser vos données et protéger votre confidentialité](https://www.apple.com/<mark class="inline-remove">fr/</mark>legal/privacy/data/fr/health-app/)</code></div>
+<div class="diff-line current added"><span class="line-number">219</span><code class="line-text">[En savoir plus sur la façon dont l’app Santé est conçue pour sécuriser vos données et protéger votre confidentialité](https://www.apple.com/legal/privacy/data/fr/health-app/)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">216</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">220</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">217</span><code class="line-text">## Remarques importantes</code></div>
+<div class="diff-line current unchanged"><span class="line-number">221</span><code class="line-text">## Remarques importantes</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">218</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">222</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
