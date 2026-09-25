@@ -5,10 +5,41 @@ from pathlib import Path
 from unittest.mock import patch
 
 from apple_support_watch.http import HttpClient
-from apple_support_watch.thematic import ThemeItem, ThematicWatcher, extract_esim_france, extract_maps_france
+from apple_support_watch.thematic import (ThemeItem, ThematicWatcher, _jobs_payload, _selected_job,
+                                          extract_availability_france, extract_esim_france, extract_maps_france)
 
 
 class ThematicExtractorTests(unittest.TestCase):
+    def test_france_availability_ignores_other_countries(self):
+        def page(other):
+            return "".join(f'<section class="features" id="feature-{i}"><h2>Feature {i}</h2>'
+                           f'<ul><li>French (France)</li><li>{other}</li></ul></section>' for i in range(21))
+        old = extract_availability_france(page("German"), "https://www.apple.com/ios/feature-availability/", "ios")
+        new = extract_availability_france(page("Spanish"), "https://www.apple.com/ios/feature-availability/", "ios")
+        self.assertEqual([item.content_hash for item in old], [item.content_hash for item in new])
+        self.assertIn("French (France)", old[0].markdown)
+        self.assertNotIn("German", old[0].markdown)
+
+    def test_macos_uses_fourth_level_headings(self):
+        html = "".join(f'<section class="features" id="mac-{i}"><h4>Feature {i}</h4>'
+                       '<ul><li>France</li></ul></section>' for i in range(21))
+        items = extract_availability_france(html, "https://www.apple.com/macos/feature-availability/", "macos")
+        self.assertEqual(len(items), 21)
+        self.assertIn("macOS", items[0].title)
+
+    def test_careers_filter_discards_retail_and_broad_roles(self):
+        self.assertFalse(_selected_job({"postingTitle": "FR - Specialist", "team": {"teamName": "Apple Retail"}}, False))
+        self.assertTrue(_selected_job({"postingTitle": "Wallet Payments Manager", "team": {},
+                                       "jobSummary": "Work on Wallet capabilities for France."}, False))
+        self.assertTrue(_selected_job({"postingTitle": "Health Sensing Hardware Engineer", "team": {},
+                                       "locations": []}, True))
+        self.assertFalse(_selected_job({"postingTitle": "Satellite Sales Manager", "team": {},
+                                        "locations": []}, True))
+
+    def test_careers_missing_hydration_fails_closed(self):
+        with self.assertRaisesRegex(ValueError, "search data is missing"):
+            _jobs_payload("<html><body>No listings</body></html>", "search")
+
     def test_extracts_only_selected_france_esim_section(self):
         html = """
         <select><option value="TAG_FR" name="france" selected>France</option></select>

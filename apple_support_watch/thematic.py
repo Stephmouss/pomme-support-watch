@@ -7,6 +7,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlencode
 
 from bs4 import BeautifulSoup, Tag
 
@@ -269,6 +270,96 @@ def extract_dsa(html: str, url: str) -> ThemeItem:
     )
 
 
+def _jobs_payload(html: str, route: str) -> dict[str, Any]:
+    soup = BeautifulSoup(html, "html.parser")
+    script = next((tag.string for tag in soup.find_all("script") if tag.string and
+                   tag.string.startswith("window.__staticRouterHydrationData")), None)
+    if not script or "JSON.parse(" not in script:
+        raise ValueError("Apple Careers search data is missing")
+    encoded = script.split("JSON.parse(", 1)[1].rsplit(");", 1)[0]
+    data = json.loads(json.loads(encoded))
+    return data["loaderData"][route]
+
+
+FRANCE_JOB_TERMS = re.compile(
+    r"wallet|payments?|commerce|maps|siri|apple intelligence|machine learning|"
+    r"foundation models?|artificial intelligence|security|cryptograph|privacy|"
+    r"health|vision pro|satellite|robotic|carplay|homekit|sensor|camera|silicon|"
+    r"research|engineer|software|hardware", re.I
+)
+GLOBAL_RND_TERMS = re.compile(r"robotic|satellite|health sens|wearable sens", re.I)
+TECHNICAL_ROLE = re.compile(r"engineer|research|scientist|architect|design|systems|sensor", re.I)
+
+
+def _selected_job(job: dict[str, Any], global_rnd: bool) -> bool:
+    title = str(job.get("postingTitle", ""))
+    team = str(job.get("team", {}).get("teamName", ""))
+    summary = str(job.get("jobSummary", ""))
+    if team == "Apple Retail" or re.search(r"specialist|store|internship|intern\b|student|sales|marketing", title, re.I):
+        return False
+    if global_rnd:
+        return bool(GLOBAL_RND_TERMS.search(title) and TECHNICAL_ROLE.search(title) and
+                    not any(loc.get("countryID") == "iso-country-FRA" for loc in job.get("locations", [])))
+    return bool(FRANCE_JOB_TERMS.search(title) and
+                (TECHNICAL_ROLE.search(title) or re.search(r"wallet|payments?|commerce|maps|carplay", title, re.I)) and
+                len(summary) > 30)
+
+
+def _job_item(job: dict[str, Any], detail: dict[str, Any], global_rnd: bool) -> ThemeItem:
+    position = str(job["positionId"])
+    title = _clean(str(detail.get("postingTitle") or job["postingTitle"]))
+    url = f"https://jobs.apple.com/en-us/details/{position}/{job['transformedPostingTitle']}"
+    location = ", ".join(sorted({str(loc.get("name", "")) for loc in detail.get("locations", []) if loc.get("name")}))
+    sections = [f"# {title}", f"Team: {', '.join(detail.get('teamNames', []))}", f"Location: {location}"]
+    for field, heading in (("jobSummary", "Summary"), ("description", "Description"),
+                           ("responsibilities", "Responsibilities"),
+                           ("minimumQualifications", "Minimum qualifications"),
+                           ("preferredQualifications", "Preferred qualifications")):
+        value = detail.get(field)
+        if value:
+            sections.append(f"## {heading}\n\n{_clean(value if isinstance(value, str) else str(value))}")
+    collection = "jobs:global-rnd" if global_rnd else "jobs:france"
+    return ThemeItem(
+        item_id=f"jobs:{position}", collection=collection, title=title, url=url,
+        source_name="Apple Careers", category="R&D matériel" if global_rnd else "Recrutement stratégique — France",
+        description=_clean(str(job.get("jobSummary", "")))[:320],
+        markdown="\n\n".join(sections) + "\n",
+    )
+
+
+def extract_availability_france(html: str, url: str, platform: str) -> list[ThemeItem]:
+    soup = BeautifulSoup(html, "html.parser")
+    sections = soup.select("section.features[id], section.section-table[id]")
+    if len(sections) < 20:
+        raise ValueError(f"{platform} feature availability sections are missing")
+    items = []
+    for section in sections:
+        heading = section.find(["h2", "h3", "h4"])
+        if not heading:
+            continue
+        for footnote in heading.select("sup"):
+            footnote.decompose()
+        title = _clean(heading.get_text(" ", strip=True))
+        if not title:
+            continue
+        france = sorted({
+            _clean(li.get_text(" ", strip=True)) for li in section.select("li")
+            if re.search(r"\bFrance\b", li.get_text(" ", strip=True), re.I)
+        })
+        platform_name = {"ios": "iOS et iPadOS", "watchos": "watchOS", "macos": "macOS"}[platform]
+        name = f"{platform_name} — {title}"
+        availability = " ; ".join(france) if france else "Non indiquée pour la France"
+        items.append(ThemeItem(
+            item_id=f"availability:{platform}:{section['id']}", collection=f"availability:{platform}",
+            title=name, url=f"{url}#{section['id']}", source_name="Apple Feature Availability",
+            category="Disponibilité des fonctions — France",
+            description=availability, markdown=f"# {name}\n\nFrance : {availability}\n",
+        ))
+    if len(items) < 20:
+        raise ValueError(f"{platform} feature availability titles are missing")
+    return items
+
+
 class ThematicWatcher:
     def __init__(self, root: Path, config: dict[str, Any], client: HttpClient, site_url: str, dry_run: bool = False) -> None:
         self.root = root
@@ -291,6 +382,47 @@ class ThematicWatcher:
 
     def _fetch_source(self, source: dict[str, Any]) -> tuple[dict[str, list[ThemeItem]], dict[str, str]]:
         kind = source["type"]
+        if kind == "feature_availability_fr":
+            collections, errors = {}, {}
+            for page in source["pages"]:
+                platform = page["platform"]
+                try:
+                    collections[f"availability:{platform}"] = extract_availability_france(
+                        self.client.get_text(page["url"]), page["url"], platform
+                    )
+                except Exception as exc:
+                    errors[f"availability:{platform}"] = str(exc)
+            return collections, errors
+        if kind in {"jobs_france", "jobs_global_rnd"}:
+            global_rnd = kind == "jobs_global_rnd"
+            searches = [{"location": "france-FRAC"}] if not global_rnd else [
+                {"search": f'"{term}"'} for term in source["queries"]
+            ]
+            candidates: dict[str, dict[str, Any]] = {}
+            for search in searches:
+                for page in range(1, 3):
+                    params = urlencode({**search, "sort": "newest", "page": page})
+                    search_url = f"{source['url']}?{params}"
+                    data = _jobs_payload(self.client.get_text(search_url), "search")
+                    results = data["searchResults"]
+                    if not isinstance(results, list) or (not results and int(data["totalRecords"]) > 0):
+                        # Apple occasionally serves an empty page while its index refreshes.
+                        data = _jobs_payload(self.client.get_text(search_url), "search")
+                        results = data["searchResults"]
+                    if not isinstance(results, list) or (not results and int(data["totalRecords"]) > 0):
+                        raise ValueError("Apple Careers returned incomplete search results")
+                    for job in results:
+                        if _selected_job(job, global_rnd):
+                            candidates[str(job["positionId"])] = job
+                    if page * 20 >= int(data["totalRecords"]):
+                        break
+            collection = "jobs:global-rnd" if global_rnd else "jobs:france"
+            items = []
+            for job in candidates.values():
+                url = f"https://jobs.apple.com/en-us/details/{job['positionId']}/{job['transformedPostingTitle']}"
+                detail = _jobs_payload(self.client.get_text(url), "jobDetails")["jobsData"]
+                items.append(_job_item(job, detail, global_rnd))
+            return {collection: items}, {}
         if kind == "regulatory_catalog":
             collections: dict[str, list[ThemeItem]] = {}
             errors: dict[str, str] = {}
