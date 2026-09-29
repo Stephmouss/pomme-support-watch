@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Ajouter et modifier des widgets sur votre iPhone - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Ajouter et modifier des widgets sur votre iPhone - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/118610">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+45 ajouts</span>
+      <span class="badge removed">−33 suppressions</span>
+      <span class="badge">4 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">- Depuis l’écran d’accueil, touchez de manière prolongée un widget ou une zone vide jusqu’à ce que les apps s’animent.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">- Depuis l’écran d’accueil, touchez de manière prolongée un widget ou une zone vide jusqu’à ce que les apps s’animent.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">- Touchez Modifier dans l’angle supérieur gauche.</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">- Touchez<mark class="inline-add"> le bouton</mark> Modifier dans l’angle supérieur gauche.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">- Touchez Ajouter <mark class="inline-remove">le</mark> widget.</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">- Touchez Ajouter <mark class="inline-add">un</mark> widget.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">[Image: L’ouverture du menu de sélection de widgets vous permet d’accéder à des options comme Ajouter un widget et Modifier le fond d’écran.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">- Sélectionnez un widget, choisissez une taille de widget, puis touchez Ajouter le widget.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">- Sélectionnez un widget, choisissez une taille de widget, puis touchez Ajouter le widget.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- Touchez OK.</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- Touchez <mark class="inline-add">le bouton </mark>OK<mark class="inline-add"> </mark>.</code></div>
+<div class="diff-line previous removed"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">[Image: Un iPhone montrant des widgets pour la météo et les évènements du calendrier.]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">## Ajouter des widgets à l’écran verrouillé</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">## Ajouter des widgets à l’écran verrouillé</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">Sous iOS 16, vous pouvez ajouter des widgets à <mark class="inline-remove">votre </mark>écran verrouillé de façon à visualiser certaines informations d’un seul coup d’œil, par exemple, la température, la qualité de l’air, le niveau de batterie ou les évènements à venir du calendrier.</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">Sous iOS 16<mark class="inline-add"> ou version ultérieure</mark>, vous pouvez ajouter des widgets à <mark class="inline-add">l’</mark>écran verrouillé de façon à visualiser certaines informations d’un seul coup d’œil, par exemple, la température, la qualité de l’air, le niveau de batterie ou les évènements à venir du calendrier.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">- Appuyez de façon prolongée sur l’écran verrouillé jusqu’à ce que le bouton Personnaliser apparaisse, puis touchez Personnaliser.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">- Appuyez de façon prolongée sur l’écran verrouillé jusqu’à ce que le bouton Personnaliser apparaisse, puis touchez Personnaliser.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">- Touchez Ajouter des widgets.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">- Touchez Ajouter des widgets.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">[Image: Lorsque vous modifiez ou créez un fond d’écran pour l’écran verrouillé de votre iPhone, touchez le bouton Ajouter des widgets pour sélectionner ceux qui s’afficheront sur l’écran verrouillé.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">- Touchez ou faites glisser les widgets que vous souhaitez ajouter à l’écran verrouillé.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">- Touchez ou faites glisser les widgets que vous souhaitez ajouter à l’écran verrouillé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">- Lorsque vous avez terminé, touchez <mark class="inline-remove">le bouton Fermer , puis </mark>OK.</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- Lorsque vous avez terminé, <mark class="inline-add">effectuez un balayage vers le bas depuis la liste des widgets, puis </mark>touchez OK.</code></div>
+<div class="diff-line previous removed"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">[Image: No alt supplied for Image]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">[Image: Écran d’iPhone montrant comment ajouter des widgets à l’écran verrouillé]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">S’il n’y a pas assez de place pour un nouveau widget, vous pouvez toucher le bouton Supprimer afin de supprimer un widget et de faire de la place pour celui que vous souhaitez ajouter.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">S’il n’y a pas assez de place pour un nouveau widget, vous pouvez toucher le bouton Supprimer afin de supprimer un widget et de faire de la place pour celui que vous souhaitez ajouter.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">- Touchez de manière prolongée un widget ou une zone vide dans l’affichage du jour jusqu’à ce que les apps s’animent.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">- Touchez de manière prolongée un widget ou une zone vide dans l’affichage du jour jusqu’à ce que les apps s’animent.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- Touchez Modifier dans l’angle supérieur gauche.</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- Touchez<mark class="inline-add"> le bouton</mark> Modifier dans l’angle supérieur gauche.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">- Touchez Ajouter <mark class="inline-remove">le</mark> widget.</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- Touchez Ajouter <mark class="inline-add">un</mark> widget.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">- Faites défiler vers le bas <mark class="inline-remove">pour</mark> sélectionne<mark class="inline-remove">r</mark> un widget<mark class="inline-remove">, puis touchez Ajouter le widget</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- Faites défiler <mark class="inline-add">l’écran </mark>vers le bas <mark class="inline-add">et</mark> sélectionne<mark class="inline-add">z</mark> un widget.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">- <mark class="inline-remove">T</mark>ouchez <mark class="inline-remove">OK</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">- <mark class="inline-add">Effectuez un balayage pour choisir une apparence, puis t</mark>ouchez <mark class="inline-add">Ajouter le widget</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text"><mark class="inline-remove">[Imag</mark>e<mark class="inline-remove">:</mark> <mark class="inline-remove">iPh</mark>on<mark class="inline-remove">e</mark> <mark class="inline-remove">affichant</mark> <mark class="inline-remove">des widgets dans l’affichage du jour</mark>.<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text"><mark class="inline-add">- Touch</mark>e<mark class="inline-add">z</mark> <mark class="inline-add">le bout</mark>on <mark class="inline-add">OK</mark> .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">## Modifier vos widgets</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">## Modifier vos widgets</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">Certains widgets proposent des configurations différentes. Par exemple, vous pouvez modifier le widget Météo pour consulter la météo du lieu où vous vous trouvez ou d’autres villes.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">Certains widgets proposent des configurations différentes. Par exemple, vous pouvez modifier le widget Météo pour consulter la météo du lieu où vous vous trouvez ou d’autres villes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text"><mark class="inline-remove">Pour</mark> <mark class="inline-remove">m</mark>odifier <mark class="inline-remove">l</mark>es widgets <mark class="inline-remove">à partir </mark>de l’affichage du jour<mark class="inline-remove"> :</mark></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">M</mark>odifier <mark class="inline-add">d</mark>es widgets de<mark class="inline-add">puis</mark> l’affichage du jour</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Balayez l’écran d’accueil ou l’écran verrouillé de gauche à droite.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">- Balayez l’écran d’accueil ou l’écran verrouillé de gauche à droite.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">63</span><code class="line-text">- Touchez de manière prolongée un widget pour ouvrir le menu Quick Actions.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">- Touchez de manière prolongée un widget pour ouvrir le menu Quick Actions.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">- Touchez Modifier le widget ou choisissez une <mark class="inline-remove">au</mark>tre<mark class="inline-remove"> mise e</mark>n<mark class="inline-remove"> pag</mark>e.</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">- Touchez Modifier le widget ou choisissez une <mark class="inline-add">disposi</mark>t<mark class="inline-add">ion diffé</mark>ren<mark class="inline-add">t</mark>e.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">[Image: i<mark class="inline-remove">cô</mark>ne <mark class="inline-remove">M</mark>odi<mark class="inline-remove">fi</mark>er <mark class="inline-remove">le</mark> widget]</code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">[Image: <mark class="inline-add">Sur votre </mark>i<mark class="inline-add">Pho</mark>ne<mark class="inline-add">,</mark> <mark class="inline-add">t</mark>o<mark class="inline-add">uchez </mark>d<mark class="inline-add">e man</mark>i<mark class="inline-add">èr</mark>e<mark class="inline-add"> p</mark>r<mark class="inline-add">olongée</mark> <mark class="inline-add">un</mark> widget<mark class="inline-add"> pour afficher les options de modification et de disposition.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">- Apportez vos modifications, puis touchez une zone à l’extérieur du widget pour quitter.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">- Apportez vos modifications, puis touchez une zone à l’extérieur du widget pour quitter.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text"><mark class="inline-remove">[Im</mark>a<mark class="inline-remove">ge: iPhone montrant </mark>c<mark class="inline-remove">omment modifi</mark>er <mark class="inline-remove">un</mark> widget<mark class="inline-remove">.]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text"><mark class="inline-add">### Dépl</mark>acer <mark class="inline-add">des</mark> widget<mark class="inline-add">s sur l’écran d’accueil</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text"><mark class="inline-remove">Vous pouvez également déplacer vos widgets afin de trouver plus facilement vos préférés.</mark> Touchez <mark class="inline-remove">s</mark>i<mark class="inline-remove">mpl</mark>e<mark class="inline-remove">men</mark>t de manière prolongée<mark class="inline-remove"> un widget jusqu’à ce qu’il s’anime, puis déplacez le widget sur l’écran</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text"><mark class="inline-add">-</mark> Touchez <mark class="inline-add">un w</mark>i<mark class="inline-add">dg</mark>et de manière prolongée.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">- Touchez Modifier l’écran d’accueil.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">- Touchez de manière prolongée le widget que vous souhaitez déplacer, puis faites-le glisser sur l’écran d’accueil pour le réorganiser au sein des autres apps et widgets.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">- Touchez le bouton Terminé .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">## Utiliser des piles de widgets</code></div>
+<div class="diff-line current unchanged"><span class="line-number">79</span><code class="line-text">## Utiliser des piles de widgets</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">### Ajouter une pile intelligente</code></div>
+<div class="diff-line current unchanged"><span class="line-number">83</span><code class="line-text">### Ajouter une pile intelligente</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">Une pile intelligente est une collection prédéfinie de widgets qui affiche le bon widget en fonction de facteurs tels que le lieu où vous vous trouvez, une activité ou l’heure. Une <mark class="inline-remove">P</mark>ile intelligente modifie automatiquement l’ordre des widgets pour afficher les informations les plus pertinentes tout au long de la journée.</code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">Une pile intelligente est une collection prédéfinie de widgets qui affiche le bon widget en fonction de facteurs tels que le lieu où vous vous trouvez, une activité ou l’heure. Une <mark class="inline-add">p</mark>ile intelligente modifie automatiquement l’ordre des widgets pour afficher les informations les plus pertinentes tout au long de la journée.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">Pour ajouter une pile intelligente :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">Pour ajouter une pile intelligente :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">- Touchez de manière prolongée une zone sur votre écran d’accueil ou dans l’affichage du jour jusqu’à ce que les apps s’animent.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">89</span><code class="line-text">- Touchez de manière prolongée une zone sur votre écran d’accueil ou dans l’affichage du jour jusqu’à ce que les apps s’animent.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text">- Touchez Modifier dans l’angle supérieur gauche.</code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">- Touchez<mark class="inline-add"> le bouton</mark> Modifier dans l’angle supérieur gauche.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text">- Touchez Ajouter <mark class="inline-remove">le</mark> widget.</code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">- Touchez Ajouter <mark class="inline-add">un</mark> widget.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">- Faites défiler vers le bas, sélectionnez une Pile intelligente, puis touchez Ajouter le widget.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">- Faites défiler vers le bas, sélectionnez une Pile intelligente, puis touchez Ajouter le widget.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">- Touchez OK.</code></div>
+<div class="diff-line current added"><span class="line-number">97</span><code class="line-text">- Touchez <mark class="inline-add">le bouton </mark>OK<mark class="inline-add"> </mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">95</span><code class="line-text">### Créer vos propres piles de widgets</code></div>
+<div class="diff-line current unchanged"><span class="line-number">99</span><code class="line-text">### Créer vos propres piles de widgets</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">99</span><code class="line-text">- Faites glisser un widget au-dessus d’un autre widget. Vous pouvez empiler jusqu’à 10 widgets.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">103</span><code class="line-text">- Faites glisser un widget au-dessus d’un autre widget. Vous pouvez empiler jusqu’à 10 widgets.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">101</span><code class="line-text">- Touchez OK.</code></div>
+<div class="diff-line current added"><span class="line-number">105</span><code class="line-text">- Touchez <mark class="inline-add">le bouton </mark>OK<mark class="inline-add"> </mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">103</span><code class="line-text">### Modifier une pile de widgets</code></div>
+<div class="diff-line current unchanged"><span class="line-number">107</span><code class="line-text">### Modifier une pile de widgets</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">105</span><code class="line-text">- Touchez de manière prolongée la pile de widgets.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">109</span><code class="line-text">- Touchez de manière prolongée la pile de widgets.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">107</span><code class="line-text">- Touchez Modifier la pile<mark class="inline-remove"> </mark>. Vous pouvez ensuite réorganiser les widgets au sein de la pile en faisant glisser l’app à l’endroit où vous souhaitez la voir dans la pile. Vous pouvez également activer ou désactiver la fonctionnalité de rotation intelligente * .</code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text">- Touchez Modifier la pile. Vous pouvez ensuite réorganiser les widgets au sein de la pile en faisant glisser l’app à l’endroit où vous souhaitez la voir dans la pile. Vous pouvez également activer ou désactiver la fonctionnalité de rotation intelligente * .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">109</span><code class="line-text">[Image: <mark class="inline-remove">N</mark>o alt s<mark class="inline-remove">u</mark>p<mark class="inline-remove">pl</mark>i<mark class="inline-remove">ed f</mark>o<mark class="inline-remove">r Image</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text">[Image: <mark class="inline-add">P</mark>o<mark class="inline-add">ur modifier une pile de widgets, touchez-la de manière prolongée pour</mark> a<mark class="inline-add">fficher </mark>l<mark class="inline-add">es options de modification e</mark>t <mark class="inline-add">de di</mark>sp<mark class="inline-add">os</mark>i<mark class="inline-add">ti</mark>o<mark class="inline-add">n.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">111</span><code class="line-text">- Touchez OK.</code></div>
+<div class="diff-line current added"><span class="line-number">115</span><code class="line-text">- Touchez <mark class="inline-add">le bouton </mark>OK<mark class="inline-add"> </mark>.</code></div>
+<div class="diff-line previous removed"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">113</span><code class="line-text">[Image: Un iPhone montrant une pile de widgets]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">115</span><code class="line-text">* Lorsque la fonctionnalité de rotation intelligente est activée, iOS vous montre les widgets pertinents tout au long de la journée.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">117</span><code class="line-text">* Lorsque la fonctionnalité de rotation intelligente est activée, iOS vous montre les widgets pertinents tout au long de la journée.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">117</span><code class="line-text"><mark class="inline-remove">S</mark>ous<mark class="inline-remove"> iOS 15 et v</mark>er<mark class="inline-remove">sions</mark> <mark class="inline-remove">ultéri</mark>e<mark class="inline-remove">ures, vou</mark>s p<mark class="inline-remove">ouvez act</mark>i<mark class="inline-remove">ver </mark>les <mark class="inline-remove">sug</mark>ges<mark class="inline-remove">t</mark>i<mark class="inline-remove">on</mark>s de widgets, <mark class="inline-remove">afin que les apps que </mark>vous utilise<mark class="inline-remove">z déjà puissent appa</mark>r<mark class="inline-remove">aître automatiquement dans la pile</mark> i<mark class="inline-remove">ntelligente</mark> <mark class="inline-remove">a</mark>u <mark class="inline-remove">bon mom</mark>e<mark class="inline-remove">nt, en fonct</mark>ion <mark class="inline-remove">d</mark>e<mark class="inline-remove"> vot</mark>re<mark class="inline-remove"> activité passée</mark>.<mark class="inline-remove"> Une option vous permet d’ajouter le widget à la pile afin qu’il soit toujours disponible lorsque vous en avez besoin. Suivez simplement les étapes 1 et 2, puis touchez Suggestions de widgets pour activer ces dernières.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">119</span><code class="line-text"><mark class="inline-add">P</mark>ou<mark class="inline-add">r utili</mark>ser <mark class="inline-add">d</mark>es piles <mark class="inline-add">intelli</mark>ge<mark class="inline-add">nte</mark>s<mark class="inline-add"> ou créer vos propres p</mark>i<mark class="inline-add">le</mark>s de widgets, vous<mark class="inline-add"> devez</mark> utiliser i<mark class="inline-add">OS</mark> <mark class="inline-add">14 o</mark>u <mark class="inline-add">v</mark>e<mark class="inline-add">rs</mark>ion <mark class="inline-add">ultéri</mark>e<mark class="inline-add">u</mark>re.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">119</span><code class="line-text"><mark class="inline-remove">Pour</mark> <mark class="inline-remove">u</mark>tiliser des pile<mark class="inline-remove">s</mark> intelligente<mark class="inline-remove">s ou créer vos propres piles de widgets, vous devez utiliser iOS 14 ou version ultérieure.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">121</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">U</mark>tiliser <mark class="inline-add">les suggestions </mark>de<mark class="inline-add"> widget</mark>s<mark class="inline-add"> avec une</mark> pile intelligente</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">123</span><code class="line-text">Sous iOS 15 et versions ultérieures, vous pouvez activer les suggestions de widgets, afin que les apps que vous utilisez déjà puissent apparaître automatiquement dans la pile intelligente au bon moment, en fonction de votre activité passée.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">125</span><code class="line-text">- Touchez de manière prolongée la pile de widgets.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">127</span><code class="line-text">- Touchez Modifier la pile.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">129</span><code class="line-text">- Activez ou désactivez l’option Suggestions de widgets.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">131</span><code class="line-text">- Touchez le bouton OK .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">121</span><code class="line-text">## Supprimer des widgets</code></div>
+<div class="diff-line current unchanged"><span class="line-number">133</span><code class="line-text">## Supprimer des widgets</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
