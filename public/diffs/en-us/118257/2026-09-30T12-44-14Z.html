@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Transfer a copy of your iCloud Photos collection to another service — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Transfer a copy of your iCloud Photos collection to another service</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/118257">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+16 ajouts</span>
+      <span class="badge removed">−16 suppressions</span>
+      <span class="badge">3 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">You can request to transfer a copy of your iCloud Photos — photos and videos associated with your Apple Account — to another service.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">You can request to transfer a copy of your iCloud Photos — photos and videos associated with your Apple Account — to another service.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text"><mark class="inline-remove">Thi</mark>s<mark class="inline-remove"> service is available</mark> to<mark class="inline-remove"> customers in over 240 countries around the world for</mark> transfers to Google Photos.</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text"><mark class="inline-add">You can reque</mark>s<mark class="inline-add">t</mark> to transfer<mark class="inline-add"> a copy of photo</mark>s<mark class="inline-add"> and videos you store in [iCloud Photos](https://support.apple.com/en-us/108782)</mark> to Google Photos<mark class="inline-add"> from your Apple Account</mark>.<mark class="inline-add">* Transferring photos and videos from iCloud Photos doesn’t remove or alter the content you store with Apple, but sends a copy of your content to the other service.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text"><mark class="inline-remove">Y</mark>ou <mark class="inline-remove">c</mark>a<mark class="inline-remove">n</mark> request to transfer<mark class="inline-remove"> a copy of photos and videos you store in [iCloud Photos](https://support</mark>.<mark class="inline-remove">apple.com/en-us/108782) to Google Photos. Transferring photos and videos from iCloud Photos doesn’t remove or alter the content you store with Apple, but sends a copy of your content to the other service.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text"><mark class="inline-add">Most transfers take between three and seven days, alth</mark>ou<mark class="inline-add">gh</mark> <mark class="inline-add">some might t</mark>a<mark class="inline-add">ke up to 30 days. We use this time to verify that the</mark> request <mark class="inline-add">was made by you, and </mark>to<mark class="inline-add"> make the</mark> transfer.</code></div>
+<div class="diff-line previous removed"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">The transfer process takes between three and seven days. We use this time to verify that the request was made by you, and to make the transfer.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">Some data and formats available in iCloud Photos — such as Smart Albums, Live Photos, or some RAW files — may not be available when you transfer your content to another service. More information about what data is transferred is listed below.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">Some data and formats available in iCloud Photos — such as Smart Albums, Live Photos, or some RAW files — may not be available when you transfer your content to another service. More information about what data is transferred is listed below.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">T<mark class="inline-remove">hi</mark>s<mark class="inline-remove"> s</mark>er<mark class="inline-remove">vice isn&#x27;t</mark> a<mark class="inline-remove">vailable for</mark> c<mark class="inline-remove">hild</mark> <mark class="inline-remove">acc</mark>ou<mark class="inline-remove">nts or Managed Apple Accounts. You can&#x27;t export photo or video data from iCloud while Advanced Data Protection fo</mark>r iCloud <mark class="inline-remove">i</mark>s t<mark class="inline-remove">u</mark>rned <mark class="inline-remove">on</mark> <mark class="inline-remove">fo</mark>r<mark class="inline-remove"> your a</mark>c<mark class="inline-remove">count</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">T<mark class="inline-add">o tran</mark>s<mark class="inline-add">f</mark>er a c<mark class="inline-add">opy</mark> <mark class="inline-add">of y</mark>our iCloud <mark class="inline-add">Photo</mark>s t<mark class="inline-add">o anothe</mark>r<mark class="inline-add"> service, follow the directio</mark>n<mark class="inline-add">s provid</mark>ed <mark class="inline-add">by</mark> <mark class="inline-add">that se</mark>r<mark class="inline-add">vi</mark>c<mark class="inline-add">e</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">B</mark>e<mark class="inline-remove">fo</mark>re <mark class="inline-remove">y</mark>o<mark class="inline-remove">u request to transf</mark>er <mark class="inline-remove">ph</mark>ot<mark class="inline-remove">o</mark>s and video</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text"><mark class="inline-add">*</mark> <mark class="inline-add">This s</mark>er<mark class="inline-add">vic</mark>e <mark class="inline-add">is available in </mark>o<mark class="inline-add">v</mark>er <mark class="inline-add">240 c</mark>o<mark class="inline-add">un</mark>t<mark class="inline-add">rie</mark>s and <mark class="inline-add">regions. This ser</mark>vi<mark class="inline-add">ce isn&#x27;t available for chil</mark>d<mark class="inline-add"> accounts or Manag</mark>e<mark class="inline-add">d Apple Acc</mark>o<mark class="inline-add">unts.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">## Before you request to transfer photos and videos</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">Before you request to transfer your iCloud Photos content, please make sure:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">Before you request to transfer your iCloud Photos content, please make sure:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">- You&#x27;re using iCloud Photos to store photos and videos with Apple.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">- You&#x27;re using iCloud Photos to store photos and videos with Apple.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">- Your Apple Account uses [two-factor authentication](https://support.apple.com/en-us/102660) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">- Your Apple Account uses [two-factor authentication](https://support.apple.com/en-us/102660) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- You&#x27;ve [turned off Advanced Data Protection for iCloud](https://support.apple.com/guide/security/sec973254c5f/) . You can&#x27;t export photo or video data from iCloud while Advanced Data Protection for iCloud is turned on for your account.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">- You have a Google account to use Google Photos.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">- You have a Google account to use Google Photos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">## How to request to transfer your iCloud Photos content</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">## How to request to transfer your iCloud Photos content</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">To start a request to <mark class="inline-remove">transfe</mark>r <mark class="inline-remove">th</mark>e p<mark class="inline-remove">hoto</mark>s a<mark class="inline-remove">nd</mark> <mark class="inline-remove">videos in iCloud</mark> Ph<mark class="inline-remove">o</mark>t<mark class="inline-remove">o</mark>s:</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text"><mark class="inline-add">- </mark>To start a request<mark class="inline-add">, sign in</mark> to <mark class="inline-add">you</mark>r <mark class="inline-add">Appl</mark>e <mark class="inline-add">Account at A</mark>p<mark class="inline-add">ple&#x27;</mark>s <mark class="inline-add">[D</mark>a<mark class="inline-add">ta</mark> <mark class="inline-add">&amp;</mark> P<mark class="inline-add">rivacy page](</mark>ht<mark class="inline-add">tp</mark>s:<mark class="inline-add">//privacy.apple.com/) .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- <mark class="inline-remove">Sig</mark>n <mark class="inline-remove">i</mark>n <mark class="inline-remove">t</mark>o your <mark class="inline-remove">Apple Account at Apple&#x27;s [D</mark>ata a<mark class="inline-remove">nd</mark> <mark class="inline-remove">Priva</mark>cy <mark class="inline-remove">p</mark>a<mark class="inline-remove">ge](h</mark>t<mark class="inline-remove">tps://priv</mark>a<mark class="inline-remove">cy</mark>.<mark class="inline-remove">apple.com/) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- <mark class="inline-add">U</mark>n<mark class="inline-add">der</mark> <mark class="inline-add">Tra</mark>n<mark class="inline-add">sfer</mark> <mark class="inline-add">a c</mark>o<mark class="inline-add">py of</mark> your <mark class="inline-add">d</mark>ata<mark class="inline-add">, select Request to transfer</mark> a c<mark class="inline-add">op</mark>y <mark class="inline-add">of your d</mark>ata.</code></div>
+<div class="diff-line previous removed"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- Select Transfer a copy of your data.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">- Follow the prompts to complete your request.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">- Follow the prompts to complete your request.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text"><mark class="inline-remove">Y</mark>ou<mark class="inline-remove">’ll b</mark>e asked to sign in to your Google account<mark class="inline-remove"> to start the transfer</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text"><mark class="inline-add">To start the transfer, y</mark>ou<mark class="inline-add">&#x27;r</mark>e asked to sign in to your Google account.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">You<mark class="inline-remove">’ll</mark> receive an email notification of your transfer request and another email when your transfer is complete. If you cancel your transfer request before it’s complete, and some photos or videos have already been transferred, they remain in Google Photos.</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">You receive an email notification of your transfer request and another email when your transfer is complete. If you cancel your transfer request before it’s complete, and some photos or videos have already been transferred, they remain in Google Photos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">[Check the status of your request at Apple&#x27;s Data &amp; Privacy page](https://privacy.apple.com<mark class="inline-remove">/account</mark>)</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">[Check the status of your request at Apple&#x27;s Data &amp; Privacy page](https://privacy.apple.com)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">## About the photos and videos that are transferred</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">## About the photos and videos that are transferred</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">Only content stored in iCloud Photos<mark class="inline-remove">*</mark> is transferred. Photos and videos are transferred either in the original format or in industry-standard formats that are easy to open and read. In some cases, you may find that the transfer didn’t include all the photos, videos, or formats that you expected and there are a few reasons why this could happen.</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">Only content stored in iCloud Photos is transferred. Photos and videos are transferred either in the original format or in industry-standard formats that are easy to open and read. In some cases, you may find that the transfer didn’t include all the photos, videos, or formats that you expected and there are a few reasons why this could happen.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">- The transfer includes copies of photos and videos that you store in iCloud Photos, associated with your Apple Account. Formats include: .jpg, .png, .webp, .gif, some RAW files, .mpg, .mod, .mmv, .tod, .wmv, .asf, .avi, .divx, .mov, .m4v, .3gp, .3g2, .mp4, .m2t, .m2ts, .mts, and .mkv files.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">- The transfer includes copies of photos and videos that you store in iCloud Photos, associated with your Apple Account. Formats include: .jpg, .png, .webp, .gif, some RAW files, .mpg, .mod, .mmv, .tod, .wmv, .asf, .avi, .divx, .mov, .m4v, .3gp, .3g2, .mp4, .m2t, .m2ts, .mts, and .mkv files.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">- Whenever possible, photos are transferred with their albums. Videos are transferred separately, without their albums.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">- Whenever possible, photos are transferred with their albums. Videos are transferred separately, without their albums.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">- Once transferred to Google, the filenames of albums and videos start with &quot;Copy of.<mark class="inline-remove">”</mark></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">- Once transferred to Google, the filenames of albums and videos start with &quot;Copy of.<mark class="inline-add">&quot;</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">- Some content—including shared albums, smart albums<mark class="inline-remove">, photo stream content</mark>, live photos, some metadata, and photos and videos stored in other folders or locations—is not transferred at all.</code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- Some content—including shared albums, smart albums, live photos, some metadata, and photos and videos stored in other folders or locations—is not transferred at all.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">Your Google account’s total storage space applies to content transferred from iCloud Photos to Google Photos. Google Photos also has a limit of 20,000 photos per album. If you transfer an album with more than 20,000 photos, the additional photos are still transferred but are not added to the album.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">Your Google account’s total storage space applies to content transferred from iCloud Photos to Google Photos. Google Photos also has a limit of 20,000 photos per album. If you transfer an album with more than 20,000 photos, the additional photos are still transferred but are not added to the album.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

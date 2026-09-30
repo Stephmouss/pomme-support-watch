@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>If Logic Pro for Mac isn&#x27;t working — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>If Logic Pro for Mac isn&#x27;t working</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/119881">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+8 ajouts</span>
+      <span class="badge removed">−6 suppressions</span>
+      <span class="badge">5 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## Before you begin</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## Before you begin</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">- If you just updated Logic Pro or macOS and Logic Pro isn&#x27;t working, any third-party <mark class="inline-remove">Audi</mark>o<mark class="inline-remove"> Uni</mark>t<mark class="inline-remove">s plug-ins</mark> or<mark class="inline-remove"> external</mark> hardwar<mark class="inline-remove">e like an audio interfac</mark>e you&#x27;re using might not be compatible. <mark class="inline-remove">Ta</mark>k<mark class="inline-remove">e note of all</mark> the t<mark class="inline-remove">hird-party Aud</mark>io<mark class="inline-remove"> U</mark>n<mark class="inline-remove">its and hardware you&#x27;re using with your Mac, then [contact the developer</mark>s](https://support.apple.com/10<mark class="inline-remove">3190</mark>) <mark class="inline-remove">t</mark>o<mark class="inline-remove"> make su</mark>re<mark class="inline-remove"> their</mark> prod<mark class="inline-remove">ucts are compat</mark>i<mark class="inline-remove">ble</mark> with the <mark class="inline-remove">Logic Pro and macOS upda</mark>tes that<mark class="inline-remove"> you want to </mark>i<mark class="inline-remove">nsta</mark>l<mark class="inline-remove">l</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">- If you just updated Logic Pro or macOS and Logic Pro isn&#x27;t working, any third-party <mark class="inline-add">s</mark>o<mark class="inline-add">f</mark>t<mark class="inline-add">ware</mark> or hardware you&#x27;re using might not be compatible. <mark class="inline-add">[Chec</mark>k the<mark class="inline-add">se</mark> <mark class="inline-add">recommenda</mark>tions](https://support.apple.com/<mark class="inline-add">en-us/</mark>1<mark class="inline-add">25</mark>0<mark class="inline-add">75</mark>) <mark class="inline-add">bef</mark>ore pro<mark class="inline-add">cee</mark>di<mark class="inline-add">ng</mark> with the <mark class="inline-add">s</mark>te<mark class="inline-add">p</mark>s<mark class="inline-add"> in</mark> th<mark class="inline-add">is </mark>a<mark class="inline-add">r</mark>ti<mark class="inline-add">c</mark>l<mark class="inline-add">e</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">- [Back up the currently installed version of Logic Pro and your Logic Pro projects](https://support.apple.com/en-us/102029) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">- [Back up the currently installed version of Logic Pro and your Logic Pro projects](https://support.apple.com/en-us/102029) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">- If you are using an external storage device to store your projects or your Logic Pro Sound Library, [make sure it&#x27;s formatted as APFS](https://support.apple.com/guide/disk-utility/erase-and-reformat-a-storage-device-dskutl14079/mac) . If you have to reformat your storage device, you&#x27;ll have to copy any contents of the drive that you don&#x27;t want to lose before you reformat the storage device. If your Sound Library is on the storage device, you can [reinstall it after you reformat your drive](https://support.apple.com/guide/logicpro/manage-logic-pro-content-lgcpf77e757d/mac) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">- If you are using an external storage device to store your projects or your Logic Pro Sound Library, [make sure it&#x27;s formatted as APFS](https://support.apple.com/guide/disk-utility/erase-and-reformat-a-storage-device-dskutl14079/mac) . If you have to reformat your storage device, you&#x27;ll have to copy any contents of the drive that you don&#x27;t want to lose before you reformat the storage device. If your Sound Library is on the storage device, you can [reinstall it after you reformat your drive](https://support.apple.com/guide/logicpro/manage-logic-pro-content-lgcpf77e757d/mac) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- If you have installed both the one-time purchase version of Logic Pro and the version of Logic Pro included in Apple Creator Studio, [check the icon of the Logic Pro](https://support.apple.com/en-us/127131) app to make sure you&#x27;re troubleshooting the correct version.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">## Troubleshoot Logic Pro for Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">## Troubleshoot Logic Pro for Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 43 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">- In the alert, click Don’t Launch.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">- In the alert, click Don’t Launch.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">If Logic Pro opens, you might need to update or service your external audio interface. Contact the manufacturer for support. It can also mean a third-party Audio Units plug-in might be damaged, or it might not be compatible with your version of Logic Pro. You can try [bypassing plug-ins](https://support.apple.com/<mark class="inline-remove">kb</mark>/<mark class="inline-remove">HT2</mark>01<mark class="inline-remove">199</mark>) to troubleshoot your issue.</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">If Logic Pro opens, you might need to update or service your external audio interface. Contact the manufacturer for support. It can also mean a third-party Audio Units plug-in might be damaged, or it might not be compatible with your version of Logic Pro. You can try [bypassing plug-ins](https://support.apple.com/<mark class="inline-add">en-us</mark>/<mark class="inline-add">1</mark>0<mark class="inline-add">93</mark>1<mark class="inline-add">5</mark>) to troubleshoot your issue.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">63</span><code class="line-text">### 7. Check the Mic Mode on your Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">### 7. Check the Mic Mode on your Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">- In the alert, click Launch Without Audio Units.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">77</span><code class="line-text">- In the alert, click Launch Without Audio Units.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">If the issue doesn&#x27;t occur after bypassing all third-party Audio Units plug-ins, you can [bypass individual plug-ins and do further troubleshooting of Audio Units plug-ins](https://support.apple.com/<mark class="inline-remove">kb</mark>/<mark class="inline-remove">HT2</mark>01<mark class="inline-remove">199</mark>) .</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">If the issue doesn&#x27;t occur after bypassing all third-party Audio Units plug-ins, you can [bypass individual plug-ins and do further troubleshooting of Audio Units plug-ins](https://support.apple.com/<mark class="inline-add">en-us</mark>/<mark class="inline-add">1</mark>0<mark class="inline-add">93</mark>1<mark class="inline-add">5</mark>) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">### 9. Test with a new project</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">### 9. Test with a new project</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 37 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">119</span><code class="line-text">Resetting Logic Pro settings doesn’t affect your project files, presets, or patches. However, you do lose any custom preference settings that you might have made.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">121</span><code class="line-text">Resetting Logic Pro settings doesn’t affect your project files, presets, or patches. However, you do lose any custom preference settings that you might have made.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">121</span><code class="line-text">- Choose Logic Pro &gt; Settings<mark class="inline-remove"> (or Preferences)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">123</span><code class="line-text">- Choose Logic Pro &gt; Settings<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">123</span><code class="line-text">- Note any specific settings that you’ve made.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">125</span><code class="line-text">- Note any specific settings that you’ve made.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">125</span><code class="line-text">- In the Logic Pro Settings (or Preferences) menu, choose Reset All Settings (or Preferences) Except Key Commands. This affects the settings as follows:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">127</span><code class="line-text">- In the Logic Pro Settings (or Preferences) menu, choose Reset All Settings (or Preferences) Except Key Commands. This affects the settings as follows:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">127</span><code class="line-text">- Resets user<mark class="inline-remove"> </mark>defined global settings</code></div>
+<div class="diff-line current added"><span class="line-number">129</span><code class="line-text">- Resets user<mark class="inline-add">-</mark>defined global settings</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">129</span><code class="line-text">- Resets Control Bar settings to defaults</code></div>
+<div class="diff-line current unchanged"><span class="line-number">131</span><code class="line-text">- Resets Control Bar settings to defaults</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 41 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">173</span><code class="line-text">- Locate the Logic Pro app and drag it to the Trash.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">175</span><code class="line-text">- Locate the Logic Pro app and drag it to the Trash.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">175</span><code class="line-text">- <mark class="inline-remove">[</mark>Reinstall Logic Pro from the App Store for Mac<mark class="inline-remove">](https://apps.apple.com/us/app/logic-pro/id634148309?mt=12) </mark>, or restore it from a backup. When restoring a copy of the Logic Pro app from a backup, you can either drag it from its storage location to your Applications folder or [restore Logic Pro from a Time Machine backup](https://support.apple.com/en-us/104984) .</code></div>
+<div class="diff-line current added"><span class="line-number">177</span><code class="line-text">- Reinstall Logic Pro from the App Store for Mac, or restore it from a backup. When restoring a copy of the Logic Pro app from a backup, you can either drag it from its storage location to your Applications folder or [restore Logic Pro from a Time Machine backup](https://support.apple.com/en-us/104984) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">177</span><code class="line-text">## Learn more</code></div>
+<div class="diff-line current unchanged"><span class="line-number">179</span><code class="line-text">## Learn more</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

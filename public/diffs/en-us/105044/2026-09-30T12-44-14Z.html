@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>If Final Cut Pro isn&#x27;t working — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>If Final Cut Pro isn&#x27;t working</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/105044">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+15 ajouts</span>
+      <span class="badge removed">−67 suppressions</span>
+      <span class="badge">9 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">## Try these steps in order</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">## Try these steps in order</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">After <mark class="inline-remove">back</mark>ing<mark class="inline-remove"> up and checking your storage devices, try</mark> each step below<mark class="inline-remove"> in order. When you&#x27;ve completed each step</mark>, test Final Cut Pro to see if you&#x27;ve fixed your issue.</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">After <mark class="inline-add">try</mark>ing each step below, test Final Cut Pro<mark class="inline-add"> again</mark> to see if you&#x27;ve fixed your issue.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">[</mark>Restart your Mac<mark class="inline-remove">](https://support.apple.com/en-us/105044#restart)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">1. </mark>Restart your Mac</code></div>
+<div class="diff-line previous removed"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- [Disconnect external devices](https://support.apple.com/en-us/105044#external)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">- [Check system requirements](https://support.apple.com/en-us/105044#requirements)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- [Make sure the app is working as expected](https://support.apple.com/en-us/105044#guide)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- [Update Final Cut Pro](https://support.apple.com/en-us/105044#update)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">- [Verify installation of Pro Video Formats](https://support.apple.com/en-us/105044#PVF)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">- [Check media, device, and storage format compatibility](https://support.apple.com/en-us/105044#device_compatibility)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">- [Check third-party software compatibility](https://support.apple.com/en-us/105044#software_compatibility)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- [Test in a new user account](https://support.apple.com/en-us/105044#account)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- [Test with a new library and project](https://support.apple.com/en-us/105044#library)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- [Reset Final Cut Pro preferences](https://support.apple.com/en-us/105044#reset)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">- [Remove and reinstall Final Cut Pro](https://support.apple.com/en-us/105044#reinstall)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">- [Test with a new volume](https://support.apple.com/en-us/105044#new_volume)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">## Restart your Mac</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">Choose Restart from the Apple menu .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">Choose Restart from the Apple menu .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text"><mark class="inline-remove">[Back</mark> <mark class="inline-remove">to</mark> <mark class="inline-remove">top](http</mark>s<mark class="inline-remove">://support.apple.</mark>co<mark class="inline-remove">m/</mark>en<mark class="inline-remove">-u</mark>s<mark class="inline-remove">/105044#Summary)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">2.</mark> <mark class="inline-add">Di</mark>sco<mark class="inline-add">nn</mark>e<mark class="inline-add">ct exter</mark>n<mark class="inline-add">al device</mark>s</code></div>
+<div class="diff-line previous removed"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">## Disconnect external devices</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">An incompatible or malfunctioning external device can sometimes cause issues with Final Cut Pro. To test external devices:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">An incompatible or malfunctioning external device can sometimes cause issues with Final Cut Pro. To test external devices:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">If the issue only occurs when a particular device is connected, you might need to update or service the device. Contact the manufacturer for support.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">If the issue only occurs when a particular device is connected, you might need to update or service the device. Contact the manufacturer for support.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text"><mark class="inline-remove">[Ba</mark>ck t<mark class="inline-remove">o</mark> <mark class="inline-remove">top](https://s</mark>u<mark class="inline-remove">ppo</mark>r<mark class="inline-remove">t.appl</mark>e<mark class="inline-remove">.co</mark>m<mark class="inline-remove">/</mark>en<mark class="inline-remove">-u</mark>s<mark class="inline-remove">/105044#Summary)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text"><mark class="inline-add">### 3. Che</mark>ck <mark class="inline-add">sys</mark>t<mark class="inline-add">em</mark> <mark class="inline-add">req</mark>u<mark class="inline-add">i</mark>remen<mark class="inline-add">t</mark>s</code></div>
+<div class="diff-line previous removed"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">## Check system requirements</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">Make sure your Mac meets [Final Cut Pro system requirements](http://www.apple.com/final-cut-pro/specs/) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">Make sure your Mac meets [Final Cut Pro system requirements](http://www.apple.com/final-cut-pro/specs/) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text"><mark class="inline-remove">[B</mark>a<mark class="inline-remove">c</mark>k t<mark class="inline-remove">o</mark> <mark class="inline-remove">top](https://support.</mark>app<mark class="inline-remove">l</mark>e<mark class="inline-remove">.</mark>c<mark class="inline-remove">om/</mark>e<mark class="inline-remove">n-us/105044#Summary)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text"><mark class="inline-add">### 4. M</mark>ak<mark class="inline-add">e sure</mark> t<mark class="inline-add">he</mark> app<mark class="inline-add"> is working as </mark>e<mark class="inline-add">xpe</mark>c<mark class="inline-add">t</mark>e<mark class="inline-add">d</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">## Make sure the app is working as expected</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">Check [the Final Cut Pro User Guide](https://support.apple.com/guide/final-cut-pro/welcome/mac) to make sure the app is working as expected. You can search the user guide for key terms shown in alerts, [alert icons](https://support.apple.com/kb/PH12711) , or error messages.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">Check [the Final Cut Pro User Guide](https://support.apple.com/guide/final-cut-pro/welcome/mac) to make sure the app is working as expected. You can search the user guide for key terms shown in alerts, [alert icons](https://support.apple.com/kb/PH12711) , or error messages.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text"><mark class="inline-remove">[B</mark>a<mark class="inline-remove">ck</mark> to<mark class="inline-remove"> top](https://support.apple.com/en-us/105044#Summary)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text"><mark class="inline-add">### 5. Upd</mark>a<mark class="inline-add">te</mark> <mark class="inline-add">Final Cu</mark>t<mark class="inline-add"> Pr</mark>o</code></div>
+<div class="diff-line previous removed"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">## Update Final Cut Pro</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">- Try to complete all active projects.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">- Try to complete all active projects.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">89</span><code class="line-text">If no Final Cut Pro update is available, you&#x27;re using the latest version. Proceed to [verifying installation of Pro Video Formats](https://support.apple.com/en-us/105044#PVF) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">If no Final Cut Pro update is available, you&#x27;re using the latest version. Proceed to [verifying installation of Pro Video Formats](https://support.apple.com/en-us/105044#PVF) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text"><mark class="inline-remove">[B</mark>a<mark class="inline-remove">ck</mark> <mark class="inline-remove">t</mark>o <mark class="inline-remove">t</mark>o<mark class="inline-remove">p](https://supp</mark>or<mark class="inline-remove">t.apple.com/en-us/105044#Sum</mark>ma<mark class="inline-remove">ry)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text"><mark class="inline-add">### 6. Verify inst</mark>a<mark class="inline-add">llation</mark> <mark class="inline-add">of Pr</mark>o <mark class="inline-add">Vide</mark>o<mark class="inline-add"> F</mark>orma<mark class="inline-add">ts</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">## Verify installation of Pro Video Formats</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">95</span><code class="line-text">Make sure that you&#x27;ve [installed Pro Video Formats](https://support.apple.com/en-us/101631) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">Make sure that you&#x27;ve [installed Pro Video Formats](https://support.apple.com/en-us/101631) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">97</span><code class="line-text"><mark class="inline-remove">[Ba</mark>ck <mark class="inline-remove">to</mark> <mark class="inline-remove">top](https://support.</mark>a<mark class="inline-remove">ppl</mark>e<mark class="inline-remove">.</mark>com<mark class="inline-remove">/en-us/105044#Summ</mark>a<mark class="inline-remove">r</mark>y<mark class="inline-remove">)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text"><mark class="inline-add">### 7. Che</mark>ck <mark class="inline-add">media</mark> a<mark class="inline-add">nd d</mark>e<mark class="inline-add">vice </mark>com<mark class="inline-add">p</mark>a<mark class="inline-add">tibilit</mark>y</code></div>
+<div class="diff-line previous removed"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text">## Check media and device compatibility</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">101</span><code class="line-text">- Make sure to [set the Privacy &amp; Security settings on your Mac](https://support.apple.com/guide/mac-help/mchl211c911f/mac) , which gives Final Cut Pro access to your photo library, Microphone, Camera, and Files and Folders.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">- Make sure to [set the Privacy &amp; Security settings on your Mac](https://support.apple.com/guide/mac-help/mchl211c911f/mac) , which gives Final Cut Pro access to your photo library, Microphone, Camera, and Files and Folders.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">117</span><code class="line-text">- For any external devices you&#x27;re using like cameras, storage devices, or interfaces, check with the manufacturer for software or firmware updates. Follow the manufacturer&#x27;s instructions when updating.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">79</span><code class="line-text">- For any external devices you&#x27;re using like cameras, storage devices, or interfaces, check with the manufacturer for software or firmware updates. Follow the manufacturer&#x27;s instructions when updating.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">119</span><code class="line-text"><mark class="inline-remove">[Ba</mark>ck t<mark class="inline-remove">o to</mark>p<mark class="inline-remove">](https://suppo</mark>rt<mark class="inline-remove">.</mark>a<mark class="inline-remove">ppl</mark>e<mark class="inline-remove">.</mark>com<mark class="inline-remove">/en-us/105044#Summ</mark>a<mark class="inline-remove">r</mark>y<mark class="inline-remove">)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text"><mark class="inline-add">### 8. Che</mark>ck t<mark class="inline-add">hird-</mark>p<mark class="inline-add">a</mark>rt<mark class="inline-add">y softw</mark>a<mark class="inline-add">r</mark>e<mark class="inline-add"> </mark>com<mark class="inline-add">p</mark>a<mark class="inline-add">tibilit</mark>y</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">121</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">C</mark>he<mark class="inline-remove">ck</mark> third-party software compatib<mark class="inline-remove">i</mark>lity</code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text"><mark class="inline-add">Note</mark> <mark class="inline-add">all t</mark>he third-party software <mark class="inline-add">you&#x27;re using with your Mac, which can include video and audio plug-ins, transitions, generators, other video apps, utilities, security, antivirus, and malware software. Then contact the developers to make sure their products are </mark>compatibl<mark class="inline-add">e w</mark>it<mark class="inline-add">h the versions of Final Cut Pro and macOS </mark>y<mark class="inline-add">ou have installed.</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">123</span><code class="line-text">Note all the third-party software you&#x27;re using with your Mac, which can include video and audio plug-ins, other video apps, utilities, security, antivirus, and malware software. Then contact the developers to make sure their products are compatible with the versions of Final Cut Pro and macOS you have installed.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">125</span><code class="line-text">- Developers can tell you if they have a software update. Follow their instructions to update their software.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">- Developers can tell you if they have a software update. Follow their instructions to update their software.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">129</span><code class="line-text">And before your next Final Cut Pro or macOS update, [back up the Final Cut Pro app and your libraries, check third-party compatibility, and turn off automatic updates on your Mac](https://support.apple.com/en-us/119959) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">89</span><code class="line-text">And before your next Final Cut Pro or macOS update, [back up the Final Cut Pro app and your libraries, check third-party compatibility, and turn off automatic updates on your Mac](https://support.apple.com/en-us/119959) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">131</span><code class="line-text"><mark class="inline-remove">[B</mark>ac<mark class="inline-remove">k to top](https://support.apple.</mark>co<mark class="inline-remove">m/e</mark>n<mark class="inline-remove">-us/105044#Summary)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text"><mark class="inline-add">### 9. Test in a new user </mark>acco<mark class="inline-add">u</mark>n<mark class="inline-add">t</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">133</span><code class="line-text">## Test in a new user account</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">135</span><code class="line-text">[Create another administrator user account on your Mac](https://support.apple.com/guide/mac-help/add-a-user-or-group-mchl3e281fc9/mac) , then try to recreate the issue in the new account. If the issue doesn&#x27;t occur in the new account, settings or files in the original account might be causing the issue.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">93</span><code class="line-text">[Create another administrator user account on your Mac](https://support.apple.com/guide/mac-help/add-a-user-or-group-mchl3e281fc9/mac) , then try to recreate the issue in the new account. If the issue doesn&#x27;t occur in the new account, settings or files in the original account might be causing the issue.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">137</span><code class="line-text"><mark class="inline-remove">[Back</mark> <mark class="inline-remove">to top](https://support.apple.com/en-us/</mark>10<mark class="inline-remove">5044#Summ</mark>ary<mark class="inline-remove">)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text"><mark class="inline-add">###</mark> 10<mark class="inline-add">. Test with a new libr</mark>ary<mark class="inline-add"> and project</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">139</span><code class="line-text">## Test with a new library and project</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">141</span><code class="line-text">- [Create a new library](https://support.apple.com/guide/final-cut-pro/create-a-new-library-vera0e150af2/mac) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">- [Create a new library](https://support.apple.com/guide/final-cut-pro/create-a-new-library-vera0e150af2/mac) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">147</span><code class="line-text">If you can&#x27;t reproduce the issue using test media, the issue might be related to the media in the affected project. Obtain new copies of the media from the original source.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">103</span><code class="line-text">If you can&#x27;t reproduce the issue using test media, the issue might be related to the media in the affected project. Obtain new copies of the media from the original source.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">149</span><code class="line-text"><mark class="inline-remove">[B</mark>a<mark class="inline-remove">ck</mark> to <mark class="inline-remove">to</mark>p<mark class="inline-remove">](https://suppo</mark>r<mark class="inline-remove">t.appl</mark>e<mark class="inline-remove">.com/</mark>en<mark class="inline-remove">-u</mark>s<mark class="inline-remove">/105044#Summary)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">105</span><code class="line-text"><mark class="inline-add">### 11. Reset Fin</mark>a<mark class="inline-add">l</mark> <mark class="inline-add">Cu</mark>t<mark class="inline-add"> Pr</mark>o pre<mark class="inline-add">fer</mark>en<mark class="inline-add">ce</mark>s</code></div>
+<div class="diff-line previous removed"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">151</span><code class="line-text">## Reset Final Cut Pro preferences</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">153</span><code class="line-text">Resetting preferences doesn&#x27;t affect your libraries, projects, or media. However, any custom preference settings will be reset to their default settings. To reset Final Cut Pro settings:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">107</span><code class="line-text">Resetting preferences doesn&#x27;t affect your libraries, projects, or media. However, any custom preference settings will be reset to their default settings. To reset Final Cut Pro settings:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">163</span><code class="line-text">- Try to reproduce the issue you were experiencing. If the issue no longer occurs, open Final Cut Pro settings and reapply your custom settings.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">117</span><code class="line-text">- Try to reproduce the issue you were experiencing. If the issue no longer occurs, open Final Cut Pro settings and reapply your custom settings.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">165</span><code class="line-text"><mark class="inline-remove">[B</mark>a<mark class="inline-remove">ck</mark> to<mark class="inline-remove"> top](https://support.apple.com/en-us/105044#Summary)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">119</span><code class="line-text"><mark class="inline-add">### 12. Remove </mark>a<mark class="inline-add">nd</mark> <mark class="inline-add">reins</mark>t<mark class="inline-add">all Final Cut Pr</mark>o</code></div>
+<div class="diff-line previous removed"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">167</span><code class="line-text">## Remove and reinstall Final Cut Pro</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">169</span><code class="line-text">When you remove and reinstall Final Cut Pro, your libraries, projects, and media won&#x27;t also be removed or affected in any way.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">121</span><code class="line-text">When you remove and reinstall Final Cut Pro, your libraries, projects, and media won&#x27;t also be removed or affected in any way.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">175</span><code class="line-text">- [Reinstall Final Cut Pro from the App Store](https://support.apple.com/guide/app-store/install-and-reinstall-purchased-apps-fir0fb69db23/mac) , or restore it from a backup. When restoring a copy of the Final Cut Pro application from a backup, you can either drag it from its storage location to your Applications folder or [restore Final Cut Pro from a Time Machine backup](https://support.apple.com/en-us/104984) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">127</span><code class="line-text">- [Reinstall Final Cut Pro from the App Store](https://support.apple.com/guide/app-store/install-and-reinstall-purchased-apps-fir0fb69db23/mac) , or restore it from a backup. When restoring a copy of the Final Cut Pro application from a backup, you can either drag it from its storage location to your Applications folder or [restore Final Cut Pro from a Time Machine backup](https://support.apple.com/en-us/104984) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">177</span><code class="line-text"><mark class="inline-remove">[B</mark>a<mark class="inline-remove">ck</mark> <mark class="inline-remove">t</mark>o<mark class="inline-remove"> top](https://support.app</mark>l<mark class="inline-remove">e.com/en-us/105044#S</mark>um<mark class="inline-remove">mary)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">129</span><code class="line-text"><mark class="inline-add">### 13. Test with </mark>a <mark class="inline-add">new v</mark>olum<mark class="inline-add">e</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">179</span><code class="line-text">## Test with a new volume</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">181</span><code class="line-text">As a final check to make sure Final Cut Pro, macOS, and your Mac are working as expected, test the app with a new volume using test media.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">131</span><code class="line-text">As a final check to make sure Final Cut Pro, macOS, and your Mac are working as expected, test the app with a new volume using test media.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 15 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">199</span><code class="line-text">If the issue doesn’t occur, this test confirms that Final Cut Pro, macOS, and your Mac are working as expected and that the issue lies with your media, external devices, or other third-party products like plug-ins.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">149</span><code class="line-text">If the issue doesn’t occur, this test confirms that Final Cut Pro, macOS, and your Mac are working as expected and that the issue lies with your media, external devices, or other third-party products like plug-ins.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">200</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">201</span><code class="line-text">[Back to top](https://support.apple.com/en-us/105044#Summary)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">202</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">203</span><code class="line-text">## Still not working?</code></div>
+<div class="diff-line current unchanged"><span class="line-number">151</span><code class="line-text">## Still not working?</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">204</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">205</span><code class="line-text">[Contact Apple support](https://getsupport.apple.com/?caller=kbase)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">153</span><code class="line-text">[Contact Apple support](https://getsupport.apple.com/?caller=kbase)</code></div>
+<div class="fold"><span>••• 16 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
