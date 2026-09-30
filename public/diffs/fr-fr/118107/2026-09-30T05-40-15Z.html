@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Restaurer les réglages par défaut de votre iPhone, iPad ou iPod à l’aide d’un ordinateur - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Restaurer les réglages par défaut de votre iPhone, iPad ou iPod à l’aide d’un ordinateur - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/118107">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+19 ajouts</span>
+      <span class="badge removed">−15 suppressions</span>
+      <span class="badge">2 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Restaurer les réglages par défaut de votre iPhone, iPad ou iPod à l’aide d’un ordinateur</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Restaurer les réglages par défaut de votre iPhone, iPad ou iPod à l’aide d’un ordinateur</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Effacez <mark class="inline-remove">le contenu de </mark>votre a<mark class="inline-remove">ppare</mark>i<mark class="inline-remove">l</mark> et installez la dernière version du logiciel à l’aide d’un ordinateur. Cette restauration des réglages p<mark class="inline-remove">a</mark>r d<mark class="inline-remove">éfaut efface tout</mark>es <mark class="inline-remove">les d</mark>on<mark class="inline-remove">née</mark>s et <mark class="inline-remove">tous l</mark>es réglages de votre i<mark class="inline-remove">Phone, iPad ou iPod</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Effacez votre <mark class="inline-add">iPhone, iP</mark>a<mark class="inline-add">d ou </mark>i<mark class="inline-add">Pod</mark> et installez la dernière version du logiciel<mark class="inline-add"> iOS, iPadOS ou iPod</mark> à l’aide d’un ordinateur. Cette restauration des réglages <mark class="inline-add">d’usine su</mark>p<mark class="inline-add">p</mark>r<mark class="inline-add">ime l’ensemble</mark> des <mark class="inline-add">informati</mark>ons et <mark class="inline-add">d</mark>es réglages de votre <mark class="inline-add">appare</mark>i<mark class="inline-add">l</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">Si votre appareil fonctionne, [effacez-le et restaurez-le sans ordinateur](https://support.apple.com/fr-fr/108931) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">[Image: Lire la vidéo]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">[Image: Lire la vidéo]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">## Préparer votre appareil</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">## Préparer votre appareil</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">- Mettez à jour votre Mac ou PC.</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">- Mettez à jour votre Mac ou PC.<mark class="inline-add"> Si vous utilisez iTunes, [assurez-vous de disposer de la dernière version](https://support.apple.com/fr-fr/118290) .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">- [Créez une sauvegarde](https://support.apple.com/fr-fr/118426) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">- [Créez une sauvegarde](https://support.apple.com/fr-fr/118426) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 15 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">- Connectez votre appareil à votre ordinateur.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">- Connectez votre appareil à votre ordinateur.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">- Si <mark class="inline-remove">l’a</mark>le<mark class="inline-remove">rt</mark>e « Autoriser la connexion de l<mark class="inline-remove">’</mark>accessoire ? » s’affiche sur votre ordinateur, cliquez sur Autoriser.</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- Si <mark class="inline-add">vous voyez </mark>le<mark class="inline-add"> messag</mark>e « <mark class="inline-add">[</mark>Autoriser la connexion de l<mark class="inline-add">&#x27;</mark>accessoire ? »<mark class="inline-add">](https://support.apple.com/fr-fr/102282) &quot;</mark> s’affiche sur votre ordinateur, cliquez sur Autoriser.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- Ouvrez le Finder sur <mark class="inline-remove">un </mark>Mac ou <mark class="inline-remove">[</mark>l’app Appareils Apple](https://support.apple.com<mark class="inline-remove">/fr-fr</mark>/guide/devices-windows/welcome/windows) sur un PC.<mark class="inline-remove"> [Identifiez la version de macOS installée sur votre Mac](https://support.apple.com/fr-fr/109033) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- Ouvrez le Finder sur Mac <mark class="inline-add">( [vérifiez la version de macOS que vous utilisez](https://support.apple.com/fr-fr/109033) ) </mark>ou l’<mark class="inline-add"> [</mark>app Appareils Apple](https://support.apple.com/guide/devices-windows/welcome/windows) sur un PC.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">- [Sélectionnez votre appareil](https://support.apple.com/fr-fr/108392) lorsqu’il apparaît sur votre ordinateur.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">- [Sélectionnez votre appareil](https://support.apple.com/fr-fr/108392) lorsqu’il apparaît sur votre ordinateur.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- Si un message vous demande le code d<mark class="inline-remove">’accès d</mark>e votre appareil ou si vous souhaitez <mark class="inline-remove">fair</mark>e <mark class="inline-remove">con</mark>fi<mark class="inline-remove">anc</mark>e à cet ordinateur<mark class="inline-remove">, procédez comme indiqué à l’écran. [Si vous avez oublié votre code d’accès</mark>](https://support.apple.com/fr-fr/1<mark class="inline-remove">18</mark>4<mark class="inline-remove">30</mark>) <mark class="inline-remove">, obtenez de l’aide</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">- S<mark class="inline-add">uivez les instructions à l’écran s</mark>i un message vous demande le code de votre appareil ou <mark class="inline-add">d’indiquer </mark>si vous souhaitez <mark class="inline-add">« [S</mark>e fie<mark class="inline-add">r</mark> à cet ordinateur](https://support.apple.com/fr-fr/1<mark class="inline-add">0905</mark>4) <mark class="inline-add">»</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">- Cliquez sur Restaurer [appareil] sur votre ordinateur<mark class="inline-remove">*</mark>. <mark class="inline-remove">[Assur</mark>ez-vous d’a<mark class="inline-remove">v</mark>o<mark class="inline-remove">i</mark>r d<mark class="inline-remove">ésactivé</mark> la<mark class="inline-remove"> fonctionnalité</mark> Localiser<mark class="inline-remove">,</mark> co<mark class="inline-remove">mm</mark>e<mark class="inline-remove"> d</mark>é<mark class="inline-remove">crit ci-dessus](https://support</mark>.<mark class="inline-remove">apple.com/fr-fr/118107#prepare) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">- Cliquez sur Restaurer [appareil] sur votre ordinateur. <mark class="inline-add">1 Déconnect</mark>ez-vous d’a<mark class="inline-add">b</mark>or<mark class="inline-add">d</mark> d<mark class="inline-add">e</mark> l<mark class="inline-add">’</mark>a<mark class="inline-add">pp</mark> Localiser<mark class="inline-add"> si vous y êtes</mark> co<mark class="inline-add">nn</mark>e<mark class="inline-add">ct</mark>é.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">[Image: Fenêtre du Finder affichant le bouton Restaurer l’iPhone sous l’onglet Général.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">- Cliquez sur Restaurer pour confirmer. Votre ordinateur efface votre appareil et installe la version la plus récente d’iOS, d’iPadOS ou du logiciel de l’iPod.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">- Cliquez sur Restaurer pour confirmer. Votre ordinateur efface votre appareil et installe la version la plus récente d’iOS, d’iPadOS ou du logiciel de l’iPod.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text"><mark class="inline-remove">[Imag</mark>e<mark class="inline-remove">:</mark> <mark class="inline-remove">B</mark>o<mark class="inline-remove">ît</mark>e de<mark class="inline-remove"> dialogue de confirmation du Finder demandant si vous souhaitez vraiment</mark> restaurer<mark class="inline-remove"> les r</mark>é<mark class="inline-remove">glages par défaut de</mark> l’<mark class="inline-remove">iPh</mark>on<mark class="inline-remove">e, après av</mark>o<mark class="inline-remove">i</mark>r c<mark class="inline-remove">liqué</mark> sur <mark class="inline-remove">Res</mark>t<mark class="inline-remove">au</mark>rer<mark class="inline-remove"> </mark>l<mark class="inline-remove">’iPhone</mark>.<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text"><mark class="inline-add">Un</mark>e <mark class="inline-add">f</mark>o<mark class="inline-add">is l</mark>e<mark class="inline-add"> processus</mark> de restaur<mark class="inline-add">ation t</mark>er<mark class="inline-add">min</mark>é<mark class="inline-add">,</mark> l’<mark class="inline-add">écran B</mark>on<mark class="inline-add">j</mark>o<mark class="inline-add">u</mark>r <mark class="inline-add">s’affi</mark>c<mark class="inline-add">he</mark> sur <mark class="inline-add">vo</mark>tre<mark class="inline-add"> appa</mark>r<mark class="inline-add">ei</mark>l.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text"><mark class="inline-remove">Une</mark> <mark class="inline-remove">fois le processus de</mark> restauration <mark class="inline-remove">terminé, l</mark>’<mark class="inline-remove">écra</mark>n <mark class="inline-remove">B</mark>on<mark class="inline-remove">jour</mark> <mark class="inline-remove">appa</mark>raî<mark class="inline-remove">tr</mark>a sur votre app<mark class="inline-remove">a</mark>r<mark class="inline-remove">eil</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">La</mark> restauration <mark class="inline-add">d</mark>’<mark class="inline-add">u</mark>n <mark class="inline-add">iPh</mark>on<mark class="inline-add">e</mark> <mark class="inline-add">n’ent</mark>raî<mark class="inline-add">ne pas l</mark>a su<mark class="inline-add">ppression de votre eSIM. [Découvrez comment efface</mark>r votre <mark class="inline-add">eSIM](https://support.</mark>app<mark class="inline-add">le.com/f</mark>r<mark class="inline-add">-fr/102421) </mark>.</code></div>
+<div class="diff-line previous removed"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">* La restauration d’un iPhone n’entraîne pas la suppression de votre eSIM. [Découvrez comment effacer votre eSIM en cas de besoin](https://support.apple.com/fr-fr/102421) .</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">## Obtenir de l’aide</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">## Obtenir de l’aide</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">- [<mark class="inline-remove">Tr</mark>ou<mark class="inline-remove">ver vot</mark>re a<mark class="inline-remove">ppareil sur votr</mark>e <mark class="inline-remove">o</mark>r<mark class="inline-remove">dinat</mark>eur](https://support.apple.com/fr-fr/10<mark class="inline-remove">8643</mark>) .</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">- [<mark class="inline-add">Rés</mark>ou<mark class="inline-add">d</mark>re <mark class="inline-add">un mess</mark>a<mark class="inline-add">g</mark>e <mark class="inline-add">d’e</mark>r<mark class="inline-add">r</mark>eur](https://support.apple.com/fr-fr/10<mark class="inline-add">9057</mark>) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">- [Redémarrer un iPhone, iPad ou iPod qui ne répond pas](https://support.apple.com/fr-fr/116940) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- [Résoudre les problèmes d’un appareil qui n’apparaît pas sur votre ordinateur](https://support.apple.com/fr-fr/108643) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">- [Réinitialiser un code d’accès oublié](https://support.apple.com/fr-fr/118430) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">- [Restaurer votre appareil à partir d’une sauvegarde](https://support.apple.com/fr-fr/118105) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">- [Restaurer votre appareil à partir d’une sauvegarde](https://support.apple.com/fr-fr/118105) .</code></div>
+<div class="diff-line previous removed"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">- [Résoudre les erreurs lors de la mise à jour ou de la restauration de votre appareil](https://support.apple.com/fr-fr/109057) .</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">- Résoudre les problèmes liés à un [iPhone](https://support.apple.com/fr-fr/116940) , [iPad](https://support.apple.com/fr-fr/102642) ou [iPod touch](https://support.apple.com/fr-fr/108342) qui ne répond pas.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">## Besoin d’aide supplémentaire ?</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">## Besoin d’aide supplémentaire ?</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

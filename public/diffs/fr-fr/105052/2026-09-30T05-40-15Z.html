@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Collaborer sur des documents dans Keynote, Pages et Numbers - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Collaborer sur des documents dans Keynote, Pages et Numbers - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/105052">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+20 ajouts</span>
+      <span class="badge removed">−20 suppressions</span>
+      <span class="badge">4 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">Pour commencer à collaborer :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">Pour commencer à collaborer :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- [Connectez-vous à iCloud sur votre appareil<mark class="inline-remove">,</mark> <mark class="inline-remove">puis</mark> activez iCloud Drive](https://support.apple.com/guide/icloud/set-up-icloud-on-your-devices-mmfc0f1e2a/icloud) pour Keynote, Pages et Numbers.</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- [Connectez-vous à iCloud sur votre appareil <mark class="inline-add">et</mark> activez iCloud Drive](https://support.apple.com/guide/icloud/set-up-icloud-on-your-devices-mmfc0f1e2a/icloud) pour Keynote, Pages et Numbers.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">- Lorsque votre document est ouvert, <mark class="inline-remove">touchez ou </mark>cliquez <mark class="inline-remove">s</mark>u<mark class="inline-remove">r</mark> le bouton Partager dans la barre d’outils, s<mark class="inline-remove">élect</mark>i<mark class="inline-remove">onn</mark>ez <mark class="inline-remove">Coll</mark>a<mark class="inline-remove">bo</mark>rer dans le menu local, puis choisissez <mark class="inline-remove">u</mark>n<mark class="inline-remove">e</mark> <mark class="inline-remove">méthode d’</mark>invitat<mark class="inline-remove">i</mark>on.</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- Lorsque votre document est ouvert, cliquez <mark class="inline-add">o</mark>u<mark class="inline-add"> touchez</mark> le bouton Partager dans la barre d’outils, <mark class="inline-add">choi</mark>si<mark class="inline-add">ss</mark>ez <mark class="inline-add">« P</mark>ar<mark class="inline-add">tag</mark>er<mark class="inline-add"> le lien »</mark> dans le menu local, puis choisissez <mark class="inline-add">comme</mark>n<mark class="inline-add">t</mark> invit<mark class="inline-add">er d’</mark>a<mark class="inline-add">u</mark>t<mark class="inline-add">res pers</mark>on<mark class="inline-add">nes</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">[Image: <mark class="inline-remove">A</mark>u<mark class="inline-remove">cun texte de rem</mark>pl<mark class="inline-remove">ac</mark>e<mark class="inline-remove">ment</mark> <mark class="inline-remove">p</mark>o<mark class="inline-remove">u</mark>r <mark class="inline-remove">l’i</mark>mage]</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">[Image: <mark class="inline-add">No alt s</mark>u<mark class="inline-add">p</mark>pl<mark class="inline-add">i</mark>e<mark class="inline-add">d</mark> <mark class="inline-add">f</mark>or <mark class="inline-add">I</mark>mage]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">Si la taille de votre document est supérieure à 2 Go (4 Go si vous avez souscrit un abonnement Apple Creator Studio), vous devrez [la réduire dans Keynote, Pages ou Numbers avant d’inviter d’autres personnes à collaborer](https://support.apple.com/fr-fr/119884) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">Si la taille de votre document est supérieure à 2 Go (4 Go si vous avez souscrit un abonnement Apple Creator Studio), vous devrez [la réduire dans Keynote, Pages ou Numbers avant d’inviter d’autres personnes à collaborer](https://support.apple.com/fr-fr/119884) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">## Définir des autorisations</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">## Définir des autorisations</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">Pour dé<mark class="inline-remove">term</mark>iner qui peut <mark class="inline-remove">vo</mark>ir, modifier et inviter d’autres personnes à collaborer sur votre document, cliquez ou touchez le menu local situé sous le menu local <mark class="inline-remove">Co</mark>ll<mark class="inline-remove">aborat</mark>i<mark class="inline-remove">o</mark>n.</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">Pour dé<mark class="inline-add">f</mark>in<mark class="inline-add">ir l</mark>e<mark class="inline-add">s autorisations et choisi</mark>r qui peut <mark class="inline-add">aff</mark>i<mark class="inline-add">che</mark>r, modifier et inviter d’autres personnes à collaborer sur votre document, cliquez ou touchez le menu local situé sous le menu local <mark class="inline-add">« Partager </mark>l<mark class="inline-add">e </mark>li<mark class="inline-add">e</mark>n<mark class="inline-add"> »</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">Vous pouvez définir les options suivantes :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">Vous pouvez définir les options suivantes :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">- Pour <mark class="inline-remove">n’</mark>autoriser que certains participants à accéder au document, choisissez « Personnes <mark class="inline-remove">qu</mark>e vo<mark class="inline-remove">us</mark> i<mark class="inline-remove">nvitez</mark> ». Pour ouvrir le document partagé, ces participants doivent se connecter à iCloud ou [iCloud.com](https://www.icloud.com/) à l’aide d’un compte Apple. Les personnes qui n’ont pas de compte Apple peuvent en créer un une fois que vous avez partagé le document avec elles.</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- Pour autoriser <mark class="inline-add">uni</mark>que<mark class="inline-add">ment</mark> certains participants à accéder au document, choisissez « Personnes <mark class="inline-add">d</mark>e vo<mark class="inline-add">tre</mark> <mark class="inline-add">cho</mark>i<mark class="inline-add">x</mark> ». Pour ouvrir le document partagé, ces participants doivent se connecter à iCloud ou [iCloud.com](https://www.icloud.com/) à l’aide d’un compte Apple. Les personnes qui n’ont pas de compte Apple peuvent en créer un une fois que vous avez partagé le document avec elles.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">- Pour que toutes les personnes disposant du lien puissent ouvrir le document partagé, choisissez « Toute personne disposant du lien ».</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">- Pour que toutes les personnes disposant du lien puissent ouvrir le document partagé, choisissez « Toute personne disposant du lien ».</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- Pour <mark class="inline-remove">q</mark>ue toute<mark class="inline-remove">s les</mark> personne<mark class="inline-remove">s</mark> ayant accès au document <mark class="inline-remove">puissent</mark> le modifier et l’imprimer, choisissez « Modification <mark class="inline-remove">»</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- Pour <mark class="inline-add">a</mark>u<mark class="inline-add">toris</mark>e<mark class="inline-add">r</mark> toute personne ayant accès au document <mark class="inline-add">à</mark> le modifier et<mark class="inline-add"> à</mark> l’imprimer, choisissez « <mark class="inline-add">Peut modifier » sous macOS, ou </mark>Modification <mark class="inline-add">sous iOS et iPadOS</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- Pour <mark class="inline-remove">q</mark>ue toute<mark class="inline-remove">s les</mark> personne<mark class="inline-remove">s</mark> ayant accès au document <mark class="inline-remove">puissent</mark> l’<mark class="inline-remove">ouvr</mark>ir et l’imprimer, mais pas le modifier, choisissez « <mark class="inline-remove">C</mark>o<mark class="inline-remove">ns</mark>ul<mark class="inline-remove">t</mark>a<mark class="inline-remove">tion</mark> ».</code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- Pour <mark class="inline-add">a</mark>u<mark class="inline-add">toris</mark>e<mark class="inline-add">r</mark> toute personne ayant accès au document <mark class="inline-add">à</mark> l’<mark class="inline-add">aff</mark>i<mark class="inline-add">che</mark>r et<mark class="inline-add"> à</mark> l’imprimer, mais pas<mark class="inline-add"> à</mark> le modifier, choisissez « <mark class="inline-add">Peut afficher </mark>ou<mark class="inline-add"> té</mark>l<mark class="inline-add">éch</mark>a<mark class="inline-add">rger</mark> »<mark class="inline-add"> sous macOS, ou Affichage et téléchargement sous iOS et iPadOS</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">- <mark class="inline-remove">Si v</mark>ou<mark class="inline-remove">s</mark> <mark class="inline-remove">ne v</mark>o<mark class="inline-remove">ulez pas que les pa</mark>r<mark class="inline-remove">ticipants pu</mark>is<mark class="inline-remove">sent invit</mark>er d’autres personnes à <mark class="inline-remove">coll</mark>a<mark class="inline-remove">bor</mark>er, <mark class="inline-remove">d</mark>éco<mark class="inline-remove">ch</mark>ez « <mark class="inline-remove">N</mark>’importe<mark class="inline-remove"> </mark>qu<mark class="inline-remove">i peut ajouter d’autr</mark>es <mark class="inline-remove">personnes »</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">- <mark class="inline-add">P</mark>ou<mark class="inline-add">r</mark> <mark class="inline-add">aut</mark>oriser d’autres personnes à <mark class="inline-add">dem</mark>a<mark class="inline-add">nd</mark>er<mark class="inline-add"> l’accès au document partagé</mark>, <mark class="inline-add">s</mark>é<mark class="inline-add">le</mark>c<mark class="inline-add">ti</mark>o<mark class="inline-add">nn</mark>ez « <mark class="inline-add">Autoriser les demandes d</mark>’<mark class="inline-add">accès » sous macOS, ou act</mark>i<mark class="inline-add">vez De</mark>m<mark class="inline-add">andes d’accès sous iOS et iPadOS. [Découvrez comment gérer les demandes d’accès](https://sup</mark>port<mark class="inline-add">.appl</mark>e<mark class="inline-add">.com/fr-fr/105052#re</mark>ques<mark class="inline-add">ts)</mark> .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">## Collaborer sur un document partagé</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">## Collaborer sur un document partagé</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">Après avoir ouvert le document, vous pouvez voir les modifications apportées par les autres personnes en temps réel, ainsi ce qu’elles ont modifié récemment. <mark class="inline-remove">En f</mark>on<mark class="inline-remove">ction de</mark> votre appareil, le nombre de personnes qui modifient ou consultent le document fi<mark class="inline-remove">gur</mark>e sur le bouton Collaboration dans la barre d’outils<mark class="inline-remove">.</mark> <mark class="inline-remove">Ce</mark> <mark class="inline-remove">bou</mark>t<mark class="inline-remove">on</mark> <mark class="inline-remove">s’</mark>a<mark class="inline-remove">ffiche une foi</mark>s que vous avez invité des personnes. Vous pouvez également afficher la liste des participants en touchant ou en cliquant sur le bouton Collaboration.</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">Après avoir ouvert le document, vous pouvez voir les modifications apportées par les autres personnes en temps réel, ainsi ce qu’elles ont modifié récemment. <mark class="inline-add">Sel</mark>on votre appareil, le nombre de personnes qui modifient ou consultent le document <mark class="inline-add">s’af</mark>fi<mark class="inline-add">ch</mark>e sur le bouton Collaboration dans la barre d’outils<mark class="inline-add">,</mark> <mark class="inline-add">qui</mark> <mark class="inline-add">apparaî</mark>t a<mark class="inline-add">prè</mark>s que vous avez invité d<mark class="inline-add">’autr</mark>es personnes. Vous pouvez également afficher la liste des participants en touchant ou en cliquant sur le bouton Collaboration.</code></div>
+<div class="diff-line previous removed"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">[Image: Aucun texte de remplacement pour l’image]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">Lors de la modification d’un document partagé, vous pouvez utiliser [toutes les fonctionnalités de Keynote, Pages et Numbers, avec certaines exceptions](https://support.apple.com/fr-fr/105052#limits) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">Lors de la modification d’un document partagé, vous pouvez utiliser [toutes les fonctionnalités de Keynote, Pages et Numbers, avec certaines exceptions](https://support.apple.com/fr-fr/105052#limits) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">## Voir la dernière activité</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">## Voir la dernière activité</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">Dans Keynote, Pages et Numbers sur iPhone, iPad et Mac, touchez ou cliquez sur le bouton Collaboration dans la barre d’outils pour voir <mark class="inline-remove">l</mark>e<mark class="inline-remove">s modifications</mark> qui <mark class="inline-remove">on</mark>t a<mark class="inline-remove">pport</mark>é<mark class="inline-remove">es</mark> depuis <mark class="inline-remove">la</mark> dernière consultation du document. Vous pouvez également échanger avec les participants depuis l’app et modifier les réglages d’activité.</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">Dans Keynote, Pages et Numbers sur iPhone, iPad et Mac, touchez ou cliquez sur le bouton Collaboration dans la barre d’outils pour voir <mark class="inline-add">c</mark>e qui <mark class="inline-add">s’es</mark>t <mark class="inline-add">p</mark>a<mark class="inline-add">ss</mark>é depuis <mark class="inline-add">votre</mark> dernière consultation du document. Vous pouvez également échanger avec les participants depuis l’app et modifier les réglages d’activité.</code></div>
+<div class="diff-line previous removed"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">[Image: Aucun texte de remplacement pour l’image]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">- Touchez ou cliquez sur Afficher toute l’activité pour voir qui a travaillé sur le document, ainsi qu’un résumé des modifications apportées. Touchez ou cliquez sur la flèche d’expansion pour afficher plus d’informations sur les modifications, telles que les modifications apportées par un participant à plusieurs endroits. Vous pouvez également toucher une activité pour afficher l’endroit où la modification a été apportée. Les activités non lues sont en surbrillance, et le fait de toucher une activité en surbrillance marquera toutes les activités non lues comme lues.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">- Touchez ou cliquez sur Afficher toute l’activité pour voir qui a travaillé sur le document, ainsi qu’un résumé des modifications apportées. Touchez ou cliquez sur la flèche d’expansion pour afficher plus d’informations sur les modifications, telles que les modifications apportées par un participant à plusieurs endroits. Vous pouvez également toucher une activité pour afficher l’endroit où la modification a été apportée. Les activités non lues sont en surbrillance, et le fait de toucher une activité en surbrillance marquera toutes les activités non lues comme lues.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">## Modifier les réglages d’un document partagé</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">## Modifier les réglages d’un document partagé</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">Pour modifier les autorisations après avoir partagé votre document, <mark class="inline-remove">touchez ou </mark>cliquez <mark class="inline-remove">s</mark>u<mark class="inline-remove">r</mark> le bouton Collaboration dans la barre d’outils, puis <mark class="inline-remove">touchez ou </mark>cliquez <mark class="inline-remove">s</mark>u<mark class="inline-remove">r</mark> Gérer le document, la présentation ou la feuille de calcul partagé<mark class="inline-remove">(</mark>e<mark class="inline-remove">)</mark>, e<mark class="inline-remove">n f</mark>on<mark class="inline-remove">ction de</mark> l’app iWork que vous utilisez. Vous pouvez modifier l’accès et les autorisations, ainsi que mettre fin au partage.</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">Pour modifier les autorisations après avoir partagé votre document, cliquez <mark class="inline-add">o</mark>u<mark class="inline-add"> touchez</mark> le bouton Collaboration dans la barre d’outils, puis cliquez <mark class="inline-add">o</mark>u<mark class="inline-add"> touchez</mark> Gérer le document<mark class="inline-add"> partagé</mark>, la présentation<mark class="inline-add"> partagée</mark> ou la feuille de calcul partagée, <mark class="inline-add">s</mark>e<mark class="inline-add">l</mark>on l’app iWork que vous utilisez. Vous pouvez modifier l’accès et les autorisations, ainsi que mettre fin au partage.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text"><mark class="inline-remove">[Imag</mark>e<mark class="inline-remove">:</mark> <mark class="inline-remove">Aucun t</mark>e<mark class="inline-remove">xte</mark> de <mark class="inline-remove">rempl</mark>ac<mark class="inline-remove">ement pour l’image]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text"><mark class="inline-add">## Gér</mark>e<mark class="inline-add">r</mark> <mark class="inline-add">l</mark>e<mark class="inline-add">s</mark> de<mark class="inline-add">mandes</mark> <mark class="inline-add">d’</mark>ac<mark class="inline-add">cès</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">Si vous avez choisi d’autoriser les demandes d’accès lors de la configuration des autorisations et que le lien vers votre document, présentation ou feuille de calcul est partagé avec une personne que vous n’avez pas invitée à collaborer, cette personne sera invitée à demander l’accès avant de pouvoir afficher le fichier.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">Pour gérer les demandes d’accès, cliquez ou touchez le bouton Collaboration dans la barre d’outils, puis cliquez ou touchez Gérer le document partagé, la présentation partagée ou la feuille de calcul partagée, selon l’app iWork que vous utilisez. Les demandes d’accès en attente sont répertoriées par utilisateur.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">71</span><code class="line-text">## Fonctionnalités non compatibles avec la collaboration</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">## Fonctionnalités non compatibles avec la collaboration</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 75 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">149</span><code class="line-text">Si vous utilisez Keynote, Pages ou Numbers et que la fonctionnalité de collaboration n’est pas disponible, il se peut que vous deviez mettre à jour vos apps. [Activez les mises à jour automatiques](https://support.apple.com/fr-fr/102629) afin que vos apps soient toujours à jour. Si votre appareil est trop ancien pour mettre à jour vos apps, vous pouvez toujours collaborer en ligne en accédant à l’adresse [iCloud.com](https://www.icloud.com/) sur un Mac ou un PC.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">149</span><code class="line-text">Si vous utilisez Keynote, Pages ou Numbers et que la fonctionnalité de collaboration n’est pas disponible, il se peut que vous deviez mettre à jour vos apps. [Activez les mises à jour automatiques](https://support.apple.com/fr-fr/102629) afin que vos apps soient toujours à jour. Si votre appareil est trop ancien pour mettre à jour vos apps, vous pouvez toujours collaborer en ligne en accédant à l’adresse [iCloud.com](https://www.icloud.com/) sur un Mac ou un PC.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">151</span><code class="line-text">Si vous souhaitez envoyer une copie du document, vous pouvez le faire sans utiliser la collaboration. <mark class="inline-remove">Touchez ou c</mark>liquez <mark class="inline-remove">s</mark>u<mark class="inline-remove">r</mark> le bouton Partager, choisissez Envoyer une copie dans le menu local, puis choisissez <mark class="inline-remove">la faç</mark>o<mark class="inline-remove">n do</mark>nt<mark class="inline-remove"> vous souhaitez</mark> envoyer le document.</code></div>
+<div class="diff-line current added"><span class="line-number">151</span><code class="line-text">Si vous souhaitez envoyer une copie du document, vous pouvez le faire sans utiliser la collaboration. <mark class="inline-add">C</mark>liquez <mark class="inline-add">o</mark>u<mark class="inline-add"> touchez</mark> le bouton Partager, choisissez <mark class="inline-add">« </mark>Envoyer une copie<mark class="inline-add"> »</mark> dans le menu local, puis choisissez <mark class="inline-add">c</mark>o<mark class="inline-add">mme</mark>nt envoyer le document.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">153</span><code class="line-text">## Configuration système minimale et configuration iCloud requises pour la collaboration</code></div>
+<div class="diff-line current unchanged"><span class="line-number">153</span><code class="line-text">## Configuration système minimale et configuration iCloud requises pour la collaboration</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">155</span><code class="line-text">Pour afficher ou modifier un document partagé et inviter d’autres personnes à participer à la présentation, vous et les personnes avec lesquelles vous le partagez devez disposer de l’un des appareils suivants :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">155</span><code class="line-text">Pour afficher ou modifier un document partagé et inviter d’autres personnes à participer à la présentation, vous et les personnes avec lesquelles vous le partagez devez disposer de l’un des appareils suivants :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">157</span><code class="line-text">- Un Mac doté de macOS <mark class="inline-remove">S</mark>e<mark class="inline-remove">quoia</mark> <mark class="inline-remove">15</mark>.<mark class="inline-remove">6</mark> et de Keynote, Pages ou Numbers 15.<mark class="inline-remove">3</mark> ou version ultérieure.</code></div>
+<div class="diff-line current added"><span class="line-number">157</span><code class="line-text">- Un Mac doté de macOS <mark class="inline-add">Taho</mark>e <mark class="inline-add">26</mark>.<mark class="inline-add">0</mark> et de Keynote, Pages ou Numbers 15.<mark class="inline-add">4,</mark> ou<mark class="inline-add"> d’une</mark> version ultérieure.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">159</span><code class="line-text">- Un iPhone ou iPad doté d’iOS ou iPadOS <mark class="inline-remove">18</mark> et de Keynote, Pages ou Numbers 15.<mark class="inline-remove">3</mark> ou version ultérieure.</code></div>
+<div class="diff-line current added"><span class="line-number">159</span><code class="line-text">- Un iPhone ou<mark class="inline-add"> un</mark> iPad doté d’iOS ou <mark class="inline-add">d’</mark>iPadOS <mark class="inline-add">26.0</mark> et de Keynote, Pages ou Numbers 15.<mark class="inline-add">4,</mark> ou<mark class="inline-add"> d’une</mark> version ultérieure.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">161</span><code class="line-text">- Un Apple Vision Pro doté de visionOS 2 et de Pages ou Numbers 15.<mark class="inline-remove">3 ou version ultérieure</mark>, ou de<mark class="inline-remove"> visionOS 2.4 et de Keynote 15.3 ou</mark> version ultérieure.</code></div>
+<div class="diff-line current added"><span class="line-number">161</span><code class="line-text">- Un Apple Vision Pro doté de visionOS 2<mark class="inline-add">6.0</mark> et de<mark class="inline-add"> Keynote,</mark> Pages ou Numbers 15.<mark class="inline-add">4</mark>, ou d<mark class="inline-add">’un</mark>e version ultérieure.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">163</span><code class="line-text">Keynote, Pages et Numbers pour iCloud fonctionnent avec un Mac ou un PC utilisant Safari 13.1 ou version ultérieure, Google Chrome ou Microsoft Edge.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">163</span><code class="line-text">Keynote, Pages et Numbers pour iCloud fonctionnent avec un Mac ou un PC utilisant Safari 13.1 ou version ultérieure, Google Chrome ou Microsoft Edge.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
