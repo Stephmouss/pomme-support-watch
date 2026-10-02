@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Notes de version de Logic Pro pour iPad - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Notes de version de Logic Pro pour iPad - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/101628">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+63 ajouts</span>
+      <span class="badge removed">−13 suppressions</span>
+      <span class="badge">4 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">Obtenez des informations sur les principales fonctionnalités de Logic Pro pour iPad.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">Obtenez des informations sur les principales fonctionnalités de Logic Pro pour iPad.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">## Nouveautés de Logic Pro pour iPad 3.<mark class="inline-remove">3</mark></code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">## Nouveautés de Logic Pro pour iPad 3.<mark class="inline-add">4</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">Stabilité et fiabilité</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">- Résout un problème qui pouvait entraîner la fermeture inopinée de Logic Pro pour iPad lors de l’importation de boucles audio.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">- Résout un problème qui pouvait entraîner la fermeture inopinée de Logic Pro pour iPad lors de l’ouverture d’un projet.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">Édition</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- Les anciens projets Beat Breaker affichent désormais les commandes du mode Édition lorsque des tranches sont sélectionnées.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">Séquenceur pas à pas</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- Le bouton Créer de la zone de dialogue Ajouter un intervalle du Séquenceur pas à pas est désormais visible.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">Drum Machine Designer</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- La fonction Annuler de Drum Machine Designer fonctionne désormais correctement.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">Accords et piste d’accords</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- Les accords sus2 et sus4 de la piste d’accords globale affichent désormais toutes les options de gammes majeures et mineures valides, au lieu d’être limités aux gammes mineures uniquement.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">Prises et comping</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- Lorsque plusieurs régions sont déposées dans un dossier de prises, celui-ci contient désormais toutes les régions en mode de superposition.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- Des sous-pistes sont désormais créées lors de l’enregistrement de prises MIDI dans un dossier de prises développé.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">Piles de pistes</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- Les positions des faders d’une pile de dossiers s’affichent désormais correctement sans qu’il soit nécessaire de les toucher.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">Flashback Capture</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">- Correction d’un problème où la quantification d’un enregistrement fusionné ne s’appliquait pas aux notes de la deuxième prise.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">Accessibility</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- VoiceOver peut désormais accéder à la pastille dans Synth Player Bass pour la toucher deux fois, la maintenir enfoncée et la déplacer.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">Général</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">- Un problème où la réduction de la fenêtre de Logic Pro pouvait empêcher l’enregistrement du projet a été résolu.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">- L’exportation d’un fichier avec l’option « Le fichier audio est une boucle » étire désormais le fichier audio pour l’adapter au tempo du projet.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">- Les termes de recherche peuvent désormais être saisis à l’aide du Zhuyin (méthode de saisie pour le chinois traditionnel).</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">- Les commutateurs des réglages de surface fonctionnent désormais correctement après leur réorganisation.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">[Obtenez des instructions et informations complètes et détaillées sur toutes les fonctionnalités de Logic Pro pour iPad](https://support.apple.com/guide/logicpro-ipad/welcome/ipados)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">## Versions précédentes</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">### Logic Pro pour iPad 3.3</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">Nouvelles fonctionnalités et améliorations</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">Nouvelles fonctionnalités et améliorations</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">- Beat Breaker</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">- Beat Breaker</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">- <mark class="inline-remove">D</mark>e nouveaux modes de filtr<mark class="inline-remove">ag</mark>e et de résonance<mark class="inline-remove"> ont été ajoutés</mark> avec des filtres passe-haut ou passe-bas p<mark class="inline-remove">ou</mark>r<mark class="inline-remove"> chaque</mark> tranche.</code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">- <mark class="inline-add">Intégration d</mark>e nouveaux modes de filtre et de résonance avec des filtres passe-haut ou passe-bas p<mark class="inline-add">a</mark>r tranche.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">- <mark class="inline-remove">U</mark>n mode panoramique <mark class="inline-remove">a été aj</mark>ou<mark class="inline-remove">té,</mark> permett<mark class="inline-remove">a</mark>n<mark class="inline-remove">t</mark> d<mark class="inline-remove">e po</mark>s<mark class="inline-remove">it</mark>ion<mark class="inline-remove">n</mark>er l<mark class="inline-remove">e son à</mark> gauche <mark class="inline-remove">ou</mark> <mark class="inline-remove">à</mark> droite p<mark class="inline-remove">ou</mark>r<mark class="inline-remove"> chaque</mark> tranche.</code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">- <mark class="inline-add">I</mark>n<mark class="inline-add">tégration du</mark> mode panoramique <mark class="inline-add">p</mark>ou<mark class="inline-add">r</mark> permett<mark class="inline-add">re u</mark>n<mark class="inline-add">e</mark> d<mark class="inline-add">iffu</mark>sion<mark class="inline-add"> v</mark>er<mark class="inline-add">s</mark> l<mark class="inline-add">a</mark> gauche <mark class="inline-add">et</mark> <mark class="inline-add">vers la</mark> droite p<mark class="inline-add">a</mark>r tranche.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- <mark class="inline-remove">U</mark>n<mark class="inline-remove"> pa</mark>ra<mark class="inline-remove">mè</mark>t<mark class="inline-remove">re</mark> de <mark class="inline-remove">t</mark>rai<mark class="inline-remove">tement alé</mark>at<mark class="inline-remove">o</mark>i<mark class="inline-remove">re est disp</mark>on<mark class="inline-remove">ible</mark> pour tous les modes, ou p<mark class="inline-remove">ou</mark>r<mark class="inline-remove"> chaque</mark> mode<mark class="inline-remove"> individuel</mark>, <mark class="inline-remove">ave</mark>c <mark class="inline-remove">d</mark>es commandes de probabilité et d’intensité.</code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">- <mark class="inline-add">I</mark>n<mark class="inline-add">tég</mark>rat<mark class="inline-add">ion</mark> de <mark class="inline-add">la </mark>ra<mark class="inline-add">ndom</mark>i<mark class="inline-add">s</mark>ation pour tous les modes, ou p<mark class="inline-add">a</mark>r mode, <mark class="inline-add">y </mark>c<mark class="inline-add">ompris</mark> <mark class="inline-add">l</mark>es commandes de probabilité et d’intensité.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">- Alchemy</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">- Alchemy</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- Le moteur granulaire a été <mark class="inline-remove">ét</mark>en<mark class="inline-remove">du</mark> <mark class="inline-remove">avec un mo</mark>de <mark class="inline-remove">Gr</mark>a<mark class="inline-remove">in</mark> <mark class="inline-remove">Sy</mark>nc <mark class="inline-remove">(</mark>synchronisation granulaire<mark class="inline-remove">)</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">- Le moteur<mark class="inline-add"> de synthèse</mark> granulaire a été en<mark class="inline-add">richi</mark> de <mark class="inline-add">l</mark>a <mark class="inline-add">fo</mark>nc<mark class="inline-add">tionnalité</mark> <mark class="inline-add">de </mark>synchronisation granulaire.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">- Une fonctionnalité de décalage des formants est désormais incluse.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">77</span><code class="line-text">- Une fonctionnalité de décalage des formants est désormais incluse.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">- Nouveau paquet de sons</code></div>
+<div class="diff-line current unchanged"><span class="line-number">79</span><code class="line-text">- Nouveau paquet de sons</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- Comprend des boucles, de<mark class="inline-remove">s</mark> one-shot<mark class="inline-remove">s</mark> et des enregistrements de terrain traités <mark class="inline-remove">à</mark> l<mark class="inline-remove">’</mark>a<mark class="inline-remove">ide du</mark> nouve<mark class="inline-remove">au mod</mark>e <mark class="inline-remove">G</mark>ranular<mark class="inline-remove"> Sync</mark> d’Alchemy.</code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text">- Comprend des boucles, <mark class="inline-add">un mo</mark>de one-shot et des enregistrements de terrain traités <mark class="inline-add">avec</mark> la nouve<mark class="inline-add">ll</mark>e <mark class="inline-add">synchronisation g</mark>ranula<mark class="inline-add">i</mark>r<mark class="inline-add">e</mark> d’Alchemy.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">- Autres améliorations</code></div>
+<div class="diff-line current unchanged"><span class="line-number">83</span><code class="line-text">- Autres améliorations</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 83 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">113</span><code class="line-text">- Il est à nouveau possible d’insérer le module AU Filtre passe-haut.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">169</span><code class="line-text">- Il est à nouveau possible d’insérer le module AU Filtre passe-haut.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">115</span><code class="line-text">Accessibilit<mark class="inline-remove">é</mark></code></div>
+<div class="diff-line current added"><span class="line-number">171</span><code class="line-text">Accessibilit<mark class="inline-add">y</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">117</span><code class="line-text">- Un toucher sur la zone de lecture dans la règle de temps permet désormais à VoiceOver d’y accéder.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">173</span><code class="line-text">- Un toucher sur la zone de lecture dans la règle de temps permet désormais à VoiceOver d’y accéder.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 42 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">161</span><code class="line-text">- Les réglages de projet Flex et Smart Tempo sont désormais définis par défaut sur Flex Désactivé pour les nouveaux projets.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">217</span><code class="line-text">- Les réglages de projet Flex et Smart Tempo sont désormais définis par défaut sur Flex Désactivé pour les nouveaux projets.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">218</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">163</span><code class="line-text">- Les réglages de projet Smart Tempo ont été renommés pour plus de clarté.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">219</span><code class="line-text">- Les réglages de projet Smart Tempo ont été renommés pour plus de clarté.</code></div>
+<div class="diff-line previous removed"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">165</span><code class="line-text">[Obtenez des instructions et informations complètes et détaillées sur toutes les fonctionnalités de Logic Pro pour iPad](https://support.apple.com/guide/logicpro-ipad/welcome/ipados)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">167</span><code class="line-text">## Versions précédentes</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">220</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">169</span><code class="line-text">### Logic Pro pour iPad 3.2</code></div>
+<div class="diff-line current unchanged"><span class="line-number">221</span><code class="line-text">### Logic Pro pour iPad 3.2</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">222</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 886 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">1057</span><code class="line-text">- VoiceOver annonce désormais la sélection d’une nouvelle ligne dans le séquenceur pas à pas.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1109</span><code class="line-text">- VoiceOver annonce désormais la sélection d’une nouvelle ligne dans le séquenceur pas à pas.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">1058</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">1110</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">1059</span><code class="line-text">- Le bouton Nouveau projet dans le navigateur de projets fonctionne désormais après la première pression lors de l’utilisation de VoiceOver.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1111</span><code class="line-text">- Le bouton Nouveau projet dans le navigateur de projets fonctionne désormais après la première pression lors de l’utilisation de VoiceOver.</code></div>
+<div class="diff-line previous removed"><span class="line-number">1060</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">1061</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">1062</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">1112</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">1063</span><code class="line-text">- Varispeed dans la barre des commandes peut maintenant être activé à l’aide de VoiceOver.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1113</span><code class="line-text">- Varispeed dans la barre des commandes peut maintenant être activé à l’aide de VoiceOver.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">1064</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">1114</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1315 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
