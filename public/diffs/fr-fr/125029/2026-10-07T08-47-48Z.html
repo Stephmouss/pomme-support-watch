@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>À propos d’Apple Creator Studio - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>À propos d’Apple Creator Studio - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/125029">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+36 ajouts</span>
+      <span class="badge removed">−130 suppressions</span>
+      <span class="badge">7 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># À propos d’Apple Creator Studio</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># À propos d’Apple Creator Studio</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Découvrez tout ce que vous devez savoir sur Apple Creator Studio : quelles apps sont incluses, où les télécharger, comment s’abonner, la configuration système requise, l<mark class="inline-remove">e</mark>s <mark class="inline-remove">fonctionnalités d’intellig</mark>ence<mark class="inline-remove">, etc</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Découvrez tout ce que vous devez savoir sur Apple Creator Studio : quelles apps sont incluses, où les télécharger, comment s’abonner, la configuration système requise, <mark class="inline-add">et bien p</mark>l<mark class="inline-add">u</mark>s enc<mark class="inline-add">or</mark>e.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">Apple Creator Studio est une collection d’apps de créativité et de productivité d’Apple qui comprend Final Cut Pro, Logic Pro, Pixelmator Pro, Motion, Compressor et MainStage. L’abonnement <mark class="inline-remove">c</mark>o<mark class="inline-remove">mpr</mark>e<mark class="inline-remove">nd</mark> également du contenu premium et des fonctionnalités d’<mark class="inline-remove">IA</mark> dans Keynote, Pages, Numbers et Freeform.</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">Apple Creator Studio est une collection d’apps de créativité et de productivité d’Apple qui comprend Final Cut Pro, Logic Pro, Pixelmator Pro, Motion, Compressor et MainStage. L’abonnement <mark class="inline-add">d</mark>o<mark class="inline-add">nn</mark>e également <mark class="inline-add">accès à [</mark>du contenu premium et des fonctionnalités d’<mark class="inline-add">intelligence](https://support.apple.com/fr-fr/127888)</mark> dans Keynote, Pages, Numbers et Freeform.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">[Obtenir un aperçu des fonctionnalités d’Apple Creator Studio](https://www.apple.com/fr/apple-creator-studio)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">[Obtenir un aperçu des fonctionnalités d’Apple Creator Studio](https://www.apple.com/fr/apple-creator-studio)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">Apple Creator Studio comprend les apps suivantes :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">Apple Creator Studio comprend les apps suivantes :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- Final Cut Pro pour Mac 12.<mark class="inline-remove">3</mark></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- Final Cut Pro pour Mac 12.<mark class="inline-add">4</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">- Final Cut Pro pour iPad 3.<mark class="inline-remove">3</mark></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- Final Cut Pro pour iPad 3.<mark class="inline-add">4</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- Logic Pro pour Mac 12.<mark class="inline-remove">3</mark></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- Logic Pro pour Mac 12.<mark class="inline-add">4</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">- Logic Pro pour iPad 3.<mark class="inline-remove">3</mark></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">- Logic Pro pour iPad 3.<mark class="inline-add">4</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- Pixelmator Pro pour Mac 4.<mark class="inline-remove">3</mark></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- Pixelmator Pro pour Mac 4.<mark class="inline-add">4</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- Pixelmator Pro pour iPad 4.<mark class="inline-remove">3</mark></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- Pixelmator Pro pour iPad 4.<mark class="inline-add">4</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">- Motion 6.<mark class="inline-remove">3</mark> (Mac)</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- Motion 6.<mark class="inline-add">4</mark> (Mac)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">- Compressor 5.<mark class="inline-remove">3</mark> (Mac)</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">- Compressor 5.<mark class="inline-add">4</mark> (Mac)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">- MainStage 4.3 (Mac)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">- MainStage 4.3 (Mac)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- Keynote 15.<mark class="inline-remove">3</mark> (Mac, iPad<mark class="inline-remove"> et</mark> iPhone)</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- Keynote 15.<mark class="inline-add">4</mark> (Mac, iPad<mark class="inline-add">,</mark> iPhone<mark class="inline-add"> et Apple Vision Pro</mark>)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- Pages 15.<mark class="inline-remove">3</mark> (Mac, iPad, iPhone et Apple Vision Pro)</code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- Pages 15.<mark class="inline-add">4</mark> (Mac, iPad, iPhone et Apple Vision Pro)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- Numbers 15.<mark class="inline-remove">3</mark> (Mac, iPad, iPhone et Apple Vision Pro)</code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- Numbers 15.<mark class="inline-add">4</mark> (Mac, iPad, iPhone et Apple Vision Pro)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">- Freeform (Mac, iPad, iPhone et Apple Vision Pro)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">- Freeform (Mac, iPad, iPhone et Apple Vision Pro)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">## S’abonner à Apple Creator Studio</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">## S’abonner à Apple Creator Studio</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">Lorsque vous ouvrez une app Apple Creator Studio pour la première fois, vous pouvez vous <mark class="inline-remove">i</mark>n<mark class="inline-remove">sc</mark>r<mark class="inline-remove">ire</mark> à <mark class="inline-remove">un</mark> e<mark class="inline-remove">ssai gr</mark>atui<mark class="inline-remove">t d’un m</mark>o<mark class="inline-remove">is</mark> à l’aide de votre compte Apple <mark class="inline-remove">et c</mark>hoisi<mark class="inline-remove">r</mark> un abonnement mensuel ou annuel. <mark class="inline-remove">V</mark>ous <mark class="inline-remove">ne pouvez pas souscrire d’</mark>abonnement <mark class="inline-remove">avec</mark> un compte Apple géré.</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">Lorsque vous ouvrez une app Apple Creator Studio pour la première fois, vous pouvez vous <mark class="inline-add">abo</mark>n<mark class="inline-add">ne</mark>r à <mark class="inline-add">Apple</mark> <mark class="inline-add">Cr</mark>eat<mark class="inline-add">or St</mark>u<mark class="inline-add">d</mark>io à l’aide de votre compte Apple<mark class="inline-add">.</mark> <mark class="inline-add">C</mark>hoisi<mark class="inline-add">ssez</mark> un abonnement mensuel ou annuel. <mark class="inline-add">Pour v</mark>ous abonne<mark class="inline-add">r, vous devez utiliser un co</mark>m<mark class="inline-add">pt</mark>e<mark class="inline-add"> Apple perso</mark>n<mark class="inline-add">nel, e</mark>t <mark class="inline-add">non</mark> un compte Apple géré.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">- Ouvrez l’une des apps Apple Creator Studio, touchez ou cliquez sur Continuer, puis suivez les instructions à l’écran. Pour Keynote, Pages, Numbers ou Freeform, vous pouvez vous abonner depuis l’app lorsque vous interagissez avec du contenu ou des fonctionnalités premium. Vous ne pouvez pas souscrire d’abonnement dans Keynote ou Freeform sur Apple Vision Pro.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">- Ouvrez l’une des apps Apple Creator Studio, touchez ou cliquez sur Continuer, puis suivez les instructions à l’écran. Pour Keynote, Pages, Numbers ou Freeform, vous pouvez vous abonner depuis l’app lorsque vous interagissez avec du contenu ou des fonctionnalités premium. Vous ne pouvez pas souscrire d’abonnement dans Keynote ou Freeform sur Apple Vision Pro.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">- <mark class="inline-remove">Touchez ou cliquez sur Accepter l’essai gratuit (ou une autre option disponible), puis s</mark>uivez les instructions à l’écran pour vous abonner e<mark class="inline-remove">n</mark> <mark class="inline-remove">utilisant</mark> votre compte Apple.</code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">- <mark class="inline-add">S</mark>uivez les instructions<mark class="inline-add"> qui s’affichent</mark> à l’écran pour vous abonner <mark class="inline-add">à l’aid</mark>e <mark class="inline-add">de</mark> votre compte Apple.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">- Pour commencer, créez un projet ou document, ou ouvrez un projet ou document existant dans une app Apple Creator Studio.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">- Pour commencer, créez un projet ou document, ou ouvrez un projet ou document existant dans une app Apple Creator Studio.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text"><mark class="inline-remove">Si</mark> vous <mark class="inline-remove">dispos</mark>ez <mark class="inline-remove">déjà d’</mark>un <mark class="inline-remove">abo</mark>n<mark class="inline-remove">nement à Final Cut Pro p</mark>ou<mark class="inline-remove">r</mark> iPad<mark class="inline-remove"> </mark>ou<mark class="inline-remove"> à L</mark>o<mark class="inline-remove">gic </mark>Pro pou<mark class="inline-remove">r iPad, télécharg</mark>ez e<mark class="inline-remove">t</mark> <mark class="inline-remove">ouvrez une autre app </mark>Apple Creator Studio, puis abonne<mark class="inline-remove">z-</mark>vous <mark class="inline-remove">à</mark> p<mark class="inline-remove">a</mark>r<mark class="inline-remove">t</mark>ir <mark class="inline-remove">de ce</mark>t<mark class="inline-remove">t</mark>e a<mark class="inline-remove">pp</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text"><mark class="inline-add">Lorsque</mark> vous <mark class="inline-add">[achet</mark>ez un nou<mark class="inline-add">veau Mac ou un nouvel</mark> iPad<mark class="inline-add">](https://www.apple.c</mark>o<mark class="inline-add">m/promo/pdf/EN_US_Apple_Creator_St</mark>u<mark class="inline-add">di</mark>o<mark class="inline-add">_</mark>Pro<mark class="inline-add">mo_TandCs.pdf) , vous</mark> pou<mark class="inline-add">v</mark>ez <mark class="inline-add">profit</mark>e<mark class="inline-add">r</mark> <mark class="inline-add">d’</mark>Apple Creator Studio<mark class="inline-add"> gratuitement pendant trois mois. Pour bénéficier de l’offre de trois mois</mark>, <mark class="inline-add">veillez à vous inscrire à l’aide du com</mark>p<mark class="inline-add">te Apple q</mark>u<mark class="inline-add">e vous avez util</mark>is<mark class="inline-add">é pour configurer votre nouvel appareil. Une fois les trois mois écoulés, votre</mark> abonne<mark class="inline-add">ment est renouvelé selon l’abonnement mensuel ou annuel que </mark>vous <mark class="inline-add">avez choisi. Vous</mark> p<mark class="inline-add">ouvez </mark>r<mark class="inline-add">és</mark>i<mark class="inline-add">lie</mark>r <mark class="inline-add">vo</mark>t<mark class="inline-add">r</mark>e a<mark class="inline-add">bonnement à tout moment</mark>.</code></div>
+<div class="diff-line previous removed"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">Lorsque vous [achetez un nouveau Mac ou un nouvel iPad](https://www.apple.com/fr/promo/pdf/FR_FR_Apple_Creator_Studio_Promo_TandCs.pdf) , vous pouvez profiter d’Apple Creator Studio gratuitement pendant trois mois. Pour bénéficier de l’offre, vous devez vous abonner avec le compte Apple avec lequel vous avez configuré votre nouvel appareil.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">## Gérer votre abonnement</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">## Gérer votre abonnement</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">Vous pouvez modifier ou annuler votre abonnement Apple Creator Studio depuis votre Mac, iPad ou iPhone. Si vous annulez votre abonnement, vous conservez l’accès à toutes les apps et fonctionnalités incluses jusqu’à la fin de la période de facturation de votre abonnement.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">Vous pouvez modifier ou annuler votre abonnement Apple Creator Studio depuis votre Mac, iPad ou iPhone. Si vous annulez votre abonnement, vous conservez l’accès à toutes les apps et fonctionnalités incluses jusqu’à la fin de la période de facturation de votre abonnement.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">Une fois la période de facturation terminée, vous aurez toujours accès à Keynote, Pages, Numbers et Freeform, mais sans les fonctionnalités d’intelligence intégrées à l’abonnement. Vous conservez également l’accès aux projets et aux fichiers que vous avez créés avec les apps incluses dans l’abonnement. Vous pourrez ainsi travailler sur vos projets si vous décidez de vous réabonner ultérieurement ou si vous souhaitez acheter <mark class="inline-remove">l’</mark>une <mark class="inline-remove">des </mark>apps individuel<mark class="inline-remove">lement</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">Une fois la période de facturation terminée, vous aurez toujours accès à Keynote, Pages, Numbers et Freeform, mais sans les fonctionnalités d’intelligence intégrées à l’abonnement. Vous conservez également l’accès aux projets et aux fichiers que vous avez créés avec les apps incluses dans l’abonnement. Vous pourrez ainsi travailler sur vos projets si vous décidez de vous réabonner ultérieurement ou si vous souhaitez <mark class="inline-add">[</mark>acheter une app<mark class="inline-add">](http</mark>s<mark class="inline-add">://support.apple.com/fr-fr/125029#purchase) disponible sous forme d’achat</mark> individuel.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">### Gérer votre abonnement sur Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">### Gérer votre abonnement sur Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">71</span><code class="line-text">- Pour modifier votre type d’abonnement, cliquez sur une autre option d’abonnement, puis suivez les instructions.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">- Pour modifier votre type d’abonnement, cliquez sur une autre option d’abonnement, puis suivez les instructions.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text">- Pour <mark class="inline-remove">annu</mark>ler votre abonnemen<mark class="inline-remove">t ou votre essai gratui</mark>t, cliquez sur Annuler l’abonnement, puis suivez les instructions.</code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">- Pour <mark class="inline-add">rési</mark>l<mark class="inline-add">i</mark>er votre abonnement, cliquez sur Annuler l’abonnement, puis suivez les instructions.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">- Pour modifier ou mettre à jour votre mode de paiement, cliquez sur votre nom dans le coin inférieur gauche, cliquez sur Réglages du compte, puis sur Modes de paiement et suivez les instructions.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">- Pour modifier ou mettre à jour votre mode de paiement, cliquez sur votre nom dans le coin inférieur gauche, cliquez sur Réglages du compte, puis sur Modes de paiement et suivez les instructions.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">- Pour modifier votre type d’abonnement, touchez Voir tous les abonnements, touchez une autre option d’abonnement, puis suivez les instructions à l’écran.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">83</span><code class="line-text">- Pour modifier votre type d’abonnement, touchez Voir tous les abonnements, touchez une autre option d’abonnement, puis suivez les instructions à l’écran.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text">- Pour <mark class="inline-remove">annu</mark>ler votre abonnemen<mark class="inline-remove">t ou votre essai gratui</mark>t, touchez Annuler l’abonnement, puis suivez les instructions à l’écran.</code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">- Pour <mark class="inline-add">rési</mark>l<mark class="inline-add">i</mark>er votre abonnement, touchez Annuler l’abonnement, puis suivez les instructions <mark class="inline-add">qui s’affichent </mark>à l’écran.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">89</span><code class="line-text">- Pour modifier ou mettre à jour votre mode de paiement :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">- Pour modifier ou mettre à jour votre mode de paiement :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 27 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">119</span><code class="line-text">## Configuration système requise pour Apple Creator Studio</code></div>
+<div class="diff-line current unchanged"><span class="line-number">117</span><code class="line-text">## Configuration système requise pour Apple Creator Studio</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">121</span><code class="line-text">L’ensemble des fonctionnalités d’Apple Creator Studio est disponible avec macOS 2<mark class="inline-remove">6</mark>, iPadOS 2<mark class="inline-remove">6</mark> et iOS 2<mark class="inline-remove">6</mark>. Apple Creator Studio est disponible sur l’App Store et nécessite un compte Apple. Les fonctionnalités sont susceptibles d’être modifiées, et certaines peuvent nécessiter un accès à Internet. Des frais et des conditions supplémentaires peuvent s’appliquer.</code></div>
+<div class="diff-line current added"><span class="line-number">119</span><code class="line-text">L’ensemble des fonctionnalités d’Apple Creator Studio est disponible avec macOS 2<mark class="inline-add">7</mark>, iPadOS 2<mark class="inline-add">7</mark> et iOS 2<mark class="inline-add">7</mark>. Apple Creator Studio est disponible sur l’App Store et nécessite un compte Apple. Les fonctionnalités sont susceptibles d’être modifiées, et certaines peuvent nécessiter un accès à Internet. Des frais et des conditions supplémentaires peuvent s’appliquer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">123</span><code class="line-text">La configuration système minimale requise pour chaque application Apple Creator Studio est la suivante :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">121</span><code class="line-text">La configuration système minimale requise pour chaque application Apple Creator Studio est la suivante :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">125</span><code class="line-text">- Toutes les apps Mac nécessitent macOS 15.6 ou version ultérieure, à l’exception de Pixelmator Pro qui nécessite macOS 26 ou version ultérieure.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">127</span><code class="line-text">- Final Cut Pro :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">123</span><code class="line-text">- Final Cut Pro :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">129</span><code class="line-text">- Final Cut Pro <mark class="inline-remove">s</mark>ur Mac nécessite macOS <mark class="inline-remove">15</mark>.6 ou version ultérieure.</code></div>
+<div class="diff-line current added"><span class="line-number">125</span><code class="line-text">- Final Cut Pro <mark class="inline-add">po</mark>ur Mac nécessite macOS <mark class="inline-add">26</mark>.6 ou version ultérieure.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">131</span><code class="line-text">- Final Cut Pro pour iPad nécessite iPadOS <mark class="inline-remove">18</mark>.6 ou version ultérieure et un iPad<mark class="inline-remove">, iPad</mark> Pro ou iPad Air <mark class="inline-remove">avec</mark> une puce Apple M1 ou ultérieure, un iPad (A16) ou un iPad mini (A17 Pro).</code></div>
+<div class="diff-line current added"><span class="line-number">127</span><code class="line-text">- Final Cut Pro pour iPad nécessite iPadOS <mark class="inline-add">26</mark>.6 ou version ultérieure et un iPad Pro ou<mark class="inline-add"> un</mark> iPad Air <mark class="inline-add">doté</mark> <mark class="inline-add">d’</mark>une puce Apple M1 ou ultérieure, un iPad (A16) ou un iPad mini (A17 Pro).</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">133</span><code class="line-text">- Logic Pro:</code></div>
+<div class="diff-line current added"><span class="line-number">129</span><code class="line-text">- Logic Pro<mark class="inline-add"> </mark>:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">135</span><code class="line-text">- Logic Pro pour Mac <mark class="inline-remove">r</mark>e<mark class="inline-remove">qu</mark>ie<mark class="inline-remove">rt</mark> macOS <mark class="inline-remove">15</mark>.6 ou version ultérieure et un Mac avec puce Apple.</code></div>
+<div class="diff-line current added"><span class="line-number">131</span><code class="line-text">- Logic Pro pour Mac <mark class="inline-add">néc</mark>e<mark class="inline-add">ss</mark>i<mark class="inline-add">t</mark>e macOS <mark class="inline-add">26</mark>.6 ou version ultérieure et un Mac avec puce Apple.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">137</span><code class="line-text">- Logic Pro pour iPad nécessite iPadOS 2<mark class="inline-remove">6</mark> ou version ultérieure et un iPad <mark class="inline-remove">avec</mark> une puce Apple A12 Bionic ou ultérieure. Certaines fonctionnalités nécessitent une puce Apple A17 Pro ou ultérieure.</code></div>
+<div class="diff-line current added"><span class="line-number">133</span><code class="line-text">- Logic Pro pour iPad nécessite iPadOS 2<mark class="inline-add">7</mark> ou version ultérieure et un iPad <mark class="inline-add">doté</mark> <mark class="inline-add">d’</mark>une puce Apple A12 Bionic ou ultérieure. Certaines fonctionnalités nécessitent une puce Apple A17 Pro ou ultérieure.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">139</span><code class="line-text">- Pixelmator Pro :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">135</span><code class="line-text">- Pixelmator Pro :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">141</span><code class="line-text">- Pixelmator Pro pour Mac nécessite macOS 26 ou version ultérieure.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">137</span><code class="line-text">- Pixelmator Pro pour Mac nécessite macOS 26 ou version ultérieure.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">143</span><code class="line-text">- Pixelmator Pro pour iPad nécessite iPadOS 26 ou version ultérieure et un iPad<mark class="inline-remove">, iPad</mark> Pro ou iPad Air <mark class="inline-remove">avec</mark> une puce Apple M1 ou ultérieure, un iPad (A16) ou un iPad mini (A17 Pro).</code></div>
+<div class="diff-line current added"><span class="line-number">139</span><code class="line-text">- Pixelmator Pro pour iPad nécessite iPadOS 26 ou version ultérieure et un iPad Pro ou<mark class="inline-add"> un</mark> iPad Air <mark class="inline-add">doté</mark> <mark class="inline-add">d’</mark>une puce Apple M1 ou ultérieure, un iPad (A16) ou un iPad mini (A17 Pro).</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">145</span><code class="line-text">- Keynote, Pages et Numbers :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">141</span><code class="line-text">- Keynote, Pages et Numbers :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">147</span><code class="line-text">- Keynote, Pages et Numbers <mark class="inline-remove">s</mark>ur Mac nécessitent macOS <mark class="inline-remove">15.</mark>6 ou version ultérieure.</code></div>
+<div class="diff-line current added"><span class="line-number">143</span><code class="line-text">- Keynote, Pages et Numbers <mark class="inline-add">po</mark>ur Mac nécessitent macOS <mark class="inline-add">2</mark>6 ou version ultérieure.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">149</span><code class="line-text">- Keynote, Pages et Numbers pour iPad et iPhone nécessitent iPadOS <mark class="inline-remove">18</mark> ou version ultérieure et iOS <mark class="inline-remove">18</mark> ou version ultérieure.</code></div>
+<div class="diff-line current added"><span class="line-number">145</span><code class="line-text">- Keynote, Pages et Numbers pour iPad et iPhone nécessitent iPadOS <mark class="inline-add">26</mark> ou version ultérieure et iOS <mark class="inline-add">26</mark> ou version ultérieure.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">151</span><code class="line-text">- Pour Apple Vision Pro<mark class="inline-remove">, Pages et Numbers</mark> nécessitent visionOS 2<mark class="inline-remove"> ou version ultérieure, et Keynote nécessite visionOS 2.4</mark> ou version ultérieure.</code></div>
+<div class="diff-line current added"><span class="line-number">147</span><code class="line-text">- <mark class="inline-add">Keynote, </mark>P<mark class="inline-add">ages et Numbers p</mark>our Apple Vision Pro nécessitent visionOS 2<mark class="inline-add">6</mark> ou version ultérieure.</code></div>
+<div class="diff-line previous removed"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">153</span><code class="line-text">- Certaines fonctionnalités premium nécessitent macOS 26 ou version ultérieure, iPadOS 26 ou version ultérieure, iOS 26 ou version ultérieure ou visionOS 26 ou version ultérieure.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">155</span><code class="line-text">- Freeform :</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">157</span><code class="line-text">- Freeform pour Mac, iPad, iPhone et Apple Vision Pro nécessite macOS 26.4, iPadOS 26.4, iOS 26.4 et visionOS 26.4 ou version ultérieure.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">149</span><code class="line-text">- Freeform pour Mac, iPad, iPhone et Apple Vision Pro nécessite macOS 26.4, iPadOS 26.4, iOS 26.4 et visionOS 26.4 ou version ultérieure.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">159</span><code class="line-text">- Motion nécessite macOS <mark class="inline-remove">15</mark>.6 ou version ultérieure.</code></div>
+<div class="diff-line current added"><span class="line-number">151</span><code class="line-text">- Motion nécessite macOS <mark class="inline-add">26</mark>.6 ou version ultérieure.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">161</span><code class="line-text">- Compressor nécessite macOS <mark class="inline-remove">15</mark>.6 ou version ultérieure. Certaines fonctionnalités nécessitent un Mac avec puce Apple.</code></div>
+<div class="diff-line current added"><span class="line-number">153</span><code class="line-text">- Compressor nécessite macOS <mark class="inline-add">26</mark>.6 ou version ultérieure. Certaines fonctionnalités nécessitent un Mac avec puce Apple.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">163</span><code class="line-text">- MainStage nécessite macOS <mark class="inline-remove">15</mark>.6 ou version ultérieure et un Mac avec puce Apple.</code></div>
+<div class="diff-line current added"><span class="line-number">155</span><code class="line-text">- MainStage nécessite macOS <mark class="inline-add">26</mark>.6 ou version ultérieure et un Mac avec puce Apple.</code></div>
+<div class="diff-line previous removed"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">165</span><code class="line-text">## Fonctionnalités d’intelligence</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">167</span><code class="line-text">Les fonctionnalités d’intelligence suivantes sont disponibles exclusivement pour les personnes abonnées à Apple Creator Studio :</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">169</span><code class="line-text">- Génération d’image 1 dans Keynote, Pages, Numbers, Pixelmator Pro et Freeform</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">171</span><code class="line-text">- Génération de forme 1 dans Keynote, Pages, Numbers et Pixelmator Pro</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">173</span><code class="line-text">- Super résolution et Recadrage automatique dans Keynote, Pages, Numbers et Freeform</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">175</span><code class="line-text">- Générer une présentation 2,3 , Générer des notes de l’intervenant 1,3 et Corriger une diapositive 3 dans Keynote</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">177</span><code class="line-text">- Remplissage magique dans Numbers</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">179</span><code class="line-text">### Configuration système requise pour les fonctionnalités d’intelligence</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">181</span><code class="line-text">Les fonctionnalités Générer une image, Générer une forme, Générer des notes de l’intervenant et Générer une présentation nécessitent des appareils, des versions d’iOS et de macOS spécifiques, ainsi qu’un compte Apple avec iCloud activé :</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">183</span><code class="line-text">- Un iPhone 15 Pro ou un iPhone 15 Pro Max ou modèle ultérieur exécutant iOS 26 ou version ultérieure ;</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">184</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">185</span><code class="line-text">- Un iPad doté d’une puce A17 Pro, ou un iPad Pro ou iPad Air doté d’une puce M1 ou modèle ultérieur, exécutant iPadOS 26 ou version ultérieure ;</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">186</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">187</span><code class="line-text">- Un Mac doté d’une puce Apple exécutant macOS 26 ou version ultérieure.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">188</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">189</span><code class="line-text">- Compte Apple [avec iCloud configuré et activé](https://support.apple.com/guide/icloud/set-up-icloud-on-your-devices-mmfc0f1e2a/icloud) . Les configurations de compte gérés peuvent affecter la disponibilité des fonctionnalités d’intelligence.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">190</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">191</span><code class="line-text">Certaines fonctionnalités d’intelligence sont soumises à des restrictions d’âge.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">192</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">193</span><code class="line-text">#### Activer Apple Intelligence</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">194</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">195</span><code class="line-text">[Activez Apple Intelligence sur votre appareil](https://support.apple.com/fr-fr/121115) pour utiliser les fonctionnalités de génération d’image et de forme avec ces apps et ces appareils :</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">196</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">197</span><code class="line-text">- Pixelmator Pro sur Mac et iPad.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">199</span><code class="line-text">- Pages, Numbers et Freeform sur Apple Vision Pro.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">200</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">201</span><code class="line-text">### Limites d’utilisation des fonctionnalités d’intelligence</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">202</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">203</span><code class="line-text">Les fonctionnalités Générer une image, Générer une forme, Générer des notes de l’intervenant et Générer une présentation sont soumises à des limitations :</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">204</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">205</span><code class="line-text">- La fonctionnalité Générer une présentation est optimisée par OpenAI et est disponible uniquement dans les pays et régions où [OpenAI est prise en charge](https://help.openai.com/articles/5347006-openai-api-supported-countries-and-territories) ainsi que dans les pays et régions où [Apple Creator Studio est disponible](https://support.apple.com/fr-fr/118205) .</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">206</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">207</span><code class="line-text">- Les fonctionnalités Générer une image, Générer une forme et Générer des notes de l’intervenant sont optimisées par Google Cloud et proposées dans certains pays et certaines régions 1 où [Apple Creator Studio est disponible](https://support.apple.com/fr-fr/118205) .</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">208</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">209</span><code class="line-text">- La disponibilité peut également être limitée par des restrictions de réseau ou bloquée par des restrictions locales, des fournisseurs de réseau ou des réglementations gouvernementales.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">210</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">211</span><code class="line-text">- Le nombre exact d’images, de diapositives et de notes de l’intervenant que vous pouvez générer varie en fonction de la complexité des requêtes, ainsi que de la disponibilité des serveurs et des réseaux. Dans le cadre d’une utilisation exclusive, au minimum, vous pouvez chaque mois :</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">212</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">213</span><code class="line-text">- générer 50 images ;</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">214</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">215</span><code class="line-text">- générer 250 formes ;</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">216</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">217</span><code class="line-text">- générer 50 présentations (d’environ 8 à 10 diapositives chacune) ;</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">218</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">219</span><code class="line-text">- générer des notes de l’intervenant pour 700 diapositives.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">220</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">221</span><code class="line-text">- Les limites d’utilisation sont réinitialisées chaque mois.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">222</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">223</span><code class="line-text">- Pour consulter votre consommation :</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">224</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">225</span><code class="line-text">- Sur Mac, selon l’app utilisée, choisissez Keynote, Pages, Numbers ou Freeform dans la barre des menus, sélectionnez Fonctionnalités d’intelligence, puis Afficher l’état d’utilisation.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">226</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">227</span><code class="line-text">- Sur iPhone ou iPad, ouvrez Keynote, Pages, Numbers ou Freeform, touchez le bouton Plus , Fonctionnalités d’intelligence, puis Afficher l’état d’utilisation.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">228</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">229</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">230</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">231</span><code class="line-text">- Ces fonctionnalités peuvent fournir des résultats inattendus. Pour signaler un problème concernant les résultats :</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">232</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">233</span><code class="line-text">- Pour une présentation générée, touchez ou cliquez sur « Signaler un problème » dans l’alerte affichée une fois la génération des diapositives terminée.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">234</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">235</span><code class="line-text">- Pour des notes de l’intervenant générées, touchez ou cliquez sur le bouton Signaler un problème dans les notes de l’intervenant, une fois les notes générées.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">236</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">237</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">238</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">239</span><code class="line-text">- Pour une image ou une forme générée, touchez ou cliquez sur le bouton Plus sur l’image créée, puis touchez ou cliquez sur « Signaler un problème » dans le menu.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">240</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">241</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">242</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">243</span><code class="line-text">- Ces fonctionnalités ne s’intègrent pas aux comptes ChatGPT et Google personnels.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">244</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">245</span><code class="line-text">### Fonctionnalités d’intelligence et confidentialité</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">246</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">247</span><code class="line-text">Le contenu que vous envoyez dans le cadre de ces fonctionnalités ne sera jamais utilisé pour entraîner des modèles d’intelligence.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">248</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">249</span><code class="line-text">## Utiliser le contenu libre de droits inclus dans Apple Creator Studio</code></div>
+<div class="diff-line current unchanged"><span class="line-number">157</span><code class="line-text">## Utiliser le contenu libre de droits inclus dans Apple Creator Studio</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">250</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">251</span><code class="line-text">L’utilisation du contenu libre de droits inclus dans Apple Creator Studio est soumise aux [Conditions générales d’Apple Creator Studio](https://www.apple.com/legal/sla/docs/CreatorStudio.pdf) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">159</span><code class="line-text">L’utilisation du contenu libre de droits inclus dans Apple Creator Studio est soumise aux [Conditions générales d’Apple Creator Studio](https://www.apple.com/legal/sla/docs/CreatorStudio.pdf) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">161</span><code class="line-text">## Fonctionnalités d’intelligence dans Apple Creator Studio</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">163</span><code class="line-text">[En savoir plus sur le contenu premium et les fonctionnalités d’intelligence incluses dans les abonnements Apple Creator Studio](https://support.apple.com/fr-fr/127888)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">252</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">253</span><code class="line-text">## Informations supplémentaires</code></div>
+<div class="diff-line current unchanged"><span class="line-number">165</span><code class="line-text">## Informations supplémentaires</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">254</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">256</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">257</span><code class="line-text">[Si votre abonnement à Final Cut Pro pour iPad ou Logic Pro pour iPad n’est plus actif](https://support.apple.com/fr-fr/126080)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">169</span><code class="line-text">[Si votre abonnement à Final Cut Pro pour iPad ou Logic Pro pour iPad n’est plus actif](https://support.apple.com/fr-fr/126080)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">258</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">259</span><code class="line-text">1 Optimisé par Google Cloud, disponible partout où Google Cloud est disponible, à l’exception de la Biélorussie, des Bermudes, des îles Caïmans, de la Chine continentale, de Hong Kong, du Kosovo, de Macao, de Montserrat, de la Russie, des îles Turques-et-Caïques et du Venezuela. La liste des pays et régions est susceptible d’être modifiée.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">260</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">261</span><code class="line-text">2 Optimisé par OpenAI</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">262</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">263</span><code class="line-text">3 Disponible en version bêta</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">264</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">265</span><code class="line-text">Les informations se rapportant à des produits non fabriqués par Apple, ou à des sites Web indépendants qui ne sont ni contrôlés ni testés par Apple, sont fournies uniquement à titre indicatif et ne constituent aucune recommandation. Apple ne saurait être tenu responsable de problèmes liés à l’utilisation de tels sites ou produits tiers, ou à leurs performances. Apple ne garantit en aucune façon la fiabilité d’un site Web tiers ni l’exactitude des informations que ce dernier propose. [Contactez le fournisseur](https://support.apple.com/fr-fr/103190) pour plus d’informations.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">171</span><code class="line-text">Les informations se rapportant à des produits non fabriqués par Apple, ou à des sites Web indépendants qui ne sont ni contrôlés ni testés par Apple, sont fournies uniquement à titre indicatif et ne constituent aucune recommandation. Apple ne saurait être tenu responsable de problèmes liés à l’utilisation de tels sites ou produits tiers, ou à leurs performances. Apple ne garantit en aucune façon la fiabilité d’un site Web tiers ni l’exactitude des informations que ce dernier propose. [Contactez le fournisseur](https://support.apple.com/fr-fr/103190) pour plus d’informations.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
