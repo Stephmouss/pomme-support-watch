@@ -52,7 +52,7 @@ Category: Energy labels
     "name": "Accessories"
   },
   "productName": "Studio Display",
-  "regulation": "Regulation 2013/2019",
+  "regulation": "Regulation 2019/2013",
   "subCategory": "Displays & Mounts",
   "transName": "Studio Display",
   "version": 1,
