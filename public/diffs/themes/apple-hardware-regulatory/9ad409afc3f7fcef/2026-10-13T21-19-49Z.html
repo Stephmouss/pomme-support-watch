@@ -1,0 +1,699 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Hypertension notifications — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Hypertension notifications</h1></div>
+      <a class="source" href="https://regulatoryinfo.apple.com/ifu">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+8 ajouts</span>
+      <span class="badge removed">−40 suppressions</span>
+      <span class="badge">40 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 64 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text">    {</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">68</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-59563-A HTNF 1.X Montenegro Country-Specific IFU_1791849495808.pdf&quot;,</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">      &quot;langVersion&quot;: 1,</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">70</span><code class="line-text">      &quot;languageName&quot;: &quot;Montenegrin&quot;,</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">      &quot;name&quot;: &quot;Montenegrin&quot;,</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">72</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-59563-A HTNF 1.X Montenegro Country-Specific IFU.pdf&quot;</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">    },</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">74</span><code class="line-text">    {</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_ar_SA_1759877647651.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_ar_SA_1759877647651.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text">      &quot;languageName&quot;: &quot;العربية&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">77</span><code class="line-text">      &quot;languageName&quot;: &quot;العربية&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_ar_SA.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">79</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_ar_SA.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_bg_BG_1759878289307.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_bg_BG_1759878289307.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">77</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">83</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text">      &quot;languageName&quot;: &quot;България&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text">      &quot;languageName&quot;: &quot;България&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_bg_BG.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_bg_BG.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">81</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_ca_ES_1759877966234.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">89</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_ca_ES_1759877966234.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text">      &quot;languageName&quot;: &quot;Català&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">91</span><code class="line-text">      &quot;languageName&quot;: &quot;Català&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_ca_ES.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">93</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_ca_ES.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">89</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_cs_CZ_1759877745402.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_cs_CZ_1759877745402.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">93</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text">      &quot;languageName&quot;: &quot;Česky&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text">      &quot;languageName&quot;: &quot;Česky&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_cs_CZ.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_cs_CZ.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">97</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">101</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_da_DK_1759878190539.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">103</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_da_DK_1759878190539.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">101</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text">      &quot;languageName&quot;: &quot;Dansk&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">105</span><code class="line-text">      &quot;languageName&quot;: &quot;Dansk&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_da_DK.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">107</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_da_DK.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">105</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">109</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">107</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_de_DE_1759878441238.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_de_DE_1759878441238.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">109</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">111</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text">      &quot;languageName&quot;: &quot;Deutsch&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text">      &quot;languageName&quot;: &quot;Deutsch&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_de_DE.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">114</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_de_DE.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">113</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">115</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">115</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_el_GR_1759877773697.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">117</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_el_GR_1759877773697.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">117</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text">      &quot;languageName&quot;: &quot;Ελληνικα&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">119</span><code class="line-text">      &quot;languageName&quot;: &quot;Ελληνικα&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_el_GR.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">121</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_el_GR.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">121</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">123</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">123</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_es_419_1759878264917.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_es_419_1759878264917.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">125</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">125</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text">      &quot;languageName&quot;: &quot;Español, América Latina&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text">      &quot;languageName&quot;: &quot;Español, América Latina&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_es_419.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">128</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_es_419.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">129</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">129</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">130</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">131</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">132</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_es_ES_1759877857673.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">131</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_es_ES_1759877857673.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">133</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">134</span><code class="line-text">      &quot;languageName&quot;: &quot;Español&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">133</span><code class="line-text">      &quot;languageName&quot;: &quot;Español&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">136</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_es_ES.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">135</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_es_ES.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">137</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">136</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">138</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">137</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">139</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">140</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_et_EE_1759878420641.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">138</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_et_EE_1759878420641.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">141</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">139</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">142</span><code class="line-text">      &quot;languageName&quot;: &quot;Eestikeelne&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">140</span><code class="line-text">      &quot;languageName&quot;: &quot;Eestikeelne&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">144</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_et_EE.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">142</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_et_EE.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">145</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">143</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">146</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">144</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">147</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">148</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_fi_FI_1759877761059.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">145</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_fi_FI_1759877761059.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">149</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">146</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">150</span><code class="line-text">      &quot;languageName&quot;: &quot;Suomi&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">147</span><code class="line-text">      &quot;languageName&quot;: &quot;Suomi&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">152</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_fi_FI.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">149</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_fi_FI.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">153</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">150</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">154</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">151</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">155</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">156</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_fr_CA_1759877665246.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">152</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_fr_CA_1759877665246.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">157</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">153</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">158</span><code class="line-text">      &quot;languageName&quot;: &quot;Français, Canada&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">154</span><code class="line-text">      &quot;languageName&quot;: &quot;Français, Canada&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">160</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_fr_CA.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">156</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_fr_CA.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">161</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">157</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">162</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">158</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">163</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">164</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_fr_FR_1759878196590.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">159</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_fr_FR_1759878196590.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">165</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">160</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">166</span><code class="line-text">      &quot;languageName&quot;: &quot;Français&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">161</span><code class="line-text">      &quot;languageName&quot;: &quot;Français&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">168</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_fr_FR.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">163</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_fr_FR.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">169</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">164</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">170</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">165</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">171</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">172</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_he_IL_1759878207104.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">166</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_he_IL_1759878207104.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">173</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">167</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">174</span><code class="line-text">      &quot;languageName&quot;: &quot;עברית&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">168</span><code class="line-text">      &quot;languageName&quot;: &quot;עברית&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">176</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_he_IL.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">170</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_he_IL.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">177</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">171</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">178</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">172</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">179</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">180</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_hi_IN_1759878451255.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">173</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_hi_IN_1759878451255.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">181</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">174</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">182</span><code class="line-text">      &quot;languageName&quot;: &quot;हिन्दी&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">175</span><code class="line-text">      &quot;languageName&quot;: &quot;हिन्दी&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">184</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_hi_IN.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">177</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_hi_IN.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">185</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">178</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">186</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">179</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">187</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">188</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_hr_HR_1759878305530.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">180</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_hr_HR_1759878305530.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">189</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">181</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">190</span><code class="line-text">      &quot;languageName&quot;: &quot;Hrvatski&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">182</span><code class="line-text">      &quot;languageName&quot;: &quot;Hrvatski&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">192</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_hr_HR.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">184</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_hr_HR.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">193</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">185</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">194</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">186</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">195</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">196</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_hu_HU_1759877801931.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">187</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_hu_HU_1759877801931.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">197</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">188</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">198</span><code class="line-text">      &quot;languageName&quot;: &quot;Magyar&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">189</span><code class="line-text">      &quot;languageName&quot;: &quot;Magyar&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">200</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_hu_HU.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">191</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_hu_HU.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">201</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">192</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">202</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">193</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">203</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">204</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_id_ID_1759878456828.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">194</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_id_ID_1759878456828.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">205</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">195</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">206</span><code class="line-text">      &quot;languageName&quot;: &quot;Bahasa Indonesia&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">196</span><code class="line-text">      &quot;languageName&quot;: &quot;Bahasa Indonesia&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">208</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_id_ID.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">198</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_id_ID.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">209</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">199</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">210</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">200</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">211</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">212</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_is_IS_1759878212596.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">201</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_is_IS_1759878212596.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">213</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">202</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">214</span><code class="line-text">      &quot;languageName&quot;: &quot;Íslenska&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">203</span><code class="line-text">      &quot;languageName&quot;: &quot;Íslenska&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">216</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_is_IS.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">205</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_is_IS.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">217</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">206</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">218</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">207</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">219</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">220</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_it_IT_1759877809652.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">208</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_it_IT_1759877809652.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">221</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">209</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">222</span><code class="line-text">      &quot;languageName&quot;: &quot;Italiano&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">210</span><code class="line-text">      &quot;languageName&quot;: &quot;Italiano&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">224</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_it_IT.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">212</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_it_IT.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">225</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">213</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">226</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">214</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">227</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">228</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_lt_LT_1759878225704.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">215</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_lt_LT_1759878225704.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">229</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">216</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">230</span><code class="line-text">      &quot;languageName&quot;: &quot;Lietuvių&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">217</span><code class="line-text">      &quot;languageName&quot;: &quot;Lietuvių&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">232</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_lt_LT.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">219</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_lt_LT.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">233</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">220</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">234</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">221</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">235</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">236</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_lv_LV_1759877817796.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">222</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_lv_LV_1759877817796.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">237</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">223</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">238</span><code class="line-text">      &quot;languageName&quot;: &quot;Latviski&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">224</span><code class="line-text">      &quot;languageName&quot;: &quot;Latviski&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">240</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_lv_LV.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">226</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_lv_LV.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">241</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">227</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">242</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">228</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">243</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">244</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_ms_MY_1759878468777.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">229</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_ms_MY_1759878468777.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">245</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">230</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">246</span><code class="line-text">      &quot;languageName&quot;: &quot;Bahasa Melayu&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">231</span><code class="line-text">      &quot;languageName&quot;: &quot;Bahasa Melayu&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">248</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_ms_MY.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">233</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_ms_MY.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">249</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">234</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">250</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">235</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">251</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">252</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_nl_NL_1759878310634.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">236</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_nl_NL_1759878310634.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">253</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">237</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">254</span><code class="line-text">      &quot;languageName&quot;: &quot;Nederlands&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">238</span><code class="line-text">      &quot;languageName&quot;: &quot;Nederlands&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">256</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_nl_NL.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">240</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_nl_NL.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">257</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">241</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">258</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">242</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">259</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">260</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_no_NO_1759877823576.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">243</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_no_NO_1759877823576.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">261</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">244</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">262</span><code class="line-text">      &quot;languageName&quot;: &quot;Norsk&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">245</span><code class="line-text">      &quot;languageName&quot;: &quot;Norsk&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">264</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_no_NO.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">247</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_no_NO.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">265</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">248</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">266</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">249</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">267</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">268</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_pl_PL_1759878245788.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">250</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_pl_PL_1759878245788.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">269</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">251</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">270</span><code class="line-text">      &quot;languageName&quot;: &quot;Polski&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">252</span><code class="line-text">      &quot;languageName&quot;: &quot;Polski&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">272</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_pl_PL.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">254</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_pl_PL.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">273</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">255</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">274</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">256</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">275</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">276</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_pt_BR_1759877957905.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">257</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_pt_BR_1759877957905.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">277</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">258</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">278</span><code class="line-text">      &quot;languageName&quot;: &quot;Português, Brasil&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">259</span><code class="line-text">      &quot;languageName&quot;: &quot;Português, Brasil&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">280</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_pt_BR.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">261</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_pt_BR.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">281</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">262</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">282</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">263</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">283</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">284</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_pt_PT_1759878476638.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">264</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_pt_PT_1759878476638.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">285</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">265</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">286</span><code class="line-text">      &quot;languageName&quot;: &quot;Português&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">266</span><code class="line-text">      &quot;languageName&quot;: &quot;Português&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">288</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_pt_PT.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">268</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_pt_PT.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">289</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">269</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">290</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">270</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">291</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">292</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_ro_RO_1759877831537.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">271</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_ro_RO_1759877831537.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">293</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">272</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">294</span><code class="line-text">      &quot;languageName&quot;: &quot;Română&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">273</span><code class="line-text">      &quot;languageName&quot;: &quot;Română&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">296</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_ro_RO.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">275</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_ro_RO.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">297</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">276</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">298</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">277</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">299</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">300</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_ru_RU_1759878252482.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">278</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_ru_RU_1759878252482.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">301</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">279</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">302</span><code class="line-text">      &quot;languageName&quot;: &quot;Русский&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">280</span><code class="line-text">      &quot;languageName&quot;: &quot;Русский&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">304</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_ru_RU.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">282</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_ru_RU.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">305</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">283</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">306</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">284</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">307</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">308</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_sk_SK_1759878259016.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">285</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_sk_SK_1759878259016.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">309</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">286</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">310</span><code class="line-text">      &quot;languageName&quot;: &quot;Slovensky&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">287</span><code class="line-text">      &quot;languageName&quot;: &quot;Slovensky&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">312</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_sk_SK.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">289</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_sk_SK.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">313</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">290</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">314</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">291</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">315</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">316</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_sl_SL_1759878505571.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">292</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_sl_SL_1759878505571.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">317</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">293</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">318</span><code class="line-text">      &quot;languageName&quot;: &quot;Slovenščina&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">294</span><code class="line-text">      &quot;languageName&quot;: &quot;Slovenščina&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">320</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_sl_SL.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">296</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_sl_SL.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">321</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">297</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">322</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">298</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">323</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">324</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_sv_SE_1759878510912.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">299</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_sv_SE_1759878510912.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">325</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">300</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">326</span><code class="line-text">      &quot;languageName&quot;: &quot;Svenska&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">301</span><code class="line-text">      &quot;languageName&quot;: &quot;Svenska&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">328</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_sv_SE.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">303</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_sv_SE.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">329</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">304</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">330</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">305</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">331</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">332</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_th_TH_1759877863483.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">306</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_th_TH_1759877863483.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">333</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">307</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">334</span><code class="line-text">      &quot;languageName&quot;: &quot;ภาษาไทย&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">308</span><code class="line-text">      &quot;languageName&quot;: &quot;ภาษาไทย&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">336</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_th_TH.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">310</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_th_TH.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">337</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">311</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">338</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">312</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">339</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">340</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_tr_TR_1759877868031.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">313</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_tr_TR_1759877868031.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">341</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">314</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">342</span><code class="line-text">      &quot;languageName&quot;: &quot;Türkçe&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">315</span><code class="line-text">      &quot;languageName&quot;: &quot;Türkçe&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">344</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_tr_TR.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">317</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_tr_TR.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">345</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">318</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">346</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">319</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">347</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">348</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_vi_VN_1759878523420.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">320</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_vi_VN_1759878523420.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">349</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">321</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">350</span><code class="line-text">      &quot;languageName&quot;: &quot;Tiếng Việt&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">322</span><code class="line-text">      &quot;languageName&quot;: &quot;Tiếng Việt&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">352</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_vi_VN.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">324</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_vi_VN.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">353</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">325</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">354</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">326</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">355</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">356</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_zh_CN_1759877843864.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">327</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_zh_CN_1759877843864.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">357</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">328</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">358</span><code class="line-text">      &quot;languageName&quot;: &quot;简体中文&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">329</span><code class="line-text">      &quot;languageName&quot;: &quot;简体中文&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">360</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_zh_CN.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">331</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_zh_CN.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">361</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">332</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">362</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">333</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">363</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">364</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_zh_HK_1759878270069.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">334</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C HTNF 1.X Instructions for Use (Global)_zh_HK_1759878270069.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">365</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">335</span><code class="line-text">      &quot;langVersion&quot;: 2,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">366</span><code class="line-text">      &quot;languageName&quot;: &quot;繁體中文, 香港&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">336</span><code class="line-text">      &quot;languageName&quot;: &quot;繁體中文, 香港&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">368</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_zh_HK.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">338</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C HTNF 1.X Instructions for Use (Global)_zh_HK.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">369</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">339</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">370</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">340</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">371</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">372</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C Hermit Instructions for Use (Global)_ko_KR_1769550680975.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">341</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/099-52027-C Hermit Instructions for Use (Global)_ko_KR_1769550680975.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">373</span><code class="line-text">      &quot;langVersion&quot;: 3,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">342</span><code class="line-text">      &quot;langVersion&quot;: 3,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">374</span><code class="line-text">      &quot;languageName&quot;: &quot;한국어&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">343</span><code class="line-text">      &quot;languageName&quot;: &quot;한국어&quot;,</code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">376</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C Hermit Instructions for Use (Global)_ko_KR.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">345</span><code class="line-text">      &quot;originalFileName&quot;: &quot;099-52027-C Hermit Instructions for Use (Global)_ko_KR.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">377</span><code class="line-text">    },</code></div>
+<div class="diff-line current unchanged"><span class="line-number">346</span><code class="line-text">    },</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">378</span><code class="line-text">    {</code></div>
+<div class="diff-line current unchanged"><span class="line-number">347</span><code class="line-text">    {</code></div>
+<div class="diff-line previous removed"><span class="line-number">379</span><code class="line-text">      &quot;extractedFiles&quot;: [],</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">380</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/GID-6182361 Rev D HTNF 1.X US IFU_1788929686127.pdf&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">348</span><code class="line-text">      &quot;fileId&quot;: &quot;htnf/GID-6182361 Rev D HTNF 1.X US IFU_1788929686127.pdf&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">381</span><code class="line-text">      &quot;langVersion&quot;: 3,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">349</span><code class="line-text">      &quot;langVersion&quot;: 3,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">382</span><code class="line-text">      &quot;name&quot;: &quot;English, United States&quot;,</code></div>
+<div class="diff-line current unchanged"><span class="line-number">350</span><code class="line-text">      &quot;name&quot;: &quot;English, United States&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">383</span><code class="line-text">      &quot;originalFileName&quot;: &quot;GID-6182361 Rev D HTNF 1.X US IFU.pdf&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">351</span><code class="line-text">      &quot;originalFileName&quot;: &quot;GID-6182361 Rev D HTNF 1.X US IFU.pdf&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">384</span><code class="line-text">    }</code></div>
+<div class="diff-line current unchanged"><span class="line-number">352</span><code class="line-text">    }</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">385</span><code class="line-text">  ],</code></div>
+<div class="diff-line current unchanged"><span class="line-number">353</span><code class="line-text">  ],</code></div>
+<div class="diff-line previous removed"><span class="line-number">386</span><code class="line-text">  &quot;modifiedTime&quot;: &quot;2026-0<mark class="inline-remove">9</mark>-<mark class="inline-remove">09</mark>T<mark class="inline-remove">16:3</mark>3:<mark class="inline-remove">1</mark>3<mark class="inline-remove">.932</mark>+00:00&quot;,</code></div>
+<div class="diff-line current added"><span class="line-number">354</span><code class="line-text">  &quot;modifiedTime&quot;: &quot;2026-<mark class="inline-add">1</mark>0-<mark class="inline-add">12</mark>T<mark class="inline-add">2</mark>3:<mark class="inline-add">58:26.82</mark>3+00:00&quot;,</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">387</span><code class="line-text">  &quot;version&quot;: &quot;Version 1&quot;</code></div>
+<div class="diff-line current unchanged"><span class="line-number">355</span><code class="line-text">  &quot;version&quot;: &quot;Version 1&quot;</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">388</span><code class="line-text">}</code></div>
+<div class="diff-line current unchanged"><span class="line-number">356</span><code class="line-text">}</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">389</span><code class="line-text">```</code></div>
+<div class="diff-line current unchanged"><span class="line-number">357</span><code class="line-text">```</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
