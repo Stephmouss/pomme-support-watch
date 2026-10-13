@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Update your iPhone, iPad, or iPod touch with the Finder — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Update your iPhone, iPad, or iPod touch with the Finder</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/109046">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+19 ajouts</span>
+      <span class="badge removed">−13 suppressions</span>
+      <span class="badge">1 bloc modifié</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">Learn how to update your iPhone, iPad, or iPod touch to the latest version of iOS or iPadOS using your computer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">Learn how to update your iPhone, iPad, or iPod touch to the latest version of iOS or iPadOS using your computer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">[Image:<mark class="inline-remove"> The</mark> Finder icon<mark class="inline-remove"> on macOS</mark>, a smiling face made of two overlapping blue squares.]</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">[Image: Finder icon, a smiling face made of two overlapping blue squares.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text"><mark class="inline-remove">If y</mark>ou can<mark class="inline-remove">&#x27;t</mark> update<mark class="inline-remove"> wirelessly on</mark> your devic<mark class="inline-remove">e, you can updat</mark>e using the Finder on a c<mark class="inline-remove">omputer</mark> that you trust.</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text"><mark class="inline-add">Y</mark>ou can<mark class="inline-add"> also</mark> update your device using the Finder on a <mark class="inline-add">Ma</mark>c that you trust.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">## Prepare to update</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">## Prepare to update</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">- [Back up your device](https://support.apple.com/en-us/118426) using iCloud or your computer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">- [Back up your device](https://support.apple.com/en-us/118426) using iCloud or your computer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">-<mark class="inline-remove"> Check that your computer is running macOS Catalina or later.</mark> If you a<mark class="inline-remove">re</mark> using<mark class="inline-remove"> a Mac with</mark> macOS Mojave or earlier, [update your device using iTunes](https://support.apple.com/en-us/108964) .</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- If you<mark class="inline-add">r</mark> <mark class="inline-add">M</mark>a<mark class="inline-add">c is</mark> using macOS Mojave or earlier, [update your device using iTunes](https://support.apple.com/en-us/108964) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- <mark class="inline-remove">If your computer is using Personal Hotspot on the device that you&#x27;re updating, c</mark>onnect your c<mark class="inline-remove">omputer</mark> to a different Wi-Fi or Ethernet network.</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- <mark class="inline-add">C</mark>onnect your <mark class="inline-add">Ma</mark>c to a different Wi-Fi or Ethernet network<mark class="inline-add"> if it&#x27;s using Personal Hotspot on the device you&#x27;re updating</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">## Update your i<mark class="inline-remove">Phon</mark>e<mark class="inline-remove">, iPad, or iPod touch</mark> using <mark class="inline-remove">your</mark> <mark class="inline-remove">comput</mark>er</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">## Update your <mark class="inline-add">dev</mark>i<mark class="inline-add">c</mark>e using <mark class="inline-add">the</mark> <mark class="inline-add">Find</mark>er</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- Open the Finder window on <mark class="inline-remove">a</mark> Mac<mark class="inline-remove"> with macOS Catalina or later</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- Open the Finder window on <mark class="inline-add">your</mark> Mac.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">- Connect your device to your computer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">- Connect your device to your computer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- <mark class="inline-remove">S</mark>elect your device<mark class="inline-remove"> in the left sidebar of the Finder window</mark>.<mark class="inline-remove"> [Don&#x27;t see your device](https://support.apple.com/en-us/108643) ?</mark></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- <mark class="inline-add">In the Finder sidebar, s</mark>elect your device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">- Click General, then click Check for Update.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">- Click General, then click Check for Update.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">[Image: <mark class="inline-remove">Cu</mark>rsor ho<mark class="inline-remove">v</mark>er<mark class="inline-remove">ing</mark> over the <mark class="inline-remove">&quot;</mark>Check for Update<mark class="inline-remove">&quot;</mark> button<mark class="inline-remove"> in the Finder</mark>.]</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">[Image: <mark class="inline-add">Finde</mark>r<mark class="inline-add"> window </mark>s<mark class="inline-add">howing the General pane f</mark>or <mark class="inline-add">an iP</mark>ho<mark class="inline-add">ne, with the point</mark>er over the Check for Update button.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">- Click Download and Update<mark class="inline-remove">.</mark> <mark class="inline-remove">Co</mark>n<mark class="inline-remove">tinue</mark> follow<mark class="inline-remove">ing</mark> the onscreen instructions.</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">- Click Download and Update<mark class="inline-add">,</mark> <mark class="inline-add">the</mark>n follow the onscreen instructions.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">- <mark class="inline-remove">If asked, e</mark>nter your passcode<mark class="inline-remove">.</mark> <mark class="inline-remove">[Forgot your</mark> p<mark class="inline-remove">asscode](https://suppo</mark>r<mark class="inline-remove">t.apple.c</mark>om<mark class="inline-remove">/</mark>e<mark class="inline-remove">n-us/118430) ?</mark></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- <mark class="inline-add">E</mark>nter your passcode <mark class="inline-add">when</mark> prom<mark class="inline-add">pt</mark>e<mark class="inline-add">d.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">## If you see alert messages on your computer</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">## If you see alert messages on your computer</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">Get help <mark class="inline-remove">[</mark>i<mark class="inline-remove">f you see</mark> alert<mark class="inline-remove"> message</mark>s while updating<mark class="inline-remove"> your device with your computer</mark>](https://support.apple.com/en-us/109057) .</code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text"><mark class="inline-add">[</mark>Get help <mark class="inline-add">w</mark>i<mark class="inline-add">th</mark> alerts while updating](https://support.apple.com/en-us/109057) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">## If you need more space to update</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">## If you need more space to update</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text"><mark class="inline-remove">If you n</mark>ee<mark class="inline-remove">d</mark> <mark class="inline-remove">m</mark>ore space <mark class="inline-remove">for an update, you can [delete c</mark>on<mark class="inline-remove">tent from</mark> your device<mark class="inline-remove"> manually</mark>](https://support.apple.com/en-us/108327) .</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text"><mark class="inline-add">[Fr</mark>ee <mark class="inline-add">up st</mark>or<mark class="inline-add">ag</mark>e space on your device](https://support.apple.com/en-us/108327) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">## Learn more</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- [Get help connecting your device to your Mac](https://support.apple.com/en-us/108643)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- [Get help with a forgotten passcode](https://support.apple.com/en-us/118430)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">## Need more help?</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">## Need more help?</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">Tell us more about what&#x27;s happening, and we<mark class="inline-remove">’</mark>ll suggest what you can do next.</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">Tell us more about what&#x27;s happening, and we<mark class="inline-add">&#x27;</mark>ll suggest what you can do next.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">[Get suggestions](https://getsupport.apple.com/?caller=ikb)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">[Get suggestions](https://getsupport.apple.com/?caller=ikb)</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
