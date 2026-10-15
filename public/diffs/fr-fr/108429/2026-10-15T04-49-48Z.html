@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Vérifier l’espace de stockage sur votre iPhone et iPad - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Vérifier l’espace de stockage sur votre iPhone et iPad - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/108429">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+24 ajouts</span>
+      <span class="badge removed">−24 suppressions</span>
+      <span class="badge">4 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Vérifier l’espace de stockage sur votre iPhone et iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Vérifier l’espace de stockage sur votre iPhone et iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">i<mark class="inline-remove">OS </mark>e<mark class="inline-remove">t iPadOS surveillent l’espace de stockage de votre appareil et indiquent</mark> l’espace utilisé par <mark class="inline-remove">chaque</mark> app. Vous pouvez vérifier l<mark class="inline-remove">’espace d</mark>e stockage dis<mark class="inline-remove">p</mark>o<mark class="inline-remove">nibl</mark>e <mark class="inline-remove">d</mark>a<mark class="inline-remove">ns Réglages, le Finder, l’app A</mark>ppareil<mark class="inline-remove">s Apple</mark> ou i<mark class="inline-remove">T</mark>une<mark class="inline-remove">s</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text"><mark class="inline-add">Vér</mark>i<mark class="inline-add">fi</mark>e<mark class="inline-add">z</mark> l’espace utilisé par <mark class="inline-add">vos</mark> app<mark class="inline-add">s sur votre iPhone ou iPad</mark>. Vous pouvez vérifier le stockage di<mark class="inline-add">rectement </mark>s<mark class="inline-add">ur v</mark>o<mark class="inline-add">tr</mark>e appareil ou <mark class="inline-add">à l’a</mark>i<mark class="inline-add">de d’</mark>un<mark class="inline-add"> ordinat</mark>e<mark class="inline-add">ur</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">[Image: Lire la vidéo]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## Optimiser le stockage des appareils iOS et iPadOS</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">## Optimiser le stockage des appareils iOS et iPadOS</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">Lorsque votre appareil est <mark class="inline-remove">à</mark> c<mark class="inline-remove">o</mark>ur<mark class="inline-remove">t</mark> d’espac<mark class="inline-remove">e de stockage, il en libèr</mark>e en supprimant <mark class="inline-remove">l</mark>es éléments que vous pouvez télécharger à nouveau ou qui ne sont p<mark class="inline-remove">a</mark>s nécessaires, comme <mark class="inline-remove">l</mark>es apps inutilisées et <mark class="inline-remove">l</mark>es fichiers temporaires.</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">Lorsqu<mark class="inline-add">e l’espace de stockage d</mark>e votre appareil est <mark class="inline-add">faible,</mark> c<mark class="inline-add">el</mark>u<mark class="inline-add">i-ci libè</mark>r<mark class="inline-add">e</mark> d<mark class="inline-add">e l</mark>’espace en supprimant <mark class="inline-add">d</mark>es éléments que vous pouvez télécharger à nouveau ou qui ne sont p<mark class="inline-add">lu</mark>s nécessaires, comme <mark class="inline-add">d</mark>es apps inutilisées et <mark class="inline-add">d</mark>es fichiers temporaires.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">## Consultation de l’espace de stockage sur votre appareil</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">## Consultation de l’espace de stockage sur votre appareil</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">- <mark class="inline-remove">Accéd</mark>ez<mark class="inline-remove"> à</mark> Réglages<mark class="inline-remove">, touchez Général, puis Stockage de [l’appareil]</mark>.<mark class="inline-remove"> Vous y trouverez des [recommandations](https://support.apple.com/fr-fr/108429#recommendations) ainsi qu’une liste des apps avec l’espace de stockage qu’elles utilisent.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">- <mark class="inline-add">Ouvr</mark>ez Réglages.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- Touchez Général.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- Touchez Stockage [de l&#x27;appareil] pour afficher les [recommandations et une liste d’apps](https://support.apple.com/fr-fr/108429#recommendations) avec leur utilisation du stockage.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">[Image: Recommandation de désinstaller les apps non utilisées dans les réglages de stockage de l’iPhone.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">[Image: Recommandation de désinstaller les apps non utilisées dans les réglages de stockage de l’iPhone.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">- Touchez le nom d’une app pour obtenir plus d’informations sur l’espace de stockage qu’elle occupe. Les données mises en cache et les données temporaires peuvent ne pas compter comme une utilisation.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">- Touchez le nom d’une app pour obtenir plus d’informations sur l’espace de stockage qu’elle occupe. Les données mises en cache et les données temporaires peuvent ne pas compter comme une utilisation.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text"><mark class="inline-remove">Vous</mark> <mark class="inline-remove">pouvez effectuer les opérations suivantes d</mark>ans la vue détaillée :</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">D</mark>ans la vue détaillée<mark class="inline-add">, vous pouvez</mark> :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- Dé<mark class="inline-remove">sinst</mark>a<mark class="inline-remove">ll</mark>er l’app<mark class="inline-remove">,</mark> <mark class="inline-remove">c</mark>e <mark class="inline-remove">qu</mark>i libère l’espace utilisé par l’app, mais en conserve les documents et les données.</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- Dé<mark class="inline-add">ch</mark>a<mark class="inline-add">rg</mark>er l’app<mark class="inline-add">.</mark> <mark class="inline-add">Cett</mark>e <mark class="inline-add">act</mark>i<mark class="inline-add">on</mark> libère l’espac<mark class="inline-add">e de stockag</mark>e utilisé par l’app, mais en conserve les documents et les données.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">- Supprimer l’app, ce qui retire l’app et ses données.</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- Supprimer l’app, ce qui retire l’app et ses données.<mark class="inline-add"> Certaines apps vous permettent de supprimer une partie de leurs documents et de leurs données.</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- Certaines apps vous permettent de supprimer une partie de leurs documents et de leurs données.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">Si votre appareil affiche une alerte « Stockage presque saturé », vérifiez les recommandations de stockage ou supprimez certains contenus, tels que des vidéos et des apps.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">Si votre appareil affiche une alerte « Stockage presque saturé », vérifiez les recommandations de stockage ou supprimez certains contenus, tels que des vidéos et des apps.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">### Catégori<mark class="inline-remove">ser l</mark>e c<mark class="inline-remove">ont</mark>e<mark class="inline-remove">nu</mark></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">### C<mark class="inline-add">omprendre chaque c</mark>atégorie <mark class="inline-add">de sto</mark>c<mark class="inline-add">kag</mark>e</code></div>
+<div class="diff-line previous removed"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">Votre appareil peut stocker les types de contenu suivants :</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">- Applications : apps installées et leur contenu, contenu stocké dans le répertoire « Sur mon iPhone/iPad/iPod touch » de l’app Fichiers, et téléchargements de Safari.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">- Applications : apps installées et leur contenu, contenu stocké dans le répertoire « Sur mon iPhone/iPad/iPod touch » de l’app Fichiers, et téléchargements de Safari.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">- Photos : photos et vidéos stockées dans l’app Photos.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">- Photos : photos et vidéos stockées dans l’app Photos.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- <mark class="inline-remove">Contenu m</mark>ultimédia : musique, vidéos, podcasts, sonneries, illustrations et mémos vocaux.</code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- <mark class="inline-add">M</mark>ultimédia : musique, vidéos, podcasts, sonneries, illustrations et mémos vocaux.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">- Mail : e-mails et leurs pièces jointes.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">- Mail : e-mails et leurs pièces jointes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">- iCloud Drive : contenu d’iCloud Drive que vous avez téléchargé localement sur votre appareil. 1</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">- iCloud Drive : contenu d’iCloud Drive que vous avez téléchargé localement sur votre appareil. 1</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- Autre : ressources mobiles non supprimables, <mark class="inline-remove">telles qu</mark>e les voix de Siri, les polices, les dictionnaires, les <mark class="inline-remove">fichiers d’</mark>historique et <mark class="inline-remove">d</mark>e cache non supprimables, l’index Spotlight<mark class="inline-remove">,</mark> et les données système <mark class="inline-remove">comm</mark>e le trousseau et la base de données CloudKit. 2</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- Autre : ressources mobiles non supprimables, <mark class="inline-add">comm</mark>e les voix de Siri, les polices, les dictionnaires, les historique<mark class="inline-add">s</mark> et <mark class="inline-add">l</mark>e<mark class="inline-add">s</mark> cache<mark class="inline-add">s</mark> non supprimables, l’index Spotlight et les données système<mark class="inline-add">,</mark> <mark class="inline-add">telles qu</mark>e le trousseau et la base de données CloudKit. 2</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">- Données système : espace occupé par le système d’exploitation. Cet espace peut varier en fonction de votre appareil et de son modèle.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">- Données système : espace occupé par le système d’exploitation. Cet espace peut varier en fonction de votre appareil et de son modèle.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">### Si votre stockage est saturé, suivez les recommandations d’optimisation du stockage</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">### Si votre stockage est saturé, suivez les recommandations d’optimisation du stockage</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text"><mark class="inline-remove">Dans la section Stockage de Réglages, v</mark>otre appareil peut proposer des recommandations p<mark class="inline-remove">e</mark>r<mark class="inline-remove">mettant</mark> <mark class="inline-remove">d’</mark>optimiser le stockage<mark class="inline-remove">.</mark> <mark class="inline-remove">Pour</mark> <mark class="inline-remove">op</mark>ti<mark class="inline-remove">miser</mark> <mark class="inline-remove">votre s</mark>tockage :</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text"><mark class="inline-add">V</mark>otre appareil peut proposer des recommandations p<mark class="inline-add">ou</mark>r optimiser le stockage <mark class="inline-add">dans</mark> <mark class="inline-add">la sec</mark>ti<mark class="inline-add">on</mark> <mark class="inline-add">S</mark>tockage <mark class="inline-add">des Réglages </mark>:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">- Touchez Tout afficher afin de voir les recommandations pour votre appareil.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">- Touchez Tout afficher afin de voir les recommandations pour votre appareil.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">- Lisez la description de chaque recommandation et touchez Activer pour l’appliquer, ou touchez-en une pour examiner le contenu que vous pouvez supprimer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">- Lisez la description de chaque recommandation et touchez Activer pour l’appliquer, ou touchez-en une pour examiner le contenu que vous pouvez supprimer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">## Consulter l’espace de stockage de votre appareil <mark class="inline-remove">iOS </mark>dans le Finder, l’app Appareils Apple ou iTunes</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">## Consulter l’espace de stockage de votre appareil dans le Finder, l’app Appareils Apple ou iTunes</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">- Passez sur le Finder sur votre Mac ou [l’app Appareils Apple](https://support.apple.com/guide/devices-windows/welcome/windows) sur votre PC. Si l’app Appareils Apple n’est pas installée sur votre PC, ou si votre Mac est doté de macOS Mojave ou d’une version antérieure, ouvrez [iTunes](https://support.apple.com/fr-fr/118290) à la place. [Identifie<mark class="inline-remove">z</mark> la version de macOS installée sur votre Mac](https://support.apple.com/fr-fr/109033) .</code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">- Passez sur le Finder sur votre Mac ou [l’app Appareils Apple](https://support.apple.com/guide/devices-windows/welcome/windows) sur votre PC. Si l’app Appareils Apple n’est pas installée sur votre PC, ou si votre Mac est doté de macOS Mojave ou d’une version antérieure, ouvrez [iTunes](https://support.apple.com/fr-fr/118290) à la place. [Identifie<mark class="inline-add">r</mark> la version de macOS installée sur votre Mac](https://support.apple.com/fr-fr/109033) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Connectez votre appareil à votre ordinateur.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">- Connectez votre appareil à votre ordinateur.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">- Survolez la barre avec votre souris pour afficher l’espace de stockage occupé par chaque type de contenu.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">- Survolez la barre avec votre souris pour afficher l’espace de stockage occupé par chaque type de contenu.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">[Image: Curseur <mark class="inline-remove">passant</mark> sur une catégorie de stockage dans le Finder.]</code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">[Image: Curseur <mark class="inline-add">qui</mark> sur<mark class="inline-add">vole</mark> une catégorie de stockage d<mark class="inline-add">e l’iPhone d</mark>ans le Finder.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">69</span><code class="line-text">### Catégoriser le contenu</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">### Catégoriser le contenu</code></div>
+<div class="diff-line previous removed"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">Votre appareil peut stocker les types de contenu suivants :</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">- Audio : morceaux, podcasts audio, livres audio, mémos vocaux et sonneries.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">- Audio : morceaux, podcasts audio, livres audio, mémos vocaux et sonneries.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">89</span><code class="line-text">### À propos des fichiers mis en cache de la catégorie « Autre »</code></div>
+<div class="diff-line current unchanged"><span class="line-number">89</span><code class="line-text">### À propos des fichiers mis en cache de la catégorie « Autre »</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">91</span><code class="line-text">Le Finder, l’app Appareils Apple et iTunes présentent les morceaux de musique, les vidéos et les photos mis en cache dans la catégorie « Autre ». <mark class="inline-remove">L</mark>e <mark class="inline-remove">systèm</mark>e crée ces fichiers lorsque vous diffusez ou <mark class="inline-remove">v</mark>i<mark class="inline-remove">sualis</mark>ez du contenu<mark class="inline-remove">,</mark> <mark class="inline-remove">ce</mark> qui <mark class="inline-remove">p</mark>er<mark class="inline-remove">m</mark>et<mark class="inline-remove"> d’y accéder</mark> plus rapidement la fois<mark class="inline-remove"> suivante</mark> que vous s<mark class="inline-remove">ouhaitez profiter du</mark> conte<mark class="inline-remove">nu</mark>. Votre appareil supprime ces fichiers lorsque votre appareil a besoin de plus d’espace.</code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">Le Finder, l’app Appareils Apple et iTunes présentent les morceaux de musique, les vidéos et les photos mis en cache dans la catégorie « Autre ». <mark class="inline-add">Votr</mark>e <mark class="inline-add">appar</mark>e<mark class="inline-add">il</mark> crée ces fichiers lorsque vous diffusez ou <mark class="inline-add">aff</mark>i<mark class="inline-add">ch</mark>ez du contenu <mark class="inline-add">afin</mark> qu<mark class="inline-add">’</mark>i<mark class="inline-add">ls</mark> <mark class="inline-add">s</mark>e<mark class="inline-add"> cha</mark>r<mark class="inline-add">g</mark>e<mark class="inline-add">n</mark>t plus rapidement la <mark class="inline-add">prochaine </mark>fois que vous <mark class="inline-add">le</mark>s con<mark class="inline-add">sul</mark>te<mark class="inline-add">rez</mark>. Votre appareil supprime ces fichiers lorsque votre appareil a besoin de plus d’espace.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">93</span><code class="line-text">### Si l’espace de stockage diffère sur votre appareil et dans le Finder, l’app Appareils Apple ou iTunes</code></div>
+<div class="diff-line current unchanged"><span class="line-number">93</span><code class="line-text">### Si l’espace de stockage diffère sur votre appareil et dans le Finder, l’app Appareils Apple ou iTunes</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">95</span><code class="line-text">Les fichiers mis en cache étant répertoriés dans la catégorie Autre par le Finder, l’app Appareils Apple et iTunes, il se peut que l’espace de stockage alloué aux catégories Musique et Vidéo diffère. Pour c<mark class="inline-remove">onsult</mark>er l’<mark class="inline-remove">espace de stockage </mark>utilis<mark class="inline-remove">é</mark> sur votre appareil, <mark class="inline-remove">accéd</mark>ez<mark class="inline-remove"> à</mark> Réglages<mark class="inline-remove">,</mark> touchez Général, puis Stockage de<mark class="inline-remove"> [l’appar</mark>e<mark class="inline-remove">il</mark>].</code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text">Les fichiers mis en cache étant répertoriés dans la catégorie Autre par le Finder, l’app Appareils Apple et iTunes, il se peut que l’espace de stockage alloué aux catégories Musique et Vidéo diffère. Pour <mark class="inline-add">affi</mark>c<mark class="inline-add">h</mark>er l’utilis<mark class="inline-add">ation</mark> sur votre appareil, <mark class="inline-add">ouvr</mark>ez Réglages<mark class="inline-add"> et</mark> touchez Général, puis <mark class="inline-add">touchez </mark>Stockage <mark class="inline-add">[</mark>de<mark class="inline-add">vic</mark>e].</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">97</span><code class="line-text">### Si vous souhaitez supprimer les fichiers mis en cache sur votre appareil</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">### Si vous souhaitez supprimer les fichiers mis en cache sur votre appareil</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">99</span><code class="line-text">Pour libérer de l’espace, votre appareil supprime les fichiers mis en cache et temporaires ; vous n’avez donc pas à le faire.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">99</span><code class="line-text">Pour libérer de l’espace, votre appareil supprime les fichiers mis en cache et temporaires ; vous n’avez donc pas à le faire.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">101</span><code class="line-text"><mark class="inline-remove">1.</mark> Vous ne pouvez pas supprimer automatiquement le contenu iCloud.</code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text"><mark class="inline-add">-</mark> Vous ne pouvez pas supprimer automatiquement le contenu iCloud.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">103</span><code class="line-text"><mark class="inline-remove">2.</mark> Le système ne peut pas supprimer les fichiers mis en cache.</code></div>
+<div class="diff-line current added"><span class="line-number">103</span><code class="line-text"><mark class="inline-add">-</mark> Le système ne peut pas supprimer les fichiers mis en cache.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">105</span><code class="line-text"><mark class="inline-remove">3.</mark> Vous ne pouvez pas supprimer de données dans le contenu synchronisé à l’aide de votre iPhone. Pour supprimer ces données, passez sur le Finder ou ouvrez l’app Appareils Apple ou iTunes, désélectionnez les données et cliquez sur Synchroniser.</code></div>
+<div class="diff-line current added"><span class="line-number">105</span><code class="line-text"><mark class="inline-add">-</mark> Vous ne pouvez pas supprimer de données dans le contenu synchronisé à l’aide de votre iPhone. Pour supprimer ces données, passez sur le Finder ou ouvrez l’app Appareils Apple ou iTunes, désélectionnez les données et cliquez sur Synchroniser.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">107</span><code class="line-text">Les informations se rapportant à des produits non fabriqués par Apple, ou à des sites Web indépendants qui ne sont ni contrôlés ni testés par Apple, sont fournies uniquement à titre indicatif et ne constituent aucune recommandation. Apple ne saurait être tenu responsable de problèmes liés à l’utilisation de tels sites ou produits tiers, ou à leurs performances. Apple ne garantit en aucune façon la fiabilité d’un site Web tiers ni l’exactitude des informations que ce dernier propose. [Contactez le fournisseur](https://support.apple.com/fr-fr/103190) pour plus d’informations.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">107</span><code class="line-text">Les informations se rapportant à des produits non fabriqués par Apple, ou à des sites Web indépendants qui ne sont ni contrôlés ni testés par Apple, sont fournies uniquement à titre indicatif et ne constituent aucune recommandation. Apple ne saurait être tenu responsable de problèmes liés à l’utilisation de tels sites ou produits tiers, ou à leurs performances. Apple ne garantit en aucune façon la fiabilité d’un site Web tiers ni l’exactitude des informations que ce dernier propose. [Contactez le fournisseur](https://support.apple.com/fr-fr/103190) pour plus d’informations.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
