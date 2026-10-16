@@ -17,6 +17,8 @@ def _absolute(base_url: str, relative: str | None) -> str | None:
 
 def _event_html(event: Event, base_url: str) -> str:
     parts = [f"<p>{html.escape(event.description)}</p>"] if event.description else []
+    if event.reference_context:
+        parts.insert(0, f"<p><strong>À examiner :</strong> {html.escape(event.reference_context)}</p>")
     if event.kind == "updated":
         parts.append(f"<p><strong>{event.added} added · {event.removed} removed</strong></p>")
         if event.diff_excerpt:
@@ -32,6 +34,9 @@ def _event_html(event: Event, base_url: str) -> str:
         links.append(f'<a href="{html.escape(diff_url, quote=True)}">Full diff</a>')
     if event.counterpart_url:
         links.append(f'<a href="{html.escape(event.counterpart_url, quote=True)}">Other language</a>')
+    reference_url = _absolute(base_url, event.reference_page)
+    if reference_url:
+        links.append(f'<a href="{html.escape(reference_url, quote=True)}">Historique des références</a>')
     parts.append(f"<p>{' · '.join(links)}</p>")
     return "".join(parts)
 
@@ -48,9 +53,10 @@ def write_feed(path: Path, events: list[Event], title: str, base_url: str, limit
         datetime.now(timezone.utc), usegmt=True
     )
     visible_events = [event for event in events if event.kind in {"new", "updated"}]
-    for event in sorted(visible_events, key=lambda item: item.detected_at, reverse=True)[:limit]:
+    for event in sorted(visible_events, key=lambda item: (item.detected_at, bool(item.editorial_type)), reverse=True)[:limit]:
         item = ET.SubElement(channel, "item")
         prefix = {"new": "NEW", "updated": "UPDATED"}[event.kind]
+        prefix = {"new_reference": "NOUVELLE RÉFÉRENCE", "identity_change": "NOM MODIFIÉ"}.get(event.editorial_type, prefix)
         ET.SubElement(item, "title").text = f"[{prefix}] {event.title}"
         ET.SubElement(item, "link").text = event.url
         ET.SubElement(item, "guid", {"isPermaLink": "false"}).text = event.event_id
@@ -59,3 +65,4 @@ def write_feed(path: Path, events: list[Event], title: str, base_url: str, limit
         ET.SubElement(item, "description").text = _event_html(event, base_url)
     ET.indent(rss)
     path.write_bytes(ET.tostring(rss, encoding="utf-8", xml_declaration=True))
+

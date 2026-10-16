@@ -16,6 +16,7 @@ from .extract import _to_markdown
 from .feeds import write_feed
 from .http import HttpClient
 from .models import Event
+from .references import ReferenceFilter, write_archive
 
 
 REGULATORY_BASE = "https://regulatoryinfo.apple.com"
@@ -507,6 +508,14 @@ class ThematicWatcher:
                 except Exception as exc:
                     all_errors[source["type"]] = str(exc)
 
+            reference_filter = None
+            if (self.config.get("regulatory_reference_filter", True)
+                    and any(key.startswith("regulatory:") for key in fetched)):
+                reference_filter = ReferenceFilter(
+                    state.get("reference_filter", {}), records,
+                    [item for items in fetched.values() for item in items], timestamp, set(initialized),
+                )
+
             for collection, items in fetched.items():
                 initial = collection not in initialized
                 current_ids = {item.item_id for item in items}
@@ -524,12 +533,16 @@ class ThematicWatcher:
                         records[item.item_id] = record
                         if not initial:
                             event = self._event(slug, "new", item, timestamp)
-                            events.insert(0, event)
-                            self.created_events.append(event)
+                            event = reference_filter.apply(event, item) if reference_filter else event
+                            if event is not None:
+                                events.insert(0, event)
+                                self.created_events.append(event)
                     elif old and record.get("hash") and item.content_hash != record["hash"] and not initial:
                         event = self._event(slug, "updated", item, timestamp, old)
-                        events.insert(0, event)
-                        self.created_events.append(event)
+                        event = reference_filter.apply(event, item) if reference_filter else event
+                        if event is not None:
+                            events.insert(0, event)
+                            self.created_events.append(event)
                     record.update({
                         "collection": collection,
                         "title": item.title,
@@ -558,7 +571,11 @@ class ThematicWatcher:
 
             state["last_success"] = timestamp
             state["errors"] = all_errors
+            if reference_filter is not None:
+                state["reference_filter"] = reference_filter.finish()
             if not self.dry_run:
+                if reference_filter is not None:
+                    write_archive(self.root / "public", state["reference_filter"])
                 _save_json(state_path, state)
                 _save_json(events_path, [event.as_dict() for event in events[:1000]])
                 write_feed(
@@ -573,5 +590,7 @@ class ThematicWatcher:
                 "active": sum(1 for record in records.values() if record.get("active", True)),
                 "collections": len(initialized),
                 "errors": all_errors,
+                **({"reference_filter": state["reference_filter"]["last_run"]} if reference_filter is not None else {}),
             }
         return result
+

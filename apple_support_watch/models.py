@@ -42,6 +42,10 @@ class Event:
     counterpart_url: str | None = None
     source_name: str = ""
     category: str = ""
+    editorial_type: str = ""
+    reference_models: list[str] = field(default_factory=list)
+    reference_context: str = ""
+    reference_page: str | None = None
 
     def as_dict(self) -> dict[str, Any]:
         return {
@@ -62,9 +66,14 @@ class Event:
             "counterpart_url": self.counterpart_url,
             "source_name": self.source_name,
             "category": self.category,
+            "editorial_type": self.editorial_type,
+            "reference_models": self.reference_models,
+            "reference_context": self.reference_context,
+            "reference_page": self.reference_page,
         }
 
     @classmethod
     def from_dict(cls, value: dict[str, Any]) -> "Event":
         allowed = cls.__dataclass_fields__.keys()
         return cls(**{key: value[key] for key in allowed if key in value})
+
