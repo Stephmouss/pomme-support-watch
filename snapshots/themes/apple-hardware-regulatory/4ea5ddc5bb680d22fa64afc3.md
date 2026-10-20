@@ -26,8 +26,6 @@ Category: Battery management
       "models": []
     }
   ],
-  "createdTime": "2026-09-18T14:50:58.169+00:00",
-  "date": "2026-09-18T00:00:00.000+00:00",
   "deviceId": "6aad2d458705d14251865f01",
   "elabelFilesData": [],
   "emcNumber": "",
@@ -36,7 +34,6 @@ Category: Battery management
   "filesData": [],
   "id": "6aad50168705d14251867baf",
   "modelName": "0602S",
-  "modifiedTime": "2026-09-18T14:50:58.169+00:00",
   "originalFileName": "",
   "productCategory": {
     "id": "6aab8972cee6b033465d2fcc",

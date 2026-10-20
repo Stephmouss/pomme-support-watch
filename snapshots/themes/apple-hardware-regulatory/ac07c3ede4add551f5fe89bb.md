@@ -25,8 +25,6 @@ Category: Battery management
       "models": []
     }
   ],
-  "createdTime": "2026-09-17T16:14:28.782+00:00",
-  "date": "2026-09-17T00:00:00.000+00:00",
   "deviceId": "6aabb82bcee6b033465d8df2",
   "elabelFilesData": [],
   "emcNumber": "",
@@ -35,7 +33,6 @@ Category: Battery management
   "filesData": [],
   "id": "6aac1210cee6b033465ddbba",
   "modelName": "A1760",
-  "modifiedTime": "2026-09-17T16:14:28.782+00:00",
   "originalFileName": "",
   "productCategory": {
     "id": "6aab8972cee6b033465d2fcc",

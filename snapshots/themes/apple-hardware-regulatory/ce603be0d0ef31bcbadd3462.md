@@ -39,8 +39,6 @@ Category: Battery management
       "models": []
     }
   ],
-  "createdTime": "2026-09-17T17:42:44.999+00:00",
-  "date": "2026-09-17T00:00:00.000+00:00",
   "deviceId": "6aabc5994d124b8c3f1dce8e",
   "elabelFilesData": [],
   "emcNumber": "",
@@ -49,7 +47,6 @@ Category: Battery management
   "filesData": [],
   "id": "6aac2742cee6b033465edd7a",
   "modelName": "A2729",
-  "modifiedTime": "2026-09-17T17:42:44.999+00:00",
   "originalFileName": "",
   "productCategory": {
     "id": "6aab8972cee6b033465d2fcc",

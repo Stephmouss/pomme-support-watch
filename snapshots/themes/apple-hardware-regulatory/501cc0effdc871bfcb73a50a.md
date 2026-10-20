@@ -18,8 +18,6 @@ Category: Battery management
       "models": []
     }
   ],
-  "createdTime": "2026-09-18T14:57:09.265+00:00",
-  "date": "2026-09-18T00:00:00.000+00:00",
   "deviceId": "6aad2d5b8705d14251865f09",
   "elabelFilesData": [],
   "emcNumber": "",
@@ -28,7 +26,6 @@ Category: Battery management
   "filesData": [],
   "id": "6aad53a48705d14251868c19",
   "modelName": "S2337",
-  "modifiedTime": "2026-09-18T14:57:09.265+00:00",
   "originalFileName": "",
   "productCategory": {
     "id": "6aab8972cee6b033465d2fcc",

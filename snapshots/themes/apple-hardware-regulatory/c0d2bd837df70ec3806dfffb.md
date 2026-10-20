@@ -46,8 +46,6 @@ Category: Battery management
       "models": []
     }
   ],
-  "createdTime": "2026-09-17T17:23:40.581+00:00",
-  "date": "2026-09-17T00:00:00.000+00:00",
   "deviceId": "6aabc8714d124b8c3f1dceb0",
   "elabelFilesData": [],
   "emcNumber": "",
@@ -56,7 +54,6 @@ Category: Battery management
   "filesData": [],
   "id": "6aac2288cee6b033465e732a",
   "modelName": "BR1632",
-  "modifiedTime": "2026-09-17T17:23:40.581+00:00",
   "originalFileName": "",
   "productCategory": {
     "id": "6aab8972cee6b033465d2fcc",
