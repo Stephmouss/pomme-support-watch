@@ -20,18 +20,20 @@ def _event_html(event: Event, base_url: str) -> str:
     if event.reference_context:
         parts.insert(0, f"<p><strong>À examiner :</strong> {html.escape(event.reference_context)}</p>")
     if event.kind == "updated":
-        parts.append(f"<p><strong>{event.added} added · {event.removed} removed</strong></p>")
-        if event.diff_excerpt:
+        if event.source_name != "Apple Regulatory Information":
+            parts.append(f"<p><strong>{event.added} added · {event.removed} removed</strong></p>")
+        if event.diff_excerpt and event.source_name != "Apple Regulatory Information":
             formatted = []
             for line in event.diff_excerpt:
                 color = "#087f23" if line.startswith("+") else "#b00020"
                 formatted.append(f'<span style="color:{color}">{html.escape(line)}</span>')
             parts.append(f"<pre>{'<br>'.join(formatted)}</pre>")
     source_name = event.source_name or "Apple Support"
-    links = [f'<a href="{html.escape(event.url, quote=True)}">{html.escape(source_name)}</a>']
+    links = []
     diff_url = _absolute(base_url, event.diff_page)
     if diff_url:
-        links.append(f'<a href="{html.escape(diff_url, quote=True)}">Full diff</a>')
+        links.append(f'<a href="{html.escape(diff_url, quote=True)}">Voir les modifications</a>')
+    links.append(f'<a href="{html.escape(event.url, quote=True)}">Page Apple — {html.escape(source_name)}</a>')
     if event.counterpart_url:
         links.append(f'<a href="{html.escape(event.counterpart_url, quote=True)}">Other language</a>')
     reference_url = _absolute(base_url, event.reference_page)
@@ -58,7 +60,7 @@ def write_feed(path: Path, events: list[Event], title: str, base_url: str, limit
         prefix = {"new": "NEW", "updated": "UPDATED"}[event.kind]
         prefix = {"new_reference": "NOUVELLE RÉFÉRENCE", "identity_change": "NOM MODIFIÉ"}.get(event.editorial_type, prefix)
         ET.SubElement(item, "title").text = f"[{prefix}] {event.title}"
-        ET.SubElement(item, "link").text = event.url
+        ET.SubElement(item, "link").text = _absolute(base_url, event.diff_page) or event.url
         ET.SubElement(item, "guid", {"isPermaLink": "false"}).text = event.event_id
         parsed = datetime.fromisoformat(event.detected_at.replace("Z", "+00:00"))
         ET.SubElement(item, "pubDate").text = format_datetime(parsed)

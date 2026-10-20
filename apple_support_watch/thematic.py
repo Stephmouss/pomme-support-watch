@@ -75,6 +75,9 @@ VOLATILE_KEYS = {
     "inProgress",
     "status",
     "workflowId",
+    "createdTime",
+    "modifiedTime",
+    "date",
 }
 
 
@@ -156,6 +159,8 @@ def _record_title(record: dict[str, Any], category: str) -> str:
 
 
 def _regulatory_url(endpoint: str, record: dict[str, Any]) -> str:
+    if endpoint == "batteryManagement" and str(record.get("eurl", "")).startswith(f"{REGULATORY_BASE}/"):
+        return record["eurl"]
     if endpoint == "device/rfexposure" and record.get("modelNames"):
         return f"{REGULATORY_BASE}/rfexposure/model/{record['modelNames'][0]}/en"
     routes = {
@@ -174,8 +179,8 @@ def _regulatory_url(endpoint: str, record: dict[str, Any]) -> str:
     return f"{REGULATORY_BASE}/{routes.get(endpoint, 'regulatorydata')}"
 
 
-def _regulatory_item(endpoint: str, category: str, record: dict[str, Any]) -> ThemeItem:
-    stable = _stable(record)
+def _regulatory_item(endpoint: str, category: str, record: dict[str, Any], variants: list[dict[str, Any]] | None = None) -> ThemeItem:
+    stable = sorted((_stable(value) for value in variants), key=lambda value: json.dumps(value, sort_keys=True)) if variants else _stable(record)
     title = _record_title(record, category)
     models = record.get("modelNames") or record.get("modelName") or []
     if isinstance(models, str):
@@ -196,6 +201,64 @@ def _regulatory_item(endpoint: str, category: str, record: dict[str, Any]) -> Th
         description=" · ".join(details),
         markdown=markdown,
     )
+
+
+def _regulatory_items(endpoint: str, category: str, records: list[dict[str, Any]]) -> list[ThemeItem]:
+    groups: dict[str, list[dict[str, Any]]] = {}
+    for record in records:
+        groups.setdefault(_raw_id(record), []).append(record)
+    return [_regulatory_item(endpoint, category, group[0], group if len(group) > 1 else None)
+            for group in groups.values()]
+
+
+def _regulatory_json(markdown: str) -> Any:
+    return json.loads(markdown.split("```json\n", 1)[1].split("\n```", 1)[0])
+
+
+def _normalized_regulatory_markdown(markdown: str) -> str:
+    try:
+        prefix, rest = markdown.split("```json\n", 1)
+        payload, suffix = rest.split("\n```", 1)
+        return prefix + "```json\n" + json.dumps(_stable(json.loads(payload)), ensure_ascii=False, indent=2, sort_keys=True) + "\n```" + suffix
+    except (ValueError, IndexError):
+        return markdown
+
+
+def _regulatory_summary(old: str, new: str) -> str:
+    try:
+        previous, current = _regulatory_json(old), _regulatory_json(new)
+    except (ValueError, IndexError):
+        return "Données réglementaires modifiées. Ouvrez la comparaison pour les détails."
+    if isinstance(previous, list) or isinstance(current, list):
+        if isinstance(previous, list) and isinstance(current, list):
+            def model_names(variants: list[dict[str, Any]]) -> list[str]:
+                return sorted({str(model) for value in variants for model in
+                               ([value.get("productModelName")] if value.get("productModelName") else value.get("modelNames", []))})
+            before, after = model_names(previous), model_names(current)
+            if before != after:
+                return f"Références des variantes : {', '.join(before) or 'aucune'} → {', '.join(after) or 'aucune'}."
+            if len(previous) != len(current):
+                return f"Nombre de variantes réglementaires : {len(previous)} → {len(current)}."
+            return f"Informations modifiées dans les {len(current)} variantes réglementaires. Ouvrez la comparaison."
+        return "Variantes réglementaires regroupées. Ouvrez la comparaison."
+    labels = {"productName": "Nom du produit", "modelName": "Modèle", "modelNames": "Modèles",
+              "productModelName": "Référence du modèle", "yearOfRelease": "Année de sortie",
+              "regulatoryDataId": "Identifiant réglementaire", "associatedDataList": "Documents associés"}
+    changed = [key for key in sorted(set(previous) | set(current)) if previous.get(key) != current.get(key)]
+    details = []
+    for key in changed[:4]:
+        before, after = previous.get(key), current.get(key)
+        if all(isinstance(value, (str, int, float, type(None))) for value in (before, after)):
+            details.append(f"{labels.get(key, key)} : {before if before is not None else 'absent'} → {after if after is not None else 'absent'}")
+        else:
+            details.append(f"{labels.get(key, key)} modifié")
+    return " ; ".join(details) + (f" ; {len(changed) - 4} autre(s) champ(s)" if len(changed) > 4 else "")
+
+
+def _metadata_only_event(event: Event) -> bool:
+    return (event.kind == "updated" and event.article_id.startswith("regulatory:")
+            and bool(event.diff_excerpt)
+            and all(re.match(r'^[+-]\s*"(?:createdTime|modifiedTime|date)":', line) for line in event.diff_excerpt))
 
 
 def extract_esim_france(html: str, url: str) -> ThemeItem:
@@ -379,7 +442,7 @@ class ThematicWatcher:
             f"{REGULATORY_BASE}/cwt/api/ext/{endpoint}", headers=REGULATORY_HEADERS
         )
         category = REGULATORY_COLLECTIONS[endpoint]
-        return endpoint, [_regulatory_item(endpoint, category, record) for record in _records(payload)]
+        return endpoint, _regulatory_items(endpoint, category, _records(payload))
 
     def _fetch_source(self, source: dict[str, Any]) -> tuple[dict[str, list[ThemeItem]], dict[str, str]]:
         kind = source["type"]
@@ -466,6 +529,8 @@ class ThematicWatcher:
             diff_page = f"diffs/themes/{slug}/{item_key}/{stamp}.html"
             if not self.dry_run:
                 write_html_diff(self.root / "public" / diff_page, old, item.markdown, item.title, item.url)
+        description = (_regulatory_summary(old, item.markdown)
+                       if kind == "updated" and item.item_id.startswith("regulatory:") else item.description)
         return Event(
             event_id=f"apple-support-watch:{slug}:{kind}:{digest}",
             kind=kind,
@@ -474,7 +539,7 @@ class ThematicWatcher:
             title=f"[{item.category}] {item.title}",
             url=item.url,
             detected_at=timestamp,
-            description=item.description,
+            description=description,
             added=added,
             removed=removed,
             diff_excerpt=excerpt,
@@ -508,6 +573,25 @@ class ThematicWatcher:
                 except Exception as exc:
                     all_errors[source["type"]] = str(exc)
 
+            # Previous versions treated duplicate API IDs as repeated edits in one run.
+            # Baseline the grouped form once and remove those spurious historical alerts.
+            migration = slug == "apple-hardware-regulatory" and not state.get("regulatory_grouping_v1")
+            grouped_ids: set[str] = set()
+            if migration:
+                for collection, items in fetched.items():
+                    if collection.startswith("regulatory:"):
+                        for item in items:
+                            try:
+                                if isinstance(_regulatory_json(item.markdown), list):
+                                    grouped_ids.add(item.item_id)
+                            except (ValueError, IndexError):
+                                pass
+                if grouped_ids:
+                    events = [event for event in events if not _metadata_only_event(event)
+                              and not (event.article_id in grouped_ids and event.kind == "updated"
+                                       and not event.editorial_type)]
+                    state["regulatory_grouping_v1"] = timestamp
+
             reference_filter = None
             if (self.config.get("regulatory_reference_filter", True)
                     and any(key.startswith("regulatory:") for key in fetched)):
@@ -523,6 +607,8 @@ class ThematicWatcher:
                     snapshot = self._snapshot_path(slug, item.item_id)
                     record = records.get(item.item_id)
                     old = snapshot.read_text(encoding="utf-8") if snapshot.exists() else ""
+                    if item.item_id.startswith("regulatory:") and old:
+                        old = _normalized_regulatory_markdown(old)
                     if record is None:
                         record = {
                             "collection": collection,
@@ -537,7 +623,8 @@ class ThematicWatcher:
                             if event is not None:
                                 events.insert(0, event)
                                 self.created_events.append(event)
-                    elif old and record.get("hash") and item.content_hash != record["hash"] and not initial:
+                    elif (old and record.get("hash") and old != item.markdown and not initial
+                          and not (migration and item.item_id in grouped_ids)):
                         event = self._event(slug, "updated", item, timestamp, old)
                         event = reference_filter.apply(event, item) if reference_filter else event
                         if event is not None:

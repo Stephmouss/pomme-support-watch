@@ -6,10 +6,39 @@ from unittest.mock import patch
 
 from apple_support_watch.http import HttpClient
 from apple_support_watch.thematic import (ThemeItem, ThematicWatcher, _jobs_payload, _selected_job,
+                                          _regulatory_items, _normalized_regulatory_markdown,
                                           extract_availability_france, extract_esim_france, extract_maps_france)
 
 
 class ThematicExtractorTests(unittest.TestCase):
+    def test_regulatory_variants_are_grouped_and_order_independent(self):
+        records = [
+            {"id": "shared", "productName": "Accessory", "productModelName": model,
+             "regulatoryDataId": document}
+            for model, document in (("A1234", "doc1"), ("A1235", "doc2"))
+        ]
+        first = _regulatory_items("device/regulatory_data", "Environmental characteristics", records)
+        second = _regulatory_items("device/regulatory_data", "Environmental characteristics", list(reversed(records)))
+        self.assertEqual(len(first), 1)
+        self.assertEqual(first[0].content_hash, second[0].content_hash)
+        self.assertIn("A1234", first[0].markdown)
+        self.assertIn("A1235", first[0].markdown)
+
+    def test_regulatory_timestamps_do_not_generate_a_change(self):
+        old = _regulatory_items("batteryManagement", "Battery management", [{
+            "id": "battery1", "productName": "NA105", "modelName": "NA105",
+            "eurl": "https://regulatoryinfo.apple.com/elabels/NA105",
+            "date": "2026-09-25", "createdTime": "2026-09-25", "modifiedTime": "2026-09-25",
+        }])[0]
+        current = _regulatory_items("batteryManagement", "Battery management", [{
+            "id": "battery1", "productName": "NA105", "modelName": "NA105",
+            "eurl": "https://regulatoryinfo.apple.com/elabels/NA105",
+        }])[0]
+        self.assertEqual(old.content_hash, current.content_hash)
+        self.assertEqual(current.url, "https://regulatoryinfo.apple.com/elabels/NA105")
+        legacy = '# NA105\n\nCategory: Battery management\n\n```json\n{"id": "battery1", "date": "2026-09-25", "productName": "NA105", "modelName": "NA105", "eurl": "https://regulatoryinfo.apple.com/elabels/NA105"}\n```\n'
+        self.assertEqual(_normalized_regulatory_markdown(legacy), current.markdown)
+
     def test_france_availability_ignores_other_countries(self):
         def page(other):
             return "".join(f'<section class="features" id="feature-{i}"><h2>Feature {i}</h2>'
@@ -112,7 +141,8 @@ class ThematicWatcherTests(unittest.TestCase):
         self.assertEqual(second.created_events[0].kind, "updated")
         feed = (self.root / "public/feeds/test-theme.xml").read_text(encoding="utf-8")
         self.assertIn("[UPDATED] [Test category] Test item", feed)
-        self.assertIn("Full diff", feed)
+        self.assertIn("Voir les modifications", feed)
+        self.assertIn("<link>https://pages.test/diffs/themes/test-theme/", feed)
         events = json.loads((self.root / "events/themes/test-theme.json").read_text(encoding="utf-8"))
         self.assertEqual(events[0]["source_name"], "Apple Test")
 
