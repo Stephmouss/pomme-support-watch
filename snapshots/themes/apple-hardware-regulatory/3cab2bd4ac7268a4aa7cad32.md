@@ -5,7 +5,6 @@ Category: Accessibility VPAT
 ```json
 {
   "categoryName": "Software",
-  "createdTime": "2026-01-30T08:11:45.530+00:00",
   "deviceId": "697c65321a500d71e5e8875a",
   "id": "697c69191a500d71e5e88775",
   "languages": [
@@ -19,7 +18,6 @@ Category: Accessibility VPAT
     }
   ],
   "modelNames": [],
-  "modifiedTime": "2026-01-30T08:11:45.530+00:00",
   "productCategory": {
     "id": "67ac20c1a123dd6194745d7e",
     "name": "Software"

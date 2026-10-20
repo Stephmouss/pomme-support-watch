@@ -5,7 +5,6 @@ Category: Accessibility VPAT
 ```json
 {
   "categoryName": "Watch",
-  "createdTime": "2025-02-12T10:22:53.801+00:00",
   "deviceId": "66e0af79b6f008644651b7f0",
   "id": "67d7e1dea1ba8eb3df2bd126",
   "languages": [
@@ -22,7 +21,6 @@ Category: Accessibility VPAT
     "A2997",
     "A2998"
   ],
-  "modifiedTime": "2025-02-12T10:22:53.801+00:00",
   "productCategory": {
     "id": "6398c145948c6c4924ab69a5",
     "name": "Watch"

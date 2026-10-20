@@ -5,7 +5,6 @@ Category: Accessibility VPAT
 ```json
 {
   "categoryName": "Mac",
-  "createdTime": "2025-02-12T10:22:53.801+00:00",
   "deviceId": "631a093b70023c117017b546",
   "id": "67d7b1e5a1ba8eb3df2bd0ef",
   "languages": [
@@ -21,7 +20,6 @@ Category: Accessibility VPAT
   "modelNames": [
     "A2337"
   ],
-  "modifiedTime": "2025-02-12T10:22:53.801+00:00",
   "productCategory": {
     "id": "6398c145948c6c4924ab69a2",
     "name": "Mac"

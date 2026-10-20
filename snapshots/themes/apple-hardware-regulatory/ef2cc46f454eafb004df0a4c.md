@@ -5,7 +5,6 @@ Category: Irregular rhythm notifications
 ```json
 {
   "archived": false,
-  "createdTime": "2024-07-29T07:50:36.576+00:00",
   "id": "66a749cc7d0d5100331792f8",
   "languages": [
     {
@@ -347,7 +346,6 @@ Category: Irregular rhythm notifications
       "originalFileName": "099-30417-M IRN 2.X Instructions for Use (IFU)_zh_HK.pdf"
     }
   ],
-  "modifiedTime": "2026-09-09T04:50:19.612+00:00",
   "version": "Version 2"
 }
 ```

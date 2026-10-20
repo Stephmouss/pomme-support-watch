@@ -4,8 +4,6 @@ Category: Electronic regulatory labels
 
 ```json
 {
-  "createdTime": "2025-10-31T15:42:43.264+00:00",
-  "date": "2024-08-13T00:00:00.000+00:00",
   "deviceId": "66e0b2d9b6f008644651ba4e",
   "emcNumber": "8692",
   "fileId": "",
@@ -37,7 +35,6 @@ Category: Electronic regulatory labels
   ],
   "id": "690663c31246be7c088bedfb",
   "modelName": "A3082",
-  "modifiedTime": "2025-10-31T15:42:43.264+00:00",
   "originalFileName": "",
   "productCategory": {
     "id": "6398c145948c6c4924ab69a4",

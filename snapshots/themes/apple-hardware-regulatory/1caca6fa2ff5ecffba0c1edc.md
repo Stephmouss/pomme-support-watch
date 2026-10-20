@@ -4,8 +4,6 @@ Category: Electronic regulatory labels
 
 ```json
 {
-  "createdTime": "2025-10-31T15:42:43.264+00:00",
-  "date": "2024-05-16T00:00:00.000+00:00",
   "deviceId": "638e1708bf5a3625505af10f",
   "emcNumber": "8090",
   "fileId": "",
@@ -109,7 +107,6 @@ Category: Electronic regulatory labels
   ],
   "id": "69048aad1246be7c088bedec",
   "modelName": "A2722",
-  "modifiedTime": "2025-10-31T15:42:43.264+00:00",
   "originalFileName": "",
   "productCategory": {
     "id": "6398c145948c6c4924ab69a5",
