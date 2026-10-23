@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>If your payment method is declined in the App Store or iTunes Store — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>If your payment method is declined in the App Store or iTunes Store</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/108095">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+64 ajouts</span>
+      <span class="badge removed">−12 suppressions</span>
+      <span class="badge">1 bloc modifié</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># If your payment method is declined in the App Store or iTunes Store</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># If your payment method is declined in the App Store or iTunes Store</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text"><mark class="inline-remove">To complete your purchase, a</mark>dd a different payment method, then remove the old one.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text"><mark class="inline-add">A</mark>dd a different payment method, then remove the old one<mark class="inline-add"> and try your purchase again</mark>.<mark class="inline-add"> Make sure your billing details are entered correctly.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">## <mark class="inline-remove">C</mark>o<mark class="inline-remove">mplet</mark>e your<mark class="inline-remove"> purchase if a paymen</mark>t<mark class="inline-remove"> failed or was declined</mark></code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">## <mark class="inline-add">Bef</mark>o<mark class="inline-add">r</mark>e you<mark class="inline-add"> sta</mark>rt</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">On</mark> your i<mark class="inline-remove">Pho</mark>ne or i<mark class="inline-remove">P</mark>a<mark class="inline-remove">d,</mark> <mark class="inline-remove">o</mark>pen the <mark class="inline-remove">Set</mark>tin<mark class="inline-remove">g</mark>s<mark class="inline-remove"> app</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text"><mark class="inline-add">Check</mark> <mark class="inline-add">that</mark> your <mark class="inline-add">name, b</mark>i<mark class="inline-add">lli</mark>n<mark class="inline-add">g addr</mark>e<mark class="inline-add">ss, and</mark> o<mark class="inline-add">the</mark>r i<mark class="inline-add">nform</mark>a<mark class="inline-add">tion</mark> <mark class="inline-add">are s</mark>pe<mark class="inline-add">lled correctly. Your billi</mark>n<mark class="inline-add">g details must match</mark> the <mark class="inline-add">informa</mark>ti<mark class="inline-add">o</mark>n<mark class="inline-add"> on file with your financial in</mark>s<mark class="inline-add">titution</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Tap</mark> your name<mark class="inline-remove">.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text"><mark class="inline-add">##</mark> <mark class="inline-add">Retry</mark> your <mark class="inline-add">purchase with a </mark>n<mark class="inline-add">ew p</mark>a<mark class="inline-add">y</mark>me<mark class="inline-add">nt method</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">T</mark>ap<mark class="inline-remove"> P</mark>ayment <mark class="inline-remove">&amp;</mark> <mark class="inline-remove">S</mark>h<mark class="inline-remove">i</mark>ppin<mark class="inline-remove">g</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text"><mark class="inline-add">Add</mark> a<mark class="inline-add"> new </mark>payment <mark class="inline-add">method</mark> <mark class="inline-add">on your device. T</mark>h<mark class="inline-add">en remove the old </mark>p<mark class="inline-add">ayment method and try your </mark>p<mark class="inline-add">urchase aga</mark>in.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">[Add</mark> <mark class="inline-remove">a d</mark>i<mark class="inline-remove">fferent payment met</mark>ho<mark class="inline-remove">d a</mark>n<mark class="inline-remove">d remove th</mark>e o<mark class="inline-remove">l</mark>d<mark class="inline-remove"> one](https://support.apple.com/en-us/118293) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">On</mark> i<mark class="inline-add">P</mark>hone o<mark class="inline-add">r iPa</mark>d</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- <mark class="inline-remove">Try</mark> t<mark class="inline-remove">o com</mark>p<mark class="inline-remove">lete</mark> your <mark class="inline-remove">purch</mark>a<mark class="inline-remove">s</mark>e.</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- <mark class="inline-add">In Settings,</mark> t<mark class="inline-add">a</mark>p your <mark class="inline-add">n</mark>a<mark class="inline-add">m</mark>e.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- Tap Payment &amp; Shipping. If you&#x27;re asked, sign in to your Apple Account.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- Tap Add Payment Method.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">- Enter the new payment method, then tap Done.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- Tap Edit, then tap the red delete button next to the old payment method and tap Remove.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- Try your purchase again.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">[If you still can&#x27;t make a purchase](https://support.apple.com/en-us/108095#troubleshooting)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">### On Mac</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- In the App Store, click your name at the bottom of the sidebar. Or, click the Sign In button and sign in to your Apple Account.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- On the page that appears, click your name. If you&#x27;re asked, sign in to your Apple Account.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- Click Payment Methods.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- Click Add Payment Method, then enter the new payment method. Click Done.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">- Click Edit, then click Remove Payment Method to remove the old payment method.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">- Try your purchase again.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">## If you still can&#x27;t make a purchase</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">## If you still can&#x27;t make a purchase</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Y</mark>ou <mark class="inline-remove">m</mark>i<mark class="inline-remove">gh</mark>t <mark class="inline-remove">h</mark>a<mark class="inline-remove">v</mark>e an un<mark class="inline-remove">paid</mark> or<mark class="inline-remove">der. [Learn how to</mark> pay<mark class="inline-remove"> an unpaid order](https://support.apple.co</mark>m<mark class="inline-remove">/</mark>en<mark class="inline-remove">-us/118284)</mark> <mark class="inline-remove">.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text"><mark class="inline-add">If</mark> <mark class="inline-add">y</mark>ou <mark class="inline-add">st</mark>i<mark class="inline-add">ll can&#x27;</mark>t <mark class="inline-add">m</mark>a<mark class="inline-add">k</mark>e a<mark class="inline-add"> purchase after verifyi</mark>n<mark class="inline-add">g your billing details and</mark> u<mark class="inline-add">pdati</mark>n<mark class="inline-add">g</mark> <mark class="inline-add">y</mark>o<mark class="inline-add">u</mark>r paymen<mark class="inline-add">t</mark> <mark class="inline-add">method:</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Cont</mark>a<mark class="inline-remove">ct</mark> <mark class="inline-remove">your fin</mark>an<mark class="inline-remove">c</mark>i<mark class="inline-remove">al</mark> <mark class="inline-remove">in</mark>s<mark class="inline-remove">titution.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">P</mark>a<mark class="inline-add">y</mark> an<mark class="inline-add">y unpa</mark>i<mark class="inline-add">d</mark> <mark class="inline-add">order</mark>s</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Y</mark>ou might nee<mark class="inline-remove">d</mark> to a<mark class="inline-remove">s</mark>k<mark class="inline-remove"> your financial institution to allow int</mark>e<mark class="inline-remove">rnational</mark> purchases on your d<mark class="inline-remove">eb</mark>i<mark class="inline-remove">t</mark> or <mark class="inline-remove">credit card</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text"><mark class="inline-add">If</mark> <mark class="inline-add">you have an unpaid order, y</mark>ou might n<mark class="inline-add">ot b</mark>e<mark class="inline-add"> abl</mark>e to <mark class="inline-add">m</mark>ake purchases o<mark class="inline-add">r dow</mark>n<mark class="inline-add">load free apps until</mark> your <mark class="inline-add">balance is pai</mark>d<mark class="inline-add">. [Pay an unpa</mark>i<mark class="inline-add">d</mark> or<mark class="inline-add">der](https://support.apple.com/en-us/118284)</mark> .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">If you want to know why a debit card, credit card, or ot</mark>he<mark class="inline-remove">r payment method was de</mark>c<mark class="inline-remove">lined, spea</mark>k<mark class="inline-remove"> with</mark> your<mark class="inline-remove"> financial institution.</mark> Apple <mark class="inline-remove">d</mark>o<mark class="inline-remove">es</mark>n<mark class="inline-remove">&#x27;</mark>t <mark class="inline-remove">have inf</mark>o<mark class="inline-remove">rm</mark>ation<mark class="inline-remove"> about why the payment method was declined.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">C</mark>heck your Apple <mark class="inline-add">Acc</mark>o<mark class="inline-add">u</mark>nt <mark class="inline-add">l</mark>o<mark class="inline-add">c</mark>ation</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text"><mark class="inline-remove">- In</mark> s<mark class="inline-remove">om</mark>e <mark class="inline-remove">coun</mark>t<mark class="inline-remove">ries </mark>a<mark class="inline-remove">nd regions,</mark> your payment method <mark class="inline-remove">might</mark> <mark class="inline-remove">be declined be</mark>cause <mark class="inline-remove">of</mark> <mark class="inline-remove">changes to local law. [Learn ab</mark>ou<mark class="inline-remove">t</mark> <mark class="inline-remove">bi</mark>l<mark class="inline-remove">ling and purchases in Europ</mark>e <mark class="inline-remove">a</mark>n<mark class="inline-remove">d Japan.</mark>](https://support.apple.com/en-us/1<mark class="inline-remove">0</mark>8<mark class="inline-remove">10</mark>3)</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text"><mark class="inline-add">Make</mark> s<mark class="inline-add">ur</mark>e t<mark class="inline-add">h</mark>a<mark class="inline-add">t</mark> you<mark class="inline-add">&#x27;</mark>r<mark class="inline-add">e</mark> <mark class="inline-add">using a [</mark>payment method <mark class="inline-add">you</mark> ca<mark class="inline-add">n </mark>use <mark class="inline-add">with</mark> <mark class="inline-add">y</mark>ou<mark class="inline-add">r</mark> <mark class="inline-add">App</mark>le <mark class="inline-add">Accou</mark>n<mark class="inline-add">t</mark>](https://support.apple.com/en-us/1<mark class="inline-add">11741) in your country or region. If you&#x27;re using an accepted payment method but your Apple Account is set to a different country or region, [change your country or region](https://support.apple.com/en-us/11</mark>8<mark class="inline-add">28</mark>3)<mark class="inline-add"> .</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">In some countries and regions, your payment method might be declined because of changes to local law. Learn [about billing and purchases in Australia, Brazil, Europe, and Japan](https://support.apple.com/en-us/108103) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">### Contact your financial institution</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">You might need to ask your financial institution to allow international purchases on your debit or credit card.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">Some payment methods require verification through your financial institution&#x27;s app, text message, or other means. If you can&#x27;t verify, contact your financial institution for help.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">If you want to know why a debit card, credit card, or other payment method was declined, speak with your financial institution. Apple doesn&#x27;t have information about why the payment method was declined.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">## If you see a message that says &quot;Purchase Not Completed&quot;</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">If Apple detects suspicious purchase activity, you might need to submit a review request for your purchase. You can [submit a request for Apple Support to review your purchase](https://getsupport.apple.com/?caller=kbase) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">To request a review of your purchase:</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">- Go back to the item that you tried to buy.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">- Try to buy the item again.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">- When you see the &quot;Purchase Not Completed&quot; message, select Continue.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">- Follow the onscreen instructions to submit a purchase review.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">Apple Support can&#x27;t submit a review on your behalf or expedite the review process.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
