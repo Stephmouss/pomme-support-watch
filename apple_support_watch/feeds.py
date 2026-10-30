@@ -58,7 +58,7 @@ def write_feed(path: Path, events: list[Event], title: str, base_url: str, limit
     for event in sorted(visible_events, key=lambda item: (item.detected_at, bool(item.editorial_type)), reverse=True)[:limit]:
         item = ET.SubElement(channel, "item")
         prefix = {"new": "NEW", "updated": "UPDATED"}[event.kind]
-        prefix = {"new_reference": "NOUVELLE RÉFÉRENCE", "identity_change": "NOM MODIFIÉ"}.get(event.editorial_type, prefix)
+        prefix = {"new_reference": "NOUVELLE REF", "identity_change": "NOM MODIFIÉ"}.get(event.editorial_type, prefix)
         ET.SubElement(item, "title").text = f"[{prefix}] {event.title}"
         ET.SubElement(item, "link").text = _absolute(base_url, event.diff_page) or event.url
         ET.SubElement(item, "guid", {"isPermaLink": "false"}).text = event.event_id
@@ -67,4 +67,5 @@ def write_feed(path: Path, events: list[Event], title: str, base_url: str, limit
         ET.SubElement(item, "description").text = _event_html(event, base_url)
     ET.indent(rss)
     path.write_bytes(ET.tostring(rss, encoding="utf-8", xml_declaration=True))
+
 

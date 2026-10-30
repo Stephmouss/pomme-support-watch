@@ -58,7 +58,7 @@ class ReferenceFilterTests(unittest.TestCase):
         self.assertEqual(event.reference_models, ["A3632"])
         self.assertIn("pas qu’un produit est non annoncé", event.reference_context)
         feed = (self.root / "public/feeds/hardware.xml").read_text()
-        self.assertIn("[NOUVELLE RÉFÉRENCE] Smart Folio pour iPad mini — A3632", feed)
+        self.assertIn("[NOUVELLE REF] Smart Folio pour iPad mini — A3632", feed)
         self.assertEqual(self.state()["reference_filter"]["totals"]["new_references"], 1)
         # A later section listing does not re-alert for the same hardware.
         later = self.run_watch({"regulatory:compliance/declaration": [self.item(endpoint="compliance/declaration")]}, day=3)
