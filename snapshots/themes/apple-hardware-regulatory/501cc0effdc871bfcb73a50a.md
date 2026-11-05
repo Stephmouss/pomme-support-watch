@@ -4,6 +4,7 @@ Category: Battery management
 
 ```json
 {
+  "archived": false,
   "associatedDataList": [
     {
       "docUrl": "https://regulatoryinfo.apple.com/eurocompliance/A3579",
@@ -18,6 +19,7 @@ Category: Battery management
       "models": []
     }
   ],
+  "bucketFile": false,
   "deviceId": "6aad2d5b8705d14251865f09",
   "elabelFilesData": [],
   "emcNumber": "",
