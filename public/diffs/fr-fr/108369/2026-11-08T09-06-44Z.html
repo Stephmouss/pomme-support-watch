@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Notifications sur votre Apple Watch - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Notifications sur votre Apple Watch - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/108369">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+23 ajouts</span>
+      <span class="badge removed">−23 suppressions</span>
+      <span class="badge">7 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">Si votre iPhone est déverrouillé, vous recevez les notifications sur votre iPhone au lieu de votre Apple Watch.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">Si votre iPhone est déverrouillé, vous recevez les notifications sur votre iPhone au lieu de votre Apple Watch.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">[Image: Une Apple Watch montrant que les notifications s’affichent sur l’Apple Watch plutôt que sur l’iPhone]</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">[Image: Une Apple Watch montrant que les notifications s’affichent sur l’Apple Watch plutôt que sur l’iPhone<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">Si votre iPhone est verrouillé ou en veille, vous recevez les notifications sur votre Apple Watch, à moins que votre Apple Watch ne soit verrouillée.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">Si votre iPhone est verrouillé ou en veille, vous recevez les notifications sur votre Apple Watch, à moins que votre Apple Watch ne soit verrouillée.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">Certaines apps, telles que l’app Bruit, figurent uniquement sur votre Apple Watch. Les notifications de ces apps n’apparaissent donc pas sur votre iPhone.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">Certaines apps, telles que l’app Bruit, figurent uniquement sur votre Apple Watch. Les notifications de ces apps n’apparaissent donc pas sur votre iPhone.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">L’icône de notification <mark class="inline-remove">rouge s’</mark>a<mark class="inline-remove">ffiche dans la </mark>part<mark class="inline-remove">i</mark>e <mark class="inline-remove">s</mark>u<mark class="inline-remove">périeure</mark> du cadran de votre montre lorsque vous avez des notifications non lues. Si vous souhaitez masquer l’icône de notification, ouvrez l’app Apple Watch sur votre iPhone, touchez Notifications, puis désactivez Indicateur de notifications.</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">L’icôn<mark class="inline-add">e roug</mark>e de notification a<mark class="inline-add">p</mark>par<mark class="inline-add">aî</mark>t<mark class="inline-add"> </mark>e<mark class="inline-add">n</mark> <mark class="inline-add">ha</mark>u<mark class="inline-add">t</mark> du cadran de votre montre lorsque vous avez des notifications non lues. Si vous souhaitez masquer l’icône de notification, ouvrez l’app Apple Watch sur votre iPhone, touchez Notifications, puis désactivez Indicateur de notifications.</code></div>
+<div class="diff-line previous removed"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">[Image: Aucun texte de remplacement pour l’image]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">Lorsque vous lisez ou ignorez des notifications sur votre Apple Watch, elles sont également supprimées de votre iPhone.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">Lorsque vous lisez ou ignorez des notifications sur votre Apple Watch, elles sont également supprimées de votre iPhone.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">Lorsqu’une notification apparaît, vous pouvez la toucher afin d’accéder à plus d’options. En fonction de l’app qui a envoyé la notification, vous pouvez répondre à un message, rappeler quelqu’un, archiver un e-mail, et plus encore.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">Lorsqu’une notification apparaît, vous pouvez la toucher afin d’accéder à plus d’options. En fonction de l’app qui a envoyé la notification, vous pouvez répondre à un message, rappeler quelqu’un, archiver un e-mail, et plus encore.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">[Image: Apple Watch affichant une notification d’appel manqué]</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">[Image: Apple Watch affichant une notification d’appel manqué<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">Si votre Apple Watch présente une luminosité faible et n’est pas active, les notifications s’affichent en plein écran. Lorsque vous utilisez votre Apple Watch, les notifications s’affichent dans une bannière en haut de l’écran.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">Si votre Apple Watch présente une luminosité faible et n’est pas active, les notifications s’affichent en plein écran. Lorsque vous utilisez votre Apple Watch, les notifications s’affichent dans une bannière en haut de l’écran.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">- Pour supprimer une notification, effectuez un balayage vers la gauche, puis touchez le bouton Supprimer .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">- Pour supprimer une notification, effectuez un balayage vers la gauche, puis touchez le bouton Supprimer .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">[Image: Aucun texte de remplacement pour l’image]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">## Effacer toutes vos notifications Apple Watch non lues</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">## Effacer toutes vos notifications Apple Watch non lues</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">- Maintenez votre doigt sur la partie supérieure du cadran de la montre pour ouvrir le centre de notifications.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">- Maintenez votre doigt sur la partie supérieure du cadran de la montre pour ouvrir le centre de notifications.</code></div>
+<div class="fold"><span>••• 2 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">- Touchez Tout effacer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">- Touchez Tout effacer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">[Image: Une Apple Watch affichant le bouton de notifications Tout effacer]</code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">[Image: Une Apple Watch affichant le bouton de notifications Tout effacer<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">## Couper le son ou désactiver les notifications d’une app sur votre Apple Watch</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">## Couper le son ou désactiver les notifications d’une app sur votre Apple Watch</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Attendez que le centre de notifications s’affiche, puis effectuez un balayage vers le bas.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">- Attendez que le centre de notifications s’affiche, puis effectuez un balayage vers le bas.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">- Effectuez un balayage vers la gauche sur la notification dont vous souhaitez couper le son ou que vous <mark class="inline-remove">v</mark>ou<mark class="inline-remove">l</mark>ez désactiver, puis touchez le bouton Plus .</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">- Effectuez un balayage vers la gauche sur la notification dont vous souhaitez couper le son ou que vous <mark class="inline-add">s</mark>ou<mark class="inline-add">hait</mark>ez désactiver, puis touchez le bouton Plus .</code></div>
+<div class="diff-line previous removed"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">[Image: Aucun texte de remplacement pour l’image]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">- Faites votre choix parmi les options disponibles pour cette app. En fonction de l’app, vous pouvez couper le son des notifications pour le reste de la journée, les couper pendant une heure ou les désactiver complètement.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">- Faites votre choix parmi les options disponibles pour cette app. En fonction de l’app, vous pouvez couper le son des notifications pour le reste de la journée, les couper pendant une heure ou les désactiver complètement.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">[Image: Une Apple Watch affichant l’écran permettant de couper le son des notifications]</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">[Image: Une Apple Watch affichant l’écran permettant de couper le son des notifications<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">71</span><code class="line-text">Vous pouvez réactiver les notifications d’une app si vous souhaitez à nouveau les voir :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">Vous pouvez réactiver les notifications d’une app si vous souhaitez à nouveau les voir :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 41 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">115</span><code class="line-text">## Si les notifications ne s’affichent pas sur votre Apple Watch</code></div>
+<div class="diff-line current unchanged"><span class="line-number">109</span><code class="line-text">## Si les notifications ne s’affichent pas sur votre Apple Watch</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">117</span><code class="line-text">Si vous ne recevez pas les notifications sur votre Apple Watch comme prévu, s<mark class="inline-remove">uiv</mark>ez ces c<mark class="inline-remove">ons</mark>e<mark class="inline-remove">il</mark>s.</code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text">Si vous ne recevez pas les notifications sur votre Apple Watch comme prévu, <mark class="inline-add">e</mark>s<mark class="inline-add">say</mark>ez ces <mark class="inline-add">astu</mark>ces.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">119</span><code class="line-text">### Vérifie<mark class="inline-remove">r</mark> la connexion entre votre Apple Watch et votre iPhone</code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text">### Vérifie<mark class="inline-add">z</mark> la connexion entre votre Apple Watch et votre iPhone</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">121</span><code class="line-text">Lorsque votre Apple Watch et votre iPhone s<mark class="inline-remove">ont</mark> déconnect<mark class="inline-remove">és</mark>, <mark class="inline-remove">le</mark>s notifications s<mark class="inline-remove">’affich</mark>en<mark class="inline-remove">t</mark> sur votre iPhone e<mark class="inline-remove">t</mark> <mark class="inline-remove">non sur</mark> votre Apple Watch. Pour vérifier votre connexion dans le <mark class="inline-remove">c</mark>entre de contrôle, appuyez sur le bouton latéral de votre Apple Watch. Si vos appareils sont déconnectés, l’icône d’iPhon<mark class="inline-remove">e roug</mark>e , l’icône de X <mark class="inline-remove">rouge</mark> ou l’icône Wi-Fi <mark class="inline-remove">peut apparaître</mark>. Suivez ces étapes pour vous reconnecter :</code></div>
+<div class="diff-line current added"><span class="line-number">115</span><code class="line-text">Lorsque votre Apple Watch et votre iPhone s<mark class="inline-add">e</mark> déconnect<mark class="inline-add">ent</mark>, <mark class="inline-add">vo</mark>s notifications s<mark class="inline-add">ont </mark>en<mark class="inline-add">voyées</mark> sur votre iPhone <mark class="inline-add">au li</mark>e<mark class="inline-add">u</mark> <mark class="inline-add">de</mark> votre Apple Watch. Pour vérifier votre connexion dans le <mark class="inline-add">C</mark>entre de contrôle, appuyez sur le bouton latéral de votre Apple Watch. Si vos appareils sont déconnectés, <mark class="inline-add">vous pouvez voir </mark>l’icône <mark class="inline-add">rouge </mark>d<mark class="inline-add">e l</mark>’iPhone , l’icône <mark class="inline-add">rouge en forme </mark>de X <mark class="inline-add">,</mark> ou l’icône Wi-Fi . Suivez ces étapes pour vous reconnecter :</code></div>
+<div class="diff-line previous removed"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">123</span><code class="line-text">[Image: Aucun texte de remplacement pour l’image]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">125</span><code class="line-text">- Placez votre Apple Watch à proximité de l’iPhone jumelé en veillant à ce qu’ils soient à portée l’un de l’autre.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">117</span><code class="line-text">- Placez votre Apple Watch à proximité de l’iPhone jumelé en veillant à ce qu’ils soient à portée l’un de l’autre.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">127</span><code class="line-text">- Sur votre iPhone, effectuez un balayage vers le bas à partir de l’angle supérieur droit de l’écran pour ouvrir le centre de contrôle, puis assurez-vous que le mode Avion est désactivé et que le Wi-Fi et le Bluetooth sont activés.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">119</span><code class="line-text">- Sur votre iPhone, effectuez un balayage vers le bas à partir de l’angle supérieur droit de l’écran pour ouvrir le centre de contrôle, puis assurez-vous que le mode Avion est désactivé et que le Wi-Fi et le Bluetooth sont activés.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">129</span><code class="line-text">[Image: <mark class="inline-remove">Le c</mark>entre de contrôle sur l’iPhone 17 Pro.]</code></div>
+<div class="diff-line current added"><span class="line-number">121</span><code class="line-text">[Image: <mark class="inline-add">C</mark>entre de contrôle sur l’iPhone 17 Pro.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">131</span><code class="line-text">- Sur votre Apple Watch, appuyez sur le bouton latéral pour ouvrir le centre de contrôle, puis assurez-vous que le mode Avion est désactivé.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">123</span><code class="line-text">- Sur votre Apple Watch, appuyez sur le bouton latéral pour ouvrir le centre de contrôle, puis assurez-vous que le mode Avion est désactivé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">135</span><code class="line-text">Si votre Apple Watch ne parvient toujours pas à se connecter, [désactivez son jumelage avec l’iPhone](https://support.apple.com/fr-fr/108372) , puis [réactivez-le](https://support.apple.com/fr-fr/109015) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">127</span><code class="line-text">Si votre Apple Watch ne parvient toujours pas à se connecter, [désactivez son jumelage avec l’iPhone](https://support.apple.com/fr-fr/108372) , puis [réactivez-le](https://support.apple.com/fr-fr/109015) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">137</span><code class="line-text">### Vérifier le mode Ne pas déranger</code></div>
+<div class="diff-line current added"><span class="line-number">129</span><code class="line-text">### Vérifie<mark class="inline-add">z si vot</mark>r<mark class="inline-add">e montre est verrouillée ou si</mark> le mode Ne pas déranger<mark class="inline-add"> est activé</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">139</span><code class="line-text">Lorsque votre Apple Watch est verrouillée ou lorsque vous activez l’option Ne pas déranger, les notifications sont envoyées sur votre iPhone :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">131</span><code class="line-text">Lorsque votre Apple Watch est verrouillée ou lorsque vous activez l’option Ne pas déranger, les notifications sont envoyées sur votre iPhone :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">141</span><code class="line-text">- Lorsque votre Apple Watch est verrouillée, l’icône de <mark class="inline-remove">c</mark>a<mark class="inline-remove">d</mark>e<mark class="inline-remove">nas</mark> apparaît sur le cadran<mark class="inline-remove"> de la montre</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">133</span><code class="line-text">- Lorsque votre Apple Watch est verrouillée, l’icône de <mark class="inline-add">verrouill</mark>a<mark class="inline-add">g</mark>e apparaît sur le cadran.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">143</span><code class="line-text"><mark class="inline-remove">[Image:</mark> <mark class="inline-remove">A</mark>u<mark class="inline-remove">cun text</mark>e de re<mark class="inline-remove">mpl</mark>ace<mark class="inline-remove">m</mark>ent <mark class="inline-remove">p</mark>our l’i<mark class="inline-remove">m</mark>age<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">135</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">Lorsq</mark>ue <mark class="inline-add">le mo</mark>de <mark class="inline-add">Ne pas dé</mark>r<mark class="inline-add">ang</mark>e<mark class="inline-add">r est </mark>ac<mark class="inline-add">tivé, l’icôn</mark>e<mark class="inline-add"> N</mark>e<mark class="inline-add"> pas déra</mark>n<mark class="inline-add">ger apparaî</mark>t <mark class="inline-add">sur le cadran. P</mark>our <mark class="inline-add">désactiver cette fonctionnalité, balayez le cadran vers le haut, puis touchez </mark>l’i<mark class="inline-add">cône Ne p</mark>a<mark class="inline-add">s déran</mark>ge<mark class="inline-add">r .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">145</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Lorsque la fonctionnalité Ne pas d</mark>ér<mark class="inline-remove">ang</mark>e<mark class="inline-remove">r est activée, l’icône Ne pas déranger apparaît</mark> s<mark class="inline-remove">u</mark>r<mark class="inline-remove"> l</mark>e<mark class="inline-remove"> cadran de la</mark> montre<mark class="inline-remove">. Pour désactiver cette fonctionnalité,</mark> e<mark class="inline-remove">ff</mark>e<mark class="inline-remove">ctuez u</mark>n <mark class="inline-remove">balayage vers le haut sur le cadran </mark>de <mark class="inline-remove">la m</mark>on<mark class="inline-remove">tr</mark>e<mark class="inline-remove">,</mark> <mark class="inline-remove">puis touchez l</mark>’<mark class="inline-remove">icô</mark>ne<mark class="inline-remove"> N</mark>e<mark class="inline-remove"> pas déranger .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">137</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">V</mark>ér<mark class="inline-add">ifi</mark>e<mark class="inline-add">z</mark> s<mark class="inline-add">i vot</mark>re montre e<mark class="inline-add">st </mark>en <mark class="inline-add">mo</mark>de <mark class="inline-add">Éc</mark>on<mark class="inline-add">omi</mark>e <mark class="inline-add">d</mark>’<mark class="inline-add">é</mark>ne<mark class="inline-add">rgi</mark>e</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">147</span><code class="line-text"><mark class="inline-remove">###</mark> <mark class="inline-remove">V</mark>érifier <mark class="inline-remove">s</mark>i<mark class="inline-remove"> vous u</mark>t<mark class="inline-remove">ilisez une app tierce</mark></code></div>
+<div class="diff-line current added"><span class="line-number">139</span><code class="line-text"><mark class="inline-add">Lorsque</mark> <mark class="inline-add">votre Apple Watch est en [mode Économie d’</mark>é<mark class="inline-add">ne</mark>r<mark class="inline-add">gie](https://support.apple.com/fr-fr/108320) , les not</mark>ifi<mark class="inline-add">cations peuvent se comport</mark>er <mark class="inline-add">d</mark>i<mark class="inline-add">fféremmen</mark>t<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">141</span><code class="line-text">- L’écran Toujours activé est désactivé, vous risquez donc de ne pas voir de notification si votre poignet n’est pas levé.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">143</span><code class="line-text">- Les appels téléphoniques entrants et les notifications sont désactivés si votre iPhone ne se trouve pas à proximité. Les appels téléphoniques manqués et les notifications sont récupérés une fois par heure.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">145</span><code class="line-text">- Les notifications de fréquence cardiaque en cas d’arythmie, de fréquence cardiaque élevée et de fréquence cardiaque faible sont désactivées.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">147</span><code class="line-text">### Vérifiez si vous utilisez une app tierce</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">149</span><code class="line-text">Pour les apps tierces, les notifications sont envoyées uniquement si votre iPhone jumelé est également connecté à un réseau.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">149</span><code class="line-text">Pour les apps tierces, les notifications sont envoyées uniquement si votre iPhone jumelé est également connecté à un réseau.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
