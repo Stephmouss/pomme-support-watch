@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Si l’app Plans ne fonctionne pas sur votre appareil Apple - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Si l’app Plans ne fonctionne pas sur votre appareil Apple - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/108924">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+14 ajouts</span>
+      <span class="badge removed">−14 suppressions</span>
+      <span class="badge">5 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Si l’app Plans ne fonctionne pas sur votre appareil Apple</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Si l’app Plans ne fonctionne pas sur votre appareil Apple</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Vous ne parvenez pas à localiser votre position sur Plans ? Plans vous propose-t-il des résultats incorrects sur votre iPhone, iPad, <mark class="inline-remove">iPod touch </mark>ou Mac ? Découvrez la marche à suivre.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Vous ne parvenez pas à localiser votre position sur Plans ? Plans vous propose-t-il des résultats incorrects sur votre iPhone, iPad, ou Mac ? Découvrez la marche à suivre.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">Les fonctionnalités de Plans varient selon les pays et les régions géographiques. [Vérifiez si une fonctionnalité que vous souhaitez utiliser est disponible dans votre région](https://www.apple.com/fr/ios/feature-availability/#maps-standard)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">Les fonctionnalités de Plans varient selon les pays et les régions géographiques. [Vérifiez si une fonctionnalité que vous souhaitez utiliser est disponible dans votre région](https://www.apple.com/fr/ios/feature-availability/#maps-standard)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">## Si vous avez besoin de corriger des informations ou d’ajouter votre entreprise à Plans</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">## Si vous avez besoin de corriger des informations ou d’ajouter votre entreprise à Plans</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">Si vous êtes propriétaire d’une entreprise et que vous souhaitez ajouter cette dernière ou corriger les informations relatives à l’un de vos lieux s’affichant dans l’app Plans, [connectez-vous à Apple Business<mark class="inline-remove"> Connect</mark>](https://businessconnect.apple.com) . Avec Apple Business<mark class="inline-remove"> Connect</mark>, vous pouvez <mark class="inline-remove">charg</mark>er des photos haute résolution, présenter des articles ou des offres, et <mark class="inline-remove">p</mark>r<mark class="inline-remove">endre</mark> d’autres <mark class="inline-remove">mesure</mark>s pour mettre votre marque<mark class="inline-remove"> en avant</mark>. Les [informations professionnelles que vous mettez à jour dans Apple Business<mark class="inline-remove"> Connect</mark>](https://support.apple.com/guide/apple-business-connect/edit-or-remove-a-location-abcb7fc491ec/web) apparaissent à plusieurs endroits, notamment Plans, Siri, Safari, Calendrier, etc.</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">Si vous êtes propriétaire d’une entreprise et que vous souhaitez ajouter cette dernière ou corriger les informations relatives à l’un de vos lieux s’affichant dans l’app Plans, [connectez-vous à Apple Business](https://businessconnect.apple.com) . Avec Apple Business, vous pouvez <mark class="inline-add">envoy</mark>er des photos haute résolution, présenter des articles ou des offres, et <mark class="inline-add">effectue</mark>r d’autres <mark class="inline-add">action</mark>s pour mettre <mark class="inline-add">en valeur </mark>votre marque. Les [informations professionnelles que vous mettez à jour dans Apple Business](https://support.apple.com/guide/apple-business-connect/edit-or-remove-a-location-abcb7fc491ec/web) apparaissent à plusieurs endroits, notamment Plans, Siri, Safari, Calendrier, etc.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">Pour corriger ou mettre à jour <mark class="inline-remove">d</mark>es informations <mark class="inline-remove">professionnelles, vous pouvez revendiquer votre entreprise, si elle apparaît déjà dans Plans </mark>:</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text"><mark class="inline-add">Si votre entreprise apparaît déjà dans </mark>P<mark class="inline-add">lans, vous pouvez la revendiquer p</mark>our corriger ou mettre à jour <mark class="inline-add">s</mark>es informations :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">- Dans Plans, recherchez une entreprise. Si nécessaire, touchez l’entreprise ou la localisation appropriée.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">- Dans Plans, recherchez une entreprise. Si nécessaire, touchez l’entreprise ou la localisation appropriée.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">- Faites défiler vers le bas et touchez Revendiquer ce lieu.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">- Faites défiler vers le bas et touchez Revendiquer ce lieu.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">- Suivez les instructions à l’écran pour vous connecter à Apple Business<mark class="inline-remove"> Connect</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- Suivez les instructions à l’écran pour vous connecter à Apple Business.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">## Si vous ne parvenez pas à <mark class="inline-remove">l</mark>o<mark class="inline-remove">calis</mark>er votre position actuelle sur votre iPhone<mark class="inline-remove">, iPad</mark> ou iP<mark class="inline-remove">o</mark>d<mark class="inline-remove"> touch</mark></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">## Si vous ne parvenez pas à <mark class="inline-add">tr</mark>o<mark class="inline-add">uv</mark>er votre position actuelle sur votre iPhone ou iP<mark class="inline-add">a</mark>d</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">- Activez les services de localisation et l’accès à la localisation pour Plans. Dans l’app Réglages, touchez Confidentialité et sécurité, puis touchez Service de localisation. Assurez-vous que le réglage Service de localisation est activé, et que Plans est défini sur À l’utilisation de l’app ou de ses widgets.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">- Activez les services de localisation et l’accès à la localisation pour Plans. Dans l’app Réglages, touchez Confidentialité et sécurité, puis touchez Service de localisation. Assurez-vous que le réglage Service de localisation est activé, et que Plans est défini sur À l’utilisation de l’app ou de ses widgets.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">- Activez les données cellulaires ou le Wi-Fi pour avoir une connexion active. Dans l’app Réglages, touchez Wi-Fi ou Cellulaire, puis sélectionnez un forfait réseau ou cellulaire.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">- Activez les données cellulaires ou le Wi-Fi pour avoir une connexion active. Dans l’app Réglages, touchez Wi-Fi ou Cellulaire, puis sélectionnez un forfait réseau ou cellulaire.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text"><mark class="inline-remove">L</mark>e ser<mark class="inline-remove">v</mark>ic<mark class="inline-remove">e</mark> de localisation <mark class="inline-remove">utili</mark>se <mark class="inline-remove">les bornes Wi-Fi communautaires, le Bluetooth, le GPS et les antennes re</mark>la<mark class="inline-remove">is pour détermin</mark>er vo<mark class="inline-remove">tre position. Si vou</mark>s n<mark class="inline-remove">e parvenez toujours pa</mark>s à l<mark class="inline-remove">o</mark>calis<mark class="inline-remove">er</mark> votre position actu<mark class="inline-remove">e</mark>l<mark class="inline-remove">le dan</mark>s<mark class="inline-remove"> Plans, [fermez l’app Plans](https://support.appl</mark>e.<mark class="inline-remove">com/109359) et rouvrez-la. Vous pouvez également essayer de [redémarrer votre iPhone](https://support.apple.com/118259) , [iPad](https://support.apple.com/101603) ou [iPod touch](https://support.apple.com/102137) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text"><mark class="inline-add">- Si votr</mark>e <mark class="inline-add">appareil e</mark>s<mark class="inline-add">t doté d’un module photo proéminent, la façon dont vous le tenez peut entraîn</mark>er<mark class="inline-add"> des </mark>i<mark class="inline-add">mpré</mark>c<mark class="inline-add">isions</mark> de localisation<mark class="inline-add">.</mark> <mark class="inline-add">E</mark>s<mark class="inline-add">sayez d</mark>e <mark class="inline-add">p</mark>la<mark class="inline-add">c</mark>er vos <mark class="inline-add">mai</mark>ns à l<mark class="inline-add">’é</mark>ca<mark class="inline-add">rt du modu</mark>l<mark class="inline-add">e photo et vér</mark>i<mark class="inline-add">fiez </mark>s<mark class="inline-add">i</mark> votre position <mark class="inline-add">s’</mark>actu<mark class="inline-add">a</mark>l<mark class="inline-add">i</mark>se.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text"><mark class="inline-remove">Appr</mark>e<mark class="inline-remove">nez-en</mark> <mark class="inline-remove">plus sur les [</mark>service<mark class="inline-remove">s</mark> de localisation sur votre iPhone<mark class="inline-remove">,</mark> iPad<mark class="inline-remove"> ou iPod touch</mark>](https://support.apple.com/10<mark class="inline-remove">25</mark>1<mark class="inline-remove">5</mark>)<mark class="inline-remove"> .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text"><mark class="inline-add">L</mark>e service de localisation <mark class="inline-add">utilise les bornes Wi-Fi communautaires, le Bluetooth, le GPS et les antennes relais pour déterminer votre position. Si vous ne parvenez toujours pas à trouver votre position actuelle dans Plans, [fermez l’app Plans](https://</mark>su<mark class="inline-add">pport.apple.com/fr-fr/109359) et rouvrez-la. Vous pouvez également essayer de [redémarre</mark>r votre iPhone<mark class="inline-add">](https://support.apple.com/fr-fr/118259)</mark> <mark class="inline-add">ou [</mark>iPad](https://support.apple.com/101<mark class="inline-add">603</mark>)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">En savoir plus sur le [service de localisation sur votre iPhone ou iPad](https://support.apple.com/fr-fr/102515)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">### Modifier ou compléter votre adresse de domicile dans Plans sur votre iPhone ou iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">### Modifier ou compléter votre adresse de domicile dans Plans sur votre iPhone ou iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">- Touchez OK.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">- Touchez OK.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">Sous iOS 18 et <mark class="inline-remove">versions </mark>ultérieur<mark class="inline-remove">es</mark>, vous pouvez [définir une adresse de domicile ou de travail dans Plans](https://support.apple.com/104976)<mark class="inline-remove"> ,</mark> différente de celle <mark class="inline-remove">de</mark> votre fiche de contact.</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">Sous iOS 18 et ultérieur, vous pouvez [définir une adresse de domicile ou de travail dans Plans](https://support.apple.com/<mark class="inline-add">fr-fr/</mark>104976) différente de celle <mark class="inline-add">figurant sur</mark> votre fiche de contact.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">## Si vous ne trouvez pas votre position actuelle sur votre Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">## Si vous ne trouvez pas votre position actuelle sur votre Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">- Dans le menu <mark class="inline-remove">Pomm</mark>e , choisissez Réglages Système.</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">- Dans le menu <mark class="inline-add">Appl</mark>e , choisissez Réglages Système.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">- Cliquez sur Confidentialité et sécurité à gauche, puis sur cliquez sur Service de localisation à droite.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">- Cliquez sur Confidentialité et sécurité à gauche, puis sur cliquez sur Service de localisation à droite.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 27 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">- Touchez le bouton d’aperçu.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">- Touchez le bouton d’aperçu.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">## Signaler un problème ou ajouter un lieu manquant dans Plans sur votre iPhone<mark class="inline-remove">, iPad</mark> ou iP<mark class="inline-remove">o</mark>d<mark class="inline-remove"> touch</mark></code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">## Signaler un problème ou ajouter un lieu manquant dans Plans sur votre iPhone ou iP<mark class="inline-add">a</mark>d</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">- Dans l’app Plans, faites défiler l’écran vers le bas.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">- Dans l’app Plans, faites défiler l’écran vers le bas.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 35 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">121</span><code class="line-text">## Autres problèmes que vous pourriez rencontrer lorsque vous utilisez Plans</code></div>
+<div class="diff-line current unchanged"><span class="line-number">123</span><code class="line-text">## Autres problèmes que vous pourriez rencontrer lorsque vous utilisez Plans</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">123</span><code class="line-text">[Si <mark class="inline-remove">Plan</mark>s <mark class="inline-remove">c</mark>o<mark class="inline-remove">nt</mark>in<mark class="inline-remove">ue</mark> d’a<mark class="inline-remove">ff</mark>ic<mark class="inline-remove">he</mark>r<mark class="inline-remove"> un</mark> l<mark class="inline-remove">ieu </mark>que vous <mark class="inline-remove">n</mark>e<mark class="inline-remove"> reconnai</mark>ssez <mark class="inline-remove">p</mark>as](https://support.apple.com/101<mark class="inline-remove">818</mark>)</code></div>
+<div class="diff-line current added"><span class="line-number">125</span><code class="line-text">[Si <mark class="inline-add">vou</mark>s <mark class="inline-add">avez bes</mark>oin d’ai<mark class="inline-add">de ave</mark>c<mark class="inline-add"> Ca</mark>r<mark class="inline-add">Play</mark> l<mark class="inline-add">ors</mark>que vous ess<mark class="inline-add">ay</mark>ez <mark class="inline-add">d’utiliser Pl</mark>a<mark class="inline-add">n</mark>s<mark class="inline-add"> dans votre véhicule</mark>](https://support.apple.com/<mark class="inline-add">fr-fr/</mark>10<mark class="inline-add">5</mark>1<mark class="inline-add">09</mark>)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">125</span><code class="line-text">[Si vous avez <mark class="inline-remove">besoin d’aide ave</mark>c<mark class="inline-remove"> C</mark>ar<mark class="inline-remove">Play lorsque vous essayez d’utiliser Plan</mark>s dans votre<mark class="inline-remove"> véhicule</mark>](https://support.apple.com/105<mark class="inline-remove">1</mark>0<mark class="inline-remove">9</mark>)</code></div>
+<div class="diff-line current added"><span class="line-number">127</span><code class="line-text">[Si<mark class="inline-add"> vous ne trouvez pas des plans hors ligne que</mark> vous avez <mark class="inline-add">télé</mark>c<mark class="inline-add">h</mark>ar<mark class="inline-add">gé</mark>s dans <mark class="inline-add">iOS 17 ou </mark>v<mark class="inline-add">ersi</mark>o<mark class="inline-add">ns ul</mark>t<mark class="inline-add">érieu</mark>re<mark class="inline-add">s</mark>](https://support.apple.com/<mark class="inline-add">fr-fr/</mark>1050<mark class="inline-add">84</mark>)</code></div>
+<div class="diff-line previous removed"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">127</span><code class="line-text">[Si vous ne trouvez pas des plans hors ligne que vous avez téléchargés dans iOS 17 ou versions ultérieures](https://support.apple.com/105084)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">129</span><code class="line-text">Les informations se rapportant à des produits non fabriqués par Apple, ou à des sites web indépendants qui ne sont ni contrôlés ni testés par Apple, sont fournies uniquement à titre indicatif et ne sont ni recommandées ni approuvées par Apple. Apple ne saurait être tenu responsable de problèmes liés à l’utilisation de tels sites ou produits tiers, ou à leurs performances. Apple ne garantit en aucune façon la fiabilité d’un site web tiers ni l’exactitude des informations que ce dernier propose. Pour en savoir plus, [contactez le fournisseur](https://support.apple.com/103190) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">129</span><code class="line-text">Les informations se rapportant à des produits non fabriqués par Apple, ou à des sites web indépendants qui ne sont ni contrôlés ni testés par Apple, sont fournies uniquement à titre indicatif et ne sont ni recommandées ni approuvées par Apple. Apple ne saurait être tenu responsable de problèmes liés à l’utilisation de tels sites ou produits tiers, ou à leurs performances. Apple ne garantit en aucune façon la fiabilité d’un site web tiers ni l’exactitude des informations que ce dernier propose. Pour en savoir plus, [contactez le fournisseur](https://support.apple.com/103190) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
