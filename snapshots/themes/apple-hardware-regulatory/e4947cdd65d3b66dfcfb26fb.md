@@ -5,7 +5,7 @@ Category: Australian cyber security
 ```json
 {
   "archived": false,
-  "categoryName": "TV & Home",
+  "categoryName": "Home",
   "deviceId": "631a093b70023c117017b54f",
   "deviceWorkflowMessage": "",
   "fileId": "australianCyberSecurity/Apple TV 4K (2nd Gen)- A2169-Y2021_V1.pdf",
@@ -18,7 +18,7 @@ Category: Australian cyber security
   "originalFileName": "Apple TV 4K (2nd Gen)- A2169-Y2021.pdf",
   "productCategory": {
     "id": "6398c145948c6c4924ab69a8",
-    "name": "TV & Home"
+    "name": "Home"
   },
   "productName": "Apple TV 4K (2nd gen)",
   "subCategory": "Apple TV",

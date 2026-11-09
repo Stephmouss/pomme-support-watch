@@ -5,7 +5,7 @@ Category: Australian cyber security
 ```json
 {
   "archived": false,
-  "categoryName": "TV & Home",
+  "categoryName": "Home",
   "deviceId": "6ace35671d4c362c3df1fc7a",
   "deviceWorkflowMessage": "",
   "fileId": "australianCyberSecurity/HomeView_AUS Cyber_A3218_A3300_V1.pdf",
@@ -19,7 +19,7 @@ Category: Australian cyber security
   "originalFileName": "HomeView_AUS Cyber_A3218_A3300_V1.pdf",
   "productCategory": {
     "id": "6398c145948c6c4924ab69a8",
-    "name": "TV & Home"
+    "name": "Home"
   },
   "productName": "Apple HomeView",
   "subCategory": "HomeView",
