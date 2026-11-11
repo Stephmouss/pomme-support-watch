@@ -22,7 +22,7 @@ Category: Australian cyber security
     "name": "Home"
   },
   "productName": "Apple HomeView",
-  "subCategory": "HomeView",
+  "subCategory": "Apple HomeView",
   "transName": "Apple HomeView",
   "version": 1,
   "yearOfRelease": "2026"
