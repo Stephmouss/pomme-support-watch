@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>If Maps isn&#x27;t working on your Apple device — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>If Maps isn&#x27;t working on your Apple device</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/108924">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+13 ajouts</span>
+      <span class="badge removed">−13 suppressions</span>
+      <span class="badge">5 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># If Maps isn&#x27;t working on your Apple device</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># If Maps isn&#x27;t working on your Apple device</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Can’t find your location on Maps? Do you see the wrong results in Maps on your iPhone, iPad, <mark class="inline-remove">iPod touch, </mark>or Mac? Learn what to do.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Can’t find your location on Maps? Do you see the wrong results in Maps on your iPhone, iPad, or Mac? Learn what to do.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">Maps features vary by country and region. [Check whether a feature you want to use is available in your area](https://www.apple.com/ios/feature-availability/#maps-standard)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">Maps features vary by country and region. [Check whether a feature you want to use is available in your area](https://www.apple.com/ios/feature-availability/#maps-standard)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">## If you need to correct information or add your business to Maps</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">## If you need to correct information or add your business to Maps</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">If you&#x27;re a business owner and want to add your business or correct the information about one of your locations in Maps, [sign in to Apple Business<mark class="inline-remove"> Connect</mark>](https://businessconnect.apple.com/) . With Apple Business<mark class="inline-remove"> Connect</mark>, you can upload high<mark class="inline-remove"> </mark>resolution photos, showcase items or offers, and take other actions to elevate your brand. The [business details you update in Apple Business<mark class="inline-remove"> Connect</mark>](https://support.apple.com/guide/apple-business-connect/edit-or-remove-a-location-abcb7fc491ec/web) appear in several places, including Maps, Siri, Safari, Calendar, and more.</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">If you&#x27;re a business owner and want to add your business or correct the information about one of your locations in Maps, [sign in to Apple Business](https://businessconnect.apple.com/) . With Apple Business, you can upload high<mark class="inline-add">-</mark>resolution photos, showcase items or offers, and take other actions to elevate your brand. The [business details you update in Apple Business](https://support.apple.com/guide/apple-business-connect/edit-or-remove-a-location-abcb7fc491ec/web) appear in several places, including Maps, Siri, Safari, Calendar, and more.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text"><mark class="inline-remove">T</mark>o correct or update business information<mark class="inline-remove">, you can claim your business if it already appears in Maps</mark>:</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text"><mark class="inline-add">If your business already appears in Maps, you can claim it t</mark>o correct or update business information:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">- In Maps, search for a business. If needed, tap the correct business or location.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">- In Maps, search for a business. If needed, tap the correct business or location.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">- Scroll down to the bottom and tap Claim This Place.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">- Scroll down to the bottom and tap Claim This Place.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">- Follow the on screen instructions to sign in to Apple Business<mark class="inline-remove"> Connect</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- Follow the on screen instructions to sign in to Apple Business.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">## If you can&#x27;t find your current location on your iPhone<mark class="inline-remove">, iPad,</mark> or iP<mark class="inline-remove">o</mark>d<mark class="inline-remove"> touch</mark></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">## If you can&#x27;t find your current location on your iPhone or iP<mark class="inline-add">a</mark>d</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">- Turn on Location Services and Location Access for Maps. In the Settings app, tap Privacy &amp; Security, then tap Location Services. Make sure Location Services is on, and Maps is set to While Using the App or Widgets.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">- Turn on Location Services and Location Access for Maps. In the Settings app, tap Privacy &amp; Security, then tap Location Services. Make sure Location Services is on, and Maps is set to While Using the App or Widgets.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">- Turn on cellular data or Wi-Fi so that you have an active connection. In the Settings app, tap Wi-Fi or Cellular, then select a network or cellular plan.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">- Turn on cellular data or Wi-Fi so that you have an active connection. In the Settings app, tap Wi-Fi or Cellular, then select a network or cellular plan.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text"><mark class="inline-remove">L</mark>ocation <mark class="inline-remove">Se</mark>r<mark class="inline-remove">v</mark>i<mark class="inline-remove">c</mark>es <mark class="inline-remove">u</mark>s<mark class="inline-remove">es</mark> <mark class="inline-remove">GPS, Bluetooth, crowd-s</mark>our<mark class="inline-remove">ced Wi-Fi</mark> hot<mark class="inline-remove">s</mark>p<mark class="inline-remove">ots,</mark> and <mark class="inline-remove">c</mark>e<mark class="inline-remove">llular</mark> <mark class="inline-remove">towers to determ</mark>i<mark class="inline-remove">ne</mark> your location<mark class="inline-remove">.</mark> <mark class="inline-remove">If yo</mark>u<mark class="inline-remove"> still can&#x27;t fin</mark>d<mark class="inline-remove"> your current loc</mark>at<mark class="inline-remove">ion in Maps, [close the Maps app](https://support.apple.com/109359) and reopen it. You can also try to [r</mark>es<mark class="inline-remove">tart your iPhone](https://support</mark>.<mark class="inline-remove">apple.com/118259) , [iPad](https://support.apple.com/101603) , or [iPod touch](https://support.apple.com/102137) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text"><mark class="inline-add">- If your device has a camera bump, the way you hold it may cause l</mark>ocation <mark class="inline-add">inaccu</mark>r<mark class="inline-add">ac</mark>ies<mark class="inline-add">.</mark> <mark class="inline-add">Try repo</mark>s<mark class="inline-add">itioning</mark> <mark class="inline-add">y</mark>our h<mark class="inline-add">and(s) away fr</mark>o<mark class="inline-add">m </mark>t<mark class="inline-add">he camera bum</mark>p and <mark class="inline-add">s</mark>e<mark class="inline-add">e</mark> i<mark class="inline-add">f</mark> your location u<mark class="inline-add">p</mark>dates.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text"><mark class="inline-remove">Learn more about [</mark>Location Services on your iPhone<mark class="inline-remove">,</mark> iPad<mark class="inline-remove">, or iPod touch</mark>](https://support.apple.com/10<mark class="inline-remove">25</mark>1<mark class="inline-remove">5</mark>)<mark class="inline-remove"> .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">Location Services <mark class="inline-add">uses GPS, Bluetooth, crowd-sourced Wi-Fi hotspots, and cellular towers to determine your locati</mark>on<mark class="inline-add">. If you still can&#x27;t find your current location in Maps, [close the Maps app](https://support.apple.com/en-us/109359) and reopen it. You can also try to [restart</mark> your iPhone<mark class="inline-add">](https://support.apple.com/en-us/118259)</mark> <mark class="inline-add">or [</mark>iPad](https://support.apple.com/101<mark class="inline-add">603</mark>)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">Learn more about [Location Services on your iPhone or iPad](https://support.apple.com/en-us/102515)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">### Edit or refine your home address in Maps on your iPhone or iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">### Edit or refine your home address in Maps on your iPhone or iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">- Tap Done.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">- Tap Done.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">In iOS 18 and later, you can [set a home or work address in Maps](https://support.apple.com/104976) that<mark class="inline-remove"> i</mark>s different from the home or work address on your Contact Card.</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">In iOS 18 and later, you can [set a home or work address in Maps](https://support.apple.com/<mark class="inline-add">en-us/</mark>104976) that<mark class="inline-add">&#x27;</mark>s different from the home or work address on your Contact Card.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">## If you can&#x27;t find your current location on your Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">## If you can&#x27;t find your current location on your Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 31 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">- Tap the overview button.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">- Tap the overview button.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">## Report an issue or add a missing place in Maps on your iPhone<mark class="inline-remove">, iPad,</mark> or iP<mark class="inline-remove">o</mark>d<mark class="inline-remove"> touch</mark></code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">## Report an issue or add a missing place in Maps on your iPhone or iP<mark class="inline-add">a</mark>d</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">- In the Maps app, scroll down to the bottom of the screen.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">- In the Maps app, scroll down to the bottom of the screen.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 35 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">121</span><code class="line-text">## Other problems you might encounter when you use Maps</code></div>
+<div class="diff-line current unchanged"><span class="line-number">123</span><code class="line-text">## Other problems you might encounter when you use Maps</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">123</span><code class="line-text">[If Maps <mark class="inline-remove">con</mark>t<mark class="inline-remove">inues to s</mark>h<mark class="inline-remove">ow</mark> you <mark class="inline-remove">a p</mark>l<mark class="inline-remove">ace you don&#x27;t recogniz</mark>e](https://support.apple.com/101<mark class="inline-remove">818</mark>)</code></div>
+<div class="diff-line current added"><span class="line-number">125</span><code class="line-text">[If<mark class="inline-add"> you have trouble with CarPlay when you try to use</mark> Maps <mark class="inline-add">wi</mark>th you<mark class="inline-add">r</mark> <mark class="inline-add">vehic</mark>le](https://support.apple.com/<mark class="inline-add">en-us/</mark>10<mark class="inline-add">5</mark>1<mark class="inline-add">09</mark>)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">125</span><code class="line-text">[If you <mark class="inline-remove">h</mark>a<mark class="inline-remove">v</mark>e <mark class="inline-remove">trouble with C</mark>a<mark class="inline-remove">rPlay when</mark> you <mark class="inline-remove">try</mark> <mark class="inline-remove">t</mark>o<mark class="inline-remove"> use Maps with you</mark>r <mark class="inline-remove">v</mark>e<mark class="inline-remove">hicle</mark>](https://support.apple.com/105<mark class="inline-remove">1</mark>0<mark class="inline-remove">9</mark>)</code></div>
+<div class="diff-line current added"><span class="line-number">127</span><code class="line-text">[If you <mark class="inline-add">c</mark>a<mark class="inline-add">n&#x27;t find offlin</mark>e <mark class="inline-add">m</mark>a<mark class="inline-add">ps</mark> you <mark class="inline-add">downloaded</mark> <mark class="inline-add">in iOS 17 </mark>or <mark class="inline-add">lat</mark>e<mark class="inline-add">r</mark>](https://support.apple.com/<mark class="inline-add">en-us/</mark>1050<mark class="inline-add">84</mark>)</code></div>
+<div class="diff-line previous removed"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">127</span><code class="line-text">[If you can&#x27;t find offline maps you downloaded in iOS 17 or later](https://support.apple.com/105084)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">129</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">129</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
