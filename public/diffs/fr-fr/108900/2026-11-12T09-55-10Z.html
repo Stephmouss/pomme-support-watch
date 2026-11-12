@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Relancer ou restaurer le programme interne d’un Mac - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Relancer ou restaurer le programme interne d’un Mac - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/108900">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+26 ajouts</span>
+      <span class="badge removed">−22 suppressions</span>
+      <span class="badge">11 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 17 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">- Démarrage sur un [point d’exclamation dans un cercle](https://support.apple.com/fr-fr/102164)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">- Démarrage sur un [point d’exclamation dans un cercle](https://support.apple.com/fr-fr/102164)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">- Mise en route, mais démarrage sur un écran vide (sans que d’autres [solutions](https://support.apple.com/fr-fr/102575)</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">- Mise en route, mais démarrage sur un écran vide (sans que d’autres [solutions<mark class="inline-add"> ne résolvent ce problème)</mark>](https://support.apple.com/fr-fr/102575)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">- Affichage du [voyant d’état](https://support.apple.com/fr-fr/102768) du mode de récupération du programme interne</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">- Affichage du [voyant d’état](https://support.apple.com/fr-fr/102768) du mode de récupération du programme interne</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- Problème d’installation de macOS (sans que d’autres [solutions](https://support.apple.com/fr-fr/102531)</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- Problème d’installation de macOS (sans que d’autres [solutions<mark class="inline-add"> ne résolvent ce problème)</mark>](https://support.apple.com/fr-fr/102531)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">## Éléments requis pour relancer ou restaurer un Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">## Éléments requis pour relancer ou restaurer un Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">- Le Mac concerné, à savoir [le Mac avec puce Apple](https://support.apple.com/fr-fr/116943) ou [le Mac doté de la puce Apple T2 Security](https://support.apple.com/fr-fr/103265) que vous relancez ou restaurez. Les autres modèles de Mac ne sont pas concernés.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">- Le Mac concerné, à savoir [le Mac avec puce Apple](https://support.apple.com/fr-fr/116943) ou [le Mac doté de la puce Apple T2 Security](https://support.apple.com/fr-fr/103265) que vous relancez ou restaurez. Les autres modèles de Mac ne sont pas concernés.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">- Un autre Mac de n’importe quel modèle exécutant macOS<mark class="inline-remove"> Sonoma</mark> 14 ou version ultérieure. Vous utiliserez ce Mac pour relancer ou restaurer le Mac concerné. <mark class="inline-remove">[</mark>Identi<mark class="inline-remove">fi</mark>e<mark class="inline-remove">z</mark> la <mark class="inline-remove">v</mark>ers<mark class="inline-remove">i</mark>o<mark class="inline-remove">n</mark> de m<mark class="inline-remove">acOS i</mark>n<mark class="inline-remove">s</mark>t<mark class="inline-remove">allée</mark> su<mark class="inline-remove">r vot</mark>re<mark class="inline-remove"> Mac](https://support</mark>.<mark class="inline-remove">apple.com/fr-fr/109033) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- Un autre Mac de n’importe quel modèle exécutant <mark class="inline-add">[</mark>macOS 14 ou version ultérieure<mark class="inline-add">](https://support.apple.com/fr-fr/109033) </mark>. Vous utiliserez ce Mac<mark class="inline-add"> hôte</mark> pour relancer ou restaurer le Mac concerné. I<mark class="inline-add">l </mark>d<mark class="inline-add">evrait être connecté à Internet* et disposer de suffisamment d’espace de stockage disponible pour télécharger et extraire </mark>enti<mark class="inline-add">èr</mark>e<mark class="inline-add">ment</mark> l<mark class="inline-add">es données nécess</mark>a<mark class="inline-add">ires</mark> <mark class="inline-add">pour le relanc</mark>er<mark class="inline-add"> ou le re</mark>s<mark class="inline-add">taurer : 60 G</mark>o de<mark class="inline-add">vraient</mark> <mark class="inline-add">a</mark>m<mark class="inline-add">pleme</mark>nt su<mark class="inline-add">ffi</mark>re.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">- Un câble USB-C vers USB-C prenant en charge le transfert de données et la charge, tel que le câble de charge USB-C Apple inclus avec certains produits Apple. Il fonctionne avec les [ports du Mac](https://support.apple.com/fr-fr/109523) prenant en charge le connecteur USB-C. N’utilisez pas de câble Thunderbolt 3 .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">- Un câble USB-C vers USB-C prenant en charge le transfert de données et la charge, tel que le câble de charge USB-C Apple inclus avec certains produits Apple. Il fonctionne avec les [ports du Mac](https://support.apple.com/fr-fr/109523) prenant en charge le connecteur USB-C. N’utilisez pas de câble Thunderbolt 3 .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">Vous utiliserez le câble USB-C pour connecter les deux ordinateurs Mac, puis vous entrerez en mode DFU (mise à jour du programme interne de l’appareil) sur le Mac concerné.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">Vous utiliserez le câble USB-C pour connecter les deux ordinateurs Mac, puis vous entrerez en mode DFU (mise à jour du programme interne de l’appareil) sur le Mac concerné.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">- Assurez-vous que les deux ordinateurs Mac sont branchés <mark class="inline-remove">à</mark> une source d’alimentation.</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- Assurez-vous que les deux ordinateurs Mac sont branchés <mark class="inline-add">sur</mark> une source d’alimentation.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">- Sur l’ordinateur portable Mac concerné :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">- Sur l’ordinateur portable Mac concerné :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">- Branchez le câble USB-C sur le port DFU. [Découvrez comment identifier le port DFU](https://support.apple.com/fr-fr/120694)<mark class="inline-remove"> .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- Branchez le câble USB-C sur le port DFU. [Découvrez comment identifier le port DFU<mark class="inline-add">.</mark>](https://support.apple.com/fr-fr/120694)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">- Assurez-vous qu’aucun câble n’est branché sur un autre port USB, sauf pour connecter votre Mac à l’alimentation si nécessaire. Si votre Mac est doté d’un port MagSafe, utilisez ce port pour l’alimentation plutôt qu’un port USB.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">- Assurez-vous qu’aucun câble n’est branché sur un autre port USB, sauf pour connecter votre Mac à l’alimentation si nécessaire. Si votre Mac est doté d’un port MagSafe, utilisez ce port pour l’alimentation plutôt qu’un port USB.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">- Sur l<mark class="inline-remove">’autr</mark>e Mac :</code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">- Sur le Mac <mark class="inline-add">hôte </mark>:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">- Branchez l’autre extrémité du câble USB-C sur n’importe quel port USB-C.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">- Branchez l’autre extrémité du câble USB-C sur n’importe quel port USB-C.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">- Assurez-vous que ce Mac est allumé et connecté à Internet.<mark class="inline-remove">*</mark></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">- Assurez-vous que ce Mac est allumé et connecté à Internet<mark class="inline-add">*</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">- Sur l’ordinateur portable Mac concerné, entrez en mode DFU :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">- Sur l’ordinateur portable Mac concerné, entrez en mode DFU :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">- Appuyez<mark class="inline-remove"> de manière prolongée</mark> sur le bouton d’alimentation (Touch ID) pendant 10 secondes, jusqu’à l’arrêt complet du Mac. Si, au contraire, le Mac s’allume, répétez cette étape.</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">- Appuyez sur le bouton d’alimentation (Touch ID) pendant 10 secondes, jusqu’à l’arrêt complet du Mac. Si, au contraire, le Mac s’allume, répétez cette étape.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Appuyez sur le bouton d’alimentation, puis relâchez-le. Ensuite, appuyez simultanément et de manière prolongée sur les quatre touches suivantes du clavier intégré :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">- Appuyez sur le bouton d’alimentation, puis relâchez-le. Ensuite, appuyez simultanément et de manière prolongée sur les quatre touches suivantes du clavier intégré :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">- Maintenez les quatre touches enfoncées pendant environ 10 secondes, puis relâchez-les toutes à l’exception du bouton d’alimentation.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">- Maintenez les quatre touches enfoncées pendant environ 10 secondes, puis relâchez-les toutes à l’exception du bouton d’alimentation.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">- Maintenez le bouton d’alimentation enfoncé 10 secondes supplémentaires, jusqu’à ce que l<mark class="inline-remove">’autr</mark>e Mac affiche une [fenêtre DFU dans le Finder](https://support.apple.com/fr-fr/108900#reviveorrestore) . S’il affiche d’abord une alerte vous demandant votre autorisation pour la connexion de l’accessoire, relâchez le bouton d’alimentation et cliquez sur Autoriser.</code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">- Maintenez le bouton d’alimentation enfoncé 10 secondes supplémentaires, jusqu’à ce que le Mac<mark class="inline-add"> hôte</mark> affiche une [fenêtre DFU dans le Finder](https://support.apple.com/fr-fr/108900#reviveorrestore) . S’il affiche d’abord une alerte vous demandant votre autorisation pour la connexion de l’accessoire, relâchez le bouton d’alimentation et cliquez sur Autoriser.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text">- Sur un ordinateur portable Mac avec puce T2 <mark class="inline-remove">: m</mark>a<mark class="inline-remove">inten</mark>ez les quatre touch<mark class="inline-remove">es enfoncé</mark>es pendant environ trois secondes, jusqu’à ce que l<mark class="inline-remove">’autr</mark>e Mac affiche une [fenêtre DFU dans le Finder](https://support.apple.com/fr-fr/108900#reviveorrestore) . S’il affiche d’abord une alerte vous demandant votre autorisation pour la connexion de l’accessoire, relâchez toutes les touches et cliquez sur Autoriser.</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">- Sur un ordinateur portable Mac avec puce T2<mark class="inline-add">,</mark> a<mark class="inline-add">ppuy</mark>ez<mark class="inline-add"> sur</mark> les quatre touches pendant environ trois secondes, jusqu’à ce que le Mac<mark class="inline-add"> hôte</mark> affiche une [fenêtre DFU dans le Finder](https://support.apple.com/fr-fr/108900#reviveorrestore) . S’il affiche d’abord une alerte vous demandant votre autorisation pour la connexion de l’accessoire, relâchez toutes les touches et cliquez sur Autoriser.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">81</span><code class="line-text">- Le Mac concerné se trouve désormais en mode DFU et devrait afficher un écran vide. Suivez les [étapes pour procéder à la relance ou à la restauration de votre Mac](https://support.apple.com/fr-fr/108900#reviveorrestore) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">- Le Mac concerné se trouve désormais en mode DFU et devrait afficher un écran vide. Suivez les [étapes pour procéder à la relance ou à la restauration de votre Mac](https://support.apple.com/fr-fr/108900#reviveorrestore) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">87</span><code class="line-text">- Sur le Mac concerné :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">- Sur le Mac concerné :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text">- Branchez le câble USB-C sur le port DFU. [Découvrez comment identifier le port DFU](https://support.apple.com/fr-fr/120694)<mark class="inline-remove"> .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">- Branchez le câble USB-C sur le port DFU. [Découvrez comment identifier le port DFU<mark class="inline-add">.</mark>](https://support.apple.com/fr-fr/120694)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">- Assurez-vous qu’aucun câble n’est branché sur un autre port USB.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">91</span><code class="line-text">- Assurez-vous qu’aucun câble n’est branché sur un autre port USB.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">- Sur l<mark class="inline-remove">’autr</mark>e Mac :</code></div>
+<div class="diff-line current added"><span class="line-number">93</span><code class="line-text">- Sur le Mac <mark class="inline-add">hôte </mark>:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">95</span><code class="line-text">- Branchez l’autre extrémité du câble USB-C sur n’importe quel port USB-C.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">- Branchez l’autre extrémité du câble USB-C sur n’importe quel port USB-C.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">97</span><code class="line-text">- Assurez-vous que ce Mac est allumé et qu’il est connecté à l’alimentation et à Internet.<mark class="inline-remove">*</mark></code></div>
+<div class="diff-line current added"><span class="line-number">97</span><code class="line-text">- Assurez-vous que ce Mac est allumé et qu’il est connecté à l’alimentation et à Internet<mark class="inline-add">*</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">99</span><code class="line-text">- Sur le Mac concerné, entrez en mode DFU :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">99</span><code class="line-text">- Sur le Mac concerné, entrez en mode DFU :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">103</span><code class="line-text">- Appuyez sur le bouton d’alimentation et maintenez-le enfoncé.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">103</span><code class="line-text">- Appuyez sur le bouton d’alimentation et maintenez-le enfoncé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">105</span><code class="line-text">- Maintenez le bouton d’alimentation enfoncé pendant que vous branchez le Mac sur l’alimentation, et maintenez-le ainsi pendant 10 secondes jusqu’à ce que l<mark class="inline-remove">’autr</mark>e Mac affiche une [fenêtre DFU dans le Finder](https://support.apple.com/fr-fr/108900#reviveorrestore) . S’il affiche d’abord une alerte vous demandant votre autorisation pour la connexion de l’accessoire, relâchez le bouton d’alimentation et cliquez sur Autoriser.</code></div>
+<div class="diff-line current added"><span class="line-number">105</span><code class="line-text">- Maintenez le bouton d’alimentation enfoncé pendant que vous branchez le Mac sur l’alimentation, et maintenez-le ainsi pendant 10 secondes jusqu’à ce que le Mac<mark class="inline-add"> hôte</mark> affiche une [fenêtre DFU dans le Finder](https://support.apple.com/fr-fr/108900#reviveorrestore) . S’il affiche d’abord une alerte vous demandant votre autorisation pour la connexion de l’accessoire, relâchez le bouton d’alimentation et cliquez sur Autoriser.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">107</span><code class="line-text">- Le Mac concerné se trouve désormais en mode DFU et devrait afficher un écran vide. Suivez les instructions permettant de le relancer ou de le restaurer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">107</span><code class="line-text">- Le Mac concerné se trouve désormais en mode DFU et devrait afficher un écran vide. Suivez les instructions permettant de le relancer ou de le restaurer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">109</span><code class="line-text">## Comment relancer ou restaurer un Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">109</span><code class="line-text">## Comment relancer ou restaurer un Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">111</span><code class="line-text">Une fois vos ordinateurs préparés pour la relance <mark class="inline-remove">et</mark> la restauration, le Finder sur l<mark class="inline-remove">’autr</mark>e Mac devrait afficher une fenêtre DFU. La fenêtre DFU comporte l’option « Mac » sélectionnée dans la barre latérale et « Mode DFU du Mac » à droite. [Vous ne voyez pas la fenêtre DFU ?](https://support.apple.com/fr-fr/108900#help)</code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text">Une fois vos ordinateurs préparés pour la relance <mark class="inline-add">ou</mark> la restauration, le Finder sur le Mac<mark class="inline-add"> hôte</mark> devrait afficher une fenêtre DFU. La fenêtre DFU comporte l’option « Mac » sélectionnée dans la barre latérale et « Mode DFU du Mac » à droite. [Vous ne voyez pas la fenêtre DFU ?](https://support.apple.com/fr-fr/108900#help)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">113</span><code class="line-text">[Image: Fenêtre du Finder affichant « Mac » sélectionné dans la barre latérale.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">113</span><code class="line-text">[Image: Fenêtre du Finder affichant « Mac » sélectionné dans la barre latérale.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">121</span><code class="line-text">- Si ce Mac est doté d’une version de macOS antérieure à celle du Mac en cours de relance, il se peut qu’un message vous invite à mettre à jour le logiciel de ce Mac avant de pouvoir continuer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">121</span><code class="line-text">- Si ce Mac est doté d’une version de macOS antérieure à celle du Mac en cours de relance, il se peut qu’un message vous invite à mettre à jour le logiciel de ce Mac avant de pouvoir continuer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">123</span><code class="line-text">- La barre de progression qui apparaît dans la fenêtre indique que la relance est en cours. <mark class="inline-remove">U</mark>ne <mark class="inline-remove">fo</mark>i<mark class="inline-remove">s</mark> la relance terminée<mark class="inline-remove">, le Mac concerné redémarre automatiquement</mark>.<mark class="inline-remove"> S’il s’éteint, appuyez sur le bouton d’alimentation pour l’allumer.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">123</span><code class="line-text">- La barre de progression qui apparaît dans la fenêtre indique que la relance est en cours. <mark class="inline-add">Veillez à ce que ce Mac </mark>ne <mark class="inline-add">se mette pas en ve</mark>i<mark class="inline-add">lle tant que</mark> la relance <mark class="inline-add">n’est pas </mark>terminée.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">125</span><code class="line-text">- Une fois la relance terminée, le Mac concerné redémarre automatiquement. S’il s’éteint, appuyez sur le bouton d’alimentation pour l’allumer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">125</span><code class="line-text">- Le cas échéant, sélectionnez le volume à récupérer (par exemple, Macintosh HD), puis cliquez sur Suivant.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">127</span><code class="line-text">- Le cas échéant, sélectionnez le volume à récupérer (par exemple, Macintosh HD), puis cliquez sur Suivant.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">127</span><code class="line-text">- Si un message vous y invite, sélectionnez un utilisateur<mark class="inline-remove"> ou une utilisatrice</mark> dont vous connaissez le mot de passe, puis saisissez le mot de passe de connexion de cette personne. Cliquez sur Suivant, puis sur Redémarrer.</code></div>
+<div class="diff-line current added"><span class="line-number">129</span><code class="line-text">- Si un message vous y invite, sélectionnez un utilisateur dont vous connaissez le mot de passe, puis saisissez le mot de passe de connexion de cette personne. Cliquez sur Suivant, puis sur Redémarrer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">129</span><code class="line-text">- Si vous relancez un Mac avec puce Apple, celui-ci peut [charger les options de démarrage](https://support.apple.com/fr-fr/102342) , qui affiche votre disque de démarrage (par exemple, Macintosh HD) et l’icône Options sous forme d’engrenage. Sélectionnez votre disque de démarrage, puis cliquez sur le bouton Continuer qui apparaît en dessous.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">131</span><code class="line-text">- Si vous relancez un Mac avec puce Apple, celui-ci peut [charger les options de démarrage](https://support.apple.com/fr-fr/102342) , qui affiche votre disque de démarrage (par exemple, Macintosh HD) et l’icône Options sous forme d’engrenage. Sélectionnez votre disque de démarrage, puis cliquez sur le bouton Continuer qui apparaît en dessous.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">139</span><code class="line-text">- Si ce Mac est doté d’une version de macOS antérieure à celle du Mac en cours de restauration, il se peut qu’un message vous invite à mettre à jour le logiciel de ce Mac avant de pouvoir continuer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">141</span><code class="line-text">- Si ce Mac est doté d’une version de macOS antérieure à celle du Mac en cours de restauration, il se peut qu’un message vous invite à mettre à jour le logiciel de ce Mac avant de pouvoir continuer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">141</span><code class="line-text">- La barre de progression qui apparaît dans la fenêtre indique que la restauration est en cours. <mark class="inline-remove">U</mark>ne <mark class="inline-remove">fo</mark>i<mark class="inline-remove">s</mark> la restauration terminée<mark class="inline-remove">, le Mac concerné redémarre automatiquement</mark>.<mark class="inline-remove"> S’il s’éteint, appuyez sur le bouton d’alimentation pour l’allumer.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">143</span><code class="line-text">- La barre de progression qui apparaît dans la fenêtre indique que la restauration est en cours. <mark class="inline-add">Veillez à ce que ce Mac </mark>ne <mark class="inline-add">se mette pas en ve</mark>i<mark class="inline-add">lle tant que</mark> la restauration <mark class="inline-add">n’est pas </mark>terminée.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">145</span><code class="line-text">- Une fois la restauration terminée, le Mac concerné redémarre automatiquement. S’il s’éteint, appuyez sur le bouton d’alimentation pour l’allumer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">143</span><code class="line-text">- Si un message vous y invite, sélectionnez un réseau Wi-Fi ou connectez un câble réseau.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">147</span><code class="line-text">- Si un message vous y invite, sélectionnez un réseau Wi-Fi ou connectez un câble réseau.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">147</span><code class="line-text">- Le cas échéant, connectez-vous au compte Apple précédemment utilisé avec ce Mac restauré.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">151</span><code class="line-text">- Le cas échéant, connectez-vous au compte Apple précédemment utilisé avec ce Mac restauré.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">149</span><code class="line-text">- Lorsque l’Assistant réglages<mark class="inline-remove"> du</mark> s’ouvre, utilisez-le pour terminer la configuration de votre Mac.</code></div>
+<div class="diff-line current added"><span class="line-number">153</span><code class="line-text">- Lorsque l’Assistant réglages s’ouvre, utilisez-le pour terminer la configuration de votre Mac.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">151</span><code class="line-text">- Mac avec puce T2 :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">155</span><code class="line-text">- Mac avec puce T2 :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">161</span><code class="line-text">## Si aucune fenêtre DFU ne s’affiche dans le Finder</code></div>
+<div class="diff-line current unchanged"><span class="line-number">165</span><code class="line-text">## Si aucune fenêtre DFU ne s’affiche dans le Finder</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">163</span><code class="line-text">Après<mark class="inline-remove"> avoir</mark> prépar<mark class="inline-remove">é</mark> vos ordinateurs en vue d’une relance ou d’une restauration, si aucune fenêtre DFU ne s’affiche dans le Finder<mark class="inline-remove">, essayez les solutions suivantes</mark> :</code></div>
+<div class="diff-line current added"><span class="line-number">167</span><code class="line-text">Après prépar<mark class="inline-add">ation de</mark> vos ordinateurs en vue d’une relance ou d’une restauration, si aucune fenêtre DFU ne s’affiche dans le Finder :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">165</span><code class="line-text">- Dans le menu Finder de la barre des menus, choisissez Réglages. Cliquez sur Barre latérale en haut de la fenêtre des réglages, puis assurez-vous que le réglage « CD, DVD et appareils iOS » est sélectionné.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">169</span><code class="line-text">- Dans le menu Finder de la barre des menus, choisissez Réglages. Cliquez sur Barre latérale en haut de la fenêtre des réglages, puis assurez-vous que le réglage « CD, DVD et appareils iOS » est sélectionné.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">169</span><code class="line-text">- Débranchez le câble USB-C du Mac concerné, puis maintenez le bouton d’alimentation enfoncé pendant 10 secondes maximum pour éteindre le Mac concerné. Rebranchez le câble USB-C au [port DFU](https://support.apple.com/fr-fr/120694) , assurez-vous qu’aucun câble n’est branché sur un autre port USB, puis réessayez d’entrer en mode DFU. Il est important de bien appuyer sur les touches pendant le temps imparti.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">173</span><code class="line-text">- Débranchez le câble USB-C du Mac concerné, puis maintenez le bouton d’alimentation enfoncé pendant 10 secondes maximum pour éteindre le Mac concerné. Rebranchez le câble USB-C au [port DFU](https://support.apple.com/fr-fr/120694) , assurez-vous qu’aucun câble n’est branché sur un autre port USB, puis réessayez d’entrer en mode DFU. Il est important de bien appuyer sur les touches pendant le temps imparti.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">171</span><code class="line-text">- Essayez un autre câble USB-C. Il doit <mark class="inline-remove">prend</mark>re e<mark class="inline-remove">n</mark> c<mark class="inline-remove">harge</mark> le<mark class="inline-remove"> tran</mark>s<mark class="inline-remove">fert de</mark> données et la charge.</code></div>
+<div class="diff-line current added"><span class="line-number">175</span><code class="line-text">- Essayez un autre câble USB-C<mark class="inline-add"> vers USB-C </mark>. Il doit <mark class="inline-add">êt</mark>re <mark class="inline-add">compatibl</mark>e <mark class="inline-add">à la fois ave</mark>c les données et <mark class="inline-add">avec </mark>la charge<mark class="inline-add">, et il ne doit pas s’agir d’un câble Thunderbolt 3 </mark>.<mark class="inline-add"> Branchez le câble directement sur chaque Mac, et pas sur un concentrateur USB ou un autre appareil.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">173</span><code class="line-text">## Besoin d’aide supplémentaire ?</code></div>
+<div class="diff-line current unchanged"><span class="line-number">177</span><code class="line-text">## Besoin d’aide supplémentaire ?</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">177</span><code class="line-text">[Obtenir des suggestions](https://getsupport.apple.com/?caller=ikb)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">181</span><code class="line-text">[Obtenir des suggestions](https://getsupport.apple.com/?caller=ikb)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">179</span><code class="line-text">* Si vous utilisez un proxy web ou un coupe-feu, celui-ci doit autoriser le trafic réseau entre votre Mac et le réseau 17.0.0.0/8 d’Apple. Si vous n’êtes pas sûr que cela soit le cas, consultez le manuel de votre routeur ou votre fournisseur d’accès à Internet. <mark class="inline-remove">Ob</mark>t<mark class="inline-remove">en</mark>ez pl<mark class="inline-remove">us d’in</mark>f<mark class="inline-remove">o</mark>r<mark class="inline-remove">mations</mark> sur [<mark class="inline-remove">l’</mark>utilis<mark class="inline-remove">ation</mark> <mark class="inline-remove">d</mark>e produits Apple sur des réseaux d’entreprise](https://support.apple.com/fr-fr/101555) .</code></div>
+<div class="diff-line current added"><span class="line-number">183</span><code class="line-text">* Si vous utilisez un proxy web ou un coupe-feu, celui-ci doit autoriser le trafic réseau entre votre Mac et le réseau 17.0.0.0/8 d’Apple. Si vous n’êtes pas sûr que cela soit le cas, consultez le manuel de votre routeur ou votre fournisseur d’accès à Internet. <mark class="inline-add">Si nécessaire, [désac</mark>t<mark class="inline-add">iv</mark>ez <mark class="inline-add">tout logiciel de VPN ou de sécurité](https://support.ap</mark>pl<mark class="inline-add">e.com/</mark>fr<mark class="inline-add">-fr/102281)</mark> sur <mark class="inline-add">le Mac hôte, puis découvrez comment </mark>[utilis<mark class="inline-add">er</mark> <mark class="inline-add">l</mark>e<mark class="inline-add">s</mark> produits Apple sur des réseaux d’entreprise](https://support.apple.com/fr-fr/101555) .</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
