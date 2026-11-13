@@ -1,0 +1,99 @@
+# MacBook Pro with PROLED XDR Display, 16-inch, M5 Max
+
+Category: Electronic regulatory labels
+
+```json
+{
+  "deviceId": "6ae237d4e342e00ef84e68bc",
+  "emcNumber": "9069",
+  "fileId": "",
+  "filesData": [
+    {
+      "fileId": "eLabels/A3376_10272026_1793292869540/10_JPN_A3376_2026-08-04_CHN.png",
+      "originalFileName": "10_JPN_A3376_2026-08-04_CHN.png"
+    },
+    {
+      "fileId": "eLabels/A3376_10272026_1793292869540/11_CH_A3376_2026-08-26_CHN.png",
+      "originalFileName": "11_CH_A3376_2026-08-26_CHN.png"
+    },
+    {
+      "fileId": "eLabels/A3376_10272026_1793292869540/12_ARG_A3376_2026-09-18_CHN.png",
+      "originalFileName": "12_ARG_A3376_2026-09-18_CHN.png"
+    },
+    {
+      "fileId": "eLabels/A3376_10272026_1793292869540/13_MEX_A3376_2026-09-30_CHN.png",
+      "originalFileName": "13_MEX_A3376_2026-09-30_CHN.png"
+    },
+    {
+      "fileId": "eLabels/A3376_10272026_1793292869540/14_UAE_A3376_2026-10-08_CHN.png",
+      "originalFileName": "14_UAE_A3376_2026-10-08_CHN.png"
+    },
+    {
+      "fileId": "eLabels/A3376_10272026_1793292869540/15_KOR_A3376_2026-10-13_CHN.png",
+      "originalFileName": "15_KOR_A3376_2026-10-13_CHN.png"
+    },
+    {
+      "fileId": "eLabels/A3376_10272026_1793292869540/16_TWN_A3376_2026-10-13_CHN.png",
+      "originalFileName": "16_TWN_A3376_2026-10-13_CHN.png"
+    },
+    {
+      "fileId": "eLabels/A3376_10272026_1793292869540/17_SAF_A3376_2026-10-22_CHN.png",
+      "originalFileName": "17_SAF_A3376_2026-10-22_CHN.png"
+    },
+    {
+      "fileId": "eLabels/A3376_10272026_1793292869540/18_UKR_A3376_2026-10-22_CHN.png",
+      "originalFileName": "18_UKR_A3376_2026-10-22_CHN.png"
+    },
+    {
+      "fileId": "eLabels/A3376_10272026_1793292869540/19_NGA_A3376_2026-11-05_CHN_1794418800594.png",
+      "originalFileName": "19_NGA_A3376_2026-11-05_CHN.png"
+    },
+    {
+      "fileId": "eLabels/A3376_10272026_1793292869540/1_US_A3376_2026-07-24_CHN.png",
+      "originalFileName": "1_US_A3376_2026-07-24_CHN.png"
+    },
+    {
+      "fileId": "eLabels/A3376_10272026_1793292869540/2_CAN_A3376_2026-07-24_CHN.png",
+      "originalFileName": "2_CAN_A3376_2026-07-24_CHN.png"
+    },
+    {
+      "fileId": "eLabels/A3376_10272026_1793292869540/3_UKEU_A3376_2026-10-27_CHN.png",
+      "originalFileName": "3_UKEU_A3376_2026-10-27_CHN.png"
+    },
+    {
+      "fileId": "eLabels/A3376_10272026_1793292869540/4_AUS_A3376_2026-07-24_CHN.png",
+      "originalFileName": "4_AUS_A3376_2026-07-24_CHN.png"
+    },
+    {
+      "fileId": "eLabels/A3376_10272026_1793292869540/5_SGP_A3376_2026-07-24_CHN.png",
+      "originalFileName": "5_SGP_A3376_2026-07-24_CHN.png"
+    },
+    {
+      "fileId": "eLabels/A3376_10272026_1793292869540/6_MYS_A3376_2026-07-24_CHN.png",
+      "originalFileName": "6_MYS_A3376_2026-07-24_CHN.png"
+    },
+    {
+      "fileId": "eLabels/A3376_10272026_1793292869540/7_EAC_A3376_2026-07-24_CHN.png",
+      "originalFileName": "7_EAC_A3376_2026-07-24_CHN.png"
+    },
+    {
+      "fileId": "eLabels/A3376_10272026_1793292869540/8_MAR_A3376_2026-07-24_CHN.png",
+      "originalFileName": "8_MAR_A3376_2026-07-24_CHN.png"
+    },
+    {
+      "fileId": "eLabels/A3376_10272026_1793292869540/9_BRA_A3376_2026-07-24_CHN.png",
+      "originalFileName": "9_BRA_A3376_2026-07-24_CHN.png"
+    }
+  ],
+  "id": "6af73d03780d2a1e506a8640",
+  "modelName": "A3376",
+  "originalFileName": "",
+  "productCategory": {
+    "id": "6398c145948c6c4924ab69a2",
+    "name": "Mac"
+  },
+  "productName": "MacBook Pro with PROLED XDR Display, 16-inch, M5 Max",
+  "transName": "MacBook Pro with PROLED XDR Display, 16-inch, M5 Max",
+  "yearOfRelease": "2026"
+}
+```
