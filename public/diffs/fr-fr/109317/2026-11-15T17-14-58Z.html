@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Utilisation de la double SIM avec une carte eSIM - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Utilisation de la double SIM avec une carte eSIM - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/109317">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+25 ajouts</span>
+      <span class="badge removed">−25 suppressions</span>
+      <span class="badge">14 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Utilisation de la double SIM avec une carte eSIM</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Utilisation de la double SIM avec une carte eSIM</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">L’eSIM est une carte SIM numérique qui vous permet d’utiliser un forfait mobile auprès de votre opérateur sans avoir à utiliser une nano-SIM physique. La double SIM vous permet d<mark class="inline-remove">’av</mark>o<mark class="inline-remove">i</mark>r deux numéros de téléphone ou<mark class="inline-remove"> deux</mark> cartes SIM actifs pour passer et recevoir des appels et des <mark class="inline-remove">messages</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">L’eSIM est une carte SIM numérique qui vous permet d’utiliser un forfait mobile auprès de votre opérateur sans avoir à utiliser une nano-SIM physique. La double SIM vous permet d<mark class="inline-add">e disp</mark>o<mark class="inline-add">se</mark>r<mark class="inline-add"> de</mark> deux numéros de téléphone ou cartes SIM actifs pour passer et recevoir des appels et des <mark class="inline-add">SMS</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## Comment utiliser la double SIM ?</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## Comment utiliser la double SIM ?</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">- Utiliser un forfait voix et un forfait de données distincts</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">- Utiliser un forfait voix et un forfait de données distincts</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">Les deux numéros de téléphone peuvent passer et recevoir des appels vocaux et FaceTime. Ils peuvent également envoyer et recevoir des messages via iMessage, SMS et MMS 1 Votre iPhone peut utiliser un seul réseau de données <mark class="inline-remove">ce</mark>l<mark class="inline-remove">lulair</mark>es à la fois.</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">Les deux numéros de téléphone peuvent passer et recevoir des appels vocaux et FaceTime. Ils peuvent également envoyer et recevoir des messages via iMessage, SMS et MMS 1 Votre iPhone peut utiliser un seul réseau de données <mark class="inline-add">mobi</mark>les à la fois.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">## Éléments requis</code></div>
+<div class="diff-line current unchanged"><span class="line-number">15</span><code class="line-text">## Éléments requis</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">- iPhone XS, iPhone XS Max ou iPhone XR ou modèle ultérieur</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">- iPhone XS, iPhone XS Max ou iPhone XR ou modèle ultérieur</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">En Chine continentale, seuls l<mark class="inline-remove">’</mark>iPhone 18 Pro, <mark class="inline-remove">l’</mark>iPhone 18 Pro Max, <mark class="inline-remove">l’</mark>iPhone 17e et <mark class="inline-remove">l’</mark>iPhone Air prennent en charge l’eSIM. En savoir plus sur l’utilisation de <mark class="inline-remove">[</mark>l’eSIM avec votre iPhone](https://support.apple.com/fr-fr/123879) en Chine continentale. À Hong Kong et à Macao, certains modèles d’iPhone peuvent accueillir [deux cartes nano-SIM](https://support.apple.com/fr-fr/108898) .</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">En Chine continentale, seuls l<mark class="inline-add">es modèles </mark>iPhone 18 Pro, iPhone 18 Pro Max, <mark class="inline-add">iPhone Duo, </mark>iPhone 17e et iPhone Air prennent en charge l’eSIM. En savoir plus sur l’utilisation de l’<mark class="inline-add"> [</mark>eSIM avec votre iPhone](https://support.apple.com/fr-fr/123879) en Chine continentale. À Hong Kong et à Macao, certains modèles d’iPhone peuvent accueillir [deux cartes nano-SIM](https://support.apple.com/fr-fr/108898) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">- [Un opérateur mobile qui pr<mark class="inline-remove">end en charg</mark>e l<mark class="inline-remove">’</mark>eSIM](https://support.apple.com/fr-fr/101569)</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">- [Un opérateur mobile qui pr<mark class="inline-add">opos</mark>e l<mark class="inline-add">e service </mark>eSIM](https://support.apple.com/fr-fr/101569)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">Pour utiliser deux opérateurs, votre opérateur doit déverrouiller votre iPhone, ou les deux forfaits doivent provenir du même opérateur. Contactez votre opérateur pour en savoir plus. Si vous disposez d’un forfait mobile professionnel ou d’entreprise, renseignez-vous auprès de l’administrateur de votre société pour savoir si cette fonctionnalité est prise en charge.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">Pour utiliser deux opérateurs, votre opérateur doit déverrouiller votre iPhone, ou les deux forfaits doivent provenir du même opérateur. Contactez votre opérateur pour en savoir plus. Si vous disposez d’un forfait mobile professionnel ou d’entreprise, renseignez-vous auprès de l’administrateur de votre société pour savoir si cette fonctionnalité est prise en charge.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 17 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">### Voyager à l’étranger avec la double SIM</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">### Voyager à l’étranger avec la double SIM</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">Vous pouvez également utiliser la double SIM lorsque vous voyagez à l’étranger avec votre iPhone. Par exemple, en utilisant un numéro pour votre ligne personnelle et un autre spécifiquement pour votre voyage. Avec iOS 26 ou <mark class="inline-remove">une </mark>version ultérieure, si vous téléchargez une eSIM de voyage, vous pourriez bénéficier d’un p<mark class="inline-remove">a</mark>rc<mark class="inline-remove">o</mark>u<mark class="inline-remove">r</mark>s de configuration personnalisé. Découvrez comment [garder le contact dans le pays ou la région que vous visitez](https://support.apple.com/fr-fr/118227) .</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">Vous pouvez également utiliser la double SIM lorsque vous voyagez à l’étranger avec votre iPhone. Par exemple, en utilisant un numéro pour votre ligne personnelle et un autre spécifiquement pour votre voyage. Avec iOS 26 ou version ultérieure, si vous téléchargez une eSIM de voyage, vous pourriez bénéficier d’un pr<mark class="inline-add">o</mark>c<mark class="inline-add">ess</mark>us de configuration<mark class="inline-add"> d’eSIM de voyage</mark> personnalisé. Découvrez comment [garder le contact dans le pays ou la région que vous visitez](https://support.apple.com/fr-fr/118227) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">### Nommer vos forfaits</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">### Nommer vos forfaits</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">- Touchez le numéro dont vous souhaitez modifier la dénomination.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">- Touchez le numéro dont vous souhaitez modifier la dénomination.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">- Touchez Étiquette du forfait <mark class="inline-remove">ce</mark>l<mark class="inline-remove">lulair</mark>e et sélectionnez un nouveau nom ou saisissez un nom personnalisé.</code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">- Touchez Étiquette du forfait <mark class="inline-add">mobi</mark>le et sélectionnez un nouveau nom ou saisissez un nom personnalisé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">[Image: <mark class="inline-remove">M</mark>enu de configuration de la double eSIM avec l<mark class="inline-remove">a liste d</mark>es étiquettes de<mark class="inline-remove">s</mark> forfaits <mark class="inline-remove">c</mark>el<mark class="inline-remove">l</mark>u<mark class="inline-remove">la</mark>ire<mark class="inline-remove">s</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">[Image: <mark class="inline-add">Écran d’iPhone affichant le m</mark>enu de configuration de la double eSIM avec les étiquettes de forfaits <mark class="inline-add">mobil</mark>e<mark class="inline-add">s et </mark>l<mark class="inline-add">es options Ajo</mark>u<mark class="inline-add">ter une eSIM ou Convert</mark>ir<mark class="inline-add"> </mark>e<mark class="inline-add">n eSIM</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">### Définir votre numéro de téléphone par défaut</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">### Définir votre numéro de téléphone par défaut</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">71</span><code class="line-text">- Sur cet écran, choisissez un numéro comme numéro par défaut. Vous pouvez également choisir le numéro à utiliser uniquement pour les données mobiles. Votre autre numéro sera alors celui de votre ligne par défaut.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">- Sur cet écran, choisissez un numéro comme numéro par défaut. Vous pouvez également choisir le numéro à utiliser uniquement pour les données mobiles. Votre autre numéro sera alors celui de votre ligne par défaut.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text">- Si vous souhaitez que votre iPhone utilise les données mobiles de vos deux forfaits, en fonction de la couverture et de la disponibilité, activez l’option « Autoriser le basculement des données <mark class="inline-remove">ce</mark>l<mark class="inline-remove">lulair</mark>es ».</code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">- Si vous souhaitez que votre iPhone utilise les données mobiles de vos deux forfaits, en fonction de la couverture et de la disponibilité, activez l’option « Autoriser le basculement des données <mark class="inline-add">mobi</mark>les ».</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">## Utiliser deux numéros de téléphone pour les appels, les messages et les données</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">## Utiliser deux numéros de téléphone pour les appels, les messages et les données</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">87</span><code class="line-text">- Touchez le numéro à utiliser avec ce contact.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">- Touchez le numéro à utiliser avec ce contact.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text">[Image: C<mark class="inline-remove">onfig</mark>ura<mark class="inline-remove">tio</mark>n d<mark class="inline-remove">e la lig</mark>ne <mark class="inline-remove">doubl</mark>e e<mark class="inline-remove">SIM à utiliser pour vos</mark> contacts <mark class="inline-remove">à</mark> part<mark class="inline-remove">i</mark>r <mark class="inline-remove">de l’écra</mark>n <mark class="inline-remove">C</mark>ontact<mark class="inline-remove">s</mark>.]</code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">[Image: C<mark class="inline-add">apt</mark>ur<mark class="inline-add">e d’écr</mark>an d<mark class="inline-add">’u</mark>ne <mark class="inline-add">fich</mark>e <mark class="inline-add">d</mark>e contact<mark class="inline-add"> sur iPhone affichant le</mark>s <mark class="inline-add">options permettant de sélectionner la SIM 1 ou la SIM 2 comme ligne</mark> par<mark class="inline-add"> défau</mark>t<mark class="inline-add"> pou</mark>r <mark class="inline-add">u</mark>n <mark class="inline-add">c</mark>ontact.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">### Passer et recevoir des appels</code></div>
+<div class="diff-line current unchanged"><span class="line-number">91</span><code class="line-text">### Passer et recevoir des appels</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">95</span><code class="line-text">- Lorsque vous êtes en communication, si l’opérateur de votre autre numéro de téléphone prend en charge les appels Wi-Fi, vous pouvez répondre aux appels entrants sur votre autre numéro.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">95</span><code class="line-text">- Lorsque vous êtes en communication, si l’opérateur de votre autre numéro de téléphone prend en charge les appels Wi-Fi, vous pouvez répondre aux appels entrants sur votre autre numéro.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">97</span><code class="line-text">- Lorsque vous êtes en communication sur une ligne qui n’a pas été désignée pour les données mobiles, vous devez [activer l’option « Autoriser le basculement des données <mark class="inline-remove">ce</mark>l<mark class="inline-remove">lulair</mark>es »](https://support.apple.com/fr-fr/109317#data) pour recevoir les appels entrants sur votre autre ligne.</code></div>
+<div class="diff-line current added"><span class="line-number">97</span><code class="line-text">- Lorsque vous êtes en communication sur une ligne qui n’a pas été désignée pour les données mobiles, vous devez [activer l’option « Autoriser le basculement des données <mark class="inline-add">mobi</mark>les »](https://support.apple.com/fr-fr/109317#data) pour recevoir les appels entrants sur votre autre ligne.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">99</span><code class="line-text">- Si vous ignorez l’appel et que vous avez configuré la messagerie vocale auprès de votre opérateur, vous recevez une notification d’appel manqué et l’appel est redirigé vers votre messagerie vocale.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">99</span><code class="line-text">- Si vous ignorez l’appel et que vous avez configuré la messagerie vocale auprès de votre opérateur, vous recevez une notification d’appel manqué et l’appel est redirigé vers votre messagerie vocale.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">101</span><code class="line-text">- Vérifiez auprès de votre opérateur si <mark class="inline-remove">l</mark>es appels Wi-Fi <mark class="inline-remove">sont pris en charge </mark>et <mark class="inline-remove">si</mark> votre fournisseur de données <mark class="inline-remove">appl</mark>i<mark class="inline-remove">que</mark> des frais supplémentaires ou <mark class="inline-remove">d</mark>e<mark class="inline-remove">s</mark> <mark class="inline-remove">frais d’</mark>utilisation de données <mark class="inline-remove">mob</mark>i<mark class="inline-remove">l</mark>e<mark class="inline-remove">s</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">- Vérifiez auprès de votre opérateur <mark class="inline-add">la di</mark>s<mark class="inline-add">pon</mark>i<mark class="inline-add">bilité</mark> <mark class="inline-add">d</mark>es appels Wi-Fi et <mark class="inline-add">demandez à</mark> votre fournisseur de données <mark class="inline-add">s</mark>i des frais supplémentaires ou <mark class="inline-add">un</mark>e utilisation de<mark class="inline-add">s</mark> données <mark class="inline-add">s’appl</mark>i<mark class="inline-add">qu</mark>e<mark class="inline-add">nt</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">103</span><code class="line-text">Si vous êtes en communication et que <mark class="inline-remove">le message « Aucun service » s’affiche pour </mark>votre autre ligne, votre opérateur ne prend pas en charge les appels Wi-Fi o<mark class="inline-remove">u</mark> vous n’avez pas activé <mark class="inline-remove">c</mark>e<mark class="inline-remove">tt</mark>e <mark class="inline-remove">fonct</mark>i<mark class="inline-remove">onnal</mark>i<mark class="inline-remove">té</mark> 2 Cela peut également signifier que l’option Autoriser le basculement des données <mark class="inline-remove">ce</mark>l<mark class="inline-remove">lulair</mark>es n’est pas activée. Si vous êtes déjà en ligne, les appels entrants sur votre autre numéro de téléphone sont redirigés vers la messagerie vocale, à condition que vous l’ayez configurée auprès de votre opérateur 3 Cependant, vous ne recevrez pas de notification d’appel manqué de votre numéro secondaire. Le signal d’appel fonctionne pour les appels entrants sur le même numéro de téléphone. Pour ne pas manquer un appel important, vous pouvez activer le renvoi d’appel et rediriger tous les appels d’un numéro vers l’autre. Vérifiez auprès de votre opérateur si cette fonctionnalité est disponible et si elle génère des frais supplémentaires.</code></div>
+<div class="diff-line current added"><span class="line-number">103</span><code class="line-text">Si vous êtes en communication et que votre autre ligne<mark class="inline-add"> affiche Aucun service</mark>,<mark class="inline-add"> soit</mark> votre opérateur ne prend pas en charge les appels Wi-Fi<mark class="inline-add">,</mark> <mark class="inline-add">s</mark>o<mark class="inline-add">it</mark> vous n’avez pas activé <mark class="inline-add">l</mark>e<mark class="inline-add">s app</mark>e<mark class="inline-add">ls</mark> <mark class="inline-add">W</mark>i<mark class="inline-add">-F</mark>i<mark class="inline-add">.</mark> 2 Cela peut également signifier que l’option Autoriser le basculement des données <mark class="inline-add">mobi</mark>les n’est pas activée. Si vous êtes déjà en ligne, les appels entrants sur votre autre numéro de téléphone sont redirigés vers la messagerie vocale, à condition que vous l’ayez configurée auprès de votre opérateur 3 Cependant, vous ne recevrez pas de notification d’appel manqué de votre numéro secondaire. Le signal d’appel fonctionne pour les appels entrants sur le même numéro de téléphone. Pour ne pas manquer un appel important, vous pouvez activer le renvoi d’appel et rediriger tous les appels d’un numéro vers l’autre. Vérifiez auprès de votre opérateur si cette fonctionnalité est disponible et si elle génère des frais supplémentaires.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">105</span><code class="line-text">### Changer de numéro de téléphone pour un appel</code></div>
+<div class="diff-line current unchanged"><span class="line-number">105</span><code class="line-text">### Changer de numéro de téléphone pour un appel</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 15 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">123</span><code class="line-text">- Touchez le numéro que vous souhaitez utiliser.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">123</span><code class="line-text">- Touchez le numéro que vous souhaitez utiliser.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">125</span><code class="line-text">[Image: <mark class="inline-remove">Télép</mark>hone a<mark class="inline-remove">ve</mark>c<mark class="inline-remove"> double eSIM montr</mark>ant <mark class="inline-remove">comme</mark>n<mark class="inline-remove">t changer de numéro depuis le</mark> pavé numérique]</code></div>
+<div class="diff-line current added"><span class="line-number">125</span><code class="line-text">[Image: <mark class="inline-add">Écran d’iP</mark>hone a<mark class="inline-add">ffi</mark>c<mark class="inline-add">h</mark>ant <mark class="inline-add">u</mark>n pavé numérique<mark class="inline-add"> avec un menu Pop-up permettant de basculer entre deux numéros de téléphone</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">127</span><code class="line-text">## Envoyer des messages via iMessage ou SMS/MMS/RCS</code></div>
+<div class="diff-line current unchanged"><span class="line-number">127</span><code class="line-text">## Envoyer des messages via iMessage ou SMS/MMS/RCS</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">129</span><code class="line-text">Vous pouvez envoyer des messages avec iMessage ou par SMS/MMS en utilisant l’un ou l’autre de vos numéros de téléphone. 4 Avec iOS 18, la messagerie RCS est disponible auprès des opérateurs c<mark class="inline-remove">ompat</mark>i<mark class="inline-remove">bl</mark>e<mark class="inline-remove">s</mark>. Vous pouvez choisir le numéro à utiliser avant ou après le début d’une conversation.<mark class="inline-remove"> Voici comment faire.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">129</span><code class="line-text">Vous pouvez envoyer des messages avec iMessage ou par SMS/MMS en utilisant l’un ou l’autre de vos numéros de téléphone. 4 Avec iOS 18, la messagerie RCS est disponible auprès des opérateurs <mark class="inline-add">proposant </mark>c<mark class="inline-add">e serv</mark>i<mark class="inline-add">c</mark>e. Vous pouvez choisir le numéro à utiliser avant ou après le début d’une conversation.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">131</span><code class="line-text">### Choisir un numéro avant d’envoyer un iMessage ou un message SMS/MMS/RCS</code></div>
+<div class="diff-line current unchanged"><span class="line-number">131</span><code class="line-text">### Choisir un numéro avant d’envoyer un iMessage ou un message SMS/MMS/RCS</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">141</span><code class="line-text">- Touchez le numéro que vous souhaitez utiliser.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">141</span><code class="line-text">- Touchez le numéro que vous souhaitez utiliser.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">143</span><code class="line-text">[Image: Choix de la ligne double eSIM pour l’envoi d’un iMessage ou d’un message SMS, MMS ou RCS]</code></div>
+<div class="diff-line current added"><span class="line-number">143</span><code class="line-text">[Image: Choix de la ligne double eSIM pour l’envoi d’un iMessage ou d’un message SMS, MMS ou RCS<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">145</span><code class="line-text">### Changer de numéro pendant une conversation</code></div>
+<div class="diff-line current unchanged"><span class="line-number">145</span><code class="line-text">### Changer de numéro pendant une conversation</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">149</span><code class="line-text">- Choisissez le numéro que vous souhaitez utiliser à la place.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">149</span><code class="line-text">- Choisissez le numéro que vous souhaitez utiliser à la place.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">151</span><code class="line-text">[Image: Changement de numéro en cours de conversation sur un téléphone avec double eSIM]</code></div>
+<div class="diff-line current added"><span class="line-number">151</span><code class="line-text">[Image: Changement de numéro en cours de conversation sur un téléphone avec double eSIM<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">153</span><code class="line-text">## En savoir plus sur les icônes d’état associées à la double SIM</code></div>
+<div class="diff-line current unchanged"><span class="line-number">153</span><code class="line-text">## En savoir plus sur les icônes d’état associées à la double SIM</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">155</span><code class="line-text">Les icônes de la barre d’état, figurant en haut de l’écran, indiquent l’intensité du signal de vos deux opérateurs. Découvrez [la signification des icônes d’état](https://support.apple.com/<mark class="inline-remove">zh-cn/</mark>guide/iphone/-iphef7bb57dc/26/ios/26) .</code></div>
+<div class="diff-line current added"><span class="line-number">155</span><code class="line-text">Les icônes de la barre d’état, figurant en haut de l’écran, indiquent l’intensité du signal de vos deux opérateurs. Découvrez [la signification des icônes d’état](https://support.apple.com/guide/iphone/-iphef7bb57dc/26/ios/26) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">157</span><code class="line-text">D’autres icônes d’état apparaissent lorsque vous ouvrez le [centre de contrôle](https://support.apple.com/fr-fr/108330) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">157</span><code class="line-text">D’autres icônes d’état apparaissent lorsque vous ouvrez le [centre de contrôle](https://support.apple.com/fr-fr/108330) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">159</span><code class="line-text">[Image: <mark class="inline-remove">L</mark>a barre d’état <mark class="inline-remove">indiqu</mark>e<mark class="inline-remove"> que</mark> l’appareil<mark class="inline-remove"> est</mark> connecté à la 5G et <mark class="inline-remove">que </mark>l’autre ligne n<mark class="inline-remove">’</mark>a <mark class="inline-remove">accès à a</mark>ucun service.]</code></div>
+<div class="diff-line current added"><span class="line-number">159</span><code class="line-text">[Image: <mark class="inline-add">Capture d’écran du centre de contrôle de l’iPhone affichant l</mark>a barre d’état <mark class="inline-add">av</mark>e<mark class="inline-add">c</mark> l’appareil connecté à la 5G et l’autre ligne <mark class="inline-add">i</mark>n<mark class="inline-add">diqu</mark>a<mark class="inline-add">nt</mark> <mark class="inline-add">A</mark>ucun service.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">161</span><code class="line-text">Lorsque la ligne de l’opérateur 1 est utilisée, le message « Aucun service » s’affiche pour l’autre ligne.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">161</span><code class="line-text">Lorsque la ligne de l’opérateur 1 est utilisée, le message « Aucun service » s’affiche pour l’autre ligne.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">167</span><code class="line-text">[Image: La barre d’état indique que l’opérateur 1 utilise un réseau 5G et que l’opérateur 2 utilise les données mobiles de l’opérateur 1.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">167</span><code class="line-text">[Image: La barre d’état indique que l’opérateur 1 utilise un réseau 5G et que l’opérateur 2 utilise les données mobiles de l’opérateur 1.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">169</span><code class="line-text">Lorsque l’option « Autoriser le basculement des données <mark class="inline-remove">ce</mark>l<mark class="inline-remove">lulair</mark>es » est activée, la barre d’état indique que la ligne de l’opérateur 1 utilise un réseau 5G, que celle de l’opérateur 2 utilise les données mobiles de la ligne de l’opérateur 1 et que les appels Wi-Fi sont activés.</code></div>
+<div class="diff-line current added"><span class="line-number">169</span><code class="line-text">Lorsque l’option « Autoriser le basculement des données <mark class="inline-add">mobi</mark>les » est activée, la barre d’état indique que la ligne de l’opérateur 1 utilise un réseau 5G, que celle de l’opérateur 2 utilise les données mobiles de la ligne de l’opérateur 1 et que les appels Wi-Fi sont activés.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">171</span><code class="line-text">## Modifier votre numéro de données mobiles</code></div>
+<div class="diff-line current unchanged"><span class="line-number">171</span><code class="line-text">## Modifier votre numéro de données mobiles</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">181</span><code class="line-text">- Touchez le numéro avec lequel vous souhaitez utiliser les données mobiles.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">181</span><code class="line-text">- Touchez le numéro avec lequel vous souhaitez utiliser les données mobiles.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">183</span><code class="line-text">[Image: Réglages Données <mark class="inline-remove">ce</mark>l<mark class="inline-remove">lulair</mark>es d’un iPhone permettant de définir la ligne qui utilisera les données mobiles, avec l’option Autoriser le basculement des données <mark class="inline-remove">ce</mark>l<mark class="inline-remove">lulair</mark>es.]</code></div>
+<div class="diff-line current added"><span class="line-number">183</span><code class="line-text">[Image: Réglages Données <mark class="inline-add">mobi</mark>les d’un iPhone permettant de définir la ligne qui utilisera les données mobiles, avec l’option Autoriser le basculement des données <mark class="inline-add">mobi</mark>les.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">184</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">184</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">185</span><code class="line-text">Si vous êtes en train de passer un appel vocal sur la ligne utilisée uniquement pour les appels vocaux et si, dans le même temps, l’option « Autoriser le basculement des données <mark class="inline-remove">ce</mark>l<mark class="inline-remove">lulair</mark>es » est activée, la ligne en question basculera automatiquement vers les services d’appels vocaux et de données 5 Cela vous permet d’utiliser la voix et les données pendant l’appel.</code></div>
+<div class="diff-line current added"><span class="line-number">185</span><code class="line-text">Si vous êtes en train de passer un appel vocal sur la ligne utilisée uniquement pour les appels vocaux et si, dans le même temps, l’option « Autoriser le basculement des données <mark class="inline-add">mobi</mark>les » est activée, la ligne en question basculera automatiquement vers les services d’appels vocaux et de données 5 Cela vous permet d’utiliser <mark class="inline-add">à la fois </mark>la voix et les données pendant l’appel.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">186</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">186</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">187</span><code class="line-text">Si l’option « Autoriser le basculement des données <mark class="inline-remove">ce</mark>l<mark class="inline-remove">lulair</mark>es » est désactivée et que vous êtes en communication sur une ligne choisie pour les appels vocaux, mais qui n’a pas été sélectionnée pour les données mobiles, vous ne pourrez pas vous connecter à ces données tout en étant en ligne avec votre interlocuteur ou interlocutrice.</code></div>
+<div class="diff-line current added"><span class="line-number">187</span><code class="line-text">Si l’option « Autoriser le basculement des données <mark class="inline-add">mobi</mark>les » est désactivée et que vous êtes en communication sur une ligne choisie pour les appels vocaux, mais qui n’a pas été sélectionnée pour les données mobiles, vous ne pourrez pas vous connecter à ces données tout en étant en ligne avec votre interlocuteur ou interlocutrice.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">188</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">188</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">189</span><code class="line-text">Pour activer l’option « Autoriser le basculement des données cellulaires » :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">189</span><code class="line-text">Pour activer l’option « Autoriser le basculement des données cellulaires » :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">190</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">190</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">194</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">194</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">195</span><code class="line-text">- Touchez Données mobiles.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">195</span><code class="line-text">- Touchez Données mobiles.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">196</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">196</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">197</span><code class="line-text">- Activez l’option Autoriser le basculement des données <mark class="inline-remove">ce</mark>l<mark class="inline-remove">lulair</mark>es.</code></div>
+<div class="diff-line current added"><span class="line-number">197</span><code class="line-text">- Activez l’option Autoriser le basculement des données <mark class="inline-add">mobi</mark>les.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">199</span><code class="line-text">## Gérer les réglages des données mobiles</code></div>
+<div class="diff-line current unchanged"><span class="line-number">199</span><code class="line-text">## Gérer les réglages des données mobiles</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">200</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">200</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">214</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">214</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">215</span><code class="line-text">- [Utilisez la double SIM avec une eSIM et votre Apple Watch](https://support.apple.com/fr-fr/102359)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">215</span><code class="line-text">- [Utilisez la double SIM avec une eSIM et votre Apple Watch](https://support.apple.com/fr-fr/102359)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">216</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">216</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">217</span><code class="line-text">- Si vous ne parvenez pas à configurer votre eSIM ou en<mark class="inline-remove"> </mark>c<mark class="inline-remove">as</mark> de problème d<mark class="inline-remove">’</mark>utilisation<mark class="inline-remove"> de votre eSIM, [découvrez la marche à suivre</mark>](https://support.apple.com/fr-fr/109322)<mark class="inline-remove"> .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">217</span><code class="line-text">- <mark class="inline-add">[</mark>Si vous ne parvenez pas à configurer votre eSIM ou <mark class="inline-add">si vous r</mark>enc<mark class="inline-add">ontrez</mark> de<mark class="inline-add">s</mark> problème<mark class="inline-add">s lors</mark> d<mark class="inline-add">e son </mark>utilisation](https://support.apple.com/fr-fr/109322)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">218</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">218</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">219</span><code class="line-text">- Cette fonctionnalité utilise la technologie Dual SIM Dual Standby (DSDS), qui permet de passer et de recevoir des appels avec les deux cartes SIM.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">219</span><code class="line-text">- Cette fonctionnalité utilise la technologie Dual SIM Dual Standby (DSDS), qui permet de passer et de recevoir des appels avec les deux cartes SIM.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">220</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">220</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">221</span><code class="line-text">- <mark class="inline-remove">S</mark>i vous utilisez iOS 12, effectuez la mise à jour vers iOS 13 ou version ultérieure pour recevoir des appels lorsque vous utilisez votre autre numéro.</code></div>
+<div class="diff-line current added"><span class="line-number">221</span><code class="line-text">- <mark class="inline-add">Ou, s</mark>i vous utilisez iOS 12, effectuez la mise à jour vers iOS 13 ou version ultérieure pour recevoir des appels lorsque vous utilisez votre autre numéro.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">222</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">222</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">223</span><code class="line-text">- Si l’itinérance des données est activée pour le numéro qui utilise les données mobiles, votre ligne utilisée uniquement pour les appels vocaux désactivera la messagerie vocale visuelle et les MMS.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">223</span><code class="line-text">- Si l’itinérance des données est activée pour le numéro qui utilise les données mobiles, votre ligne utilisée uniquement pour les appels vocaux désactivera la messagerie vocale visuelle et les MMS.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">224</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">224</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
