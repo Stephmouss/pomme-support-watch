@@ -18,7 +18,8 @@ def _absolute(base_url: str, relative: str | None) -> str | None:
 def _event_html(event: Event, base_url: str) -> str:
     parts = [f"<p>{html.escape(event.description)}</p>"] if event.description else []
     if event.reference_context:
-        parts.insert(0, f"<p><strong>À examiner :</strong> {html.escape(event.reference_context)}</p>")
+        context = event.reference_context.replace("Cela ne prouve pas qu’un produit est non annoncé ; une variante ou un accessoire déjà commercialisé reste possible.", "").strip()
+        parts.insert(0, f"<p>{html.escape(context)}</p>")
     if event.kind == "updated":
         if event.source_name != "Apple Regulatory Information":
             parts.append(f"<p><strong>{event.added} added · {event.removed} removed</strong></p>")

@@ -134,8 +134,7 @@ class ReferenceFilter:
         event.editorial_type = reason
         event.reference_models = selected
         event.reference_context = (context + " Première détection : " + self.timestamp
-            + ". Famille : " + family(item.title) + ". "
-            + "Cela ne prouve pas qu’un produit est non annoncé ; une variante ou un accessoire déjà commercialisé reste possible.")
+            + ".")
         event.title = item.title + " — " + ", ".join(selected)
         marker = ",".join(selected) + (":" + signature(item.title) if reason == "identity_change" else "")
         event.event_id = "apple-regulatory:" + reason + ":" + hashlib.sha256(marker.encode()).hexdigest()[:20]
@@ -160,8 +159,7 @@ def write_archive(public: Path, index: dict) -> None:
     e = html.escape
     cutoff = datetime.fromisoformat(index["last_run"]["checked_at"].replace("Z", "+00:00")) - timedelta(days=7)
     recent = [a for a in alerts if datetime.fromisoformat(a["detected_at"].replace("Z", "+00:00")) >= cutoff]
-    body = ('<h1>Références matérielles Apple</h1><p>Historique commun aux rubriques Regulatory. '
-            'Une nouvelle référence n’est pas une preuve de produit non annoncé.</p>'
+    body = ('<h1>Références matérielles Apple</h1>'
             f'<p>Filtre activé le {e(index["activated_at"])}. {len(models_index)} références mémorisées.</p>'
             f'<p>Depuis l’activation : {index["totals"]["new_references"]} nouvelle(s) référence(s), '
             f'{index["totals"]["identity_changes"]} changement(s) de nom et '
@@ -170,7 +168,7 @@ def write_archive(public: Path, index: dict) -> None:
             '<h2>Signalements depuis l’activation</h2>')
     for a in alerts:
         body += (f'<article><h3>{e(a["title"])} — {e(", ".join(a["models"]))}</h3>'
-                 f'<p>{e(a["context"])}</p><p>{e(a["description"])}</p>'
+                 f'<p>{e(a["context"].replace("Cela ne prouve pas qu’un produit est non annoncé ; une variante ou un accessoire déjà commercialisé reste possible.", "").strip())}</p><p>{e(a["description"])}</p>'
                  f'<p><a href="{e(a["url"], quote=True)}">Source Apple</a></p></article>')
     if not alerts:
         body += '<p>Aucun signalement depuis l’activation. Les références antérieures ne sont pas renvoyées dans le RSS.</p>'
