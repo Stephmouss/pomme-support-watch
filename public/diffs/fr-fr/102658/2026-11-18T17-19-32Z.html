@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Historique des pièces et des réparations de l’iPhone - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Historique des pièces et des réparations de l’iPhone - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/102658">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+13 ajouts</span>
+      <span class="badge removed">−7 suppressions</span>
+      <span class="badge">4 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 21 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">Vous pouvez obtenir des informations sur les pièces suivantes, en fonction de votre modèle d’iPhone :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">Vous pouvez obtenir des informations sur les pièces suivantes, en fonction de votre modèle d’iPhone :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">| Batterie | Écran | Carte logique | <mark class="inline-remove">C</mark>a<mark class="inline-remove">mé</mark>r<mark class="inline-remove">a</mark> avant | Caméras arrière</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">| Batterie | Écran <mark class="inline-add">1 </mark>| Carte logique | <mark class="inline-add">App</mark>ar<mark class="inline-add">eil photo</mark> avant<mark class="inline-add"> 2</mark> | Caméras arrière<mark class="inline-add"> | Touch ID</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text"><mark class="inline-remove">Modèles d’</mark>iPhone <mark class="inline-remove">12 et </mark>u<mark class="inline-remove">ltérieurs</mark> | ✓ | ✓ | ✓ | ✓ | ✓</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">iPhone <mark class="inline-add">D</mark>u<mark class="inline-add">o</mark> | ✓ | ✓ | ✓ | ✓ | ✓<mark class="inline-add"> | ✓</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">Modèles d’iPhone 1<mark class="inline-remove">1</mark> | ✓ | ✓ | | |</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">Modèles d’iPhone 1<mark class="inline-add">2 et ultérieurs</mark> | ✓ | ✓ | <mark class="inline-add">✓ </mark>| <mark class="inline-add">✓ </mark>|<mark class="inline-add"> ✓ |</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">iPhone <mark class="inline-remove">XR,</mark> <mark class="inline-remove">iPhone</mark> <mark class="inline-remove">XS, iPhone XS Max et iPhone SE (2e et 3e générations)</mark> | ✓ | | | |</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text"><mark class="inline-add">Modèles d’</mark>iPhone <mark class="inline-add">11</mark> <mark class="inline-add">|</mark> <mark class="inline-add">✓</mark> | ✓ | | | |</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">iPhone XR, iPhone XS, iPhone XS Max et iPhone SE (2e et 3e générations) | ✓ | | | | |</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">Sous les versions d’iOS antérieures à la version 15.2, vous pouvez uniquement vérifier si une pièce de remplacement est identifiée comme Pièce inconnue.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">Sous les versions d’iOS antérieures à la version 15.2, vous pouvez uniquement vérifier si une pièce de remplacement est identifiée comme Pièce inconnue.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">Si vous ne terminez pas la réparation, vous pouvez continuer à utiliser votre appareil, mais la pièce peut ne pas fonctionner aussi bien qu’une pièce étalonnée. Vous ne pourrez pas déverrouiller votre appareil ni vous connecter aux apps à l’aide de Face ID ou Touch ID tant que ces pièces n’ont pas été étalonnées. Dans l’historique des pièces et des réparations, la mention Finaliser la réparation s’affichera à côté de la pièce concernée pour votre appareil tant que la réparation ne sera pas terminée.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">Si vous ne terminez pas la réparation, vous pouvez continuer à utiliser votre appareil, mais la pièce peut ne pas fonctionner aussi bien qu’une pièce étalonnée. Vous ne pourrez pas déverrouiller votre appareil ni vous connecter aux apps à l’aide de Face ID ou Touch ID tant que ces pièces n’ont pas été étalonnées. Dans l’historique des pièces et des réparations, la mention Finaliser la réparation s’affichera à côté de la pièce concernée pour votre appareil tant que la réparation ne sera pas terminée.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">Si la réparation a été effectuée à l’aide de pièces détachées Apple d’origine et du processus d’étalonnage Apple, la mention Pièce d’origine ou Pièce réutilisée figurera à côté de la pièce. <mark class="inline-remove">1</mark> Une fois la réparation terminée et votre iPhone connecté à Internet, vous pouvez toucher l<mark class="inline-remove">e nom de l</mark>a pièce pour obtenir <mark class="inline-remove">davantage</mark> d’informations, <mark class="inline-remove">y c</mark>om<mark class="inline-remove">pris</mark> la date de l<mark class="inline-remove">’inte</mark>r<mark class="inline-remove">ven</mark>tion.</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">Si la réparation a été effectuée à l’aide de pièces détachées Apple d’origine et du processus d’étalonnage Apple, la mention Pièce d’origine ou Pièce réutilisée figurera à côté de la pièce. <mark class="inline-add">3</mark> Une fois la réparation terminée et votre iPhone connecté à Internet, vous pouvez toucher la pièce pour obtenir <mark class="inline-add">plus</mark> d’informations, <mark class="inline-add">n</mark>o<mark class="inline-add">ta</mark>m<mark class="inline-add">ment</mark> la date de l<mark class="inline-add">a </mark>r<mark class="inline-add">épara</mark>tion.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">[Image: Écran d’information Pièce détachée Apple d’origine pour un écran]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">[Image: Écran d’information Pièce détachée Apple d’origine pour un écran]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 35 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">## En savoir plus sur les options de réparation</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">## En savoir plus sur les options de réparation</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text">Lorsque vous devez faire réparer votre iPhone, vous avez le choix entre plusieurs options. Pour la plupart des personnes, le moyen le plus sûr et le plus fiable de bénéficier d’un service consiste à se rendre dans un centre dédié où une équipe technique certifiée utilise des pièces détachées Apple d’origine. Ces centres comprennent Apple et les centres de services agréés Apple. Les Independent Repair Providers ont également accès aux pièces détachées Apple d’origine. <mark class="inline-remove">2</mark> Les pièc<mark class="inline-remove">es détaché</mark>es Apple d’origine sont conçues pour s’adapter précisément à l’appareil et f<mark class="inline-remove">ou</mark>r<mark class="inline-remove">n</mark>ir des performances, une sécurité et une fiabilité optimales. Les réparations effectuées par Apple et les centres de services agréés Apple sont couvertes par la garantie d’Apple.</code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">Lorsque vous devez faire réparer votre iPhone, vous avez le choix entre plusieurs options. Pour la plupart des personnes, le moyen le plus sûr et le plus fiable de bénéficier d’un service consiste à se rendre dans un centre dédié où une équipe technique certifiée utilise des pièces détachées Apple d’origine. Ces centres comprennent Apple et les centres de services agréés Apple. Les Independent Repair Providers ont également accès aux pièces détachées Apple d’origine. <mark class="inline-add">4</mark> Les pièces Apple d’origine sont conçues pour s’adapter précisément à l’appareil et <mark class="inline-add">o</mark>f<mark class="inline-add">f</mark>rir des performances, une sécurité et une fiabilité optimales. Les réparations effectuées par Apple et les centres de services agréés Apple sont couvertes par la garantie d’Apple.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">89</span><code class="line-text">En fonction de l’endroit où vous vous trouvez, vous pouvez faire réparer votre iPhone, sous ou hors garantie, en vous rendant dans un Apple Store ou un centre de services agréé Apple, ou en envoyant votre iPhone à un centre de réparation Apple. Les pièces détachées Apple d’origine sont également disponibles auprès des Independent Repair Providers ou par le biais de Self Service Repair pour toute réparation hors garantie. <mark class="inline-remove">3</mark></code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">En fonction de l’endroit où vous vous trouvez, vous pouvez faire réparer votre iPhone, sous ou hors garantie, en vous rendant dans un Apple Store ou un centre de services agréé Apple, ou en envoyant votre iPhone à un centre de réparation Apple. Les pièces détachées Apple d’origine sont également disponibles auprès des Independent Repair Providers ou par le biais de Self Service Repair pour toute réparation hors garantie. <mark class="inline-add">5</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">Les réparations effectuées par des personnes non qualifiées ou utilisant des pièces qui ne sont pas d’origine peuvent affecter le fonctionnement, la sécurité et la confidentialité de l’appareil.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">93</span><code class="line-text">Les réparations effectuées par des personnes non qualifiées ou utilisant des pièces qui ne sont pas d’origine peuvent affecter le fonctionnement, la sécurité et la confidentialité de l’appareil.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">103</span><code class="line-text">- [À propos de l’Assistant de réparation](https://support.apple.com/fr-fr/120579)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">105</span><code class="line-text">- [À propos de l’Assistant de réparation](https://support.apple.com/fr-fr/120579)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">107</span><code class="line-text">- « Écran » peut désigner l’écran interne ou externe.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">109</span><code class="line-text">- « Appareil photo avant » peut désigner l&#x27;appareil photo avant interne ou externe.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">105</span><code class="line-text">- Une pièce usagée peut fonctionner dans un autre iPhone, mais en raison d’une utilisation ou d’une modification antérieure, les performances et la qualité risquent d’être aléatoires.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">111</span><code class="line-text">- Une pièce usagée peut fonctionner dans un autre iPhone, mais en raison d’une utilisation ou d’une modification antérieure, les performances et la qualité risquent d’être aléatoires.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">107</span><code class="line-text">- Les Independent Repair Providers ont accès aux pièces détachées d’origine, aux outils, aux formations, aux guides de service, aux diagnostics et aux ressources Apple. Les réparations effectuées par des Independent Repair Providers ne sont pas couvertes par la garantie Apple, ni par les contrats AppleCare, mais peuvent être couvertes par la garantie proposée par le fournisseur lui-même.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">113</span><code class="line-text">- Les Independent Repair Providers ont accès aux pièces détachées d’origine, aux outils, aux formations, aux guides de service, aux diagnostics et aux ressources Apple. Les réparations effectuées par des Independent Repair Providers ne sont pas couvertes par la garantie Apple, ni par les contrats AppleCare, mais peuvent être couvertes par la garantie proposée par le fournisseur lui-même.</code></div>
+<div class="fold"><span>••• 2 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
