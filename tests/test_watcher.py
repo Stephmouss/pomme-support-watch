@@ -94,6 +94,45 @@ class WatcherTests(unittest.TestCase):
         feed = (self.root / "public/feeds/en-us-updated.xml").read_text(encoding="utf-8")
         self.assertNotIn("REMOVED", feed)
 
+    def test_search_recovers_recent_article_without_sitemap_or_duplicate(self):
+        recent = "https://support.apple.com/en-us/149699"
+        old = "https://support.apple.com/en-us/149168"
+        wrong_locale = "https://support.apple.com/fr-fr/149699"
+        def page(url, published):
+            return (f'<link rel="canonical" href="{url}"><meta property="og:title" content="Example">'
+                    '<article><p>A complete Support article about controlling access to specific folders on Mac.</p>'
+                    f'</article><time itemprop="datePublished">{published}</time>')
+
+        self.config["sources"].append(
+            {"locale": "fr-fr", "label": "French", "index": "https://example.test/fr.xml"}
+        )
+        self.config["discovery_queries"] = ["Full Disk Access"]
+        search = '<a class="rf-serp-support-title-link" href="' + recent + '">Recent</a>' + (
+            '<a class="rf-serp-support-title-link" href="' + old + '">Old</a>')
+        responses = {
+            recent: page(recent, "November 16, 2026"),
+            old: page(old, "November 1, 2026"),
+            wrong_locale: page(recent, "November 16, 2026"),
+            "https://support.apple.com/fr-fr/149168": page(old, "November 1, 2026"),
+        }
+        with patch("apple_support_watch.watcher.now_iso", return_value="2026-11-18T20:00:00Z"), patch(
+            "apple_support_watch.watcher.fetch_articles", return_value={}
+        ), patch("apple_support_watch.http.HttpClient.get_text",
+                 side_effect=lambda url: search if "www.apple.com" in url else responses[url]):
+            first = Watcher(self.root, self.config)
+            first.run()
+            second = Watcher(self.root, self.config)
+            second.run()
+            with patch("apple_support_watch.watcher.fetch_articles",
+                       side_effect=[{recent: "2026-11-18"}, {}]):
+                third = Watcher(self.root, self.config)
+                third.run()
+
+        self.assertEqual([(event.kind, event.url) for event in first.created_events], [("new", recent)])
+        self.assertEqual(second.created_events + third.created_events, [])
+        self.assertEqual((self.root / "public/feeds/en-us-new.xml").read_text().count("[NEW]"), 1)
+        self.assertNotIn("[NEW]", (self.root / "public/feeds/fr-fr-new.xml").read_text())
+
     def test_migrates_device_variants_and_keeps_one_canonical_event(self):
         variant_urls = [
             self.url,

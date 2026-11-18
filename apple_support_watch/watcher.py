@@ -4,15 +4,16 @@ import hashlib
 import json
 import os
 import time
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
 from .diffing import unified_changes, write_html_diff
+from .discovery import publication_date, search_candidates
 from .extract import article_id_from_url, extract_article
 from .feeds import write_feed
 from .http import HttpClient
-from .models import Event, Source
+from .models import Article, Event, Source
 from .site import write_index
 from .sitemaps import canonical_article_url, fetch_articles
 from .thematic import ThematicWatcher
@@ -147,9 +148,10 @@ class Watcher:
                 return url
         return None
 
-    def _record_new(self, source: Source, record: dict, lastmod: str | None, timestamp: str) -> Event | None:
+    def _record_new(self, source: Source, record: dict, lastmod: str | None, timestamp: str,
+                    article: Article | None = None) -> Event | None:
         try:
-            article = self._fetch_article(record["url"], source.locale)
+            article = article or self._fetch_article(record["url"], source.locale)
         except Exception as exc:
             record["last_error"] = str(exc)
             return None
@@ -182,6 +184,36 @@ class Watcher:
             published_date=article.published_date,
             description=article.description,
         )
+
+    def _discover_recent(self, source: Source, state: dict, ids: list[str], timestamp: str,
+                         events: list[Event]) -> None:
+        today = date.fromisoformat(timestamp[:10])
+        cutoff = today - timedelta(days=14)
+        records = state["articles"]
+        deferred = state.setdefault("discovery_retry_after", {})
+        for url in list(deferred):
+            if deferred[url] <= today.isoformat():
+                del deferred[url]
+
+        urls = [f"https://support.apple.com/{source.locale}/{article_id}" for article_id in ids]
+        unseen = [url for url in urls if url not in records and url not in deferred]
+        for url in unseen[:int(self.config.get("discovery_batch_size", 30))]:
+            try:
+                article = extract_article(self.client.get_text(url), url, source.locale, verify_canonical=True)
+            except Exception:
+                deferred[url] = (today + timedelta(days=1)).isoformat()
+                continue
+            published = publication_date(article.published_date)
+            if published is None or not cutoff <= published <= today + timedelta(days=1):
+                deferred[url] = (today + timedelta(days=7)).isoformat()
+                continue
+            record = {"url": url, "first_seen": timestamp, "active": True, "missing_count": 0,
+                      "outside_sitemap": True}
+            event = self._record_new(source, record, None, timestamp, article=article)
+            if event:
+                records[url] = record
+                events.insert(0, event)
+                self.created_events.append(event)
 
     def _check_content(self, source: Source, record: dict, timestamp: str, emit: bool = True) -> Event | None:
         try:
@@ -243,6 +275,8 @@ class Watcher:
         for source in sources:
             fetched_maps[source.locale] = fetch_articles(self.client, source.index, source.locale)
 
+        candidate_ids, discovery_errors = search_candidates(self.client, self.config.get("discovery_queries", []))
+
         for source in sources:
             current = fetched_maps[source.locale]
             state = states[source.locale]
@@ -296,6 +330,7 @@ class Watcher:
                         record = records[url]
                         prior_lastmod = record.get("sitemap_lastmod")
                         record["active"] = True
+                        record.pop("outside_sitemap", None)
                         record["missing_count"] = 0
                         record["sitemap_lastmod"] = lastmod
                         if record.get("new_pending"):
@@ -305,13 +340,15 @@ class Watcher:
                                 self.created_events.append(event)
                         elif lastmod != prior_lastmod:
                             event = self._check_content(source, record, timestamp, emit=True)
+                            if record.get("last_error"):
+                                record["sitemap_lastmod"] = prior_lastmod
                             if event:
                                 events.insert(0, event)
                                 self.created_events.append(event)
 
                 confirmations = int(self.config["removal_confirmations"])
                 for url, record in records.items():
-                    if url in current or not record.get("active", True):
+                    if url in current or record.get("outside_sitemap") or not record.get("active", True):
                         continue
                     record["missing_count"] = int(record.get("missing_count", 0)) + 1
                     if record["missing_count"] >= confirmations:
@@ -344,6 +381,8 @@ class Watcher:
                     events.insert(0, event)
                     self.created_events.append(event)
 
+            if candidate_ids:
+                self._discover_recent(source, state, candidate_ids, timestamp, events)
             state["last_success"] = timestamp
             state["sitemap_count"] = len(current)
             if not self.dry_run:
@@ -358,7 +397,8 @@ class Watcher:
             if not self.dry_run:
                 self._save_events(locale, events)
 
-        status = {"last_success": timestamp, "sources": {}}
+        status = {"last_success": timestamp, "sources": {},
+                  "discovery": {"candidates": len(candidate_ids), "errors": discovery_errors}}
         for source in sources:
             records = states[source.locale].get("articles", {})
             status["sources"][source.locale] = {

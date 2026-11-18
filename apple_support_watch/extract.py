@@ -84,8 +84,12 @@ def _to_markdown(container: Tag, base_url: str) -> str:
     return "\n\n".join(output).strip() + "\n"
 
 
-def extract_article(html: str, url: str, locale: str) -> Article:
+def extract_article(html: str, url: str, locale: str, *, verify_canonical: bool = False) -> Article:
     soup = BeautifulSoup(html, "html.parser")
+    if verify_canonical:
+        canonical = soup.select_one('link[rel="canonical"][href]')
+        if not canonical or canonical["href"].rstrip("/") != url.rstrip("/"):
+            raise ValueError(f"Canonical Support article does not match {url}")
     title_meta = soup.select_one('meta[property="og:title"]')
     description_meta = soup.select_one('meta[name="description"]')
     title = title_meta.get("content", "") if title_meta else ""
@@ -109,7 +113,7 @@ def extract_article(html: str, url: str, locale: str) -> Article:
     if len(markdown) < 80:
         raise ValueError(f"Extracted article is unexpectedly short: {url}")
 
-    date_node = soup.select_one("time, .published-date, #publication-date")
+    date_node = soup.select_one('time[itemprop="datePublished"]') or soup.select_one("time, .published-date, #publication-date")
     published_date = _clean_text(date_node.get_text(" ", strip=True)) if date_node else None
     digest = hashlib.sha256(markdown.encode("utf-8")).hexdigest()
     return Article(
