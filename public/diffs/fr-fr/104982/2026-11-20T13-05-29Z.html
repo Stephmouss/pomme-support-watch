@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Utiliser l’app Messages sur votre iPhone ou iPad - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Utiliser l’app Messages sur votre iPhone ou iPad - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/104982">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+12 ajouts</span>
+      <span class="badge removed">−12 suppressions</span>
+      <span class="badge">5 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">- Ouvrez Messages.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">- Ouvrez Messages.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">- Vous pouvez également accéder à une conversation existante.</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">-<mark class="inline-add"> Touchez le bouton Rédiger pour écrire un nouveau message.</mark> Vous pouvez également accéder à une conversation existante.</code></div>
+<div class="diff-line previous removed"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">[Image: Vous pouvez également accéder à une conversation existante.]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">- Saisissez votre message, puis touchez le bouton Envoyer .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">- Saisissez votre message, puis touchez le bouton Envoyer .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 35 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">* Le toucher prolongé fonctionne sur la plupart des appareils compatibles avec iOS 13 et versions ultérieures ou iPadOS.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">* Le toucher prolongé fonctionne sur la plupart des appareils compatibles avec iOS 13 et versions ultérieures ou iPadOS.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">### <mark class="inline-remove">R</mark>eli<mark class="inline-remove">r</mark>e<mark class="inline-remove"> ou réé</mark>c<mark class="inline-remove">rir</mark>e<mark class="inline-remove"> vos textes</mark> dans Messages</code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">### <mark class="inline-add">Utiliser Apple Int</mark>el<mark class="inline-add">l</mark>i<mark class="inline-add">g</mark>e<mark class="inline-add">n</mark>ce dans Messages</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">Sur les appareils compatibles avec Apple Intelligence<mark class="inline-remove"> et</mark> dotés d’iOS 18.1 et d’iPadOS 18.1 ou version ultérieure, vous pouvez [utiliser les Outils d<mark class="inline-remove">’</mark>éc<mark class="inline-remove">r</mark>i<mark class="inline-remove">ture</mark> pour relire, réécrire, résumer ou modifier le ton d<mark class="inline-remove">’</mark>u<mark class="inline-remove">n</mark> texte.](https://support.apple.com/guide/iphone/use-writing-tools-iph6f08da1d2/ios) Surlignez le texte que vous souhaitez modifier, touchez le bouton Suivant , puis touchez Outils d’écriture pour commencer.</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">Sur les appareils compatibles avec Apple Intelligence dotés d’iOS 18.1 et d’iPadOS 18.1 ou version ultérieure, vous pouvez [utiliser les Outils d<mark class="inline-add">e r</mark>é<mark class="inline-add">da</mark>c<mark class="inline-add">t</mark>i<mark class="inline-add">on</mark> pour relire, réécrire, résumer ou modifier le ton du texte.](https://support.apple.com/guide/iphone/use-writing-tools-iph6f08da1d2/ios) Surlignez le texte que vous souhaitez modifier, touchez le bouton Suivant , puis touchez Outils d’écriture pour commencer.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">Sur les appareils compatibles avec Apple Intelligence dotés d’iOS 27.2 ou d’iPadOS 27.2 ou version ultérieure, Apple Intelligence peut suggérer des actions, comme créer un rappel ou ouvrir l’app Photos, en fonction de vos conversations dans Messages. Touchez une action suggérée dans votre conversation pour ouvrir une app et finaliser les détails.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">Pour utiliser les fonctionnalités d’Apple Intelligence sur votre iPhone, vous avez besoin d’un [appareil compatible.](https://www.apple.com/apple-intelligence/) Apple Intelligence est disponible en version bêta à partir d’iOS 18.1, d’iPadOS 18.1 et de macOS Sequoia 15.1, à condition que votre appareil et Siri utilisent la même [langue prise en charge](https://support.apple.com/121115#supportedlanguages) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">Pour utiliser les fonctionnalités d’Apple Intelligence sur votre iPhone, vous avez besoin d’un [appareil compatible.](https://www.apple.com/apple-intelligence/) Apple Intelligence est disponible en version bêta à partir d’iOS 18.1, d’iPadOS 18.1 et de macOS Sequoia 15.1, à condition que votre appareil et Siri utilisent la même [langue prise en charge](https://support.apple.com/121115#supportedlanguages) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">- Touchez l’icône du contact ou du groupe en haut de la conversation.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">- Touchez l’icône du contact ou du groupe en haut de la conversation.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">- Touchez pour activer<mark class="inline-remove"> l’option</mark> Traduire automatiquement.</code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">- Touchez pour activer Traduire automatiquement.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">- Touchez Traduire de ou Traduire vers<mark class="inline-remove">,</mark> <mark class="inline-remove">puis</mark> choisissez vos langues.</code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">- Touchez Traduire de ou Traduire vers <mark class="inline-add">et</mark> choisissez vos langues.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">[Image: Écran d’iPhone affichant les réglages de Messages pour la Traduction i<mark class="inline-remove">ns</mark>t<mark class="inline-remove">antanée</mark>, avec des options pour traduire de l’anglais vers l’espagnol.]</code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">[Image: Écran d’iPhone affichant les réglages de Messages pour la Traduction <mark class="inline-add">en d</mark>i<mark class="inline-add">rec</mark>t, avec des options pour traduire de l’anglais vers l’espagnol.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text">Après avoir activé la <mark class="inline-remove">T</mark>raduction i<mark class="inline-remove">ns</mark>t<mark class="inline-remove">antanée</mark>, vous pouvez afficher les messages texte d’origine à tout moment. Touchez Traduction en <mark class="inline-remove">cours (</mark>[langue]<mark class="inline-remove">)</mark> au bas de la conversation, puis choisissez d<mark class="inline-remove">’aff</mark>i<mark class="inline-remove">che</mark>r le texte origin<mark class="inline-remove">al</mark> ou <mark class="inline-remove">d</mark>e<mark class="inline-remove"> sélectionner</mark> Arrêter la traduction.</code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">Après avoir activé la <mark class="inline-add">t</mark>raduction <mark class="inline-add">en d</mark>i<mark class="inline-add">rec</mark>t, vous pouvez afficher les messages texte d’origine à tout moment. Touchez Traduction en [langue] au bas de la conversation, puis choisissez d<mark class="inline-add">e vo</mark>ir le texte <mark class="inline-add">d’</mark>origin<mark class="inline-add">e</mark> ou <mark class="inline-add">choisiss</mark>e<mark class="inline-add">z</mark> Arrêter la traduction.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">La <mark class="inline-remove">T</mark>raduction i<mark class="inline-remove">ns</mark>t<mark class="inline-remove">antanée</mark> dans Messages est <mark class="inline-remove">propos</mark>ée par Apple Intelligence. Elle est initialement disponible <mark class="inline-remove">da</mark>n<mark class="inline-remove">s les langues suivantes :</mark> allemand, anglais, chinois (simplifié), chinois (traditionnel), coréen, danois, espagnol, français, italien, japonais, néerlandais, norvégien, portugais, suédois, turc et vietnamien.</code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">La <mark class="inline-add">t</mark>raduction <mark class="inline-add">en d</mark>i<mark class="inline-add">rec</mark>t dans Messages est <mark class="inline-add">activ</mark>ée par Apple Intelligence. Elle est initialement disponible <mark class="inline-add">e</mark>n allemand, anglais, chinois (simplifié), chinois (traditionnel), coréen, danois, espagnol, français, italien, japonais, néerlandais, norvégien, portugais, suédois, turc et vietnamien.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">77</span><code class="line-text">## Épingler les conversations importantes</code></div>
+<div class="diff-line current unchanged"><span class="line-number">77</span><code class="line-text">## Épingler les conversations importantes</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 27 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">107</span><code class="line-text">- Touchez le bouton OK .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">107</span><code class="line-text">- Touchez le bouton OK .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">109</span><code class="line-text">[Image: <mark class="inline-remove">É</mark>cran d’iPhone <mark class="inline-remove">montr</mark>a<mark class="inline-remove">nt</mark> un avatar Memoji avec des lunettes et u<mark class="inline-remove">ne</mark> coiff<mark class="inline-remove">ure </mark>s<mark class="inline-remove">tylée</mark>, avec des options de personnalisation.]</code></div>
+<div class="diff-line current added"><span class="line-number">109</span><code class="line-text">[Image: <mark class="inline-add">L’é</mark>cran d<mark class="inline-add">e l</mark>’iPhone a<mark class="inline-add">ffiche</mark> un avatar Memoji avec des lunettes et <mark class="inline-add">des cheve</mark>u<mark class="inline-add">x</mark> coiff<mark class="inline-add">é</mark>s, avec des options de personnalisation.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">111</span><code class="line-text">Vous pouvez partager votre nom et votre photo avec quiconque utilise iMessage, mais vous devrez confirmer que vous souhaitez les partager lorsque vous envoyez ou répondez à un nouveau message. Vous pouvez également activer et désactiver le partage. Suivez simplement les étapes 1 et 2 et activez ou désactivez le partage du nom et de la photo.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">111</span><code class="line-text">Vous pouvez partager votre nom et votre photo avec quiconque utilise iMessage, mais vous devrez confirmer que vous souhaitez les partager lorsque vous envoyez ou répondez à un nouveau message. Vous pouvez également activer et désactiver le partage. Suivez simplement les étapes 1 et 2 et activez ou désactivez le partage du nom et de la photo.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 49 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">163</span><code class="line-text">- Activez l’option Supprimer après utilisation.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">163</span><code class="line-text">- Activez l’option Supprimer après utilisation.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">165</span><code class="line-text">[Image: Écran des réglages de l’iPhone <mark class="inline-remove">montr</mark>ant le <mark class="inline-remove">b</mark>out<mark class="inline-remove">on</mark> Supprimer après utilisation pour les codes de v<mark class="inline-remove">al</mark>i<mark class="inline-remove">d</mark>ation.]</code></div>
+<div class="diff-line current added"><span class="line-number">165</span><code class="line-text">[Image: Écran des réglages de l’iPhone <mark class="inline-add">affich</mark>ant le <mark class="inline-add">c</mark>o<mark class="inline-add">mm</mark>ut<mark class="inline-add">ateur</mark> Supprimer après utilisation pour les codes de v<mark class="inline-add">ér</mark>i<mark class="inline-add">fic</mark>ation.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">167</span><code class="line-text">Lorsque ce réglage est activé dans iOS 17 ou version ultérieure, votre téléphone supprime automatiquement les codes de validation dans Messages ou Mail une fois que le code a été utilisé avec le remplissage automatique.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">167</span><code class="line-text">Lorsque ce réglage est activé dans iOS 17 ou version ultérieure, votre téléphone supprime automatiquement les codes de validation dans Messages ou Mail une fois que le code a été utilisé avec le remplissage automatique.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 13 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
