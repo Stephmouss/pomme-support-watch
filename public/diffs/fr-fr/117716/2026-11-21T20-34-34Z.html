@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Dessinez, annotez et utilisez Griffonner dans Pages, Numbers et Keynote - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Dessinez, annotez et utilisez Griffonner dans Pages, Numbers et Keynote - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/117716">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+10 ajouts</span>
+      <span class="badge removed">−16 suppressions</span>
+      <span class="badge">8 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">## Transformer l’écriture manuscrite en texte avec Griffonner</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">## Transformer l’écriture manuscrite en texte avec Griffonner</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">Griffonner vous permet de transformer l’écriture manuscrite en texte à l’aide d’un Apple Pencil sur un iPad compatible*. Lorsque vous jumelez un Apple Pencil avec un iPad, la fonctionnalité Griffonner est activée par défaut. Pour v<mark class="inline-remove">érifi</mark>er <mark class="inline-remove">l</mark>e<mark class="inline-remove"> </mark>r<mark class="inline-remove">églage</mark> Griffonner <mark class="inline-remove">ou po</mark>ur <mark class="inline-remove">l</mark>e d<mark class="inline-remove">ésactiver</mark>, accédez à Réglages <mark class="inline-remove">&gt;</mark> Apple Pencil<mark class="inline-remove"> sur votre iPad</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">Griffonner vous permet de transformer l’écriture manuscrite en texte à l’aide d’un Apple Pencil sur un iPad compatible*. Lorsque vous jumelez un Apple Pencil avec un iPad, la fonctionnalité Griffonner est activée par défaut. Pour <mark class="inline-add">acti</mark>ver <mark class="inline-add">ou désactiv</mark>er Griffonner <mark class="inline-add">s</mark>ur <mark class="inline-add">votr</mark>e <mark class="inline-add">iPa</mark>d, accédez à Réglages <mark class="inline-add">et touchez</mark> Apple Pencil.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">- Touchez Apple Pencil dans le corps d’un document de traitement de texte dans Pages, une feuille de calcul dans Numbers ou une diapositive dans Keynote à l’endroit où vous souhaitez écrire. Ou bien touchez une zone de texte, une forme ou la cellule d’un tableau.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">- Touchez Apple Pencil dans le corps d’un document de traitement de texte dans Pages, une feuille de calcul dans Numbers ou une diapositive dans Keynote à l’endroit où vous souhaitez écrire. Ou bien touchez une zone de texte, une forme ou la cellule d’un tableau.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 17 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">La barre d’outils contient également des boutons pour appliquer un retrait, mettre le texte en forme et l’aligner, ainsi que pour insérer des sauts de page, des signets, etc.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">La barre d’outils contient également des boutons pour appliquer un retrait, mettre le texte en forme et l’aligner, ainsi que pour insérer des sauts de page, des signets, etc.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">* Vous pouvez passer à une autre langue prise en charge dans la barre d’outils si vous avez ajouté le clavier d<mark class="inline-remove">e</mark> cette langue d<mark class="inline-remove">ans</mark> Réglages <mark class="inline-remove">&gt;</mark> Général<mark class="inline-remove"> &gt;</mark> Clavier <mark class="inline-remove">&gt;</mark> Claviers. [Vérifiez les langues et régions prises en charge par la fonctionnalité Griffonner](https://www.apple.com/fr/ios/feature-availability/#apple-pencil-scribble) .</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">* Vous pouvez passer à une autre langue prise en charge dans la barre d’outils si vous avez ajouté le clavier <mark class="inline-add">correspon</mark>d<mark class="inline-add">ant à</mark> cette langue<mark class="inline-add">.</mark> <mark class="inline-add">Pour gérer vos claviers, accé</mark>d<mark class="inline-add">ez à</mark> Réglages<mark class="inline-add">,</mark> <mark class="inline-add">puis touchez</mark> Général<mark class="inline-add">,</mark> Clavier<mark class="inline-add">,</mark> <mark class="inline-add">puis</mark> Claviers. [Vérifiez les langues et régions prises en charge par la fonctionnalité Griffonner](https://www.apple.com/fr/ios/feature-availability/#apple-pencil-scribble) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">## Ajouter un dessin</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">## Ajouter un dessin</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">### Ajouter un dessin au document</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">### Ajouter un dessin au document</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">Pour utiliser votre doigt pour ajouter un dessin, ou si vous avez un Apple Pencil<mark class="inline-remove">,</mark> mais que vous avez activé <mark class="inline-remove">l’option</mark> <mark class="inline-remove">[</mark>Sélectionner et faire défiler](https://<mark class="inline-remove">acc</mark>p<mark class="inline-remove">.c</mark>or<mark class="inline-remove">p</mark>.apple.com/<mark class="inline-remove">content/haiku/article/</mark>fr<mark class="inline-remove">_FR</mark>/<mark class="inline-remove">KBase/033/208459.html</mark>#selectandscroll) <mark class="inline-remove">, procédez comme suit </mark>:</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">Pour utiliser votre doigt pour ajouter un dessin, ou si vous avez un Apple Pencil mais que vous avez activé <mark class="inline-add">[«</mark> Sélectionner et faire défiler<mark class="inline-add"> »</mark>](https://<mark class="inline-add">su</mark>p<mark class="inline-add">p</mark>or<mark class="inline-add">t</mark>.apple.com/fr<mark class="inline-add">-fr</mark>/<mark class="inline-add">117716</mark>#selectandscroll) :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">- Sur iPhone, touchez le bouton Content Hub dans la barre d’outils, balayez vers l’onglet pour afficher d’autres options , puis touchez Ajouter un dessin.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">- Sur iPhone, touchez le bouton Content Hub dans la barre d’outils, balayez vers l’onglet pour afficher d’autres options , puis touchez Ajouter un dessin.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text"><mark class="inline-remove">[I</mark>mage<mark class="inline-remove">:</mark> null<mark class="inline-remove">]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text"><mark class="inline-add">- Sur iPad, touchez le bouton Données </mark>m<mark class="inline-add">ultimédi</mark>a<mark class="inline-add">s , puis Ajouter un dessin. Vous pouvez é</mark>g<mark class="inline-add">al</mark>e<mark class="inline-add">ment</mark> <mark class="inline-add">toucher l e bouton « Centre de conte</mark>nu<mark class="inline-add"> » dans </mark>l<mark class="inline-add">a barre d’outi</mark>l<mark class="inline-add">s, balayer vers l’onglet « Plus d’options » , puis toucher Ajouter un dessin.</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">- Sur iPad, touchez le bouton Données multimédias , puis Ajouter un dessin. Vous pouvez également toucher le bouton Content Hub dans la barre d’outils, balayer vers l’onglet pour afficher d’autres options , puis toucher Ajouter un dessin.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">Les outils de dessin (le stylo, le crayon, l’outil pastel ou l’outil de remplissage) apparaissent dans la barre d’outils en bas de l’écran.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">Les outils de dessin (le stylo, le crayon, l’outil pastel ou l’outil de remplissage) apparaissent dans la barre d’outils en bas de l’écran.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">63</span><code class="line-text">[Image: Barre d’outils Dessin]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">[Image: Barre d’outils Dessin]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">65</span><code class="line-text">- Pour dessiner avec une <mark class="inline-remove">ép</mark>ai<mark class="inline-remove">ss</mark>e<mark class="inline-remove">ur</mark> et une opacité<mark class="inline-remove"> de trait</mark> différentes, touchez<mark class="inline-remove"> deux fois</mark> l’un des outils de dessin, puis to<mark class="inline-remove">uch</mark>ez une nouvelle <mark class="inline-remove">ép</mark>ai<mark class="inline-remove">sseur d</mark>e <mark class="inline-remove">trait. V</mark>ou<mark class="inline-remove">s pouvez également</mark> fai<mark class="inline-remove">r</mark>e glisser le curseur pour ajuster l’opacité.</code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">- Pour dessiner avec une <mark class="inline-add">t</mark>ai<mark class="inline-add">ll</mark>e et une opacité différentes, touchez l’un des outils de dessin<mark class="inline-add"> deux fois</mark>, puis <mark class="inline-add">sélec</mark>t<mark class="inline-add">i</mark>o<mark class="inline-add">nn</mark>ez une nouvelle <mark class="inline-add">t</mark>ai<mark class="inline-add">ll</mark>e ou fai<mark class="inline-add">t</mark>e<mark class="inline-add">s</mark> glisser le curseur pour ajuster l’opacité.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">- Vous pouvez dessiner avec une couleur différente :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">- Vous pouvez dessiner avec une couleur différente :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 89 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">159</span><code class="line-text">Vous pouvez ajouter des annotations à du texte, à des objets ou aux cellules d’un tableau dans un document Pages. Les annotations se déplacent avec le texte ou les objets lorsque vous apportez des modifications. Deux outils d’annotation sont disponibles : le stylo et le surligneur.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">155</span><code class="line-text">Vous pouvez ajouter des annotations à du texte, à des objets ou aux cellules d’un tableau dans un document Pages. Les annotations se déplacent avec le texte ou les objets lorsque vous apportez des modifications. Deux outils d’annotation sont disponibles : le stylo et le surligneur.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">161</span><code class="line-text">- Pour ajouter une annotation avec l’Apple Pencil, touchez n’importe quel endroit de la page, puis effectuez un balayage vers la gauche sur la barre d’outils pour accéder aux outils d’annotation. Pour utiliser votre doigt, ou si vous avez activé [Sélectionner et faire défiler](https://<mark class="inline-remove">acc</mark>p<mark class="inline-remove">.c</mark>or<mark class="inline-remove">p</mark>.apple.com/<mark class="inline-remove">content/haiku/article/</mark>fr<mark class="inline-remove">_FR</mark>/<mark class="inline-remove">KBase/033/208459.html</mark>#selectandscroll) , touchez le bouton Plus , puis touchez Annotation intelligente.</code></div>
+<div class="diff-line current added"><span class="line-number">157</span><code class="line-text">- Pour ajouter une annotation avec l’Apple Pencil, touchez n’importe quel endroit de la page, puis effectuez un balayage vers la gauche sur la barre d’outils pour accéder aux outils d’annotation. Pour utiliser votre doigt, ou si vous avez activé [Sélectionner et faire défiler](https://<mark class="inline-add">su</mark>p<mark class="inline-add">p</mark>or<mark class="inline-add">t</mark>.apple.com/fr<mark class="inline-add">-fr</mark>/<mark class="inline-add">117716</mark>#selectandscroll) , touchez le bouton Plus , puis touchez Annotation intelligente.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">163</span><code class="line-text">[Image: le bouton Plus]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">159</span><code class="line-text">[Image: le bouton Plus]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 21 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">186</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">187</span><code class="line-text">- Pour effacer toutes les annotations, touchez le bouton Corbeille dans la barre d’outils, puis touchez Effacer toutes les annotations intelligentes.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">183</span><code class="line-text">- Pour effacer toutes les annotations, touchez le bouton Corbeille dans la barre d’outils, puis touchez Effacer toutes les annotations intelligentes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">188</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">184</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">189</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">190</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">191</span><code class="line-text">- Lorsque vous avez fini, touchez Terminé.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">185</span><code class="line-text">- Lorsque vous avez fini, touchez Terminé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">192</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">186</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">193</span><code class="line-text">Vous pouvez supprimer une annotation après l’avoir ajoutée. Touchez l’annotation, puis Supprimer. Si vous supprimez le texte ou l’objet associé à une annotation, celle-ci est également supprimée.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">187</span><code class="line-text">Vous pouvez supprimer une annotation après l’avoir ajoutée. Touchez l’annotation, puis Supprimer. Si vous supprimez le texte ou l’objet associé à une annotation, celle-ci est également supprimée.</code></div>
+<div class="fold"><span>••• 14 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">208</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">202</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">209</span><code class="line-text">- Pour supprimer une annotation, sélectionnez-la, puis appuyez sur la touche Supprimer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">203</span><code class="line-text">- Pour supprimer une annotation, sélectionnez-la, puis appuyez sur la touche Supprimer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">210</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">204</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">211</span><code class="line-text">- Pour supprimer toutes les annotations, s<mark class="inline-remove">élect</mark>i<mark class="inline-remove">onn</mark>ez <mark class="inline-remove">É</mark>di<mark class="inline-remove">t</mark>i<mark class="inline-remove">on</mark> <mark class="inline-remove">&gt;</mark> Supprimer les annotations intelligentes.</code></div>
+<div class="diff-line current added"><span class="line-number">205</span><code class="line-text">- Pour supprimer toutes les annotations, <mark class="inline-add">choi</mark>si<mark class="inline-add">ss</mark>ez <mark class="inline-add">Mo</mark>di<mark class="inline-add">f</mark>i<mark class="inline-add">er,</mark> <mark class="inline-add">puis appuyez sur</mark> Supprimer les annotations intelligentes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">212</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">206</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">213</span><code class="line-text">- Pour afficher ou masquer toutes les annotations, s<mark class="inline-remove">élect</mark>i<mark class="inline-remove">onn</mark>ez Présentation <mark class="inline-remove">&gt;</mark> Afficher/<mark class="inline-remove">m</mark>asquer les annotations intelligentes.</code></div>
+<div class="diff-line current added"><span class="line-number">207</span><code class="line-text">- Pour afficher ou masquer toutes les annotations, <mark class="inline-add">choi</mark>si<mark class="inline-add">ss</mark>ez Présentation<mark class="inline-add">,</mark> <mark class="inline-add">puis appuyez sur</mark> Afficher/<mark class="inline-add">M</mark>asquer les annotations intelligentes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">214</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">208</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">215</span><code class="line-text">## Sélectionner et faire défiler avec l’Apple Pencil</code></div>
+<div class="diff-line current unchanged"><span class="line-number">209</span><code class="line-text">## Sélectionner et faire défiler avec l’Apple Pencil</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">216</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">210</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 19 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">236</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">230</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">237</span><code class="line-text">- [Saisissez du texte avec Griffonner sur l’iPad](https://support.apple.com/guide/ipad/ipad355ab2a7/ipados)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">231</span><code class="line-text">- [Saisissez du texte avec Griffonner sur l’iPad](https://support.apple.com/guide/ipad/ipad355ab2a7/ipados)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">238</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">232</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">239</span><code class="line-text">- [Si vous ne pouvez pas jumeler l’Apple Pencil avec votre iPad](https://support.apple.com/108788)</code></div>
+<div class="diff-line current added"><span class="line-number">233</span><code class="line-text">- [Si vous ne pouvez pas jumeler l’Apple Pencil avec votre iPad](https://support.apple.com/<mark class="inline-add">fr-fr/</mark>108788)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">240</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">234</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">241</span><code class="line-text">- [<mark class="inline-remove">Obt</mark>e<mark class="inline-remove">ni</mark>r un aperçu des outils et commandes avec le survol de l’Apple Pencil sur l’iPad](https://support.apple.com/guide/ipad/<mark class="inline-remove">preview-tools-controls-apple-pencil-hover-</mark>ipad<mark class="inline-remove">f</mark>c<mark class="inline-remove">9d43</mark>5b/ipados)</code></div>
+<div class="diff-line current added"><span class="line-number">235</span><code class="line-text">- [<mark class="inline-add">Affich</mark>er un aperçu des outils et<mark class="inline-add"> des</mark> commandes avec le survol de l’Apple Pencil sur l’iPad](https://support.apple.com/guide/ipad/ipadc<mark class="inline-add">5</mark>5b<mark class="inline-add">6c7a/27</mark>/ipados<mark class="inline-add">/27</mark>)</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

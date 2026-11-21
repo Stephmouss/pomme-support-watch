@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Locate and manage backups of your iPhone, iPad, and iPod touch — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Locate and manage backups of your iPhone, iPad, and iPod touch</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/108809">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+26 ajouts</span>
+      <span class="badge removed">−18 suppressions</span>
+      <span class="badge">1 bloc modifié</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Locate and manage backups of your iPhone, iPad, and iPod touch</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Locate and manage backups of your iPhone, iPad, and iPod touch</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Find <mark class="inline-remove">a list of you</mark>r<mark class="inline-remove"> iOS or iPadOS backups on</mark> your Mac<mark class="inline-remove">,</mark> PC<mark class="inline-remove">,</mark> and i<mark class="inline-remove">OS or i</mark>Pad<mark class="inline-remove">OS</mark> <mark class="inline-remove">devi</mark>c<mark class="inline-remove">e</mark>. <mark class="inline-remove">L</mark>e<mark class="inline-remove">ar</mark>n<mark class="inline-remove"> how to</mark> delete <mark class="inline-remove">b</mark>ac<mark class="inline-remove">kups,</mark> <mark class="inline-remove">copy</mark> backups<mark class="inline-remove">,</mark> a<mark class="inline-remove">nd more</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Find <mark class="inline-add">whe</mark>r<mark class="inline-add">e</mark> your Mac<mark class="inline-add"> or</mark> PC<mark class="inline-add"> stores iPhone</mark> and iPad <mark class="inline-add">ba</mark>c<mark class="inline-add">kups</mark>. <mark class="inline-add">Th</mark>en delete <mark class="inline-add">or </mark>a<mark class="inline-add">r</mark>c<mark class="inline-add">hive</mark> <mark class="inline-add">a</mark> backup<mark class="inline-add"> in the Finder or Apple Device</mark>s a<mark class="inline-add">pp</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">[Locate backups stored on your Mac](https://support.apple.com/en-us/108809#locate-mac)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">[Locate backups stored on your Mac](https://support.apple.com/en-us/108809#locate-mac)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">[Locate backups stored on your PC](https://support.apple.com/en-us/108809#locate-pc)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">[Locate backups stored on your PC](https://support.apple.com/en-us/108809#locate-pc)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">[Manage backups<mark class="inline-remove"> in the Finder or the Apple Devices app</mark>](https://support.apple.com/en-us/108809#manage-backups)</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">[Manage <mark class="inline-add">your </mark>backups](https://support.apple.com/en-us/108809#manage-backups)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">## Locate backups stored on your Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">## Locate backups stored on your Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">- From the Go menu in the Finder menu bar, choose Go to Folder.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">- From the Go menu in the Finder menu bar, choose Go to Folder.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- <mark class="inline-remove">Typ</mark>e or <mark class="inline-remove">co</mark>p<mark class="inline-remove">y and past</mark>e ~/Library/Application Support/MobileSync/Backup/ in the <mark class="inline-remove">pa</mark>thn<mark class="inline-remove">am</mark>e <mark class="inline-remove">wi</mark>n<mark class="inline-remove">dow</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- <mark class="inline-add">Past</mark>e or <mark class="inline-add">ty</mark>pe ~/Library/Application Support/MobileSync/Backup/ in the <mark class="inline-add">text field, </mark>th<mark class="inline-add">e</mark>n<mark class="inline-add"> pr</mark>e<mark class="inline-add">ss</mark> <mark class="inline-add">Retur</mark>n.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">## Locate backups stored on your PC</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">## Locate backups stored on your PC</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- Press the Windows key + R<mark class="inline-remove"> to open the Run dialog box</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- Press the Windows key + R.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">- Type %USERPROFILE%<mark class="inline-remove"> if you&#x27;re using the </mark>Apple<mark class="inline-remove"> D</mark>e<mark class="inline-remove">vi</mark>c<mark class="inline-remove">es </mark>a<mark class="inline-remove">p</mark>p <mark class="inline-remove">or iTunes from</mark> the <mark class="inline-remove">Microsoft Sto</mark>re.</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">- Type %USERPROFILE%<mark class="inline-add">\</mark>Apple<mark class="inline-add">\Mobil</mark>e<mark class="inline-add">Syn</mark>c<mark class="inline-add">\B</mark>a<mark class="inline-add">cku</mark>p <mark class="inline-add">,</mark> the<mark class="inline-add">n</mark> <mark class="inline-add">p</mark>re<mark class="inline-add">ss Enter</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- If <mark class="inline-remove">iTunes shows &quot;Help &gt; Check for Updates&quot; and you are not using </mark>the <mark class="inline-remove">App</mark>le <mark class="inline-remove">Devic</mark>es <mark class="inline-remove">a</mark>p<mark class="inline-remove">p</mark>, type %AppData%<mark class="inline-remove"> . When iTunes on your PC shows &quot;Help &gt; Check for Updates&quot;, this situation usually means that you have the older, traditional iTunes version (not from the Microsoft Store) and need to manually update it using the Help menu. However, if you have the Microsoft Store version, updates are automatic, and the %AppData% reference suggests potential file location issues or corrupted installation. To keep </mark>Apple <mark class="inline-remove">s</mark>o<mark class="inline-remove">f</mark>t<mark class="inline-remove">w</mark>a<mark class="inline-remove">re for Mi</mark>c<mark class="inline-remove">rosoft Windows </mark>up <mark class="inline-remove">to da</mark>te<mark class="inline-remove"> on your PC, [use Microsoft Store </mark>a<mark class="inline-remove">n</mark>d<mark class="inline-remove"> Apple Software Update](https://support</mark>.<mark class="inline-remove">apple.com/en-us/118406) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- If the <mark class="inline-add">fo</mark>l<mark class="inline-add">d</mark>e<mark class="inline-add">r</mark> <mark class="inline-add">do</mark>es<mark class="inline-add">n&#x27;t</mark> <mark class="inline-add">o</mark>p<mark class="inline-add">en</mark>, type %AppData%<mark class="inline-add">\</mark>Apple <mark class="inline-add">C</mark>o<mark class="inline-add">mpu</mark>t<mark class="inline-add">er\MobileSync\B</mark>ac<mark class="inline-add">k</mark>up <mark class="inline-add">ins</mark>tead.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">## Manage backups<mark class="inline-remove"> in the Finder or the Apple Devices app</mark></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">## Manage <mark class="inline-add">your </mark>backups</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">After you delete a backup, you can&#x27;t recover it. If you want to keep a backup, archive it so that later backups don&#x27;t replace it.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">- Open the Finder or the [Apple Devices](https://support.apple.com/guide/devices-windows/welcome/windows) app.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">- Open the Finder or the [Apple Devices](https://support.apple.com/guide/devices-windows/welcome/windows) app.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">- Connect your device u<mark class="inline-remove">s</mark>i<mark class="inline-remove">ng</mark> a USB cable.</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- Connect your device <mark class="inline-add">to yo</mark>u<mark class="inline-add">r computer w</mark>i<mark class="inline-add">th</mark> a USB cable.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">- If your device is<mark class="inline-remove"> </mark>n<mark class="inline-remove">o</mark>t selected<mark class="inline-remove"> automatically</mark>, click <mark class="inline-remove">your dev</mark>i<mark class="inline-remove">ce. [Learn what to do if your device does not appear](https://suppor</mark>t.<mark class="inline-remove">apple.com/en-us/108643) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- If your device isn<mark class="inline-add">&#x27;</mark>t selected, click it.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- If <mark class="inline-remove">n</mark>e<mark class="inline-remove">cessary</mark>, trust your device<mark class="inline-remove">. This is typically necessary when using a new device with a backup of</mark> an<mark class="inline-remove">o</mark>t<mark class="inline-remove">h</mark>er de<mark class="inline-remove">vice previously trusted</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- If <mark class="inline-add">prompt</mark>e<mark class="inline-add">d</mark>, t<mark class="inline-add">ap T</mark>rust<mark class="inline-add"> on</mark> your device an<mark class="inline-add">d en</mark>ter <mark class="inline-add">your passco</mark>de.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- <mark class="inline-remove">Under</mark> the General tab, click Manage Backups<mark class="inline-remove"> to see a list of your backups</mark>.<mark class="inline-remove"> From here, right-click on the backup that you want, then choose Delete, Archive, Show in Finder, or Show in Explorer.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- <mark class="inline-add">Click</mark> the General tab,<mark class="inline-add"> then</mark> click Manage Backups.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text"><mark class="inline-remove">[Ima</mark>g<mark class="inline-remove">e: T</mark>h<mark class="inline-remove">e F</mark>i<mark class="inline-remove">nder window with Show In Finder as</mark> the <mark class="inline-remove">sele</mark>ct<mark class="inline-remove">ed</mark> o<mark class="inline-remove">p</mark>t<mark class="inline-remove">ion]</mark></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text"><mark class="inline-add">- Ri</mark>gh<mark class="inline-add">t-cl</mark>i<mark class="inline-add">ck</mark> the <mark class="inline-add">ba</mark>c<mark class="inline-add">kup </mark>t<mark class="inline-add">hat</mark> <mark class="inline-add">y</mark>o<mark class="inline-add">u wan</mark>t<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">- <mark class="inline-remove">Onc</mark>e <mark class="inline-remove">you finish</mark>, c<mark class="inline-remove">l</mark>i<mark class="inline-remove">ck</mark> <mark class="inline-remove">OK</mark> <mark class="inline-remove">t</mark>o <mark class="inline-remove">retur</mark>n<mark class="inline-remove"> to the</mark> Finder<mark class="inline-remove"> or the Apple Devices app</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">- <mark class="inline-add">Choos</mark>e <mark class="inline-add">Delete</mark>, <mark class="inline-add">Ar</mark>c<mark class="inline-add">h</mark>i<mark class="inline-add">ve,</mark> <mark class="inline-add">or</mark> <mark class="inline-add">Sh</mark>o<mark class="inline-add">w</mark> <mark class="inline-add">I</mark>n Finder.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">[Image: The Device backups dialog in the Finder with a backup selected and its shortcut menu open.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- After you finish, click OK.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">If your device doesn&#x27;t appear, see [Fix a device that doesn&#x27;t appear](https://support.apple.com/en-us/108643) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">On a PC, the third option is Show in Explorer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">## Learn more</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">## Learn more</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">- <mark class="inline-remove">Learn how to </mark>[<mark class="inline-remove">b</mark>ack up your iPhone, iPad, or iPod touch](https://support.apple.com/en-us/118426)<mark class="inline-remove"> .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">- [<mark class="inline-add">B</mark>ack up your iPhone, iPad, or iPod touch](https://support.apple.com/en-us/118426)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">- <mark class="inline-remove">Le</mark>ar<mark class="inline-remove">n th</mark>e<mark class="inline-remove"> [difference between</mark> iCloud and iTunes backups](https://support.apple.com/en-us/108771)<mark class="inline-remove"> .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">- <mark class="inline-add">[Comp</mark>are iCloud and iTunes backups](https://support.apple.com/en-us/108771)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">- <mark class="inline-remove">Learn how to </mark>[<mark class="inline-remove">delete or m</mark>anage iCloud backups](https://support.apple.com/en-us/108922)<mark class="inline-remove"> from your Mac or PC.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- [<mark class="inline-add">M</mark>anage iCloud backups<mark class="inline-add"> on Mac or PC</mark>](https://support.apple.com/en-us/108922)</code></div>
+<div class="diff-line previous removed"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">- Learn how to [view and manage iCloud device backups](https://support.apple.com/guide/icloud/view-and-manage-backups-mm122d3ef202/icloud) .</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
