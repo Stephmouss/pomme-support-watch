@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Finaliser la réparation d’un iPhone ou iPad avec l’assistant de réparation - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Finaliser la réparation d’un iPhone ou iPad avec l’assistant de réparation - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/120579">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+41 ajouts</span>
+      <span class="badge removed">−15 suppressions</span>
+      <span class="badge">6 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">Lorsque vous effectuez la mise à jour vers la dernière version d’iOS ou d’iPadOS, il peut vous être demandé de finaliser une réparation avec l’assistant de réparation si une pièce a été remplacée par une pièce d’occasion ou si une pièce n’a pas été étalonnée dans le cadre d’une réparation précédente.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">Lorsque vous effectuez la mise à jour vers la dernière version d’iOS ou d’iPadOS, il peut vous être demandé de finaliser une réparation avec l’assistant de réparation si une pièce a été remplacée par une pièce d’occasion ou si une pièce n’a pas été étalonnée dans le cadre d’une réparation précédente.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">Avec l’iPhone 15 et modèles ultérieurs, l’iPad Pro (M4 et M5), l’iPad Air (M2, M3 et M4), l’iPad mini (A17 Pro) et l’iPad (A16), si vous avez <mark class="inline-remove">un</mark>e <mark class="inline-remove">certaine </mark>expérience dans l<mark class="inline-remove">es</mark> réparation<mark class="inline-remove">s</mark> complexe<mark class="inline-remove">s</mark> d’appareils électroniques, vous pouvez réutiliser les pièces d’un appareil d<mark class="inline-remove">e</mark> même modèle. Si vous remplacez une pièce de l’un de ces appareils par une pièce d’un autre appareil de même modèle, l’assistant de réparation vous permet de vérifier que la pièce en question est fonctionnelle et correctement calibrée.</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">Avec l’iPhone 15 et<mark class="inline-add"> les</mark> modèles ultérieurs, l’iPad Pro (M4 et M5), l’iPad Air (M2, M3 et M4), l’iPad mini (A17 Pro<mark class="inline-add"> et A20 Pro</mark>) et l’iPad (A16), si vous avez <mark class="inline-add">d</mark>e <mark class="inline-add">l’</mark>expérience dans l<mark class="inline-add">a</mark> réparation complexe d’appareils électroniques, vous pouvez réutiliser les pièces d’un appareil d<mark class="inline-add">u</mark> même modèle. Si vous remplacez une pièce de l’un de ces appareils par une pièce d’un autre appareil de même modèle, l’assistant de réparation vous permet de vérifier que la pièce en question est fonctionnelle et correctement calibrée.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">## Éléments requis</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">## Éléments requis</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">- Votre appareil doit disposer de la dernière version d’iOS ou d’iPadOS.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">- Votre appareil doit disposer de la dernière version d’iOS ou d’iPadOS.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text"><mark class="inline-remove">Si</mark> <mark class="inline-remove">vous possédez l’</mark>un <mark class="inline-remove">des modèles d’</mark>iPhone <mark class="inline-remove">s</mark>u<mark class="inline-remove">ivants</mark>, vous pouvez utiliser l’Assistant de réparation pour terminer la réparation de ces pièces :</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text"><mark class="inline-add">Avec</mark> un iPhone <mark class="inline-add">D</mark>u<mark class="inline-add">o</mark>, vous pouvez utiliser l’Assistant de réparation pour terminer la réparation de ces pièces :</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- Dos en verre</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- Carte logique</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- Carte d’E/S</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">- Écran externe</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- Écran interne</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- Batterie</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- Caméra FaceTime</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- Appareil photo avant externe</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">- Touch ID</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">- Boutons de réglage du volume</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- Boîtier</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- Bloc écran interne</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- Appareil photo arrière</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">Avec l’un de ces modèles d’iPhone, vous pouvez utiliser l’Assistant de réparation pour terminer la réparation de ces pièces :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">| Dos en verre 2, 3 | Batterie | Écran | Caméra avant | Appareil photo arrière | Boîtier | Touch ID</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">| Dos en verre 2, 3 | Batterie | Écran | Caméra avant | Appareil photo arrière | Boîtier | Touch ID</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">iPhone SE (3e génération) | | ✓ | | | | | ✓</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">iPhone SE (3e génération) | | ✓ | | | | | ✓</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text"><mark class="inline-remove">Si </mark>v<mark class="inline-remove">ous posséd</mark>e<mark class="inline-remove">z</mark> l’un des modèles d’iPad<mark class="inline-remove"> suivants</mark>, vous pouvez utiliser l’Assistant de réparation pour terminer la réparation de ces pièces :</code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text"><mark class="inline-add">A</mark>ve<mark class="inline-add">c</mark> l’un d<mark class="inline-add">e c</mark>es modèles d’iPad, vous pouvez utiliser l’Assistant de réparation pour terminer la réparation de ces pièces :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">| Écran | Caméra TrueDepth | Caméra avant | Appareil photo arrière</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text"><mark class="inline-add">| Batterie </mark>| Écran | Caméra TrueDepth | Caméra avant | Appareil photo arrière<mark class="inline-add"> | Touch ID</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">iPad Pro (M4 et M5) | ✓ | ✓ | ✓ | ✓</code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">iPad Pro (M4 et M5) | <mark class="inline-add">| </mark>✓ | ✓ | ✓ | ✓<mark class="inline-add"> |</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">iPad Air (M2, M3 et M4) | ✓ | | ✓ |</code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">iPad Air (M2, M3 et M4) | <mark class="inline-add">| </mark>✓ | | ✓ |<mark class="inline-add"> | ✓</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">iPad mini (A<mark class="inline-remove">17</mark> Pro) | ✓ | | ✓ |</code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">iPad mini (A<mark class="inline-add">20</mark> Pro) | ✓ | <mark class="inline-add">✓ | </mark>| ✓ |<mark class="inline-add"> | ✓</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">iPad (A1<mark class="inline-remove">6</mark>) | ✓ | | ✓ |</code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">iPad <mark class="inline-add">mini </mark>(A1<mark class="inline-add">7 Pro</mark>)<mark class="inline-add"> |</mark> | ✓ | | ✓ |<mark class="inline-add"> | ✓</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">iPad (A16) | | ✓ | | ✓ | |</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">## Utiliser l’assistant de réparation</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">## Utiliser l’assistant de réparation</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">- Ouvrez Réglages.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">79</span><code class="line-text">- Ouvrez Réglages.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">- Touchez Général.</code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text">- Touchez Général<mark class="inline-add">, touchez Informations, puis touchez Historique des pièces et des réparations</mark>.</code></div>
+<div class="diff-line previous removed"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">- Touchez Informations.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">- Touchez Historique des pièces et des réparations.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">- Touchez « Redémarrer et finaliser la réparation » pour lancer l’assistant de réparation.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">83</span><code class="line-text">- Touchez « Redémarrer et finaliser la réparation » pour lancer l’assistant de réparation.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">71</span><code class="line-text">- Redémarrez votre appareil et suivez à nouveau la procédure de finalisation de la réparation.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">- Redémarrez votre appareil et suivez à nouveau la procédure de finalisation de la réparation.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text">- Si vous avez installé la pièce vous-même<mark class="inline-remove">, procédez comme suit</mark> :</code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text">- Si vous avez installé la pièce vous-même :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">75</span><code class="line-text">- Assurez-vous que la pièce est correctement installée.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">101</span><code class="line-text">- Assurez-vous que la pièce est correctement installée.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">- Si la pièce a été installée par quelqu’un d’autre, il est possible qu’elle soit protégée par le [verrouillage d’activation](https://support.apple.com/fr-fr/120610) . Contactez le centre de réparation et demandez à ce que la réparation soit finalisée pour vous.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">105</span><code class="line-text">- Si la pièce a été installée par quelqu’un d’autre, il est possible qu’elle soit protégée par le [verrouillage d’activation](https://support.apple.com/fr-fr/120610) . Contactez le centre de réparation et demandez à ce que la réparation soit finalisée pour vous.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">Avec les modèles d’iPhone 18 Pro, si vous ne terminez pas la réparation ou ne restaurez pas votre iPhone, vous ne pourrez pas utiliser la <mark class="inline-remove">caméra</mark>. Avec <mark class="inline-remove">les </mark>autres modèles d’iPhone, si vous ne terminez pas la réparation, vous pouvez continuer à utiliser votre appareil, mais <mark class="inline-remove">il est possible que </mark>la pièce ne fonctionne<mark class="inline-remove"> pas</mark> aussi bien qu’une pièce étalonnée. Vous ne pourrez pas déverrouiller votre appareil, effectuer des paiements ni vous connecter aux apps à l’aide de Face ID ou Touch ID tant que ces pièces n’ont pas été étalonnées. Tant qu’une réparation n’a pas été finalisée avec l’assistant de réparation, « Finaliser la réparation » apparaît en regard de la pièce concernée dans l’historique des pièces et des réparations.</code></div>
+<div class="diff-line current added"><span class="line-number">107</span><code class="line-text">Avec les modèles d’iPhone 18 Pr<mark class="inline-add">o et l’iPhone Du</mark>o, si vous ne terminez pas la réparation ou ne restaurez pas votre iPhone, vous ne pourrez pas utiliser l<mark class="inline-add">’</mark>a<mark class="inline-add">ppareil</mark> <mark class="inline-add">photo</mark>. Avec <mark class="inline-add">d’</mark>autres modèles d’iPhone, si vous ne terminez pas la réparation, vous pouvez continuer à utiliser votre appareil, mais la pièce <mark class="inline-add">risque de </mark>ne<mark class="inline-add"> pas</mark> fonctionne<mark class="inline-add">r</mark> aussi bien qu’une pièce étalonnée. Vous ne pourrez pas déverrouiller votre appareil, effectuer des paiements ni vous connecter aux apps à l’aide de Face ID ou Touch ID tant que ces pièces n’ont pas été étalonnées. Tant qu’une réparation n’a pas été finalisée avec l’assistant de réparation, « Finaliser la réparation » apparaît en regard de la pièce concernée dans l’historique des pièces et des réparations.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">Si vous ne disposez pas des informations nécessaires sur votre compte Apple, vous ne pourrez peut-être pas finaliser une réparation ni déverrouiller une pièce. Une pièce verrouillée n’est pas éligible à la réparation dans le cadre de la [garantie limitée Apple](https://www.apple.com/legal/warranty/) ni d’un plan AppleCare. Vous ne pouvez pas non plus faire reprendre votre appareil si vous ne pouvez pas déverrouiller une pièce. [Découvrez la marche à suivre si vous ne parvenez pas à finaliser une réparation](https://support.apple.com/fr-fr/120610) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">109</span><code class="line-text">Si vous ne disposez pas des informations nécessaires sur votre compte Apple, vous ne pourrez peut-être pas finaliser une réparation ni déverrouiller une pièce. Une pièce verrouillée n’est pas éligible à la réparation dans le cadre de la [garantie limitée Apple](https://www.apple.com/legal/warranty/) ni d’un plan AppleCare. Vous ne pouvez pas non plus faire reprendre votre appareil si vous ne pouvez pas déverrouiller une pièce. [Découvrez la marche à suivre si vous ne parvenez pas à finaliser une réparation](https://support.apple.com/fr-fr/120610) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
