@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Si vous ne parvenez pas à collaborer dans l’app Notes - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Si vous ne parvenez pas à collaborer dans l’app Notes - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/102462">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+24 ajouts</span>
+      <span class="badge removed">−6 suppressions</span>
+      <span class="badge">4 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">Découvrez comment accéder à l’option Collaborer dans une note de l’app Notes sur votre iPhone ou iPad, ainsi que la marche à suivre si vous ne parvenez pas à collaborer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">Découvrez comment accéder à l’option Collaborer dans une note de l’app Notes sur votre iPhone ou iPad, ainsi que la marche à suivre si vous ne parvenez pas à collaborer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">## <mark class="inline-remove">Av</mark>a<mark class="inline-remove">nt</mark> de <mark class="inline-remove">c</mark>o<mark class="inline-remove">mm</mark>e<mark class="inline-remove">nc</mark>e<mark class="inline-remove">r</mark></code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">## <mark class="inline-add">Vérifier les régl</mark>a<mark class="inline-add">ges</mark> de <mark class="inline-add">v</mark>o<mark class="inline-add">tr</mark>e<mark class="inline-add"> appar</mark>e<mark class="inline-add">il</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">- Assurez-vous que vous et la personne avec laquelle vous souhaitez partager du contenu ou collaborer possédez tous deux un iPhone ou un iPad mis à jour vers [la dernière version d’iOS ou d’iPadOS](https://support.apple.com/fr-fr/118575) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">- Assurez-vous que vous et la personne avec laquelle vous souhaitez partager du contenu ou collaborer possédez tous deux un iPhone ou un iPad mis à jour vers [la dernière version d’iOS ou d’iPadOS](https://support.apple.com/fr-fr/118575) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">- Ouvrez l’app Réglages, touchez votre nom, puis iCloud. Sous Enregistré sur iCloud, touchez Notes. Vérifiez que l’option « Synchroniser cet [appareil] » est activée.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">- Ouvrez l’app Réglages, touchez votre nom, puis iCloud. Sous Enregistré sur iCloud, touchez Notes. Vérifiez que l’option « Synchroniser cet [appareil] » est activée.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">## <mark class="inline-remove">Reche</mark>r<mark class="inline-remove">ch</mark>er l’option <mark class="inline-remove">C</mark>ollaborer</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text">## <mark class="inline-add">T</mark>r<mark class="inline-add">ouv</mark>er l’option <mark class="inline-add">de c</mark>ollabor<mark class="inline-add">ation sous iOS 27 ou iPadOS 27 ou une v</mark>er<mark class="inline-add">sion ultérieure</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- Ouvrez l’app Notes sur votre iPhone ou iPad.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- Accédez au dossier Tout iCloud et recherchez votre note.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- Ouvrez la note, puis touchez le bouton Partager en haut de l’écran. Si la note est verrouillée, [déverrouillez-la](https://support.apple.com/fr-fr/102537) d’abord.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">- Sous le titre de la note, vous pouvez choisir Partager un lien ou Envoyer une copie.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">[Image: Écran d’iPhone qui affiche la feuille de partage de l’app Notes avec les options pour partager un lien ou envoyer une copie d’une note.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- Pour modifier les autorisations de la note, sous iOS 27 ou iPadOS 27 ou une version ultérieure, touchez « Les personnes que vous choisissez peuvent apporter des modifications ». Vous pouvez choisir de partager la note avec toute personne disposant du lien, d’activer les demandes d’accès et d’accorder aux participants un accès en modification ou un accès en consultation et téléchargement uniquement.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">[Image: Écran d’iPhone affichant les options de partage d’une note dans l’app Notes.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">- Choisissez comment envoyer votre invitation. La première personne à participer est ajoutée automatiquement. Les autres participants doivent demander l’accès ou être ajoutés : touchez le bouton Collaborer , touchez Gérer la note partagée, puis touchez Ajouter un participant.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">## Trouver l’option de collaboration sous iOS 26 ou iPadOS 26 ou une version antérieure</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">15</span><code class="line-text">- Ouvrez l’app Notes sur votre iPhone ou iPad exécutant iOS 18 ou iPadOS 18, ou version ultérieure.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">- Ouvrez l’app Notes sur votre iPhone ou iPad exécutant iOS 18 ou iPadOS 18, ou version ultérieure.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">- Ouvrez la note, puis touchez le bouton Partager en haut de l’écran. Si la note est verrouillée, [déverrouillez-la](https://support.apple.com/fr-fr/102537) d’abord.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">- Ouvrez la note, puis touchez le bouton Partager en haut de l’écran. Si la note est verrouillée, [déverrouillez-la](https://support.apple.com/fr-fr/102537) d’abord.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">[Image: null]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">- Sous le titre de la note, vous avez le choix entre Collaborer ou Envoyer une copie. Choisissez Collaborer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">- Sous le titre de la note, vous avez le choix entre Collaborer ou Envoyer une copie. Choisissez Collaborer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">[Image: Après avoir touché le bouton Partager, un menu s’affiche. Le titre de la note se trouve en haut du menu. En dessous, l’option Collaborer est sélectionnée par défaut.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">[Image: Après avoir touché le bouton Partager, un menu s’affiche. Le titre de la note se trouve en haut du menu. En dessous, l’option Collaborer est sélectionnée par défaut.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">- Pour modifier les autorisations de la note, touchez « Seules les personnes invitées peuvent modifier ». <mark class="inline-remove">Ensuite, c</mark>hoisissez <mark class="inline-remove">l</mark>es acc<mark class="inline-remove">ès</mark>, les autorisations et si des personnes peuvent en inviter<mark class="inline-remove"> d’autres</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- Pour modifier les autorisations de la note, touchez « Seules les personnes invitées peuvent <mark class="inline-add">apporter des </mark>modifi<mark class="inline-add">cations » ou « Seuls les participants peuvent apport</mark>er<mark class="inline-add"> des modifications</mark> ». <mark class="inline-add">C</mark>hoisissez e<mark class="inline-add">n</mark>s<mark class="inline-add">uite qui peut y</mark> acc<mark class="inline-add">éder</mark>, les autorisations et si d<mark class="inline-add">’autr</mark>es personnes peuvent en inviter.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">[Image: « Seules les personnes invitées peuvent modifier » se trouve en haut de la page, sous Collaborer ou Envoyer une copie.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">[Image: « Seules les personnes invitées peuvent modifier » se trouve en haut de la page, sous Collaborer ou Envoyer une copie.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">## Si vous ne parvenez toujours pas à collaborer dans l’app Notes</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">## Si vous ne parvenez toujours pas à collaborer dans l’app Notes</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">- Si vous avez demandé l’accès à une note sous iOS ou iPadOS 27 ou une version ultérieure, votre demande est peut-être en attente. Le propriétaire de la note peut toucher le bouton Collaborer pour afficher et gérer les demandes.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">- Si la note est verrouillée, déverrouillez-la. Vous ne pouvez pas collaborer sur une note verrouillée ou sur un dossier contenant des notes verrouillées.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">53</span><code class="line-text">- Si la note est verrouillée, déverrouillez-la. Vous ne pouvez pas collaborer sur une note verrouillée ou sur un dossier contenant des notes verrouillées.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- <mark class="inline-remove">V</mark>ous pouvez collaborer sur des notes uniquement avec <mark class="inline-remove">d</mark>e<mark class="inline-remove">s</mark> personnes<mark class="inline-remove"> disposan</mark>t é<mark class="inline-remove">ga</mark>le<mark class="inline-remove">ment</mark> <mark class="inline-remove">d’</mark>un appareil<mark class="inline-remove"> Apple connecté à leur compte</mark> Apple. Si vous ne parvenez pas à collaborer, vous pouvez toujours envoyer une copie de la note par e-mail ou par message.</code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">- <mark class="inline-add">Sous iOS ou iPadOS 26 ou une version antérieure, v</mark>ous pouvez collaborer sur des notes uniquement avec <mark class="inline-add">un</mark>e personne<mark class="inline-add"> qui e</mark>st <mark class="inline-add">connect</mark>é<mark class="inline-add">e à son compte App</mark>le <mark class="inline-add">sur </mark>un appareil Apple. Si vous ne parvenez pas à collaborer, vous pouvez toujours envoyer une copie de la note par e-mail ou par message.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">- Jusqu’à 100 personnes peuvent collaborer sur une note dans l’app Notes. Assurez-vous de ne pas avoir dépassé le nombre de personnes autorisées.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">- Jusqu’à 100 personnes peuvent collaborer sur une note dans l’app Notes. Assurez-vous de ne pas avoir dépassé le nombre de personnes autorisées.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

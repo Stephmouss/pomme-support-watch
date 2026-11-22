@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Mac : utilisation des gestes Multi-Touch - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Mac : utilisation des gestes Multi-Touch - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/102482">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+38 ajouts</span>
+      <span class="badge removed">−18 suppressions</span>
+      <span class="badge">2 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Mac : utilisation des gestes Multi-Touch</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Mac : utilisation des gestes Multi-Touch</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Avec un trackpad Multi-Touch<mark class="inline-remove"> ou</mark> une<mark class="inline-remove"> souris</mark> Magic Mouse, vous pouvez r<mark class="inline-remove">é</mark>aliser d<mark class="inline-remove">ivers</mark>es actions utiles<mark class="inline-remove"> d’un simple toucher, défilement, pincement ou balayage</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Avec un trackpad Multi-Touch<mark class="inline-add">,</mark> une Magic Mous<mark class="inline-add">e ou un écran tactil</mark>e, vous pouvez <mark class="inline-add">touche</mark>r<mark class="inline-add">, b</mark>al<mark class="inline-add">ayer, p</mark>i<mark class="inline-add">ncer ou écarter un ou plu</mark>s<mark class="inline-add">ieurs doigts pour effectu</mark>er des actions utiles.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">- [Gestes avec un trackpad](https://support.apple.com/fr-fr/102482#trackpad)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">- [Gestes avec un trackpad](https://support.apple.com/fr-fr/102482#trackpad)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">- [Gestes avec une Magic Mouse](https://support.apple.com/fr-fr/102482#magicmouse)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">- [Gestes avec une Magic Mouse](https://support.apple.com/fr-fr/102482#magicmouse)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">- [Gestes sur l’écran tactile](https://support.apple.com/fr-fr/102482#touchdisplay)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">## Gestes avec un trackpad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">## Gestes avec un trackpad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">Ces gestes nécessitent de disposer d’un Magic Trackpad ou d’un clavier Multi-Touch intégré. Si votre trackpad prend en charge la fonctionnalité Force Touch, vous pouvez aussi [effectuer des clics forcés et obtenir un retour haptique](https://support.apple.com/fr-fr/102309) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">Ces gestes nécessitent de disposer d’un Magic Trackpad ou d’un clavier Multi-Touch intégré. Si votre trackpad prend en charge la fonctionnalité Force Touch, vous pouvez aussi [effectuer des clics forcés et obtenir un retour haptique](https://support.apple.com/fr-fr/102309) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">Pour plus d’informations sur ces gestes, choisissez Réglages Système (ou Préférences Système) dans le menu <mark class="inline-remove">Pomm</mark>e , puis cliquez sur Trackpad. Une fois dans cette fenêtre, vous pouvez activer ou désactiver un geste, modifier le type de geste associé à une action et découvrir comment fonctionnent les gestes sur votre Mac.</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">Pour plus d’informations sur ces gestes, choisissez Réglages Système (ou Préférences Système) dans le menu <mark class="inline-add">Appl</mark>e , puis cliquez sur Trackpad. Une fois dans cette fenêtre, vous pouvez activer ou désactiver un geste, modifier le type de geste associé à une action et découvrir comment fonctionnent les gestes sur votre Mac.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">[Image: <mark class="inline-remove">Aucu</mark>n te<mark class="inline-remove">x</mark>te de <mark class="inline-remove">re</mark>mpl<mark class="inline-remove">ac</mark>e<mark class="inline-remove">ment</mark> <mark class="inline-remove">po</mark>ur <mark class="inline-remove">l’im</mark>a<mark class="inline-remove">g</mark>e]</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">[Image: <mark class="inline-add">Mai</mark>n <mark class="inline-add">effec</mark>t<mark class="inline-add">uant l</mark>e<mark class="inline-add"> ges</mark>te de <mark class="inline-add">« clic si</mark>mple <mark class="inline-add">» s</mark>ur <mark class="inline-add">un tr</mark>a<mark class="inline-add">ckpad d</mark>e<mark class="inline-add"> Mac.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">Clic simple</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">Clic simple</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">Touchez le trackpad avec un doigt pour effectuer un clic.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">21</span><code class="line-text">Touchez le trackpad avec un doigt pour effectuer un clic.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">[Image: <mark class="inline-remove">A</mark>ucun t<mark class="inline-remove">exte</mark> de <mark class="inline-remove">rempl</mark>ac<mark class="inline-remove">ement pour l’image</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">[Image: <mark class="inline-add">Main montrant un geste Multi-To</mark>uc<mark class="inline-add">h sur </mark>un t<mark class="inline-add">rackpad</mark> de <mark class="inline-add">M</mark>ac<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">Clic secondaire (clic droit)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">25</span><code class="line-text">Clic secondaire (clic droit)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">25</span><code class="line-text">Cliquez ou touchez avec deux doigts.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">Cliquez ou touchez avec deux doigts.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">[Image: <mark class="inline-remove">A</mark>u<mark class="inline-remove">c</mark>un t<mark class="inline-remove">exte</mark> de <mark class="inline-remove">rempl</mark>ac<mark class="inline-remove">ement</mark> pour <mark class="inline-remove">l’i</mark>m<mark class="inline-remove">a</mark>ge]</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">[Image: <mark class="inline-add">Main </mark>u<mark class="inline-add">tilisant deux doigts sur </mark>un t<mark class="inline-add">rackpad</mark> de <mark class="inline-add">M</mark>ac pour m<mark class="inline-add">ontrer des </mark>ge<mark class="inline-add">stes Multi-Touch.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">Zoom intelligent</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">Zoom intelligent</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">Avec deux doigts, touchez deux fois le trackpad pour effectuer un zoom avant ou arrière, sur une page web ou un PDF.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">Avec deux doigts, touchez deux fois le trackpad pour effectuer un zoom avant ou arrière, sur une page web ou un PDF.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">[Image: <mark class="inline-remove">A</mark>u<mark class="inline-remove">c</mark>un t<mark class="inline-remove">exte</mark> de <mark class="inline-remove">rempl</mark>ac<mark class="inline-remove">ement pour l’image</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">[Image: <mark class="inline-add">De</mark>u<mark class="inline-add">x doigts faisant défiler vers le haut sur </mark>un t<mark class="inline-add">rackpad</mark> de <mark class="inline-add">M</mark>ac<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">Défilement</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">Défilement</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">Effectuez un balayage à deux doigts vers le haut ou vers le bas 1</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">Effectuez un balayage à deux doigts vers le haut ou vers le bas 1</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">[Image: <mark class="inline-remove">A</mark>u<mark class="inline-remove">c</mark>un <mark class="inline-remove">t</mark>e<mark class="inline-remove">x</mark>te de re<mark class="inline-remove">mplacemen</mark>t <mark class="inline-remove">po</mark>ur <mark class="inline-remove">l’im</mark>a<mark class="inline-remove">g</mark>e]</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">[Image: <mark class="inline-add">Main effect</mark>u<mark class="inline-add">ant </mark>un <mark class="inline-add">g</mark>e<mark class="inline-add">s</mark>te de r<mark class="inline-add">otation à d</mark>e<mark class="inline-add">ux doig</mark>t<mark class="inline-add">s</mark> <mark class="inline-add">s</mark>ur <mark class="inline-add">un tr</mark>a<mark class="inline-add">ckpad d</mark>e<mark class="inline-add"> Mac.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">Zoom avant et zoom arrière</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">Zoom avant et zoom arrière</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">43</span><code class="line-text">Écartez vos doigts pour effectuer un zoom avant, ou un geste de pincement pour opérer un zoom arrière.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">45</span><code class="line-text">Écartez vos doigts pour effectuer un zoom avant, ou un geste de pincement pour opérer un zoom arrière.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">[Image: <mark class="inline-remove">Aucu</mark>n texte de r<mark class="inline-remove">empl</mark>a<mark class="inline-remove">ceme</mark>n<mark class="inline-remove">t</mark> <mark class="inline-remove">po</mark>ur <mark class="inline-remove">l’im</mark>a<mark class="inline-remove">g</mark>e]</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">[Image: <mark class="inline-add">Mai</mark>n <mark class="inline-add">u</mark>t<mark class="inline-add">ilisant d</mark>e<mark class="inline-add">u</mark>x<mark class="inline-add"> doigts pour effectuer le ges</mark>te de r<mark class="inline-add">ot</mark>a<mark class="inline-add">tio</mark>n <mark class="inline-add">s</mark>ur <mark class="inline-add">un tr</mark>a<mark class="inline-add">ckpad d</mark>e<mark class="inline-add"> Mac.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">47</span><code class="line-text">Rotation</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">Rotation</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">Placez deux doigts légèrement écartés sur le trackpad, puis déplacez-les de manière circulaire afin de faire pivoter l’élément à l’écran.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">Placez deux doigts légèrement écartés sur le trackpad, puis déplacez-les de manière circulaire afin de faire pivoter l’élément à l’écran.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">[Image: <mark class="inline-remove">A</mark>ucun te<mark class="inline-remove">x</mark>te de r<mark class="inline-remove">empl</mark>a<mark class="inline-remove">ceme</mark>n<mark class="inline-remove">t pour l’image</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">[Image: <mark class="inline-add">De</mark>u<mark class="inline-add">x doigts effe</mark>c<mark class="inline-add">tuant une rotation sur </mark>un t<mark class="inline-add">rackpad d</mark>e<mark class="inline-add"> Mac, illustrant le ges</mark>te de r<mark class="inline-add">ot</mark>a<mark class="inline-add">tio</mark>n<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">Passage d’une page à une autre</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">Passage d’une page à une autre</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">Effectuez un balayage à deux doigts vers la gauche ou vers la droite, pour afficher la page suivante ou la page précédente.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">Effectuez un balayage à deux doigts vers la gauche ou vers la droite, pour afficher la page suivante ou la page précédente.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">[Image: <mark class="inline-remove">A</mark>u<mark class="inline-remove">c</mark>un <mark class="inline-remove">t</mark>e<mark class="inline-remove">x</mark>te de <mark class="inline-remove">remp</mark>la<mark class="inline-remove">c</mark>e<mark class="inline-remove">m</mark>e<mark class="inline-remove">n</mark>t <mark class="inline-remove">po</mark>ur <mark class="inline-remove">l’im</mark>a<mark class="inline-remove">ge</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">[Image: <mark class="inline-add">Main effect</mark>u<mark class="inline-add">ant </mark>un <mark class="inline-add">g</mark>e<mark class="inline-add">s</mark>te de <mark class="inline-add">ba</mark>la<mark class="inline-add">yag</mark>e<mark class="inline-add"> à d</mark>e<mark class="inline-add">ux doig</mark>t<mark class="inline-add">s</mark> <mark class="inline-add">s</mark>ur <mark class="inline-add">un tr</mark>a<mark class="inline-add">ckpad.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">Ouverture du centre de notifications</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">Ouverture du centre de notifications</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">Effectuez un balayage à deux doigts vers la gauche, en partant de l’extrémité droite du trackpad.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">Effectuez un balayage à deux doigts vers la gauche, en partant de l’extrémité droite du trackpad.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">[Image: <mark class="inline-remove">Aucu</mark>n te<mark class="inline-remove">x</mark>te de <mark class="inline-remove">remp</mark>l<mark class="inline-remove">ac</mark>ement <mark class="inline-remove">p</mark>our <mark class="inline-remove">l’im</mark>a<mark class="inline-remove">g</mark>e]</code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">[Image: <mark class="inline-add">Mai</mark>n <mark class="inline-add">effec</mark>t<mark class="inline-add">uant l</mark>e<mark class="inline-add"> ges</mark>te de <mark class="inline-add">g</mark>l<mark class="inline-add">iss</mark>ement <mark class="inline-add">à tr</mark>o<mark class="inline-add">is doigts s</mark>ur <mark class="inline-add">un tr</mark>a<mark class="inline-add">ckpad d</mark>e<mark class="inline-add"> Mac.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">Glissement à trois doigts</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">Glissement à trois doigts</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">Effectuez un balayage à trois doigts pour déplacer des éléments à l’écran, puis cliquez dessus ou touchez-les pour les déplacer. [Activez cette fonctionnalité dans les réglages d’accessibilité](https://support.apple.com/fr-fr/102341) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">Effectuez un balayage à trois doigts pour déplacer des éléments à l’écran, puis cliquez dessus ou touchez-les pour les déplacer. [Activez cette fonctionnalité dans les réglages d’accessibilité](https://support.apple.com/fr-fr/102341) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">[Image: <mark class="inline-remove">A</mark>ucun t<mark class="inline-remove">exte</mark> de <mark class="inline-remove">rempl</mark>ac<mark class="inline-remove">eme</mark>nt p<mark class="inline-remove">our l’im</mark>a<mark class="inline-remove">ge</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">[Image: <mark class="inline-add">Main effectuant un geste Multi-To</mark>uc<mark class="inline-add">h sur </mark>un t<mark class="inline-add">rackpad</mark> de <mark class="inline-add">M</mark>ac<mark class="inline-add">, illustra</mark>nt <mark class="inline-add">la fonctionnalité du track</mark>pa<mark class="inline-add">d.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">71</span><code class="line-text">Recherche et détection de données</code></div>
+<div class="diff-line current unchanged"><span class="line-number">73</span><code class="line-text">Recherche et détection de données</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">Touchez le trackpad avec trois doigts afin de rechercher un mot ou réaliser d’autres actions ayant trait aux dates, adresses, numéros de téléphone, etc.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">75</span><code class="line-text">Touchez le trackpad avec trois doigts afin de rechercher un mot ou réaliser d’autres actions ayant trait aux dates, adresses, numéros de téléphone, etc.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">[Image: <mark class="inline-remove">A</mark>ucun t<mark class="inline-remove">exte</mark> de <mark class="inline-remove">rempl</mark>ac<mark class="inline-remove">ement pour l’image</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text">[Image: <mark class="inline-add">Main effectuant un geste Multi-To</mark>uc<mark class="inline-add">h sur </mark>un t<mark class="inline-add">rackpad</mark> de <mark class="inline-add">M</mark>ac<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">77</span><code class="line-text">Affichage du bureau</code></div>
+<div class="diff-line current unchanged"><span class="line-number">79</span><code class="line-text">Affichage du bureau</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">Placez votre pouce et trois autres doigts sur votre trackpad, puis écartez-les pour afficher votre bureau.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">Placez votre pouce et trois autres doigts sur votre trackpad, puis écartez-les pour afficher votre bureau.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">[Image: <mark class="inline-remove">A</mark>u<mark class="inline-remove">c</mark>un t<mark class="inline-remove">exte de </mark>r<mark class="inline-remove">empl</mark>ac<mark class="inline-remove">ement</mark> pour <mark class="inline-remove">l’ima</mark>ge]</code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">[Image: <mark class="inline-add">Main </mark>u<mark class="inline-add">tilisant </mark>un trac<mark class="inline-add">kpad</mark> pour <mark class="inline-add">effectuer un </mark>ge<mark class="inline-add">ste Multi-Touch.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">Apps</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">Apps</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">Effectuez un pincement avec le pouce et trois autres doigts pour afficher vos applications installées.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">Effectuez un pincement avec le pouce et trois autres doigts pour afficher vos applications installées.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text">[Image: <mark class="inline-remove">A</mark>u<mark class="inline-remove">c</mark>un t<mark class="inline-remove">exte</mark> de <mark class="inline-remove">rempl</mark>ac<mark class="inline-remove">ement</mark> pour l<mark class="inline-remove">’image</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text">[Image: <mark class="inline-add">Main effect</mark>u<mark class="inline-add">ant un balayage vers le haut à quatre doigts sur </mark>un t<mark class="inline-add">rackpad</mark> de <mark class="inline-add">M</mark>ac pour <mark class="inline-add">ouvrir Mission Contro</mark>l<mark class="inline-add">.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">89</span><code class="line-text">Ouverture de Mission Control</code></div>
+<div class="diff-line current unchanged"><span class="line-number">91</span><code class="line-text">Ouverture de Mission Control</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">Effectuez un balayage à quatre doigts vers le haut 2 pour ouvrir [Mission Control](https://support.apple.com/guide/mac-help/mh35798/mac) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">93</span><code class="line-text">Effectuez un balayage à quatre doigts vers le haut 2 pour ouvrir [Mission Control](https://support.apple.com/guide/mac-help/mh35798/mac) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">[Image: <mark class="inline-remove">A</mark>u<mark class="inline-remove">c</mark>un <mark class="inline-remove">t</mark>e<mark class="inline-remove">x</mark>te <mark class="inline-remove">de remplacement po</mark>ur l’<mark class="inline-remove">im</mark>a<mark class="inline-remove">ge</mark>]</code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text">[Image: <mark class="inline-add">Main effect</mark>u<mark class="inline-add">ant </mark>un <mark class="inline-add">g</mark>e<mark class="inline-add">s</mark>te <mark class="inline-add">s</mark>ur l<mark class="inline-add">e trackpad d</mark>’<mark class="inline-add">un M</mark>a<mark class="inline-add">c.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">95</span><code class="line-text">Activation du mode App Exposé</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">Activation du mode App Exposé</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">97</span><code class="line-text">Effectuez un balayage à quatre doigts vers le bas 2 pour afficher l’ensemble des fenêtres de l’app que vous utilisez.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">99</span><code class="line-text">Effectuez un balayage à quatre doigts vers le bas 2 pour afficher l’ensemble des fenêtres de l’app que vous utilisez.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text">[Image: <mark class="inline-remove">A</mark>u<mark class="inline-remove">c</mark>un t<mark class="inline-remove">exte de </mark>r<mark class="inline-remove">empl</mark>ac<mark class="inline-remove">ement</mark> pour <mark class="inline-remove">l’ima</mark>ge]</code></div>
+<div class="diff-line current added"><span class="line-number">101</span><code class="line-text">[Image: <mark class="inline-add">Main </mark>u<mark class="inline-add">tilisant </mark>un trac<mark class="inline-add">kpad</mark> pour <mark class="inline-add">effectuer un </mark>ge<mark class="inline-add">ste Multi-Touch sur un Mac.</mark>]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">101</span><code class="line-text">Passage d’une app en mode plein écran à une autre</code></div>
+<div class="diff-line current unchanged"><span class="line-number">103</span><code class="line-text">Passage d’une app en mode plein écran à une autre</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">107</span><code class="line-text">Ces gestes nécessitent une Magic Mouse, et les modèles de Magic Mouse dotés d’un port USB-C nécessitent macOS Sequoia 15.1 ou version ultérieure.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">109</span><code class="line-text">Ces gestes nécessitent une Magic Mouse, et les modèles de Magic Mouse dotés d’un port USB-C nécessitent macOS Sequoia 15.1 ou version ultérieure.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">109</span><code class="line-text">Pour plus d’informations sur ces gestes, choisissez Réglages Système (ou Préférences Système) dans le menu <mark class="inline-remove">Pomm</mark>e , puis cliquez sur Souris. Une fois dans cette fenêtre, vous pouvez activer ou désactiver un geste, modifier le type de geste associé à une action et découvrir comment fonctionnent les gestes sur votre Mac.</code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text">Pour plus d’informations sur ces gestes, choisissez Réglages Système (ou Préférences Système) dans le menu <mark class="inline-add">Appl</mark>e , puis cliquez sur Souris. Une fois dans cette fenêtre, vous pouvez activer ou désactiver un geste, modifier le type de geste associé à une action et découvrir comment fonctionnent les gestes sur votre Mac.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text">[Image: Clic secondaire (clic droit)]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">111</span><code class="line-text">Clic secondaire (clic droit)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">115</span><code class="line-text">Clic secondaire (clic droit)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">113</span><code class="line-text">Cliquez sur le côté droit de la souris.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">117</span><code class="line-text">Cliquez sur le côté droit de la souris.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">119</span><code class="line-text">[Image: Défilement]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">115</span><code class="line-text">Défilement</code></div>
+<div class="diff-line current unchanged"><span class="line-number">121</span><code class="line-text">Défilement</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">117</span><code class="line-text">Effectuez un balayage à un doigt vers le haut ou vers le bas 1</code></div>
+<div class="diff-line current unchanged"><span class="line-number">123</span><code class="line-text">Effectuez un balayage à un doigt vers le haut ou vers le bas 1</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">125</span><code class="line-text">[Image: Zoom intelligent]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">119</span><code class="line-text">Zoom intelligent</code></div>
+<div class="diff-line current unchanged"><span class="line-number">127</span><code class="line-text">Zoom intelligent</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">121</span><code class="line-text">Avec un doigt, touchez deux fois la souris pour effectuer un zoom avant ou arrière dans une page web ou un PDF.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">129</span><code class="line-text">Avec un doigt, touchez deux fois la souris pour effectuer un zoom avant ou arrière dans une page web ou un PDF.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">131</span><code class="line-text">[Image: Ouverture de Mission Control]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">123</span><code class="line-text">Ouverture de Mission Control</code></div>
+<div class="diff-line current unchanged"><span class="line-number">133</span><code class="line-text">Ouverture de Mission Control</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">125</span><code class="line-text">Touchez deux fois la souris avec deux doigts pour ouvrir [Mission Control](https://support.apple.com/guide/mac-help/mh35798/mac) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">135</span><code class="line-text">Touchez deux fois la souris avec deux doigts pour ouvrir [Mission Control](https://support.apple.com/guide/mac-help/mh35798/mac) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">137</span><code class="line-text">[Image: Image illustrant les gestes de la Magic Mouse.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">127</span><code class="line-text">Passage d’une app en mode plein écran à une autre</code></div>
+<div class="diff-line current unchanged"><span class="line-number">139</span><code class="line-text">Passage d’une app en mode plein écran à une autre</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">129</span><code class="line-text">Effectuez un balayage horizontal à deux doigts pour basculer entre des apps en mode plein écran et le bureau.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">141</span><code class="line-text">Effectuez un balayage horizontal à deux doigts pour basculer entre des apps en mode plein écran et le bureau.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">143</span><code class="line-text">[Image: Passage d’une page à une autre]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">131</span><code class="line-text">Passage d’une page à une autre</code></div>
+<div class="diff-line current unchanged"><span class="line-number">145</span><code class="line-text">Passage d’une page à une autre</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">133</span><code class="line-text">Effectuez un balayage à un doigt vers la gauche ou vers la droite pour afficher la page suivante ou la page précédente.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">147</span><code class="line-text">Effectuez un balayage à un doigt vers la gauche ou vers la droite pour afficher la page suivante ou la page précédente.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">149</span><code class="line-text">## Gestes sur l’écran tactile</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">151</span><code class="line-text">Sur un MacBook Pro doté d’un écran PROLED XDR, vous pouvez effectuer des gestes directement sur la surface de l’écran.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">153</span><code class="line-text">[En savoir plus sur les gestes tactiles sur l’écran PROLED XDR](https://support.apple.com/guide/macbook-pro-proled-xdr/wv2xzgrweunx/mac)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">135</span><code class="line-text">## Besoin d’aide supplémentaire ?</code></div>
+<div class="diff-line current unchanged"><span class="line-number">155</span><code class="line-text">## Besoin d’aide supplémentaire ?</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
