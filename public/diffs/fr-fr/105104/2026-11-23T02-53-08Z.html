@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Partager votre position sur l’iPhone - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Partager votre position sur l’iPhone - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/105104">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+34 ajouts</span>
+      <span class="badge removed">−42 suppressions</span>
+      <span class="badge">8 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous unchanged"><span class="line-number">1</span><code class="line-text"># Partager votre position sur l’iPhone</code></div>
+<div class="diff-line current unchanged"><span class="line-number">1</span><code class="line-text"># Partager votre position sur l’iPhone</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Partagez votre position avec vos amis, les membres de votre famille et d’autres personnes de confiance dans Localiser, Messages et Plans. Vous pouvez partager votre position actuelle une fois, partager temporairement <mark class="inline-remove">votre position </mark>pendant <mark class="inline-remove">q</mark>u<mark class="inline-remove">e vous êtes e</mark>n <mark class="inline-remove">ch</mark>e<mark class="inline-remove">min</mark> vers une destination ou partager votre position en c<mark class="inline-remove">on</mark>t<mark class="inline-remove">inu</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Partagez votre position avec vos amis, les membres de votre famille et d’autres personnes de confiance dans Localiser, Messages et Plans. Vous pouvez partager votre position actuelle une <mark class="inline-add">seule </mark>fois,<mark class="inline-add"> la</mark> partager temporairement pendant un <mark class="inline-add">traj</mark>e<mark class="inline-add">t</mark> vers une destination<mark class="inline-add"> prévue</mark> ou partager votre position en <mark class="inline-add">dire</mark>ct.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## Différentes manières de partager votre position</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## Différentes manières de partager votre position</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 21 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">## Partager votre position actuelle une fois</code></div>
+<div class="diff-line current unchanged"><span class="line-number">29</span><code class="line-text">## Partager votre position actuelle une fois</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">Vous pouvez partager votre position actuelle sous la forme d’un instantané. La personne avec laquelle vous partagez votre position ne voit que cette position et ne peut pas vous suivre pendant que vous vous déplacez.</code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">Vous pouvez partager votre position actuelle sous la forme d’un instantané<mark class="inline-add"> dans Messages ou Plans</mark>. La personne avec laquelle vous partagez votre position ne voit que cette position et ne peut pas vous suivre pendant que vous vous déplacez.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">### Placer un repère dans Messages</code></div>
+<div class="diff-line current unchanged"><span class="line-number">33</span><code class="line-text">### Placer un repère dans Messages</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">39</span><code class="line-text">[Image: bouton Plus]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">39</span><code class="line-text">[Image: bouton Plus]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">- Touchez le bouton <mark class="inline-remove">Re</mark>p<mark class="inline-remove">èr</mark>e de c<mark class="inline-remove">arte</mark> <mark class="inline-remove">, t</mark>ouchez Envoyer <mark class="inline-remove">u</mark>n<mark class="inline-remove"> repèr</mark>e, puis envoyez votre message.</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">- Touchez le bouton <mark class="inline-add">É</mark>p<mark class="inline-add">ingl</mark>e d<mark class="inline-add">ans l</mark>e c<mark class="inline-add">oin.</mark> <mark class="inline-add">T</mark>ouchez Envoyer <mark class="inline-add">l’épi</mark>n<mark class="inline-add">gl</mark>e, puis envoyez votre message.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">[Image: bouton <mark class="inline-remove">Re</mark>p<mark class="inline-remove">ère de cart</mark>e]</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">[Image: bouton <mark class="inline-add">É</mark>p<mark class="inline-add">ingl</mark>e]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">45</span><code class="line-text">[Image: Pou<mark class="inline-remove">r</mark> <mark class="inline-remove">p</mark>artager <mark class="inline-remove">vo</mark>t<mark class="inline-remove">r</mark>e<mark class="inline-remove"> positio</mark>n<mark class="inline-remove"> actuelle sous forme </mark>de<mark class="inline-remove"> </mark>r<mark class="inline-remove">epère dans Messages, touchez le bouton de repère situé près de la partie supérieure de la vue de plan dans Messages</mark>.]</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">[Image: <mark class="inline-add">Écran d’i</mark>P<mark class="inline-add">hone affichant un plan avec une épingle et les b</mark>ou<mark class="inline-add">tons</mark> <mark class="inline-add">P</mark>artager <mark class="inline-add">e</mark>t<mark class="inline-add"> D</mark>e<mark class="inline-add">ma</mark>nder.]</code></div>
+<div class="diff-line previous removed"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">Sous iOS 16 ou une version antérieure, vous pouvez partager votre position actuelle dans Messages en touchant le nom de la personne en haut de la conversation, puis en touchant « Envoyer ma position actuelle ».</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">Vous pouvez également partager votre position actuelle en plaçant un repère dans Plans.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">51</span><code class="line-text">### Lorsque vous partagez votre position actuelle une fois</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">Lorsque vous placez un repère, vous ne partagez que la position actuelle. La personne avec laquelle vous avez partagé votre position ne peut pas la voir en continu pendant que vous vous déplacez.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">Lorsque vous placez un repère, vous ne partagez que la position actuelle. La personne avec laquelle vous avez partagé votre position ne peut pas la voir en continu pendant que vous vous déplacez.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">[Image: Lo<mark class="inline-remove">rsqu</mark>e <mark class="inline-remove">v</mark>o<mark class="inline-remove">us</mark> partage<mark class="inline-remove">z</mark> <mark class="inline-remove">votre</mark> position <mark class="inline-remove">en plaçant </mark>u<mark class="inline-remove">n repère dans Messages, la person</mark>ne <mark class="inline-remove">avec laquel</mark>le<mark class="inline-remove"> vous la partagez reçoit cette notification</mark>.]</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">[Image: L<mark class="inline-add">’écran d’un iPh</mark>o<mark class="inline-add">n</mark>e <mark class="inline-add">affiche un message d’un c</mark>o<mark class="inline-add">ntact</mark> partage<mark class="inline-add">ant</mark> <mark class="inline-add">la</mark> position <mark class="inline-add">d’</mark>une <mark class="inline-add">éping</mark>le.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">## Partager une épingle dans Plans</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">- Dans l’app Plans, faites défiler l’écran vers le bas jusqu’à Partager ma position.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">- Touchez Partager ma position.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">- Choisissez comment partager votre épingle, par exemple avec un contact dans Messages.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">## Partager votre position pendant que vous êtes en chemin vers une destination</code></div>
+<div class="diff-line current unchanged"><span class="line-number">59</span><code class="line-text">## Partager votre position pendant que vous êtes en chemin vers une destination</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">### Partager votre heure d’arrivée estimée dans Plans</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">### Partager votre heure d’arrivée estimée dans Plans</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">Vous pouvez partager votre heure d’arrivée estimée (ETA) tout en suivant un itinéraire en voiture, à vélo ou à pied. Lorsque vous partagez votre heure d’arrivée estimée, vous partagez votre position en direct et tous les arrêts e<mark class="inline-remove">ff</mark>e<mark class="inline-remove">ctués</mark> pendant <mark class="inline-remove">ce</mark> t<mark class="inline-remove">rajet</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">Vous pouvez partager votre heure d’arrivée estimée (ETA) tout en suivant un itinéraire en voiture, à vélo ou à pied. Lorsque vous partagez votre heure d’arrivée estimée, vous partagez votre position en direct<mark class="inline-add">. La personne avec qui vous partagez votre position peut ainsi suivre vos déplacements</mark> e<mark class="inline-add">n </mark>t<mark class="inline-add">emps réel, y compris</mark> tous les arrêts <mark class="inline-add">sur votr</mark>e<mark class="inline-add"> itinérair</mark>e pendant <mark class="inline-add">la</mark> <mark class="inline-add">naviga</mark>t<mark class="inline-add">ion</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">[Partager votre heure d’arrivée estimée dans Plans](https://support.apple.com/guide/iphone/iph65c86df8c)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">67</span><code class="line-text">[Partager votre heure d’arrivée estimée dans Plans](https://support.apple.com/guide/iphone/iph65c86df8c)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">### Faire savoir à votre famille et à vos amis que vous êtes arrivé grâce à la fonctionnalité Accompagnement</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">### Faire savoir à votre famille et à vos amis que vous êtes arrivé grâce à la fonctionnalité Accompagnement</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">Vous pouvez utiliser la fonctionnalité Accompagnement pour i<mark class="inline-remove">nforme</mark>r automatiquement un membre de votre famille, un ami ou <mark class="inline-remove">to</mark>u<mark class="inline-remove">te</mark> autre <mark class="inline-remove">pers</mark>on<mark class="inline-remove">ne</mark> de confiance que votre iPhone est arrivé à destination ou que vo<mark class="inline-remove">us avez </mark>t<mark class="inline-remove">e</mark>r<mark class="inline-remove">miné un</mark>e activité et pou<mark class="inline-remove">r</mark> <mark class="inline-remove">d</mark>é<mark class="inline-remove">f</mark>i<mark class="inline-remove">n</mark>ir les informations <mark class="inline-remove">aux</mark>que<mark class="inline-remove">ll</mark>es <mark class="inline-remove">i</mark>l<mark class="inline-remove"> au</mark>r<mark class="inline-remove">a accès</mark> si vous ne m<mark class="inline-remove">ett</mark>ez pas <mark class="inline-remove">fin</mark> <mark class="inline-remove">à l</mark>a<mark class="inline-remove"> session A</mark>ccompagnement.</code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">Vous pouvez utiliser la fonctionnalité Accompagnement pour <mark class="inline-add">avert</mark>ir automatiquement un membre de votre famille, un ami ou u<mark class="inline-add">n</mark> autre <mark class="inline-add">c</mark>on<mark class="inline-add">tact</mark> de confiance que votre iPhone est <mark class="inline-add">bien </mark>arrivé à destination ou que votre activité e<mark class="inline-add">s</mark>t<mark class="inline-add"> terminée. Vous</mark> pou<mark class="inline-add">vez</mark> é<mark class="inline-add">galement cho</mark>i<mark class="inline-add">s</mark>ir les informations que<mark class="inline-add"> c</mark>es <mark class="inline-add">personnes peuvent consu</mark>l<mark class="inline-add">te</mark>r si vous ne <mark class="inline-add">ter</mark>m<mark class="inline-add">in</mark>ez pas <mark class="inline-add">votre</mark> accompagnement<mark class="inline-add"> comme prévu</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text"><mark class="inline-remove">L</mark>a <mark class="inline-remove">f</mark>onction<mark class="inline-remove">nalité</mark> <mark class="inline-remove">Accompa</mark>g<mark class="inline-remove">nem</mark>ent ne partage <mark class="inline-remove">pa</mark>s <mark class="inline-remove">a</mark>u<mark class="inline-remove">tomatiquement vot</mark>re <mark class="inline-remove">pos</mark>i<mark class="inline-remove">tion. Votr</mark>e <mark class="inline-remove">position n’</mark>est<mark class="inline-remove"> partag</mark>ée<mark class="inline-remove"> qu’en cas de retard imprévu pendant votre trajet ou votre activité et si vous ne réagissez pas</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text"><mark class="inline-add">[Im</mark>a<mark class="inline-add">ge:</mark> <mark class="inline-add">Écran d’iPh</mark>on<mark class="inline-add">e qui affi</mark>c<mark class="inline-add">he une notifica</mark>tion <mark class="inline-add">ur</mark>gent<mark class="inline-add">e</mark> <mark class="inline-add">de Pla</mark>n<mark class="inline-add">s indiquant qu’Ashl</mark>e<mark class="inline-add">y</mark> partage s<mark class="inline-add">on</mark> <mark class="inline-add">he</mark>ure <mark class="inline-add">d’arr</mark>i<mark class="inline-add">vé</mark>e est<mark class="inline-add">im</mark>ée.<mark class="inline-add">]</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">73</span><code class="line-text"><mark class="inline-remove">[Comment</mark> <mark class="inline-remove">utiliser l</mark>a fonctionnalité Accompagnement<mark class="inline-remove">](h</mark>tt<mark class="inline-remove">ps://s</mark>u<mark class="inline-remove">p</mark>port<mark class="inline-remove">.</mark>a<mark class="inline-remove">ppl</mark>e<mark class="inline-remove">.</mark>c<mark class="inline-remove">om/gui</mark>de<mark class="inline-remove">/</mark>ip<mark class="inline-remove">h</mark>one<mark class="inline-remove">/</mark>ip<mark class="inline-remove">hc143bb7e9/io</mark>s<mark class="inline-remove">)</mark></code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">L</mark>a fonctionnalité Accompagnement<mark class="inline-add"> ne par</mark>t<mark class="inline-add">age pas au</mark>t<mark class="inline-add">omatiq</mark>u<mark class="inline-add">ement votre </mark>po<mark class="inline-add">sition. Votre position n’est pa</mark>rta<mark class="inline-add">gé</mark>e<mark class="inline-add"> qu’en </mark>c<mark class="inline-add">as </mark>de<mark class="inline-add"> retard </mark>i<mark class="inline-add">m</mark>p<mark class="inline-add">révu pendant v</mark>o<mark class="inline-add">tre trajet ou votre activité et si vous </mark>ne<mark class="inline-add"> réag</mark>i<mark class="inline-add">ssez </mark>p<mark class="inline-add">a</mark>s<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text"><mark class="inline-remove">###</mark> <mark class="inline-remove">L</mark>orsque<mark class="inline-remove"> vous partagez</mark> votre position pendant que vous <mark class="inline-remove">êtes en chemin </mark>ver<mark class="inline-remove">s </mark>u<mark class="inline-remove">ne destination</mark></code></div>
+<div class="diff-line current added"><span class="line-number">77</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">Si v</mark>o<mark class="inline-add">t</mark>r<mark class="inline-add">e iPhone n’arrive pa</mark>s<mark class="inline-add"> à destination comme prévu, la fonctionnalité Accompagnement avertit votre contact de confiance, lui communi</mark>que votre position <mark class="inline-add">actuelle, ainsi que des informations sur le signal réseau et la batterie de votre iPhone. Vous </mark>p<mark class="inline-add">ouvez égalem</mark>en<mark class="inline-add">t partager plus </mark>d<mark class="inline-add">’inform</mark>a<mark class="inline-add">tions, notamme</mark>nt<mark class="inline-add"> l’itinéraire</mark> que vous <mark class="inline-add">a</mark>ve<mark class="inline-add">z pa</mark>r<mark class="inline-add">co</mark>u<mark class="inline-add">ru.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">77</span><code class="line-text">- <mark class="inline-remove">L</mark>or<mark class="inline-remove">sque</mark> vou<mark class="inline-remove">s</mark> partage<mark class="inline-remove">z</mark> votre <mark class="inline-remove">h</mark>eure d<mark class="inline-remove">’a</mark>r<mark class="inline-remove">riv</mark>ée <mark class="inline-remove">estimée dans Plans, vous partagez v</mark>otre position en <mark class="inline-remove">d</mark>i<mark class="inline-remove">r</mark>e<mark class="inline-remove">c</mark>t<mark class="inline-remove">. Cela signifie que la</mark> p<mark class="inline-remove">er</mark>s<mark class="inline-remove">onne avec laquelle vous l’avez</mark> partagée<mark class="inline-remove"> peut suivre vos déplacements en temps réel</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">79</span><code class="line-text">- <mark class="inline-add">Une f</mark>o<mark class="inline-add">is l’accompagnement te</mark>r<mark class="inline-add">miné,</mark> vo<mark class="inline-add">tre position pe</mark>u<mark class="inline-add">t continuer d’être</mark> partag<mark class="inline-add">é</mark>e<mark class="inline-add"> avec</mark> votre <mark class="inline-add">contact d</mark>e<mark class="inline-add"> confiance pendant une co</mark>ur<mark class="inline-add">t</mark>e d<mark class="inline-add">u</mark>rée<mark class="inline-add">.</mark> <mark class="inline-add">V</mark>otre position en <mark class="inline-add">cont</mark>i<mark class="inline-add">nu n’</mark>e<mark class="inline-add">s</mark>t p<mark class="inline-add">a</mark>s partagée.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">79</span><code class="line-text"><mark class="inline-remove">- Lorsque v</mark>ou<mark class="inline-remove">s</mark> <mark class="inline-remove">dé</mark>m<mark class="inline-remove">arr</mark>e<mark class="inline-remove">z</mark> u<mark class="inline-remove">ne </mark>se<mark class="inline-remove">ss</mark>ion Accompagnement<mark class="inline-remove"> </mark>m<mark class="inline-remove">a</mark>i<mark class="inline-remove">s qu</mark>e<mark class="inline-remove"> votre </mark>i<mark class="inline-remove">P</mark>hone<mark class="inline-remove"> n’arr</mark>i<mark class="inline-remove">v</mark>e<mark class="inline-remove"> pas à destinat</mark>io<mark class="inline-remove">n comme prévu, Accompagnement avertit votre per</mark>s<mark class="inline-remove">onne de confiance et partage votre position actuelle, ainsi que les informations relatives au signal réseau et à la batterie de votre iPhone. Vous pouvez également choisir de partager d’autres informations, y compris l’itinéraire que vous avez emprunté.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text"><mark class="inline-add">[Déc</mark>ou<mark class="inline-add">vrir</mark> <mark class="inline-add">co</mark>m<mark class="inline-add">m</mark>e<mark class="inline-add">nt</mark> u<mark class="inline-add">tili</mark>se<mark class="inline-add">r la fonct</mark>ion<mark class="inline-add">nalité</mark> Accompagnement<mark class="inline-add">](https://support.apple.co</mark>m<mark class="inline-add">/gu</mark>i<mark class="inline-add">d</mark>e<mark class="inline-add">/</mark>i<mark class="inline-add">p</mark>hone<mark class="inline-add">/</mark>i<mark class="inline-add">phc143bb7</mark>e<mark class="inline-add">9/</mark>ios<mark class="inline-add">)</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">- Si la fonctionnalité Accompagnement partage votre position avec la personne de confiance et que vous mettez fin à la session Accompagnement, cette position peut continuer à être partagée pendant une courte durée. Seule la position actuelle qui a été partagée reste partagée, et non pas votre position en continu.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">[Image: Lorsque vous partagez votre heure d’arrivée estimée dans Plans, la personne avec laquelle vous la partagez reçoit une notification.]</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">## Partager votre position en continu et en temps réel</code></div>
+<div class="diff-line current unchanged"><span class="line-number">83</span><code class="line-text">## Partager votre position en continu et en temps réel</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">87</span><code class="line-text">Vous pouvez partager votre position en direct dans Localiser ou Messages pour permettre à vos amis et à votre famille de suivre votre position en continu et en temps réel. <mark class="inline-remove">Grâ</mark>c<mark class="inline-remove">e à</mark> la position en direct, les personnes avec <mark class="inline-remove">les</mark>qu<mark class="inline-remove">elles</mark> vous avez partagé votre position peuvent même avoir une idée de la direction dans laquelle vous vous déplacez et de <mark class="inline-remove">la</mark> vitesse<mark class="inline-remove"> à laquelle vous allez</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">85</span><code class="line-text">Vous pouvez partager votre position en direct dans Localiser ou Messages pour permettre à vos amis et à votre famille de suivre votre position en continu et en temps réel. <mark class="inline-add">Ave</mark>c la position en direct, les personnes avec qu<mark class="inline-add">i</mark> vous avez partagé votre position peuvent même avoir une idée de la direction dans laquelle vous vous déplacez et de <mark class="inline-add">votre</mark> vitesse.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">89</span><code class="line-text">Quelle que soit l’app que vous utilisez, votre position est partagée de la même manière.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">Quelle que soit l’app que vous utilisez, votre position est partagée de la même manière.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">95</span><code class="line-text">- Dans Localiser, touchez l’onglet Moi et activez Partager ma position.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">93</span><code class="line-text">- Dans Localiser, touchez l’onglet Moi et activez Partager ma position.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">97</span><code class="line-text">- Touchez l’onglet Personnes, le bouton Ajouter , puis Partager ma position pour ajouter un ami et commencer à partager votre position. Si vous faites partie d’un groupe familial, vous v<mark class="inline-remove">err</mark>ez <mark class="inline-remove">déjà</mark> les membres de votre famille.</code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text">- Touchez l’onglet Personnes, le bouton Ajouter , puis Partager ma position pour ajouter un ami et commencer à partager votre position. Si vous faites partie d’un groupe <mark class="inline-add">de partage </mark>familial, vous <mark class="inline-add">pou</mark>vez <mark class="inline-add">voir</mark> les membres de votre famille<mark class="inline-add"> qui ont choisi de partager leur position</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">99</span><code class="line-text">[Image: bouton Ajouter]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">[Image: bouton Ajouter]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">101</span><code class="line-text">- Choisissez de partager votre position pendant une heure, <mark class="inline-remove">to</mark>u<mark class="inline-remove">t</mark>e la journée<mark class="inline-remove"> ou</mark> indéfiniment.</code></div>
+<div class="diff-line current added"><span class="line-number">99</span><code class="line-text">- Choisissez de partager votre position pendant une heure, <mark class="inline-add">j</mark>u<mark class="inline-add">squ’à la fin d</mark>e la journée<mark class="inline-add">,</mark> indéfiniment<mark class="inline-add"> ou pour une durée personnalisée</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">103</span><code class="line-text">[En savoir plus sur le partage de position dans Localiser](https://support.apple.com/guide/iphone/iph01954dc44/ios)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">101</span><code class="line-text">[En savoir plus sur le partage de position dans Localiser](https://support.apple.com/guide/iphone/iph01954dc44/ios)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">105</span><code class="line-text">### Commencer à partager votre position en continu avec Messages</code></div>
+<div class="diff-line current unchanged"><span class="line-number">103</span><code class="line-text">### Commencer à partager votre position en continu avec Messages</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">107</span><code class="line-text">- Touchez le bouton Plus <mark class="inline-remove">pour</mark> pa<mark class="inline-remove">r</mark>t<mark class="inline-remove">ag</mark>er <mark class="inline-remove">vot</mark>r<mark class="inline-remove">e positio</mark>n <mark class="inline-remove">en direct dans la con</mark>vers<mark class="inline-remove">ation. Le ou</mark> les <mark class="inline-remove">participants à c</mark>e<mark class="inline-remove">tte conversation peuven</mark>t touche<mark class="inline-remove">r</mark> <mark class="inline-remove">votre message de p</mark>osition<mark class="inline-remove"> pour vous localiser sur une carte et obtenir un itinéraire jusqu’à votre position actuelle</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">105</span><code class="line-text">- Touchez le bouton Plus <mark class="inline-add">,</mark> p<mark class="inline-add">uis f</mark>a<mark class="inline-add">i</mark>t<mark class="inline-add">es défil</mark>er <mark class="inline-add">l’éc</mark>r<mark class="inline-add">a</mark>n vers le<mark class="inline-add"> ba</mark>s et touche<mark class="inline-add">z</mark> <mark class="inline-add">P</mark>osition.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">109</span><code class="line-text">[Image: bouton Plus]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">107</span><code class="line-text">[Image: bouton Plus]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">108</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">111</span><code class="line-text">- <mark class="inline-remove">V</mark>o<mark class="inline-remove">u</mark>s po<mark class="inline-remove">uv</mark>e<mark class="inline-remove">z ég</mark>a<mark class="inline-remove">leme</mark>nt <mark class="inline-remove">to</mark>u<mark class="inline-remove">c</mark>her l<mark class="inline-remove">e</mark> n<mark class="inline-remove">om</mark> de la personne ou <mark class="inline-remove">du</mark> <mark class="inline-remove">g</mark>r<mark class="inline-remove">ou</mark>pe<mark class="inline-remove"> </mark>e<mark class="inline-remove">n haut de la</mark> conversation<mark class="inline-remove">.</mark> <mark class="inline-remove">E</mark>n<mark class="inline-remove">sui</mark>t<mark class="inline-remove">e,</mark> touche<mark class="inline-remove">z</mark> <mark class="inline-remove">Pa</mark>r<mark class="inline-remove">t</mark>age<mark class="inline-remove">r</mark> <mark class="inline-remove">ma position (ou touchez Deman</mark>de<mark class="inline-remove">r la</mark> position pour <mark class="inline-remove">demander à</mark> la<mark class="inline-remove"> per</mark>s<mark class="inline-remove">onne de partag</mark>er sa position a<mark class="inline-remove">v</mark>e<mark class="inline-remove">c vous)</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">109</span><code class="line-text">- <mark class="inline-add">Ch</mark>o<mark class="inline-add">i</mark>s<mark class="inline-add">issez de partager votre</mark> po<mark class="inline-add">sition p</mark>e<mark class="inline-add">nd</mark>ant u<mark class="inline-add">ne </mark>he<mark class="inline-add">u</mark>r<mark class="inline-add">e, jusqu’à</mark> l<mark class="inline-add">a</mark> <mark class="inline-add">fi</mark>n de la<mark class="inline-add"> journée, indéfiniment ou pour une durée</mark> personn<mark class="inline-add">alisée. L</mark>e ou <mark class="inline-add">les</mark> <mark class="inline-add">pa</mark>r<mark class="inline-add">tici</mark>p<mark class="inline-add">ants à c</mark>e<mark class="inline-add">tt</mark>e conversation <mark class="inline-add">peuve</mark>nt touche<mark class="inline-add">r</mark> <mark class="inline-add">vot</mark>r<mark class="inline-add">e mess</mark>age de position pour <mark class="inline-add">vous</mark> l<mark class="inline-add">oc</mark>a<mark class="inline-add">li</mark>ser s<mark class="inline-add">ur une c</mark>a<mark class="inline-add">rte et obtenir un itinéraire jusqu’à votre</mark> position a<mark class="inline-add">ctu</mark>e<mark class="inline-add">lle</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">113</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Ch</mark>ois<mark class="inline-remove">i</mark>s<mark class="inline-remove">sez</mark> <mark class="inline-remove">d</mark>e partage<mark class="inline-remove">r</mark> <mark class="inline-remove">votr</mark>e position <mark class="inline-remove">pen</mark>dant<mark class="inline-remove"> </mark>une<mark class="inline-remove"> </mark>h<mark class="inline-remove">eure, toute la journée ou indéfiniment.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">111</span><code class="line-text"><mark class="inline-add">[En</mark> <mark class="inline-add">sav</mark>oi<mark class="inline-add">r plu</mark>s<mark class="inline-add"> </mark>s<mark class="inline-add">ur</mark> <mark class="inline-add">l</mark>e partage <mark class="inline-add">d</mark>e position dan<mark class="inline-add">s Messages](h</mark>t<mark class="inline-add">tps://s</mark>u<mark class="inline-add">pport.apple.com/guide/ipho</mark>ne<mark class="inline-add">/ip</mark>h<mark class="inline-add">69b192bc2/)</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">115</span><code class="line-text">[En savoir plus sur le partage de position dans Messages](https://support.apple.com/guide/iphone/iph69b192bc2/ios)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">117</span><code class="line-text">### Lorsque vous partagez votre position en continu</code></div>
+<div class="diff-line current unchanged"><span class="line-number">113</span><code class="line-text">### Lorsque vous partagez votre position en continu</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">131</span><code class="line-text">- [Partager votre position par satellite](https://support.apple.com/guide/iphone/iph2aac8ae20) lorsque vous êtes hors de portée d’un réseau Wi-Fi ou mobile.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">127</span><code class="line-text">- [Partager votre position par satellite](https://support.apple.com/guide/iphone/iph2aac8ae20) lorsque vous êtes hors de portée d’un réseau Wi-Fi ou mobile.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">133</span><code class="line-text">- <mark class="inline-remove">Si vous et la personne avec laquelle vous avez partagé votre position avez un iPhone 15 Pro ou modèle ultérieur, </mark>[<mark class="inline-remove">u</mark>tilisez la<mark class="inline-remove"> fonctionnalité</mark> Localisation précise pour vous aider à trouver <mark class="inline-remove">la</mark> position exacte <mark class="inline-remove">de l’a</mark>ut<mark class="inline-remove">r</mark>e<mark class="inline-remove"> personn</mark>e](https://support.apple.com/guide/iphone/iph3effd0ed6) .</code></div>
+<div class="diff-line current added"><span class="line-number">129</span><code class="line-text">- [<mark class="inline-add">U</mark>tilisez la Localisation précise pour vous aider à trouver <mark class="inline-add">votre</mark> position exacte <mark class="inline-add">m</mark>ut<mark class="inline-add">u</mark>e<mark class="inline-add">ll</mark>e](https://support.apple.com/guide/iphone/iph3effd0ed6) <mark class="inline-add">si vous possédez tous les deux un iPhone 15 ou un modèle ultérieur</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">135</span><code class="line-text">[Image: <mark class="inline-remove">Lorsque vous partagez v</mark>ot<mark class="inline-remove">re pos</mark>ition <mark class="inline-remove">av</mark>e<mark class="inline-remove">c</mark> l’app Localiser<mark class="inline-remove">,</mark> <mark class="inline-remove">la</mark> <mark class="inline-remove">pers</mark>o<mark class="inline-remove">n</mark>ne a<mark class="inline-remove">v</mark>e<mark class="inline-remove">c laquelle vous la</mark> partage<mark class="inline-remove">z</mark> <mark class="inline-remove">reç</mark>oi<mark class="inline-remove">t une notifica</mark>tion.]</code></div>
+<div class="diff-line current added"><span class="line-number">131</span><code class="line-text">[Image: <mark class="inline-add">N</mark>oti<mark class="inline-add">fica</mark>tion <mark class="inline-add">d</mark>e l’app Localiser <mark class="inline-add">sur</mark> <mark class="inline-add">iPh</mark>one <mark class="inline-add">dem</mark>a<mark class="inline-add">ndant d</mark>e partage<mark class="inline-add">r</mark> <mark class="inline-add">la p</mark>o<mark class="inline-add">s</mark>ition<mark class="inline-add"> actuelle</mark>.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">137</span><code class="line-text">## Arrêter de partager votre position</code></div>
+<div class="diff-line current unchanged"><span class="line-number">133</span><code class="line-text">## Arrêter de partager votre position</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 21 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">161</span><code class="line-text">Lorsque vous arrêtez de partager votre position avec quelqu’un dans une app, vous arrêtez de la partager dans toutes les apps. La personne avec laquelle vous arrêtez de partager votre position ne sera pas avertie.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">157</span><code class="line-text">Lorsque vous arrêtez de partager votre position avec quelqu’un dans une app, vous arrêtez de la partager dans toutes les apps. La personne avec laquelle vous arrêtez de partager votre position ne sera pas avertie.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">163</span><code class="line-text">#### <mark class="inline-remove">Local</mark>i<mark class="inline-remove">ser</mark></code></div>
+<div class="diff-line current added"><span class="line-number">159</span><code class="line-text">#### <mark class="inline-add">F</mark>i<mark class="inline-add">nd My</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">165</span><code class="line-text">- Sélectionnez l’onglet Personnes.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">161</span><code class="line-text">- Sélectionnez l’onglet Personnes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">167</span><code class="line-text">- Choisissez la personne avec qui vous souhaitez cesser de partager votre position.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">163</span><code class="line-text">- Choisissez la personne avec qui vous souhaitez cesser de partager votre position.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">169</span><code class="line-text">- <mark class="inline-remove">Faites défiler l’écran vers le bas et t</mark>ouchez <mark class="inline-remove">N</mark>e <mark class="inline-remove">p</mark>lus <mark class="inline-remove">partager ma position</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">165</span><code class="line-text">- <mark class="inline-add">T</mark>ouchez <mark class="inline-add">l</mark>e <mark class="inline-add">bouton P</mark>lus .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">167</span><code class="line-text">- Faites défiler l’écran vers le bas et touchez Ne plus partager ma position. Ou, sous Ma position, touchez Masquer ma position pour arrêter de partager votre position pour le reste de la journée.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">171</span><code class="line-text">#### Messages</code></div>
+<div class="diff-line current unchanged"><span class="line-number">169</span><code class="line-text">#### Messages</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">175</span><code class="line-text">- Touchez le nom de la personne ou du groupe en haut de la conversation.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">173</span><code class="line-text">- Touchez le nom de la personne ou du groupe en haut de la conversation.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">177</span><code class="line-text">- Touchez <mark class="inline-remove">N</mark>e p<mark class="inline-remove">l</mark>us partager.</code></div>
+<div class="diff-line current added"><span class="line-number">175</span><code class="line-text">- Touchez <mark class="inline-add">Arrêter l</mark>e p<mark class="inline-add">artage de ma position. O</mark>u<mark class="inline-add"> touchez Ma</mark>s<mark class="inline-add">quer ma position pour arrêter de</mark> partager<mark class="inline-add"> votre position pour le reste de la journée</mark>.</code></div>
+<div class="diff-line previous removed"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">179</span><code class="line-text">#### Cartes</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">181</span><code class="line-text">- Touchez « Partage avec... » au bas de l’écran.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">183</span><code class="line-text">- Touchez le nom de la personne avec laquelle vous souhaitez arrêter de partager votre position.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

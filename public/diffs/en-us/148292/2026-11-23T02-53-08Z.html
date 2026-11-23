@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Set up for virtual production with Apple devices and genlock — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Set up for virtual production with Apple devices and genlock</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/148292">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+69 ajouts</span>
+      <span class="badge removed">−37 suppressions</span>
+      <span class="badge">8 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">5</span><code class="line-text">## About virtual productions and synchronization</code></div>
+<div class="diff-line current unchanged"><span class="line-number">5</span><code class="line-text">## About virtual productions and synchronization</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">In a virtual production, live performances are filmed in front of a dynamic, synchronized video background. <mark class="inline-remove">F</mark>or a successful virtual production, the video playback device and the cameras must share the same timing reference. When the devices are properly synchronized, each frame of your recording is <mark class="inline-remove">perfectly </mark>in sync an<mark class="inline-remove">d helps you achieve professional,</mark> frame-accurate edits without hours of manual <mark class="inline-remove">frame-by-frame </mark>alignment.</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">In a virtual production, live performances are filmed in front of a dynamic, synchronized video background. <mark class="inline-add">T</mark>o<mark class="inline-add"> ensu</mark>r<mark class="inline-add">e</mark> a successful virtual production, the video playback device and the cameras must share the same timing reference. When the devices are properly synchronized, each frame of your recording is in sync<mark class="inline-add">,</mark> <mark class="inline-add">m</mark>a<mark class="inline-add">ki</mark>n<mark class="inline-add">g</mark> frame-accurate edits <mark class="inline-add">possible </mark>without<mark class="inline-add"> needing to do</mark> hours of manual alignment.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">## System requirements</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">## System requirements</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">With genlock support on compatible iPhone and Mac models, you can now do a virtual production in places like your office, home, or in a studio. Connect a Mac to an OLED TV or another type of compatible display, play the content back on the Mac, then record actors and props in front of the video background using iPhone or other third-party cameras that support genlock. You can sync everything with genlock-compatible wired or wireless sync generators and compatible USB-C docks like the Black<mark class="inline-remove">M</mark>agic Camera ProDock.</code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">With genlock support on compatible iPhone and Mac models, you can now do a virtual production in places like your office, home, or in a studio. Connect a Mac to an OLED TV or another type of compatible display, play the content back on the Mac, then record actors and props in front of the video background using iPhone or other third-party cameras that support genlock. You can sync everything with genlock-compatible wired or wireless sync generators and compatible USB-C docks like the Black<mark class="inline-add">m</mark>agic Camera ProDock.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">13</span><code class="line-text">### Hardware requirements</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">### Hardware requirements</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- For video playback, <mark class="inline-remove">M</mark>ac<mark class="inline-remove"> </mark>mi<mark class="inline-remove">ni (M5 Pro),</mark> Mac<mark class="inline-remove"> Studio (M5 Max), or Mac Studio (M5 Ultra)</mark> running macOS 27 Golden Gate<mark class="inline-remove">.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">- For video playback, a<mark class="inline-add"> </mark>c<mark class="inline-add">o</mark>m<mark class="inline-add">pat</mark>i<mark class="inline-add">ble</mark> Mac running macOS 27<mark class="inline-add">.2</mark> Golden Gate<mark class="inline-add"> or later:</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text">- <mark class="inline-remove">For</mark> <mark class="inline-remove">record</mark>in<mark class="inline-remove">g</mark> <mark class="inline-remove">v</mark>i<mark class="inline-remove">deo,</mark> <mark class="inline-remove">iPhone 17</mark> Pro<mark class="inline-remove"> or later Pro models running iOS 26 or later, or third-party genlock-compatible cameras.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- <mark class="inline-add">Mac</mark> <mark class="inline-add">m</mark>in<mark class="inline-add">i</mark> <mark class="inline-add">w</mark>i<mark class="inline-add">th</mark> <mark class="inline-add">M5</mark> Pro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- <mark class="inline-remove">(op</mark>tio<mark class="inline-remove">n</mark>a<mark class="inline-remove">l)</mark> <mark class="inline-remove">F</mark>or <mark class="inline-remove">s</mark>t<mark class="inline-remove">oring video recorded on an iPhone, an external SSD sto</mark>ra<mark class="inline-remove">ge devices for your iOS devices.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- <mark class="inline-add">Mac S</mark>t<mark class="inline-add">ud</mark>io<mark class="inline-add"> with M5 M</mark>a<mark class="inline-add">x</mark> or <mark class="inline-add">M5 Ul</mark>tra</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">-<mark class="inline-remove"> For the</mark> Mac <mark class="inline-remove">and each i</mark>P<mark class="inline-remove">hone in the p</mark>ro<mark class="inline-remove">duction, a supported dock</mark> with <mark class="inline-remove">USB-C connections and genlock sync input and output, such as the [Black</mark>M<mark class="inline-remove">agic Camera</mark> Pro<mark class="inline-remove">D</mark>o<mark class="inline-remove">ck](https://www.</mark>a<mark class="inline-remove">pple.com/shop/product/hs8b2zm/a/blackmagic-camera-prodock) .</mark></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">- Mac<mark class="inline-add">Book</mark> Pro with M<mark class="inline-add">5</mark> Pro<mark class="inline-add"> </mark>o<mark class="inline-add">r M5 M</mark>a<mark class="inline-add">x</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- <mark class="inline-remove">A</mark> genlock-c<mark class="inline-remove">a</mark>pable <mark class="inline-remove">syn</mark>c<mark class="inline-remove"> gen</mark>era<mark class="inline-remove">tor </mark>s<mark class="inline-remove">ystem</mark>.<mark class="inline-remove"> One wired or multiple wireless sync generators in a transmitter/receiver configuration are supported. 1</mark></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- <mark class="inline-add">For recording video, iPhone 17 Pro and later Pro models running iOS 26 or later, or third-party</mark> genlock-c<mark class="inline-add">om</mark>pa<mark class="inline-add">ti</mark>ble c<mark class="inline-add">am</mark>eras.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- (<mark class="inline-remove">O</mark>ptional) <mark class="inline-remove">A BNC</mark> s<mark class="inline-remove">pl</mark>i<mark class="inline-remove">t</mark>ter to<mark class="inline-remove"> connect multipl</mark>e device<mark class="inline-remove">s to the sync generator system</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- (<mark class="inline-add">o</mark>ptional) <mark class="inline-add">For</mark> s<mark class="inline-add">tor</mark>i<mark class="inline-add">ng video recorded on an iPhone, an ex</mark>ter<mark class="inline-add">nal</mark> <mark class="inline-add">SSD s</mark>to<mark class="inline-add">rag</mark>e device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">- For s<mark class="inline-remove">y</mark>nc connections<mark class="inline-remove">,</mark> <mark class="inline-remove">BNC</mark> c<mark class="inline-remove">ables to connect the</mark> sync <mark class="inline-remove">ge</mark>n<mark class="inline-remove">er</mark>at<mark class="inline-remove">or</mark>s <mark class="inline-remove">to</mark> the dock<mark class="inline-remove">s</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- For <mark class="inline-add">the Mac and each iPhone u</mark>s<mark class="inline-add">ed i</mark>n<mark class="inline-add"> the produ</mark>c<mark class="inline-add">tion, a supported dock with USB-C</mark> connections <mark class="inline-add">and</mark> <mark class="inline-add">genlo</mark>c<mark class="inline-add">k</mark> sync <mark class="inline-add">i</mark>n<mark class="inline-add">put </mark>a<mark class="inline-add">nd ou</mark>t<mark class="inline-add">put </mark>s<mark class="inline-add">uch</mark> <mark class="inline-add">as</mark> the <mark class="inline-add">[Blackmagic Camera ProDock](https://www.apple.com/shop/product/hs8b2zm/a/blackmagic-camera-pro</mark>dock<mark class="inline-add">) </mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">- <mark class="inline-remove">A</mark> <mark class="inline-remove">disp</mark>l<mark class="inline-remove">ay li</mark>k<mark class="inline-remove">e</mark> a <mark class="inline-remove">lar</mark>ge-scre<mark class="inline-remove">en OLED TV</mark> or a<mark class="inline-remove"> projec</mark>tor t<mark class="inline-remove">h</mark>at support<mark class="inline-remove">s variabl</mark>e<mark class="inline-remove"> refresh rate (VRR)</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">- <mark class="inline-add">To</mark> <mark class="inline-add">generate gen</mark>l<mark class="inline-add">oc</mark>k<mark class="inline-add">,</mark> a ge<mark class="inline-add">nlock</mark>-<mark class="inline-add">capable </mark>s<mark class="inline-add">yn</mark>c<mark class="inline-add"> generator system. One wi</mark>re<mark class="inline-add">d</mark> or <mark class="inline-add">multiple wireless sync gener</mark>ator<mark class="inline-add">s in a</mark> t<mark class="inline-add">ransmitter/receiver configur</mark>at<mark class="inline-add">ion are</mark> supporte<mark class="inline-add">d</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- (Optional) For connecting multiple devices to the sync system, a BNC splitter such as a distribution amplifier (DA). A sync generator with multiple outputs can also be used to connect multiple devices.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- For displaying the background video, a large-screen OLED TV or a projector that supports variable refresh rate (VRR).</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">31</span><code class="line-text">- For video connections to the display from your Mac, an HDMI cable, or a USB-C or Thunderbolt cable for display port connections.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">- For video connections to the display from your Mac, an HDMI cable, or a USB-C or Thunderbolt cable for display port connections.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">### Software requirements</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">### Software requirements</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">- The latest version of Final Cut Camera or a third-party camera app like Black<mark class="inline-remove">M</mark>agic Camera that supports genlock on each iPhone used in your production.</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">- The latest version of Final Cut Camera or a third-party camera app like Black<mark class="inline-add">m</mark>agic Camera that supports genlock on each iPhone used in your production.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">- Depending on the sync generator you&#x27;re using, software to program the devices. See the manufacturer’s documentation for details.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">41</span><code class="line-text">- Depending on the sync generator you&#x27;re using, software to program the devices. See the manufacturer’s documentation for details.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">## C<mark class="inline-remove">onfigure and c</mark>onnect t<mark class="inline-remove">h</mark>e<mark class="inline-remove"> display</mark></code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">## Connect <mark class="inline-add">your sys</mark>te<mark class="inline-add">m</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">Connect all the hardware in your system and configure your devices:</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- Configure and connect your display</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">- Configure and connect your sync generator</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">51</span><code class="line-text">- Configure and connect your Mac</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">- Connect your iOS devices or standalone cameras</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">- Configure your iOS devices or standalone cameras</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">[Example wiring diagrams for wired or wireless sync generator virtual production setups](https://support.apple.com/en-us/148292#Diagrams)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">### Configure and connect the display</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">Configure the display, then connect the display to your Mac.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">Configure the display, then connect the display to your Mac.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">### Configure settings on the display</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text"><mark class="inline-add">#</mark>### Configure settings on the display</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">The names of these settings on displays vary, but in general these types of settings should be turned on:</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">The names of these settings on displays vary, but in general these types of settings should be turned on:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 19 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">67</span><code class="line-text">In some camera apps, like Final Cut Camera, you can [adjust the sync signal](https://support.apple.com/en-us/148292#genlock_offset) to account for that delay, which can create ghosting artifacts in the recorded footage.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">87</span><code class="line-text">In some camera apps, like Final Cut Camera, you can [adjust the sync signal](https://support.apple.com/en-us/148292#genlock_offset) to account for that delay, which can create ghosting artifacts in the recorded footage.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">88</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">### Connect the display</code></div>
+<div class="diff-line current added"><span class="line-number">89</span><code class="line-text"><mark class="inline-add">#</mark>### Connect the display</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">71</span><code class="line-text">- Connect the display to <mark class="inline-remove">the</mark> Mac.</code></div>
+<div class="diff-line current added"><span class="line-number">91</span><code class="line-text">- Connect the display to <mark class="inline-add">your</mark> Mac.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">73</span><code class="line-text">- Turn on your Mac and the display.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">93</span><code class="line-text">- Turn on your Mac and the display.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">75</span><code class="line-text">## Configure and connect the sync generator</code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text"><mark class="inline-add">#</mark>## Configure and connect the sync generator</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">76</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">77</span><code class="line-text">The frame rate setting on the sync generator must match the frame rate settings on any iPhone you&#x27;re using to record video. Resolutions don&#x27;t have to match.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">The frame rate setting on the sync generator must match the frame rate settings on any iPhone you&#x27;re using to record video. Resolutions don&#x27;t have to match.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">90</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">91</span><code class="line-text">- Connect the output of each sync generator to the sync input on each dock with a BNC cable.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">111</span><code class="line-text">- Connect the output of each sync generator to the sync input on each dock with a BNC cable.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">93</span><code class="line-text">- For setups that include a splitter, connect the sync generator to the input of the splitter, then connect the outputs of the splitter to the docks. I<mark class="inline-remove">t</mark> <mark class="inline-remove">is</mark> not re<mark class="inline-remove">comm</mark>e<mark class="inline-remove">nded to</mark> use <mark class="inline-remove">m</mark>o<mark class="inline-remove">re tha</mark>n one splitter.</code></div>
+<div class="diff-line current added"><span class="line-number">113</span><code class="line-text">- For setups that include a splitter, connect the sync generator to the input of the splitter, then connect the outputs of the splitter to the docks. I<mark class="inline-add">f</mark> <mark class="inline-add">you&#x27;re</mark> not <mark class="inline-add">using a dist</mark>r<mark class="inline-add">ibution amplifi</mark>e<mark class="inline-add">r as a splitt</mark>e<mark class="inline-add">r,</mark> use on<mark class="inline-add">ly</mark> one splitter.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">95</span><code class="line-text">- On each dock, check the status indicators to ensure that the dock is receiving genlock signal.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">115</span><code class="line-text">- On each dock, check the status indicators to ensure that the dock is receiving genlock signal.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">97</span><code class="line-text">## Connect and configure your Mac</code></div>
+<div class="diff-line current added"><span class="line-number">117</span><code class="line-text"><mark class="inline-add">#</mark>## Connect and configure your Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">99</span><code class="line-text">- Connect the dock to a USB-C port on your Mac. If you have a Black<mark class="inline-remove">M</mark>agic dock, connect the built-in USB-C cable to the Mac. <mark class="inline-remove">2</mark> Make sure to connect the dock to a compatible USB-C port on your Mac:</code></div>
+<div class="diff-line current added"><span class="line-number">119</span><code class="line-text">- Connect the dock to a USB-C port on your Mac. If you have a Black<mark class="inline-add">m</mark>agic dock, connect the built-in USB-C cable to the Mac. <mark class="inline-add">1</mark> Make sure to connect the dock to a compatible USB-C port on your Mac:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">101</span><code class="line-text">- On Mac mini <mark class="inline-remove">(</mark>M5 Pro<mark class="inline-remove">)</mark> and Mac Studio <mark class="inline-remove">(</mark>M5 Max<mark class="inline-remove">)</mark>, connect the dock to a USB-C port on the back of the computer.</code></div>
+<div class="diff-line current added"><span class="line-number">121</span><code class="line-text">- On Mac mini <mark class="inline-add">with </mark>M5 Pro and Mac Studio <mark class="inline-add">with </mark>M5 Max, connect the dock to a USB-C port on the back of the computer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">102</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">103</span><code class="line-text">- On Mac Studio <mark class="inline-remove">(</mark>M5 Ultra<mark class="inline-remove">)</mark>, connect the dock to any USB-C port on the computer.</code></div>
+<div class="diff-line current added"><span class="line-number">123</span><code class="line-text">- On Mac Studio <mark class="inline-add">with </mark>M5 Ultra<mark class="inline-add"> or MacBook Pro</mark>, connect the dock to any USB-C port on the computer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">104</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">105</span><code class="line-text">- Choose System Settings from the Apple menu , then choose Displays from the sidebar.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">125</span><code class="line-text">- Choose System Settings from the Apple menu , then choose Displays from the sidebar.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">106</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">110</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">111</span><code class="line-text">- To minimize interruption during virtual production, [choose a Focus in Control Center](https://support.apple.com/guide/mac-help/set-up-a-focus-to-stay-on-task-mchl613dc43f/mac) like Do Not Disturb.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">131</span><code class="line-text">- To minimize interruption during virtual production, [choose a Focus in Control Center](https://support.apple.com/guide/mac-help/set-up-a-focus-to-stay-on-task-mchl613dc43f/mac) like Do Not Disturb.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">112</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">113</span><code class="line-text">## Connect iOS devices and configure the camera app</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">114</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">115</span><code class="line-text">After you’ve configured your Mac, connect your iOS devices to their respective docks, configure the camera app you’re using to record video, then properly orient your iOS devices for recording video.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">116</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">117</span><code class="line-text">### Connect iOS devices</code></div>
+<div class="diff-line current unchanged"><span class="line-number">133</span><code class="line-text">### Connect iOS devices</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">118</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">119</span><code class="line-text"><mark class="inline-remove">- Conn</mark>e<mark class="inline-remove">ct a dock to the iPhone with a USB-C cable. If</mark> you<mark class="inline-remove"> ha</mark>ve <mark class="inline-remove">a</mark> <mark class="inline-remove">Bl</mark>ac<mark class="inline-remove">kMagic Camera ProDock</mark>, connect <mark class="inline-remove">th</mark>e<mark class="inline-remove"> bu</mark>i<mark class="inline-remove">lt-in USB-C </mark>c<mark class="inline-remove">abl</mark>e to the i<mark class="inline-remove">Ph</mark>o<mark class="inline-remove">ne. 2</mark></code></div>
+<div class="diff-line current added"><span class="line-number">135</span><code class="line-text"><mark class="inline-add">Aft</mark>e<mark class="inline-add">r</mark> you<mark class="inline-add">’</mark>ve <mark class="inline-add">configured</mark> <mark class="inline-add">your M</mark>ac, connect <mark class="inline-add">your iOS d</mark>e<mark class="inline-add">v</mark>ice<mark class="inline-add">s</mark> to the<mark class="inline-add">ir</mark> <mark class="inline-add">respect</mark>i<mark class="inline-add">ve d</mark>o<mark class="inline-add">cks</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">137</span><code class="line-text">- Connect a dock to the iPhone with a USB-C cable. If you have a Blackmagic Camera ProDock, connect the built-in USB-C cable to the iPhone.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">121</span><code class="line-text">- If you’re using an external storage device to store video, connect it to a USB-C port on the corresponding dock.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">139</span><code class="line-text">- If you’re using an external storage device to store video, connect it to a USB-C port on the corresponding dock.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">123</span><code class="line-text">### Configure your camera<mark class="inline-remove"> app</mark></code></div>
+<div class="diff-line current added"><span class="line-number">141</span><code class="line-text">### Configure your camera</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">125</span><code class="line-text">Next, configure the app you&#x27;re using to record video on iPhone.</code></div>
+<div class="diff-line current added"><span class="line-number">143</span><code class="line-text">Next, configure the app you&#x27;re using to record video on iPhone<mark class="inline-add"> or configure your standalone camera</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">127</span><code class="line-text">#### Configure Final Cut Camera</code></div>
+<div class="diff-line current unchanged"><span class="line-number">145</span><code class="line-text">#### Configure Final Cut Camera</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 19 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">149</span><code class="line-text">Consult the documentation for your camera app to set the correct frame rate, sync the app to the incoming genlock signal, and set the storage location for recorded video.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">167</span><code class="line-text">Consult the documentation for your camera app to set the correct frame rate, sync the app to the incoming genlock signal, and set the storage location for recorded video.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">151</span><code class="line-text">#### If your camera<mark class="inline-remove"> app</mark> won&#x27;t recognize genlock</code></div>
+<div class="diff-line current added"><span class="line-number">169</span><code class="line-text">#### If your camera won&#x27;t recognize genlock</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">170</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">153</span><code class="line-text">If you get an error message that your a<mark class="inline-remove">pp</mark> isn&#x27;t detecting genlock, check the following:</code></div>
+<div class="diff-line current added"><span class="line-number">171</span><code class="line-text">If you get an error message that your <mark class="inline-add">c</mark>a<mark class="inline-add">mera</mark> isn&#x27;t detecting genlock, check the following:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">155</span><code class="line-text">- The sync generator is turned on and configured properly.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">173</span><code class="line-text">- The sync generator is turned on and configured properly.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">159</span><code class="line-text">- The iPhone is connected to the correct USB-C cable or port on the dock.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">177</span><code class="line-text">- The iPhone is connected to the correct USB-C cable or port on the dock.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">161</span><code class="line-text">### Orient each iPhone used for recording</code></div>
+<div class="diff-line current added"><span class="line-number">179</span><code class="line-text"><mark class="inline-add">#</mark>### Orient each iPhone used for recording</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">163</span><code class="line-text">You can use the front or back cameras on iPhone to record video in a virtual production, but orient the device as follows: <mark class="inline-remove">3</mark></code></div>
+<div class="diff-line current added"><span class="line-number">181</span><code class="line-text">You can use the front or back cameras on iPhone to record video in a virtual production, but orient the device as follows: <mark class="inline-add">2</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">182</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">165</span><code class="line-text">- If you&#x27;re recording with the back camera, orient the iPhone horizontally in landscape mode. The back cameras should be along the top edge of the device.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">183</span><code class="line-text">- If you&#x27;re recording with the back camera, orient the iPhone horizontally in landscape mode. The back cameras should be along the top edge of the device.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">184</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">190</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">173</span><code class="line-text">## If you see ghosting on your recorded video</code></div>
+<div class="diff-line current unchanged"><span class="line-number">191</span><code class="line-text">## If you see ghosting on your recorded video</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">192</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">175</span><code class="line-text">If the genlock signal doesn&#x27;t arrive at your Mac and iPhone devices at the same time, the background video might be delayed slightly. A variety of factors can contribute to this delay, including the use of physical video adapters and certain types of advanced processing on the display itself. If the delay is significant enough, it can create a faint doubling of fast<mark class="inline-remove"> </mark>moving images (also called ghosting artifacts) in the video background on the recorded video.</code></div>
+<div class="diff-line current added"><span class="line-number">193</span><code class="line-text">If the genlock signal doesn&#x27;t arrive at your Mac and iPhone devices at the same time, the background video might be delayed slightly. A variety of factors can contribute to this delay, including the use of physical video adapters and certain types of advanced processing on the display itself. If the delay is significant enough, it can create a faint doubling of fast<mark class="inline-add">-</mark>moving images (also called ghosting artifacts) in the video background on the recorded video.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">176</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">194</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">177</span><code class="line-text"><mark class="inline-remove">T</mark>o a<mark class="inline-remove">dj</mark>ust <mark class="inline-remove">fo</mark>r<mark class="inline-remove"> this del</mark>a<mark class="inline-remove">y</mark>, you can s<mark class="inline-remove">e</mark>t the genlock offset <mark class="inline-remove">i</mark>n <mark class="inline-remove">Fin</mark>a<mark class="inline-remove">l Cu</mark>t <mark class="inline-remove">C</mark>a<mark class="inline-remove">mera</mark> so th<mark class="inline-remove">e</mark> frames<mark class="inline-remove"> are</mark> properly align<mark class="inline-remove">ed</mark>:</code></div>
+<div class="diff-line current added"><span class="line-number">195</span><code class="line-text"><mark class="inline-add">In s</mark>o<mark class="inline-add">me camera</mark> a<mark class="inline-add">pps, s</mark>u<mark class="inline-add">ch a</mark>s<mark class="inline-add"> Final Cu</mark>t <mark class="inline-add">Came</mark>ra, you can <mark class="inline-add">adju</mark>st the genlock offset <mark class="inline-add">to compe</mark>n<mark class="inline-add">sate</mark> <mark class="inline-add">for th</mark>at <mark class="inline-add">del</mark>a<mark class="inline-add">y</mark> so th<mark class="inline-add">at</mark> frames properly align:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">178</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">196</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">179</span><code class="line-text">- Go to the Final Cut Camera app on your iPhone.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">197</span><code class="line-text">- Go to the Final Cut Camera app on your iPhone.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">180</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 11 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">192</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">210</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">193</span><code class="line-text">- To test the offset, play back a video that has fast motion (or just alternates between two images) and record it. Check the recording for ghosting artifacts, then adjust the offset until the ghosting stops.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">211</span><code class="line-text">- To test the offset, play back a video that has fast motion (or just alternates between two images) and record it. Check the recording for ghosting artifacts, then adjust the offset until the ghosting stops.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">194</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">212</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">195</span><code class="line-text"><mark class="inline-remove">1.</mark> <mark class="inline-remove">So</mark>m<mark class="inline-remove">e third-</mark>p<mark class="inline-remove">arty genlock-capab</mark>le <mark class="inline-remove">sy</mark>n<mark class="inline-remove">c ge</mark>nera<mark class="inline-remove">tor</mark>s<mark class="inline-remove"> include the BlackMagic Mini Converter Sync Generator (wired), Ambient Lockit (ACN-CL) (wireless), and the Atomos UltraSync One (wireless).</mark></code></div>
+<div class="diff-line current added"><span class="line-number">213</span><code class="line-text"><mark class="inline-add">##</mark> <mark class="inline-add">Exa</mark>mple <mark class="inline-add">co</mark>nne<mark class="inline-add">ction diag</mark>ra<mark class="inline-add">m</mark>s</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">196</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">214</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">197</span><code class="line-text"><mark class="inline-remove">2. For</mark> d<mark class="inline-remove">ock</mark>s <mark class="inline-remove">other tha</mark>n the <mark class="inline-remove">[BlackMagic</mark> <mark class="inline-remove">C</mark>am<mark class="inline-remove">era ProDock](https://www.ap</mark>ple<mark class="inline-remove">.</mark>co<mark class="inline-remove">m/</mark>s<mark class="inline-remove">h</mark>o<mark class="inline-remove">p/</mark>product<mark class="inline-remove">/</mark>hs<mark class="inline-remove">8b2zm/a/blackm</mark>agic<mark class="inline-remove">-</mark>camera<mark class="inline-remove">-prodock) , refer to the documentation for guidance on which USB-C port or cable to u</mark>s<mark class="inline-remove">e</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">215</span><code class="line-text"><mark class="inline-add">The</mark> d<mark class="inline-add">iagram</mark>s <mark class="inline-add">i</mark>n th<mark class="inline-add">is s</mark>e<mark class="inline-add">ction</mark> <mark class="inline-add">show</mark> <mark class="inline-add">ex</mark>ample<mark class="inline-add">s of how to physically </mark>co<mark class="inline-add">nnect wired and wirele</mark>s<mark class="inline-add">s sync devices f</mark>o<mark class="inline-add">r a virtual </mark>product<mark class="inline-add">ion. T</mark>h<mark class="inline-add">e</mark>s<mark class="inline-add">e di</mark>ag<mark class="inline-add">rams show iPhone dev</mark>ic<mark class="inline-add">es as the </mark>cameras.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">198</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">216</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">199</span><code class="line-text"><mark class="inline-remove">3.</mark> <mark class="inline-remove">Camera sensors </mark>i<mark class="inline-remove">n compatible iPhone models use a technique called “rolling shutter” to read out the image data. This means that not all of the pixels from the camera sensor are captu</mark>red at<mark class="inline-remove"> the same time. Additionally, the direction in which the pixels are captured is fixed. Similarly, the pixels of an LED or OLED display (or for that matter, any raster display) are not all illuminated at the same time. The direction in which the display’s pixels are illuminated is also fixed. F</mark>or di<mark class="inline-remove">spl</mark>a<mark class="inline-remove">ys, the di</mark>r<mark class="inline-remove">ection is left-to-right and top-to-bottom for the standard, horizontal orientation of the display. Similarly, for the iPhone sensors, the direction is left-to-right and top-to-bottom if the phone is held in a horizontal position with the c</mark>am<mark class="inline-remove">eras on the back at the top of the phone. For best results, both the display and the phone should have similar orientations such that their scan-out and read-out directions are the same.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">217</span><code class="line-text"><mark class="inline-add">###</mark> <mark class="inline-add">W</mark>ired <mark class="inline-add">sync gener</mark>ator dia<mark class="inline-add">g</mark>ram</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">218</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">219</span><code class="line-text">The following diagram shows how to connect a wired sync generator to your Mac, dock, and cameras.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">220</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">221</span><code class="line-text">[Image: Mac Studio and two iPhones connected to a sync generator through BlackMagic docks.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">222</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">223</span><code class="line-text">### Wireless sync generator diagram</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">224</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">225</span><code class="line-text">The following diagram shows how to connect a wireless sync generator system to your Mac, dock, and cameras.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">226</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">227</span><code class="line-text">[Image: Mac Studio connected to a wireless sync generator in &quot;transmit&quot; mode, and two iPhones connected to wireless sync generators in &quot;receive&quot; mode.]</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">228</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">229</span><code class="line-text">1. For docks other than the [BlackMagic Camera ProDock](https://www.apple.com/shop/product/hs8b2zm/a/blackmagic-camera-prodock) , refer to the documentation for guidance on which USB-C port or cable to use.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">230</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">231</span><code class="line-text">2. Camera sensors in compatible iPhone models use a technique called “rolling shutter” to read out the image data. This means that not all of the pixels from the camera sensor are captured at the same time. Additionally, the direction in which the pixels are captured is fixed. Similarly, the pixels of an LED or OLED display (or for that matter, any raster display) are not all illuminated at the same time. The direction in which the display’s pixels are illuminated is also fixed. For displays, the direction is left-to-right and top-to-bottom for the standard, horizontal orientation of the display. Similarly, for the iPhone sensors, the direction is left-to-right and top-to-bottom if the phone is held in a horizontal position with the cameras on the back at the top of the phone. For best results, both the display and the phone should have similar orientations such that their scan-out and read-out directions are the same.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">200</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">232</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">201</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">233</span><code class="line-text">Information about products not manufactured by Apple, or independent websites not controlled or tested by Apple, is provided without recommendation or endorsement. Apple assumes no responsibility with regard to the selection, performance, or use of third-party websites or products. Apple makes no representations regarding third-party website accuracy or reliability. [Contact the vendor](https://support.apple.com/103190) for additional information.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
