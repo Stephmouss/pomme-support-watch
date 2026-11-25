@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Configurer une eSIM sur un iPad - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Configurer une eSIM sur un iPad - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/119592">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+35 ajouts</span>
+      <span class="badge removed">−35 suppressions</span>
+      <span class="badge">9 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">Obtenez des informations sur l’eSIM et sur la configuration d’une eSIM sur votre iPad.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">Obtenez des informations sur l’eSIM et sur la configuration d’une eSIM sur votre iPad.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">## Qu’est-ce que l’eSIM sur <mark class="inline-remove">l’</mark>iPad ?</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">## Qu’est-ce que l’eSIM sur iPad ?</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">Une eSIM est une carte SIM numérique standard intégrée à votre iPad qui vous évite d’avoir à utiliser une carte SIM physique. Cette fonctionnalité innovante vous permet de basculer sans effort entre des cartes SIM, de gérer huit eSIM ou plus et d’activer de nouveaux forfaits de façon numérique. Avec l’eSIM, vous profitez d’une plus grande flexibilité, d’un meilleur confort d’utilisation, d’une meilleure sécurité et d’une connectivité fluide, en particulier lorsque vous voyagez à l’étranger.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">Une eSIM est une carte SIM numérique standard intégrée à votre iPad qui vous évite d’avoir à utiliser une carte SIM physique. Cette fonctionnalité innovante vous permet de basculer sans effort entre des cartes SIM, de gérer huit eSIM ou plus et d’activer de nouveaux forfaits de façon numérique. Avec l’eSIM, vous profitez d’une plus grande flexibilité, d’un meilleur confort d’utilisation, d’une meilleure sécurité et d’une connectivité fluide, en particulier lorsque vous voyagez à l’étranger.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">- Un iPad prenant en charge l’eSIM :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">- Un iPad prenant en charge l’eSIM :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- iPad Pro 13 pouces (<mark class="inline-remove">M4,</mark> <mark class="inline-remove">M5</mark>) Wi-Fi + Cellular*</code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">- iPad Pro 13 pouces (<mark class="inline-add">3e</mark> <mark class="inline-add">génération et modèles ultérieurs</mark>) Wi-Fi + Cellula<mark class="inline-add">i</mark>r<mark class="inline-add">e</mark>*</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">- iPad Pro 11 pouces (<mark class="inline-remove">M4,</mark> <mark class="inline-remove">M5</mark>) Wi-Fi + Cellular*</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">- iPad Pro 11 pouces (<mark class="inline-add">1re</mark> <mark class="inline-add">génération et modèles ultérieurs</mark>) Wi-Fi + Cellular*</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text">- iPad <mark class="inline-remove">P</mark>r<mark class="inline-remove">o 11 pouces</mark> (<mark class="inline-remove">de la 1re à la 4</mark>e génération) Wi-Fi + Cellular</code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">- iPad <mark class="inline-add">Ai</mark>r (<mark class="inline-add">3</mark>e génération<mark class="inline-add"> et modèles ultérieurs</mark>) Wi-Fi + Cellular<mark class="inline-add">*</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- iPad <mark class="inline-remove">Pro 12,9 pouces </mark>(<mark class="inline-remove">de la 3e à la 6</mark>e génération) Wi-Fi + Cellular</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- iPad (<mark class="inline-add">7</mark>e génération<mark class="inline-add"> et modèles ultérieurs</mark>) Wi-Fi + Cellula<mark class="inline-add">i</mark>r<mark class="inline-add">e*</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">- iPad <mark class="inline-remove">A</mark>ir <mark class="inline-remove">13</mark> <mark class="inline-remove">p</mark>o<mark class="inline-remove">uc</mark>es <mark class="inline-remove">(M2, M3, M4</mark>) Wi-Fi + Cellular*</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- iPad <mark class="inline-add">m</mark>i<mark class="inline-add">ni (5e géné</mark>r<mark class="inline-add">ation</mark> <mark class="inline-add">et</mark> <mark class="inline-add">m</mark>o<mark class="inline-add">dèl</mark>es <mark class="inline-add">ultérieurs</mark>) Wi-Fi + Cellula<mark class="inline-add">i</mark>r<mark class="inline-add">e</mark>*</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text"><mark class="inline-remove">-</mark> i<mark class="inline-remove">Pa</mark>d <mark class="inline-remove">Air 11 p</mark>o<mark class="inline-remove">uc</mark>es <mark class="inline-remove">(M2, M3, M4) Wi-Fi + C</mark>ellular<mark class="inline-remove">*</mark></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text"><mark class="inline-add">L’activation</mark> <mark class="inline-add">d’un forfa</mark>i<mark class="inline-add">t </mark>d<mark class="inline-add">e</mark> <mark class="inline-add">d</mark>o<mark class="inline-add">nné</mark>es <mark class="inline-add">c</mark>ellula<mark class="inline-add">i</mark>r<mark class="inline-add">es avec une eSIM en Chine continentale n’est disponible qu’avec les [modèles d’iPad prenant en charge l’eSIM en Chine continentale](https://support.apple.com/fr-fr/104991) .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">- iPad<mark class="inline-remove"> Ai</mark>r<mark class="inline-remove"> (d</mark>e<mark class="inline-remove"> la </mark>3<mark class="inline-remove">e à la 5e génération</mark>)<mark class="inline-remove"> Wi-Fi + Cellular</mark></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- <mark class="inline-add">[Identifiez votre modèle d’</mark>iPad<mark class="inline-add">](https://suppo</mark>r<mark class="inline-add">t.appl</mark>e<mark class="inline-add">.com/fr-fr/10804</mark>3)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- <mark class="inline-remove">iP</mark>a<mark class="inline-remove">d (A16) Wi-Fi +</mark> Cellul<mark class="inline-remove">ar*</mark></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- <mark class="inline-add">[Cont</mark>a<mark class="inline-add">ctez</mark> C<mark class="inline-add">hina Unicom pour </mark>e<mark class="inline-add">n savoir plus](https://ma</mark>ll<mark class="inline-add">.10010.com/static/homepage/s</mark>u<mark class="inline-add">bjectpage/5980000010023.htm</mark>l<mark class="inline-add">)</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text"><mark class="inline-remove">-</mark> iPad (de <mark class="inline-remove">l</mark>a<mark class="inline-remove"> 7</mark>e <mark class="inline-remove">à</mark> <mark class="inline-remove">la 10</mark>e<mark class="inline-remove"> génération) Wi-Fi + Cellular</mark></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text"><mark class="inline-add">*iPad Pro 11 pouces (M4) et modèles ultérieurs, iPad Pro 13 pouces (M4) et modèles ultérieurs, iPad Air 11 pouces (M2) et modèles ultérieurs, iPad Air 13 pouces (M2) et modèles ultérieurs,</mark> iPad (<mark class="inline-add">A16) et modèles ultérieurs, et iPad mini (A17 Pro) et modèles ultérieurs prennent uniquement en charge l’eSIM et ne possèdent pas </mark>de <mark class="inline-add">support pour c</mark>a<mark class="inline-add">rt</mark>e <mark class="inline-add">SIM</mark> <mark class="inline-add">physiqu</mark>e<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- iPad mini (A17 Pro) Wi-Fi + Cellular *</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">- iPad mini (5e et 6e générations) Wi-Fi + Cellular</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">L’activation d’un forfait de données cellulaires avec une eSIM en Chine continentale n’est disponible qu’avec les [modèles d’iPad prenant en charge l’eSIM en Chine continentale](https://support.apple.com/fr-fr/104991) . [Identifiez votre modèle d’iPad](https://support.apple.com/fr-fr/108043) . [Contactez China Unicom pour en savoir plus.](https://mall.10010.com/static/homepage/subjectpage/5980000010023.html)</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">* Les modèles d’iPad (A16) Wi-Fi + Cellular et modèles ultérieurs, les modèles d’iPad Pro (M4) Wi-Fi + Cellular et modèles ultérieurs, les modèles d’iPad Air (M2) Wi-Fi + Cellular et modèles ultérieurs, ainsi que les modèles d’iPad mini (A17 Pro) Wi-Fi + Cellular et modèles ultérieurs sont activés à l’aide d’une eSIM et ne sont pas dotés d’une carte SIM physique.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">## Activer une eSIM sur un iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">37</span><code class="line-text">## Activer une eSIM sur un iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">### Utiliser l’activation de l’eSIM par l’opérateur sur iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">### Utiliser l’activation de l’eSIM par l’opérateur sur iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">Si votre opérateur prend en charge les services d’activation d’eSIM, il peut attribuer une nouvelle eSIM à votre iPad.<mark class="inline-remove"> Si une eSIM a été attribuée à votre iPad lorsque vous l’avez acheté, allumez votre iPad et suivez les instructions à l’écran. Votre eSIM sera installée via la configuration.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text"><mark class="inline-add">- </mark>Si votre opérateur prend en charge les services d’activation d’eSIM, il peut attribuer une nouvelle eSIM à votre iPad.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- Si votre opérateur a attribué une eSIM à votre iPad lors de son achat, allumez votre iPad et suivez les instructions à l’écran.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">- La configuration permet l’installation de votre eSIM.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">Si vous avez contacté votre opérateur pour obtenir une eSIM après avoir configuré votre iPad, et que celui-ci a configuré eSIM Carrier Activation (Activation de l’eSIM par l’opérateur) :</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">Si vous avez contacté votre opérateur pour obtenir une eSIM après avoir configuré votre iPad, et que celui-ci a configuré eSIM Carrier Activation (Activation de l’eSIM par l’opérateur) :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">61</span><code class="line-text">- Touchez Continuer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">- Touchez Continuer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">Si le forfait que vous avez activé remplace le forfait de votre carte SIM physique<mark class="inline-remove">,</mark> <mark class="inline-remove">retirez cette dernière, puis redémarrez votre iPad.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">Si le forfait que vous avez activé remplace le forfait de votre carte SIM physique <mark class="inline-add">:</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">- Retirez votre carte SIM.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">- Redémarrer votre iPad.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">### Transférer votre forfait depuis un autre iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">65</span><code class="line-text">### Transférer votre forfait depuis un autre iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">Certains opérateurs prennent en charge le transfert rapide de l’eSIM, qui vous permet de transférer l’eSIM de votre ancien iPad sur votre nouvel iPad sans avoir à contacter votre opérateur. Si vous <mark class="inline-remove">êt</mark>es <mark class="inline-remove">i</mark>n<mark class="inline-remove">vit</mark>é <mark class="inline-remove">à</mark> transférer votre forfait pendant la configuration, <mark class="inline-remove">suivez </mark>les instructions à l’écran.</code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">Certains opérateurs prennent en charge le transfert rapide de l’eSIM, qui vous permet de transférer l’eSIM de votre ancien iPad sur votre nouvel iPad sans avoir à contacter votre opérateur. S<mark class="inline-add">’</mark>i<mark class="inline-add">l</mark> vous es<mark class="inline-add">t</mark> <mark class="inline-add">dema</mark>n<mark class="inline-add">d</mark>é <mark class="inline-add">de</mark> transférer votre forfait<mark class="inline-add"> cellulaire</mark> pendant la configuration, les instructions à l’écran<mark class="inline-add"> vous guideront</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">Vous pouvez également transférer votre eSIM depuis un autre iPad après la configuration <mark class="inline-remove">comme suit </mark>:</code></div>
+<div class="diff-line current added"><span class="line-number">69</span><code class="line-text">Vous pouvez également transférer votre eSIM depuis un autre iPad après la configuration :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">71</span><code class="line-text">- Assurez-vous que votre iPad utilise [la dernière version d’iPadOS](https://support.apple.com/fr-fr/118575) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">71</span><code class="line-text">- Assurez-vous que votre iPad utilise [la dernière version d’iPadOS](https://support.apple.com/fr-fr/118575) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">78</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">79</span><code class="line-text">- Suivez les instructions à l’écran pour transférer le service. Vous devrez peut-être patienter quelques minutes pour que l’activation s’effectue.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">79</span><code class="line-text">- Suivez les instructions à l’écran pour transférer le service. Vous devrez peut-être patienter quelques minutes pour que l’activation s’effectue.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">81</span><code class="line-text">Si <mark class="inline-remove">l</mark>e bouton Transfer<mark class="inline-remove">t ne s’affiche pas</mark> ou si vous ne pouvez pas transférer <mark class="inline-remove">votr</mark>e forfait, <mark class="inline-remove">vous devrez peut-être </mark>contacte<mark class="inline-remove">r</mark> votre opérateur. 1</code></div>
+<div class="diff-line current added"><span class="line-number">81</span><code class="line-text">Si <mark class="inline-add">vous ne voyez pas d</mark>e bouton Transf<mark class="inline-add">ér</mark>er<mark class="inline-add">,</mark> ou si vous ne pouvez pas transférer <mark class="inline-add">d</mark>e forfait, contacte<mark class="inline-add">z</mark> votre opérateur. 1</code></div>
+<div class="diff-line previous removed"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">83</span><code class="line-text">1 Votre iPad est régi par les politiques de votre fournisseur de téléphonie mobile, qui peuvent prévoir des restrictions quant au transfert d’un forfait de données. Contactez votre opérateur pour obtenir des informations supplémentaires. Si vous ne savez pas quel opérateur appeler, ouvrez l’app Réglages sur votre iPad et touchez Opérateur.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">### Rejoindre un forfait pour iPhone existant</code></div>
+<div class="diff-line current unchanged"><span class="line-number">83</span><code class="line-text">### Rejoindre un forfait pour iPhone existant</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">86</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">92</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">95</span><code class="line-text">- Touchez Rejoindre le forfait iPhone, puis suivez les instructions à l’écran.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">93</span><code class="line-text">- Touchez Rejoindre le forfait iPhone, puis suivez les instructions à l’écran.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">94</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">97</span><code class="line-text">Si <mark class="inline-remove">v</mark>o<mark class="inline-remove">us ne </mark>p<mark class="inline-remove">ouvez pas sélec</mark>tion<mark class="inline-remove">ner</mark> Rejoindre le forfait iPhone,<mark class="inline-remove"> assurez-vous que vous avez</mark> activ<mark class="inline-remove">é</mark> le Wi-Fi sur <mark class="inline-remove">l’</mark>iPad et <mark class="inline-remove">qu</mark>e<mark class="inline-remove"> </mark>vous ave<mark class="inline-remove">z utilisé</mark> le même compte Apple <mark class="inline-remove">pour vous connecter </mark>sur votre iPhone et <mark class="inline-remove">sur </mark>votre iPad.</code></div>
+<div class="diff-line current added"><span class="line-number">95</span><code class="line-text"><mark class="inline-add">- </mark>Si <mark class="inline-add">l’</mark>option Rejoindre le forfait iPhone<mark class="inline-add"> est indisponible</mark>, activ<mark class="inline-add">ez</mark> le Wi-Fi sur <mark class="inline-add">votre </mark>iPad et <mark class="inline-add">conn</mark>e<mark class="inline-add">ctez-</mark>vous ave<mark class="inline-add">c</mark> le même compte Apple sur votre iPhone et votre iPad.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">96</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">99</span><code class="line-text">### Rechercher et configurer un nouveau forfait</code></div>
+<div class="diff-line current unchanged"><span class="line-number">97</span><code class="line-text">### Rechercher et configurer un nouveau forfait</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">100</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">98</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 21 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">120</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">123</span><code class="line-text">- Suivez les instructions à l’écran pour configurer et activer votre nouveau forfait de données mobiles sur votre iPad.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">121</span><code class="line-text">- Suivez les instructions à l’écran pour configurer et activer votre nouveau forfait de données mobiles sur votre iPad.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">122</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">125</span><code class="line-text">### <mark class="inline-remove">U</mark>ti<mark class="inline-remove">lis</mark>er un code QR</code></div>
+<div class="diff-line current added"><span class="line-number">123</span><code class="line-text">### <mark class="inline-add">Ac</mark>ti<mark class="inline-add">v</mark>er<mark class="inline-add"> une eSIM avec</mark> un code QR</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">124</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">127</span><code class="line-text">Vous pouvez utiliser un code QR fourni par votre opérateur pour activer une eSIM sur votre iPad.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">125</span><code class="line-text">Vous pouvez utiliser un code QR fourni par votre opérateur pour activer une eSIM sur votre iPad.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">126</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">129</span><code class="line-text">Active<mark class="inline-remove">z</mark> une eSIM avec un code QR lorsque vous configurez votre iPad pour la première fois <mark class="inline-remove">comme suit </mark>:</code></div>
+<div class="diff-line current added"><span class="line-number">127</span><code class="line-text">Active<mark class="inline-add">r</mark> une eSIM avec un code QR lorsque vous configurez votre iPad pour la première fois :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">128</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">131</span><code class="line-text">- Lorsque vous arrivez à l’écran Configurer un forfait cellulaire, touchez Utiliser un code QR.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">129</span><code class="line-text">- Lorsque vous arrivez à l’écran Configurer un forfait cellulaire, touchez Utiliser un code QR.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">130</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">133</span><code class="line-text">- Suivez les instructions à l’écran.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">131</span><code class="line-text">- Suivez les instructions à l’écran.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">132</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">135</span><code class="line-text">Active<mark class="inline-remove">z</mark> une eSIM a<mark class="inline-remove">v</mark>e<mark class="inline-remove">c</mark> un code QR après avoir configuré votre iPad <mark class="inline-remove">comme suit </mark>:</code></div>
+<div class="diff-line current added"><span class="line-number">133</span><code class="line-text">Active<mark class="inline-add">r</mark> une eSIM <mark class="inline-add">à l’</mark>a<mark class="inline-add">id</mark>e <mark class="inline-add">d’</mark>un code QR après avoir configuré votre iPad :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">134</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">137</span><code class="line-text">- Contactez votre opérateur pour obtenir un code QR.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">135</span><code class="line-text">- Contactez votre opérateur pour obtenir un code QR.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">136</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">139</span><code class="line-text">- Ouvrez l’app <mark class="inline-remove">App</mark>ar<mark class="inline-remove">eil photo</mark> et scannez votre code QR. <mark class="inline-remove">T</mark>ou<mark class="inline-remove">ch</mark>e<mark class="inline-remove">z</mark> la notification<mark class="inline-remove"> «</mark> Forfait cellulaire détecté <mark class="inline-remove">» lorsqu’elle </mark>s’affiche.</code></div>
+<div class="diff-line current added"><span class="line-number">137</span><code class="line-text">- Ouvrez l’app <mark class="inline-add">C</mark>a<mark class="inline-add">mé</mark>r<mark class="inline-add">a</mark> et scannez votre code QR. <mark class="inline-add">L</mark>o<mark class="inline-add">rsq</mark>ue la notification Forfait cellulaire détecté s’affiche<mark class="inline-add">, touchez-la</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">138</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">141</span><code class="line-text">- Si vous utilisez un iPad doté d’iPadOS 17.4 ou version ultérieure<mark class="inline-remove"> et que</mark> vous <mark class="inline-remove">dis</mark>po<mark class="inline-remove">s</mark>ez <mark class="inline-remove">d’</mark>un code QR<mark class="inline-remove"> reçu dans un e-mail</mark> de votre opérateur <mark class="inline-remove">ou</mark> o<mark class="inline-remove">bten</mark>u sur <mark class="inline-remove">l</mark>a page web <mark class="inline-remove">de ce dernier, t</mark>ouchez le code QR de <mark class="inline-remove">f</mark>a<mark class="inline-remove">ço</mark>n prolongée, puis touchez Ajouter une <mark class="inline-remove">carte </mark>eSIM.</code></div>
+<div class="diff-line current added"><span class="line-number">139</span><code class="line-text">- Si vous utilisez un iPad doté d’iPadOS 17.4 ou version ultérieure<mark class="inline-add">,</mark> vous po<mark class="inline-add">uv</mark>ez <mark class="inline-add">recevoir </mark>un code QR de votre opérateur <mark class="inline-add">par e-mail</mark> ou sur <mark class="inline-add">s</mark>a page web<mark class="inline-add">.</mark> <mark class="inline-add">T</mark>ouchez le code QR de <mark class="inline-add">m</mark>an<mark class="inline-add">ière</mark> prolongée, puis touchez Ajouter une eSIM.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">140</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">143</span><code class="line-text">- Touchez Continuer.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">141</span><code class="line-text">- Touchez Continuer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">142</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">145</span><code class="line-text">- Touchez Ajouter un forfait cellulaire.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">143</span><code class="line-text">- Touchez Ajouter un forfait cellulaire.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">144</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">147</span><code class="line-text">Votre opérateur peut exiger <mark class="inline-remove">l’utilisation d’</mark>un code de confirmation pour une authentification supplémentaire<mark class="inline-remove">.</mark> <mark class="inline-remove">Ent</mark>rez <mark class="inline-remove">le code de conf</mark>i<mark class="inline-remove">rmat</mark>i<mark class="inline-remove">on fourni par l’opérateu</mark>r lorsque vous y <mark class="inline-remove">êt</mark>e<mark class="inline-remove">s</mark> invité.</code></div>
+<div class="diff-line current added"><span class="line-number">145</span><code class="line-text">Votre opérateur peut exiger un code de confirmation pour une authentification supplémentaire<mark class="inline-add">,</mark> <mark class="inline-add">que vous dev</mark>rez <mark class="inline-add">sa</mark>i<mark class="inline-add">s</mark>ir lorsque vous y <mark class="inline-add">s</mark>e<mark class="inline-add">rez</mark> invité.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">146</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">149</span><code class="line-text">### Autres méthodes<mark class="inline-remove"> d’activation de l’eSIM</mark></code></div>
+<div class="diff-line current added"><span class="line-number">147</span><code class="line-text">### A<mark class="inline-add">ctiver l’eSIM à l’aide d’a</mark>utres méthodes</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">148</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">151</span><code class="line-text">Certains opérateurs peuvent prendre en charge d’autres méthodes d’activation de l’eSIM pour vous permettre de configurer un forfait de données mobiles sur votre iPad.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">149</span><code class="line-text">Certains opérateurs peuvent prendre en charge d’autres méthodes d’activation de l’eSIM pour vous permettre de configurer un forfait de données mobiles sur votre iPad.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">150</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">153</span><code class="line-text">#### Utiliser un lien</code></div>
+<div class="diff-line current unchanged"><span class="line-number">151</span><code class="line-text">#### Utiliser un lien</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">152</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">155</span><code class="line-text">Si votre opérateur vous envoie un lien pour télécharger et activer votre eSIM<mark class="inline-remove">, procédez comme suit</mark> :</code></div>
+<div class="diff-line current added"><span class="line-number">153</span><code class="line-text">Si votre opérateur vous envoie un lien pour télécharger et activer votre eSIM :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">154</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">157</span><code class="line-text">- Sur votre iPad doté d’iPadOS 17.4 ou version ultérieure, touchez le lien.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">155</span><code class="line-text">- Sur votre iPad doté d’iPadOS 17.4 ou version ultérieure, touchez le lien.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">158</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">156</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">160</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">163</span><code class="line-text">#### Utiliser l’application de l’opérateur</code></div>
+<div class="diff-line current unchanged"><span class="line-number">161</span><code class="line-text">#### Utiliser l’application de l’opérateur</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">162</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">165</span><code class="line-text">Si votre opérateur prend en charge l’activation de l’eSIM <mark class="inline-remove">à</mark> <mark class="inline-remove">l’aide d’</mark>une app, télécharge<mark class="inline-remove">z</mark> <mark class="inline-remove">l’</mark>app d<mark class="inline-remove">e votre opér</mark>a<mark class="inline-remove">teur </mark>s<mark class="inline-remove">ur</mark> l’App Store et suive<mark class="inline-remove">z</mark> les instructions à l’écran.</code></div>
+<div class="diff-line current added"><span class="line-number">163</span><code class="line-text">Si votre opérateur prend en charge l’activation de l’eSIM <mark class="inline-add">via</mark> une app,<mark class="inline-add"> vous pouvez</mark> télécharge<mark class="inline-add">r</mark> <mark class="inline-add">son </mark>app da<mark class="inline-add">n</mark>s l’App Store et suiv<mark class="inline-add">r</mark>e les instructions à l’écran<mark class="inline-add"> fournies</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">164</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">167</span><code class="line-text">## Voyager à l’étranger avec votre iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">165</span><code class="line-text">## Voyager à l’étranger avec votre iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">168</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">166</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 4 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">173</span><code class="line-text">Expliquez-nous ce qui se passe en détail, et nous vous proposerons les options à votre disposition.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">171</span><code class="line-text">Expliquez-nous ce qui se passe en détail, et nous vous proposerons les options à votre disposition.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">172</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">175</span><code class="line-text">[Obtenir des suggestions](https://getsupport.apple.com/?caller=ikb)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">173</span><code class="line-text">[Obtenir des suggestions](https://getsupport.apple.com/?caller=ikb)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">174</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">175</span><code class="line-text">- Votre iPad est régi par les politiques de votre fournisseur de téléphonie mobile, qui peuvent prévoir des restrictions quant au transfert d’un forfait de données. Contactez votre opérateur pour obtenir des informations supplémentaires. Si vous ne savez pas quel opérateur appeler, ouvrez l’app Réglages sur votre iPad et touchez Opérateur.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

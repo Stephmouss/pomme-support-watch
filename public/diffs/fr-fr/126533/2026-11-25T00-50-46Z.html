@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Comment créer un code de Temps d’écran sur un iPhone ou un iPad - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Comment créer un code de Temps d’écran sur un iPhone ou un iPad - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/126533">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+34 ajouts</span>
+      <span class="badge removed">−16 suppressions</span>
+      <span class="badge">2 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="diff-line previous removed"><span class="line-number">1</span><code class="line-text"># <mark class="inline-remove">D</mark>é<mark class="inline-remove">fini</mark>r un code de Temps d’écran sur un iPhone ou un iPad</code></div>
+<div class="diff-line current added"><span class="line-number">1</span><code class="line-text"># <mark class="inline-add">Comment cr</mark>é<mark class="inline-add">e</mark>r un code de Temps d’écran sur un iPhone ou un iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">3</span><code class="line-text">Vous pouvez créer un code de Temps d’écran <mark class="inline-remove">pour vous </mark>a<mark class="inline-remove">ssurer</mark> que les réglages que vous choisissez pour l’appareil de votre enfant ou le vôtre restent en <mark class="inline-remove">vigu</mark>e<mark class="inline-remove">ur</mark>. Cela signifie que le code doit être saisi pour pouvoir modifier des réglages de Temps d’écran. Lorsqu’un code de Temps d’écran est activé <mark class="inline-remove">s</mark>ur l’appareil d’un enfant, vous recevez une notification chaque fois que <mark class="inline-remove">c</mark>e code <mark class="inline-remove">est saisi </mark>sur <mark class="inline-remove">l’</mark>appareil<mark class="inline-remove"> en question</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">3</span><code class="line-text">Vous pouvez créer un code de Temps d’écran a<mark class="inline-add">fin</mark> que les réglages que vous choisissez pour l’appareil de votre enfant ou le vôtre restent en <mark class="inline-add">plac</mark>e. Cela signifie que le code doit être saisi pour pouvoir modifier des réglages de Temps d’écran. Lorsqu’un code de Temps d’écran est activé <mark class="inline-add">po</mark>ur l’appareil d’un enfant, vous recevez une notification chaque fois qu<mark class="inline-add">’il utilis</mark>e <mark class="inline-add">l</mark>e code sur <mark class="inline-add">son </mark>appareil.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text"><mark class="inline-remove">Le</mark> co<mark class="inline-remove">de de T</mark>em<mark class="inline-remove">ps d’écran diffèr</mark>e<mark class="inline-remove"> du code de déverrouillage de votre appareil ou de celui de l’enfant. Il est importa</mark>nt d<mark class="inline-remove">e conserver et de mémoriser votre code de Temps d</mark>’<mark class="inline-remove">écran, car vous en avez besoin pour changer les réglages Temps d’écran de votre appareil ou de celui de votre enfant. Vous pouvez modifier ou supprimer </mark>un code de Temps d’écran<mark class="inline-remove"> à </mark>to<mark class="inline-remove">u</mark>t<mark class="inline-remove"> m</mark>om<mark class="inline-remove">ent.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">[Fon</mark>c<mark class="inline-add">ti</mark>o<mark class="inline-add">nn</mark>ement d’un code de Temps d’écran<mark class="inline-add">](h</mark>t<mark class="inline-add">tps://supp</mark>o<mark class="inline-add">r</mark>t<mark class="inline-add">.apple.c</mark>om<mark class="inline-add">/fr-fr/126533#how)</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text"><mark class="inline-remove">S</mark>i vo<mark class="inline-remove">us u</mark>t<mark class="inline-remove">ilisez l</mark>e <mark class="inline-remove">[partag</mark>e<mark class="inline-remove"> </mark>fa<mark class="inline-remove">milial</mark>](https://support.apple.com/1<mark class="inline-remove">08</mark>3<mark class="inline-remove">80) pour gérer le </mark>c<mark class="inline-remove">ompte Apple d’un enfant, la personne responsable du partage fam</mark>il<mark class="inline-remove">ial ou un parent/tuteur </mark>d<mark class="inline-remove">oit définir le code de Temps d’écran de l’enfant sur son propre appareil, pas sur celui de l’enfant.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text"><mark class="inline-add">- [Comment conf</mark>i<mark class="inline-add">gurer un code de Temps d’écran pour l’iPhone ou l’iPad de</mark> vot<mark class="inline-add">r</mark>e e<mark class="inline-add">n</mark>fa<mark class="inline-add">nt</mark>](https://support.apple.com/<mark class="inline-add">fr-fr/</mark>1<mark class="inline-add">265</mark>3<mark class="inline-add">3#</mark>c<mark class="inline-add">h</mark>ild<mark class="inline-add">)</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">[<mark class="inline-remove">Dé</mark>co<mark class="inline-remove">uvrez la marche à su</mark>i<mark class="inline-remove">vre po</mark>ur<mark class="inline-remove"> modifi</mark>er <mark class="inline-remove">votre</mark> code de Temps d’écran](https://support.apple.com/1<mark class="inline-remove">0</mark>26<mark class="inline-remove">77</mark>)</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text"><mark class="inline-add">- </mark>[<mark class="inline-add">Comment </mark>co<mark class="inline-add">nf</mark>i<mark class="inline-add">g</mark>urer <mark class="inline-add">un</mark> code de Temps d’écran<mark class="inline-add"> pour votre propre iPhone ou iPad</mark>](https://support.apple.com/<mark class="inline-add">fr-fr/</mark>126<mark class="inline-add">533#adult</mark>)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">11</span><code class="line-text">## <mark class="inline-remove">Déf</mark>in<mark class="inline-remove">ir</mark> un code de Temps d’écran<mark class="inline-remove"> pour l’iPhone ou l’iPad de votre enfant</mark></code></div>
+<div class="diff-line current added"><span class="line-number">11</span><code class="line-text">## <mark class="inline-add">Fonct</mark>i<mark class="inline-add">o</mark>n<mark class="inline-add">nement</mark> <mark class="inline-add">d’</mark>un code de Temps d’écran</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Ouvr</mark>e<mark class="inline-remove">z</mark> <mark class="inline-remove">l’app Réglag</mark>e<mark class="inline-remove">s, puis touchez</mark> Temps d’écran.</code></div>
+<div class="diff-line current added"><span class="line-number">13</span><code class="line-text"><mark class="inline-add">Le</mark> <mark class="inline-add">cod</mark>e <mark class="inline-add">d</mark>e Temps d’écran<mark class="inline-add"> n’est pas le même que le code de déverrouillage de votre appareil</mark>.<mark class="inline-add"> Il est important de conserver et de mémoriser votre code de Temps d’écran, car vous en avez besoin pour changer les réglages Temps d’écran de votre appareil ou de celui de votre enfant.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">F</mark>a<mark class="inline-remove">it</mark>es d<mark class="inline-remove">éfil</mark>e<mark class="inline-remove">r</mark> <mark class="inline-remove">l</mark>’écran <mark class="inline-remove">v</mark>ers le<mark class="inline-remove"> ba</mark>s e<mark class="inline-remove">t touchez </mark>l<mark class="inline-remove">e nom</mark> de votre <mark class="inline-remove">enfant s</mark>ou<mark class="inline-remove">s Famille. Si l</mark>e <mark class="inline-remove">nom </mark>d<mark class="inline-remove">e votre enfant n’apparaît pas sous Famille, assurez-vous que votre appareil et celui de votre enfant sont connectés chacun au bon compte Apple et que l</mark>e partage familial est con<mark class="inline-remove">figu</mark>ré.</code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text"><mark class="inline-add">Pour</mark> <mark class="inline-add">vous </mark>a<mark class="inline-add">ssurer que vos réglag</mark>es de <mark class="inline-add">Temps d</mark>’écran <mark class="inline-add">s</mark>e<mark class="inline-add"> synch</mark>r<mark class="inline-add">onisent sur tou</mark>s les <mark class="inline-add">appar</mark>e<mark class="inline-add">i</mark>l<mark class="inline-add">s</mark> de votre <mark class="inline-add">gr</mark>ou<mark class="inline-add">p</mark>e de partage familial<mark class="inline-add">, mettez à jour tous les appareils vers la dernière version du logiciel avant d’activer ou de modifier vos réglages de Temps d’écran. Si vous avez activé l’option Partager entre les appareils, votre code</mark> est <mark class="inline-add">automatiquement mis à jour sur les appareils </mark>con<mark class="inline-add">cernés après la </mark>ré<mark class="inline-add">initialisation</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">17</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">T</mark>ou<mark class="inline-remove">ch</mark>ez <mark class="inline-remove">G</mark>érer le te<mark class="inline-remove">m</mark>p<mark class="inline-remove">s</mark> d’<mark class="inline-remove">écr</mark>an, p<mark class="inline-remove">uis V</mark>erroui<mark class="inline-remove">ll</mark>er le<mark class="inline-remove">s</mark> <mark class="inline-remove">réglag</mark>e<mark class="inline-remove">s</mark> Temps d’écran.</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text"><mark class="inline-add">Si</mark> <mark class="inline-add">v</mark>ou<mark class="inline-add">s utilis</mark>ez <mark class="inline-add">le [partage familial](https://support.apple.com/108380) pour g</mark>érer le <mark class="inline-add">comp</mark>te<mark class="inline-add"> A</mark>p<mark class="inline-add">ple</mark> d’<mark class="inline-add">un enf</mark>an<mark class="inline-add">t</mark>, <mark class="inline-add">la </mark>per<mark class="inline-add">sonne </mark>r<mark class="inline-add">esponsable du partage familial, un parent </mark>ou<mark class="inline-add"> un tuteur/une tutr</mark>i<mark class="inline-add">c</mark>e<mark class="inline-add"> doit défini</mark>r le <mark class="inline-add">cod</mark>e<mark class="inline-add"> de</mark> Temps d’écran<mark class="inline-add"> sur son propre appareil, pas sur celui de l’enfant</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">19</span><code class="line-text">[Découvrez la marche à suivre si vous avez oublié votre code de Temps d’écran ou si vous avez simplement besoin de le réinitialiser](https://support.apple.com/102677)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">## Comment configurer un code de Temps d’écran pour l’appareil de votre enfant</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">23</span><code class="line-text">Ces étapes s’appliquent à iOS 27 et iPadOS 27 et versions ultérieures. Découvrez comment [configurer un code de Temps d’écran pour l’appareil de votre enfant sous iOS 26 ou version antérieure](https://support.apple.com/guide/iphone/create-manage-track-a-screen-time-passcode-iph272b4c4bd/26/ios/26) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">- Sur l’iPhone ou l’iPad de la personne responsable du partage familial ou du parent/tuteur, ouvrez l’app Réglages.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- Touchez Famille, puis le nom de votre enfant. Si le nom de votre enfant n’apparaît pas sous Famille, assurez-vous que vous êtes tous les deux connectés à vos appareils avec votre propre compte Apple et que le compte de votre enfant fait partie du groupe de Partage familial.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">- Touchez Code et gestion. Si vous ne voyez pas Code et gestion, vous devrez peut-être [configurer d’abord l’utilisation et le contrôle parental](https://support.apple.com/108806) , puis configurer le code de Temps d’écran.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text">- Touchez Verrouiller les réglages de Temps d’écran.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- Saisissez un code à quatre chiffres, puis saisissez-le à nouveau pour le confirmer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">[Image: Écran d’iPhone affichant les réglages Gérer le temps d’écran pour un enfant, avec l’option Verrouiller les réglages Temps d’écran mise en évidence.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">[Image: Écran d’iPhone affichant les réglages Gérer le temps d’écran pour un enfant, avec l’option Verrouiller les réglages Temps d’écran mise en évidence.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">Sa</mark>i<mark class="inline-remove">siss</mark>e<mark class="inline-remove">z</mark> un code <mark class="inline-remove">à quatr</mark>e <mark class="inline-remove">chiffr</mark>e<mark class="inline-remove">s, </mark>p<mark class="inline-remove">ui</mark>s <mark class="inline-remove">s</mark>a<mark class="inline-remove">isissez-le à </mark>n<mark class="inline-remove">ouveau</mark> pour <mark class="inline-remove">l</mark>e <mark class="inline-remove">c</mark>on<mark class="inline-remove">f</mark>i<mark class="inline-remove">rmer.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text"><mark class="inline-add">##</mark> <mark class="inline-add">Conf</mark>i<mark class="inline-add">gur</mark>e<mark class="inline-add">r</mark> un code <mark class="inline-add">d</mark>e <mark class="inline-add">T</mark>e<mark class="inline-add">m</mark>ps <mark class="inline-add">d’écr</mark>an pour <mark class="inline-add">votr</mark>e <mark class="inline-add">propre iPh</mark>on<mark class="inline-add">e ou </mark>i<mark class="inline-add">Pad</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text"><mark class="inline-remove">##</mark> Défi<mark class="inline-remove">ni</mark>r un code de Temps d’écran <mark class="inline-remove">po</mark>ur votre iPhone <mark class="inline-remove">ou</mark> i<mark class="inline-remove">P</mark>ad</code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text"><mark class="inline-add">Ces étapes s’appliquent à iOS 27 et iPadOS 27 et versions ultérieures.</mark> Dé<mark class="inline-add">couvrez comment [con</mark>fi<mark class="inline-add">gure</mark>r un code de Temps d’écran <mark class="inline-add">s</mark>ur votre iPhone <mark class="inline-add">avec</mark> i<mark class="inline-add">OS 26](https://support.</mark>a<mark class="inline-add">pple.com/gui</mark>d<mark class="inline-add">e/iphone/create-manage-track-a-screen-time-passcode-iph272b4c4bd/26/ios/26) .</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">- Ouvrez l’app Réglages, puis touchez Temps d’écran.</code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">- Ouvrez l’app Réglages, puis <mark class="inline-add">faites défiler l’écran vers le bas et </mark>touchez Temps d’écran.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">- Faites défiler l’écran vers le bas, touchez <mark class="inline-remove">Gér</mark>e<mark class="inline-remove">r le temps</mark> d’<mark class="inline-remove">é</mark>c<mark class="inline-remove">ran, pui</mark>s <mark class="inline-remove">V</mark>e<mark class="inline-remove">rrouiller</mark> <mark class="inline-remove">les régla</mark>ges<mark class="inline-remove"> Temps d’écra</mark>n.</code></div>
+<div class="diff-line current added"><span class="line-number">43</span><code class="line-text">- Faites défiler l’écran vers le bas, touchez <mark class="inline-add">Cod</mark>e d’<mark class="inline-add">a</mark>c<mark class="inline-add">cè</mark>s e<mark class="inline-add">t</mark> ges<mark class="inline-add">tio</mark>n.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- Touchez Verrouiller les réglages de Temps d’écran.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">29</span><code class="line-text">[Image: Écran d’iPhone affichant les réglages Gérer le temps d’écran, avec un bouton permettant de verrouiller les réglages Temps d’écran.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">[Image: Écran d’iPhone affichant les réglages Gérer le temps d’écran, avec un bouton permettant de verrouiller les réglages Temps d’écran.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">- Pour ajouter un code de secours pour Temps d’écran, saisissez l’adresse e-mail ou le numéro de téléphone et le mot de passe associés à votre compte Apple.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">- Pour ajouter un code de secours pour Temps d’écran, saisissez l’adresse e-mail ou le numéro de téléphone et le mot de passe associés à votre compte Apple.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">[Image: Écran d’iPhone affichant les options <mark class="inline-remove">C</mark>ode de<mark class="inline-remove"> secours pour «</mark> Temps d’écran<mark class="inline-remove"> »</mark>, avec <mark class="inline-remove">l</mark>es champs pour l<mark class="inline-remove">’id</mark>e<mark class="inline-remove">n</mark>t<mark class="inline-remove">ifiant</mark> Apple et le mot de passe.]</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">[Image: Écran d’iPhone affichant les options <mark class="inline-add">de récupération du c</mark>ode de Temps d’écran, avec <mark class="inline-add">d</mark>es champs pour le<mark class="inline-add"> comp</mark>t<mark class="inline-add">e</mark> Apple et le mot de passe.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">Il est recommandé de ne pas passer l’étape d’ajout d’un code de secours pour Temps d’écran. Si vous oubliez votre code de Temps d’écran, vous pourrez ainsi le réinitialiser à l’aide de votre compte Apple. Si vous <mark class="inline-remove">a</mark>vez p<mark class="inline-remove">lusi</mark>e<mark class="inline-remove">u</mark>r<mark class="inline-remove">s</mark> comp<mark class="inline-remove">te</mark>s <mark class="inline-remove">Apple</mark>, vous devez utiliser celui <mark class="inline-remove">que vou</mark>s<mark class="inline-remove"> </mark>a<mark class="inline-remove">vez util</mark>is<mark class="inline-remove">é</mark> lors de la configuration initiale de <mark class="inline-remove">v</mark>o<mark class="inline-remove">tre</mark> code de<mark class="inline-remove"> secours pour</mark> Temps d’écran.</code></div>
+<div class="diff-line current added"><span class="line-number">55</span><code class="line-text">Il est recommandé de ne pas passer l’étape d’ajout d’un code de secours pour Temps d’écran. Si vous oubliez votre code de Temps d’écran, vous pourrez ainsi le réinitialiser à l’aide de votre compte Apple. Si vous <mark class="inline-add">de</mark>vez <mark class="inline-add">récu</mark>p<mark class="inline-add">ér</mark>er<mark class="inline-add"> votre</mark> co<mark class="inline-add">de de Te</mark>mps <mark class="inline-add">d’écran</mark>, vous devez utiliser <mark class="inline-add">le même compte que </mark>celui sais<mark class="inline-add">i</mark> lors de la configuration initiale de <mark class="inline-add">la récupérati</mark>o<mark class="inline-add">n du</mark> code de Temps d’écran.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">Il est important de se<mark class="inline-remove"> souveni</mark>r <mark class="inline-remove">du</mark> compte Apple utilisé pour votre code de <mark class="inline-remove">secours pour </mark>Temps d’écran<mark class="inline-remove">.</mark> <mark class="inline-remove">S</mark>ans <mark class="inline-remove">ce compte</mark>, vous ne pourrez pas supprimer ni réinitialiser votre code de Temps d’écran, et Apple ne<mark class="inline-remove"> sera</mark> pas en mesure de vous fournir ce<mark class="inline-remove">tte</mark> information.</code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text">Il est important de <mark class="inline-add">mémori</mark>ser <mark class="inline-add">le</mark> compte Apple <mark class="inline-add">que vous avez </mark>utilisé pour<mark class="inline-add"> la récupération de</mark> votre code de Temps d’écran<mark class="inline-add">,</mark> <mark class="inline-add">car s</mark>ans <mark class="inline-add">lui</mark>, vous ne pourrez pas supprimer ni réinitialiser votre code de Temps d’écran, et Apple <mark class="inline-add">pourrait </mark>ne pas<mark class="inline-add"> être</mark> en mesure de vous fournir ce<mark class="inline-add">s</mark> information<mark class="inline-add">s</mark>.</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
