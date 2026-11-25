@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>How to get Siri AI — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>How to get Siri AI</h1></div>
+      <a class="source" href="https://support.apple.com/en-us/127893">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+26 ajouts</span>
+      <span class="badge removed">−20 suppressions</span>
+      <span class="badge">3 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">7</span><code class="line-text">A dedicated Siri app uses iCloud to privately sync your conversation history across your devices, so you can start a conversation on iPhone and continue it on Mac, iPad, Apple Watch, or Apple Vision Pro.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">7</span><code class="line-text">A dedicated Siri app uses iCloud to privately sync your conversation history across your devices, so you can start a conversation on iPhone and continue it on Mac, iPad, Apple Watch, or Apple Vision Pro.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">9</span><code class="line-text">Siri AI is available in beta for iOS 27, iPadOS 27, macOS 27 Golden Gate, visionOS 27, and watchOS 27 when your [device language](https://support.apple.com/en-us/109358) and [Siri language](https://support.apple.com/en-us/120499) are set to the same supported language and your Apple Account is in an eligible region.</code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">Siri AI is available in beta for iOS 27, iPadOS 27, macOS 27 Golden Gate, visionOS 27<mark class="inline-add">, tvOS 27.2.1, HomeView software 27.2</mark>, and watchOS 27 when your [device language](https://support.apple.com/en-us/109358) and [Siri language](https://support.apple.com/en-us/120499) are set to the same supported language and your Apple Account is in an eligible region.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">[Image: Play this video.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">[Image: Play this video.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">[Image: iPhone showing the Try Siri AI (Beta) option.]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">17</span><code class="line-text">[Image: iPhone showing the Try Siri AI (Beta) option.]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">iPhone showing the Try Siri AI (Beta) option.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">[Image: iPhone showing you are using Siri AI (Beta).]</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">[Image: iPhone showing you are using Siri AI (Beta).]</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text"><mark class="inline-remove">iP</mark>hone <mark class="inline-remove">sh</mark>ow<mark class="inline-remove">ing</mark> you a<mark class="inline-remove">r</mark>e<mark class="inline-remove"> us</mark>ing Siri AI <mark class="inline-remove">(B</mark>eta<mark class="inline-remove">)</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text"><mark class="inline-add">Follow t</mark>h<mark class="inline-add">e </mark>on<mark class="inline-add">screen instructions to pick a voice, complet</mark>e <mark class="inline-add">v</mark>o<mark class="inline-add">ice enrollment, and revie</mark>w you<mark class="inline-add">r</mark> <mark class="inline-add">priv</mark>a<mark class="inline-add">cy s</mark>e<mark class="inline-add">tt</mark>ing<mark class="inline-add">s.</mark> Siri AI <mark class="inline-add">will b</mark>e<mark class="inline-add">gin </mark>t<mark class="inline-add">o downlo</mark>a<mark class="inline-add">d automatically</mark>.<mark class="inline-add"> During times of high demand, you might be added to a waitlist first, and wait times can vary.</mark></code></div>
+<div class="diff-line previous removed"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">Follow the onscreen instructions to pick a voice, complete voice enrollment, and review your privacy settings. This will add you to a waitlist, and wait times can vary. Siri AI will begin to download automatically when your wait is complete.</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">## Siri AI requirements</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">## Siri AI requirements</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">To use Siri AI, you need an Apple Intelligence–capable iPhone, iPad, Mac, Apple Watch, or Apple Vision Pro with [device language](https://support.apple.com/en-us/109358) and [Siri language](https://support.apple.com/en-us/120499) set to a supported language:</code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text">To use Siri AI, you need an Apple Intelligence–capable iPhone, iPad, Mac, Apple Watch<mark class="inline-add">, Apple HomeView, Apple TV</mark>, or Apple Vision Pro with [device language](https://support.apple.com/en-us/109358) and [Siri language](https://support.apple.com/en-us/120499) set to a supported language:</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">- iOS 27 on iPhone 15 Pro models and later, iPhone 16 models or later, and iPhone Air</code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text">- iOS 27 on iPhone 15 Pro models and later, iPhone 16 models or later, <mark class="inline-add">iPhone Duo, </mark>and iPhone Air</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text">- iPadOS 27 on iPad mini (A17 Pro), and iPad models with M1 or later</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">- iPadOS 27 on iPad mini (A17<mark class="inline-add"> Pro and A20</mark> Pro), and iPad models with M1 or later</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">35</span><code class="line-text">- macOS 27 Golden Gate on MacBook Neo (A18 Pro) and Mac with M1 or later</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">- macOS 27 Golden Gate on MacBook Neo (A18 Pro) and Mac with M1 or later</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">37</span><code class="line-text">- <mark class="inline-remove">watch</mark>OS 27 on <mark class="inline-remove">Apple W</mark>a<mark class="inline-remove">tch Series 9 or later,</mark> Apple <mark class="inline-remove">Watch Ultra 2 </mark>o<mark class="inline-remove">r later, and Apple Watch SE 3, whe</mark>n <mark class="inline-remove">pai</mark>r<mark class="inline-remove">ed with an Apple Intelligence-enabled iPh</mark>o<mark class="inline-remove">ne with Siri AI enabled</mark></code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">- <mark class="inline-add">vision</mark>OS 27 on a<mark class="inline-add">ny</mark> Apple <mark class="inline-add">Visi</mark>on <mark class="inline-add">P</mark>ro</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">- <mark class="inline-remove">v</mark>is<mark class="inline-remove">i</mark>o<mark class="inline-remove">nOS</mark> 27 on<mark class="inline-remove"> any</mark> Apple Vi<mark class="inline-remove">sion Pro</mark></code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text">- <mark class="inline-add">HomeV</mark>i<mark class="inline-add">ew </mark>so<mark class="inline-add">ftware</mark> 27<mark class="inline-add">.2</mark> on Apple <mark class="inline-add">Home</mark>Vi<mark class="inline-add">ew*</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text">- tvOS 27.2.1 on Apple TV 4K (2nd generation and later), and a Siri AI-enabled, paired device nearby</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">- watchOS 27 on Apple Watch Series 9 or later, Apple Watch Ultra 2 or later, and Apple Watch SE 3, with a Siri AI-enabled, paired iPhone nearby</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">*For personal context understanding on Apple HomeView, you need a Siri AI-enabled, paired device nearby.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">41</span><code class="line-text">## Supported languages and regions</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">## Supported languages and regions</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">Siri AI is currently available in English. Availability varies by region and platform. After you turn on Siri AI, it will continue to work when you travel to other regions.</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">Siri AI is currently available in Engl<mark class="inline-add">ish, French, Japanese, Korean, Portuguese, and Span</mark>ish. Availability varies by region and platform. After you turn on Siri AI, it will continue to work when you travel to other regions.<mark class="inline-add"> Siri AI is available only in English on Apple HomeView.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">### For European Union residents</code></div>
+<div class="diff-line current unchanged"><span class="line-number">47</span><code class="line-text">### For European Union residents</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">Siri AI is not available for iOS, iPadOS, or watchOS in the EU. It is available for macOS 27 Golden Gate and visionOS 27 if your [Apple Account region](https://support.apple.com/en-us/118283) is in the EU and your device language and Siri language are <mark class="inline-remove">both </mark>set to <mark class="inline-remove">E</mark>ng<mark class="inline-remove">lish</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">Siri AI is not available for iOS, iPadOS, or watchOS in the EU. It is available for macOS 27 Golden Gate and visionOS 27 if your [Apple Account region](https://support.apple.com/en-us/118283) is in the EU and your device language and Siri language are set to <mark class="inline-add">the same supported la</mark>ng<mark class="inline-add">uage</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">49</span><code class="line-text">### For China mainland residents</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">### For China mainland residents</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">## Siri AI features</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">## Siri AI features</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">B</mark>roa<mark class="inline-remove">d world k</mark>n<mark class="inline-remove">owled</mark>ge<mark class="inline-remove">:</mark> <mark class="inline-remove">g</mark>e<mark class="inline-remove">t</mark> answers<mark class="inline-remove"> to almost any quest</mark>ion<mark class="inline-remove"> with broad world knowledge</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">57</span><code class="line-text"><mark class="inline-add">Siri</mark> <mark class="inline-add">AI featu</mark>r<mark class="inline-add">es vary by regi</mark>o<mark class="inline-add">n, l</mark>an<mark class="inline-add">gua</mark>ge<mark class="inline-add">,</mark> <mark class="inline-add">hardwar</mark>e<mark class="inline-add">,</mark> an<mark class="inline-add">d </mark>s<mark class="inline-add">oft</mark>w<mark class="inline-add">are v</mark>ersion.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">57</span><code class="line-text">- <mark class="inline-remove">Pe</mark>r<mark class="inline-remove">s</mark>o<mark class="inline-remove">n</mark>a<mark class="inline-remove">l context understanding: fin</mark>d w<mark class="inline-remove">h</mark>at y<mark class="inline-remove">ou need</mark> ac<mark class="inline-remove">ross Messages, Mail, Calendar, Notes, Reminders,</mark> and <mark class="inline-remove">mor</mark>e w<mark class="inline-remove">ith p</mark>er<mark class="inline-remove">sonal context understanding</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">- <mark class="inline-add">B</mark>road w<mark class="inline-add">orld knowledge: </mark>a<mark class="inline-add">sk abou</mark>t <mark class="inline-add">virtuall</mark>y a<mark class="inline-add">ny topi</mark>c and <mark class="inline-add">g</mark>e<mark class="inline-add">t</mark> <mark class="inline-add">a detailed ans</mark>wer.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">59</span><code class="line-text">- <mark class="inline-remove">O</mark>nscr<mark class="inline-remove">een</mark> a<mark class="inline-remove">war</mark>e<mark class="inline-remove">n</mark>ess<mark class="inline-remove">:</mark> as<mark class="inline-remove">k</mark> <mark class="inline-remove">about</mark> and <mark class="inline-remove">act </mark>o<mark class="inline-remove">n what&#x27;s on your sc</mark>re<mark class="inline-remove">en</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">61</span><code class="line-text">- <mark class="inline-add">Perso</mark>n<mark class="inline-add">al context under</mark>s<mark class="inline-add">tanding: find what you&#x27;re looking for a</mark>cr<mark class="inline-add">oss</mark> a<mark class="inline-add">pps lik</mark>e<mark class="inline-add"> M</mark>ess<mark class="inline-add">ages,</mark> <mark class="inline-add">M</mark>a<mark class="inline-add">il, Calendar, Note</mark>s<mark class="inline-add">,</mark> <mark class="inline-add">Reminders,</mark> and <mark class="inline-add">m</mark>ore.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">- <mark class="inline-remove">App</mark> action<mark class="inline-remove">s:</mark> <mark class="inline-remove">Siri ca</mark>n <mark class="inline-remove">ge</mark>t<mark class="inline-remove"> thing</mark>s <mark class="inline-remove">d</mark>on<mark class="inline-remove">e across</mark> your <mark class="inline-remove">app</mark>s<mark class="inline-remove"> to send messages, </mark>cre<mark class="inline-remove">ate ev</mark>en<mark class="inline-remove">ts, and more</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">63</span><code class="line-text">- <mark class="inline-add">Onscreen awareness: ask about and take</mark> action <mark class="inline-add">o</mark>n <mark class="inline-add">wha</mark>t<mark class="inline-add">&#x27;</mark>s on your screen.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">63</span><code class="line-text">- <mark class="inline-remove">Siri</mark> a<mark class="inline-remove">pp</mark>: <mark class="inline-remove">pick </mark>u<mark class="inline-remove">p where you left off with th</mark>e Siri <mark class="inline-remove">app,</mark> <mark class="inline-remove">w</mark>hi<mark class="inline-remove">ch keep</mark>s <mark class="inline-remove">your c</mark>on<mark class="inline-remove">v</mark>e<mark class="inline-remove">rsation history synced with iCloud</mark> across your <mark class="inline-remove">A</mark>pple <mark class="inline-remove">d</mark>evi<mark class="inline-remove">c</mark>es.</code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">- <mark class="inline-add">App</mark> a<mark class="inline-add">ctions</mark>: u<mark class="inline-add">s</mark>e Siri <mark class="inline-add">to</mark> <mark class="inline-add">get t</mark>hi<mark class="inline-add">ng</mark>s <mark class="inline-add">d</mark>one across your <mark class="inline-add">a</mark>pp<mark class="inline-add">s, like sending messages, creating ca</mark>le<mark class="inline-add">ndar</mark> ev<mark class="inline-add">ents, ed</mark>i<mark class="inline-add">ting not</mark>es<mark class="inline-add">, and more</mark>.</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">- Siri app: pick up where you left off with the Siri app, which keeps your conversation history synced with iCloud across your Apple devices. Not available on Apple HomeView.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">- Write with Siri: describe what you need, and Siri can generate a draft from scratch, edit what you&#x27;ve written, or give you feedback—virtually anywhere you type.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">- Write with Siri: describe what you need, and Siri can generate a draft from scratch, edit what you&#x27;ve written, or give you feedback—virtually anywhere you type.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">- Visual Intelligence: learn more about what&#x27;s in front of you with Visual Intelligence. Use Siri mode in the Camera app (iPhone only), the screenshot gesture on iPhone and iPad, or keyboard shortcuts on Mac. On Apple Vision Pro, you can search, ask questions, and take action by looking at your surroundings and asking Siri.</code></div>
+<div class="diff-line current added"><span class="line-number">71</span><code class="line-text">- Visual Intelligence: learn more about what&#x27;s in front of you with Visual Intelligence. Use Siri mode in the Camera app (iPhone only), the screenshot gesture on iPhone and iPad, or keyboard shortcuts on Mac. On Apple Vision Pro, you can search, ask questions, and take action by looking at your surroundings and asking Siri.<mark class="inline-add"> Not available on Apple HomeView.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">- Expressive voices: customize pace and expressiveness. Requires a device with the AFM Core Advanced on-device model. AFM Core Advanced is available on iPhone <mark class="inline-remove">A</mark>ir, iPhone 17 Pro <mark class="inline-remove">models </mark>a<mark class="inline-remove">nd</mark> iPhone <mark class="inline-remove">18</mark> Pro models<mark class="inline-remove">,</mark> i<mark class="inline-remove">Pad</mark> <mark class="inline-remove">(</mark>M4<mark class="inline-remove">),</mark> <mark class="inline-remove">or</mark> later <mark class="inline-remove">with</mark> at least 12GB of unified memory, <mark class="inline-remove">and </mark>Mac <mark class="inline-remove">(</mark>M3<mark class="inline-remove">)</mark> <mark class="inline-remove">or</mark> later <mark class="inline-remove">with</mark> at least 12GB of unified memory, and Apple Vision Pro (M5).</code></div>
+<div class="diff-line current added"><span class="line-number">73</span><code class="line-text">- Expressive voices: customize pace and expressiveness<mark class="inline-add"> (English only)</mark>. Requires a device with the AFM Core Advanced on-device model. AFM Core Advanced is available on iPhone <mark class="inline-add">18 Pro, </mark>i<mark class="inline-add">Phone 18 P</mark>r<mark class="inline-add">o Max, iPhone Duo, iPhone 17 Pro</mark>, iPhone 17 Pro <mark class="inline-add">M</mark>a<mark class="inline-add">x,</mark> iPhone <mark class="inline-add">Air, iPad mini (A20</mark> Pro<mark class="inline-add">), iPad</mark> models <mark class="inline-add">w</mark>i<mark class="inline-add">th</mark> M4 <mark class="inline-add">and</mark> later <mark class="inline-add">and</mark> at least 12GB of unified memory, Mac <mark class="inline-add">models with </mark>M3 <mark class="inline-add">and</mark> later <mark class="inline-add">and</mark> at least 12<mark class="inline-add"> </mark>GB of unified memory, and Apple Vision Pro (M5).<mark class="inline-add"> For Apple HomeView, the paired device must meet this requirement.</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">74</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">75</span><code class="line-text">Siri AI is not available for users under 13. Certain Apple Intelligence features that rely on server-side models are subject to daily usage limits, including but not limited to Siri AI, Intelligent Photo Editing Tools, Image Playground, and AFM 3 Cloud models in Shortcuts. Daily limits may vary by feature, request complexity, system demand, system policies, and other factors. Expanded access to such features will be available for a fee in the future. Use of these features is subject to the [Apple Intelligence Terms and Conditions](https://support.apple.com/en-us/148587) .</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
