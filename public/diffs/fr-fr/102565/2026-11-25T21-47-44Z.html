@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Transférer les données d’un PC vers un Mac avec l’Assistant migration - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Transférer les données d’un PC vers un Mac avec l’Assistant migration - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/102565">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+22 ajouts</span>
+      <span class="badge removed">−16 suppressions</span>
+      <span class="badge">2 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">L’Assistant migration copie les contacts, calendriers, comptes de messagerie et autres données depuis votre PC Windows vers les emplacements appropriés de votre Mac. Il ne supprime pas les informations de votre ancien PC ni ne remplace le système d’exploitation (macOS) de votre Mac.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">L’Assistant migration copie les contacts, calendriers, comptes de messagerie et autres données depuis votre PC Windows vers les emplacements appropriés de votre Mac. Il ne supprime pas les informations de votre ancien PC ni ne remplace le système d’exploitation (macOS) de votre Mac.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">- [<mark class="inline-remove">Se p</mark>réparer](https://support.apple.com/fr-fr/102565#setup)</code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">- [<mark class="inline-add">P</mark>réparer<mark class="inline-add"> vos ordinateurs pour la migration</mark>](https://support.apple.com/fr-fr/102565#setup)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text">- [<mark class="inline-remove">U</mark>til<mark class="inline-remove">is</mark>e<mark class="inline-remove">r</mark> l’Assistant migration](https://support.apple.com/fr-fr/102565#<mark class="inline-remove">use</mark>)</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text">- [<mark class="inline-add">Téléchargez e</mark>t<mark class="inline-add"> </mark>i<mark class="inline-add">nsta</mark>l<mark class="inline-add">l</mark>e<mark class="inline-add">z</mark> l’Assistant migration<mark class="inline-add"> Windows sur votre PC</mark>](https://support.apple.com/fr-fr/102565#<mark class="inline-add">download</mark>)</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">9</span><code class="line-text">- [Utiliser l’Assistant migration sur votre Mac et votre PC](https://support.apple.com/fr-fr/102565#use)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">- [Quelles données sont transférées et où ?](https://support.apple.com/fr-fr/102565#data)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">11</span><code class="line-text">- [Quelles données sont transférées et où ?](https://support.apple.com/fr-fr/102565#data)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">11</span><code class="line-text">- [Si la migration échoue](https://support.apple.com/fr-fr/102565#notransfer)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">13</span><code class="line-text">- [Si la migration échoue](https://support.apple.com/fr-fr/102565#notransfer)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">12</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">13</span><code class="line-text">## Pr<mark class="inline-remove">oc</mark>é<mark class="inline-remove">du</mark>re <mark class="inline-remove">p</mark>r<mark class="inline-remove">élim</mark>inair<mark class="inline-remove">e</mark></code></div>
+<div class="diff-line current added"><span class="line-number">15</span><code class="line-text">## Pré<mark class="inline-add">pa</mark>re<mark class="inline-add">r</mark> <mark class="inline-add">vos o</mark>r<mark class="inline-add">d</mark>ina<mark class="inline-add">teurs pour la m</mark>i<mark class="inline-add">g</mark>r<mark class="inline-add">ation</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">14</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">15</span><code class="line-text">- Assurez-vous qu<mark class="inline-remove">e la version d</mark>e Microsoft Windows <mark class="inline-remove">de votre PC </mark>est à jour et que [macOS est à jour](https://support.apple.com/108382) sur votre Mac.</code></div>
+<div class="diff-line current added"><span class="line-number">17</span><code class="line-text">- Assurez-vous que Microsoft Windows est à jour<mark class="inline-add"> sur votre PC</mark> et que [macOS est à jour](https://support.apple.com/108382) sur votre Mac.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">16</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">17</span><code class="line-text">- Fermez toutes les apps et désactivez tous les réglages susceptibles d’empêcher votre PC d’effectuer d’autres tâches. Si vous avez installé un logiciel antivirus, un coupe-feu ou un logiciel VPN sur l’un ou l’autre des ordinateurs, désactivez-les également.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">- Fermez toutes les apps et désactivez tous les réglages susceptibles d’empêcher votre PC d’effectuer d’autres tâches. Si vous avez installé un logiciel antivirus, un coupe-feu ou un logiciel VPN sur l’un ou l’autre des ordinateurs, désactivez-les également.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">19</span><code class="line-text">- Assurez-vous que votre <mark class="inline-remove">Mac</mark> et votre <mark class="inline-remove">PC</mark> sont à proximité l’un de l’autre et que le Wi-Fi et le Bluetooth sont activés.<mark class="inline-remove"> Si votre ancien PC ne prend pas en charge le mode Bluetooth faible énergie, un message peut vous indiquer qu’un adaptateur Bluetooth est nécessaire. Les adaptateurs Bluetooth qui se connectent au port USB de votre PC sont largement répandus.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">- Assurez-vous que votre <mark class="inline-add">PC</mark> et votre <mark class="inline-add">Mac</mark> sont à proximité l’un de l’autre et que le Wi-Fi et le Bluetooth sont activés.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">21</span><code class="line-text">- Si votre Mac est doté de macOS 13 ou d’une version antérieure, ou si vous ne connaissez pas la version actuellement installée, connectez les deux ordinateurs au même réseau, ou reliez-les directement à l’aide d’un câble Ethernet.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">- Si votre Mac est doté de macOS 13 ou d’une version antérieure, ou si vous ne connaissez pas la version actuellement installée, connectez les deux ordinateurs au même réseau, ou reliez-les directement à l’aide d’un câble Ethernet.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">23</span><code class="line-text"><mark class="inline-remove">-</mark> <mark class="inline-remove">S</mark>ur votre PC<mark class="inline-remove">,</mark> t<mark class="inline-remove">é</mark>l<mark class="inline-remove">éch</mark>arge<mark class="inline-remove">z</mark> <mark class="inline-remove">la ver</mark>s<mark class="inline-remove">i</mark>on <mark class="inline-remove">appropriée de</mark> l’<mark class="inline-remove">Assist</mark>a<mark class="inline-remove">nt migr</mark>at<mark class="inline-remove">ion Windows, en fonction de la version de macOS installée sur votre Mac :</mark></code></div>
+<div class="diff-line current added"><span class="line-number">25</span><code class="line-text"><mark class="inline-add">Bluetooth</mark> <mark class="inline-add">Low Energy : si votre ancien PC ne prend pas en charge le Bluetooth Low Energy, un message peut vous indiquer qu’un adaptate</mark>ur<mark class="inline-add"> Bluetooth est requis. Les adaptateurs Bluetooth qui se connectent au port USB de</mark> votre PC <mark class="inline-add">son</mark>t<mark class="inline-add"> </mark>large<mark class="inline-add">ment</mark> <mark class="inline-add">di</mark>s<mark class="inline-add">p</mark>on<mark class="inline-add">ibles</mark> <mark class="inline-add">à</mark> l’a<mark class="inline-add">ch</mark>at<mark class="inline-add">.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">25</span><code class="line-text">Assistant migration Windows <mark class="inline-remove">3.2.0.0 | Prend en charge la migration de donnée</mark>s<mark class="inline-remove"> à parti</mark>r <mark class="inline-remove">de Wind</mark>o<mark class="inline-remove">ws 10 ou version ul</mark>t<mark class="inline-remove">érieu</mark>re <mark class="inline-remove">vers : macOS 27 Golden Gate macOS Tahoe 26 macOS Sequoia 15 macOS Sonoma 14</mark></code></div>
+<div class="diff-line current added"><span class="line-number">27</span><code class="line-text"><mark class="inline-add">## Télécharger et installer l’</mark>Assistant migration Windows s<mark class="inline-add">u</mark>r <mark class="inline-add">v</mark>otre <mark class="inline-add">PC</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">27</span><code class="line-text">Assistant migration Windows <mark class="inline-remove">2.4.5.0 | P</mark>r<mark class="inline-remove">end</mark> en c<mark class="inline-remove">harg</mark>e l<mark class="inline-remove">a m</mark>i<mark class="inline-remove">gr</mark>ation <mark class="inline-remove">de donn</mark>é<mark class="inline-remove">es à</mark> par<mark class="inline-remove">tir de Windows 7 ou</mark> v<mark class="inline-remove">ersi</mark>o<mark class="inline-remove">n ul</mark>t<mark class="inline-remove">érieu</mark>re ve<mark class="inline-remove">rs</mark> :<mark class="inline-remove"> macOS Ventura 13 macOS Monterey 12</mark></code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text"><mark class="inline-add">- Sur votre PC (et non sur votre Mac), utilisez un navigateur web pour télécharger le programme d’installation de l’</mark>Assistant migration Windows <mark class="inline-add">app</mark>r<mark class="inline-add">oprié,</mark> en <mark class="inline-add">fon</mark>c<mark class="inline-add">tion du systèm</mark>e <mark class="inline-add">d’exp</mark>l<mark class="inline-add">o</mark>i<mark class="inline-add">t</mark>ation <mark class="inline-add">utilis</mark>é par votre <mark class="inline-add">PC et </mark>v<mark class="inline-add">otr</mark>e<mark class="inline-add"> Mac</mark> :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">Assistant migration Windows 2<mark class="inline-remove">.3</mark>.1.0 <mark class="inline-remove">|</mark> P<mark class="inline-remove">rend</mark> e<mark class="inline-remove">n charge la migra</mark>t<mark class="inline-remove">ion de</mark> do<mark class="inline-remove">nn</mark>é<mark class="inline-remove">es à partir</mark> de Windows <mark class="inline-remove">7</mark> ou version ultérieure ve<mark class="inline-remove">r</mark>s <mark class="inline-remove">:</mark> macOS <mark class="inline-remove">B</mark>i<mark class="inline-remove">g</mark> <mark class="inline-remove">S</mark>ur<mark class="inline-remove"> 11</mark></code></div>
+<div class="diff-line current added"><span class="line-number">31</span><code class="line-text"><mark class="inline-add">- [Télécharger l’</mark>Assistant migration Windows <mark class="inline-add">3.</mark>2.1.0<mark class="inline-add">](https://support.apple.com/fr-fr/118595)</mark> <mark class="inline-add">si votre</mark> P<mark class="inline-add">C</mark> e<mark class="inline-add">s</mark>t do<mark class="inline-add">t</mark>é de Windows <mark class="inline-add">10</mark> ou version ultérieure <mark class="inline-add">et que </mark>v<mark class="inline-add">otr</mark>e<mark class="inline-add"> Mac e</mark>s<mark class="inline-add">t</mark> <mark class="inline-add">doté de</mark> macOS <mark class="inline-add">Sonoma 14 ou vers</mark>i<mark class="inline-add">on</mark> <mark class="inline-add">ultérie</mark>ur<mark class="inline-add">e.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text"><mark class="inline-remove">L</mark>a<mark class="inline-remove"> v</mark>er<mark class="inline-remove">sion 2.2.0.1 , la version 2.1.2.0 et la version 1.0.5.7 de</mark> l’Assistant migration Windows rest<mark class="inline-remove">ent</mark> d<mark class="inline-remove">isp</mark>o<mark class="inline-remove">nibles pour proc</mark>é<mark class="inline-remove">der à la migration</mark> de do<mark class="inline-remove">nnée</mark>s <mark class="inline-remove">vers</mark> <mark class="inline-remove">les</mark> version<mark class="inline-remove">s</mark> <mark class="inline-remove">an</mark>térieures de macOS.</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text"><mark class="inline-add">- [Téléch</mark>a<mark class="inline-add">rg</mark>er l’Assistant migration Windows <mark class="inline-add">2.4.5.0](https://suppo</mark>r<mark class="inline-add">t.apple.com/fr-fr/106376) si votre PC </mark>est do<mark class="inline-add">t</mark>é de <mark class="inline-add">Win</mark>do<mark class="inline-add">w</mark>s <mark class="inline-add">7</mark> <mark class="inline-add">ou</mark> version <mark class="inline-add">ul</mark>térieure<mark class="inline-add"> et que votre Mac e</mark>s<mark class="inline-add">t doté</mark> de macOS<mark class="inline-add"> Ventura 13 ou de macOS Monterey 12</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">33</span><code class="line-text"><mark class="inline-remove">##</mark> <mark class="inline-remove">U</mark>tilise<mark class="inline-remove">r</mark> l’Assistant migration</code></div>
+<div class="diff-line current added"><span class="line-number">35</span><code class="line-text"><mark class="inline-add">-</mark> <mark class="inline-add">Sur votre PC, ouvrez le programme d’installa</mark>ti<mark class="inline-add">on té</mark>l<mark class="inline-add">échargé, nommé WindowsMigrationAss</mark>is<mark class="inline-add">tantS</mark>e<mark class="inline-add">tup.exe, et suivez</mark> l<mark class="inline-add">es instructions d’installation à l’écran. L</mark>’Assistant migration<mark class="inline-add"> s’ouvre alors automatiquement.</mark></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text"><mark class="inline-remove">Ces étapes concernent l</mark>’Assistant migration Windows 3, <mark class="inline-remove">m</mark>a<mark class="inline-remove">is la </mark>plupart d<mark class="inline-remove">e</mark>s<mark class="inline-remove"> éta</mark>p<mark class="inline-remove">es s</mark>on<mark class="inline-remove">t s</mark>i<mark class="inline-remove">mi</mark>l<mark class="inline-remove">air</mark>es pour les versions antérieures.</code></div>
+<div class="diff-line current added"><span class="line-number">37</span><code class="line-text"><mark class="inline-add">L</mark>’Assistant migration Windows <mark class="inline-add">[version 2.</mark>3<mark class="inline-add">.1.0](https://support.apple.com/fr-fr/106415) </mark>, <mark class="inline-add">[version 2.2.0.1](https://support.</mark>a<mark class="inline-add">p</mark>pl<mark class="inline-add">e.com/fr-fr/106459) , [version 2.1.2.0](https://s</mark>up<mark class="inline-add">port.</mark>a<mark class="inline-add">pple.com/f</mark>r<mark class="inline-add">-fr/106532) et [version 1.0.5.7](https://support.apple.com/fr-fr/106552) resten</mark>t d<mark class="inline-add">i</mark>sponi<mark class="inline-add">b</mark>les pour l<mark class="inline-add">a migration vers d</mark>es versions antérieures<mark class="inline-add"> de macOS</mark>.<mark class="inline-add"> [Identifiez la version de macOS installée sur votre Mac](https://support.apple.com/fr-fr/109033) .</mark></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">39</span><code class="line-text">## Utiliser l’Assistant migration sur votre Mac et votre PC</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">41</span><code class="line-text">Ces étapes font référence aux dernières versions de l’Assistant migration pour macOS et Windows, mais la plupart des étapes sont similaires pour les versions antérieures.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">### Sur votre Mac</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">### Sur votre Mac</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">39</span><code class="line-text">- <mark class="inline-remove">Dé</mark>t<mark class="inline-remove">erminez si l’ouvertu</mark>re d<mark class="inline-remove">e</mark> <mark class="inline-remove">l’</mark>Assistant migration es<mark class="inline-remove">t</mark> <mark class="inline-remove">néc</mark>e<mark class="inline-remove">ssa</mark>ir<mark class="inline-remove">e</mark> :</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">- <mark class="inline-add">Vo</mark>tre <mark class="inline-add">Mac inclut </mark>d<mark class="inline-add">éjà</mark> <mark class="inline-add">un </mark>Assistant migration <mark class="inline-add">pour macOS. Dét</mark>e<mark class="inline-add">rminez </mark>s<mark class="inline-add">i</mark> <mark class="inline-add">vous d</mark>e<mark class="inline-add">vez l’ouvr</mark>ir :</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">40</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">41</span><code class="line-text">- Si <mark class="inline-remove">l’</mark>assistant réglages<mark class="inline-remove"> s’affiche au démarrage de votre Mac</mark>, <mark class="inline-remove">v</mark>o<mark class="inline-remove">us aurez la </mark>po<mark class="inline-remove">ssibilité</mark> de transf<mark class="inline-remove">ér</mark>er vos informations <mark class="inline-remove">lo</mark>r<mark class="inline-remove">s</mark> de <mark class="inline-remove">la</mark> configuration <mark class="inline-remove">et</mark> <mark class="inline-remove">il</mark> n’e<mark class="inline-remove">st</mark> pas <mark class="inline-remove">néc</mark>es<mark class="inline-remove">sa</mark>i<mark class="inline-remove">re</mark> d’ouvrir Assistant migration.</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">- Si <mark class="inline-add">votre Mac démarre sur un </mark>assistant <mark class="inline-add">de </mark>réglages, <mark class="inline-add">l’</mark>op<mark class="inline-add">ti</mark>o<mark class="inline-add">n</mark> de transfer<mark class="inline-add">t de</mark> vos informations <mark class="inline-add">fait pa</mark>r<mark class="inline-add">tie</mark> de <mark class="inline-add">cette</mark> configuration <mark class="inline-add">;</mark> <mark class="inline-add">vous</mark> n’<mark class="inline-add">av</mark>e<mark class="inline-add">z donc</mark> pas <mark class="inline-add">b</mark>es<mark class="inline-add">o</mark>i<mark class="inline-add">n</mark> d’ouvrir Assistant migration<mark class="inline-add"> séparément</mark>.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">43</span><code class="line-text">- Si vous avez déjà e<mark class="inline-remove">ffectu</mark>é la<mark class="inline-remove"> procédure de</mark> configuration, ouvrez l’Assistant migration<mark class="inline-remove">,</mark> <mark class="inline-remove">q</mark>ui es<mark class="inline-remove">t</mark> <mark class="inline-remove">préinstallé sur</mark> votre <mark class="inline-remove">M</mark>a<mark class="inline-remove">c</mark>. Vous pouvez le <mark class="inline-remove">rech</mark>er<mark class="inline-remove">cher et l’ouvrir [à l’aide de</mark> Spotlight](https://support.apple.com/guide/mac-help/search-with-spotlight-mchlp1008/mac) <mark class="inline-remove">, </mark>ou<mark class="inline-remove"> y accéde</mark>r<mark class="inline-remove"> dans</mark> le <mark class="inline-remove">dossi</mark>er <mark class="inline-remove">U</mark>t<mark class="inline-remove">i</mark>l<mark class="inline-remove">ita</mark>ir<mark class="inline-remove">es de votre dossier Applications</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">49</span><code class="line-text">- Si vous avez déjà <mark class="inline-add">t</mark>e<mark class="inline-add">rmin</mark>é la configuration<mark class="inline-add"> de votre Mac</mark>, ouvrez l’Assistant migration<mark class="inline-add">.</mark> <mark class="inline-add">Cette app se tro</mark>u<mark class="inline-add">ve dans le sous-doss</mark>i<mark class="inline-add">er</mark> <mark class="inline-add">Utilitair</mark>es <mark class="inline-add">de</mark> votre <mark class="inline-add">dossier Applic</mark>a<mark class="inline-add">tions</mark>. Vous pouvez <mark class="inline-add">éga</mark>le<mark class="inline-add">ment</mark> <mark class="inline-add">[utilis</mark>er Spotlight](https://support.apple.com/guide/mac-help/search-with-spotlight-mchlp1008/mac) <mark class="inline-add">p</mark>our le <mark class="inline-add">recherch</mark>er <mark class="inline-add">e</mark>t<mark class="inline-add"> </mark>l<mark class="inline-add">’ouvr</mark>ir.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">- Si on vous demande l’autorisation d’apporter des modifications, saisissez votre mot de passe administrateur.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">- Si on vous demande l’autorisation d’apporter des modifications, saisissez votre mot de passe administrateur.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 3 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">### Sur votre PC</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">### Sur votre PC</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">53</span><code class="line-text">- Lorsque votre Mac affiche un code et vous <mark class="inline-remove">i</mark>n<mark class="inline-remove">vit</mark>e <mark class="inline-remove">à</mark> le saisir sur votre PC, ouvrez <mark class="inline-remove">l’</mark>Assistant migration Windows qu<mark class="inline-remove">e</mark> <mark class="inline-remove">v</mark>ou<mark class="inline-remove">s a</mark>ve<mark class="inline-remove">z </mark>t<mark class="inline-remove">éléchargé</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">- Lorsque votre Mac affiche un code et vous <mark class="inline-add">dema</mark>n<mark class="inline-add">d</mark>e <mark class="inline-add">de</mark> le saisir sur votre PC, <mark class="inline-add">retournez sur votre PC et </mark>ouvrez Assistant migration Windows<mark class="inline-add">. Il se peut</mark> qu<mark class="inline-add">’il</mark> <mark class="inline-add">soit déjà </mark>ouve<mark class="inline-add">r</mark>t.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">55</span><code class="line-text">- Suivez les instructions à l’écran jusqu’à ce qu’un message vous invite à saisir le code affiché sur votre Mac. Saisissez le code, puis cliquez sur Continuer. Votre PC recherche votre Mac et s’y connecte.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">- Suivez les instructions à l’écran jusqu’à ce qu’un message vous invite à saisir le code affiché sur votre Mac. Saisissez le code, puis cliquez sur Continuer. Votre PC recherche votre Mac et s’y connecte.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 79 lignes inchangées masquées</span></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
