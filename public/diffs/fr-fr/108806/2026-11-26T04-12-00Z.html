@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Gérer l’iPhone ou l’iPad de votre enfant avec Temps d’écran - Assistance Apple (FR) — Apple Support Watch</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+      --background: #f5f5f7; --panel: #fff; --text: #1d1d1f; --muted: #6e6e73;
+      --border: #d2d2d7; --gutter: #f0f0f2; --header: rgba(255,255,255,.94);
+      --removed: #fff1f0; --removed-strong: #ffc8c3; --removed-text: #8a1c13;
+      --added: #edfaef; --added-strong: #b9ebc1; --added-text: #176329;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--background); color: var(--text); }
+    main { width: min(1800px, 100%); margin: 0 auto; padding: 32px; }
+    .page-header { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .eyebrow { margin: 0 0 6px; color: var(--muted); font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    h1 { margin: 0; max-width: 1100px; font-size: clamp(26px, 3vw, 42px); line-height: 1.08; letter-spacing: -.025em; }
+    .source { flex: 0 0 auto; border: 1px solid var(--border); border-radius: 999px; padding: 9px 14px; background: var(--panel); color: #06c; font-weight: 600; text-decoration: none; }
+    .source:hover { text-decoration: underline; }
+    .summary { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; background: var(--panel); color: var(--muted); font-size: 13px; }
+    .badge.added { border-color: var(--added-strong); color: var(--added-text); }
+    .badge.removed { border-color: var(--removed-strong); color: var(--removed-text); }
+    .diff-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 14px; background: var(--panel); box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .diff-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-width: 860px; }
+    .pane-header { position: sticky; top: 0; z-index: 2; padding: 11px 16px; background: var(--header); border-bottom: 1px solid var(--border); backdrop-filter: blur(16px); font-size: 13px; font-weight: 700; }
+    .pane-header.previous { border-right: 1px solid var(--border); }
+    .diff-line { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); min-width: 0; border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent); }
+    .diff-line.previous { border-right: 1px solid var(--border); }
+    .diff-line.removed { background: var(--removed); }
+    .diff-line.added { background: var(--added); }
+    .diff-line.empty { background: color-mix(in srgb, var(--gutter) 55%, transparent); }
+    .line-number { min-height: 100%; padding: 7px 10px 7px 6px; background: color-mix(in srgb, var(--gutter) 82%, transparent); color: var(--muted); text-align: right; user-select: none; font: 12px/1.55 ui-monospace, "SFMono-Regular", Menlo, monospace; }
+    .line-text { min-width: 0; margin: 0; padding: 7px 12px; color: inherit; white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal; font: 13px/1.55 ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace; }
+    mark { color: inherit; border-radius: 3px; padding: 1px 0; }
+    .inline-remove { background: var(--removed-strong); text-decoration: line-through; text-decoration-thickness: 1px; }
+    .inline-add { background: var(--added-strong); }
+    .fold { grid-column: 1 / -1; display: flex; align-items: center; gap: 12px; padding: 7px 16px; background: var(--gutter); color: var(--muted); border-bottom: 1px solid var(--border); font-size: 12px; text-align: center; }
+    .fold::before, .fold::after { content: ""; height: 1px; flex: 1; background: var(--border); }
+    .no-change { grid-column: 1 / -1; padding: 32px; text-align: center; color: var(--muted); }
+    @media (prefers-color-scheme: dark) {
+      :root { --background: #151518; --panel: #1f1f23; --text: #f5f5f7; --muted: #a1a1a6; --border: #3a3a40; --gutter: #29292e; --header: rgba(31,31,35,.94); --removed: #3b2020; --removed-strong: #743630; --removed-text: #ffb4ad; --added: #183321; --added-strong: #285f37; --added-text: #9ee8ac; }
+      .source { color: #2997ff; }
+    }
+    @media (max-width: 700px) { main { padding: 18px 12px; } .page-header { display: block; } .source { display: inline-block; margin-top: 14px; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <div><p class="eyebrow">Apple Support Watch · Comparaison</p><h1>Gérer l’iPhone ou l’iPad de votre enfant avec Temps d’écran - Assistance Apple (FR)</h1></div>
+      <a class="source" href="https://support.apple.com/fr-fr/108806">Voir l’article actuel ↗</a>
+    </header>
+    <div class="summary">
+      <span class="badge added">+13 ajouts</span>
+      <span class="badge removed">−13 suppressions</span>
+      <span class="badge">5 blocs modifiés</span>
+      <span class="badge">Le texte inchangé est replié</span>
+    </div>
+    <div class="diff-scroll">
+      <section class="diff-grid" aria-label="Comparaison des versions">
+        <div class="pane-header previous">Version précédente</div>
+        <div class="pane-header current">Version actuelle</div>
+        <div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">2</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">3</span><code class="line-text">Temps d’écran vous permet de voir facilement comment votre enfant utilise son iPhone et son iPad. Et grâce au contrôle parental intégré à l’iPhone, à l’iPad et au Mac, vous pouvez gérer les apps et le contenu auxquels votre enfant peut accéder, les personnes avec qui il communique, les moments où il utilise ses appareils, et plus encore.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">3</span><code class="line-text">Temps d’écran vous permet de voir facilement comment votre enfant utilise son iPhone et son iPad. Et grâce au contrôle parental intégré à l’iPhone, à l’iPad et au Mac, vous pouvez gérer les apps et le contenu auxquels votre enfant peut accéder, les personnes avec qui il communique, les moments où il utilise ses appareils, et plus encore.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">4</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">5</span><code class="line-text">Sous iOS 27, iPadOS 27, macOS 27, watchOS 27 et visionOS 27, Temps d’écran introduit un nouveau contrôle parental pour aider les parents à gérer ce à quoi les enfants accèdent, les moments où ils utilisent les appareils et la façon dont ils restent en sécurité lorsqu’ils communiquent avec d’autres personnes.<mark class="inline-remove"> Pour accéder à ce contrôle parental mis à jour, assurez-vous que chaque appareil de votre groupe de partage familial utilise ces versions logicielles. L’organisateur du partage familial ou un parent/tuteur doit également mettre à jour le contrôle parental pour le groupe familial.</mark></code></div>
+<div class="diff-line current added"><span class="line-number">5</span><code class="line-text">Sous iOS 27, iPadOS 27, macOS 27, watchOS 27 et visionOS 27, Temps d’écran introduit un nouveau contrôle parental pour aider les parents à gérer ce à quoi les enfants accèdent, les moments où ils utilisent le<mark class="inline-add">ur</mark>s appareils et la façon dont ils restent en sécurité lorsqu’ils communiquent avec d’autres personnes.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">6</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">7</span><code class="line-text"><mark class="inline-remove">Si</mark> vous <mark class="inline-remove">ne</mark> <mark class="inline-remove">pouvez p</mark>a<mark class="inline-remove">s</mark> m<mark class="inline-remove">ettr</mark>e à <mark class="inline-remove">jo</mark>u<mark class="inline-remove">r tous les appareils</mark> de vo<mark class="inline-remove">tre groupe de partage familial, vou</mark>s<mark class="inline-remove"> pouvez continuer à [utiliser la version précédente de Temps d’écran et du</mark> contrôle parenta<mark class="inline-remove">l</mark>](https://support.apple.com/guide/<mark class="inline-remove">iphone/set-up-screen-time-for-a-</mark>child-<mark class="inline-remove">i</mark>p<mark class="inline-remove">ha200</mark>da<mark class="inline-remove">319/26/</mark>i<mark class="inline-remove">o</mark>s<mark class="inline-remove">/26) , ou régler le contrôle </mark>parental<mark class="inline-remove"> dire</mark>c<mark class="inline-remove">teme</mark>nt <mark class="inline-remove">sur l’appareil de l’enfant</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">7</span><code class="line-text"><mark class="inline-add">[En</mark> <mark class="inline-add">sa</mark>vo<mark class="inline-add">ir pl</mark>us <mark class="inline-add">sur</mark> <mark class="inline-add">l</mark>a m<mark class="inline-add">is</mark>e à <mark class="inline-add">nivea</mark>u de vos contrôle<mark class="inline-add">s</mark> parenta<mark class="inline-add">ux</mark>](https://support.apple.com/guide/child-<mark class="inline-add">safety/u</mark>pda<mark class="inline-add">te-fam</mark>i<mark class="inline-add">ly-device</mark>s<mark class="inline-add">-</mark>parental<mark class="inline-add">-</mark>c<mark class="inline-add">o</mark>nt<mark class="inline-add">rols-jrzvk3ml3unm/27/web/1.0)</mark> .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">8</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">9</span><code class="line-text">- [Avant de commencer](https://support.apple.com/fr-fr/108806#get-started)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">9</span><code class="line-text">- [Avant de commencer](https://support.apple.com/fr-fr/108806#get-started)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">10</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 7 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">18</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">19</span><code class="line-text">### Si le partage familial est déjà configuré</code></div>
+<div class="diff-line current unchanged"><span class="line-number">19</span><code class="line-text">### Si le partage familial est déjà configuré</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">20</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">21</span><code class="line-text">Si le partage familial est déjà configuré et que le compte Apple de votre enfant fait partie de votre groupe de partage familial, vous pouvez configurer et gérer le réglage Temps d’écran et le contrôle parental de votre enfant depuis votre propre iPhone, iPad ou Mac. Assurez-vous simplement de mettre à jour tous les appareils de votre groupe de partage familial vers la dernière version du logiciel afin que vos réglages de Temps d’écran se synchronisent sur tous les appareils de votre groupe. Puis [mettez à <mark class="inline-remove">jo</mark>u<mark class="inline-remove">r</mark> vos contrôles parentaux](https://support.apple.com/guide/child-safety/jrzvk3ml3unm) pour accéder à la nouvelle expérience Temps d’écran et contrôle parental.</code></div>
+<div class="diff-line current added"><span class="line-number">21</span><code class="line-text">Si le partage familial est déjà configuré et que le compte Apple de votre enfant fait partie de votre groupe de partage familial, vous pouvez configurer et gérer le réglage Temps d’écran et le contrôle parental de votre enfant depuis votre propre iPhone, iPad ou Mac. Assurez-vous simplement de mettre à jour tous les appareils de votre groupe de partage familial vers la dernière version du logiciel afin que vos réglages de Temps d’écran se synchronisent sur tous les appareils de votre groupe. Puis [mettez à <mark class="inline-add">nivea</mark>u vos contrôles parentaux](https://support.apple.com/guide/child-safety/jrzvk3ml3unm) pour accéder à la nouvelle expérience Temps d’écran et contrôle parental.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">22</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">23</span><code class="line-text">### Si le partage familial n’est pas configuré</code></div>
+<div class="diff-line current unchanged"><span class="line-number">23</span><code class="line-text">### Si le partage familial n’est pas configuré</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">24</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 1 ligne inchangée masquée</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">26</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">27</span><code class="line-text">- [Créez un compte enfant pour votre enfant](https://support.apple.com/102617) , s’il n’en a pas déjà un. Il est important que votre enfant ait son propre compte Apple et ne partage pas de compte avec quelqu’un d’autre, par exemple un autre membre de la famille. Ensuite, assurez-vous d’ [inviter les autres membres de votre famille à rejoindre le groupe de partage familial](https://support.apple.com/108380) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">27</span><code class="line-text">- [Créez un compte enfant pour votre enfant](https://support.apple.com/102617) , s’il n’en a pas déjà un. Il est important que votre enfant ait son propre compte Apple et ne partage pas de compte avec quelqu’un d’autre, par exemple un autre membre de la famille. Ensuite, assurez-vous d’ [inviter les autres membres de votre famille à rejoindre le groupe de partage familial](https://support.apple.com/108380) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">28</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">29</span><code class="line-text">- Mettez à jour tous les appareils de votre groupe de partage familial vers la dernière version logicielle pour que les réglages Temps d’écran se synchronisent sur tous les appareils de votre groupe de partage familial. Puis [mettez à <mark class="inline-remove">jo</mark>u<mark class="inline-remove">r</mark> vos contrôles parentaux](https://support.apple.com/guide/child-safety/jrzvk3ml3unm) pour accéder à la nouvelle expérience Temps d’écran et contrôle parental.</code></div>
+<div class="diff-line current added"><span class="line-number">29</span><code class="line-text">- Mettez à jour tous les appareils de votre groupe de partage familial vers la dernière version logicielle pour que les réglages Temps d’écran se synchronisent sur tous les appareils de votre groupe de partage familial. Puis [mettez à <mark class="inline-add">nivea</mark>u vos contrôles parentaux](https://support.apple.com/guide/child-safety/jrzvk3ml3unm) pour accéder à la nouvelle expérience Temps d’écran et contrôle parental.</code></div>
+<div class="diff-line previous removed"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">31</span><code class="line-text">En savoir plus sur les [ressources sur la parentalité numérique fournies par le gouvernement français](https://jeprotegemonenfant.gouv.fr/) .</code></div>
+<div class="diff-line current empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">30</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">33</span><code class="line-text">## Configurer Temps d’écran pour votre enfant sur votre iPhone ou iPad</code></div>
+<div class="diff-line current unchanged"><span class="line-number">31</span><code class="line-text">## Configurer Temps d’écran pour votre enfant sur votre iPhone ou iPad</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">32</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">35</span><code class="line-text">Une fois le partage familial configuré et le compte enfant associé au groupe familial, vous pouvez configurer Temps d’écran et le contrôle parental pour <mark class="inline-remove">son </mark>appareil. Il est recommandé de gérer le <mark class="inline-remove">réglage T</mark>emps d’écran et le contrôle parental d’un enfant de<mark class="inline-remove">puis</mark> l’appareil du responsable familial<mark class="inline-remove"> ou</mark> d<mark class="inline-remove">’</mark>u<mark class="inline-remove">n</mark> parent<mark class="inline-remove">/</mark>tuteur. Si vous utilisez le partage familial pour gérer le compte Apple de votre enfant, le responsable familial<mark class="inline-remove"> ou</mark> le parent<mark class="inline-remove">/</mark>tuteur doit définir le code de Temps d’écran de l’enfant sur son propre appareil, et non sur celui de l’enfant.</code></div>
+<div class="diff-line current added"><span class="line-number">33</span><code class="line-text">Une fois le partage familial configuré et le compte enfant associé au groupe familial, vous pouvez configurer Temps d’écran et le contrôle parental pour <mark class="inline-add">l’</mark>appareil<mark class="inline-add"> de votre enfant</mark>. Il est recommandé de gérer le <mark class="inline-add">t</mark>emps d’écran et le contrôle parental d’un enfant <mark class="inline-add">à partir </mark>de l’appareil du<mark class="inline-add"> ou de la</mark> responsable familial<mark class="inline-add">(e),</mark> du parent<mark class="inline-add"> ou du </mark>tuteur<mark class="inline-add">/de la tutrice, mais vous pouvez également gérer le temps d’écran directement sur l’appareil de l’enfant à l’aide d’un [code de Temps d’écran](https://support.apple.com/126533) </mark>. Si vous utilisez le partage familial pour gérer le compte Apple de votre enfant, le <mark class="inline-add">ou la </mark>responsable familial<mark class="inline-add">(e),</mark> le parent<mark class="inline-add"> ou le </mark>tuteur<mark class="inline-add">/la tutrice</mark> doit définir le code de Temps d’écran de l’enfant sur son propre appareil, et non sur celui de l’enfant.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">34</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">37</span><code class="line-text">- Ouvrez l’app Réglages.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">35</span><code class="line-text">- Ouvrez l’app Réglages.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">38</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">36</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 5 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">42</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">45</span><code class="line-text">## Ce que vous pouvez gérer avec Temps d’écran et le contrôle parental</code></div>
+<div class="diff-line current unchanged"><span class="line-number">43</span><code class="line-text">## Ce que vous pouvez gérer avec Temps d’écran et le contrôle parental</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">44</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">47</span><code class="line-text">Sous iOS 27, iPadOS 27, macOS 27, watchOS 27 et visionOS 27, Temps d’écran introduit un nouveau contrôle parental pour aider les parents à gérer ce à quoi les enfants accèdent, les moments où ils utilisent les appareils et la façon dont ils restent en sécurité lorsqu’ils communiquent avec d’autres personnes. <mark class="inline-remove">P</mark>our accéder à ce contrôle parent<mark class="inline-remove">al mis à jour, assurez-vous que chaque appareil de votre groupe de partage familial utilise ces versions logicielles. Le responsable familial ou un autre parent ou tuteur doit également [mettre à jour le contrôle parental pour le groupe famili</mark>al](https://support.apple.com/guide/child-safety/jrzvk3ml3unm) <mark class="inline-remove">afin d’accéder à la nouvelle expérience Temps d’écran</mark>.</code></div>
+<div class="diff-line current added"><span class="line-number">45</span><code class="line-text">Sous iOS 27, iPadOS 27, macOS 27, watchOS 27 et visionOS 27, Temps d’écran introduit un nouveau contrôle parental pour aider les parents à gérer ce à quoi les enfants accèdent, les moments où ils utilisent le<mark class="inline-add">ur</mark>s appareils et la façon dont ils restent en sécurité lorsqu’ils communiquent avec d’autres personnes. <mark class="inline-add">En savoir plus sur la [configuration logicielle requise p</mark>our accéder à <mark class="inline-add">la nouvelle expérien</mark>c<mark class="inline-add">e Temps d’écran et sur la procédure de mise à niveau de votr</mark>e contrôle parental](https://support.apple.com/guide/child-safety/<mark class="inline-add">update-family-devices-parental-controls-</mark>jrzvk3ml3unm<mark class="inline-add">/27/web/1.0</mark>) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">46</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">49</span><code class="line-text">Si vous ne pouvez pas mettre à jour t<mark class="inline-remove">ou</mark>s <mark class="inline-remove">l</mark>es appareils de votre groupe de partage familial, [vous pouvez continuer à utiliser la version précédente de Temps d’écran et du contrôle parental](https://support.apple.com/guide/iphone/set-up-screen-time-for-a-child-ipha200da319/26/ios/26) .</code></div>
+<div class="diff-line current added"><span class="line-number">47</span><code class="line-text">Si vous ne pouvez pas mettre à jour <mark class="inline-add">cer</mark>t<mark class="inline-add">ain</mark>s <mark class="inline-add">d</mark>es appareils de votre groupe de partage familial, [vous pouvez continuer à utiliser la version précédente de Temps d’écran et du contrôle parental](https://support.apple.com/guide/iphone/set-up-screen-time-for-a-child-ipha200da319/26/ios/26) .</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">48</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">51</span><code class="line-text">### Apps et sites web</code></div>
+<div class="diff-line current unchanged"><span class="line-number">49</span><code class="line-text">### Apps et sites web</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">50</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">53</span><code class="line-text">Vous pouvez autoriser ou bloquer l’accès à des apps et à des sites web spécifiques, et ajuster les protections des apps et des sites web, y compris Autoriser l’achat et Autoriser la consultation. Avec Autoriser l’achat et Autoriser la consultation, votre enfant vous envoie une demande d’approbation lorsqu’il souhaite effectuer un achat ou un téléchargement admissible, ou consulter un nouveau site web dans Safari ou une autre app de navigation compatible.</code></div>
+<div class="diff-line current unchanged"><span class="line-number">51</span><code class="line-text">Vous pouvez autoriser ou bloquer l’accès à des apps et à des sites web spécifiques, et ajuster les protections des apps et des sites web, y compris Autoriser l’achat et Autoriser la consultation. Avec Autoriser l’achat et Autoriser la consultation, votre enfant vous envoie une demande d’approbation lorsqu’il souhaite effectuer un achat ou un téléchargement admissible, ou consulter un nouveau site web dans Safari ou une autre app de navigation compatible.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">52</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">55</span><code class="line-text">Lorsque votre enfant est prêt à naviguer plus librement, vous pouvez mettre à jour les réglages de<mark class="inline-remove"> la fonctionnalité</mark> Demander l’autorisation de naviguer. La fonctionnalité Demander l’autorisation de naviguer est activée par défaut pour les enfants de moins de 13 ans et la fonctionnalité Limiter les sites web pour adultes est activée par défaut pour les enfants de moins de 18 ans. *</code></div>
+<div class="diff-line current added"><span class="line-number">53</span><code class="line-text">Lorsque votre enfant est prêt à naviguer plus librement, vous pouvez mettre à jour les réglages de Demander l’autorisation de naviguer. La fonctionnalité Demander l’autorisation de naviguer est activée par défaut pour les enfants de moins de 13 ans et la fonctionnalité Limiter les sites web pour adultes est activée par défaut pour les enfants de moins de 18 ans. *</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">54</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">57</span><code class="line-text">[Découvrez comment gérer les apps et les sites web auxquels votre enfant peut accéder](https://support.apple.com/guide/child-safety/jymj24zqwaek)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">55</span><code class="line-text">[Découvrez comment gérer les apps et les sites web auxquels votre enfant peut accéder](https://support.apple.com/guide/child-safety/jymj24zqwaek)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">56</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">59</span><code class="line-text">### Contacts autorisés et Toujours autorisées</code></div>
+<div class="diff-line current unchanged"><span class="line-number">57</span><code class="line-text">### Contacts autorisés et Toujours autorisées</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">58</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">61</span><code class="line-text">Vous pouvez choisir avec qui votre enfant communique dans Messages, FaceTime et Téléphone en décidant qui est inclus dans sa liste de contacts et en exigeant une autorisation avant qu’il n<mark class="inline-remove">’i</mark>nt<mark class="inline-remove">eragiss</mark>e avec une nouvelle personne. Par exemple, si votre enfant reçoit un message d’une nouvelle personne, il ne peut pas voir le message tant que vous ou un autre parent<mark class="inline-remove">/</mark>tuteur du groupe de partage familial ne l’avez pas approuvé.</code></div>
+<div class="diff-line current added"><span class="line-number">59</span><code class="line-text">Vous pouvez choisir avec qui votre enfant communique dans Messages, FaceTime et Téléphone en décidant qui est inclus dans sa liste de contacts<mark class="inline-add">,</mark> et en exigeant une autorisation avant qu’il n<mark class="inline-add">e se co</mark>n<mark class="inline-add">nec</mark>te avec une nouvelle personne. Par exemple, si votre enfant reçoit un message d’une nouvelle personne, il ne peut pas voir le message tant que vous ou un autre parent<mark class="inline-add"> ou </mark>tuteur<mark class="inline-add">/tutrice</mark> du groupe de partage familial ne l’avez pas approuvé.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">60</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">63</span><code class="line-text">[Découvrez comment gérer les personnes avec qui votre enfant peut communiquer](https://support.apple.com/guide/child-safety/gkz40jx9zf5r)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">61</span><code class="line-text">[Découvrez comment gérer les personnes avec qui votre enfant peut communiquer](https://support.apple.com/guide/child-safety/gkz40jx9zf5r)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">62</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">65</span><code class="line-text">### Limites de temps et programmes de temps d’écran</code></div>
+<div class="diff-line current unchanged"><span class="line-number">63</span><code class="line-text">### Limites de temps et programmes de temps d’écran</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">64</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">67</span><code class="line-text">Avec les <mark class="inline-remove">au</mark>t<mark class="inline-remove">orisation</mark>s de temps, vous pouvez définir des limites sur la durée pendant laquelle votre enfant peut utiliser des apps dans des catégorie<mark class="inline-remove">s d’app</mark>s, telles que le divertissement, les jeux et les réseaux sociaux. Vous pouvez définir un budget de temps quotidien qui couvre toutes les catégories, puis l’affiner en ajustant le temps alloué à chaque catégorie.</code></div>
+<div class="diff-line current added"><span class="line-number">65</span><code class="line-text">Avec les <mark class="inline-add">limi</mark>t<mark class="inline-add">e</mark>s de temps, vous pouvez définir des limites sur la durée pendant laquelle votre enfant peut utiliser des apps dans d<mark class="inline-add">ifférent</mark>es catégories, telles que le divertissement, les jeux et les réseaux sociaux. Vous pouvez définir un budget de temps quotidien qui couvre toutes les catégories, puis l’affiner en ajustant le temps alloué à chaque catégorie.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">66</span><code class="line-text"></code></div>
+<div class="diff-line previous removed"><span class="line-number">69</span><code class="line-text">Avec les programmes de Temps d’écran, vous pouvez choisir les apps auxquelles votre enfant peut accéder à différents moments de la journée, comme avant l’école, pendant l’école et après l’école. Vous pouvez même configurer des routines distinctes pour les jours de semaine et les week-ends, ou créer les vôtres en fonction de ce qui convient le mieux à votre famille. Vous pouvez également suspendre rapidement l’utilisation de l’appareil, autoriser une utilisation illimitée ou modifier le programme de la journée, directement dans les réglages de Temps d’écran.</code></div>
+<div class="diff-line current added"><span class="line-number">67</span><code class="line-text">Avec les programmes de Temps d’écran, vous pouvez choisir les apps auxquelles votre enfant peut accéder à différents moments de la journée, comme avant l’école, pendant l’école et après l’école. Vous pouvez même configurer des routines distinctes pour les jours de<mark class="inline-add"> la</mark> semaine et les week-ends, ou créer les vôtres en fonction de ce qui convient le mieux à votre famille. Vous pouvez également suspendre rapidement l’utilisation de l’appareil, autoriser une utilisation illimitée ou modifier le programme de la journée, directement dans les réglages de Temps d’écran.</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">68</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">71</span><code class="line-text">[Découvrez comment définir des limites de temps et des programmes de temps d’écran](https://support.apple.com/guide/child-safety/azgjjn208bw9)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">69</span><code class="line-text">[Découvrez comment définir des limites de temps et des programmes de temps d’écran](https://support.apple.com/guide/child-safety/azgjjn208bw9)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">72</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">70</span><code class="line-text"></code></div>
+<div class="fold"><span>••• 9 lignes inchangées masquées</span></div>
+<div class="diff-line previous unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">80</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">83</span><code class="line-text">[En savoir plus sur la fonctionnalité Sécurité des communications](https://support.apple.com/105069)</code></div>
+<div class="diff-line current unchanged"><span class="line-number">81</span><code class="line-text">[En savoir plus sur la fonctionnalité Sécurité des communications](https://support.apple.com/105069)</code></div>
+<div class="diff-line previous unchanged"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line current unchanged"><span class="line-number">82</span><code class="line-text"></code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">83</span><code class="line-text">En savoir plus sur les [ressources sur la parentalité numérique fournies par le gouvernement français](https://jeprotegemonenfant.gouv.fr/) .</code></div>
+<div class="diff-line previous empty"><span class="line-number"></span><code class="line-text"></code></div>
+<div class="diff-line current added"><span class="line-number">84</span><code class="line-text"></code></div>
+<div class="diff-line previous unchanged"><span class="line-number">85</span><code class="line-text">* L’âge limite varie selon l’État, le pays ou la région. Lorsqu’une obligation légale l’exige, un compte Apple créé pour un(e) enfant de moins de 18 ans doit faire partie d’un groupe de partage familial. Certains réglages sont automatiquement activés pour le compte des personnes de moins de 18 ans. Dans certains endroits, des réglages tels que Temps d’écran, Demander l’autorisation d’achat et les restrictions de contenu pour les apps ne peuvent pas être désactivés. [Découvrez en quoi les réglages et les fonctionnalités pour les enfants varient selon l’État, le pays ou la région](https://support.apple.com/125666) .</code></div>
+<div class="diff-line current unchanged"><span class="line-number">85</span><code class="line-text">* L’âge limite varie selon l’État, le pays ou la région. Lorsqu’une obligation légale l’exige, un compte Apple créé pour un(e) enfant de moins de 18 ans doit faire partie d’un groupe de partage familial. Certains réglages sont automatiquement activés pour le compte des personnes de moins de 18 ans. Dans certains endroits, des réglages tels que Temps d’écran, Demander l’autorisation d’achat et les restrictions de contenu pour les apps ne peuvent pas être désactivés. [Découvrez en quoi les réglages et les fonctionnalités pour les enfants varient selon l’État, le pays ou la région](https://support.apple.com/125666) .</code></div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
